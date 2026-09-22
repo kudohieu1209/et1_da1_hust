@@ -1,0 +1,4021 @@
+[
+  {
+    "code": "ET4900",
+    "name": "Đồ án tốt nghiệp cử nhân",
+    "suggested_semester": 8,
+    "credits": 6.0,
+    "is_compulsory": false,
+    "category": "Đồ án tốt nghiệp cử nhân",
+    "raw_condition": "(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4291!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4070!,ET4291!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4230!,ET4291!,ET3290,ET4010)/(ET4250!,ET4291!,ET3290,ET4010)/(ET3180!,ET3310!,ET3290,ET4010)/(ET3180!,ET4070!,ET3290,ET4010)/(ET3180!,ET4230!,ET3290,ET4010)/(ET3180!,ET4250!,ET3290,ET4010)/(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4100!,ET4110!,ET3290,ET4010)/(ET4100!,ET4120!,ET3290,ET4010)/(ET4100!,ET4450!,ET3290,ET4010)/(ET4100!,ET4471!,ET3290,ET4010)/(ET4100!,ET4480!,ET3290,ET4010)/(ET4110!,ET4120!,ET3290,ET4010)/(ET4110!,ET4450!,ET3290,ET4010)/(ET4110!,ET4471!,ET3290,ET4010)/(ET4110!,ET4480!,ET3290,ET4010)/(ET4120!,ET4450!,ET3290,ET4010)/(ET4120!,ET4471!,ET3290,ET4010)/(ET4120!,ET4480!,ET3290,ET4010)/(ET4450!,ET4471!,ET3290,ET4010)/(ET4450!,ET4480!,ET3290,ET4010)/(ET4471!,ET4480!,ET3290,ET4010)/(ET3180!,ET3310!,ET3290,ET4010)/(ET3180!,ET4130!,ET3290,ET4010)/(ET3180!,ET4250!,ET3290,ET4010)/(ET3180!,ET4140!,ET3290,ET4010)/(ET3310!,ET4130!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4140!,ET3290,ET4010)/(ET4130!,ET4250!,ET3290,ET4010)/(ET4130!,ET4140!,ET3290,ET4010)/(ET4250!,ET4140!,ET3290,ET4010)/(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4260!,ET3290,ET4010)/(ET3310!,ET4370!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4070!,ET4260!,ET3290,ET4010)/(ET4070!,ET4370!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4230!,ET4260!,ET3290,ET4010)/(ET4230!,ET4370!,ET3290,ET4010)/(ET4250!,ET4260!,ET3290,ET4010)/(ET4250!,ET4370!,ET3290,ET4010)/(ET4260!,ET4370!,ET3290,ET4010)/(ET4033!,ET4340!,ET3290,ET4010)/(ET4033!,ET4356!,ET3290,ET4010)/(ET4033!,ET4358!,ET3290,ET4010)/(ET4033!,ET4361!,ET3290,ET4010)/(ET4340!,ET4356!,ET3290,ET4010)/(ET4340!,ET4358!,ET3290,ET4010)/(ET4340!,ET4361!,ET3290,ET4010)/(ET4356!,ET4358!,ET3290,ET4010)/(ET4356!,ET4361!,ET3290,ET4010)/(ET4358!,ET4361!,ET3290,ET4010)/(ET3310,ET4010,ET4020,ET4291)/(ET3310,ET4010,ET4020,ET4070)/(ET3310,ET4010,ET3290,ET4020)/(ET4033,ET4010,ET3290,ET4340)/(ET4245,ET4010,ET3290,ET4291)/(ET3311!,ET4032!,ET3291,ET4012=)/(ET3311!,ET3250!,ET3291,ET4012=)/(ET3311!,ET4245!,ET3291,ET4012=)/(ET3311!,ET4340!,ET3291,ET4012=)/(ET3311!,ET4435!,ET3291,ET4012=)/(ET3311!,ET3180!,ET3291,ET4012=)/(ET3311!,ET4060!,ET3291,ET4012=)/(ET4032!,ET3250!,ET3291,ET4012=)/(ET4032!,ET4245!,ET3291,ET4012=)/(ET4032!,ET4340!,ET3291,ET4012=)/(ET4032!,ET4435!,ET3291,ET4012=)/(ET4032!,ET3180!,ET3291,ET4012=)/(ET4032!,ET4060!,ET3291,ET4012=)/(ET3250!,ET4245!,ET3291,ET4012=)/(ET3250!,ET4340!,ET3291,ET4012=)/(ET3250!,ET4435!,ET3291,ET4012=)/(ET3250!,ET3180!,ET3291,ET4012=)/(ET3250!,ET4060!,ET3291,ET4012=)/(ET4245!,ET4340!,ET3291,ET4012=)/(ET4245!,ET4435!,ET3291,ET4012=)/(ET4245!,ET3180!,ET3291,ET4012=)/(ET4245!,ET4060!,ET3291,ET4012=)/(ET4340!,ET4435!,ET3291,ET4012=)/(ET4340!,ET3180!,ET3291,ET4012=)/(ET4340!,ET4060!,ET3291,ET4012=)/(ET4435!,ET3180!,ET3291,ET4012=)/(ET4435!,ET4060!,ET3291,ET4012=)/(ET3180!,ET4060!,ET3291,ET4012=)",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4291",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4291",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4291",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4291",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4100",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4110",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4100",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4120",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4100",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4450",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4100",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4471",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4100",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4480",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4110",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4120",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4110",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4450",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4110",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4471",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4110",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4480",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4120",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4450",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4120",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4471",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4120",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4480",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4450",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4471",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4450",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4480",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4471",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4480",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4130",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4140",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4130",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4140",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4130",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4130",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4140",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4140",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4260",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4370",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4260",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4370",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4260",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4230",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4370",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4260",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4370",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4260",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4370",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4033",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4033",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4356",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4033",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4358",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4033",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4361",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4356",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4358",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4361",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4356",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4358",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4356",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4361",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4358",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4361",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4020",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4291",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4020",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4070",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3310",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4020",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4033",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4340",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4245",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4010",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET3290",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4291",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3311",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4032",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3311",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3311",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4245",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3311",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3311",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4435",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3311",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3311",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4060",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4032",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4032",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4245",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4032",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4032",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4435",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4032",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4032",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4060",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4245",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4435",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3250",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4060",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4245",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4245",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4435",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4245",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4245",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4060",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4435",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4340",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4060",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4435",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET4435",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4060",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ],
+      [
+        {
+          "code": "ET3180",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET4060",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "ET3291",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4012",
+          "type": "COREQUISITE"
+        }
+      ]
+    ],
+    "flat_prerequisites": [
+      "ET3180",
+      "ET3250",
+      "ET3310",
+      "ET3311",
+      "ET4032",
+      "ET4033",
+      "ET4060",
+      "ET4070",
+      "ET4100",
+      "ET4110",
+      "ET4120",
+      "ET4130",
+      "ET4140",
+      "ET4230",
+      "ET4245",
+      "ET4250",
+      "ET4260",
+      "ET4291",
+      "ET4340",
+      "ET4356",
+      "ET4358",
+      "ET4361",
+      "ET4370",
+      "ET4435",
+      "ET4450",
+      "ET4471",
+      "ET4480"
+    ],
+    "flat_prior_courses": [
+      "ET3290",
+      "ET3291",
+      "ET3310",
+      "ET4010",
+      "ET4020",
+      "ET4033",
+      "ET4070",
+      "ET4245",
+      "ET4291",
+      "ET4340"
+    ],
+    "flat_corequisites": [
+      "ET4012"
+    ],
+    "min_credits_accumulated": 120
+  },
+  {
+    "code": "PE1015",
+    "name": "Thể dục tay không",
+    "suggested_semester": null,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "TCII",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2261",
+    "name": "Karatedo",
+    "suggested_semester": null,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "TCII",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2101",
+    "name": "Bóng chuyền 1",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2151",
+    "name": "Erobic",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2201",
+    "name": "Bóng đá 1",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2251",
+    "name": "Taekwondo 1",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2301",
+    "name": "Bóng rổ 1",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2401",
+    "name": "Bóng bàn 1",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2501",
+    "name": "Cầu lông 1",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2601",
+    "name": "Chạy",
+    "suggested_semester": null,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2701",
+    "name": "Nhảy cao",
+    "suggested_semester": null,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2801",
+    "name": "Nhảy xa",
+    "suggested_semester": null,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2901",
+    "name": "Xà kép, xà lệch",
+    "suggested_semester": null,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3101",
+    "name": "Chuyên sâu Bóng chuyền 1",
+    "suggested_semester": 1,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3102",
+    "name": "Chuyên sâu Bóng chuyền 2",
+    "suggested_semester": 2,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3103",
+    "name": "Chuyên sâu Bóng chuyền 3",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3201",
+    "name": "Chuyên sâu Bóng đá 1",
+    "suggested_semester": 1,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3202",
+    "name": "Chuyên sâu Bóng đá 2",
+    "suggested_semester": 2,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3203",
+    "name": "Chuyên sâu Bóng đá 3",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3301",
+    "name": "Chuyên sâu Bóng rổ 1",
+    "suggested_semester": 1,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3302",
+    "name": "Chuyên sâu Bóng rổ 2",
+    "suggested_semester": 2,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3303",
+    "name": "Chuyên sâu Bóng rổ 3",
+    "suggested_semester": 3,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2102",
+    "name": "Bóng chuyền 2",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2202",
+    "name": "Bóng đá 2",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2252",
+    "name": "Taekwondo 2",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2302",
+    "name": "Bóng rổ 2",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2402",
+    "name": "Bóng bàn 2",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2502",
+    "name": "Cầu lông 2",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3104",
+    "name": "Chuyên sâu Bóng chuyền 4",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3204",
+    "name": "Chuyên sâu Bóng đá 4",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3304",
+    "name": "Chuyên sâu Bóng rổ 4",
+    "suggested_semester": 4,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2103",
+    "name": "Bóng chuyền 3",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2203",
+    "name": "Bóng đá 3",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2253",
+    "name": "Taekwondo 3",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2303",
+    "name": "Bóng rổ 3",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2403",
+    "name": "Bóng bàn 3",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE2503",
+    "name": "Cầu lông 3",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3105",
+    "name": "Chuyên sâu Bóng chuyền 5",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3205",
+    "name": "Chuyên sâu Bóng đá 5",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE3305",
+    "name": "Chuyên sâu Bóng rổ 5",
+    "suggested_semester": 5,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "SSH1111",
+    "name": "Triết học Mác - Lênin",
+    "suggested_semester": 1,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Lý luận chính trị",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "SSH1121",
+    "name": "Kinh tế chính trị Mác - Lênin",
+    "suggested_semester": 2,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Lý luận chính trị",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "SSH1131",
+    "name": "Chủ nghĩa xã hội khoa học",
+    "suggested_semester": 3,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Lý luận chính trị",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "SSH1141",
+    "name": "Lịch sử Đảng cộng sản Việt Nam",
+    "suggested_semester": 4,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Lý luận chính trị",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "EM1170",
+    "name": "Pháp luật đại cương",
+    "suggested_semester": 2,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Pháp luật đại cương",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "SSH1151",
+    "name": "Tư tưởng Hồ Chí Minh",
+    "suggested_semester": 4,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Lý luận chính trị",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE1014",
+    "name": "Lý luận TDTT",
+    "suggested_semester": 1,
+    "credits": 0.0,
+    "is_compulsory": true,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PE1024",
+    "name": "Bơi lội",
+    "suggested_semester": 2,
+    "credits": 0.0,
+    "is_compulsory": false,
+    "category": "Giáo dục thể chất",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MIL1210",
+    "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+    "suggested_semester": 1,
+    "credits": 0.0,
+    "is_compulsory": true,
+    "category": "ĐLQP&amp;QN của ĐCSVN",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MIL1220",
+    "name": "Công tác quốc phòng và an ninh",
+    "suggested_semester": 2,
+    "credits": 0.0,
+    "is_compulsory": true,
+    "category": "Công tác QP &amp;An ninh",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MIL1230",
+    "name": "Quân sự chung",
+    "suggested_semester": 2,
+    "credits": 0.0,
+    "is_compulsory": true,
+    "category": "Quân sự chung",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MIL1240",
+    "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+    "suggested_semester": 2,
+    "credits": 0.0,
+    "is_compulsory": true,
+    "category": "KT chiến đấu BB và chiến thuật",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "FL1131",
+    "name": "Tiếng Anh cơ sở 1",
+    "suggested_semester": null,
+    "credits": 0.0,
+    "is_compulsory": true,
+    "category": "",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "FL1132",
+    "name": "Tiếng Anh cơ sở 2",
+    "suggested_semester": null,
+    "credits": 0.0,
+    "is_compulsory": true,
+    "category": "",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MI1111",
+    "name": "Giải tích I",
+    "suggested_semester": 1,
+    "credits": 4.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MI1121",
+    "name": "Giải tích II",
+    "suggested_semester": 2,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MI1131",
+    "name": "Giải tích III",
+    "suggested_semester": 3,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MI1141",
+    "name": "Đại số",
+    "suggested_semester": 1,
+    "credits": 4.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MI2020",
+    "name": "Xác suất thống kê",
+    "suggested_semester": 3,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "MI2010",
+    "name": "Phương pháp tính",
+    "suggested_semester": 5,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PH1111",
+    "name": "Vật lý đại cương I",
+    "suggested_semester": 1,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PH1122",
+    "name": "Vật lý đại cương II",
+    "suggested_semester": 2,
+    "credits": 4.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "PH3330",
+    "name": "Vật lý điện tử",
+    "suggested_semester": 3,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "IT1110",
+    "name": "Tin học đại cương",
+    "suggested_semester": 2,
+    "credits": 4.0,
+    "is_compulsory": true,
+    "category": "Khối kiến thức Toán và Khoa học cơ bản",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2100",
+    "name": "Cấu trúc dữ liệu và giải thuật",
+    "suggested_semester": 4,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET2031",
+    "condition_tree": [
+      [
+        {
+          "code": "ET2031",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET2031"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2000",
+    "name": "Nhập môn kỹ thuật điện tử-viễn thông",
+    "suggested_semester": 1,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2021",
+    "name": "Thực tập cơ bản",
+    "suggested_semester": 1,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2031",
+    "name": "Kỹ thuật lập trình C/C++",
+    "suggested_semester": 4,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2040",
+    "name": "Cấu kiện điện tử",
+    "suggested_semester": 4,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2050",
+    "name": "Lý thuyết mạch",
+    "suggested_semester": 4,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "(MI1111,MI1121,MI1131,PH1122)/(MI1111,MI1121,MI1131,PH1121)/(MI1111,MI1121,MI1131,PH1120)",
+    "condition_tree": [
+      [
+        {
+          "code": "MI1111",
+          "type": "PRIOR"
+        },
+        {
+          "code": "MI1121",
+          "type": "PRIOR"
+        },
+        {
+          "code": "MI1131",
+          "type": "PRIOR"
+        },
+        {
+          "code": "PH1122",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "MI1111",
+          "type": "PRIOR"
+        },
+        {
+          "code": "MI1121",
+          "type": "PRIOR"
+        },
+        {
+          "code": "MI1131",
+          "type": "PRIOR"
+        },
+        {
+          "code": "PH1121",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "MI1111",
+          "type": "PRIOR"
+        },
+        {
+          "code": "MI1121",
+          "type": "PRIOR"
+        },
+        {
+          "code": "MI1131",
+          "type": "PRIOR"
+        },
+        {
+          "code": "PH1120",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "MI1111",
+      "MI1121",
+      "MI1131",
+      "PH1120",
+      "PH1121",
+      "PH1122"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2060",
+    "name": "Tín hiệu và hệ thống",
+    "suggested_semester": 4,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "MI1141",
+    "condition_tree": [
+      [
+        {
+          "code": "MI1141",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "MI1141"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3210",
+    "name": "Trường điện từ",
+    "suggested_semester": 4,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "PH1122/PH1120",
+    "condition_tree": [
+      [
+        {
+          "code": "PH1122",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "PH1120",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "PH1120",
+      "PH1122"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2072",
+    "name": "Lý thuyết thông tin",
+    "suggested_semester": 4,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "(MI1141,MI2020)!",
+    "condition_tree": [
+      [
+        {
+          "code": "MI1141",
+          "type": "PREREQUISITE"
+        },
+        {
+          "code": "MI2020",
+          "type": "PREREQUISITE"
+        }
+      ]
+    ],
+    "flat_prerequisites": [
+      "MI1141",
+      "MI2020"
+    ],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3220",
+    "name": "Điện tử số",
+    "suggested_semester": 5,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET2040/ET2042",
+    "condition_tree": [
+      [
+        {
+          "code": "ET2040",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET2042",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET2040",
+      "ET2042"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3230",
+    "name": "Điện tử tương tự I",
+    "suggested_semester": 5,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET2050,ET2040",
+    "condition_tree": [
+      [
+        {
+          "code": "ET2050",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET2040",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET2040",
+      "ET2050"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3260",
+    "name": "Kỹ thuật phần mềm ứng dụng",
+    "suggested_semester": 5,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET2100,ET2031",
+    "condition_tree": [
+      [
+        {
+          "code": "ET2100",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET2031",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET2031",
+      "ET2100"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3280",
+    "name": "Anten và truyền sóng",
+    "suggested_semester": 5,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET3210",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3210",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3210"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2080",
+    "name": "Cơ sở kỹ thuật đo lường",
+    "suggested_semester": 5,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "MI2020,ET3230",
+    "condition_tree": [
+      [
+        {
+          "code": "MI2020",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET3230",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3230",
+      "MI2020"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3250",
+    "name": "Thông tin số",
+    "suggested_semester": 6,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "MI2020,ET2060",
+    "condition_tree": [
+      [
+        {
+          "code": "MI2020",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET2060",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET2060",
+      "MI2020"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3241",
+    "name": "Điện tử tương tự II",
+    "suggested_semester": 6,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET3230/ET3231",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3230",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3231",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3230",
+      "ET3231"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3300",
+    "name": "Kỹ thuật vi xử lý",
+    "suggested_semester": 6,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET3220",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3220",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3220"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3290",
+    "name": "Đồ án thiết kế I",
+    "suggested_semester": 7,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET3260=",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3260",
+          "type": "COREQUISITE"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [
+      "ET3260"
+    ],
+    "min_credits_accumulated": 90
+  },
+  {
+    "code": "ET4010",
+    "name": "Đồ án thiết kế II",
+    "suggested_semester": 8,
+    "credits": 2.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET2022",
+    "name": "Technical Writing and Presentation",
+    "suggested_semester": 6,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4020",
+    "name": "Xử lý tín hiệu số",
+    "suggested_semester": 5,
+    "credits": 3.0,
+    "is_compulsory": true,
+    "category": "Cơ sở và cốt lõi ngành",
+    "raw_condition": "ET2060!",
+    "condition_tree": [
+      [
+        {
+          "code": "ET2060",
+          "type": "PREREQUISITE"
+        }
+      ]
+    ],
+    "flat_prerequisites": [
+      "ET2060"
+    ],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "EM1010",
+    "name": "Quản trị học đại cương",
+    "suggested_semester": 6,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Kiến thức bổ trợ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "EM1180",
+    "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+    "suggested_semester": 7,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Kiến thức bổ trợ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ED3280",
+    "name": "Tâm lý học ứng dụng",
+    "suggested_semester": 6,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Kiến thức bổ trợ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ED3220",
+    "name": "Kỹ năng mềm",
+    "suggested_semester": 6,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Kiến thức bổ trợ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3262",
+    "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+    "suggested_semester": 6,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Kiến thức bổ trợ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "CH2021",
+    "name": "Đổi mới sáng tạo và khởi nghiệp",
+    "suggested_semester": null,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Kiến thức bổ trợ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ME3123",
+    "name": "Thiết kế mỹ thuật công nghiệp",
+    "suggested_semester": null,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Kiến thức bổ trợ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ME3124",
+    "name": "Thiết kế quảng bá sản phẩm",
+    "suggested_semester": null,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Kiến thức bổ trợ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3270",
+    "name": "Thực tập kỹ thuật",
+    "suggested_semester": 8,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Thực tập kỹ thuật",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3310",
+    "name": "Lý thuyết mật mã",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 1,2,4,5",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4230",
+    "name": "Mạng máy tính",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 1,2,5",
+    "raw_condition": "ET3200/ET4070",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3200",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4070",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3200",
+      "ET4070"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4250",
+    "name": "Hệ thống viễn thông",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 1,2,4,5",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4070",
+    "name": "Cơ sở truyền số liệu",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 1,2,5",
+    "raw_condition": "MI2036/MI2020",
+    "condition_tree": [
+      [
+        {
+          "code": "MI2036",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "MI2020",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "MI2020",
+      "MI2036"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4291",
+    "name": "Hệ điều hành",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 1: Kỹ thuật Điện tử - Kỹ thuật máy tính",
+    "raw_condition": "ET2031/ET2030,ET3300",
+    "condition_tree": [
+      [
+        {
+          "code": "ET2031",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET2030",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET3300",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET2030",
+      "ET2031",
+      "ET3300"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET3180",
+    "name": "Thông tin vô tuyến",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 2,4",
+    "raw_condition": "ET3250",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3250",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3250"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4100",
+    "name": "Cơ sở điện sinh học",
+    "suggested_semester": 7,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+    "raw_condition": "ET2050",
+    "condition_tree": [
+      [
+        {
+          "code": "ET2050",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET2050"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4471",
+    "name": "Mạch xử lý tín hiệu y sinh",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4450",
+    "name": "Giải phẫu và sinh lý học",
+    "suggested_semester": 7,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4110",
+    "name": "Cảm biến và KT đo lường y sinh",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+    "raw_condition": "ET3240/ET3140/ET3096/ET3241",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3240",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3140",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3096",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3241",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3096",
+      "ET3140",
+      "ET3240",
+      "ET3241"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4480",
+    "name": "Công nghệ chẩn đoán hình ảnh I",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4120",
+    "name": "Thiết bị điện tử y sinh I",
+    "suggested_semester": 7,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+    "raw_condition": "ET4110/ET4460",
+    "condition_tree": [
+      [
+        {
+          "code": "ET4110",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4460",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET4110",
+      "ET4460"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4130",
+    "name": "Truyền số liệu và chuyển tiếp điện văn",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 4: Kỹ thuật Điện tử hàng không-Vũ trụ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4140",
+    "name": "Định vị và dẫn đường điện tử",
+    "suggested_semester": null,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 4: Kỹ thuật Điện tử hàng không-Vũ trụ",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4260",
+    "name": "Đa phương tiện",
+    "suggested_semester": null,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Mô đun 5: Kỹ thuật Đa phương tiện",
+    "raw_condition": "ET2070/ET3050/ET2072",
+    "condition_tree": [
+      [
+        {
+          "code": "ET2070",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3050",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET2072",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET2070",
+      "ET2072",
+      "ET3050"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4370",
+    "name": "Kỹ thuật truyền hình",
+    "suggested_semester": null,
+    "credits": 2.0,
+    "is_compulsory": false,
+    "category": "Mô đun 5: Kỹ thuật Đa phương tiện",
+    "raw_condition": "ET4260/ET4260=",
+    "condition_tree": [
+      [
+        {
+          "code": "ET4260",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4260",
+          "type": "COREQUISITE"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET4260"
+    ],
+    "flat_corequisites": [
+      "ET4260"
+    ],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4361",
+    "name": "Hệ thống nhúng và thiết kế giao tiếp nhúng",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 6: Thiết kế vi mạch",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4358",
+    "name": "Cơ sở công nghệ vi điện tử",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 6: Thiết kế vi mạch",
+    "raw_condition": "",
+    "condition_tree": [],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4340",
+    "name": "Thiết kế VLSI",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 6: Thiết kế vi mạch",
+    "raw_condition": "ET3220",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3220",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3220"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4033",
+    "name": "Thiết kế IC tương tự",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 6: Thiết kế vi mạch",
+    "raw_condition": "ET3230/ET3231",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3230",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3231",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3230",
+      "ET3231"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4356",
+    "name": "Kiểm chứng và kiểm tra vi mạch",
+    "suggested_semester": 7,
+    "credits": 3.0,
+    "is_compulsory": false,
+    "category": "Mô đun 6: Thiết kế vi mạch",
+    "raw_condition": "ET3231/ET3230",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3231",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET3230",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3230",
+      "ET3231"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  },
+  {
+    "code": "ET4920",
+    "name": "Đồ án nghiên cứu Cử nhân (KT Điện tử - Viễn thông)",
+    "suggested_semester": null,
+    "credits": 8.0,
+    "is_compulsory": false,
+    "category": "Đồ án nghiên cứu Cử nhân (KT Điện tử - Viễn thông)",
+    "raw_condition": "(ET3310,ET4070,ET4230)/(ET4100,ET4110,ET4120)/(ET4356,ET4033,ET4340)",
+    "condition_tree": [
+      [
+        {
+          "code": "ET3310",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4070",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4230",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4100",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4110",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4120",
+          "type": "PRIOR"
+        }
+      ],
+      [
+        {
+          "code": "ET4356",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4033",
+          "type": "PRIOR"
+        },
+        {
+          "code": "ET4340",
+          "type": "PRIOR"
+        }
+      ]
+    ],
+    "flat_prerequisites": [],
+    "flat_prior_courses": [
+      "ET3310",
+      "ET4033",
+      "ET4070",
+      "ET4100",
+      "ET4110",
+      "ET4120",
+      "ET4230",
+      "ET4340",
+      "ET4356"
+    ],
+    "flat_corequisites": [],
+    "min_credits_accumulated": 0
+  }
+]

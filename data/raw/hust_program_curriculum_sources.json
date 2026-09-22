@@ -1,0 +1,1212 @@
+{
+  "schema_version": "hust-curriculum-sources.v1",
+  "source_catalog": "D:\\Vibe Coding\\Journey\\HUST\\2026.1\\ĐA1\\project\\data\\raw\\hust_undergraduate_programs.json",
+  "discovered_at": "2026-09-16T00:08:30.572774+00:00",
+  "count": 68,
+  "with_source_link": 68,
+  "source_fetch_ok": 52,
+  "records": [
+    {
+      "admission_code": "BF-E12",
+      "name": "Kỹ thuật thực phẩm (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-thuc-pham-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-thuc-pham-elitech/",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='scls.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://sbft.hust.edu.vn/chuong-trinh-tien-tien-ky-thuat-thuc-pham.html",
+      "source_overridden": true
+    },
+    {
+      "admission_code": "BF-E19",
+      "name": "Kỹ thuật sinh học (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-sinh-hoc-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/bf-e19-ky-thuat-sinh-hoc-elitech/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/bf-e19-ky-thuat-sinh-hoc-elitech/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/bf-e19-ky-thuat-sinh-hoc-elitech/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "2c63cb09db48cc4f75a01a18ceabced7ed6ff09f04510e382d5801a1d2dcf0a1",
+        "table_count": 1,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "BF1",
+      "name": "Kỹ thuật Sinh học",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-sinh-hoc",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-sinh-hoc/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sbft.hust.edu.vn/chuong-trinh-dao-tao-ky-thuat-sinh-hoc.html",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-sinh-hoc/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "3237f079428c1e95e8d7d3d45e1932ec45dd5dc6676145366f91d87b755fa9e2",
+        "table_count": 2,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "BF2",
+      "name": "Kỹ thuật Thực phẩm",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-thuc-pham",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-thuc-pham/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sbft.hust.edu.vn/chuong-trinh-dao-tao-ky-thuat-thuc-pham.html",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-thuc-pham/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "7a3e8660e955d6662ea114ede87d4aa3d39c1b0b8b072d62f9b1a5d0f5d94d1a",
+        "table_count": 2,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "CH-E11",
+      "name": "Kỹ thuật Hóa dược (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hoa-duoc-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://husteduvn-my.sharepoint.com/:x:/g/personal/giang_nguyenle_hust_edu_vn/ER5HgJykOcRLjZFQc-OAVPgB_l23IqvgV8hyV5Ho3Z9tYg?e=xZYxsd",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://husteduvn-my.sharepoint.com/:x:/g/personal/giang_nguyenle_hust_edu_vn/ER5HgJykOcRLjZFQc-OAVPgB_l23IqvgV8hyV5Ho3Z9tYg?e=xZYxsd",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://husteduvn-my.sharepoint.com/personal/giang_nguyenle_hust_edu_vn/_layouts/15/Doc.aspx?sourcedoc=%7B9c80471e-39a4-4bc4-8d91-5073e38054f8%7D&action=default&slrid=69b33ba2-1043-5000-b355-f6d3b190c2e7&originalPath=aHR0cHM6Ly9odXN0ZWR1dm4tbXkuc2hhcmVwb2ludC5jb20vOng6L2cvcGVyc29uYWwvZ2lhbmdfbmd1eWVubGVfaHVzdF9lZHVfdm4vSVFBZVI0Q2NwRG5FUzQyUlVIUGpnRlQ0QWY1ZHR5S3I0RmZJY2xlUjZOMmZiV0k_cnRpbWU9c0ZnakJNRVQzMGc&CID=ad0459f3-8261-4d24-85c4-1a30f76fc25e&_SRM=0:G:100",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "b06b5e79a29aadf5cc7e6c08a7259cb30104b055d449a5beef7198ad8be0af5a",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "CH-E20",
+      "name": "Hóa học Mỹ phẩm (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/hoa-hoc-my-pham-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/ch-e20-hoa-hoc-my-pham-elitech/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/ch-e20-hoa-hoc-my-pham-elitech/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/ch-e20-hoa-hoc-my-pham-elitech/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "98e322bc59321a886472d8912bceb8de03e16d9df2e08e5fc4c8fb1fd18841af",
+        "table_count": 1,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "CH1",
+      "name": "Kỹ thuật Hóa học",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hoa-hoc",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-hoa-hoc/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://chemeng.hust.edu.vn/index.php/vi/dao-tao/dai-hoc",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-hoa-hoc/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "ed7602dad49737da352037a48230d407217c95da00462799d0a741ff56fe7e13",
+        "table_count": 2,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "CH2",
+      "name": "Hóa học",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/hoa-hoc",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/ch2-hoa-hoc/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/ch2-hoa-hoc/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://scls.hust.edu.vn/vi/tuyen-sinh/ch2-hoa-hoc/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "1b9c12501758c31fab2144d7e712d8e5fb4bc0118b4d4ad2063bb1e52fafd0de",
+        "table_count": 1,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "ED2",
+      "name": "Công nghệ giáo dục",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-giao-duc",
+      "curriculum_source_url": "https://fed.hust.edu.vn/vi/dao-tao/dai-hoc/chuong-trinh-dt-cong-nghe-giao-duc-178281.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://feed.hust.edu.vn/nganh-cong-nghe-giao-duc",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://fed.hust.edu.vn/vi/dao-tao/dai-hoc/chuong-trinh-dt-cong-nghe-giao-duc-178281.html",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "a602cf492ec2b53eb9bbf8baf06b4a540fa20a6b4cb6dc6b3b2f4a9be5d3239b",
+        "table_count": 1,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "ED3",
+      "name": "Quản lý giáo dục",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-ly-giao-duc",
+      "curriculum_source_url": "https://fed.hust.edu.vn/vi/dao-tao/dai-hoc/chuong-trinh-dao-tao-cu-nhan-quan-ly-giao-duc-214985.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://fed.hust.edu.vn/vi/dao-tao/dai-hoc/chuong-trinh-dao-tao-cu-nhan-quan-ly-giao-duc-214985.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://fed.hust.edu.vn/vi/dao-tao/dai-hoc/chuong-trinh-dao-tao-cu-nhan-quan-ly-giao-duc-214985.html",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "58d086a332991a6fa54f2d1fe5efd1b688fdbdbb177145e789c21e943a8d3f8a",
+        "table_count": 1,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "ED5",
+      "name": "Tâm lý học công nghiệp và tổ chức",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tam-ly-hoc-cong-nghiep-va-to-chuc",
+      "curriculum_source_url": "https://fed.hust.edu.vn/vi/news/tong-hop/tam-ly-hoc-to-chuc-va-cong-nghiep-trong-ky-nguyen-moi-302819.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://fed.hust.edu.vn/vi/news/tong-hop/tam-ly-hoc-to-chuc-va-cong-nghiep-trong-ky-nguyen-moi-302819.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://fed.hust.edu.vn/vi/news/tong-hop/tam-ly-hoc-to-chuc-va-cong-nghiep-trong-ky-nguyen-moi-302819.html",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "83646ca17f481f1f32c735a87f06e61c2d3d5ffe0c30360dabd71b26502f7a7d",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "EE-E18",
+      "name": "Hệ thống điện và năng lượng tái tạo (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/he-thong-dien-va-nang-luong-tai-tao-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-e18/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/documents/86526/191312/EE18_CTTT_program_EE1_final.pdf/44b02208-68a0-4bb6-a365-fb54073d58ee",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-e18/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "b2ace79cdd2edfc370b36818b40b87481ef94fc02ff7b77f739cc51be8eda626",
+        "table_count": 12,
+        "course_code_count": 73
+      }
+    },
+    {
+      "admission_code": "EE-E8",
+      "name": "Kỹ thuật Điều khiển - Tự động hóa (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-dieu-khien-tu-dong-hoa-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-e8/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/documents/86526/191312/2_EE8.Program+EE8_EE2.pdf/831b184a-8561-4f35-bf56-b8010cd4c874",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-e8/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "02d5db0c6fcaf9f7568eb8bb9263c3a396b6e3c3d9eb603f1c344c91b9e87315",
+        "table_count": 9,
+        "course_code_count": 76
+      }
+    },
+    {
+      "admission_code": "EE-EP",
+      "name": "Tin học công nghiệp và Tự động hóa (Chương trình Việt-Pháp PFIEV)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tin-hoc-cong-nghiep-va-tu-dong-hoa-chuong-trinh-viet-phap-pfiev",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-ep/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/documents/137618/0/CTDT+DIEN+7+-+EE_EP+Viet+Phap+Tin+hoc+cong+nghiep+va+Tu+dong+hoa.pdf/32ee06c1-5d09-46c8-b3f3-381da5d61ecf",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-ep/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "48dde4fd1805c036c09ecf1ec5d64dff236055423abda5f6041e3250e6ac6c09",
+        "table_count": 7,
+        "course_code_count": 64
+      }
+    },
+    {
+      "admission_code": "EE1",
+      "name": "Kỹ thuật điện",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-dien",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/ee1/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/documents/137618/0/CTDT+DIEN+1+-+EE1_program_final.pdf/03409928-c677-42eb-b8fc-aa6a4462f6c1",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/ee1/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "a670e7d72ef24af4a41db68c18b5bd4ae5abfdfaf2b5e12b60109b2cffee9ae7",
+        "table_count": 10,
+        "course_code_count": 76
+      }
+    },
+    {
+      "admission_code": "EE2",
+      "name": "Kỹ thuật Điều khiển - Tự động hóa",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-dieu-khien-tu-dong-hoa",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/ee2/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/documents/137618/0/CTDT+DIEN+3+-+EE2_KS_program_final.pdf/18040d81-b869-4966-94c8-bfc2bd3f99a7",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/ee2/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "0fc1179b4ef9baf82e2ad210feb30184c2248ca059c6dc7fe016b5b11c690964",
+        "table_count": 11,
+        "course_code_count": 71
+      }
+    },
+    {
+      "admission_code": "EM-E13",
+      "name": "Phân tích kinh doanh (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/phan-tich-kinh-doanh-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/8",
+      "detail_http_status": 200,
+      "error": "HTTPError: 404 for url: https://sem.hust.edu.vn/chuan-dau-ra/8",
+      "catalogue_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/8",
+      "source_overridden": false,
+      "source": {
+        "http_status": 404,
+        "final_url": "https://sem.hust.edu.vn/chuan-dau-ra/8",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "9e050b519fbc3b57b39428a171cebf4cc6aa6015543860575372f4e18405d498",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "EM-E14",
+      "name": "Logistics và Quản lý chuỗi cung ứng (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/logistics-va-quan-ly-chuoi-cung-ung-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/7",
+      "detail_http_status": 200,
+      "error": "HTTPError: 404 for url: https://sem.hust.edu.vn/chuan-dau-ra/7",
+      "catalogue_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/7",
+      "source_overridden": false,
+      "source": {
+        "http_status": 404,
+        "final_url": "https://sem.hust.edu.vn/chuan-dau-ra/7",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "9d9895d8b48b4121ac6b800404df05f7c0f9ecd661900364b560450ccda0fbbe",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "EM-E17",
+      "name": "Kế toán (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ke-toan-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/2",
+      "detail_http_status": 200,
+      "error": "HTTPError: 404 for url: https://sem.hust.edu.vn/chuan-dau-ra/2",
+      "catalogue_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/2",
+      "source_overridden": false,
+      "source": {
+        "http_status": 404,
+        "final_url": "https://sem.hust.edu.vn/chuan-dau-ra/2",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "3a58eaf1572d772a6c761f82f87e1c514bcaf449ee6b601a0bde5448ecda2616",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "EM1",
+      "name": "Quản lý năng lượng",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-ly-nang-luong",
+      "curriculum_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/11",
+      "detail_http_status": 200,
+      "error": "HTTPError: 404 for url: https://sem.hust.edu.vn/chuan-dau-ra/11",
+      "catalogue_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/11",
+      "source_overridden": false,
+      "source": {
+        "http_status": 404,
+        "final_url": "https://sem.hust.edu.vn/chuan-dau-ra/11",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "dd3969d21c4e4e9594ef448b55e46523a2235285ce8c3db43b4502be6634f8c2",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "EM2",
+      "name": "Quản lý công nghiệp",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-ly-cong-nghiep",
+      "curriculum_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/4",
+      "detail_http_status": 200,
+      "error": "HTTPError: 404 for url: https://sem.hust.edu.vn/chuan-dau-ra/4",
+      "catalogue_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/4",
+      "source_overridden": false,
+      "source": {
+        "http_status": 404,
+        "final_url": "https://sem.hust.edu.vn/chuan-dau-ra/4",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "d9907ef8a21fc427b54914abf65d80800dc82e452533d1e646c27fb5bab1834c",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "EM3",
+      "name": "Quản trị kinh doanh",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-tri-kinh-doanh",
+      "curriculum_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/5",
+      "detail_http_status": 200,
+      "error": "HTTPError: 404 for url: https://sem.hust.edu.vn/chuan-dau-ra/5",
+      "catalogue_source_url": "https://sem.hust.edu.vn/chuan-dau-ra/5",
+      "source_overridden": false,
+      "source": {
+        "http_status": 404,
+        "final_url": "https://sem.hust.edu.vn/chuan-dau-ra/5",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "3344bbd0241f6de7923880aabe16537b5e46fc01a2aff0cf4733678fb52ee58b",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "EM5",
+      "name": "Tài chính - Ngân hàng",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tai-chinh-ngan-hang",
+      "curriculum_source_url": "https://sem.hust.edu.vn/chuong-trinh-cu-nhan-tai-chinh-ngan-hang",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sem.hust.edu.vn/chuong-trinh-cu-nhan-tai-chinh-ngan-hang",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sem.hust.edu.vn/chuong-trinh-cu-nhan-tai-chinh-ngan-hang",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "56cc9f85cbf27aa6f227ffeeb77c2bad083b7d43f3365ca811c2fcd6861722c0",
+        "table_count": 3,
+        "course_code_count": 76
+      }
+    },
+    {
+      "admission_code": "ET-E16",
+      "name": "Truyền thông số và Kỹ thuật đa phương tiện (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/truyen-thong-so-va-ky-thuat-da-phuong-tien-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e16/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e16/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e16/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "082ae40d149e99db04101d4bf4372e388912a43e84e64f4ef38b30f4cebe246a",
+        "table_count": 5,
+        "course_code_count": 60
+      }
+    },
+    {
+      "admission_code": "ET-E4",
+      "name": "Kỹ thuật Điện tử - Viễn thông (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-dien-tu-vien-thong-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e4/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e4/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e4/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "d5462a555c0e49a408762e518f5df2c7040bea8667b4d32533007b5430952020",
+        "table_count": 7,
+        "course_code_count": 55
+      }
+    },
+    {
+      "admission_code": "ET-E5",
+      "name": "Kỹ thuật Y sinh (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-y-sinh-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e5/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/vi/dao-tao/dao-tao-dai-hoc/et-e5-ky-thuat-y-sinh-cttt-287934.html",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e5/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "76a8deace91c70583f3b2db70a0ae5c65636be23eb2f3460ad82050094e73eb7",
+        "table_count": 7,
+        "course_code_count": 78
+      }
+    },
+    {
+      "admission_code": "ET-E9",
+      "name": "Hệ thống nhúng thông minh và IoT (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/he-thong-nhung-thong-minh-va-iot-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e9/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e9/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e9/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "f597c8b37385305be236d2b6f0bb3947784ab56898a954cf56c0da8210531c6d",
+        "table_count": 8,
+        "course_code_count": 63
+      }
+    },
+    {
+      "admission_code": "ET-LUH",
+      "name": "Điện tử-Viễn thông - ĐH Leibniz Hannover (Đức)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/dien-tu-vien-thong-dh-leibniz-hannover-duc",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-luh/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-luh/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/et-luh/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "8799da1dd4bd65ade20625f44027d2810a5bc8685f489148132ea55c1fa8c489",
+        "table_count": 9,
+        "course_code_count": 61
+      }
+    },
+    {
+      "admission_code": "ET1",
+      "name": "Điện tử và Viễn thông",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/dien-tu-va-vien-thong",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et1/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et1/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/et1/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "e940982dd7ed8fbe93edc36302b5a692a7efcfb5d67d079c53df0d49fb9f28f8",
+        "table_count": 13,
+        "course_code_count": 79
+      }
+    },
+    {
+      "admission_code": "ET2",
+      "name": "Kỹ thuật Y sinh",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-y-sinh",
+      "curriculum_source_url": "https://seee.hust.edu.vn/vi/dao-tao/et2/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://seee.hust.edu.vn/vi/dao-tao/dao-tao-dai-hoc/et2-ky-thuat-y-sinh-287932.html",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://seee.hust.edu.vn/vi/dao-tao/et2/",
+        "content_type": "text/html",
+        "source_kind": "html",
+        "html_sha256": "ba74fd570e274cd2830b94a677b525ee8d8e1f5b6b66fae3554dcdbefcd8803a",
+        "table_count": 12,
+        "course_code_count": 81
+      }
+    },
+    {
+      "admission_code": "EV1",
+      "name": "Kỹ thuật Môi trường",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-moi-truong",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-moi-truong/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-moi-truong/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-moi-truong/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "3d84e9e7a640ce17566c99c2b9bb0f0020bd6ac7812611cb8a16a7b82b47a107",
+        "table_count": 2,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "EV2",
+      "name": "Quản lý Tài nguyên và Môi trường",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-ly-tai-nguyen-va-moi-truong",
+      "curriculum_source_url": "https://scls.hust.edu.vn/vi/dao-tao/quan-ly-tai-nguyen-va-moi-truong/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://scls.hust.edu.vn/vi/dao-tao/quan-ly-tai-nguyen-va-moi-truong/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://scls.hust.edu.vn/vi/dao-tao/quan-ly-tai-nguyen-va-moi-truong/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "c44202bb29e3364aff61e6895a36c4a90d1faf7092bb3170028de16ec0d5a03e",
+        "table_count": 2,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "FL1",
+      "name": "Tiếng Anh Khoa học Kỹ thuật và Công nghệ",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tieng-anh-khoa-hoc-ky-thuat-va-cong-nghe",
+      "curriculum_source_url": "https://sofl.hust.edu.vn/nganh-fl1",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sofl.hust.edu.vn/nganh-fl1",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sofl.hust.edu.vn/nganh-fl1",
+        "content_type": "text/html;charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "34cbb671a77038f8373f8667fc85a68fc528fc348f313cddd07a78d7c8dca1d6",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "FL2",
+      "name": "Tiếng Anh Chuyên nghiệp Quốc tế",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tieng-anh-chuyen-nghiep-quoc-te",
+      "curriculum_source_url": "https://sofl.hust.edu.vn/nganh-fl2",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sofl.hust.edu.vn/nganh-fl2",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sofl.hust.edu.vn/nganh-fl2",
+        "content_type": "text/html;charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "d19dd5795bc75267dde63114bcda18e83f5dc8981e125ad51057d288295df1f6",
+        "table_count": 2,
+        "course_code_count": 56
+      }
+    },
+    {
+      "admission_code": "FL3",
+      "name": "Tiếng Trung Khoa học và Công nghệ",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tieng-trung-khoa-hoc-va-cong-nghe",
+      "curriculum_source_url": "https://sofl.hust.edu.vn/nganh-fl3",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sofl.hust.edu.vn/nganh-fl3",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sofl.hust.edu.vn/nganh-fl3",
+        "content_type": "text/html;charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "a56c963617dfeee3e6fae396620c1f62038107764c48bbc58170c4302e59d57e",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "FL4",
+      "name": "Tiếng Hàn Khoa học và Công nghệ",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tieng-han-khoa-hoc-va-cong-nghe",
+      "curriculum_source_url": "https://sofl.hust.edu.vn/nganh-fl4",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sofl.hust.edu.vn/nganh-fl4",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sofl.hust.edu.vn/nganh-fl4",
+        "content_type": "text/html;charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "11c39f742fed4f40aef2c8e8b1b6aff4a72e5b65a521b96b306946bcce0a80ba",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "HE1",
+      "name": "Kỹ thuật Nhiệt",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-nhiet",
+      "curriculum_source_url": "https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-chuan/chuong-trinh-ky-thuat-nhiet-20.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-chuan/chuong-trinh-ky-thuat-nhiet-20.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-chuan/chuong-trinh-ky-thuat-nhiet-20.html",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "cb7fed87a343e527c57ba561a5062cf301f3cb996b217fa62c0444ab22f96bc5",
+        "table_count": 1,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "IT-E10",
+      "name": "Khoa học Dữ liệu và Trí tuệ Nhân tạo",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-du-lieu-va-tri-tue-nhan-tao",
+      "curriculum_source_url": "https://soict.hust.edu.vn/chuong-trinh-cu-nhan-khoa-hoc-du-lieu-va-tri-tue-nhan-tao-dsai-it-e10.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://soict.hust.edu.vn/chuong-trinh-cu-nhan-khoa-hoc-du-lieu-va-tri-tue-nhan-tao-dsai-it-e10.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://soict.hust.edu.vn/chuong-trinh-cu-nhan-khoa-hoc-du-lieu-va-tri-tue-nhan-tao-dsai-it-e10.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "7ad912719b704463300027dc9cb2de8d7bc46e5dd7bcddb32a5210a4033f13ce",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "IT-E15",
+      "name": "An toàn không gian số (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/an-toan-khong-gian-so-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://soict.hust.edu.vn/chuong-trinh-elitech-an-toan-khong-gian-so-cyber-security-it-e15.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://soict.hust.edu.vn/chuong-trinh-elitech-an-toan-khong-gian-so-cyber-security-it-e15.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://soict.hust.edu.vn/chuong-trinh-elitech-an-toan-khong-gian-so-cyber-security-it-e15.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "2de7a6df76241632e7f393b97675f77c5304bfc2cacd4b90ee5bab174af37296",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "IT-E6",
+      "name": "Công nghệ thông tin (Việt-Nhật) (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-thong-tin-viet-nhat-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://soict.hust.edu.vn/chuong-trinh-ky-su-cong-nghe-thong-tin-viet-nam-nhat-ban-hedspi.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://soict.hust.edu.vn/chuong-trinh-ky-su-cong-nghe-thong-tin-viet-nam-nhat-ban-hedspi.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://soict.hust.edu.vn/chuong-trinh-ky-su-cong-nghe-thong-tin-viet-nam-nhat-ban-hedspi.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "bcd5594ac51929f1cede3805ffb250804079957308de547b62a01cb7dde7ce8d",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "IT-E7",
+      "name": "Công nghệ thông tin (Global ICT)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-thong-tin-global-ict",
+      "curriculum_source_url": "https://soict.hust.edu.vn/chuong-trinh-ky-su-cong-nghe-thong-tin-toan-cau-global-ict.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://soict.hust.edu.vn/chuong-trinh-ky-su-cong-nghe-thong-tin-toan-cau-global-ict.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://soict.hust.edu.vn/chuong-trinh-ky-su-cong-nghe-thong-tin-toan-cau-global-ict.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "dd71b81f40c109176da9ee5be7ae0370bf19286ff8acb44f773fceeb546becaa",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "IT-EP",
+      "name": "Công nghệ thông tin (Việt-Pháp) (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-thong-tin-viet-phap-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://soict.hust.edu.vn/chuong-trinh-elitech-cong-nghe-thong-tin-viet-phap.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://soict.hust.edu.vn/chuong-trinh-elitech-cong-nghe-thong-tin-viet-phap.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://soict.hust.edu.vn/chuong-trinh-elitech-cong-nghe-thong-tin-viet-phap.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "d5acd067471a98caeacd75cba7fb677d87143dc9fc322230ef18bfc08bc3a229",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "IT1",
+      "name": "CNTT: Khoa học Máy tính",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cntt-khoa-hoc-may-tinh",
+      "curriculum_source_url": "https://soict.hust.edu.vn/chuong-trinh-khoa-hoc-may-tinh-ma-tuyen-sinh-it1.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://soict.hust.edu.vn/chuong-trinh-khoa-hoc-may-tinh-ma-tuyen-sinh-it1.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://soict.hust.edu.vn/chuong-trinh-khoa-hoc-may-tinh-ma-tuyen-sinh-it1.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "6fc8595f89bc0b1b5d69a12ea4164213dc56549151544a7f5b478cf563a779d6",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "IT2",
+      "name": "CNTT: Kỹ thuật máy tính",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cntt-ky-thuat-may-tinh",
+      "curriculum_source_url": "https://soict.hust.edu.vn/chuong-trinh-dao-tao-cong-nghe-thong-tin-ky-thuat-may-tinh-it2.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://soict.hust.edu.vn/chuong-trinh-dao-tao-cong-nghe-thong-tin-ky-thuat-may-tinh-it2.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://soict.hust.edu.vn/chuong-trinh-dao-tao-cong-nghe-thong-tin-ky-thuat-may-tinh-it2.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "24de04a9e89a478dda0b2b4b6eabe9eebe73654e623949353dc2e9a2d1917e73",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "ME-E1",
+      "name": "Kỹ thuật Cơ điện tử (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-co-dien-tu-chuong-trinh-tien-tien-",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/elitech-chuong-trinh-tien-tien-ky-thuat-co-dien-tu.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='sme.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/elitech-chuong-trinh-tien-tien-ky-thuat-co-dien-tu.html",
+      "source_overridden": false
+    },
+    {
+      "admission_code": "ME-GU",
+      "name": "Cơ khí - Chế tạo máy - ĐH Griffith (Úc)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/co-khi-che-tao-may-dh-griffith-uc",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/sie-chuong-trinh-ky-thuat-co-khi-hop-tac-dao-tao-quoc-te-voi-dh-griffith-uc.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='sme.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/sie-chuong-trinh-ky-thuat-co-khi-hop-tac-dao-tao-quoc-te-voi-dh-griffith-uc.html",
+      "source_overridden": false
+    },
+    {
+      "admission_code": "ME-LUH",
+      "name": "Cơ điện tử - ĐH Leibniz Hannover (Đức)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/co-dien-tu-dh-leibniz-hannover-duc",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/dtqt-chuong-trinh-co-dien-tu-hop-tac-dao-tao-voi-dh-leibniz-hannover-duc.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='sme.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/dtqt-chuong-trinh-co-dien-tu-hop-tac-dao-tao-voi-dh-leibniz-hannover-duc.html",
+      "source_overridden": false
+    },
+    {
+      "admission_code": "ME-NUT",
+      "name": "Cơ điện tử - ĐH Nagaoka (Nhật Bản)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/co-dien-tu-dh-nagaoka-nhat-ban",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/co-dien-tu-hop-tac-nagaoka.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/co-dien-tu-hop-tac-nagaoka.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sme.hust.edu.vn/vi/dao-tao/",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "3d82923f419946294c5e051c9bd1a51a47fbce591a3a4dbdb373c704f6d1d58a",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "ME1",
+      "name": "Kỹ thuật Cơ điện tử",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-co-dien-tu",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-ky-thuat-co-dien-tu.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-ky-thuat-co-dien-tu.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sme.hust.edu.vn/vi/dao-tao/",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "3a067c1f3944f2c47939bb7bee8bd69641c56b3de5f84d119737fbf3283340b2",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "ME2",
+      "name": "Kỹ thuật Cơ khí",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-co-khi",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-ky-thuat-co-khi.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-ky-thuat-co-khi.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sme.hust.edu.vn/vi/dao-tao/",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "d6778b46f73cc1aa492af5009385cff4611e470af87d37b5d8318cef482eda68",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "MI-E22",
+      "name": "Khoa học tính toán cho các hệ thống thông minh (CTTT)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-tinh-toan-cho-cac-he-thong-thong-minh-cttt",
+      "curriculum_source_url": "https://fami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/ctdt-khoa-hoc-tinh-toan-cho-cac-he-thong-thong-minh/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://fami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/ctdt-khoa-hoc-tinh-toan-cho-cac-he-thong-thong-minh/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://fami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/ctdt-khoa-hoc-tinh-toan-cho-cac-he-thong-thong-minh/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "5840b8dc9fb46fc9980621ec4e5300ab47c218ebc1894e1f8e2f4f42b7f621af",
+        "table_count": 0,
+        "course_code_count": 2
+      }
+    },
+    {
+      "admission_code": "MI1",
+      "name": "Toán - Tin",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/toan-tin",
+      "curriculum_source_url": "https://sami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://fami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "b91f9796cf7d496ce493c3d140e54cc913847d073a730885cba08cff5310e83d",
+        "table_count": 1,
+        "course_code_count": 2
+      }
+    },
+    {
+      "admission_code": "MI2",
+      "name": "Hệ thống thông tin quản lý",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/he-thong-thong-tin-quan-ly",
+      "curriculum_source_url": "https://sami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://fami.hust.edu.vn/dao-tao/dao-tao-dai-hoc/",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "b91f9796cf7d496ce493c3d140e54cc913847d073a730885cba08cff5310e83d",
+        "table_count": 1,
+        "course_code_count": 2
+      }
+    },
+    {
+      "admission_code": "MS-E3",
+      "name": "Khoa học và Kỹ thuật Vật liệu (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-va-ky-thuat-vat-lieu-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://smse.hust.edu.vn/vi/dao-tao/dao-tao-dai-hoc/chuong-trinh-khoa-hoc-va-ky-thuat-vat-lieu-cttt-5.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='smse.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://mse.hust.edu.vn/dao-tao/chuong-trinh-dao-tao-dai-hoc/chuong-trinh-tien-tien.html",
+      "source_overridden": true
+    },
+    {
+      "admission_code": "MS1",
+      "name": "Kỹ thuật Vật liệu",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-vat-lieu",
+      "curriculum_source_url": "https://smse.hust.edu.vn/vi/dao-tao/dao-tao-dai-hoc/chuong-trinh-ky-thuat-vat-lieu-4.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://mse.hust.edu.vn/dao-tao/chuong-trinh-dao-tao-dai-hoc/he-dai-hoc-chinh-quy.html",
+      "source_overridden": true,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://smse.hust.edu.vn/vi/dao-tao/dao-tao-dai-hoc/chuong-trinh-ky-thuat-vat-lieu-4.html",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "126d633f5d145f76d23e40460c95d15f7aa697692f6de43222abf028f55c32fa",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "MS2",
+      "name": "Chương trình Kỹ thuật vi điện tử và công nghệ Nano",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/chuong-trinh-ky-thuat-vi-dien-tu-va-cong-nghe-nano",
+      "curriculum_source_url": "http://itims.edu.vn/chuong-trinh-dao-tao-ky-thuat-vi-dien-tu-va-cong-nghe-nano.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "http://itims.edu.vn/chuong-trinh-dao-tao-ky-thuat-vi-dien-tu-va-cong-nghe-nano.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://itims.edu.vn/chuong-trinh-dao-tao-ky-thuat-vi-dien-tu-va-cong-nghe-nano.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "03d3339639dfa2d0fa9058c66c2264eaeb8c3fbf0f2acdbc3f049fca27a69dcc",
+        "table_count": 0,
+        "course_code_count": 1
+      }
+    },
+    {
+      "admission_code": "MS3",
+      "name": "Công nghệ vật liệu polyme và compozit",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-vat-lieu-polyme-va-compozit",
+      "curriculum_source_url": "http://itims.edu.vn/chuong-trinh-dao-tao-cong-nghe-vat-lieu-polyme-va-compozit.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "http://itims.edu.vn/chuong-trinh-dao-tao-cong-nghe-vat-lieu-polyme-va-compozit.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://itims.edu.vn/chuong-trinh-dao-tao-cong-nghe-vat-lieu-polyme-va-compozit.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "c16dcdcc4cc29ee0c3eaa09012469883920c3c2366da434f9eb77f310a4d26c4",
+        "table_count": 0,
+        "course_code_count": 2
+      }
+    },
+    {
+      "admission_code": "MS5",
+      "name": "Kỹ thuật in",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-in",
+      "curriculum_source_url": "https://smse.hust.edu.vn/vi/dao-tao/dao-tao-dai-hoc/chuong-trinh-ky-thuat-in-6.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='smse.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://chemeng.hust.edu.vn/index.php/vi/dao-tao/dai-hoc",
+      "source_overridden": true
+    },
+    {
+      "admission_code": "PH1",
+      "name": "Vật lý kỹ thuật",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/vat-ly-ky-thuat",
+      "curriculum_source_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-vat-ly-ky-thuat-ma-tuyen-sinh-ph1.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-vat-ly-ky-thuat-ma-tuyen-sinh-ph1.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-vat-ly-ky-thuat-ma-tuyen-sinh-ph1.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "07757a06bb3b00453268f76d874885bf206d5da94956c3ae58bf9a5fd2c20776",
+        "table_count": 0,
+        "course_code_count": 6
+      }
+    },
+    {
+      "admission_code": "PH2",
+      "name": "Kỹ thuật hạt nhân",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hat-nhan",
+      "curriculum_source_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-dao-tao-ky-thuat-hat-nhan-ph2.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-dao-tao-ky-thuat-hat-nhan-ph2.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-dao-tao-ky-thuat-hat-nhan-ph2.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "0f7977a574d1d6276827862fb92d73b69f8fc1cca12c1ca3a4d313bf9ceb84ab",
+        "table_count": 0,
+        "course_code_count": 6
+      }
+    },
+    {
+      "admission_code": "PH3",
+      "name": "Vật lý Y khoa",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/vat-ly-y-khoa",
+      "curriculum_source_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-dao-tao-dai-hoc-vat-ly-y-khoa-ph3.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-dao-tao-dai-hoc-vat-ly-y-khoa-ph3.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sep.hust.edu.vn/dao-tao/he-dai-hoc/chuong-trinh-dao-tao-dai-hoc-vat-ly-y-khoa-ph3.html",
+        "content_type": "text/html; charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "9f7db19c4ecc4c007492534f2bf73a9d4b79e443ac81913fed82052b63e81932",
+        "table_count": 0,
+        "course_code_count": 6
+      }
+    },
+    {
+      "admission_code": "TE-E2",
+      "name": "Kỹ thuật Ô tô (Chương trình tiên tiến)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-o-to-chuong-trinh-tien-tien",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/elitech-chuong-trinh-ky-thuat-o-to-chuong-trinh-tien-tien.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='sme.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/elitech-chuong-trinh-ky-thuat-o-to-chuong-trinh-tien-tien.html",
+      "source_overridden": false
+    },
+    {
+      "admission_code": "TE-EP",
+      "name": "Cơ khí hàng không (Chương trình Việt - Pháp PFIEV)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/co-khi-hang-khong-chuong-trinh-viet-phap-pfiev",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/elitech-chuong-trinh-co-khi-hang-khong-viet-phap-pfiev.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='sme.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/elitech-chuong-trinh-co-khi-hang-khong-viet-phap-pfiev.html",
+      "source_overridden": false
+    },
+    {
+      "admission_code": "TE1",
+      "name": "Kỹ thuật Ô tô",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-o-to",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-ky-thuat-o-to.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='sme.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-ky-thuat-o-to.html",
+      "source_overridden": false
+    },
+    {
+      "admission_code": "TE2",
+      "name": "Kỹ thuật Cơ khí động lực",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-co-khi-dong-luc",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-ky-thuat-co-khi-dong-luc.html",
+      "detail_http_status": 200,
+      "error": "ReadTimeout: HTTPSConnectionPool(host='sme.hust.edu.vn', port=443): Read timed out. (read timeout=5)",
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-ky-thuat-co-khi-dong-luc.html",
+      "source_overridden": false
+    },
+    {
+      "admission_code": "TE3",
+      "name": "Kỹ thuật Hàng không",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hang-khong",
+      "curriculum_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-dao-tao-ky-thuat-hang-khong.html",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://sme.hust.edu.vn/dao-tao/chuong-trinh-dao-tao-ky-thuat-hang-khong.html",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://sme.hust.edu.vn/vi/dao-tao/",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "99ebe9c8e8c26e131323f14612547873b2dcd535b7379a468d4aed8b0051ff0a",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "TROY-IT",
+      "name": "Khoa học máy tính - ĐH Troy (Hoa Kỳ)",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-may-tinh-dh-troy-hoa-ky",
+      "curriculum_source_url": "https://drive.google.com/open?id=1F2QQ9NCmcdA2idgg7e-PeaXenLg3IJAe",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://drive.google.com/open?id=1F2QQ9NCmcdA2idgg7e-PeaXenLg3IJAe",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://drive.google.com/file/d/1F2QQ9NCmcdA2idgg7e-PeaXenLg3IJAe/view?usp=drive_open",
+        "content_type": "text/html; charset=utf-8",
+        "source_kind": "html",
+        "html_sha256": "7414ebf4b8d357f07fcef7151831ae5c7772b20a1fd2012e32361e9435a4525c",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    },
+    {
+      "admission_code": "TX1",
+      "name": "Công nghệ Dệt May",
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-det-may",
+      "curriculum_source_url": "https://bktextile.hust.edu.vn/mo-hinh-ao-tao",
+      "detail_http_status": 200,
+      "error": null,
+      "catalogue_source_url": "https://bktextile.hust.edu.vn/mo-hinh-ao-tao",
+      "source_overridden": false,
+      "source": {
+        "http_status": 200,
+        "final_url": "https://bktextile.hust.edu.vn/mo-hinh-ao-tao",
+        "content_type": "text/html;charset=UTF-8",
+        "source_kind": "html",
+        "html_sha256": "300450667e250dd2b1e7a7d9f4280f914fe0d4dea00c5b6507cb5fbf5759684d",
+        "table_count": 0,
+        "course_code_count": 0
+      }
+    }
+  ]
+}
