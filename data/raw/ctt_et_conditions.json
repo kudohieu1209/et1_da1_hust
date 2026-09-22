@@ -1,0 +1,2678 @@
+[
+  {
+    "code": "ET1000",
+    "name": "Nhập môn Công nghệ điện tử viễn thông",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET1016",
+    "name": "Nhập môn kỹ thuật",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET1016E",
+    "name": "Nhập môn kỹ thuật y sinh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET1017",
+    "name": "Nhập môn kỹ thuật y sinh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2000",
+    "name": "Nhập môn kỹ thuật điện tử-viễn thông",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2000E",
+    "name": "Nhập môn kỹ thuật điện-điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2000Q",
+    "name": "Nhập môn kỹ thuật Điện tử - Viễn thông",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2001E",
+    "name": "Nhập môn truyền thông số và KT đa phương tiện",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2004E",
+    "name": "Nhập môn kỹ thuật điện tử-viễn thông",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2010",
+    "name": "Kỹ thuật điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2011",
+    "name": "Kỹ thuật điện tử",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET2012",
+    "name": "Kỹ thuật điện tử",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2012E",
+    "name": "Kỹ thuật điện tử",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2012Q",
+    "name": "Kỹ thuật điện tử",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2013",
+    "name": "Kỹ thuật điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2013x",
+    "name": "Kỹ thuật điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2014",
+    "name": "Kỹ thuật điện tử",
+    "credits": "2",
+    "condition": "MI1024, PH1014"
+  },
+  {
+    "code": "ET2015",
+    "name": "Electronics",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET2020",
+    "name": "Thực tập cơ bản",
+    "credits": "3",
+    "condition": "ET2040"
+  },
+  {
+    "code": "ET2020Q",
+    "name": "Thực tập cơ bản",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2021",
+    "name": "Thực tập cơ bản",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2022",
+    "name": "Technical Writing and Presentation",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2030",
+    "name": "Ngôn ngữ lập trình",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2030E",
+    "name": "Ngôn ngữ lập trình",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2030Q",
+    "name": "Ngôn ngữ lập trình",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2031",
+    "name": "Kỹ thuật lập trình C/C++",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2031E",
+    "name": "Kỹ thuật lập trình C/C++",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2031Q",
+    "name": "Kỹ thuật lập trình C/C++",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2040",
+    "name": "Cấu kiện điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2040E",
+    "name": "Linh kiện điện tử bán dẫn",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2040Q",
+    "name": "Cấu kiện điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2041",
+    "name": "Cấu kiện điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2041E",
+    "name": "Cấu kiện điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2042",
+    "name": "Linh kiện điện tử",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2050",
+    "name": "Lý thuyết mạch",
+    "credits": "3",
+    "condition": "(MI1111,MI1121,MI1131,PH1122)/(MI1111,MI1121,MI1131,PH1121)/(MI1111,MI1121,MI1131,PH1120)"
+  },
+  {
+    "code": "ET2050E",
+    "name": "Lý thuyết mạch",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2050Q",
+    "name": "Lý thuyết mạch",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2051",
+    "name": "Bài tập lý thuyết mạch",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET2060",
+    "name": "Tín hiệu và hệ thống",
+    "credits": "3",
+    "condition": "MI1141"
+  },
+  {
+    "code": "ET2060E",
+    "name": "Tín hiệu và hệ thống",
+    "credits": "3",
+    "condition": "MI1036"
+  },
+  {
+    "code": "ET2060Q",
+    "name": "Tín hiệu và hệ thống",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2061",
+    "name": "Tín hiệu và hệ thống y sinh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2070",
+    "name": "Cơ sở truyền tin",
+    "credits": "2",
+    "condition": "(MI1141,MI2020)!"
+  },
+  {
+    "code": "ET2070Q",
+    "name": "Cơ sở truyền tin",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2071",
+    "name": "Bài tập cơ sở truyền tin",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET2072",
+    "name": "Lý thuyết thông tin",
+    "credits": "2",
+    "condition": "(MI1141,MI2020)!"
+  },
+  {
+    "code": "ET2072E",
+    "name": "Lý thuyết thông tin",
+    "credits": "2",
+    "condition": "(MI1141!,MI2020!)/(MI2036!,MI1036!)"
+  },
+  {
+    "code": "ET2080",
+    "name": "Cơ sở kỹ thuật đo lường",
+    "credits": "2",
+    "condition": "MI2020,ET3230"
+  },
+  {
+    "code": "ET2080E",
+    "name": "Cơ sở kỹ thuật đo lường",
+    "credits": "2",
+    "condition": "MI2036,ET2041E/ET2040E"
+  },
+  {
+    "code": "ET2080Q",
+    "name": "Cơ sở kỹ thuật đo lường",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2081",
+    "name": "Bài tập cơ sở kỹ thuật đo lường",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET2082",
+    "name": "Đo lường điện tử",
+    "credits": "3",
+    "condition": "MI2020"
+  },
+  {
+    "code": "ET2100",
+    "name": "Cấu trúc dữ liệu và giải thuật",
+    "credits": "2",
+    "condition": "ET2031"
+  },
+  {
+    "code": "ET2100E",
+    "name": "Vật liệu điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET2100Q",
+    "name": "Cấu trúc dữ liệu và giải thuật",
+    "credits": "2",
+    "condition": "ET2031Q"
+  },
+  {
+    "code": "ET2101E",
+    "name": "Cấu trúc dữ liệu và giải thuật",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET2105E",
+    "name": "Cấu trúc dữ liệu và giải thuật",
+    "credits": "2",
+    "condition": "IT1000/ET2031E"
+  },
+  {
+    "code": "ET3000",
+    "name": "Lập trình",
+    "credits": "3",
+    "condition": "IT1010"
+  },
+  {
+    "code": "ET3003",
+    "name": "Lập trình",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3006",
+    "name": "Ngôn ngữ lập trình",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3010",
+    "name": "Toán kỹ thuật",
+    "credits": "2",
+    "condition": "MI1020"
+  },
+  {
+    "code": "ET3014",
+    "name": "Trường điện từ, anten và truyền sóng vô tuyến",
+    "credits": "3",
+    "condition": "PH1024!, MI1034"
+  },
+  {
+    "code": "ET3016",
+    "name": "Tín hiệu và hệ thống",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3024",
+    "name": "Thông tin vô tuyến",
+    "credits": "2",
+    "condition": "ET3014="
+  },
+  {
+    "code": "ET3030",
+    "name": "Lý thuyết mạch",
+    "credits": "4",
+    "condition": "ET3010"
+  },
+  {
+    "code": "ET3034",
+    "name": "Các mạch tần số vô tuyến – thực nghiệm",
+    "credits": "2",
+    "condition": "ET2014"
+  },
+  {
+    "code": "ET3036",
+    "name": "Lý thuyết mạch",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3040",
+    "name": "Trường điện từ",
+    "credits": "4",
+    "condition": "PH1020"
+  },
+  {
+    "code": "ET3044",
+    "name": "Điện tử học đối với các sóng viba",
+    "credits": "1",
+    "condition": "ET3014="
+  },
+  {
+    "code": "ET3046",
+    "name": "Cơ sinh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3046E",
+    "name": "Cơ sinh",
+    "credits": "3",
+    "condition": "MI1026,PH1016"
+  },
+  {
+    "code": "ET3050",
+    "name": "Lý thuyết thông tin",
+    "credits": "3",
+    "condition": "(MI1141,MI2020)!"
+  },
+  {
+    "code": "ET3054",
+    "name": "Quang điện tử học",
+    "credits": "1",
+    "condition": "ET3014="
+  },
+  {
+    "code": "ET3060",
+    "name": "Điện tử số",
+    "credits": "3",
+    "condition": "IT1010, PH3330"
+  },
+  {
+    "code": "ET3061",
+    "name": "Điện tử số",
+    "credits": "4",
+    "condition": "IT1010, PH3330"
+  },
+  {
+    "code": "ET3064",
+    "name": "Rada & phát hiện từ xa",
+    "credits": "1",
+    "condition": "ET3014, ET3024, ET3044"
+  },
+  {
+    "code": "ET3066",
+    "name": "Kỹ thuật số",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3070",
+    "name": "Cấu kiện điện tử",
+    "credits": "3",
+    "condition": "PH1020"
+  },
+  {
+    "code": "ET3073",
+    "name": "Cấu kiện điện tử",
+    "credits": "4",
+    "condition": "PH1020"
+  },
+  {
+    "code": "ET3076",
+    "name": "Cấu kiện điện tử",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3080",
+    "name": "Xử lý số tín hiệu",
+    "credits": "3",
+    "condition": "MI1010"
+  },
+  {
+    "code": "ET3090",
+    "name": "Điện tử tương tự I",
+    "credits": "3",
+    "condition": "ET3070="
+  },
+  {
+    "code": "ET3096",
+    "name": "Mạch điện tử I",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET30xx",
+    "name": "Lập trình",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3100",
+    "name": "Điện tử tương tự và số",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3102",
+    "name": "Kỹ thuật điện tử",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3110",
+    "name": "Kỹ thuật vi xử lý",
+    "credits": "4",
+    "condition": "ET3060/ET3061"
+  },
+  {
+    "code": "ET3116",
+    "name": "Kỹ thuật vi xử lý",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3120Q",
+    "name": "Kỹ thuật điện tử",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3130",
+    "name": "Thông tin số",
+    "credits": "3",
+    "condition": "ET3050"
+  },
+  {
+    "code": "ET3140",
+    "name": "Điện tử tương tự II",
+    "credits": "3",
+    "condition": "ET3090"
+  },
+  {
+    "code": "ET3146",
+    "name": "Mạch điện tử II",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3150",
+    "name": "Cơ sở đo lường điện tử",
+    "credits": "3",
+    "condition": "ET3110"
+  },
+  {
+    "code": "ET3160",
+    "name": "Kỹ thuật phần mềm ứng dụng",
+    "credits": "3",
+    "condition": "ET3000"
+  },
+  {
+    "code": "ET3161",
+    "name": "Phân tích thiết kế hệ thống phần mềm",
+    "credits": "3",
+    "condition": "ET2100"
+  },
+  {
+    "code": "ET3161E",
+    "name": "Phân tích thiết kế hệ thống phần mềm",
+    "credits": "3",
+    "condition": "ET2105E"
+  },
+  {
+    "code": "ET3166",
+    "name": "Cấu trúc dữ liệu",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3167",
+    "name": "Cấu trúc dữ liệu y sinh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3168",
+    "name": "Phương pháp thống kê dữ liệu y sinh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3168E",
+    "name": "Phương pháp thống kê dữ liệu y sinh",
+    "credits": "3",
+    "condition": "MI1026,ET2030E"
+  },
+  {
+    "code": "ET3170",
+    "name": "Đồ án thiết kế I",
+    "credits": "2",
+    "condition": "ET3160"
+  },
+  {
+    "code": "ET3176",
+    "name": "Thiết kế kỹ thuật y sinh I",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3176E",
+    "name": "Thiết kế kỹ thuật y sinh I",
+    "credits": "1",
+    "condition": "ET1016E/ET1016"
+  },
+  {
+    "code": "ET3178",
+    "name": "Thiết kế kỹ thuật y sinh II",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3178E",
+    "name": "Thiết kế kỹ thuật y sinh II",
+    "credits": "1",
+    "condition": "ET3176E"
+  },
+  {
+    "code": "ET3180",
+    "name": "Thông tin vô tuyến",
+    "credits": "3",
+    "condition": "ET3250"
+  },
+  {
+    "code": "ET3180E",
+    "name": "Thông tin vô tuyến",
+    "credits": "3",
+    "condition": "ET3251E"
+  },
+  {
+    "code": "ET3180Q",
+    "name": "Thông tin vô tuyến",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3181",
+    "name": "Thông tin vô tuyến",
+    "credits": "3",
+    "condition": "ET3250/ET3130"
+  },
+  {
+    "code": "ET3200",
+    "name": "Cơ sở mạng thông tin",
+    "credits": "2",
+    "condition": "ET3010"
+  },
+  {
+    "code": "ET3210",
+    "name": "Trường điện từ",
+    "credits": "3",
+    "condition": "PH1122/PH1120"
+  },
+  {
+    "code": "ET3210E",
+    "name": "Trường điện từ",
+    "credits": "3",
+    "condition": "PH1026"
+  },
+  {
+    "code": "ET3210Q",
+    "name": "Trường điện từ",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3211",
+    "name": "Bài tập trường điện từ",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3220",
+    "name": "Điện tử số",
+    "credits": "3",
+    "condition": "ET2040/ET2042"
+  },
+  {
+    "code": "ET3220E",
+    "name": "Thiết kế hệ thống số I",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3220Q",
+    "name": "Điện tử số",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3221E",
+    "name": "Điện tử số",
+    "credits": "3",
+    "condition": "ET2040E!/ET2041E/ET2050E"
+  },
+  {
+    "code": "ET3230",
+    "name": "Điện tử tương tự I",
+    "credits": "3",
+    "condition": "ET2050,ET2040"
+  },
+  {
+    "code": "ET3230E",
+    "name": "Điện tử tương tự I",
+    "credits": "4",
+    "condition": "ET2040E!/ET2041E!"
+  },
+  {
+    "code": "ET3230Q",
+    "name": "Điện tử tương tự I",
+    "credits": "3",
+    "condition": "ET2040Q"
+  },
+  {
+    "code": "ET3231",
+    "name": "Điện tử tương tự",
+    "credits": "3",
+    "condition": "ET2040/ET2050"
+  },
+  {
+    "code": "ET3231E",
+    "name": "Điện tử tương tự",
+    "credits": "3",
+    "condition": "ET2040E!/ET2041E!"
+  },
+  {
+    "code": "ET3240",
+    "name": "Điện tử tương tự II",
+    "credits": "3",
+    "condition": "ET3230"
+  },
+  {
+    "code": "ET3240E",
+    "name": "Thiết kế mạch tương tự II",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3240Q",
+    "name": "Điện tử tương tự II",
+    "credits": "3",
+    "condition": "ET3230Q"
+  },
+  {
+    "code": "ET3241",
+    "name": "Điện tử tương tự II",
+    "credits": "2",
+    "condition": "ET3230/ET3231"
+  },
+  {
+    "code": "ET3241E",
+    "name": "Mạch điện tử thông tin",
+    "credits": "2",
+    "condition": "ET3231E"
+  },
+  {
+    "code": "ET3242",
+    "name": "Mạch điện tử thông tin",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3250",
+    "name": "Thông tin số",
+    "credits": "3",
+    "condition": "MI2020,ET2060"
+  },
+  {
+    "code": "ET3250E",
+    "name": "Cơ sở hệ thống truyền thông",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3250Q",
+    "name": "Thông tin số",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3251E",
+    "name": "Thông tin số",
+    "credits": "3",
+    "condition": "MI2036,ET2060E"
+  },
+  {
+    "code": "ET3260",
+    "name": "Kỹ thuật phần mềm ứng dụng",
+    "credits": "2",
+    "condition": "ET2100,ET2031"
+  },
+  {
+    "code": "ET3260E",
+    "name": "Kỹ thuật phần mềm ứng dụng",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3260Q",
+    "name": "Kỹ thuật phần mềm ứng dụng",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3261",
+    "name": "Bài tập kỹ thuật phần mềm ứng dụng",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3262",
+    "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3262Q",
+    "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3270",
+    "name": "Thực tập kỹ thuật",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3270E",
+    "name": "Thực tập kỹ thuật",
+    "credits": "2",
+    "condition": "ET3291E,ET4011E"
+  },
+  {
+    "code": "ET3270Q",
+    "name": "Thực tập kỹ thuật",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3271",
+    "name": "Thực tập kỹ thuật",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3280",
+    "name": "Anten và truyền sóng",
+    "credits": "2",
+    "condition": "ET3210"
+  },
+  {
+    "code": "ET3280E",
+    "name": "Anten - truyền sóng",
+    "credits": "3",
+    "condition": "ET3210E"
+  },
+  {
+    "code": "ET3280Q",
+    "name": "Anten và truyền sóng",
+    "credits": "2",
+    "condition": "ET3210Q"
+  },
+  {
+    "code": "ET3290",
+    "name": "Đồ án thiết kế I",
+    "credits": "2",
+    "condition": "ET3260="
+  },
+  {
+    "code": "ET3290E",
+    "name": "Xây dựng đề tài thiết kế",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3290Q",
+    "name": "Đồ án thiết kế I",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3291",
+    "name": "Đồ án thiết kế phần mềm nhúng",
+    "credits": "2",
+    "condition": "ET2031/ET4361/ET4292"
+  },
+  {
+    "code": "ET3291E",
+    "name": "Đồ án thiết kế I",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3300",
+    "name": "Kỹ thuật vi xử lý",
+    "credits": "3",
+    "condition": "ET3220"
+  },
+  {
+    "code": "ET3300E",
+    "name": "Thiết kế hệ thống số 2",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET3300Q",
+    "name": "Kỹ thuật vi xử lý",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3301",
+    "name": "Bài tập kỹ thuật vi xử lý",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3301E",
+    "name": "Kỹ thuật vi xử lý",
+    "credits": "3",
+    "condition": "ET3221E"
+  },
+  {
+    "code": "ET3302E",
+    "name": "Kỹ thuật vi xử lý",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3310",
+    "name": "Lý thuyết mật mã",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3310E",
+    "name": "Lý thuyết mật mã",
+    "credits": "3",
+    "condition": "(MI1141,ET2031)!/(MI1036,ET2031E)!"
+  },
+  {
+    "code": "ET3310Q",
+    "name": "Cơ sở điện tử viễn thông",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET3311",
+    "name": "An toàn thông tin",
+    "credits": "3",
+    "condition": "ET2072"
+  },
+  {
+    "code": "ET3312",
+    "name": "Mã hóa bảo mật và ứng dụng",
+    "credits": "3",
+    "condition": "(MI1036/MI1131),(ET2031/ET2030)"
+  },
+  {
+    "code": "ET3312E",
+    "name": "Mã hóa bảo mật và ứng dụng",
+    "credits": "3",
+    "condition": "MI1036,ET2031E"
+  },
+  {
+    "code": "ET3499",
+    "name": "Kỹ thuật vi xử lý",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET3550",
+    "name": "Thực tập cơ bản",
+    "credits": "3",
+    "condition": "(ET3060/ET3061), ET3030, (ET3090/ET3230)"
+  },
+  {
+    "code": "ET3551",
+    "name": "Thực tập xưởng vô tuyến",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3552",
+    "name": "Thực tập nhận thức điện tử",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3560",
+    "name": "Thực tập nâng cao",
+    "credits": "3",
+    "condition": "ET3550/ET2020"
+  },
+  {
+    "code": "ET3570",
+    "name": "Thực tập nhận thức",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET3901",
+    "name": "Thông tin vô tuyến",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4010",
+    "name": "Đồ án thiết kế II",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4010E",
+    "name": "Đồ án thiết kế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4010Q",
+    "name": "Đồ án thiết kế II",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4011",
+    "name": "Đồ án II",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4011E",
+    "name": "Đồ án thiết kế II",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4012",
+    "name": "Đồ án thiết kế thiết bị nhúng",
+    "credits": "2",
+    "condition": "ET4231/ET4361/ET4292"
+  },
+  {
+    "code": "ET4020",
+    "name": "Xử lý tín hiệu số",
+    "credits": "3",
+    "condition": "ET2060!"
+  },
+  {
+    "code": "ET4020E",
+    "name": "Xử lý số tín hiệu",
+    "credits": "3",
+    "condition": "ET2060E!/(MI1016!,MI1036!,MI2036=)/(MI1111!,MI1141!,MI2020=)"
+  },
+  {
+    "code": "ET4020Q",
+    "name": "Xử lý số tín hiệu",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4021",
+    "name": "Xử lý số tín hiệu",
+    "credits": "3",
+    "condition": "ET2060"
+  },
+  {
+    "code": "ET4030",
+    "name": "Thiết kế, tổng hợp IC số và hệ thống số",
+    "credits": "4",
+    "condition": "ET3220/ET3060/ET3061"
+  },
+  {
+    "code": "ET4030Q",
+    "name": "Thiết kế, tổng hợp IC số và hệ thống số",
+    "credits": "4",
+    "condition": "ET3220!/ET3220E!/ET3220Q!/ET3221E!"
+  },
+  {
+    "code": "ET4031",
+    "name": "Thiết kế, tổng hợp hệ thống số",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4032",
+    "name": "Thiết kế IC tương tự",
+    "credits": "2",
+    "condition": "ET3231/ET3230"
+  },
+  {
+    "code": "ET4033",
+    "name": "Thiết kế IC tương tự",
+    "credits": "3",
+    "condition": "ET3230/ET3231"
+  },
+  {
+    "code": "ET4034",
+    "name": "Thiết kế, tổng hợp hệ thống số",
+    "credits": "3",
+    "condition": "ET4340"
+  },
+  {
+    "code": "ET4040",
+    "name": "Kiến trúc máy tính",
+    "credits": "3",
+    "condition": "ET3300/ET3110"
+  },
+  {
+    "code": "ET4040E",
+    "name": "Kiến trúc máy tính",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4040Q",
+    "name": "Kiến trúc máy tính",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4041",
+    "name": "Kiến trúc máy tính",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4041E",
+    "name": "Kiến trúc máy tính",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4050E",
+    "name": "Kỹ thuật Internet",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4060",
+    "name": "Phân tích và thiết kế hướng đối tượng",
+    "credits": "3",
+    "condition": "ET2031"
+  },
+  {
+    "code": "ET4060Q",
+    "name": "Phân tích và thiết kế hướng đối tượng",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4061",
+    "name": "Thiết kế và lập trình hướng đối tượng",
+    "credits": "2",
+    "condition": "EE3491"
+  },
+  {
+    "code": "ET4062",
+    "name": "Điện tử số",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4070",
+    "name": "Cơ sở truyền số liệu",
+    "credits": "3",
+    "condition": "MI2036/MI2020"
+  },
+  {
+    "code": "ET4070E",
+    "name": "Thông tin số 1",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4070Q",
+    "name": "Cơ sở truyền số liệu",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4071E",
+    "name": "Cơ sở truyền số liệu",
+    "credits": "3",
+    "condition": "MI2036"
+  },
+  {
+    "code": "ET4080",
+    "name": "Mạng thông tin",
+    "credits": "3",
+    "condition": "ET4070/ET3200"
+  },
+  {
+    "code": "ET4080E",
+    "name": "Cơ sở kỹ thuật mạng",
+    "credits": "3",
+    "condition": "MI2036"
+  },
+  {
+    "code": "ET4080Q",
+    "name": "Mạng thông tin",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4081",
+    "name": "Mạng thông tin",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4090",
+    "name": "Kỹ thuật siêu cao tần",
+    "credits": "3",
+    "condition": "ET3280/ET3040"
+  },
+  {
+    "code": "ET4090E",
+    "name": "Cơ sở kỹ thuật siêu cao tần",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4090Q",
+    "name": "Kỹ thuật siêu cao tần",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4091",
+    "name": "Kỹ thuật siêu cao tần",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4092",
+    "name": "Kỹ thuật siêu cao tần",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4093",
+    "name": "Thiết kế hệ thống tần số vô tuyến",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4100",
+    "name": "Cơ sở điện sinh học",
+    "credits": "2",
+    "condition": "ET2050"
+  },
+  {
+    "code": "ET4100E",
+    "name": "Cơ sở điện sinh học",
+    "credits": "2",
+    "condition": "ET2050E"
+  },
+  {
+    "code": "ET4110",
+    "name": "Cảm biến và KT đo lường y sinh",
+    "credits": "3",
+    "condition": "ET3240/ET3140/ET3096/ET3241"
+  },
+  {
+    "code": "ET4111",
+    "name": "Kỹ thuật đo lường y sinh",
+    "credits": "3",
+    "condition": "ET3231"
+  },
+  {
+    "code": "ET4111E",
+    "name": "Kỹ thuật đo lường y sinh",
+    "credits": "3",
+    "condition": "ET3231E"
+  },
+  {
+    "code": "ET4120",
+    "name": "Thiết bị điện tử y sinh I",
+    "credits": "2",
+    "condition": "ET4110/ET4460"
+  },
+  {
+    "code": "ET4120E",
+    "name": "Thiết bị điện tử y sinh I",
+    "credits": "2",
+    "condition": "ET4111E"
+  },
+  {
+    "code": "ET4121",
+    "name": "Thiết bị điện tử y sinh I",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4130",
+    "name": "Truyền số liệu và chuyển tiếp điện văn",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4140",
+    "name": "Định vị và dẫn đường điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4150",
+    "name": "Mạng thông tin hàng không",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4151",
+    "name": "Mạng thông tin hàng không",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4160",
+    "name": "Điện tử y sinh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4210",
+    "name": "Đồ án thiết kế II",
+    "credits": "2",
+    "condition": "ET3170"
+  },
+  {
+    "code": "ET4216",
+    "name": "Thiết kế Kỹ thuật y sinh III",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET4216E",
+    "name": "Thiết kế kỹ thuật y sinh III",
+    "credits": "1",
+    "condition": "ET3178E"
+  },
+  {
+    "code": "ET4218",
+    "name": "Thiết kế Kỹ thuật y sinh IV",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET4218E",
+    "name": "Thiết kế kỹ thuật y sinh IV",
+    "credits": "1",
+    "condition": "ET4216E"
+  },
+  {
+    "code": "ET4220",
+    "name": "Mạng thông tin",
+    "credits": "3",
+    "condition": "ET3200/ET4070"
+  },
+  {
+    "code": "ET4230",
+    "name": "Mạng máy tính",
+    "credits": "3",
+    "condition": "ET3200/ET4070"
+  },
+  {
+    "code": "ET4230E",
+    "name": "Mạng máy tính",
+    "credits": "3",
+    "condition": "ET4071E/ET3250E"
+  },
+  {
+    "code": "ET4230Q",
+    "name": "Mạng máy tính",
+    "credits": "3",
+    "condition": "ET3200Q/ET4070Q"
+  },
+  {
+    "code": "ET4231",
+    "name": "Mạng máy tính và IoT",
+    "credits": "3",
+    "condition": "ET3300/ET3300="
+  },
+  {
+    "code": "ET4235",
+    "name": "IoT trong y tế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4235E",
+    "name": "IoT trong y tế",
+    "credits": "3",
+    "condition": "ET4230E"
+  },
+  {
+    "code": "ET4240",
+    "name": "Phân tích và thiết kế hướng đối tượng",
+    "credits": "3",
+    "condition": "ET3160/ET3260"
+  },
+  {
+    "code": "ET4240E",
+    "name": "Truyền thông vô tuyến",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4245",
+    "name": "Trí tuệ nhân tạo và ứng dụng",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4248",
+    "name": "Học máy trong y tế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4248E",
+    "name": "Học máy trong y tế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4250",
+    "name": "Hệ thống viễn thông",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4250E",
+    "name": "Hệ thống viễn thông",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4250Q",
+    "name": "Hệ thống viễn thông",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4260",
+    "name": "Đa phương tiện",
+    "credits": "2",
+    "condition": "ET2070/ET3050/ET2072"
+  },
+  {
+    "code": "ET4260Q",
+    "name": "Đa phương tiện",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4262E",
+    "name": "Nén và mã hóa dữ liệu đa phương tiện",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4263",
+    "name": "Nén và mã hóa dữ liệu đa phương tiện",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4265",
+    "name": "Kỹ thuật thần kinh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4265E",
+    "name": "Kỹ thuật thần kinh",
+    "credits": "3",
+    "condition": "ET3231E,ET4100E"
+  },
+  {
+    "code": "ET4270",
+    "name": "Kiến trúc máy tính",
+    "credits": "3",
+    "condition": "ET3110/ET3300"
+  },
+  {
+    "code": "ET4280",
+    "name": "Kỹ thuật mạng nâng cao",
+    "credits": "2",
+    "condition": "ET4230"
+  },
+  {
+    "code": "ET4280E",
+    "name": "Thông tin số II",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4280Q",
+    "name": "Kỹ thuật mạng nâng cao",
+    "credits": "2",
+    "condition": "ET4230Q"
+  },
+  {
+    "code": "ET4290",
+    "name": "Hệ điều hành",
+    "credits": "2",
+    "condition": "ET3300,ET2031"
+  },
+  {
+    "code": "ET4290E",
+    "name": "Hệ điều hành",
+    "credits": "2",
+    "condition": "(ET2031E,ET3301E)/(ET2031E,ET3301E=)"
+  },
+  {
+    "code": "ET4290Q",
+    "name": "Hệ điều hành",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4291",
+    "name": "Hệ điều hành",
+    "credits": "3",
+    "condition": "ET2031/ET2030,ET3300"
+  },
+  {
+    "code": "ET4291E",
+    "name": "Hệ điều hành",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4292",
+    "name": "Hệ điều hành nhúng",
+    "credits": "3",
+    "condition": "ET3300/ET3300="
+  },
+  {
+    "code": "ET4300",
+    "name": "Đa phương tiện nâng cao",
+    "credits": "2",
+    "condition": "ET4260"
+  },
+  {
+    "code": "ET4300Q",
+    "name": "Đa phương tiện nâng cao",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4310",
+    "name": "Thông tin quang",
+    "credits": "3",
+    "condition": "(ET3070/ET2040),(ET3130/ET3250)"
+  },
+  {
+    "code": "ET4310E",
+    "name": "Thông tin sợi quang",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4310Q",
+    "name": "Thông tin quang",
+    "credits": "3",
+    "condition": "(ET3070Q/ET2040Q),(ET3130Q/ET3250Q)"
+  },
+  {
+    "code": "ET4311",
+    "name": "Thông tin quang sợi",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4320",
+    "name": "Kỹ thuật siêu cao tần - antenna",
+    "credits": "3",
+    "condition": "ET3040/ET3210"
+  },
+  {
+    "code": "ET4321",
+    "name": "Nguyên lý siêu cao tần",
+    "credits": "3",
+    "condition": "PH1122/PH1121"
+  },
+  {
+    "code": "ET4330",
+    "name": "Thông tin di động",
+    "credits": "2",
+    "condition": "ET3200/ET4070"
+  },
+  {
+    "code": "ET4330Q",
+    "name": "Thông tin di động",
+    "credits": "2",
+    "condition": "ET3200Q/ET4070Q"
+  },
+  {
+    "code": "ET4331",
+    "name": "Thông tin di động",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4331E",
+    "name": "Thông tin di động",
+    "credits": "3",
+    "condition": "(ET3251E,ET4230E)/(ET3251E,ET4230E=)"
+  },
+  {
+    "code": "ET4340",
+    "name": "Thiết kế VLSI",
+    "credits": "3",
+    "condition": "ET3220"
+  },
+  {
+    "code": "ET4340E",
+    "name": "Phân tích và TK vi mạch điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4340Q",
+    "name": "Thiết kế VLSI",
+    "credits": "3",
+    "condition": "ET3140/ET3240Q"
+  },
+  {
+    "code": "ET4345",
+    "name": "Công nghệ mạch tích hợp mật độ cao",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4348",
+    "name": "Điều khiển và ghép nối thiết bị ngoại vi",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4350",
+    "name": "Điện tử công nghiệp",
+    "credits": "2",
+    "condition": "ET3110/ET3300"
+  },
+  {
+    "code": "ET4350Q",
+    "name": "Điện tử công nghiệp",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4355",
+    "name": "Cơ sở đóng gói linh kiện vi điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4356",
+    "name": "Kiểm chứng và kiểm tra vi mạch",
+    "credits": "3",
+    "condition": "ET3231/ET3230"
+  },
+  {
+    "code": "ET4358",
+    "name": "Cơ sở công nghệ vi điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4360",
+    "name": "Thiết kế hệ nhúng",
+    "credits": "2",
+    "condition": "ET3110/ET3300"
+  },
+  {
+    "code": "ET4360E",
+    "name": "Thiết kế hệ thống nhúng",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4360Q",
+    "name": "Thiết kế hệ nhúng",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4361",
+    "name": "Hệ thống nhúng và thiết kế giao tiếp nhúng",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4362E",
+    "name": "Hệ thống nhúng đa phương tiện",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4364",
+    "name": "Hệ thống nhúng đa phương tiện",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4365",
+    "name": "Linh kiện vi điện tử mạch tích hợp",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4370",
+    "name": "Kỹ thuật truyền hình",
+    "credits": "2",
+    "condition": "ET4260/ET4260="
+  },
+  {
+    "code": "ET4370E",
+    "name": "Kỹ thuật truyền hình",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4370Q",
+    "name": "Kỹ thuật truyền hình",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4380",
+    "name": "Thông tin vệ tinh",
+    "credits": "2",
+    "condition": "ET3130/ET3250"
+  },
+  {
+    "code": "ET4380Q",
+    "name": "Thông tin vệ tinh",
+    "credits": "2",
+    "condition": "ET3130Q/ET3250Q"
+  },
+  {
+    "code": "ET4390",
+    "name": "Định vị và dẫn đường",
+    "credits": "2",
+    "condition": "ET3040/ET3210"
+  },
+  {
+    "code": "ET4400",
+    "name": "Đo lường tự động",
+    "credits": "2",
+    "condition": "ET3150/ET2080"
+  },
+  {
+    "code": "ET4400Q",
+    "name": "Đo lường tự động",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4410",
+    "name": "Tổ chức và quy hoạch mạng viễn thông",
+    "credits": "2",
+    "condition": "ET3200/ET4070"
+  },
+  {
+    "code": "ET4410Q",
+    "name": "Tổ chức và quy hoạch mạng viễn thông",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4411",
+    "name": "Quy hoạch và quản lý mạng viễn thông",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4420",
+    "name": "Điện tử y sinh",
+    "credits": "2",
+    "condition": "ET3140"
+  },
+  {
+    "code": "ET4430",
+    "name": "Lập trình nâng cao",
+    "credits": "2",
+    "condition": "ET2031/ET2030"
+  },
+  {
+    "code": "ET4430E",
+    "name": "Lập trình nâng cao",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4430Q",
+    "name": "Lập trình nâng cao",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4431",
+    "name": "Lập trình Java",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4435",
+    "name": "Lập trình song song",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4440",
+    "name": "Cơ sở điện sinh học",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4450",
+    "name": "Giải phẫu và sinh lý học",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4456",
+    "name": "Giải phẫu và sinh lý",
+    "credits": "5",
+    "condition": ""
+  },
+  {
+    "code": "ET4456E",
+    "name": "Giải phẫu và sinh lý",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4457",
+    "name": "Giải phẫu và sinh lý",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4460",
+    "name": "Cảm biến và KT đo lường y sinh",
+    "credits": "3",
+    "condition": "ET3140"
+  },
+  {
+    "code": "ET4470",
+    "name": "Mạch xử lý tín hiệu y sinh",
+    "credits": "2",
+    "condition": "ET3240/ET3140"
+  },
+  {
+    "code": "ET4471",
+    "name": "Mạch xử lý tín hiệu y sinh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4471E",
+    "name": "Mạch xử lý tín hiệu y sinh",
+    "credits": "3",
+    "condition": "ET3231E,ET4100E"
+  },
+  {
+    "code": "ET4480",
+    "name": "Công nghệ chẩn đoán hình ảnh I",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4480E",
+    "name": "Công nghệ chuẩn đoán hình ảnh I",
+    "credits": "3",
+    "condition": "PH1026"
+  },
+  {
+    "code": "ET4486",
+    "name": "Kỹ thuật chẩn đoán hình ảnh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4490",
+    "name": "Công nghệ chẩn đoán hình ảnh II",
+    "credits": "3",
+    "condition": "ET4480"
+  },
+  {
+    "code": "ET4491",
+    "name": "Công nghệ chẩn đoán hình ảnh II",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4497",
+    "name": "Kỹ thuật siêu âm",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4498",
+    "name": "Quang học y sinh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4500",
+    "name": "Xử lý ảnh y tế",
+    "credits": "3",
+    "condition": "ET2061,ET3168"
+  },
+  {
+    "code": "ET4500E",
+    "name": "Xử lý ảnh y tế",
+    "credits": "3",
+    "condition": "ET2060E,ET3168E"
+  },
+  {
+    "code": "ET4510",
+    "name": "Thiết bị điện tử y sinh I",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4516",
+    "name": "Cơ sở thiết bị y sinh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4520",
+    "name": "Thiết bị điện tử y sinh II",
+    "credits": "3",
+    "condition": "ET4460/ET4110"
+  },
+  {
+    "code": "ET4521",
+    "name": "Thiết bị điện tử y sinh II",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4526",
+    "name": "Thiết bị điện tử y tế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4530",
+    "name": "Y học hạt nhân và kỹ thuật xạ trị",
+    "credits": "3",
+    "condition": "PH1020/PH1120"
+  },
+  {
+    "code": "ET4531",
+    "name": "Y học hạt nhân và kỹ thuật xạ trị",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4540",
+    "name": "Hệ thống thông tin y tế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4541",
+    "name": "Hệ thống thông tin y tế",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4542E",
+    "name": "An ninh mạng",
+    "credits": "2",
+    "condition": "ET4230E"
+  },
+  {
+    "code": "ET4546",
+    "name": "Hệ thống thông tin y tế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4550",
+    "name": "An toàn bức xạ và an toàn điện trong y tế",
+    "credits": "2",
+    "condition": "PH1120/PH1122"
+  },
+  {
+    "code": "ET4550E",
+    "name": "An toàn bức xạ và an toàn điện trong y tế",
+    "credits": "2",
+    "condition": "PH1026"
+  },
+  {
+    "code": "ET4551",
+    "name": "An toàn trong kỹ thuật y sinh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4560",
+    "name": "Laser trong y tế",
+    "credits": "2",
+    "condition": "PH1010"
+  },
+  {
+    "code": "ET4566",
+    "name": "Xử lý ảnh",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4570",
+    "name": "Xử lý tín hiệu y sinh số",
+    "credits": "3",
+    "condition": "ET3080/ET4020"
+  },
+  {
+    "code": "ET4570E",
+    "name": "Xử lý tín hiệu y sinh số",
+    "credits": "3",
+    "condition": "ET2060E,ET4100E"
+  },
+  {
+    "code": "ET4571",
+    "name": "Xử lý tín hiệu y sinh số",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4580",
+    "name": "Xác suất và các quá trình ngẫu nhiên",
+    "credits": "2",
+    "condition": "MI2020"
+  },
+  {
+    "code": "ET4590",
+    "name": "Cơ sở xử lý ảnh số",
+    "credits": "3",
+    "condition": "ET2060/ET3080"
+  },
+  {
+    "code": "ET4590Q",
+    "name": "Cơ sở xử lý ảnh số",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4591",
+    "name": "Xử lý ảnh số",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4591E",
+    "name": "Xử lý ảnh số",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4596",
+    "name": "Tin sinh học",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4596E",
+    "name": "Tin sinh học",
+    "credits": "3",
+    "condition": "ET2030E"
+  },
+  {
+    "code": "ET4600",
+    "name": "Công nghệ Nano",
+    "credits": "2",
+    "condition": "(PH3330/PH1204), (ET3040/ET3210)"
+  },
+  {
+    "code": "ET4600Q",
+    "name": "Công nghệ Nano",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4610",
+    "name": "Điện tử công suất",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4610Q",
+    "name": "Điện tử công suất",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4611",
+    "name": "Điện tử công suất",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4612",
+    "name": "Đồng hồ chỉ thị trên máy bay",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4613",
+    "name": "Thiết kế vi mạch quản lý nguồn",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4622",
+    "name": "Thiết bị điện - điện tử trên máy bay",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4650",
+    "name": "Thông tin y tế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4660",
+    "name": "Lập trình hệ thống",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4660E",
+    "name": "Lập trình hệ thống",
+    "credits": "3",
+    "condition": "ET4290E"
+  },
+  {
+    "code": "ET4670E",
+    "name": "Công nghệ và các giao thức IoT",
+    "credits": "3",
+    "condition": "(ET3251E,ET4230E)/(ET3251E,ET4230E=)"
+  },
+  {
+    "code": "ET4700",
+    "name": "Mạng phức hợp và ứng dụng",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4710",
+    "name": "Lập trình ứng dụng di động",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4711",
+    "name": "Lập trình web và ứng dụng di động",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4712",
+    "name": "Lập trình ứng dụng",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4712E",
+    "name": "Lập trình ứng dụng",
+    "credits": "2",
+    "condition": "ET2105E"
+  },
+  {
+    "code": "ET4720",
+    "name": "Xử lý tín hiệu âm thanh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4720E",
+    "name": "Xử lý tín hiệu âm thanh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4730",
+    "name": "Đồ họa máy tính",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4730E",
+    "name": "Đồ họa máy tính",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4740",
+    "name": "Thực tại ảo và thực tại tăng cường",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4750",
+    "name": "Kỹ thuật lập trình nội dung số",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4750E",
+    "name": "Kỹ thuật lập trình nội dung số",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET4768",
+    "name": "Truyền thông đa phương tiện",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET4770",
+    "name": "Lập trình xử lý tín hiệu trên hệ thống nhúng",
+    "credits": "3",
+    "condition": "(ET3300/ET3116,ET4020/ET4021/ET3080,ET3250/ET3130)!,(ET2060/ET3016)"
+  },
+  {
+    "code": "ET4900",
+    "name": "Đồ án tốt nghiệp cử nhân",
+    "credits": "6",
+    "condition": "(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4291!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4070!,ET4291!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4230!,ET4291!,ET3290,ET4010)/(ET4250!,ET4291!,ET3290,ET4010)/(ET3180!,ET3310!,ET3290,ET4010)/(ET3180!,ET4070!,ET3290,ET4010)/(ET3180!,ET4230!,ET3290,ET4010)/(ET3180!,ET4250!,ET3290,ET4010)/(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4100!,ET4110!,ET3290,ET4010)/(ET4100!,ET4120!,ET3290,ET4010)/(ET4100!,ET4450!,ET3290,ET4010)/(ET4100!,ET4471!,ET3290,ET4010)/(ET4100!,ET4480!,ET3290,ET4010)/(ET4110!,ET4120!,ET3290,ET4010)/(ET4110!,ET4450!,ET3290,ET4010)/(ET4110!,ET4471!,ET3290,ET4010)/(ET4110!,ET4480!,ET3290,ET4010)/(ET4120!,ET4450!,ET3290,ET4010)/(ET4120!,ET4471!,ET3290,ET4010)/(ET4120!,ET4480!,ET3290,ET4010)/(ET4450!,ET4471!,ET3290,ET4010)/(ET4450!,ET4480!,ET3290,ET4010)/(ET4471!,ET4480!,ET3290,ET4010)/(ET3180!,ET3310!,ET3290,ET4010)/(ET3180!,ET4130!,ET3290,ET4010)/(ET3180!,ET4250!,ET3290,ET4010)/(ET3180!,ET4140!,ET3290,ET4010)/(ET3310!,ET4130!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4140!,ET3290,ET4010)/(ET4130!,ET4250!,ET3290,ET4010)/(ET4130!,ET4140!,ET3290,ET4010)/(ET4250!,ET4140!,ET3290,ET4010)/(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4260!,ET3290,ET4010)/(ET3310!,ET4370!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4070!,ET4260!,ET3290,ET4010)/(ET4070!,ET4370!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4230!,ET4260!,ET3290,ET4010)/(ET4230!,ET4370!,ET3290,ET4010)/(ET4250!,ET4260!,ET3290,ET4010)/(ET4250!,ET4370!,ET3290,ET4010)/(ET4260!,ET4370!,ET3290,ET4010)/(ET4033!,ET4340!,ET3290,ET4010)/(ET4033!,ET4356!,ET3290,ET4010)/(ET4033!,ET4358!,ET3290,ET4010)/(ET4033!,ET4361!,ET3290,ET4010)/(ET4340!,ET4356!,ET3290,ET4010)/(ET4340!,ET4358!,ET3290,ET4010)/(ET4340!,ET4361!,ET3290,ET4010)/(ET4356!,ET4358!,ET3290,ET4010)/(ET4356!,ET4361!,ET3290,ET4010)/(ET4358!,ET4361!,ET3290,ET4010)/(ET3310,ET4010,ET4020,ET4291)/(ET3310,ET4010,ET4020,ET4070)/(ET3310,ET4010,ET3290,ET4020)/(ET4033,ET4010,ET3290,ET4340)/(ET4245,ET4010,ET3290,ET4291)/(ET3311!,ET4032!,ET3291,ET4012=)/(ET3311!,ET3250!,ET3291,ET4012=)/(ET3311!,ET4245!,ET3291,ET4012=)/(ET3311!,ET4340!,ET3291,ET4012=)/(ET3311!,ET4435!,ET3291,ET4012=)/(ET3311!,ET3180!,ET3291,ET4012=)/(ET3311!,ET4060!,ET3291,ET4012=)/(ET4032!,ET3250!,ET3291,ET4012=)/(ET4032!,ET4245!,ET3291,ET4012=)/(ET4032!,ET4340!,ET3291,ET4012=)/(ET4032!,ET4435!,ET3291,ET4012=)/(ET4032!,ET3180!,ET3291,ET4012=)/(ET4032!,ET4060!,ET3291,ET4012=)/(ET3250!,ET4245!,ET3291,ET4012=)/(ET3250!,ET4340!,ET3291,ET4012=)/(ET3250!,ET4435!,ET3291,ET4012=)/(ET3250!,ET3180!,ET3291,ET4012=)/(ET3250!,ET4060!,ET3291,ET4012=)/(ET4245!,ET4340!,ET3291,ET4012=)/(ET4245!,ET4435!,ET3291,ET4012=)/(ET4245!,ET3180!,ET3291,ET4012=)/(ET4245!,ET4060!,ET3291,ET4012=)/(ET4340!,ET4435!,ET3291,ET4012=)/(ET4340!,ET3180!,ET3291,ET4012=)/(ET4340!,ET4060!,ET3291,ET4012=)/(ET4435!,ET3180!,ET3291,ET4012=)/(ET4435!,ET4060!,ET3291,ET4012=)/(ET3180!,ET4060!,ET3291,ET4012=)"
+  },
+  {
+    "code": "ET4900E",
+    "name": "Đồ án tốt nghiệp cử nhân",
+    "credits": "6",
+    "condition": "(ET4230E!,ET4370E!,AC3120E!,AC4120E!)/(AC3120E!,AC4150E!,AC4110E!,AC4140E!)/(ET3291E=,ET3310E!,ET4020E!,ET4080E=)/(ET4011E=,ET3310E!,ET4020E!,ET4080E=)/(AC4120E!,AC4130E!,AC4140E!)"
+  },
+  {
+    "code": "ET4900Q",
+    "name": "Đồ án tốt nghiệp cử nhân",
+    "credits": "6",
+    "condition": "(ET4070Q,ET4260Q,ET4250Q,ET3220Q!)/(ET4070Q,ET4080Q,ET4250Q,ET3220Q!)/(ET4250Q,ET4070Q,ET3180Q,ET3220Q!)/(ET4250Q,ET4080Q,ET3180Q,ET3220Q!)/(ET4250Q,ET4080Q,ET4260Q,ET3220Q!)/(ET4250Q,ET3180Q,ET4260Q,ET3220Q!)/(ET4070Q,ET4080Q,ET3180Q,ET3220Q!)/(ET4070Q,ET4080Q,ET4260Q,ET3220Q!)/(ET4070Q,ET3180Q,ET4260Q,ET3220Q!)/(ET4080Q,ET3180Q,ET4260Q,ET3220Q!)/(ET4030Q,ET4250Q,ET4040Q,ET3220Q!)/(ET4030Q,ET4250Q,ET4070Q,ET3220Q!)/(ET4030Q,ET4040Q,ET4070Q,ET3220Q!)/(ET4250Q,ET4040Q,ET4070Q,ET3220Q!)"
+  },
+  {
+    "code": "ET4901",
+    "name": "Đồ án tốt nghiệp cử nhân",
+    "credits": "6",
+    "condition": "(ET4471,ET4500,ET4235)/(ET4596,ET4235,ET4570)/(BF4601,BF4602,BF4608)/(BF4604,BF4605,BF4606)"
+  },
+  {
+    "code": "ET4910",
+    "name": "Thực tập công nghiệp",
+    "credits": "12",
+    "condition": ""
+  },
+  {
+    "code": "ET4911",
+    "name": "Đồ án tốt nghiệp cử nhân",
+    "credits": "6",
+    "condition": ""
+  },
+  {
+    "code": "ET4920",
+    "name": "Đồ án nghiên cứu Cử nhân (KT Điện tử - Viễn thông)",
+    "credits": "8",
+    "condition": "(ET3310,ET4070,ET4230)/(ET4100,ET4110,ET4120)/(ET4356,ET4033,ET4340)"
+  },
+  {
+    "code": "ET4920E",
+    "name": "Đồ án nghiên cứu Cử nhân (CTTT Kỹ thuật y sinh)",
+    "credits": "8",
+    "condition": ""
+  },
+  {
+    "code": "ET4921E",
+    "name": "Đồ án nghiên cứu Cử nhân (CTTT ĐTVT)",
+    "credits": "8",
+    "condition": "(ET4230E!,ET4370E!,AC3120E!,AC4120E!)/(AC3120E!,AC4150E!,AC4110E!,AC4140E!)/(ET3291E=,ET3310E!,ET4020E!,ET4080E=)/(ET4011E=,ET3310E!,ET4020E!,ET4080E=)"
+  },
+  {
+    "code": "ET4922",
+    "name": "Đồ án nghiên cứu Cử nhân (CTTN Điện tử truyền thông)",
+    "credits": "8",
+    "condition": "(ET3290,ET4010,ET3180!,ET4020!)/(ET3290,ET4010,ET3180!,ET4033!)/(ET3290,ET4010,ET3180!,ET4060!)/(ET3290,ET4010,ET3180!,ET4070!)/(ET3290,ET4010,ET3180!,ET4245!)/(ET3290,ET4010,ET3180!,ET4291!)/(ET3290,ET4010,ET3180!,ET4340!)/(ET3290,ET4010,ET3180!,ET4361!)/(ET3290,ET4010,ET3180!,ET4250!)/(ET3290,ET4010,ET4020!,ET4033!)/(ET3290,ET4010,ET4020!,ET4060!)/(ET3290,ET4010,ET4020!,ET4070!)/(ET3290,ET4010,ET4020!,ET4245!)/(ET3290,ET4010,ET4020!,ET4291!)/(ET3290,ET4010,ET4020!,ET4340!)/(ET3290,ET4010,ET4020!,ET4361!)/(ET3290,ET4010,ET4020!,ET4250!)/(ET3290,ET4010,ET4033!,ET4060!)/(ET3290,ET4010,ET4033!,ET4070!)/(ET3290,ET4010,ET4033!,ET4245!)/(ET3290,ET4010,ET4033!,ET4291!)/(ET3290,ET4010,ET4033!,ET4340!)/(ET3290,ET4010,ET4033!,ET4361!)/(ET3290,ET4010,ET4033!,ET4250!)/(ET3290,ET4010,ET4060!,ET4070!)/(ET3290,ET4010,ET4060!,ET4245!)/(ET3290,ET4010,ET4060!,ET4291!)/(ET3290,ET4010,ET4060!,ET4340!)/(ET3290,ET4010,ET4060!,ET4361!)/(ET3290,ET4010,ET4060!,ET4250!)/(ET3290,ET4010,ET4070!,ET4245!)/(ET3290,ET4010,ET4070!,ET4291!)/(ET3290,ET4010,ET4070!,ET4340!)/(ET3290,ET4010,ET4070!,ET4361!)/(ET3290,ET4010,ET4070!,ET4250!)/(ET3290,ET4010,ET4245!,ET4291!)/(ET3290,ET4010,ET4245!,ET4340!)/(ET3290,ET4010,ET4245!,ET4361!)/(ET3290,ET4010,ET4245!,ET4250!)/(ET3290,ET4010,ET4291!,ET4340!)/(ET3290,ET4010,ET4291!,ET4361!)/(ET3290,ET4010,ET4291!,ET4250!)/(ET3290,ET4010,ET4340!,ET4361!)/(ET3290,ET4010,ET4340!,ET4250!)/(ET3290,ET4010,ET4361!,ET4250!)"
+  },
+  {
+    "code": "ET4923E",
+    "name": "Đồ án nghiên cứu Cử nhân",
+    "credits": "8",
+    "condition": "(ET4230E!,ET4370E!,AC3120E!,AC4120E!)/(AC3120E!,AC4150E!,AC4110E!,AC4140E!)/(ET3291E=,ET3310E!,ET4020E!,ET4080E=)/(ET4011E=,ET3310E!,ET4020E!,ET4080E=)"
+  },
+  {
+    "code": "ET4924",
+    "name": "Đồ án nghiên cứu Cử nhân",
+    "credits": "8",
+    "condition": "(ET3176,ET3178,ET4216,ET4218),(ET4121!,ET4235!)/(ET4121!,ET4471!)/(ET4121!,ET4480!)/(ET4121!,ET4500!)/(ET4235!,ET4471!)/(ET4235!,ET4480!)/(ET4235!,ET4500!)/(ET4471!,ET4480!)/(ET4471!,ET4500!)/(ET4480!,ET4500!)/(ET4235!,ET4248!)/(ET4235!,ET4570!)/(ET4235!,ET4596!)/(ET4235!,ET4650!)/(ET4248!,ET4570!)/(ET4248!,ET4596!)/(ET4248!,ET4650!)/(ET4570!,ET4596!)/(ET4570!,ET4650!)/(ET4596!,ET4650!)/(ET4121!,BF4601!)/(ET4121!,BF4602!)/(ET4121!,BF4603!)/(ET4121!,BF4608!)/(BF4601!,BF4602!)/(BF4601!,BF4603!)/(BF4601!,BF4608!)/(BF4602!,BF4603!)/(BF4602!,BF4608!)/(BF4603!,BF4608!)/(BF4604!,BF4605!)/(BF4604!,BF4606!)/(BF4604!,BF4607!)/(BF4604!,BF4608!)/(BF4605!,BF4606!)/(BF4605!,BF4607!)/(BF4605!,BF4608!)/(BF4606!,BF4607!)/(BF4606!,BF4608!)/(BF4607!,BF4608!)"
+  },
+  {
+    "code": "ET5010",
+    "name": "Thực tập tốt nghiệp",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET5010E",
+    "name": "Thiết kế vi mạch số",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5011",
+    "name": "Thực tập cuối khóa",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5011Q",
+    "name": "Thực tập cuối khóa",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5012",
+    "name": "Thực tập kỹ sư",
+    "credits": "6",
+    "condition": ""
+  },
+  {
+    "code": "ET5020",
+    "name": "Đồ án thiết kế III",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5020Q",
+    "name": "Đồ án thiết kế III",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5025",
+    "name": "Đồ án chuyên ngành I",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5026",
+    "name": "Thực tập tốt nghiệp",
+    "credits": "4",
+    "condition": ""
+  },
+  {
+    "code": "ET5028",
+    "name": "Thiết kế KTYS 5",
+    "credits": "1",
+    "condition": ""
+  },
+  {
+    "code": "ET5030",
+    "name": "Đồ án chuyên ngành II",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5033",
+    "name": "Thiết kế IC tương tự nâng cao",
+    "credits": "3",
+    "condition": "ET4033"
+  },
+  {
+    "code": "ET5035",
+    "name": "Quản trị dự án",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET5080E",
+    "name": "Thiết kế số sử dụng VHDL",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5100E",
+    "name": "Thực tập tốt nghiệp",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5110",
+    "name": "Đồ án tốt nghiệp",
+    "credits": "10",
+    "condition": "ET5010="
+  },
+  {
+    "code": "ET5110E",
+    "name": "Đồ án tốt nghiệp",
+    "credits": "10",
+    "condition": ""
+  },
+  {
+    "code": "ET5111",
+    "name": "Đồ án tốt nghiệp kỹ sư",
+    "credits": "9",
+    "condition": "(ET4611!,ET4340!,ET4041!)/(ET4611!,ET4340!,ET5025!)/(ET4611!,ET4041!,ET5025!)/(ET4340!,ET4041!,ET5025!)/(ET5025!,ET4245!,ET4430!)/(ET5025!,ET4245!,ET4361!)/(ET5025!,ET4430!,ET4361!)/(ET4245!,ET4430!,ET4361!)/(ET4092!,ET4081!,ET4245!)/(ET4092!,ET4081!,ET5025!)/(ET4092!,ET4245!,ET5025!)/(ET4081!,ET4245!,ET5025!)/(ET4092!,ET4380!,ET5260!)/(ET4092!,ET4380!,ET5025!)/(ET4092!,ET5260!,ET5025!)/(ET4380!,ET5260!,ET5025!)/(ET4591!,ET4730!,ET4245!)/(ET4591!,ET4730!,ET5025!)/(ET4591!,ET4245!,ET5025!)/(ET4730!,ET4245!,ET5025!)/(ET4541!,ET4491!,ET4500!)/(ET4541!,ET4491!,ET5025!)/(ET4541!,ET4500!,ET5025!)/(ET4491!,ET4500!,ET5025!)/(ET5030!,ET6610!,ET5320!)/(ET5030!,ET5320!,ET5033!)/(ET5030!,ET5320!,ET5350!)/(ET4031!,ET4041!,ET4611!)/(ET4041!,ET4430!,ET5020!)/(ET4311!,ET4330!,ET5020!)/(ET4092!,ET4151!,ET5020!)/(ET4245!,ET4591!,ET4720!)/(ET4491!,ET4500!,ET4521!)"
+  },
+  {
+    "code": "ET5111Q",
+    "name": "Đồ án tốt nghiệp kỹ sư",
+    "credits": "9",
+    "condition": "(ET4060Q,ET4280Q,ET4400Q,ET4430Q)"
+  },
+  {
+    "code": "ET5126",
+    "name": "Thiết kế tốt nghiệp",
+    "credits": "10",
+    "condition": ""
+  },
+  {
+    "code": "ET5140",
+    "name": "Hệ thống thông tin đa phương tiện",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET5240",
+    "name": "Kỹ thuật vệ tinh",
+    "credits": "2",
+    "condition": "(ET3040/ET3210),(ET3130/ET3250),ET3180"
+  },
+  {
+    "code": "ET5260",
+    "name": "Định vị sử dụng vệ tinh",
+    "credits": "3",
+    "condition": "(ET3210/ET3040),(ET3130/ET3250),ET3180"
+  },
+  {
+    "code": "ET5270",
+    "name": "Viễn thám và GIS",
+    "credits": "3",
+    "condition": "ET3210/ET3040"
+  },
+  {
+    "code": "ET5280",
+    "name": "Thiết kế ứng dụng dựa trên vị trí",
+    "credits": "2",
+    "condition": "ET3000/ET2030"
+  },
+  {
+    "code": "ET5290",
+    "name": "Dẫn đường và quản lý không lưu",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET5300",
+    "name": "Hệ thống thông tin hàng không",
+    "credits": "2",
+    "condition": "ET3130"
+  },
+  {
+    "code": "ET5310",
+    "name": "Hệ điều hành Android",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5310E",
+    "name": "Thiết kế khuếch đại thuật toán",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5320",
+    "name": "Thiết kế vi mạch hỗn hợp",
+    "credits": "3",
+    "condition": "ET4033"
+  },
+  {
+    "code": "ET5320E",
+    "name": "Thiết kế kiểm tra điện tử",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5330",
+    "name": "Kiểm chứng thiết kế vi mạch số",
+    "credits": "3",
+    "condition": "ET4031/ET4034"
+  },
+  {
+    "code": "ET5340",
+    "name": "Thiết kế tích hợp hệ thống trên chip",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5350",
+    "name": "Kiểm tra vi mạch",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET5370",
+    "name": "Công nghệ và các giao thức IoT",
+    "credits": "3",
+    "condition": "ET4070, ET4230"
+  },
+  {
+    "code": "ET5380",
+    "name": "Thiết kế vật lý vi mạch",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET5580",
+    "name": "Quản lý trang thiết bị y tế",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET6021",
+    "name": "Xử lý tín hiệu số nâng cao",
+    "credits": "2",
+    "condition": "ET4020"
+  },
+  {
+    "code": "ET6031",
+    "name": "Phân tích thiết kế hệ thống thông tin vô tuyến",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6041",
+    "name": "Internet thế hệ mới",
+    "credits": "2",
+    "condition": "ET4070"
+  },
+  {
+    "code": "ET6061",
+    "name": "Xử lý tín hiệu không gian - thời gian",
+    "credits": "2",
+    "condition": "ET3180,ET4330"
+  },
+  {
+    "code": "ET6160",
+    "name": "Các hệ thống phân tán",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6191",
+    "name": "Mô hình hóa hệ thống và các phương pháp mô phỏng số",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6210",
+    "name": "Các hệ thống thời gian thực",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6231",
+    "name": "Lập trình song song",
+    "credits": "2",
+    "condition": "ET2031/ET2030"
+  },
+  {
+    "code": "ET6251",
+    "name": "Kiểm tra thiết kế phần cứng số",
+    "credits": "2",
+    "condition": "ET4031"
+  },
+  {
+    "code": "ET6311",
+    "name": "Công nghệ chẩn đoán hình ảnh tiên tiến",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET6351",
+    "name": "Kỹ thuật lập kế hoạch điều trị trong xạ trị",
+    "credits": "2",
+    "condition": "ET4531"
+  },
+  {
+    "code": "ET6361",
+    "name": "Cơ sinh và ứng dụng",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6441",
+    "name": "Quang học y sinh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6472",
+    "name": "Trí tuệ nhân tạo và ứng dụng",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET6530",
+    "name": "Thị giác máy tính",
+    "credits": "3",
+    "condition": ""
+  },
+  {
+    "code": "ET6540",
+    "name": "An ninh mạng",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6550",
+    "name": "Điện toán đám mây và điện toán biên",
+    "credits": "2",
+    "condition": "ET4230/ET4070"
+  },
+  {
+    "code": "ET6560",
+    "name": "Lý thuyết thông tin nâng cao và mã hóa kênh",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6570",
+    "name": "Nguyên lý và thiết kế mạch siêu cao tần",
+    "credits": "2",
+    "condition": "ET3240,ET4092"
+  },
+  {
+    "code": "ET6590",
+    "name": "Kỹ thuật phục hồi chức năng",
+    "credits": "2",
+    "condition": ""
+  },
+  {
+    "code": "ET6610",
+    "name": "Kiến trúc máy tính nâng cao",
+    "credits": "2",
+    "condition": "ET4041"
+  },
+  {
+    "code": "ETxxxx",
+    "name": "Đồ án tốt nghiệp (KSTN ĐTVT K55)",
+    "credits": "12",
+    "condition": ""
+  }
+]

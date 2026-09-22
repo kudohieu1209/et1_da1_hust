@@ -1,0 +1,6554 @@
+{
+  "schema_version": "hust-curriculum-pdf-extraction.v1",
+  "source_manifest": "data/raw/hust_program_curriculum_downloads.json",
+  "extracted_at": "2026-09-16T00:14:47.630876+00:00",
+  "count": 11,
+  "extracted": 9,
+  "records": [
+    {
+      "admission_code": "ED3",
+      "name": "Quản lý giáo dục",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": null,
+      "total_credits_published": null,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics) 13",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 6,
+          "catalog_credits": 13,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1111",
+            "SSH1121",
+            "SSH1131",
+            "SSH1141",
+            "SSH1151",
+            "EM1170"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_2",
+          "source_group_code": "PDF2",
+          "name": "Giáo dục thể chất (Physical Education)",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 1,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "PE1014"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_3",
+          "source_group_code": "PDF3",
+          "name": "Giáo dục Quốc phòng – An ninh (165 tiết) (Military Education)",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 4,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "MIL1210",
+            "MIL1220",
+            "MIL1230",
+            "MIL1240"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_4",
+          "source_group_code": "PDF4",
+          "name": "Tiếng Anh (English) 8",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 2,
+          "catalog_credits": 8,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "FL1132",
+            "FL1133"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_5",
+          "source_group_code": "PDF5",
+          "name": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 11,
+          "catalog_credits": 32,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "MI1113",
+            "MI1143",
+            "MI2020",
+            "ED2040",
+            "ED2050",
+            "ED1020",
+            "ED1030",
+            "ED1010",
+            "ED3130",
+            "ED2060",
+            "ED1040"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_6",
+          "source_group_code": "PDF6",
+          "name": "Kiến thức bổ trợ (Soft skills) 9",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 9,
+          "catalog_credits": 19,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "EM1010",
+            "EM1180",
+            "ED3280",
+            "ED3220",
+            "ET3262",
+            "TEX3123",
+            "ME3124",
+            "CH2021",
+            "ED4090"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_7",
+          "source_group_code": "PDF7",
+          "name": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering) 48",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 11,
+          "catalog_credits": 27,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "ED2070",
+            "ED2030",
+            "ED3430",
+            "ED3440",
+            "ED3450",
+            "ED3460",
+            "ED2080",
+            "ED3470",
+            "ED3480",
+            "ED3330",
+            "ED2090"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_8",
+          "source_group_code": "PDF8",
+          "name": "Tiếng Anh chuyên ngành quản lý giáo dục (English for",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 9,
+          "catalog_credits": 19,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "ED2100",
+            "ED2110",
+            "ED3170",
+            "ED3490",
+            "ED3320",
+            "ED3500",
+            "ED3510",
+            "ED3520",
+            "ED3530"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_9",
+          "source_group_code": "PDF9",
+          "name": "Đồ án về Những xu hướng quản lý giáo dục hiện đại",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "ED3540"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_10",
+          "source_group_code": "PDF10",
+          "name": "Tự chọn theo định hướng ứng dụng (chọn theo mô đun)",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_11",
+          "source_group_code": "PDF11",
+          "name": "Mô đun: Quản lý giáo dục số",
+          "kind": "module",
+          "course_count_reported": 7,
+          "catalog_credits": 14,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "ED4190",
+            "ED4200",
+            "ED4210",
+            "ED4220",
+            "ED4230",
+            "ED4240",
+            "ED4250"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_12",
+          "source_group_code": "PDF12",
+          "name": "Đồ án về Chuyển đổi số trong giáo dục (Project on",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "ED4260"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_13",
+          "source_group_code": "PDF13",
+          "name": "Mô đun: Quản lý chất lượng giáo dục",
+          "kind": "module",
+          "course_count_reported": 7,
+          "catalog_credits": 14,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "ED4190",
+            "ED4200",
+            "ED4210",
+            "ED4220",
+            "ED4270",
+            "ED4280",
+            "ED4290"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_14",
+          "source_group_code": "PDF14",
+          "name": "Đồ án về Quản lý chất lượng giáo dục (Project on",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "ED4300"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_15",
+          "source_group_code": "PDF15",
+          "name": "Thực tập và đồ án tốt nghiệp 8",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 2,
+          "catalog_credits": 8,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "ED4310",
+            "ED4320"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "3(3-0-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1121",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học (Scientific Socialism) 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1141",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh (Ho Chi Minh Ideology) 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (General Law) 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Theory in Sport) 1(0-0-2-0) x",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1210",
+          "name": "0(3-0-0-6) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng an ninh 0(2-0-0-4) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung 0(1-0-1-4) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật 0(0-0-4-8)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1132",
+          "name": "Tiếng Anh cơ sở II (General English II) 4(2-4-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1133",
+          "name": "Tiếng Anh cơ sở III (General English III) 4(2-4-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "MI1113",
+          "name": "Giải tích I (Calculus I) 4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI1143",
+          "name": "Đại số (Algebra) 4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI2020",
+          "name": "Xác suất thống kê (Probability and Statistics) 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED2040",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED2050",
+          "name": "Xã hội học giáo dục (Educational Sociology) 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED1020",
+          "name": "4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED1030",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED1010",
+          "name": "Tâm lý học giáo dục (Educational Psychology) 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED3130",
+          "name": "Lý luận dạy học (Didactics) 3(2-2-0-4) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED2060",
+          "name": "Education Science) 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED1040",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management) 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "EM1180",
+          "name": "2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology) 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills) 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "ET3262",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design) 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm (Product Promotion Design) 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "CH2021",
+          "name": "ME3124 Thiết kế quảng bá sản phẩm (Product Promotion Design)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "ED4090",
+          "name": "Technical Writing and Presentation 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "ED2070",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED2030",
+          "name": "Thiết kế dạy học (Instructional Design) 3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3430",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3440",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3450",
+          "name": "Kinh tế học giáo dục (Educational Economics) 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3460",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED2080",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3470",
+          "name": "dục (Fundamentals of Measurement and Assessment in 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3480",
+          "name": "Kế toán trong giáo dục (Accounting in Education) 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3330",
+          "name": "Giáo dục người lớn (Principles of Adult Learning) 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED2090",
+          "name": "Giáo dục số (Digital Education) 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED2100",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED2110",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED3170",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED3490",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED3320",
+          "name": "Quản trị dự án (Practical Project Management) 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED3500",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED3510",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED3520",
+          "name": "Hành vi tổ chức (Organizational Behavior) 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED3530",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "ED3540",
+          "name": "(Project on Contemporary trends in Education 2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "ED4190",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11",
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "ED4200",
+          "name": "2(1-2-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11",
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "ED4210",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11",
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "ED4220",
+          "name": "2(1-2-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11",
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "ED4230",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "ED4240",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "ED4250",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "ED4260",
+          "name": "2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "ED4270",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "ED4280",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "ED4290",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "ED4300",
+          "name": "2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_14"
+          ]
+        },
+        {
+          "code": "ED4310",
+          "name": "Thực tập tốt nghiệp (Graduation Internship) 2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_15"
+          ]
+        },
+        {
+          "code": "ED4320",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Graduation Thesis) 6(0-0-12-",
+          "credits": 6,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_15"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/ED3__attachment_1.pdf",
+      "source_url": "https://fed.hust.edu.vn/uploads/feed/dao-tao/240628_khung-ctdt-qlgd.pdf",
+      "source_sha256": "76b86b2f7dc8df0cc55b3f2c0262b2ffc4e917f6a010f5ed1d3dd7a033042ef4"
+    },
+    {
+      "admission_code": "IT-E10",
+      "name": "Khoa học Dữ liệu và Trí tuệ Nhân tạo",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "metadata_only",
+      "curriculum_version": null,
+      "total_credits_published": 132,
+      "groups": [],
+      "courses": [],
+      "warnings": [
+        "Không tìm thấy phần Danh mục học phần trong PDF",
+        "Không trích xuất được dòng mã môn + tín chỉ"
+      ],
+      "file": "data/raw/program_sources/IT-E10__attachment_1.pdf",
+      "source_url": "https://soict.hust.edu.vn/wp-content/uploads/Tho%CC%82ng-tin-chu%CC%9Bo%CC%9Bng-tri%CC%80nh-DS-AI_2025_vn.pdf",
+      "source_sha256": "12f501ea42bc8ce4c92443508309063f4bf64d0413af071987c9396e6a7cb269"
+    },
+    {
+      "admission_code": "IT-E15",
+      "name": "An toàn không gian số (Chương trình tiên tiến)",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": "2021",
+      "total_credits_published": 180,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Lý luận chính trị + Pháp luật đại cương",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 6,
+          "catalog_credits": 13,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1111",
+            "SSH1121",
+            "SSH1131",
+            "SSH1141",
+            "SSH1151",
+            "EM1170"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_2",
+          "source_group_code": "PDF2",
+          "name": "Giáo dục thể chất (Physical Education) 5",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 2,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "PE1014",
+            "PE1024"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_3",
+          "source_group_code": "PDF3",
+          "name": "Giáo dục Quốc phòng - An ninh",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 4,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "MIL1210",
+            "MIL1220",
+            "MIL1230",
+            "MIL1240"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_4",
+          "source_group_code": "PDF4",
+          "name": "Tiếng Anh (English)",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 18,
+          "catalog_credits": 38,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "FL1141",
+            "FL1142",
+            "FL1143",
+            "FL1144",
+            "FL1145",
+            "FL1146",
+            "FL1147",
+            "FL1148",
+            "FL1149",
+            "FL1150",
+            "FL1120",
+            "FL1121",
+            "FL1122",
+            "FL1123",
+            "FL1124",
+            "FL1125",
+            "FL1126",
+            "FL1127"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_5",
+          "source_group_code": "PDF5",
+          "name": "Khối kiến thức Toán và Khoa học cơ bản",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 10,
+          "catalog_credits": 32,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "MI1111E",
+            "MI1121E",
+            "MI1131E",
+            "MI1141E",
+            "PH1120E",
+            "IT1110E",
+            "MI2020E",
+            "IT3020E",
+            "IT3052E",
+            "IT2022E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_6",
+          "source_group_code": "PDF6",
+          "name": "Cơ sở và cốt lõi ngành",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 19,
+          "catalog_credits": 50,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT3010E",
+            "IT3030E",
+            "IT3160E",
+            "IT3100E",
+            "IT3090E",
+            "IT3190E",
+            "IT3910E",
+            "IT4785E",
+            "IT4010E",
+            "IT3070E",
+            "IT3080E",
+            "IT3120E",
+            "IT3320E",
+            "IT3106E",
+            "IT3180E",
+            "IT4025E",
+            "IT4260E",
+            "IT3930E",
+            "IT4815E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_7",
+          "source_group_code": "PDF7",
+          "name": "Kiến thức bổ trợ xã hội (Soft skills) 9",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 15,
+          "catalog_credits": 32,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT2030",
+            "EM1010",
+            "EM1180",
+            "ED3280",
+            "ED3220",
+            "ET3262",
+            "TEX3123",
+            "IT4432E",
+            "IT4527E",
+            "IT4508E",
+            "IT4630E",
+            "IT4831E",
+            "IT4450E",
+            "IT4413E",
+            "IT3940E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_8",
+          "source_group_code": "PDF8",
+          "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp cử nhân",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_9",
+          "source_group_code": "PDF9",
+          "name": "Thực tập kỹ thuật",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4991E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_10",
+          "source_group_code": "PDF10",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 7,
+          "catalog_credits": 22,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4126E",
+            "IT4509E",
+            "IT5016E",
+            "IT5425E",
+            "IT4220E",
+            "IT4244E",
+            "IT5018E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_11",
+          "source_group_code": "PDF11",
+          "name": "Đồ án chuyên ngành I",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 3,
+          "catalog_credits": 7,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT5009E",
+            "IT5122E",
+            "IT5123E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_12",
+          "source_group_code": "PDF12",
+          "name": "Đồ án chuyên ngành II",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 4,
+          "catalog_credits": 10,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT5010E",
+            "IT4343E",
+            "IT4922E",
+            "IT5017E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_13",
+          "source_group_code": "PDF13",
+          "name": "Thực tập kỹ sư và Đồ án kỹ sư (Engineering",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_14",
+          "source_group_code": "PDF14",
+          "name": "Thực tập kỹ sư",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 6,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT5002E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_15",
+          "source_group_code": "PDF15",
+          "name": "Đồ án kỹ sư",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 9,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT5260E"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin 3(2-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin 2(2-0-0",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học 2(2-0-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1141",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1151",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "PE1014",
+          "name": "1(0-0-2-0)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (Swimming) 1(0-0-2-0)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1210",
+          "name": "Nam (Vietnam Communist 0(3-0-0-6)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1220",
+          "name": "0(2-0-0-4)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1230",
+          "name": "0(1-0-1-4)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1240",
+          "name": "0(0-0-4-8)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1141",
+          "name": "Practical grammar for writing 3(1-4-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1142",
+          "name": "Communication Skills 1 3(1-4-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1143",
+          "name": "Working with text 1 3(1-4-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1144",
+          "name": "Listening 3(2-2-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1145",
+          "name": "Speaking 2(1-3-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1146",
+          "name": "Reading 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1147",
+          "name": "Writing 3(2-2-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1148",
+          "name": "Foundation Writing 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1149",
+          "name": "Communication Skills 2 3(2-2-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1150",
+          "name": "Working with text 2 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1120",
+          "name": "IELTS Listening 1 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1121",
+          "name": "IELTS Speaking 1 1(1-1-0-4)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1122",
+          "name": "IELTS Reading 1 1(1-1-0-4)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1123",
+          "name": "IELTS Writing 1 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1124",
+          "name": "IELTS Listening 2 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1125",
+          "name": "IELTS Speaking 2 1(1-1-0-4)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1126",
+          "name": "IELTS Reading 2 1(1-1-0-4)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1127",
+          "name": "IELTS Writing 2 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "MI1111E",
+          "name": "4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI1121E",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI1131E",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI1141E",
+          "name": "4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "PH1120E",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT1110E",
+          "name": "(Introduction to 4(3-1-1-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI2020E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT3020E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT3052E",
+          "name": "Tối ưu hóa 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT2022E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT3010E",
+          "name": "(Data Structures and 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3030E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3160E",
+          "name": "(Introduction to Artificial 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3100E",
+          "name": "(Object-oriented 3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3090E",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3190E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3910E",
+          "name": "Project I 2(0-0-4-8) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4785E",
+          "name": "bị di động 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4010E",
+          "name": "(Introduction to Cryptography 3(3-1-0",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3070E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3080E",
+          "name": "3(3-0-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3120E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3320E",
+          "name": "(Introduction to Deep 2(2-1-0-6) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3106E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3180E",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4025E",
+          "name": "Mật mã ứng dụng 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4260E",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3930E",
+          "name": "Project II 2(0-0-4-8) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4815E",
+          "name": "(IP Network Design and 2(2-0-1-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT2030",
+          "name": "3(2-2-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "EM1010",
+          "name": "2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "EM1180",
+          "name": "2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3280",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3220",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ET3262",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "TEX3123",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4432E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4527E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4508E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4630E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4831E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4450E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4413E",
+          "name": "2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT3940E",
+          "name": "Project III 3(0-0-6-12) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4991E",
+          "name": "2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4126E",
+          "name": "6(0-0-12-12) 6",
+          "credits": 6,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT4509E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT5016E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT5425E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT4220E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT4244E",
+          "name": "thông tin 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT5018E",
+          "name": "(Threat Hunting and Incident 3(2-2-0",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT5009E",
+          "name": "3(0-0-6-12) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT5122E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT5123E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT5010E",
+          "name": "3(0-0-6-12) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "IT4343E",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "IT4922E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "IT5017E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "IT5002E",
+          "name": "6(0-0-12-24) 6",
+          "credits": 6,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_14"
+          ]
+        },
+        {
+          "code": "IT5260E",
+          "name": "9(0-0-18-36) 9",
+          "credits": 9,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_15"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/IT-E15__attachment_1.pdf",
+      "source_url": "https://soict.hust.edu.vn/wp-content/uploads/CNTT-Chu%CC%9Bo%CC%9Bng-tri%CC%80nh-da%CC%80o-ta%CC%A3o-An-toa%CC%80n-Kho%CC%82ng-gian-so%CC%82%CC%81-Cyber-Security_v30032025.pdf",
+      "source_sha256": "ff52d41008682edf46cffee49cb3f5dc49e3c5289427c77e9a13d984423324f5"
+    },
+    {
+      "admission_code": "IT-E6",
+      "name": "Công nghệ thông tin (Việt-Nhật) (Chương trình tiên tiến)",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": "2020",
+      "total_credits_published": 148,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Lý luận chính trị 13",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 6,
+          "catalog_credits": 13,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1111",
+            "SSH1121",
+            "SSH1131",
+            "SSH1141",
+            "SSH1151",
+            "EM1170"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_2",
+          "source_group_code": "PDF2",
+          "name": "Giáo dục thể chất 5",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 5,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "PE1014",
+            "PE1024",
+            "MIL1110",
+            "MIL1120",
+            "MIL1130"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_3",
+          "source_group_code": "PDF3",
+          "name": "Tiếng Anh 6",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 25,
+          "catalog_credits": 66,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "FL1101",
+            "FL1102",
+            "JP1110",
+            "JP1120",
+            "JP1132",
+            "JP2111",
+            "JP2126",
+            "JP2132",
+            "JP2210",
+            "JP2220",
+            "JP3110",
+            "JP3120",
+            "MI1144",
+            "MI1114",
+            "MI1124",
+            "MI1134",
+            "MI2021",
+            "PH1110",
+            "IT3420",
+            "IT2140",
+            "IT2110",
+            "IT2120",
+            "IT3020",
+            "IT4110",
+            "IT4172"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_4",
+          "source_group_code": "PDF4",
+          "name": "Cơ sở và cốt lõi",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 23,
+          "catalog_credits": 53,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT3362",
+            "IT3382",
+            "IT3210",
+            "IT3220",
+            "IT4593",
+            "IT3011",
+            "IT3230",
+            "IT3170",
+            "IT4082",
+            "IT3070",
+            "IT3080",
+            "IT3292",
+            "IT3290",
+            "IT3160",
+            "IT3103",
+            "IT3283",
+            "IT3280",
+            "IT4015",
+            "IT5021",
+            "IT5022",
+            "IT4549",
+            "IT4062",
+            "IT3323"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_5",
+          "source_group_code": "PDF5",
+          "name": "Kiến thức bổ trợ xã hội 9",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 7,
+          "catalog_credits": 15,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT2030",
+            "EM1010",
+            "EM1180",
+            "ED3280",
+            "ED3220",
+            "ET3262",
+            "TEX3123"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_6",
+          "source_group_code": "PDF6",
+          "name": "Tự chọn theo định hướng 15",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_7",
+          "source_group_code": "PDF7",
+          "name": "Module 1- AI and Big Data 15",
+          "kind": "module",
+          "course_count_reported": 6,
+          "catalog_credits": 15,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4409",
+            "IT4785",
+            "IT4542",
+            "IT4930",
+            "IT3190",
+            "IT4441"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_8",
+          "source_group_code": "PDF8",
+          "name": "Module 2- AI and IoT 15",
+          "kind": "module",
+          "course_count_reported": 6,
+          "catalog_credits": 15,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4409",
+            "IT4785",
+            "IT4542",
+            "IT4210",
+            "IT4735",
+            "IT4651"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_9",
+          "source_group_code": "PDF9",
+          "name": "Thực tập công nghiệp",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4948"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_10",
+          "source_group_code": "PDF10",
+          "name": "Đồ án tốt nghiệp 6(0-0-12",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 6,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4125"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác-Lênin 3(3-0-0-",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1121",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1131",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1141",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1151",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương 2(2-0-0-4",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "PE1014",
+          "name": "Lý luận TDTT 0(0-0-2-0) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội 0(0-0-2-0) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1110",
+          "name": "0(3-0-0-6) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1120",
+          "name": "0(3-0-0-6) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1130",
+          "name": "0(3-0-2-8) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh TOEIC I 3(0-6-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1102",
+          "name": "Tiếng Anh TOEIC II 3(0-6-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP1110",
+          "name": "Tiếng Nhật 1",
+          "credits": 5,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP1120",
+          "name": "Tiếng Nhật 2",
+          "credits": 5,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP1132",
+          "name": "Tiếng Nhật 3 3(0-6-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP2111",
+          "name": "Tiếng Nhật 4 3(0-6-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP2126",
+          "name": "Tiếng Nhật 5 2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP2132",
+          "name": "Tiếng Nhật 6 2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP2210",
+          "name": "Tiếng Nhật 7 2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP2220",
+          "name": "Tiếng Nhật 8 1(0-2-0-2) 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP3110",
+          "name": "2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "JP3120",
+          "name": "2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI1144",
+          "name": "(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI1114",
+          "name": "(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI1124",
+          "name": "(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI1134",
+          "name": "và Chuỗi 3 (2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI2021",
+          "name": "(Probability and 2(2-0-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "PH1110",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3420",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT2140",
+          "name": "2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT2110",
+          "name": "TT 2 (2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT2120",
+          "name": "(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3020",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4110",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4172",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3362",
+          "name": "(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3382",
+          "name": "(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3210",
+          "name": "(C Programming 2 (2-0-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3220",
+          "name": "(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT4593",
+          "name": "(Introduction to 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3011",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3230",
+          "name": "(Data Structures and 2 (0-4",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3170",
+          "name": "2(2-0-1-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT4082",
+          "name": "(Software 2 (2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3070",
+          "name": "hành 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3080",
+          "name": "3(3-0-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3292",
+          "name": "(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3290",
+          "name": "(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3160",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3103",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3283",
+          "name": "(Computer 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3280",
+          "name": "(Assembly Language 2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT4015",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT5021",
+          "name": "(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT5022",
+          "name": "(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT4549",
+          "name": "ITSS 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT4062",
+          "name": "2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT3323",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT2030",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "EM1010",
+          "name": "(Introduction to 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "EM1180",
+          "name": "2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED3280",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ED3220",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "ET3262",
+          "name": "(Technology and 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "TEX3123",
+          "name": "nghiệp 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT4409",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7",
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4785",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7",
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4542",
+          "name": "(Management of 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7",
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4930",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT3190",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4441",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4210",
+          "name": "3(3-0-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4735",
+          "name": "IoT và ứng dụng 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4651",
+          "name": "3(2-0-2-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4948",
+          "name": "(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4125",
+          "name": "(Graduation Thesis) 12)",
+          "credits": 6,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/IT-E6__attachment_1.pdf",
+      "source_url": "https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Hedspi-program.pdf",
+      "source_sha256": "bc0540aca6e05da77259ce1c3e0887bc9d39c92aba5970e325541348504033aa"
+    },
+    {
+      "admission_code": "IT-E7",
+      "name": "Công nghệ thông tin (Global ICT)",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": "2020",
+      "total_credits_published": 133,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Lý luận chính trị +Pháp luật đại cương",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 6,
+          "catalog_credits": 13,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1111",
+            "SSH1121",
+            "SSH1131",
+            "SSH1141",
+            "SSH1151",
+            "EM1170"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_2",
+          "source_group_code": "PDF2",
+          "name": "Giáo dục thể chất - Physical Education (5)",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 6,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "PE1014",
+            "PE1024",
+            "MIL1210",
+            "MIL1220",
+            "MIL1230",
+            "MIL1240"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_3",
+          "source_group_code": "PDF3",
+          "name": "Tiếng Anh HUST start - English 6 (25)",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 52,
+          "catalog_credits": 120,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "FL1141",
+            "FL1142",
+            "FL1143",
+            "FL1144",
+            "FL1145",
+            "FL1146",
+            "FL1147",
+            "FL1148",
+            "FL1149",
+            "FL1150",
+            "FL1120",
+            "FL1121",
+            "FL1122",
+            "FL1123",
+            "FL1124",
+            "FL1125",
+            "FL1126",
+            "FL1127",
+            "MI1144E",
+            "MI1114E",
+            "MI1124E",
+            "MI1134E",
+            "MI2020E",
+            "PH1110E",
+            "IT3420E",
+            "IT2140E",
+            "IT2110",
+            "IT2120",
+            "IT3020E",
+            "IT4110E",
+            "IT4172E",
+            "IT3210",
+            "IT3220",
+            "IT4593E",
+            "IT3312E",
+            "IT3230E",
+            "IT3170E",
+            "IT4082E",
+            "IT3070E",
+            "IT3080E",
+            "IT3292E",
+            "IT3290E",
+            "IT3160E",
+            "IT3100E",
+            "IT3283E",
+            "IT3280E",
+            "IT4015E",
+            "IT5023E",
+            "IT5024E",
+            "IT4549E",
+            "IT4062E",
+            "IT3323E"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_4",
+          "source_group_code": "PDF4",
+          "name": "Kiến thức bổ trợ xã hội- Soft skills 9",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 7,
+          "catalog_credits": 15,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT2030",
+            "EM1010",
+            "EM1180",
+            "ED3280",
+            "ED3220",
+            "ET3262",
+            "TEX3123"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_5",
+          "source_group_code": "PDF5",
+          "name": "Tự chọn theo định hướng- Elective course 15",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_6",
+          "source_group_code": "PDF6",
+          "name": "Module 1- Trí tuệ nhân tạo và Dữ liệu lớn",
+          "kind": "module",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_7",
+          "source_group_code": "PDF7",
+          "name": "Module 1- AI and Big Data",
+          "kind": "module",
+          "course_count_reported": 6,
+          "catalog_credits": 15,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4409E",
+            "IT4785E",
+            "IT4542E",
+            "IT4142E",
+            "IT3191E",
+            "IT4441E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_8",
+          "source_group_code": "PDF8",
+          "name": "Module 2- IoT thông minh",
+          "kind": "module",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_9",
+          "source_group_code": "PDF9",
+          "name": "Module 2- AIoT",
+          "kind": "module",
+          "course_count_reported": 6,
+          "catalog_credits": 15,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4409E",
+            "IT4785E",
+            "IT4542E",
+            "IT4210E",
+            "IT4735E",
+            "IT4651E"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_10",
+          "source_group_code": "PDF10",
+          "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 2,
+          "catalog_credits": 8,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4948",
+            "IT4125E"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin 3(3-0-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng Cộng sản Việt Nam 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1151",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (General Law) 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "PE1014",
+          "name": "0(0-0-2-0) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (Swimming) 0(0-0-2-0) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1210",
+          "name": "0(3-0-0-6) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng và an ninh 0(2-0-0-4) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung 0(1-0-1-4) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1240",
+          "name": "0(0-0-4-8) x",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "FL1141",
+          "name": "Practical Grammar for writing 3(1-4-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1142",
+          "name": "Communication skills 1 3(1-4-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1143",
+          "name": "Working with text 1 3(1-4-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1144",
+          "name": "Listening 1 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1145",
+          "name": "Speaking 1 2(1-3-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1146",
+          "name": "Reading 1 2(1-2-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1147",
+          "name": "Writing 1 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1148",
+          "name": "Foundation writing 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1149",
+          "name": "English communication skills 2 3(2-2-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1150",
+          "name": "Working with text 2 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1120",
+          "name": "IELTS Listening 1 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1121",
+          "name": "IELTS Speaking 1 1(1-1-0-4)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1122",
+          "name": "IELTS Reading 1 1(1-1-0-4)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1123",
+          "name": "IELTS Writing 1 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1124",
+          "name": "IELTS Listening 2 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1125",
+          "name": "IELTS Speaking 2 1(1-1-0-4) 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1126",
+          "name": "IELTS Reading 2 1(1-1-0-4) 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1127",
+          "name": "IELTS Writing 2 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI1144E",
+          "name": "Algebra 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI1114E",
+          "name": "Caculus 1 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI1124E",
+          "name": "Caculus 2 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI1134E",
+          "name": "Derivative equations and series 3(2-2-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MI2020E",
+          "name": "Probability and Statistic 1 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "PH1110E",
+          "name": "Physics 1 3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3420E",
+          "name": "Electronics for Information Technology 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT2140E",
+          "name": "2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT2110",
+          "name": "Introduction to ICT 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT2120",
+          "name": "Computer Literacy 2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3020E",
+          "name": "Discrete Math 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4110E",
+          "name": "Scientific computing 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4172E",
+          "name": "Signal processing 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3210",
+          "name": "C Programming Language 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3220",
+          "name": "C Programming Language Lab 2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4593E",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3312E",
+          "name": "Data Structures and Algorithms 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3230E",
+          "name": "2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3170E",
+          "name": "Applied Algorithms 2(2-0-1-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4082E",
+          "name": "Software Engineering 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3070E",
+          "name": "Operating Systems 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3080E",
+          "name": "Computer Networks 3(3-0-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3292E",
+          "name": "Database 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3290E",
+          "name": "Database Lab 2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3160E",
+          "name": "Introduction to Artificial Intelligence 3(3-1-0-6",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3100E",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3283E",
+          "name": "Computer Architecture 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3280E",
+          "name": "2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4015E",
+          "name": "Introduction to Information Security 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT5023E",
+          "name": "Graduation Research 1 2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT5024E",
+          "name": "Graduation Research 2 2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4549E",
+          "name": "ITSS Software Development 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT4062E",
+          "name": "Network Programming 2(0-4-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT3323E",
+          "name": "Compiler Construction 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "IT2030",
+          "name": "Technical Writing and Presentation 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "EM1010",
+          "name": "2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "EM1180",
+          "name": "nghiệp (Business Culture and 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "ED3280",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills) 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "ET3262",
+          "name": "(Technology and Technical Design 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "TEX3123",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "IT4409E",
+          "name": "Web technologies and e- Services 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7",
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4785E",
+          "name": "Mobile Programming 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7",
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4542E",
+          "name": "Management of Software Development 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7",
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4142E",
+          "name": "Introduction to Data Science 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT3191E",
+          "name": "Machine Learning and Data Mining 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4441E",
+          "name": "User Interface and User Experience 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4210E",
+          "name": "Embedded Systems 3(3-0-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4735E",
+          "name": "IoT and Applications 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4651E",
+          "name": "IP Network Design and Implementation 3(2-0-2-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4948",
+          "name": "ITSS Internship 2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT4125E",
+          "name": "Bachelor Thesis",
+          "credits": 6,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/IT-E7__attachment_1.pdf",
+      "source_url": "https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Global-ICT-program.pdf",
+      "source_sha256": "536213e7718cf402b2f655f02f19d6270c26ba4bea0d3bce94e7aa0146298dc1"
+    },
+    {
+      "admission_code": "IT-EP",
+      "name": "Công nghệ thông tin (Việt-Pháp) (Chương trình tiên tiến)",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "metadata_only",
+      "curriculum_version": null,
+      "total_credits_published": 146,
+      "groups": [],
+      "courses": [],
+      "warnings": [
+        "Không tìm thấy phần Danh mục học phần trong PDF",
+        "Không trích xuất được dòng mã môn + tín chỉ"
+      ],
+      "file": "data/raw/program_sources/IT-EP__attachment_1.pdf",
+      "source_url": "https://soict.hust.edu.vn/wp-content/uploads/IT-EP-K70.pdf",
+      "source_sha256": "34e076c0cb2d16b79828987b0910245371cba29954e894dc74fc17713f435712"
+    },
+    {
+      "admission_code": "IT1",
+      "name": "CNTT: Khoa học Máy tính",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": "2017",
+      "total_credits_published": 136,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Lý luận chính trị + Pháp luật đại cương",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 6,
+          "catalog_credits": 13,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1111",
+            "SSH1121",
+            "SSH1131",
+            "SSH1141",
+            "SSH1151",
+            "EM1170"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_2",
+          "source_group_code": "PDF2",
+          "name": "Giáo dục thể chất",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 2,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "PE1014",
+            "PE1024"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_3",
+          "source_group_code": "PDF3",
+          "name": "Giáo dục Quốc phòng - An ninh",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 3,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "MIL1210",
+            "MIL1220",
+            "MIL1230"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_4",
+          "source_group_code": "PDF4",
+          "name": "Tiếng Anh",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_5",
+          "source_group_code": "PDF5",
+          "name": "Tiếng Anh I",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 4,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "FL1131"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_6",
+          "source_group_code": "PDF6",
+          "name": "Tiếng Anh II",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 4,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "FL1132"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_7",
+          "source_group_code": "PDF7",
+          "name": "Khối kiến thức Toán và Khoa học cơ bản",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 10,
+          "catalog_credits": 32,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "MI1111",
+            "MI1121",
+            "MI1131",
+            "MI1141",
+            "MI2020",
+            "IT2000",
+            "PH1120",
+            "IT1108",
+            "IT3020",
+            "MI3052"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_8",
+          "source_group_code": "PDF8",
+          "name": "Cơ sở và cốt lõi ngành",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 20,
+          "catalog_credits": 50,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT2022",
+            "IT3011",
+            "IT3030",
+            "IT3040",
+            "IT3070",
+            "IT4653",
+            "IT3080",
+            "IT3090",
+            "IT3100",
+            "IT3170",
+            "IT3180",
+            "IT3150",
+            "IT3160",
+            "IT3120",
+            "IT4015",
+            "IT3190",
+            "IT4930",
+            "IT3930",
+            "IT3940",
+            "IT4244"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_9",
+          "source_group_code": "PDF9",
+          "name": "Kiến thức bổ trợ xã hội",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 7,
+          "catalog_credits": 15,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT2030",
+            "EM1010",
+            "EM1180",
+            "ED3280",
+            "ED3220",
+            "ET3262",
+            "TEX3123"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_10",
+          "source_group_code": "PDF10",
+          "name": "Tự chọn theo định hướng ứng dụng",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_11",
+          "source_group_code": "PDF11",
+          "name": "Mô đun 1: Định hướng Công nghệ phần mềm",
+          "kind": "module",
+          "course_count_reported": 4,
+          "catalog_credits": 10,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4490",
+            "IT4441",
+            "IT4501",
+            "IT4785"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_12",
+          "source_group_code": "PDF12",
+          "name": "Mô đun 2: Định hướng Hệ thống thông tin",
+          "kind": "module",
+          "course_count_reported": 4,
+          "catalog_credits": 10,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4350",
+            "IT4611",
+            "IT4341",
+            "IT4863"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_13",
+          "source_group_code": "PDF13",
+          "name": "Mô đun 3: Định hướng Phân tích dữ liệu thông minh",
+          "kind": "module",
+          "course_count_reported": 4,
+          "catalog_credits": 10,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4818",
+            "IT4931",
+            "IT5425",
+            "IT4906"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_14",
+          "source_group_code": "PDF14",
+          "name": "Mô đun 4: Phát triển ứng dụng nghiệp vụ",
+          "kind": "module",
+          "course_count_reported": 2,
+          "catalog_credits": 6,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4409",
+            "IT4788"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_15",
+          "source_group_code": "PDF15",
+          "name": "Mô đun 5: Phát triển ứng dụng thông minh",
+          "kind": "module",
+          "course_count_reported": 2,
+          "catalog_credits": 6,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4663",
+            "IT4613"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_16",
+          "source_group_code": "PDF16",
+          "name": "Thực tập kỹ thuật",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4991"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_17",
+          "source_group_code": "PDF17",
+          "name": "Đồ án tốt nghiệp",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 6,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4995"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "3(3-0-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1121",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1131",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1141",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1151",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "PE1014",
+          "name": "1(0-0-2-0)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "PE1024",
+          "name": "1(0-0-2-0)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1210",
+          "name": "Đảng Cộng sản Việt Nam (Vietnam 0(3-0-0-6)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1220",
+          "name": "0(2-0-0-4)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1230",
+          "name": "0(1-0-1-4)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1131",
+          "name": "4(2-4-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "FL1132",
+          "name": "4(2-4-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "MI1111",
+          "name": "4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "MI1121",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "MI1131",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "MI1141",
+          "name": "4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "MI2020",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT2000",
+          "name": "(Introduction to Information Technology 3(2-0-2-",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "PH1120",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT1108",
+          "name": "4(3-1-1-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT3020",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "MI3052",
+          "name": "Nhập môn các phương pháp tối ưu 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT2022",
+          "name": "thực nghiệm 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3011",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3030",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3040",
+          "name": "2(2-0-1-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3070",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4653",
+          "name": "Học sâu và ứng dụng 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3080",
+          "name": "3(3-0-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3090",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3100",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3170",
+          "name": "2(2-0-1-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3180",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3150",
+          "name": "Project I 2(0-0-4-8) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3160",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3120",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4015",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3190",
+          "name": "(Introduction to Machine Learning and Data 3(3-1-0-6",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4930",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3930",
+          "name": "Project II 2(0-0-4-8) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT3940",
+          "name": "Project III",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT4244",
+          "name": "(Information Technology project 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_8"
+          ]
+        },
+        {
+          "code": "IT2030",
+          "name": "Technical Writing and Presentation 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "EM1010",
+          "name": "2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "EM1180",
+          "name": "nghiệp 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "ED3280",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "ED3220",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "ET3262",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "TEX3123",
+          "name": "2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4490",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4441",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4501",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4785",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4350",
+          "name": "dụng (Architecture of Information Systems 3(3-1-",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "IT4611",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "IT4341",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "IT4863",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_12"
+          ]
+        },
+        {
+          "code": "IT4818",
+          "name": "Phân tích nghiệp vụ thông minh 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "IT4931",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "IT5425",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "IT4906",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "IT4409",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_14"
+          ]
+        },
+        {
+          "code": "IT4788",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_14"
+          ]
+        },
+        {
+          "code": "IT4663",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_15"
+          ]
+        },
+        {
+          "code": "IT4613",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_15"
+          ]
+        },
+        {
+          "code": "IT4991",
+          "name": "2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_16"
+          ]
+        },
+        {
+          "code": "IT4995",
+          "name": "Đồ án tốt nghiệp (Bachelor Thesis)",
+          "credits": 6,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_17"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/IT1__attachment_1.pdf",
+      "source_url": "https://soict.hust.edu.vn/wp-content/uploads/CTDT-CN.KHMT-K70-V2025.03.28.pdf",
+      "source_sha256": "ac3155d0287281dda5019b6d3181a9623902e052897da21c19de5b8658b94069"
+    },
+    {
+      "admission_code": "IT2",
+      "name": "CNTT: Kỹ thuật máy tính",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": "2017",
+      "total_credits_published": 132,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Lý luận chính trị + Pháp luật đại cương",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 6,
+          "catalog_credits": 13,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1111",
+            "SSH1121",
+            "SSH1131",
+            "SSH1141",
+            "SSH1151",
+            "EM1170"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_2",
+          "source_group_code": "PDF2",
+          "name": "Giáo dục thể chất (Physical Education) 5",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 2,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "PE1014",
+            "PE1024"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_3",
+          "source_group_code": "PDF3",
+          "name": "Giáo dục Quốc phòng - An ninh (165 tiết)",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 3,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "MIL1110",
+            "MIL1120",
+            "MIL1130"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_4",
+          "source_group_code": "PDF4",
+          "name": "Tiếng Anh (English) 6",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 2,
+          "catalog_credits": 6,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "FL1100",
+            "FL1101"
+          ],
+          "counts_toward_degree_credits": false
+        },
+        {
+          "id": "group_pdf_5",
+          "source_group_code": "PDF5",
+          "name": "Khối kiến thức Toán và Khoa học cơ bản",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 10,
+          "catalog_credits": 32,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "MI1111",
+            "MI1121",
+            "MI1131",
+            "MI1141",
+            "MI2020",
+            "PH1110",
+            "PH1120",
+            "IT1110",
+            "MI2010",
+            "IT3020"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_6",
+          "source_group_code": "PDF6",
+          "name": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering) 48",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 20,
+          "catalog_credits": 48,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT2000",
+            "IT3420",
+            "IT3011",
+            "IT3030",
+            "IT3040",
+            "IT3070",
+            "IT3170",
+            "IT3080",
+            "IT3090",
+            "IT3100",
+            "IT3150",
+            "IT4593",
+            "IT4172",
+            "IT3120",
+            "IT4060",
+            "IT3180",
+            "IT4015",
+            "IT3931",
+            "IT4611",
+            "IT3943"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_7",
+          "source_group_code": "PDF7",
+          "name": "Kiến thức bổ trợ (Soft skills) 9",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 7,
+          "catalog_credits": 15,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT2030",
+            "EM1010",
+            "EM1180",
+            "ED3280",
+            "ED3220",
+            "ET3262",
+            "TEX3123"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_8",
+          "source_group_code": "PDF8",
+          "name": "Tự chọn theo định hướng ứng dụng (Elective Module)",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_9",
+          "source_group_code": "PDF9",
+          "name": "Mô đun 1: Hệ thống nhúng và IoT",
+          "kind": "module",
+          "course_count_reported": 6,
+          "catalog_credits": 16,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4210",
+            "IT4785",
+            "IT4735",
+            "IT4651",
+            "IT4409",
+            "IT4931"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_10",
+          "source_group_code": "PDF10",
+          "name": "Mô đun 2: Mạng máy tính và Truyền thông dữ liệu",
+          "kind": "module",
+          "course_count_reported": 6,
+          "catalog_credits": 16,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4651",
+            "IT4409",
+            "IT4735",
+            "IT4681",
+            "IT4263",
+            "IT4785"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_11",
+          "source_group_code": "PDF11",
+          "name": "Mô đun 3: An toàn thông tin",
+          "kind": "module",
+          "course_count_reported": 6,
+          "catalog_credits": 16,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4025",
+            "IT4263",
+            "IT4785",
+            "IT4651",
+            "IT4409",
+            "IT4831"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_12",
+          "source_group_code": "PDF12",
+          "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 0,
+          "catalog_credits": 0,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_13",
+          "source_group_code": "PDF13",
+          "name": "Thực tập kỹ thuật",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 2,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4991"
+          ],
+          "counts_toward_degree_credits": true
+        },
+        {
+          "id": "group_pdf_14",
+          "source_group_code": "PDF14",
+          "name": "Đồ án tốt nghiệp Cử nhân",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 1,
+          "catalog_credits": 6,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "IT4997"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin 3(3-0-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng Cộng sản Việt Nam 2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1151",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "2(2-0-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "PE1014",
+          "name": "1(0-0-2-0)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "PE1024",
+          "name": "1(0-0-2-0)",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_2"
+          ]
+        },
+        {
+          "code": "MIL1110",
+          "name": "(Vietnam Communist Party’s Direction 0(3-0-0-6)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1120",
+          "name": "0(3-0-0-6)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "MIL1130",
+          "name": "bắn súng tiểu liên AK (CKC) 0(3-2-0-8)",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_3"
+          ]
+        },
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I (English I) 3(0-6-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh II (English II) 3(0-6-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_4"
+          ]
+        },
+        {
+          "code": "MI1111",
+          "name": "Giải tích I (Calculus I) 4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II (Calculus II) 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III (Calculus III) 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số (Algebra) 4(3-2-0-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI2020",
+          "name": "Xác suất thống kê (Statistics) 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "PH1110",
+          "name": "Vật lý đại cương I (Physics I) 3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "PH1120",
+          "name": "Vật lý đại cương II (Physics II) 3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT1110",
+          "name": "4(3-1-1-8) 4",
+          "credits": 4,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "MI2010",
+          "name": "2(2-0-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT3020",
+          "name": "Toán rời rạc (Discrete Math) 3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_5"
+          ]
+        },
+        {
+          "code": "IT2000",
+          "name": "to Information and Communication 3(2-0-2-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3420",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3011",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3030",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3040",
+          "name": "2(2-0-1-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3070",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3170",
+          "name": "2(2-0-1-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3080",
+          "name": "Mạng máy tính (Computer Networks) 3(3-0-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3090",
+          "name": "Cơ sở dữ liệu (Database) 3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3100",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3150",
+          "name": "Project I (Project I) 2(0-0-4-8) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4593",
+          "name": "(Introduction to Communication 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4172",
+          "name": "Xử lý tín hiệu (Signal Processing) 2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3120",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4060",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3180",
+          "name": "3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4015",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3931",
+          "name": "Project II (Project II) 2(0-0-4-8) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT4611",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT3943",
+          "name": "Project III (Project III) 3(0-0-6-12) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_6"
+          ]
+        },
+        {
+          "code": "IT2030",
+          "name": "Technical Writing and Presentation 3(2-2-0-6)",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "EM1010",
+          "name": "(Introduction to Management) 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "EM1180",
+          "name": "khởi nghiệp (Business Culture and Entrepreneurship) 2(2-1-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3280",
+          "name": "(Applied Psychology) 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills) 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "ET3262",
+          "name": "thuật (Technology and Technical Design Thinking) 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp 2(1-2-0-4)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_7"
+          ]
+        },
+        {
+          "code": "IT4210",
+          "name": "Hệ nhúng (Embedded Systems) 3(3-0-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4785",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9",
+            "group_pdf_10",
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4735",
+          "name": "2(2-1-0-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9",
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT4651",
+          "name": "3(2-0-2-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9",
+            "group_pdf_10",
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4409",
+          "name": "tuyến (Web technologies and e- 3(2-2-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9",
+            "group_pdf_10",
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4931",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_9"
+          ]
+        },
+        {
+          "code": "IT4681",
+          "name": "3(2-1-1-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10"
+          ]
+        },
+        {
+          "code": "IT4263",
+          "name": "An ninh mạng (Network Security) 3(2-0-2-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_10",
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4025",
+          "name": "3(3-1-0-6) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4831",
+          "name": "2(2-0-1-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_11"
+          ]
+        },
+        {
+          "code": "IT4991",
+          "name": "2(0-0-4-4) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_13"
+          ]
+        },
+        {
+          "code": "IT4997",
+          "name": "6(0-0-12-12) 6",
+          "credits": 6,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_14"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/IT2__attachment_1.pdf",
+      "source_url": "https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Computer-Engineering-program.pdf",
+      "source_sha256": "96d4c52b466e12873ae231cb3041e7acb3adffe82cea9cf44c63a7a4381229a4"
+    },
+    {
+      "admission_code": "MS1",
+      "name": "Kỹ thuật Vật liệu",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": null,
+      "total_credits_published": 132,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Chưa phân loại từ PDF",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 33,
+          "catalog_credits": 77,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1111",
+            "EM1170",
+            "MIL1110",
+            "EE2010",
+            "MSE2023",
+            "MSE2020",
+            "MSE2025",
+            "MSE3030",
+            "MSE3025",
+            "MSE3031",
+            "MSE3401",
+            "MSE3141",
+            "MSE2060",
+            "MSE3061",
+            "MSE3071",
+            "MSE3161",
+            "EM1180",
+            "ED3280",
+            "MSE4101",
+            "MSE4141",
+            "MSE4152",
+            "MSE4342",
+            "MSE4362",
+            "MSE4372",
+            "MSE4401",
+            "MSE4412",
+            "MSE4423",
+            "MSE4431",
+            "MSE4452",
+            "MSE4502",
+            "MSE4552",
+            "MSE4631",
+            "MSE4641"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác – Lênin (Philosophy of Marxism and Leninism) 3(",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (Introduction to the Legal Environment) 2(",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense) 0",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EE2010",
+          "name": ") (Introduction to Electrical Engineering) 29 MSE2013 Khoa học vật liệu đại cương (Fundametal of Materials Science)",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE2023",
+          "name": "Sự hình thành tổ chức tế vi vật liệu (Microstructural evolution in Materials) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE2020",
+          "name": "Nhiệt động học vật liệu (Thermodynamics of Materials) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE2025",
+          "name": "Phương pháp tính toán vật liệu (Computational Methods for Materials Scientists and Engineers) 2(2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE3030",
+          "name": "Các phương pháp kiểm tra và đánh giá vật liệu (Materials characterization and testing) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE3025",
+          "name": "Tính chất quang, điện, từ của vật liệu (Electronic, optical and magnetic properties of Materials) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE3031",
+          "name": "Các quá trình trong kỹ thuật vật liệu (Materials Processing in materials) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE3401",
+          "name": "Hành vi cơ nhiệt của vật liệu (ThermoMechanical Behaviour of Materials) 3(2",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE3141",
+          "name": "Mô hình hóa và mô phỏng vật liệu (Introduction to Modeling and Simulation) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE2060",
+          "name": "Thí nghiệm I (Lab 1) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE3061",
+          "name": "Kỹ thuật môi trường trong công nghiệp (Environmental Engineering in Industry) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE3071",
+          "name": "Vật liệu kỹ thuật (Engineering Materials) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE3161",
+          "name": "Tính năng vật liệu trong các môi trường đặc biệt (Materials for extreme conditions) 2(",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4101",
+          "name": "Luyện thép (Steelmaking) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4141",
+          "name": "Xử lý & tái chế chất thải trong luyện kim (Waste Treatment and Utilization in Metallurgy) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4152",
+          "name": "Đồ án CN&TB luyện gang thép (Academic project on Iron and steelmaking) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4342",
+          "name": "Sự hình thành tổ chức hợp kim (Structure formation of alloys) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4362",
+          "name": "Xử lý số liệu và quy hoạch thực nghiệm (Design and analysis of experiments) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4372",
+          "name": "Kỹ thuật mô phỏng số đúc (Casting simulation technique) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4401",
+          "name": "Cơ sở lý thuyết luyện kim màu (Introduction of Non-ferrous metallurgy) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4412",
+          "name": "Luyện kim màu nặng (Extractive of Heavy non-ferrous metals) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4423",
+          "name": "Luyện kim màu nhẹ (Extractive metallurgy of light metals) 2(2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4431",
+          "name": "Luyện kim bột (Powder metallurgy) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4452",
+          "name": "Chuẩn bị liệu cho luyện kim (Raw Materials Preparation for Extractive Metallurgy) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4502",
+          "name": "Công nghệ và thiết bị nhiệt luyện (Heat treatment technology and equipments) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4552",
+          "name": "Đồ án thiết kế xưởng nhiệt luyện (Course Project on Designing Heat Treatment Workshop) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4631",
+          "name": "Vật liệu nano trong hàng không và vận tải (Nano materials for aerospace & automobiles) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MSE4641",
+          "name": "Công nghệ bề mặt và màng mỏng (Surface and thin film technology) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/MS1__attachment_1.pdf",
+      "source_url": "https://smse.hust.edu.vn/uploads/smse/dao-tao/2023_07/mse-k65-khung-ct-cu-nhan-2023-10-19-upload-web.pdf",
+      "source_sha256": "9abfd5ece6d1e63f1296e73963b7d95b1ed816a07e1412cfb2976edeea986716"
+    },
+    {
+      "admission_code": "MS5",
+      "name": "Kỹ thuật in",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": "2020",
+      "total_credits_published": 179,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Chưa phân loại từ PDF",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 32,
+          "catalog_credits": 63,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1110",
+            "SSH1120",
+            "SSH1050",
+            "SSH1130",
+            "EM1170",
+            "PE1014",
+            "MIL1110",
+            "MIL1120",
+            "MIL1130",
+            "FL1100",
+            "IT3087",
+            "CH3613",
+            "CH2005",
+            "CH2006",
+            "CH3641",
+            "EM1010",
+            "TEX3123",
+            "EM1180",
+            "ME2040",
+            "CH4722",
+            "CH4727",
+            "CH4672",
+            "CH4751",
+            "CH4734",
+            "CH4735",
+            "CH4663",
+            "CH6345",
+            "CH6353",
+            "CH6602",
+            "CH5731",
+            "CH5712",
+            "CH5730"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1110",
+          "name": "Những NLCB của CN Mác-Lênin I (Fundamental Principles of Marxism-Leninism I) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1120",
+          "name": "Những NLCB của CN Mác-Lênin II (Fundamental Principles of Marxism-Leninism II) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1050",
+          "name": "Tư tưởng Hồ Chí Minh (Ho-Chi-Minh’s Thought) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "SSH1130",
+          "name": "Đường lối CM của Đảng CSVN (Revolution Policy of Vietnamese Communist Party) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (General Law) 2(",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Theory in Sport) 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense) 0",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense) 0",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) (General Military Education) 0",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I (English I) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "IT3087",
+          "name": "Máy tính và mạng máy tính (Computer and Computer Networks) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH3613",
+          "name": "Thí nghiệm màu (Color reproduction Lab) 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH2005",
+          "name": "Thực tập nhập môn Kỹ thuật in (Introductory internship in Print and media engineering) 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH2006",
+          "name": "Đồ án nhập môn Kỹ thuật in\u0001(Introductory project: workflow design for print media) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH3641",
+          "name": "Kỹ thuật chế bản điện tử (Digital Imaging) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "ME2040",
+          "name": "Cơ học kỹ thuật (Engineering Mechanics) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4722",
+          "name": "Thí nghiệm in số (Digital Printing Lab) 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4727",
+          "name": "Thiết bị và dụng cụ đo trong in (Printing measurements & control instruments) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4672",
+          "name": "An toàn lao động & môi trường ngành in (Labor Safety and Environment in Printing Industry) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4751",
+          "name": "Kỹ thuật in flexo và in lõm (Flexo and Gravure Printing) 3(3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4734",
+          "name": "Đồ án thiết kế sản phẩm truyền thông (Project: media product design) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4735",
+          "name": "Quản lý truyền thông 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4663",
+          "name": "Chuyên đề (Topic) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH6345",
+          "name": "Phương pháp nghiên cứu và phân tích vật liệu (Research method and material analyzing method) 2(",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH6353",
+          "name": "Hóa học bề mặt trong công nghệ in (Surface chemistry in printing) 2(",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH6602",
+          "name": "Semina 2: Các kết quả nghiên cứu ban đầu (Report of research results) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH5731",
+          "name": "Tự động hóa trong máy in (Automation in Printing machine) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH5712",
+          "name": "Thiết kế dây chuyền sản xuất trong nhà máy in (Printing plant layout and facility design) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH5730",
+          "name": "Vật liệu in bảo mật (Secure priningt materials) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/MS5__attachment_1.pdf",
+      "source_url": "https://smse.hust.edu.vn/uploads/smse/dao-tao/2023_07/ctdt-cu-nhan-thac-si-kh-kt-in_song-ngu.03.03.2022.pdf",
+      "source_sha256": "8031a03d8c13b8cfb5f7fc47ea6cefe8d3de553243ad4aaa58bc39b6745c02ec"
+    },
+    {
+      "admission_code": "MS5",
+      "name": "Kỹ thuật in",
+      "parser": "hust-pdf-course-list.v1",
+      "status": "extracted_pdf",
+      "curriculum_version": "2020",
+      "total_credits_published": 180,
+      "groups": [
+        {
+          "id": "group_pdf_1",
+          "source_group_code": "PDF1",
+          "name": "Chưa phân loại từ PDF",
+          "kind": "unclassified_pdf_group",
+          "course_count_reported": 12,
+          "catalog_credits": 21,
+          "required_credits": null,
+          "published_catalog_credits": null,
+          "course_codes": [
+            "SSH1110",
+            "EM1170",
+            "MIL1110",
+            "MIL1120",
+            "MIL1130",
+            "FL1100",
+            "CH4728",
+            "CH4722",
+            "CH4734",
+            "CH5471",
+            "CH4758",
+            "CH5726"
+          ],
+          "counts_toward_degree_credits": true
+        }
+      ],
+      "courses": [
+        {
+          "code": "SSH1110",
+          "name": "Những NLCB của CN Mác-Lênin I (Fundamental Principles of Marxism-Leninism I) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (General Law) 2(",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense) 0",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense) 0",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) (General Military Education) 0",
+          "credits": 0,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I (English I) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4728",
+          "name": "Ảnh kỹ thuật số (Image processing) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4722",
+          "name": "Thí nghiệm in số (Digital Printing Lab) 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4734",
+          "name": "Đồ án thiết kế sản phẩm truyền thông (Project: media product design) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH5471",
+          "name": "Quản trị dự án trong ngành công nghiệp in (Project governance in printing industry) 2",
+          "credits": 2,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH4758",
+          "name": "Máy in offset và bảo dưỡng (Printing machinery maintenance and service) 3(",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        },
+        {
+          "code": "CH5726",
+          "name": "Đồ án Thiết kế SP và dây chuyền SX bao bì (Project: Package design and production) 3",
+          "credits": 3,
+          "suggested_semester": null,
+          "group_ids": [
+            "group_pdf_1"
+          ]
+        }
+      ],
+      "warnings": [],
+      "file": "data/raw/program_sources/MS5__attachment_2.pdf",
+      "source_url": "https://smse.hust.edu.vn/uploads/smse/dao-tao/2023_07/ctdt-ky-su-180-tckt-in.12.7.2023.pdf",
+      "source_sha256": "93089ccfd9ef79145a40e80ec77c6f75bfb3194ed823369b55cd685465c4e929"
+    }
+  ]
+}

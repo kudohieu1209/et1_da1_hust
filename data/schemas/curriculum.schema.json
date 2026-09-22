@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hust-course-advisor.local/schemas/curriculum.schema.json",
+  "title": "Versioned HUST curriculum",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "program",
+    "sources",
+    "graduation_paths",
+    "groups",
+    "courses",
+    "non_credit_group_ids"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "program": {
+      "type": "object",
+      "required": [
+        "program_id",
+        "program_code",
+        "name",
+        "curriculum_version",
+        "degree_level",
+        "total_required_credits"
+      ],
+      "properties": {
+        "program_id": { "type": "string" },
+        "program_code": { "type": "string" },
+        "name": { "type": "string" },
+        "curriculum_version": { "type": "string", "pattern": "^20[0-9]{2}$" },
+        "degree_level": { "enum": ["BACHELOR", "ENGINEER", "MASTER", "DOCTORATE"] },
+        "total_required_credits": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "file",
+          "sha256",
+          "authority",
+          "contains_personal_data",
+          "personal_data_included_in_output"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "kind": { "type": "string" },
+          "file": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "file_modified_at": { "type": "string" },
+          "authority": { "type": "string" },
+          "contains_personal_data": { "type": "boolean" },
+          "personal_data_included_in_output": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "graduation_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "raw_expression", "components", "total_required_credits"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "raw_expression": { "type": "string" },
+          "total_required_credits": { "type": "number" },
+          "source_order": { "type": "integer" },
+          "components": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "required": ["type", "group_id", "required_credits"],
+                  "properties": {
+                    "type": { "const": "GROUP_CREDITS" },
+                    "group_id": { "type": "string" },
+                    "required_credits": { "type": "number" }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "required": ["type", "required_credits", "options"],
+                  "properties": {
+                    "type": { "const": "ONE_OF_GROUPS" },
+                    "required_credits": { "type": "number" },
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": ["group_id", "required_credits"],
+                        "properties": {
+                          "group_id": { "type": "string" },
+                          "required_credits": { "type": "number" }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_group_code",
+          "name",
+          "course_count_reported",
+          "catalog_credits",
+          "course_codes",
+          "counts_toward_degree_credits"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "source_group_code": { "type": "string" },
+          "name": { "type": "string" },
+          "course_count_reported": { "type": "integer" },
+          "catalog_credits": { "type": "number" },
+          "course_codes": { "type": "array", "items": { "type": "string" } },
+          "counts_toward_degree_credits": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "name",
+          "credits",
+          "is_compulsory",
+          "group_ids",
+          "registration_condition"
+        ],
+        "properties": {
+          "code": { "type": "string" },
+          "name": { "type": "string" },
+          "credits": { "type": "number" },
+          "suggested_semester": { "type": ["integer", "null"] },
+          "is_compulsory": { "type": "boolean" },
+          "category": { "type": "string" },
+          "department": { "type": "string" },
+          "group_ids": { "type": "array", "items": { "type": "string" } },
+          "registration_condition": {
+            "type": "object",
+            "required": ["raw", "any_of"],
+            "properties": {
+              "raw": { "type": "string" },
+              "any_of": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["all_of"],
+                  "properties": {
+                    "all_of": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": ["course_code", "relation"],
+                        "properties": {
+                          "course_code": { "type": "string" },
+                          "relation": {
+                            "enum": ["PREREQUISITE", "PRIOR", "COREQUISITE"]
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "non_credit_group_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "build_warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

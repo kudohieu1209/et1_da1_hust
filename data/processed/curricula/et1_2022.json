@@ -1,0 +1,4942 @@
+{
+  "schema_version": "1.0.0",
+  "program": {
+    "program_id": "1654",
+    "program_code": "ET1",
+    "name": "Kỹ thuật Điện tử - Viễn thông",
+    "curriculum_version": "2022",
+    "degree_level": "BACHELOR",
+    "total_required_credits": 126
+  },
+  "sources": [
+    {
+      "id": "ctt_et1_2022_snapshot",
+      "kind": "CTT_CURRICULUM_HTML_EXPORT",
+      "file": "data/raw/et1_curiculum.html",
+      "sha256": "603eab0e03fe58a358a2120379f2b2f7c1c7ad4b19e94114afa06264e9c3248c",
+      "file_modified_at": "2026-09-13T20:01:46.370105+00:00",
+      "authority": "CTT - Đại học Bách khoa Hà Nội",
+      "contains_personal_data": true,
+      "personal_data_included_in_output": false
+    },
+    {
+      "id": "ctt_course_conditions_snapshot",
+      "kind": "CTT_COURSE_CONDITIONS_JSON_EXPORT",
+      "file": "data/raw/ctt_et_conditions.json",
+      "sha256": "44003114eedc2ac8c9258b7080498443c86912b380dd554cfcfd390827eba9c0",
+      "file_modified_at": "2026-09-13T20:28:55.617503+00:00",
+      "authority": "CTT - Đại học Bách khoa Hà Nội",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    }
+  ],
+  "graduation_paths": [
+    {
+      "id": "bachelor",
+      "name": "Điện tử-Viễn thông 2022 (CN)",
+      "raw_expression": "LLCT:13+ TKHCB:32+ CSCLN:52+ KTBT:6+ (MOD1:15)|(MOD2:15)|(MOD3:15)|(MOD4:15)|(MOD5:15)|(MOD6:15)+ TT:2+ ĐAKLTN:6",
+      "components": [
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_210",
+          "required_credits": 13
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_250",
+          "required_credits": 32
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_300",
+          "required_credits": 52
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_320",
+          "required_credits": 6
+        },
+        {
+          "type": "ONE_OF_GROUPS",
+          "required_credits": 15,
+          "options": [
+            {
+              "group_id": "group_400",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_401",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_402",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_403",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_404",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_405",
+              "required_credits": 15
+            }
+          ]
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_360",
+          "required_credits": 2
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_7",
+          "required_credits": 6
+        }
+      ],
+      "total_required_credits": 126,
+      "source_order": 0
+    },
+    {
+      "id": "integrated_bachelor_master",
+      "name": "Điện tử-Viễn thông 2022 (CN -THS)",
+      "raw_expression": "LLCT:13+ TKHCB:32+ CSCLN:52+ KTBT:6+ (MOD1:15)|(MOD2:15)|(MOD3:15)|(MOD4:15)|(MOD5:15)|(MOD6:15)+ DANC:8",
+      "components": [
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_210",
+          "required_credits": 13
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_250",
+          "required_credits": 32
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_300",
+          "required_credits": 52
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_320",
+          "required_credits": 6
+        },
+        {
+          "type": "ONE_OF_GROUPS",
+          "required_credits": 15,
+          "options": [
+            {
+              "group_id": "group_400",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_401",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_402",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_403",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_404",
+              "required_credits": 15
+            },
+            {
+              "group_id": "group_405",
+              "required_credits": 15
+            }
+          ]
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_700",
+          "required_credits": 8
+        }
+      ],
+      "total_required_credits": 126,
+      "source_order": 1
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_7",
+      "source_group_code": "7",
+      "name": "Đồ án/Khóa luận Tốt nghiệp",
+      "course_count_reported": 1,
+      "catalog_credits": 6,
+      "course_codes": [
+        "ET4900"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_9",
+      "source_group_code": "9",
+      "name": "Tự chọn II",
+      "course_count_reported": 2,
+      "catalog_credits": 0,
+      "course_codes": [
+        "PE1015",
+        "PE2261"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_39",
+      "source_group_code": "39",
+      "name": "Tự chọn GDTC C",
+      "course_count_reported": 20,
+      "catalog_credits": 0,
+      "course_codes": [
+        "PE2101",
+        "PE2151",
+        "PE2201",
+        "PE2251",
+        "PE2301",
+        "PE2401",
+        "PE2501",
+        "PE2601",
+        "PE2701",
+        "PE2801",
+        "PE2901",
+        "PE3101",
+        "PE3102",
+        "PE3103",
+        "PE3201",
+        "PE3202",
+        "PE3203",
+        "PE3301",
+        "PE3302",
+        "PE3303"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_40",
+      "source_group_code": "40",
+      "name": "Tự chọn GDTC D",
+      "course_count_reported": 9,
+      "catalog_credits": 0,
+      "course_codes": [
+        "PE2102",
+        "PE2202",
+        "PE2252",
+        "PE2302",
+        "PE2402",
+        "PE2502",
+        "PE3104",
+        "PE3204",
+        "PE3304"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_41",
+      "source_group_code": "41",
+      "name": "Tự chọn GDTC E",
+      "course_count_reported": 9,
+      "catalog_credits": 0,
+      "course_codes": [
+        "PE2103",
+        "PE2203",
+        "PE2253",
+        "PE2303",
+        "PE2403",
+        "PE2503",
+        "PE3105",
+        "PE3205",
+        "PE3305"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_210",
+      "source_group_code": "210",
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "course_count_reported": 6,
+      "catalog_credits": 13,
+      "course_codes": [
+        "SSH1111",
+        "SSH1121",
+        "SSH1131",
+        "SSH1141",
+        "EM1170",
+        "SSH1151"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_220",
+      "source_group_code": "220",
+      "name": "Giáo dục thể chất",
+      "course_count_reported": 2,
+      "catalog_credits": 0,
+      "course_codes": [
+        "PE1014",
+        "PE1024"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_230",
+      "source_group_code": "230",
+      "name": "Giáo dục Quốc phòng - An ninh",
+      "course_count_reported": 4,
+      "catalog_credits": 0,
+      "course_codes": [
+        "MIL1210",
+        "MIL1220",
+        "MIL1230",
+        "MIL1240"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_240",
+      "source_group_code": "240",
+      "name": "Tiếng Anh",
+      "course_count_reported": 2,
+      "catalog_credits": 0,
+      "course_codes": [
+        "FL1131",
+        "FL1132"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_250",
+      "source_group_code": "250",
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "course_count_reported": 10,
+      "catalog_credits": 32,
+      "course_codes": [
+        "MI1111",
+        "MI1121",
+        "MI1131",
+        "MI1141",
+        "MI2020",
+        "MI2010",
+        "PH1111",
+        "PH1122",
+        "PH3330",
+        "IT1110"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_300",
+      "source_group_code": "300",
+      "name": "Cơ sở và cốt lõi ngành",
+      "course_count_reported": 21,
+      "catalog_credits": 52,
+      "course_codes": [
+        "ET2100",
+        "ET2000",
+        "ET2021",
+        "ET2031",
+        "ET2040",
+        "ET2050",
+        "ET2060",
+        "ET3210",
+        "ET2072",
+        "ET3220",
+        "ET3230",
+        "ET3260",
+        "ET3280",
+        "ET2080",
+        "ET3250",
+        "ET3241",
+        "ET3300",
+        "ET3290",
+        "ET4010",
+        "ET2022",
+        "ET4020"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_320",
+      "source_group_code": "320",
+      "name": "Khối kiến thức bổ trợ",
+      "course_count_reported": 8,
+      "catalog_credits": 16,
+      "course_codes": [
+        "EM1010",
+        "EM1180",
+        "ED3280",
+        "ED3220",
+        "ET3262",
+        "CH2021",
+        "ME3123",
+        "ME3124"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_360",
+      "source_group_code": "360",
+      "name": "Thực tập",
+      "course_count_reported": 1,
+      "catalog_credits": 2,
+      "course_codes": [
+        "ET3270"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_400",
+      "source_group_code": "400",
+      "name": "Mô đun 1",
+      "course_count_reported": 5,
+      "catalog_credits": 15,
+      "course_codes": [
+        "ET3310",
+        "ET4230",
+        "ET4250",
+        "ET4070",
+        "ET4291"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_401",
+      "source_group_code": "401",
+      "name": "Mô đun 2",
+      "course_count_reported": 5,
+      "catalog_credits": 15,
+      "course_codes": [
+        "ET3310",
+        "ET4230",
+        "ET4250",
+        "ET4070",
+        "ET3180"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_402",
+      "source_group_code": "402",
+      "name": "Mô đun 3",
+      "course_count_reported": 6,
+      "catalog_credits": 15,
+      "course_codes": [
+        "ET4100",
+        "ET4471",
+        "ET4450",
+        "ET4110",
+        "ET4480",
+        "ET4120"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_403",
+      "source_group_code": "403",
+      "name": "Mô đun 4",
+      "course_count_reported": 5,
+      "catalog_credits": 15,
+      "course_codes": [
+        "ET4130",
+        "ET3310",
+        "ET4250",
+        "ET3180",
+        "ET4140"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_404",
+      "source_group_code": "404",
+      "name": "Mô đun 5",
+      "course_count_reported": 6,
+      "catalog_credits": 16,
+      "course_codes": [
+        "ET3310",
+        "ET4230",
+        "ET4250",
+        "ET4070",
+        "ET4260",
+        "ET4370"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_405",
+      "source_group_code": "405",
+      "name": "Mô đun 6",
+      "course_count_reported": 5,
+      "catalog_credits": 15,
+      "course_codes": [
+        "ET4361",
+        "ET4358",
+        "ET4340",
+        "ET4033",
+        "ET4356"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_700",
+      "source_group_code": "700",
+      "name": "Đồ án nghiên cứu",
+      "course_count_reported": 1,
+      "catalog_credits": 8,
+      "course_codes": [
+        "ET4920"
+      ],
+      "counts_toward_degree_credits": true
+    }
+  ],
+  "courses": [
+    {
+      "code": "ET4900",
+      "name": "Đồ án tốt nghiệp cử nhân",
+      "credits": 6,
+      "suggested_semester": 8,
+      "is_compulsory": false,
+      "category": "Đồ án tốt nghiệp cử nhân",
+      "department": "TDDT",
+      "group_ids": [
+        "group_7"
+      ],
+      "registration_condition": {
+        "raw": "(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4291!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4070!,ET4291!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4230!,ET4291!,ET3290,ET4010)/(ET4250!,ET4291!,ET3290,ET4010)/(ET3180!,ET3310!,ET3290,ET4010)/(ET3180!,ET4070!,ET3290,ET4010)/(ET3180!,ET4230!,ET3290,ET4010)/(ET3180!,ET4250!,ET3290,ET4010)/(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4100!,ET4110!,ET3290,ET4010)/(ET4100!,ET4120!,ET3290,ET4010)/(ET4100!,ET4450!,ET3290,ET4010)/(ET4100!,ET4471!,ET3290,ET4010)/(ET4100!,ET4480!,ET3290,ET4010)/(ET4110!,ET4120!,ET3290,ET4010)/(ET4110!,ET4450!,ET3290,ET4010)/(ET4110!,ET4471!,ET3290,ET4010)/(ET4110!,ET4480!,ET3290,ET4010)/(ET4120!,ET4450!,ET3290,ET4010)/(ET4120!,ET4471!,ET3290,ET4010)/(ET4120!,ET4480!,ET3290,ET4010)/(ET4450!,ET4471!,ET3290,ET4010)/(ET4450!,ET4480!,ET3290,ET4010)/(ET4471!,ET4480!,ET3290,ET4010)/(ET3180!,ET3310!,ET3290,ET4010)/(ET3180!,ET4130!,ET3290,ET4010)/(ET3180!,ET4250!,ET3290,ET4010)/(ET3180!,ET4140!,ET3290,ET4010)/(ET3310!,ET4130!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4140!,ET3290,ET4010)/(ET4130!,ET4250!,ET3290,ET4010)/(ET4130!,ET4140!,ET3290,ET4010)/(ET4250!,ET4140!,ET3290,ET4010)/(ET3310!,ET4070!,ET3290,ET4010)/(ET3310!,ET4230!,ET3290,ET4010)/(ET3310!,ET4250!,ET3290,ET4010)/(ET3310!,ET4260!,ET3290,ET4010)/(ET3310!,ET4370!,ET3290,ET4010)/(ET4070!,ET4230!,ET3290,ET4010)/(ET4070!,ET4250!,ET3290,ET4010)/(ET4070!,ET4260!,ET3290,ET4010)/(ET4070!,ET4370!,ET3290,ET4010)/(ET4230!,ET4250!,ET3290,ET4010)/(ET4230!,ET4260!,ET3290,ET4010)/(ET4230!,ET4370!,ET3290,ET4010)/(ET4250!,ET4260!,ET3290,ET4010)/(ET4250!,ET4370!,ET3290,ET4010)/(ET4260!,ET4370!,ET3290,ET4010)/(ET4033!,ET4340!,ET3290,ET4010)/(ET4033!,ET4356!,ET3290,ET4010)/(ET4033!,ET4358!,ET3290,ET4010)/(ET4033!,ET4361!,ET3290,ET4010)/(ET4340!,ET4356!,ET3290,ET4010)/(ET4340!,ET4358!,ET3290,ET4010)/(ET4340!,ET4361!,ET3290,ET4010)/(ET4356!,ET4358!,ET3290,ET4010)/(ET4356!,ET4361!,ET3290,ET4010)/(ET4358!,ET4361!,ET3290,ET4010)/(ET3310,ET4010,ET4020,ET4291)/(ET3310,ET4010,ET4020,ET4070)/(ET3310,ET4010,ET3290,ET4020)/(ET4033,ET4010,ET3290,ET4340)/(ET4245,ET4010,ET3290,ET4291)/(ET3311!,ET4032!,ET3291,ET4012=)/(ET3311!,ET3250!,ET3291,ET4012=)/(ET3311!,ET4245!,ET3291,ET4012=)/(ET3311!,ET4340!,ET3291,ET4012=)/(ET3311!,ET4435!,ET3291,ET4012=)/(ET3311!,ET3180!,ET3291,ET4012=)/(ET3311!,ET4060!,ET3291,ET4012=)/(ET4032!,ET3250!,ET3291,ET4012=)/(ET4032!,ET4245!,ET3291,ET4012=)/(ET4032!,ET4340!,ET3291,ET4012=)/(ET4032!,ET4435!,ET3291,ET4012=)/(ET4032!,ET3180!,ET3291,ET4012=)/(ET4032!,ET4060!,ET3291,ET4012=)/(ET3250!,ET4245!,ET3291,ET4012=)/(ET3250!,ET4340!,ET3291,ET4012=)/(ET3250!,ET4435!,ET3291,ET4012=)/(ET3250!,ET3180!,ET3291,ET4012=)/(ET3250!,ET4060!,ET3291,ET4012=)/(ET4245!,ET4340!,ET3291,ET4012=)/(ET4245!,ET4435!,ET3291,ET4012=)/(ET4245!,ET3180!,ET3291,ET4012=)/(ET4245!,ET4060!,ET3291,ET4012=)/(ET4340!,ET4435!,ET3291,ET4012=)/(ET4340!,ET3180!,ET3291,ET4012=)/(ET4340!,ET4060!,ET3291,ET4012=)/(ET4435!,ET3180!,ET3291,ET4012=)/(ET4435!,ET4060!,ET3291,ET4012=)/(ET3180!,ET4060!,ET3291,ET4012=)",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4291",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4291",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4291",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4291",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4100",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4110",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4100",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4120",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4100",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4450",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4100",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4471",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4100",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4480",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4110",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4120",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4110",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4450",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4110",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4471",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4110",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4480",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4120",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4450",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4120",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4471",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4120",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4480",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4450",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4471",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4450",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4480",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4471",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4480",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4130",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4140",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4130",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4140",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4130",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4130",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4140",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4140",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4260",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4370",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4260",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4370",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4260",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4230",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4370",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4260",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4370",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4260",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4370",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4033",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4033",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4356",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4033",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4358",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4033",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4361",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4356",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4358",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4361",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4356",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4358",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4356",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4361",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4358",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4361",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4020",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4291",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4020",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4070",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4020",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4033",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4340",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4245",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4010",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET3290",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4291",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3311",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4032",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3311",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3311",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4245",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3311",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3311",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4435",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3311",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3311",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4060",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4032",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4032",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4245",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4032",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4032",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4435",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4032",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4032",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4060",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4245",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4435",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3250",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4060",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4245",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4245",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4435",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4245",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4245",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4060",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4435",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4340",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4060",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4435",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4435",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4060",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3180",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET4060",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "ET3291",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4012",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "PE1015",
+      "name": "Thể dục tay không",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "TCII",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_9"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2261",
+      "name": "Karatedo",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "TCII",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_9"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2101",
+      "name": "Bóng chuyền 1",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2151",
+      "name": "Erobic",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2201",
+      "name": "Bóng đá 1",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2251",
+      "name": "Taekwondo 1",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2301",
+      "name": "Bóng rổ 1",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2401",
+      "name": "Bóng bàn 1",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2501",
+      "name": "Cầu lông 1",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2601",
+      "name": "Chạy",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2701",
+      "name": "Nhảy cao",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2801",
+      "name": "Nhảy xa",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2901",
+      "name": "Xà kép, xà lệch",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3101",
+      "name": "Chuyên sâu Bóng chuyền 1",
+      "credits": 0,
+      "suggested_semester": 1,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3102",
+      "name": "Chuyên sâu Bóng chuyền 2",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3103",
+      "name": "Chuyên sâu Bóng chuyền 3",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3201",
+      "name": "Chuyên sâu Bóng đá 1",
+      "credits": 0,
+      "suggested_semester": 1,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3202",
+      "name": "Chuyên sâu Bóng đá 2",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3203",
+      "name": "Chuyên sâu Bóng đá 3",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3301",
+      "name": "Chuyên sâu Bóng rổ 1",
+      "credits": 0,
+      "suggested_semester": 1,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3302",
+      "name": "Chuyên sâu Bóng rổ 2",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3303",
+      "name": "Chuyên sâu Bóng rổ 3",
+      "credits": 0,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_39"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2102",
+      "name": "Bóng chuyền 2",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2202",
+      "name": "Bóng đá 2",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2252",
+      "name": "Taekwondo 2",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2302",
+      "name": "Bóng rổ 2",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2402",
+      "name": "Bóng bàn 2",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2502",
+      "name": "Cầu lông 2",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3104",
+      "name": "Chuyên sâu Bóng chuyền 4",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3204",
+      "name": "Chuyên sâu Bóng đá 4",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3304",
+      "name": "Chuyên sâu Bóng rổ 4",
+      "credits": 0,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_40"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2103",
+      "name": "Bóng chuyền 3",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2203",
+      "name": "Bóng đá 3",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2253",
+      "name": "Taekwondo 3",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2303",
+      "name": "Bóng rổ 3",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2403",
+      "name": "Bóng bàn 3",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2503",
+      "name": "Cầu lông 3",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3105",
+      "name": "Chuyên sâu Bóng chuyền 5",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3205",
+      "name": "Chuyên sâu Bóng đá 5",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE3305",
+      "name": "Chuyên sâu Bóng rổ 5",
+      "credits": 0,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_41"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1111",
+      "name": "Triết học Mác - Lênin",
+      "credits": 3,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị",
+      "department": "KML",
+      "group_ids": [
+        "group_210"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1121",
+      "name": "Kinh tế chính trị Mác - Lênin",
+      "credits": 2,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị",
+      "department": "KML",
+      "group_ids": [
+        "group_210"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1131",
+      "name": "Chủ nghĩa xã hội khoa học",
+      "credits": 2,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị",
+      "department": "KML",
+      "group_ids": [
+        "group_210"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1141",
+      "name": "Lịch sử Đảng cộng sản Việt Nam",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị",
+      "department": "KML",
+      "group_ids": [
+        "group_210"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1170",
+      "name": "Pháp luật đại cương",
+      "credits": 2,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Pháp luật đại cương",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_210"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1151",
+      "name": "Tư tưởng Hồ Chí Minh",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị",
+      "department": "KML",
+      "group_ids": [
+        "group_210"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE1014",
+      "name": "Lý luận TDTT",
+      "credits": 0,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_220"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE1024",
+      "name": "Bơi lội",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_220"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1210",
+      "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+      "credits": 0,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "ĐLQP&QN của ĐCSVN",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_230"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1220",
+      "name": "Công tác quốc phòng và an ninh",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Công tác QP &An ninh",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_230"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1230",
+      "name": "Quân sự chung",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Quân sự chung",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_230"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1240",
+      "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "KT chiến đấu BB và chiến thuật",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_230"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1131",
+      "name": "Tiếng Anh cơ sở 1",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "",
+      "department": "KNN",
+      "group_ids": [
+        "group_240"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1132",
+      "name": "Tiếng Anh cơ sở 2",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "",
+      "department": "KNN",
+      "group_ids": [
+        "group_240"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1111",
+      "name": "Giải tích I",
+      "credits": 4,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "KTTD",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1121",
+      "name": "Giải tích II",
+      "credits": 3,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "KTTD",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1131",
+      "name": "Giải tích III",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "KTTD",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1141",
+      "name": "Đại số",
+      "credits": 4,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "KTTD",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI2020",
+      "name": "Xác suất thống kê",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "KTTD",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI2010",
+      "name": "Phương pháp tính",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "KTTD",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1111",
+      "name": "Vật lý đại cương I",
+      "credits": 2,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1122",
+      "name": "Vật lý đại cương II",
+      "credits": 4,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH3330",
+      "name": "Vật lý điện tử",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "IT1110",
+      "name": "Tin học đại cương",
+      "credits": 4,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản",
+      "department": "TCNTT",
+      "group_ids": [
+        "group_250"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET2100",
+      "name": "Cấu trúc dữ liệu và giải thuật",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET2031",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET2031",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET2000",
+      "name": "Nhập môn kỹ thuật điện tử-viễn thông",
+      "credits": 2,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET2021",
+      "name": "Thực tập cơ bản",
+      "credits": 2,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET2031",
+      "name": "Kỹ thuật lập trình C/C++",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET2040",
+      "name": "Cấu kiện điện tử",
+      "credits": 3,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET2050",
+      "name": "Lý thuyết mạch",
+      "credits": 3,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "(MI1111,MI1121,MI1131,PH1122)/(MI1111,MI1121,MI1131,PH1121)/(MI1111,MI1121,MI1131,PH1120)",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MI1111",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "MI1121",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "MI1131",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "PH1122",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "MI1111",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "MI1121",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "MI1131",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "PH1121",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "MI1111",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "MI1121",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "MI1131",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "PH1120",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET2060",
+      "name": "Tín hiệu và hệ thống",
+      "credits": 3,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "MI1141",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MI1141",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3210",
+      "name": "Trường điện từ",
+      "credits": 3,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "PH1122/PH1120",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "PH1122",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "PH1120",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET2072",
+      "name": "Lý thuyết thông tin",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "(MI1141,MI2020)!",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MI1141",
+                "relation": "PREREQUISITE"
+              },
+              {
+                "course_code": "MI2020",
+                "relation": "PREREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3220",
+      "name": "Điện tử số",
+      "credits": 3,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET2040/ET2042",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET2040",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET2042",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3230",
+      "name": "Điện tử tương tự I",
+      "credits": 3,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET2050,ET2040",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET2050",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET2040",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3260",
+      "name": "Kỹ thuật phần mềm ứng dụng",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET2100,ET2031",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET2100",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET2031",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3280",
+      "name": "Anten và truyền sóng",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET3210",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3210",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET2080",
+      "name": "Cơ sở kỹ thuật đo lường",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "MI2020,ET3230",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MI2020",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET3230",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3250",
+      "name": "Thông tin số",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "MI2020,ET2060",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MI2020",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET2060",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3241",
+      "name": "Điện tử tương tự II",
+      "credits": 2,
+      "suggested_semester": 6,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET3230/ET3231",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3230",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3231",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3300",
+      "name": "Kỹ thuật vi xử lý",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET3220",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3220",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3290",
+      "name": "Đồ án thiết kế I",
+      "credits": 2,
+      "suggested_semester": 7,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET3260=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3260",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4010",
+      "name": "Đồ án thiết kế II",
+      "credits": 2,
+      "suggested_semester": 8,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET2022",
+      "name": "Technical Writing and Presentation",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4020",
+      "name": "Xử lý tín hiệu số",
+      "credits": 3,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "TDDT",
+      "group_ids": [
+        "group_300"
+      ],
+      "registration_condition": {
+        "raw": "ET2060!",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET2060",
+                "relation": "PREREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EM1010",
+      "name": "Quản trị học đại cương",
+      "credits": 2,
+      "suggested_semester": 6,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_320"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1180",
+      "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+      "credits": 2,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_320"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ED3280",
+      "name": "Tâm lý học ứng dụng",
+      "credits": 2,
+      "suggested_semester": 6,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_320"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ED3220",
+      "name": "Kỹ năng mềm",
+      "credits": 2,
+      "suggested_semester": 6,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_320"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET3262",
+      "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+      "credits": 2,
+      "suggested_semester": 6,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "TDDT",
+      "group_ids": [
+        "group_320"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "CH2021",
+      "name": "Đổi mới sáng tạo và khởi nghiệp",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_320"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME3123",
+      "name": "Thiết kế mỹ thuật công nghiệp",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "TCK",
+      "group_ids": [
+        "group_320"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME3124",
+      "name": "Thiết kế quảng bá sản phẩm",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "TCK",
+      "group_ids": [
+        "group_320"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET3270",
+      "name": "Thực tập kỹ thuật",
+      "credits": 2,
+      "suggested_semester": 8,
+      "is_compulsory": false,
+      "category": "Thực tập kỹ thuật",
+      "department": "TDDT",
+      "group_ids": [
+        "group_360"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET3310",
+      "name": "Lý thuyết mật mã",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 1,2,4,5",
+      "department": "TDDT",
+      "group_ids": [
+        "group_400",
+        "group_401",
+        "group_403",
+        "group_404"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4230",
+      "name": "Mạng máy tính",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 1,2,5",
+      "department": "TDDT",
+      "group_ids": [
+        "group_400",
+        "group_401",
+        "group_404"
+      ],
+      "registration_condition": {
+        "raw": "ET3200/ET4070",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3200",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4070",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4250",
+      "name": "Hệ thống viễn thông",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 1,2,4,5",
+      "department": "TDDT",
+      "group_ids": [
+        "group_400",
+        "group_401",
+        "group_403",
+        "group_404"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4070",
+      "name": "Cơ sở truyền số liệu",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 1,2,5",
+      "department": "TDDT",
+      "group_ids": [
+        "group_400",
+        "group_401",
+        "group_404"
+      ],
+      "registration_condition": {
+        "raw": "MI2036/MI2020",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MI2036",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "MI2020",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4291",
+      "name": "Hệ điều hành",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kỹ thuật Điện tử - Kỹ thuật máy tính",
+      "department": "TDDT",
+      "group_ids": [
+        "group_400"
+      ],
+      "registration_condition": {
+        "raw": "ET2031/ET2030,ET3300",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET2031",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET2030",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET3300",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET3180",
+      "name": "Thông tin vô tuyến",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 2,4",
+      "department": "TDDT",
+      "group_ids": [
+        "group_401",
+        "group_403"
+      ],
+      "registration_condition": {
+        "raw": "ET3250",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3250",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4100",
+      "name": "Cơ sở điện sinh học",
+      "credits": 2,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+      "department": "TDDT",
+      "group_ids": [
+        "group_402"
+      ],
+      "registration_condition": {
+        "raw": "ET2050",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET2050",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4471",
+      "name": "Mạch xử lý tín hiệu y sinh",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+      "department": "TDDT",
+      "group_ids": [
+        "group_402"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4450",
+      "name": "Giải phẫu và sinh lý học",
+      "credits": 2,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+      "department": "TDDT",
+      "group_ids": [
+        "group_402"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4110",
+      "name": "Cảm biến và KT đo lường y sinh",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+      "department": "TDDT",
+      "group_ids": [
+        "group_402"
+      ],
+      "registration_condition": {
+        "raw": "ET3240/ET3140/ET3096/ET3241",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3240",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3140",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3096",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3241",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4480",
+      "name": "Công nghệ chẩn đoán hình ảnh I",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+      "department": "TDDT",
+      "group_ids": [
+        "group_402"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4120",
+      "name": "Thiết bị điện tử y sinh I",
+      "credits": 2,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Mô đun: Kỹ thuật Y sinh",
+      "department": "TDDT",
+      "group_ids": [
+        "group_402"
+      ],
+      "registration_condition": {
+        "raw": "ET4110/ET4460",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET4110",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4460",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4130",
+      "name": "Truyền số liệu và chuyển tiếp điện văn",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 4: Kỹ thuật Điện tử hàng không-Vũ trụ",
+      "department": "TDDT",
+      "group_ids": [
+        "group_403"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4140",
+      "name": "Định vị và dẫn đường điện tử",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 4: Kỹ thuật Điện tử hàng không-Vũ trụ",
+      "department": "TDDT",
+      "group_ids": [
+        "group_403"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4260",
+      "name": "Đa phương tiện",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 5: Kỹ thuật Đa phương tiện",
+      "department": "TDDT",
+      "group_ids": [
+        "group_404"
+      ],
+      "registration_condition": {
+        "raw": "ET2070/ET3050/ET2072",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET2070",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3050",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET2072",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4370",
+      "name": "Kỹ thuật truyền hình",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 5: Kỹ thuật Đa phương tiện",
+      "department": "TDDT",
+      "group_ids": [
+        "group_404"
+      ],
+      "registration_condition": {
+        "raw": "ET4260/ET4260=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET4260",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4260",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4361",
+      "name": "Hệ thống nhúng và thiết kế giao tiếp nhúng",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 6: Thiết kế vi mạch",
+      "department": "TDDT",
+      "group_ids": [
+        "group_405"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4358",
+      "name": "Cơ sở công nghệ vi điện tử",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 6: Thiết kế vi mạch",
+      "department": "TDDT",
+      "group_ids": [
+        "group_405"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET4340",
+      "name": "Thiết kế VLSI",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 6: Thiết kế vi mạch",
+      "department": "TDDT",
+      "group_ids": [
+        "group_405"
+      ],
+      "registration_condition": {
+        "raw": "ET3220",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3220",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4033",
+      "name": "Thiết kế IC tương tự",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 6: Thiết kế vi mạch",
+      "department": "TDDT",
+      "group_ids": [
+        "group_405"
+      ],
+      "registration_condition": {
+        "raw": "ET3230/ET3231",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3230",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3231",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4356",
+      "name": "Kiểm chứng và kiểm tra vi mạch",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Mô đun 6: Thiết kế vi mạch",
+      "department": "TDDT",
+      "group_ids": [
+        "group_405"
+      ],
+      "registration_condition": {
+        "raw": "ET3231/ET3230",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3231",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET3230",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ET4920",
+      "name": "Đồ án nghiên cứu Cử nhân (KT Điện tử - Viễn thông)",
+      "credits": 8,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Đồ án nghiên cứu Cử nhân (KT Điện tử - Viễn thông)",
+      "department": "TDDT",
+      "group_ids": [
+        "group_700"
+      ],
+      "registration_condition": {
+        "raw": "(ET3310,ET4070,ET4230)/(ET4100,ET4110,ET4120)/(ET4356,ET4033,ET4340)",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "ET3310",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4070",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4230",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4100",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4110",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4120",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "ET4356",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4033",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "ET4340",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "non_credit_group_ids": [
+    "group_9",
+    "group_39",
+    "group_40",
+    "group_41",
+    "group_220",
+    "group_230",
+    "group_240"
+  ],
+  "build_warnings": []
+}

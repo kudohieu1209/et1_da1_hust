@@ -1,0 +1,2068 @@
+{
+  "schema_version": "hust-undergraduate-programs.v1",
+  "source": {
+    "url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc",
+    "page_title": "Ngành đào tạo đại học",
+    "accessed_at": "2026-09-15T20:45:37.859425+00:00",
+    "html_sha256": "278728c52803bd5d97f2d85cd3d879bcdfed16e821d19d7f4cf2f187cfc142b5"
+  },
+  "count": 68,
+  "programs": [
+    {
+      "source_order": 1,
+      "slug": "ky-thuat-thuc-pham-chuong-trinh-tien-tien",
+      "admission_code": "BF-E12",
+      "name": "Kỹ thuật thực phẩm (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": 80,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-thuc-pham-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 2,
+      "slug": "ky-thuat-sinh-hoc-chuong-trinh-tien-tien",
+      "admission_code": "BF-E19",
+      "name": "Kỹ thuật sinh học (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": 80,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-sinh-hoc-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 3,
+      "slug": "ky-thuat-sinh-hoc",
+      "admission_code": "BF1",
+      "name": "Kỹ thuật Sinh học",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": 140,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-sinh-hoc"
+    },
+    {
+      "source_order": 4,
+      "slug": "ky-thuat-thuc-pham",
+      "admission_code": "BF2",
+      "name": "Kỹ thuật Thực phẩm",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": 340,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-thuc-pham"
+    },
+    {
+      "source_order": 5,
+      "slug": "ky-thuat-hoa-duoc-chuong-trinh-tien-tien",
+      "admission_code": "CH-E11",
+      "name": "Kỹ thuật Hóa dược (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hoa-duoc-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 6,
+      "slug": "hoa-hoc-my-pham-chuong-trinh-tien-tien",
+      "admission_code": "CH-E20",
+      "name": "Hóa học Mỹ phẩm (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": 40,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/hoa-hoc-my-pham-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 7,
+      "slug": "ky-thuat-hoa-hoc",
+      "admission_code": "CH1",
+      "name": "Kỹ thuật Hóa học",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hoa-hoc"
+    },
+    {
+      "source_order": 8,
+      "slug": "hoa-hoc",
+      "admission_code": "CH2",
+      "name": "Hóa học",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/hoa-hoc"
+    },
+    {
+      "source_order": 9,
+      "slug": "cong-nghe-giao-duc",
+      "admission_code": "ED2",
+      "name": "Công nghệ giáo dục",
+      "language": "Tiếng Việt",
+      "faculty": "Khoa Khoa học và Công nghệ giáo dục",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-giao-duc"
+    },
+    {
+      "source_order": 10,
+      "slug": "quan-ly-giao-duc",
+      "admission_code": "ED3",
+      "name": "Quản lý giáo dục",
+      "language": "Tiếng Việt",
+      "faculty": "Khoa Khoa học và Công nghệ giáo dục",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-ly-giao-duc"
+    },
+    {
+      "source_order": 11,
+      "slug": "tam-ly-hoc-cong-nghiep-va-to-chuc",
+      "admission_code": "ED5",
+      "name": "Tâm lý học công nghiệp và tổ chức",
+      "language": "Tiếng Việt",
+      "faculty": "Khoa Khoa học và Công nghệ giáo dục",
+      "admissions_year": 2026,
+      "admission_quota": 40,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tam-ly-hoc-cong-nghiep-va-to-chuc"
+    },
+    {
+      "source_order": 12,
+      "slug": "he-thong-dien-va-nang-luong-tai-tao-chuong-trinh-tien-tien",
+      "admission_code": "EE-E18",
+      "name": "Hệ thống điện và năng lượng tái tạo (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/he-thong-dien-va-nang-luong-tai-tao-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 13,
+      "slug": "ky-thuat-dieu-khien-tu-dong-hoa-chuong-trinh-tien-tien",
+      "admission_code": "EE-E8",
+      "name": "Kỹ thuật Điều khiển - Tự động hóa (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": 140,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-dieu-khien-tu-dong-hoa-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 14,
+      "slug": "tin-hoc-cong-nghiep-va-tu-dong-hoa-chuong-trinh-viet-phap-pfiev",
+      "admission_code": "EE-EP",
+      "name": "Tin học công nghiệp và Tự động hóa (Chương trình Việt-Pháp PFIEV)",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tin-hoc-cong-nghiep-va-tu-dong-hoa-chuong-trinh-viet-phap-pfiev"
+    },
+    {
+      "source_order": 15,
+      "slug": "ky-thuat-dien",
+      "admission_code": "EE1",
+      "name": "Kỹ thuật điện",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-dien"
+    },
+    {
+      "source_order": 16,
+      "slug": "ky-thuat-dieu-khien-tu-dong-hoa",
+      "admission_code": "EE2",
+      "name": "Kỹ thuật Điều khiển - Tự động hóa",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-dieu-khien-tu-dong-hoa"
+    },
+    {
+      "source_order": 17,
+      "slug": "phan-tich-kinh-doanh-chuong-trinh-tien-tien",
+      "admission_code": "EM-E13",
+      "name": "Phân tích kinh doanh (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Kinh tế",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/phan-tich-kinh-doanh-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 18,
+      "slug": "logistics-va-quan-ly-chuoi-cung-ung-chuong-trinh-tien-tien",
+      "admission_code": "EM-E14",
+      "name": "Logistics và Quản lý chuỗi cung ứng (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Kinh tế",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/logistics-va-quan-ly-chuoi-cung-ung-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 19,
+      "slug": "ke-toan-chuong-trinh-tien-tien",
+      "admission_code": "EM-E17",
+      "name": "Kế toán (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Kinh tế",
+      "admissions_year": 2026,
+      "admission_quota": 80,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ke-toan-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 20,
+      "slug": "quan-ly-nang-luong",
+      "admission_code": "EM1",
+      "name": "Quản lý năng lượng",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Kinh tế",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-ly-nang-luong"
+    },
+    {
+      "source_order": 21,
+      "slug": "quan-ly-cong-nghiep",
+      "admission_code": "EM2",
+      "name": "Quản lý công nghiệp",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Kinh tế",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-ly-cong-nghiep"
+    },
+    {
+      "source_order": 22,
+      "slug": "quan-tri-kinh-doanh",
+      "admission_code": "EM3",
+      "name": "Quản trị kinh doanh",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Kinh tế",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-tri-kinh-doanh"
+    },
+    {
+      "source_order": 23,
+      "slug": "tai-chinh-ngan-hang",
+      "admission_code": "EM5",
+      "name": "Tài chính - Ngân hàng",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Kinh tế",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tai-chinh-ngan-hang"
+    },
+    {
+      "source_order": 24,
+      "slug": "truyen-thong-so-va-ky-thuat-da-phuong-tien-chuong-trinh-tien-tien",
+      "admission_code": "ET-E16",
+      "name": "Truyền thông số và Kỹ thuật đa phương tiện (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/truyen-thong-so-va-ky-thuat-da-phuong-tien-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 25,
+      "slug": "ky-thuat-dien-tu-vien-thong-chuong-trinh-tien-tien",
+      "admission_code": "ET-E4",
+      "name": "Kỹ thuật Điện tử - Viễn thông (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-dien-tu-vien-thong-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 26,
+      "slug": "ky-thuat-y-sinh-chuong-trinh-tien-tien",
+      "admission_code": "ET-E5",
+      "name": "Kỹ thuật Y sinh (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-y-sinh-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 27,
+      "slug": "he-thong-nhung-thong-minh-va-iot-chuong-trinh-tien-tien",
+      "admission_code": "ET-E9",
+      "name": "Hệ thống nhúng thông minh và IoT (Chương trình tiên tiến)",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/he-thong-nhung-thong-minh-va-iot-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 28,
+      "slug": "dien-tu-vien-thong-dh-leibniz-hannover-duc",
+      "admission_code": "ET-LUH",
+      "name": "Điện tử-Viễn thông - ĐH Leibniz Hannover (Đức)",
+      "language": "Tiếng Đức tăng cường",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/dien-tu-vien-thong-dh-leibniz-hannover-duc"
+    },
+    {
+      "source_order": 29,
+      "slug": "dien-tu-va-vien-thong",
+      "admission_code": "ET1",
+      "name": "Điện tử và Viễn thông",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/dien-tu-va-vien-thong"
+    },
+    {
+      "source_order": 30,
+      "slug": "ky-thuat-y-sinh",
+      "admission_code": "ET2",
+      "name": "Kỹ thuật Y sinh",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Điện - Điện tử (SEEE)",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-y-sinh"
+    },
+    {
+      "source_order": 31,
+      "slug": "ky-thuat-moi-truong",
+      "admission_code": "EV1",
+      "name": "Kỹ thuật Môi trường",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-moi-truong"
+    },
+    {
+      "source_order": 32,
+      "slug": "quan-ly-tai-nguyen-va-moi-truong",
+      "admission_code": "EV2",
+      "name": "Quản lý Tài nguyên và Môi trường",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Hóa và Khoa học sự sống",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "B00",
+          "description": "Toán, Hoá, Sinh"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/quan-ly-tai-nguyen-va-moi-truong"
+    },
+    {
+      "source_order": 33,
+      "slug": "tieng-anh-khoa-hoc-ky-thuat-va-cong-nghe",
+      "admission_code": "FL1",
+      "name": "Tiếng Anh Khoa học Kỹ thuật và Công nghệ",
+      "language": "Tiếng Anh",
+      "faculty": "Khoa Ngoại Ngữ",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tieng-anh-khoa-hoc-ky-thuat-va-cong-nghe"
+    },
+    {
+      "source_order": 34,
+      "slug": "tieng-anh-chuyen-nghiep-quoc-te",
+      "admission_code": "FL2",
+      "name": "Tiếng Anh Chuyên nghiệp Quốc tế",
+      "language": "Tiếng Anh",
+      "faculty": "Khoa Ngoại Ngữ",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tieng-anh-chuyen-nghiep-quoc-te"
+    },
+    {
+      "source_order": 35,
+      "slug": "tieng-trung-khoa-hoc-va-cong-nghe",
+      "admission_code": "FL3",
+      "name": "Tiếng Trung Khoa học và Công nghệ",
+      "language": "",
+      "faculty": "Khoa Ngoại Ngữ",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        },
+        {
+          "code": "D04",
+          "description": "Toán, Ngữ văn, Tiếng Trung"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tieng-trung-khoa-hoc-va-cong-nghe"
+    },
+    {
+      "source_order": 36,
+      "slug": "tieng-han-khoa-hoc-va-cong-nghe",
+      "admission_code": "FL4",
+      "name": "Tiếng Hàn Khoa học và Công nghệ",
+      "language": "Tiếng Hàn",
+      "faculty": "Khoa Ngoại Ngữ",
+      "admissions_year": 2026,
+      "admission_quota": 40,
+      "admission_combinations": [
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        },
+        {
+          "code": "DD2",
+          "description": "Toán, Ngữ văn, Tiếng Hàn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/tieng-han-khoa-hoc-va-cong-nghe"
+    },
+    {
+      "source_order": 37,
+      "slug": "ky-thuat-nhiet",
+      "admission_code": "HE1",
+      "name": "Kỹ thuật Nhiệt",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-nhiet"
+    },
+    {
+      "source_order": 38,
+      "slug": "khoa-hoc-du-lieu-va-tri-tue-nhan-tao",
+      "admission_code": "IT-E10",
+      "name": "Khoa học Dữ liệu và Trí tuệ Nhân tạo",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Công nghệ thông tin và Truyền thông",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-du-lieu-va-tri-tue-nhan-tao"
+    },
+    {
+      "source_order": 39,
+      "slug": "an-toan-khong-gian-so-chuong-trinh-tien-tien",
+      "admission_code": "IT-E15",
+      "name": "An toàn không gian số (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Công nghệ thông tin và Truyền thông",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/an-toan-khong-gian-so-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 40,
+      "slug": "cong-nghe-thong-tin-viet-nhat-chuong-trinh-tien-tien",
+      "admission_code": "IT-E6",
+      "name": "Công nghệ thông tin (Việt-Nhật) (Chương trình tiên tiến)",
+      "language": "Tiếng Nhật tăng cường",
+      "faculty": "Trường Công nghệ thông tin và Truyền thông",
+      "admissions_year": 2026,
+      "admission_quota": 150,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-thong-tin-viet-nhat-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 41,
+      "slug": "cong-nghe-thong-tin-global-ict",
+      "admission_code": "IT-E7",
+      "name": "Công nghệ thông tin (Global ICT)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Công nghệ thông tin và Truyền thông",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-thong-tin-global-ict"
+    },
+    {
+      "source_order": 42,
+      "slug": "cong-nghe-thong-tin-viet-phap-chuong-trinh-tien-tien",
+      "admission_code": "IT-EP",
+      "name": "Công nghệ thông tin (Việt-Pháp) (Chương trình tiên tiến)",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Công nghệ thông tin và Truyền thông",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-thong-tin-viet-phap-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 43,
+      "slug": "cntt-khoa-hoc-may-tinh",
+      "admission_code": "IT1",
+      "name": "CNTT: Khoa học Máy tính",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Công nghệ thông tin và Truyền thông",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cntt-khoa-hoc-may-tinh"
+    },
+    {
+      "source_order": 44,
+      "slug": "cntt-ky-thuat-may-tinh",
+      "admission_code": "IT2",
+      "name": "CNTT: Kỹ thuật máy tính",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Công nghệ thông tin và Truyền thông",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cntt-ky-thuat-may-tinh"
+    },
+    {
+      "source_order": 45,
+      "slug": "ky-thuat-co-dien-tu-chuong-trinh-tien-tien-",
+      "admission_code": "ME-E1",
+      "name": "Kỹ thuật Cơ điện tử (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-co-dien-tu-chuong-trinh-tien-tien-"
+    },
+    {
+      "source_order": 46,
+      "slug": "co-khi-che-tao-may-dh-griffith-uc",
+      "admission_code": "ME-GU",
+      "name": "Cơ khí - Chế tạo máy - ĐH Griffith (Úc)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/co-khi-che-tao-may-dh-griffith-uc"
+    },
+    {
+      "source_order": 47,
+      "slug": "co-dien-tu-dh-leibniz-hannover-duc",
+      "admission_code": "ME-LUH",
+      "name": "Cơ điện tử - ĐH Leibniz Hannover (Đức)",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": 40,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/co-dien-tu-dh-leibniz-hannover-duc"
+    },
+    {
+      "source_order": 48,
+      "slug": "co-dien-tu-dh-nagaoka-nhat-ban",
+      "admission_code": "ME-NUT",
+      "name": "Cơ điện tử - ĐH Nagaoka (Nhật Bản)",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/co-dien-tu-dh-nagaoka-nhat-ban"
+    },
+    {
+      "source_order": 49,
+      "slug": "ky-thuat-co-dien-tu",
+      "admission_code": "ME1",
+      "name": "Kỹ thuật Cơ điện tử",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": 280,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-co-dien-tu"
+    },
+    {
+      "source_order": 50,
+      "slug": "ky-thuat-co-khi",
+      "admission_code": "ME2",
+      "name": "Kỹ thuật Cơ khí",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": 540,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-co-khi"
+    },
+    {
+      "source_order": 51,
+      "slug": "khoa-hoc-tinh-toan-cho-cac-he-thong-thong-minh-cttt",
+      "admission_code": "MI-E22",
+      "name": "Khoa học tính toán cho các hệ thống thông minh (CTTT)",
+      "language": "Tiếng Anh",
+      "faculty": "Khoa Toán - Tin",
+      "admissions_year": 2026,
+      "admission_quota": 40,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-tinh-toan-cho-cac-he-thong-thong-minh-cttt"
+    },
+    {
+      "source_order": 52,
+      "slug": "toan-tin",
+      "admission_code": "MI1",
+      "name": "Toán - Tin",
+      "language": "Tiếng Việt",
+      "faculty": "Khoa Toán - Tin",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/toan-tin"
+    },
+    {
+      "source_order": 53,
+      "slug": "he-thong-thong-tin-quan-ly",
+      "admission_code": "MI2",
+      "name": "Hệ thống thông tin quản lý",
+      "language": "Tiếng Việt",
+      "faculty": "Khoa Toán - Tin",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/he-thong-thong-tin-quan-ly"
+    },
+    {
+      "source_order": 54,
+      "slug": "khoa-hoc-va-ky-thuat-vat-lieu-chuong-trinh-tien-tien",
+      "admission_code": "MS-E3",
+      "name": "Khoa học và Kỹ thuật Vật liệu (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Vật liệu",
+      "admissions_year": 2026,
+      "admission_quota": 80,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-va-ky-thuat-vat-lieu-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 55,
+      "slug": "ky-thuat-vat-lieu",
+      "admission_code": "MS1",
+      "name": "Kỹ thuật Vật liệu",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Vật liệu",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-vat-lieu"
+    },
+    {
+      "source_order": 56,
+      "slug": "chuong-trinh-ky-thuat-vi-dien-tu-va-cong-nghe-nano",
+      "admission_code": "MS2",
+      "name": "Chương trình Kỹ thuật vi điện tử và công nghệ Nano",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Vật liệu",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/chuong-trinh-ky-thuat-vi-dien-tu-va-cong-nghe-nano"
+    },
+    {
+      "source_order": 57,
+      "slug": "cong-nghe-vat-lieu-polyme-va-compozit",
+      "admission_code": "MS3",
+      "name": "Công nghệ vật liệu polyme và compozit",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Vật liệu",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-vat-lieu-polyme-va-compozit"
+    },
+    {
+      "source_order": 58,
+      "slug": "ky-thuat-in",
+      "admission_code": "MS5",
+      "name": "Kỹ thuật in",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Vật liệu",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-in"
+    },
+    {
+      "source_order": 59,
+      "slug": "vat-ly-ky-thuat",
+      "admission_code": "PH1",
+      "name": "Vật lý kỹ thuật",
+      "language": "Tiếng Việt",
+      "faculty": "Khoa Vật lý Kỹ thuật",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/vat-ly-ky-thuat"
+    },
+    {
+      "source_order": 60,
+      "slug": "ky-thuat-hat-nhan",
+      "admission_code": "PH2",
+      "name": "Kỹ thuật hạt nhân",
+      "language": "Tiếng Việt",
+      "faculty": "Khoa Vật lý Kỹ thuật",
+      "admissions_year": 2026,
+      "admission_quota": 50,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hat-nhan"
+    },
+    {
+      "source_order": 61,
+      "slug": "vat-ly-y-khoa",
+      "admission_code": "PH3",
+      "name": "Vật lý Y khoa",
+      "language": "Tiếng Việt",
+      "faculty": "Khoa Vật lý Kỹ thuật",
+      "admissions_year": 2026,
+      "admission_quota": 50,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/vat-ly-y-khoa"
+    },
+    {
+      "source_order": 62,
+      "slug": "ky-thuat-o-to-chuong-trinh-tien-tien",
+      "admission_code": "TE-E2",
+      "name": "Kỹ thuật Ô tô (Chương trình tiên tiến)",
+      "language": "Tiếng Anh",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-o-to-chuong-trinh-tien-tien"
+    },
+    {
+      "source_order": 63,
+      "slug": "co-khi-hang-khong-chuong-trinh-viet-phap-pfiev",
+      "admission_code": "TE-EP",
+      "name": "Cơ khí hàng không (Chương trình Việt - Pháp PFIEV)",
+      "language": "Tiếng Pháp",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/co-khi-hang-khong-chuong-trinh-viet-phap-pfiev"
+    },
+    {
+      "source_order": 64,
+      "slug": "ky-thuat-o-to",
+      "admission_code": "TE1",
+      "name": "Kỹ thuật Ô tô",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-o-to"
+    },
+    {
+      "source_order": 65,
+      "slug": "ky-thuat-co-khi-dong-luc",
+      "admission_code": "TE2",
+      "name": "Kỹ thuật Cơ khí động lực",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-co-khi-dong-luc"
+    },
+    {
+      "source_order": 66,
+      "slug": "ky-thuat-hang-khong",
+      "admission_code": "TE3",
+      "name": "Kỹ thuật Hàng không",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Cơ khí",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hang-khong"
+    },
+    {
+      "source_order": 67,
+      "slug": "khoa-hoc-may-tinh-dh-troy-hoa-ky",
+      "admission_code": "TROY-IT",
+      "name": "Khoa học máy tính - ĐH Troy (Hoa Kỳ)",
+      "language": "Tiếng Anh",
+      "faculty": "Khoa Toán - Tin",
+      "admissions_year": 2026,
+      "admission_quota": 40,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D01",
+          "description": "Toán, Anh văn, Ngữ văn"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-may-tinh-dh-troy-hoa-ky"
+    },
+    {
+      "source_order": 68,
+      "slug": "cong-nghe-det-may",
+      "admission_code": "TX1",
+      "name": "Công nghệ Dệt May",
+      "language": "Tiếng Việt",
+      "faculty": "Trường Vật liệu",
+      "admissions_year": 2026,
+      "admission_quota": null,
+      "admission_combinations": [
+        {
+          "code": "K00",
+          "description": "Bài thi đánh giá tư duy"
+        },
+        {
+          "code": "A00",
+          "description": "Toán, Lý, Hoá"
+        },
+        {
+          "code": "A01",
+          "description": "Toán, Lý, Anh văn"
+        },
+        {
+          "code": "D07",
+          "description": "Toán, Anh văn, Hoá"
+        },
+        {
+          "code": "K01",
+          "description": "Toán, Lý/Hóa/Sinh/Tin, Ngữ văn"
+        }
+      ],
+      "detail_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-det-may"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "hust-curriculum-approvals.v1",
+  "approvals": [
+    {
+      "candidate_id": "ET1-2023",
+      "status": "approved",
+      "approved_by": "project-owner",
+      "approved_at": "2026-09-16T00:00:00+00:00",
+      "output_file": "data/processed/curricula/et1_2023.json",
+      "notes": [
+        "Trang chương trình ET1 công khai ghi phiên bản 2023 và tổng 132 TC.",
+        "79/79 học phần khớp snapshot danh mục CTT; 29 chuỗi điều kiện được giữ nguyên và parse theo slash=OR, comma=AND.",
+        "Công thức được suy ra từ các ngưỡng khối kiến thức và lựa chọn một trong năm mô-đun; riêng khối Thực tập & tốt nghiệp giữ ngưỡng công bố 8 TC."
+      ]
+    }
+  ]
+}

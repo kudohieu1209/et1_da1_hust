@@ -1,0 +1,58 @@
+# Operating System & Editor Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# Environment variables & secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.oxlint-cache
+
+# Databases & Vector DB
+*.sqlite3
+*.sqlite3-journal
+*.sqlite
+vector_db/
+
+# Large files (>100MB exceeds GitHub push limits)
+project/data/raw/So tay sinh vien_2026.pdf
+
+# Sensitive & Personal Data (bảng điểm cá nhân, thông tin sinh viên CTT)
+project/data/raw/et1_curiculum.html
+project/data/raw/et1_curiculum_files/
+project/data/processed/student_profile.json
+project/data/processed/students/
+project/data/processed/users/
