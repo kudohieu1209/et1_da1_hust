@@ -46,7 +46,7 @@ def import_student_transcript(payload: Dict[str, Any]):
     """Nhập bảng điểm cá nhân của sinh viên (từ text copy CTT hoặc JSON)"""
     try:
         return student_service.import_transcript(payload)
-    except CurriculumNotFoundError as exc:
+    except (CurriculumNotFoundError, ValueError) as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 @router.get("/tracks")

@@ -70,7 +70,10 @@ profile_long["info"] = {
     "student_name": "Lê Hoàng Long",
     "class_name": "Điện tử 03 - K67",
     "badge": "Cảnh báo Mức 2",
-    "persona": "Cảnh báo Mức 2 (CPA 1.38) • Khống chế max 14 TC • Bị chặn môn tiên quyết"
+    "persona": "Cảnh báo Mức 2 (CPA 1.38) • Khống chế max 14 TC • Bị chặn môn tiên quyết",
+    # Mức cảnh báo lấy từ CTT. Điều 19 QĐ 5445 xét theo TC không đạt từng học
+    # kỳ, dữ liệu demo không có học kỳ nên khai báo trực tiếp.
+    "warning_level": 2,
 }
 # Giảm điểm thành D, D+ và tạo môn nợ F
 long_passed = []
