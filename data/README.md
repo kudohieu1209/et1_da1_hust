@@ -15,16 +15,16 @@ chứa cấu trúc CTĐT, không chứa danh tính hay kết quả học tập.
 Sinh lại dataset và báo cáo:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/build_curriculum.py
-project/backend/venv/bin/python project/data/scripts/build_curriculum_document.py
-project/backend/venv/bin/python project/data/scripts/audit_curriculum_conflicts.py
+project/backend/.venv/bin/python project/data/scripts/build_curriculum.py
+project/backend/.venv/bin/python project/data/scripts/build_curriculum_document.py
+project/backend/.venv/bin/python project/data/scripts/audit_curriculum_conflicts.py
 ```
 
 Kiểm tra dataset:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/validate_curriculum.py
-project/backend/venv/bin/python -m unittest discover -s project/data/tests -v
+project/backend/.venv/bin/python project/data/scripts/validate_curriculum.py
+project/backend/.venv/bin/python -m unittest discover -s project/data/tests -v
 ```
 
 Nguồn đích:
@@ -47,20 +47,20 @@ Trang CTT hiện yêu cầu đăng nhập, vì vậy script mở một Chrome ri
 Cài Playwright một lần:
 
 ```bash
-project/backend/venv/bin/python -m pip install playwright
-project/backend/venv/bin/python -m playwright install chromium
+project/backend/.venv/bin/python -m pip install playwright
+project/backend/.venv/bin/python -m playwright install chromium
 ```
 
 Thu thập 117 mã môn trong dataset thử nghiệm hiện tại:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/scrape_ctt_courses.py
+project/backend/.venv/bin/python project/data/scripts/scrape_ctt_courses.py
 ```
 
 Muốn thử một mã trước (nên làm vậy khi kiểm tra quyền truy cập):
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/scrape_ctt_courses.py --code ET4230
+project/backend/.venv/bin/python project/data/scripts/scrape_ctt_courses.py --code ET4230
 ```
 
 Kết quả mặc định nằm ở `raw/ctt_courses_scraped.json`. Có thể dùng `--all`
@@ -71,7 +71,7 @@ nếu muốn giữ cấu hình mặc định).
 không cần Playwright:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/scrape_ctt_courses.py \
+project/backend/.venv/bin/python project/data/scripts/scrape_ctt_courses.py \
   --html raw/course_conditions.html.html --all \
   --output /tmp/ctt-page.json
 ```
@@ -86,7 +86,7 @@ tuyển sinh chính thức. Snapshot hiện tại có 68 chương trình, gồm 
 tên, ngôn ngữ, đơn vị đào tạo, chỉ tiêu và tổ hợp xét tuyển:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/scrape_hust_programs.py \
+project/backend/.venv/bin/python project/data/scripts/scrape_hust_programs.py \
   --output project/data/raw/hust_undergraduate_programs.json
 ```
 
@@ -98,7 +98,7 @@ JSON CTĐT được chuẩn hóa (hiện ET1 có phiên bản 2022 và 2023).
 Để rà các liên kết CTĐT mà từng trang ngành trỏ tới, chạy:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/discover_hust_curriculum_sources.py \
+project/backend/.venv/bin/python project/data/scripts/discover_hust_curriculum_sources.py \
   --insecure --output project/data/raw/hust_program_curriculum_sources.json
 ```
 
@@ -113,7 +113,7 @@ Một số trang khoa chỉ là trang giới thiệu và gắn PDF/XLSX ở bên
 tải thêm tối đa 5 tệp đính kèm có đuôi tài liệu cho mỗi nguồn HTML:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/download_hust_curriculum_sources.py \
+project/backend/.venv/bin/python project/data/scripts/download_hust_curriculum_sources.py \
   --insecure --follow-attachments \
   --output project/data/raw/hust_program_curriculum_downloads.json \
   --output-dir project/data/raw/program_sources
@@ -122,14 +122,14 @@ project/backend/venv/bin/python project/data/scripts/download_hust_curriculum_so
 PDF được đọc bảo thủ ở riêng một bước:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/extract_hust_curriculum_pdfs.py \
+project/backend/.venv/bin/python project/data/scripts/extract_hust_curriculum_pdfs.py \
   --output project/data/raw/hust_curriculum_pdf_extractions.json
 ```
 
 Với các trang HTML dùng bảng `hp-table`, có thể trích xuất candidate bằng:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/extract_hust_curriculum_tables.py \
+project/backend/.venv/bin/python project/data/scripts/extract_hust_curriculum_tables.py \
   --output project/data/raw/hust_curriculum_extractions.json
 ```
 
@@ -143,7 +143,7 @@ liệu thô để đối chiếu vì thiếu phiên bản CTĐT, công thức t�
 động (không kích hoạt luật), chạy:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/build_hust_curriculum_candidates.py \
+project/backend/.venv/bin/python project/data/scripts/build_hust_curriculum_candidates.py \
   --output project/data/raw/hust_curriculum_candidates.json
 ```
 
@@ -159,7 +159,7 @@ Bước phê duyệt có kiểm soát cho candidate đã rà xong được ghi t
 được hỗ trợ bằng lệnh:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/promote_hust_curriculum_candidate.py \
+project/backend/.venv/bin/python project/data/scripts/promote_hust_curriculum_candidate.py \
   --candidate ET1-2023 \
   --output project/data/processed/curricula/et1_2023.json
 ```

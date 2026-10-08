@@ -4,11 +4,8 @@ from google import genai
 from google.genai import types
 from app.core.config import GEMINI_API_KEY, GEMINI_MODEL, GEMINI_FALLBACK_MODEL
 
-HUST_SYSTEM_PROMPT = """Bạn là Trợ lý Cố vấn Học tập & Đào tạo thông minh của Đại học Bách Khoa Hà Nội (HUST Academic Advisor AI).
-Nhiệm vụ của bạn là tư vấn chính xác, tận tâm và chuyên nghiệp cho sinh viên Bách Khoa trên toàn trường về:
-1. Quy chế đào tạo tín chỉ HUST: Quy định đăng ký tín chỉ (tối thiểu 12 TC, tối đa 24 TC, cảnh cáo mức 2 tối đa 14 TC), rút học phần (điểm W), cách tính điểm GPA/CPA thang 4, chiến lược học cải thiện điểm, các mức cảnh cáo học tập (mức 1, mức 2, buộc thôi học) và điều kiện công nhận tốt nghiệp.
-2. Sổ tay sinh viên & Chính sách HUST: Học bổng khuyến khích học tập (Xuất sắc 150%, Giỏi 120%, Khá 100% học phí; điều kiện không môn F, tối thiểu 14 TC, ĐRL từ Khá), chuẩn đầu ra ngoại ngữ TOEIC/IELTS theo từng khóa, điểm rèn luyện, thủ tục hành chính một cửa tại Phòng 101 C1.
-3. Chương trình đào tạo và logic môn học của chương trình đang được hỗ trợ. Hiện hệ thống có dữ liệu ET1–2022 và ET1–2023; khi câu hỏi thuộc ngành hoặc phiên bản chưa có dữ liệu, phải nói rõ giới hạn này thay vì suy đoán.
+HUST_SYSTEM_PROMPT = """Bạn là Trợ lý Cố vấn Học tập & Đào tạo của Đại học Bách khoa Hà Nội.
+Nhiệm vụ của bạn là giải thích quy chế, chính sách sinh viên và chương trình đào tạo dựa trên dữ liệu được cung cấp. Hiện hệ thống có dữ liệu cấu trúc ET1–2022 và ET1–2023; khi câu hỏi thuộc ngành hoặc phiên bản chưa có dữ liệu, phải nói rõ giới hạn này thay vì suy đoán.
 
 NGUYÊN TẮC TRẢ LỜI CỐT LÕI:
 - BẮT BUỘC dựa vào "TÀI LIỆU QUY CHẾ ĐƯỢC TRÍCH XUẤT (RAG CONTEXT)" và "DỮ LIỆU LOGIC TÍNH TOÁN CỦA HỆ THỐNG" ở bên dưới.
@@ -118,8 +115,9 @@ class GeminiService:
 
         full_prompt = "\n".join(prompt_parts)
 
-        # Gọi Gemini API
-        for model in [self.model_name, self.fallback_model, "gemini-1.5-flash"]:
+        # Chỉ gọi các model được cấu hình; không ngầm thử model cũ.
+        models = list(dict.fromkeys(model for model in [self.model_name, self.fallback_model] if model))
+        for model in models:
             try:
                 response = self.client.models.generate_content(
                     model=model,
@@ -198,7 +196,7 @@ class GeminiService:
 
         question = (user_query or "").lower()
         is_curriculum_question = any(term in question for term in (
-            "ctđt", "chương trình đào tạo", "bao nhiêu tín chỉ", "mô-đun",
+            "ctđt", "chương trình đào tạo", "mô-đun",
             "mô đun", "132", "126", "cấu trúc chương trình"
         ))
 
@@ -237,9 +235,21 @@ class GeminiService:
                 "Lưu ý: Ngoại ngữ/GDTC/GDQP được theo dõi ngoài tổng tín chỉ tốt nghiệp của phiên bản đang hoạt động.",
             ])
         else:
+            # Trích các đoạn đã được retriever xếp hạng. Đây là chế độ
+            # không có LLM: ưu tiên trung thực và truy vết nguồn hơn diễn giải.
+            reply_lines.append("Mình tra được các nội dung liên quan trong nguồn HUST đã kiểm chứng:")
+            for chunk in valid_chunks[:3]:
+                meta = chunk.get("metadata", {})
+                source = clean_display_source(meta.get("source", "Tài liệu HUST"))
+                raw = chunk.get("text", "").strip()
+                raw = "\n".join(line for line in raw.splitlines() if not line.strip().startswith("#"))
+                excerpt = raw[:900].strip()
+                if len(raw) > 900:
+                    excerpt += "…"
+                reply_lines.extend(["", f"**{source}:**", excerpt])
             reply_lines.extend([
-                "Mình tìm thấy tài liệu CTĐT, nhưng nguồn hiện có chưa đủ để kết luận chính xác cho câu hỏi này.",
-                "Bạn có thể hỏi về tổng tín chỉ, mô-đun, hoặc mã môn/điều kiện đăng ký cụ thể.",
+                "",
+                "*Lưu ý: đây là chế độ trích xuất tại chỗ khi chưa cấu hình Gemini; hãy đối chiếu PDF gốc nếu dùng cho quyết định học vụ quan trọng.*",
             ])
 
         return {

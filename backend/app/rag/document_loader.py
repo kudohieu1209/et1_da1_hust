@@ -1,5 +1,6 @@
 import os
 import hashlib
+import re
 from pathlib import Path
 from typing import List, Dict, Any
 
@@ -23,6 +24,9 @@ def format_document_display_name(filename: str) -> str:
     name_map = {
         "ctt_et1_2022_verified.md": "CTĐT ET1–2022 (CTT HUST, dữ liệu đã kiểm chứng)",
         "ctt_et1_2023_verified.md": "CTĐT ET1–2023 (HUST, dữ liệu đã chuẩn hóa)",
+        "quy_che_dao_tao_2025_verified.md": "Quy chế đào tạo HUST 2025 (QĐ 5445/QĐ-ĐHBK)",
+        "so_tay_sinh_vien_2026_verified.md": "Sổ tay sinh viên HUST 2026",
+        "hoc_phi_2025_2026_verified.md": "Quyết định học phí HUST 2025-2026",
         "quy_che_dao_tao_dai_hoc_hust.md": "Quy chế Đào tạo Đại học Chính quy (HUST)",
         "chuong_trinh_dao_tao_et1.md": "Chương trình đào tạo Cử nhân Kỹ thuật Điện tử - Viễn thông",
         "de_cuong_chi_tiet_mon_hoc_et1.md": "Đề cương chi tiết học phần chuyên ngành (ET1)",
@@ -61,6 +65,22 @@ class DocumentLoader:
     def _read_text_file(self, file_path: Path) -> str:
         with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
             return f.read()
+
+    @staticmethod
+    def _parse_front_matter(text: str) -> tuple[Dict[str, str], str]:
+        """Read the small YAML-like metadata block used by verified documents."""
+        metadata: Dict[str, str] = {}
+        if not text.startswith("---\n"):
+            return metadata, text
+        end = text.find("\n---\n", 4)
+        if end == -1:
+            return metadata, text
+        for line in text[4:end].splitlines():
+            if ":" not in line:
+                continue
+            key, value = line.split(":", 1)
+            metadata[key.strip()] = value.strip().strip('"').strip("'")
+        return metadata, text[end + 5:].lstrip()
 
     def _read_pdf_file(self, file_path: Path) -> str:
         try:
@@ -151,13 +171,13 @@ class DocumentLoader:
                 continue
 
             file_hash = self.calculate_file_hash(file_path)
-            chunks = self._split_text_into_chunks(raw_text)
+            document_metadata, content_text = self._parse_front_matter(raw_text)
+            chunks = self._split_text_into_chunks(content_text)
 
             # Lấy tiêu đề từ dòng đầu tiên nếu là markdown (# Tiêu đề)
-            first_line = raw_text.strip().split("\n")[0].replace("#", "").strip()
+            first_line = content_text.strip().split("\n")[0].replace("#", "").strip()
             title = first_line if first_line else format_document_display_name(file_path.name)
 
-            import re
             valid_idx = 0
             for chunk_text in chunks:
                 cleaned_chunk = chunk_text.strip()
@@ -184,7 +204,10 @@ class DocumentLoader:
                         "chunk_index": valid_idx,
                         "total_chunks": len(chunks),
                         "file_hash": file_hash,
-                        "file_type": ext.replace(".", "")
+                        "file_type": ext.replace(".", ""),
+                        "document_type": document_metadata.get("document_type", "general"),
+                        "effective_period": document_metadata.get("effective_period", ""),
+                        "source_url": document_metadata.get("source_url", ""),
                     }
                 )
                 all_chunks.append(chunk)
