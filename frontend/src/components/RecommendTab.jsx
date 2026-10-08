@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Cpu, Wifi, Radio, HeartPulse, CheckCircle, Sparkles, Sliders } from 'lucide-react';
+import { apiUrl } from '../api';
 
 const TRACK_VISUALS = [
   { icon: Radio, color: '#38bdf8', bg: 'rgba(56, 189, 248, 0.08)' },
@@ -19,7 +20,7 @@ export default function RecommendTab() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/student/tracks')
+    fetch(apiUrl('/api/student/tracks'))
       .then(res => res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`)))
       .then(data => {
         const loaded = (data.tracks || []).map((track, index) => ({
@@ -29,17 +30,17 @@ export default function RecommendTab() {
           ...TRACK_VISUALS[index % TRACK_VISUALS.length]
         }));
         setTracks(loaded);
-        if (loaded.length && !loaded.some(track => track.id === selectedTrack)) {
-          setSelectedTrack(loaded[0].id);
+        if (loaded.length) {
+          setSelectedTrack(current => loaded.some(track => track.id === current) ? current : loaded[0].id);
         }
       })
       .catch(err => console.error('Lỗi tải danh sách mô-đun:', err));
   }, []);
 
-  const fetchRecommendation = async () => {
+  const fetchRecommendation = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/student/recommend', {
+      const res = await fetch(apiUrl('/api/student/recommend'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -55,11 +56,11 @@ export default function RecommendTab() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedTrack, maxCredits, isSummer]);
 
   useEffect(() => {
     fetchRecommendation();
-  }, [selectedTrack, maxCredits, isSummer]);
+  }, [fetchRecommendation]);
 
   return (
     <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>

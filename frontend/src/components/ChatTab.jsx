@@ -2,31 +2,20 @@ import React, { useState, useRef, useEffect } from 'react';
 import { 
   Send, 
   Sparkles, 
-  Loader2, 
   Copy, 
   Check, 
   Plus, 
-  Paperclip, 
-  Network, 
-  Cpu, 
   BookOpen,
-  Award,
-  Building,
-  Globe,
   Mic,
   MicOff,
   ThumbsUp,
   ThumbsDown,
   RotateCcw
 } from 'lucide-react';
+import { API_BASE_URL, apiUrl } from '../api';
 
 export default function ChatTab({ 
-  onSelectCourse, 
-  onNavigateTab, 
-  studentProfile,
   onOpenImport,
-  onOpenProfileModal,
-  onOpenAuthModal,
   studentId,
   conversationId,
   onConversationCreated,
@@ -53,7 +42,7 @@ export default function ChatTab({
     }
 
     setLoading(true);
-    fetch(`http://localhost:8000/api/conversations/${conversationId}`, {
+    fetch(apiUrl(`/api/conversations/${conversationId}`), {
       headers: studentId ? { 'X-Student-ID': studentId } : {}
     })
       .then(res => res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`)))
@@ -154,7 +143,7 @@ export default function ChatTab({
 
     try {
       const historyToSend = [...messagesRef.current, userMsg].slice(-6);
-      const res = await fetch('http://localhost:8000/api/chat', {
+      const res = await fetch(apiUrl('/api/chat'), {
         method: 'POST',
         // The demo auth layer identifies the active profile by MSSV. This
         // header also scopes conversation history on the backend.
@@ -196,7 +185,7 @@ export default function ChatTab({
         ...prev,
         {
           role: 'assistant',
-          content: "❌ Không thể kết nối tới Backend server (http://localhost:8000). Bạn vui lòng kiểm tra xem server FastAPI đang chạy nhé!",
+          content: `❌ Không thể kết nối tới Backend server (${API_BASE_URL}). Bạn vui lòng kiểm tra xem server FastAPI đang chạy nhé!`,
           suggested_actions: ["Thử lại", "Kiểm tra kết nối"]
         }
       ]);
@@ -752,7 +741,7 @@ export default function ChatTab({
 
                   <button
                     onClick={() => {
-                      const prevUserMsg = [...messagesRef.current.slice(0, index)].reverse().find(m => m.role === 'user');
+                      const prevUserMsg = messagesRef.current.slice(0, index).reverse().find(m => m.role === 'user');
                       if (prevUserMsg) handleSend(prevUserMsg.content);
                     }}
                     title={language === 'vi' ? 'Tạo lại câu trả lời' : 'Regenerate'}

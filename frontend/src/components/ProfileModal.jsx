@@ -5,15 +5,9 @@ import {
   UserCheck, 
   UploadCloud, 
   CheckCircle2, 
-  AlertTriangle, 
-  Sparkles, 
-  FileText,
-  Loader2,
-  GraduationCap,
-  ShieldAlert,
-  Award,
-  BookOpen
+  Loader2
 } from 'lucide-react';
+import { apiUrl } from '../api';
 
 export default function ProfileModal({ 
   isOpen, 
@@ -52,7 +46,7 @@ export default function ProfileModal({
   const fetchProfiles = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/student/profiles');
+      const res = await fetch(apiUrl('/api/student/profiles'));
       if (res.ok) {
         const data = await res.json();
         setProfiles(data);
@@ -67,7 +61,7 @@ export default function ProfileModal({
   const handleSwitch = async (studentId) => {
     setSwitchingId(studentId);
     try {
-      const res = await fetch('http://localhost:8000/api/student/switch', {
+      const res = await fetch(apiUrl('/api/student/switch'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ student_id: studentId })
@@ -119,7 +113,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
     setImporting(true);
     setImportMessage(null);
     try {
-      const res = await fetch('http://localhost:8000/api/student/import', {
+      const res = await fetch(apiUrl('/api/student/import'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

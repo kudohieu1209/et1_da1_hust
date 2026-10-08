@@ -2,10 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Menu, 
   Sparkles, 
-  ChevronLeft, 
-  Plus, 
-  Settings, 
-  ChevronDown,
   MoreHorizontal,
   Pin,
   Archive,
@@ -20,7 +16,7 @@ import AuditTab from './components/AuditTab';
 import RecommendTab from './components/RecommendTab';
 import SettingsModal from './components/SettingsModal';
 import ProfileModal from './components/ProfileModal';
-import AuthModal from './components/AuthModal';
+import { apiUrl } from './api';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('chat');
@@ -36,7 +32,6 @@ export default function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [profileModalTab, setProfileModalTab] = useState('demo');
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   // ChatGPT 3-Dots Menu & Pin / Archive States
   const [isChatMenuOpen, setIsChatMenuOpen] = useState(false);
@@ -85,8 +80,8 @@ export default function App() {
   const fetchInitialData = async () => {
     try {
       const [resProfile, resAudit] = await Promise.all([
-        fetch('http://localhost:8000/api/student/profile'),
-        fetch('http://localhost:8000/api/student/audit')
+        fetch(apiUrl('/api/student/profile')),
+        fetch(apiUrl('/api/student/audit'))
       ]);
 
       if (resProfile.ok) {
@@ -107,7 +102,7 @@ export default function App() {
   const refreshConversations = async (studentId = studentProfile?.info?.student_id) => {
     if (!studentId) return;
     try {
-      const res = await fetch('http://localhost:8000/api/conversations', {
+      const res = await fetch(apiUrl('/api/conversations'), {
         headers: { 'X-Student-ID': studentId }
       });
       if (res.ok) {
@@ -163,21 +158,21 @@ export default function App() {
     try {
       if (action === 'pin') {
         const nextPinned = !isChatPinned;
-        const res = await fetch(`http://localhost:8000/api/conversations/${activeConversationId}`, {
+        const res = await fetch(apiUrl(`/api/conversations/${activeConversationId}`), {
           method: 'PATCH', headers, body: JSON.stringify({ is_pinned: nextPinned })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         setIsChatPinned(nextPinned);
         showToast(nextPinned ? (language === 'vi' ? 'Đã ghim đoạn chat' : 'Chat pinned') : (language === 'vi' ? 'Đã bỏ ghim đoạn chat' : 'Chat unpinned'));
       } else if (action === 'archive') {
-        const res = await fetch(`http://localhost:8000/api/conversations/${activeConversationId}`, {
+        const res = await fetch(apiUrl(`/api/conversations/${activeConversationId}`), {
           method: 'PATCH', headers, body: JSON.stringify({ is_archived: true })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         handleNewChat();
         showToast(language === 'vi' ? 'Đã lưu trữ đoạn chat' : 'Chat archived');
       } else if (action === 'delete') {
-        const res = await fetch(`http://localhost:8000/api/conversations/${activeConversationId}`, {
+        const res = await fetch(apiUrl(`/api/conversations/${activeConversationId}`), {
           method: 'DELETE', headers
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -201,15 +196,6 @@ export default function App() {
     setIsProfileModalOpen(true);
   };
 
-  const handleAuthSuccess = async (user) => {
-    await fetchInitialData();
-    // If the newly registered or logged in user has 0 passed courses, automatically prompt transcript import
-    if (!user.passed_courses || user.passed_courses.length === 0) {
-      setProfileModalTab('import');
-      setIsProfileModalOpen(true);
-    }
-  };
-
   return (
     <div style={{ height: '100vh', display: 'flex', overflow: 'hidden', background: 'var(--bg-dark)' }}>
       {/* 1. ChatGPT-style Collapsible Left Sidebar */}
@@ -226,7 +212,7 @@ export default function App() {
         onSelectConversation={handleSelectConversation}
         onOpenSettings={() => setIsSettingsOpen(true)}
         onOpenProfileModal={handleOpenProfileModal}
-        onOpenAuthModal={() => setIsAuthModalOpen(true)}
+        onOpenAuthModal={handleOpenProfileModal}
         language={language}
       />
 
@@ -513,7 +499,7 @@ export default function App() {
                 onConversationUpdated={() => refreshConversations()}
                 onOpenImport={handleOpenImport}
                 onOpenProfileModal={handleOpenProfileModal}
-                onOpenAuthModal={() => setIsAuthModalOpen(true)}
+                onOpenAuthModal={handleOpenProfileModal}
                 language={language}
               />
             )}
@@ -532,7 +518,7 @@ export default function App() {
                     onNavigateTab={setActiveTab}
                     onOpenImport={handleOpenImport}
                     onOpenProfileModal={handleOpenProfileModal}
-                    onOpenAuthModal={() => setIsAuthModalOpen(true)}
+                    onOpenAuthModal={handleOpenProfileModal}
                   />
                 )}
 
@@ -558,7 +544,7 @@ export default function App() {
         auditData={auditData}
         setAuditData={setAuditData}
         onResetChat={handleNewChat}
-        onOpenAuthModal={() => setIsAuthModalOpen(true)}
+        onOpenAuthModal={handleOpenProfileModal}
         onShowToast={showToast}
       />
 
@@ -573,14 +559,6 @@ export default function App() {
           if (data.profile) setStudentProfile(data.profile);
           if (data.audit) setAuditData(data.audit);
         }}
-        language={language}
-      />
-
-      {/* 5. Student Login & Register Modal */}
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-        onAuthSuccess={handleAuthSuccess}
         language={language}
       />
     </div>

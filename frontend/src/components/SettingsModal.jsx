@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   X, Moon, Sun, Globe, User, BookOpen, Database, Settings as SettingsIcon, 
-  Check, RotateCcw, ShieldCheck, Sparkles, RefreshCw, Key, ExternalLink, 
-  LogIn, Camera, Upload, Trash2, Save, UserCheck, CheckCircle2 
+  Check, RotateCcw, ShieldCheck, Sparkles, RefreshCw,
+  LogIn, Camera, Upload, Trash2, Save
 } from 'lucide-react';
+import { apiUrl } from '../api';
 
 export default function SettingsModal({ 
   isOpen, 
@@ -21,7 +22,6 @@ export default function SettingsModal({
   onShowToast
 }) {
   const [activeTab, setActiveTab] = useState('general');
-  const [ragStatus, setRagStatus] = useState(null);
   const [isSyncing, setIsSyncing] = useState(false);
 
   const fileInputRef = useRef(null);
@@ -93,7 +93,7 @@ export default function SettingsModal({
         avatar_emoji: formAvatarEmoji,
         avatar_gradient: formAvatarGradient
       };
-      const res = await fetch('http://localhost:8000/api/student/profile/update', {
+      const res = await fetch(apiUrl('/api/student/profile/update'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -130,11 +130,8 @@ export default function SettingsModal({
 
   const fetchRagStatus = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/rag/status');
-      if (res.ok) {
-        const data = await res.json();
-        setRagStatus(data);
-      }
+      const res = await fetch(apiUrl('/api/rag/status'));
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
     } catch (e) {
       console.warn('Lỗi lấy RAG status:', e);
     }
@@ -143,7 +140,7 @@ export default function SettingsModal({
   const handleSyncKnowledge = async () => {
     setIsSyncing(true);
     try {
-      const res = await fetch('http://localhost:8000/api/rag/sync', {
+      const res = await fetch(apiUrl('/api/rag/sync'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ force: true })
@@ -272,7 +269,7 @@ export default function SettingsModal({
               }}
             >
               <User size={16} />
-              <span>{language === 'vi' ? 'Tài khoản & Hồ sơ' : 'Account & Profile'}</span>
+              <span>{language === 'vi' ? 'Hồ sơ demo' : 'Demo Profile'}</span>
             </button>
 
             <button
@@ -440,7 +437,7 @@ export default function SettingsModal({
                 {/* Account & Login Section */}
                 <div>
                   <label style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--text-primary)', display: 'block', marginBottom: '8px' }}>
-                    {language === 'vi' ? 'Tài khoản người dùng' : 'User Account'}
+                    {language === 'vi' ? 'Hồ sơ đang chọn' : 'Selected Profile'}
                   </label>
                   <div style={{ 
                     display: 'flex', 
@@ -499,7 +496,7 @@ export default function SettingsModal({
                       onMouseLeave={e => e.currentTarget.style.background = 'rgba(200, 16, 46, 0.08)'}
                     >
                       <LogIn size={15} />
-                      <span>{language === 'vi' ? 'Đăng nhập / Đổi tài khoản' : 'Login / Switch Account'}</span>
+                      <span>{language === 'vi' ? 'Chọn hồ sơ demo' : 'Choose demo profile'}</span>
                     </button>
                   </div>
                 </div>
@@ -879,7 +876,7 @@ export default function SettingsModal({
                     onMouseLeave={e => e.currentTarget.style.background = 'rgba(200, 16, 46, 0.08)'}
                   >
                     <LogIn size={15} />
-                    <span>{language === 'vi' ? 'Đổi tài khoản' : 'Switch Account'}</span>
+                    <span>{language === 'vi' ? 'Đổi hồ sơ demo' : 'Switch Demo Profile'}</span>
                   </button>
                 </div>
               </form>

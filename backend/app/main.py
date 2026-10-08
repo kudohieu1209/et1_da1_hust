@@ -7,7 +7,6 @@ from app.api.router_courses import router as courses_router
 from app.api.router_student import router as student_router
 from app.api.router_chat import router as chat_router
 from app.api.router_rag import router as rag_router
-from app.api.router_auth import router as auth_router
 from app.api.router_conversations import router as conversations_router
 from app.api.router_programs import router as programs_router
 from app.rag.rag_engine import rag_engine
@@ -47,7 +46,6 @@ app.include_router(courses_router)
 app.include_router(student_router)
 app.include_router(chat_router)
 app.include_router(rag_router)
-app.include_router(auth_router)
 app.include_router(conversations_router)
 app.include_router(programs_router)
 

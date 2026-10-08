@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Award,
   CheckCircle2,
   AlertTriangle,
   GraduationCap,
@@ -9,17 +8,14 @@ import {
   Clock,
   Sparkles,
   Layers,
-  Calendar,
-  ArrowDown
+  Calendar
 } from 'lucide-react';
 
 export default function AuditTab({ 
   auditData, 
   onNavigateTab, 
   onOpenImport, 
-  onOpenProfileModal, 
-  onOpenAuthModal, 
-  language = 'vi' 
+  onOpenProfileModal
 }) {
   if (!auditData) {
     return (
@@ -43,13 +39,12 @@ export default function AuditTab({
     passed_count = 0,
     failed_count = 0,
     academic_classification = { rank: 'Trung bình', color: '#f59e0b', desc: '2.00 ≤ CPA < 2.50' },
-    target_kha_advice = { gpa_needed_remaining: 3.71, remaining_credits: 21.0, is_achievable: true },
+    target_kha_advice = null,
     unlearned_compulsory_courses = [],
     unlearned_elective_courses = [],
     graduation_group_audit = [],
     non_credit_requirements = [],
-    graduation_ready = false,
-    pending_requirements = []
+    graduation_ready = false
   } = auditData;
 
   const remaining_credits = Math.max(0, total_credits_required - total_credits_accumulated);
@@ -57,6 +52,10 @@ export default function AuditTab({
   const elective_credits_missing = Math.max(0, remaining_credits - compulsory_credits_missing);
   const moduleRequirement = graduation_group_audit.find(item => item.type === 'ONE_OF_GROUPS');
   const moduleCount = moduleRequirement?.options?.length || 0;
+  const maxCreditsPerSemester = Number(credit_limit.max || 24);
+  const theoreticalMinSemesters = remaining_credits > 0
+    ? Math.ceil(remaining_credits / Math.max(1, maxCreditsPerSemester))
+    : 0;
 
   // SVG Circular progress
   const radius = 38;
@@ -399,7 +398,7 @@ export default function AuditTab({
             fontWeight: '600'
           }}>
             <Calendar size={14} />
-            <span>Dự kiến hoàn thành sau 2 học kỳ nữa</span>
+            <span>Ít nhất {theoreticalMinSemesters} học kỳ theo giới hạn tín chỉ</span>
           </div>
         </div>
       </div>
@@ -490,7 +489,7 @@ export default function AuditTab({
         gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
         gap: '20px'
       }}>
-        {/* Left Column: Breakdown of Remaining 21 Credits */}
+        {/* Left Column: Breakdown of remaining credits */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           {/* Section 4A: Missing Compulsory Courses */}
           <div className="glass-panel" style={{ padding: '22px' }}>
@@ -531,10 +530,8 @@ export default function AuditTab({
                 }}>
                   🎉 Chúc mừng! Bạn đã hoàn thành 100% các học phần bắt buộc trong CTĐT!
                 </div>
-              ) : (
-                <>
-                  {/* Course 1: ET3290 */}
-                  <div style={{
+              ) : unlearned_compulsory_courses.map((course) => (
+                  <div key={course.code} style={{
                     padding: '14px 16px',
                     background: 'var(--bg-card-hover)',
                     border: '1px solid var(--border-subtle)',
@@ -554,76 +551,24 @@ export default function AuditTab({
                           borderRadius: '4px',
                           background: 'rgba(2, 132, 199, 0.1)'
                         }}>
-                          ET3290
+                          {course.code}
                         </span>
                         <strong style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>
-                          Đồ án thiết kế I
+                          {course.name || 'Chưa có tên học phần'}
                         </strong>
-                        <span className="badge badge-success" style={{ fontSize: '0.68rem', padding: '2px 8px' }}>
-                          Học trước (Kỳ 7)
-                        </span>
+                        {course.suggested_semester && (
+                          <span className="badge badge-indigo" style={{ fontSize: '0.68rem', padding: '2px 8px' }}>
+                            Kỳ gợi ý {course.suggested_semester}
+                          </span>
+                        )}
                       </div>
                       <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '6px' }}>
-                        Khối kiến thức: Cơ sở và cốt lõi ngành • Môn điều kiện tiên quyết cho ĐATK II
+                        {course.category || 'Học phần bắt buộc trong công thức tốt nghiệp'}
                       </div>
                     </div>
-                    <span className="badge badge-indigo" style={{ fontWeight: '700' }}>2 TC</span>
+                    <span className="badge badge-indigo" style={{ fontWeight: '700' }}>{course.credits || 0} TC</span>
                   </div>
-
-                  {/* Prerequisite Flow Indicator */}
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    padding: '8px 14px',
-                    borderRadius: '8px',
-                    background: 'rgba(245, 158, 11, 0.08)',
-                    border: '1px dashed rgba(245, 158, 11, 0.35)',
-                    fontSize: '0.76rem',
-                    color: 'var(--warning)'
-                  }}>
-                    <ArrowDown size={14} style={{ flexShrink: 0 }} />
-                    <span><strong>Lưu ý lộ trình:</strong> ET4010 yêu cầu tiên quyết ET3290 (không thể đăng ký song hành trong cùng 1 kỳ).</span>
-                  </div>
-
-                  {/* Course 2: ET4010 */}
-                  <div style={{
-                    padding: '14px 16px',
-                    background: 'var(--bg-card-hover)',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-md)',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center'
-                  }}>
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                        <span style={{
-                          fontWeight: '800',
-                          color: '#0284c7',
-                          fontFamily: 'monospace',
-                          fontSize: '1rem',
-                          padding: '2px 6px',
-                          borderRadius: '4px',
-                          background: 'rgba(2, 132, 199, 0.1)'
-                        }}>
-                          ET4010
-                        </span>
-                        <strong style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>
-                          Đồ án thiết kế II
-                        </strong>
-                        <span className="badge badge-warning" style={{ fontSize: '0.68rem', padding: '2px 8px' }}>
-                          Kỳ 8 (Sau khi qua ĐATK I)
-                        </span>
-                      </div>
-                      <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '6px' }}>
-                        Khối kiến thức: Cơ sở và cốt lõi ngành • Yêu cầu hoàn thành trước khi xét tốt nghiệp
-                      </div>
-                    </div>
-                    <span className="badge badge-indigo" style={{ fontWeight: '700' }}>2 TC</span>
-                  </div>
-                </>
-              )}
+              ))}
             </div>
           </div>
 
@@ -782,13 +727,13 @@ export default function AuditTab({
                       {unlearned_compulsory_courses.length === 0 ? (
                         'Đã hoàn thành 100% học phần bắt buộc.'
                       ) : (
-                        <span>Còn <strong style={{ color: 'var(--text-primary)' }}>{unlearned_compulsory_courses.length} môn bắt buộc</strong> (Đồ án thiết kế I & II).</span>
+                        <span>Còn <strong style={{ color: 'var(--text-primary)' }}>{unlearned_compulsory_courses.length} môn bắt buộc</strong> ({compulsory_credits_missing.toFixed(1)} TC).</span>
                       )}
                     </div>
                   </div>
                 </div>
                 <span className={unlearned_compulsory_courses.length === 0 ? "badge badge-success" : "badge badge-warning"} style={{ fontSize: '0.7rem' }}>
-                  {unlearned_compulsory_courses.length === 0 ? "Đạt" : "Còn 2 môn"}
+                  {unlearned_compulsory_courses.length === 0 ? "Đạt" : `Còn ${unlearned_compulsory_courses.length} môn`}
                 </span>
               </div>
 
@@ -874,7 +819,7 @@ export default function AuditTab({
                 Dự báo Kế hoạch Tốt nghiệp
               </div>
               <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '2px', lineHeight: '1.4' }}>
-                Với 21 TC còn lại và hạn mức 24 TC/kỳ, bạn có thể hoàn thành chương trình trong <strong>2 học kỳ chính</strong> (Kỳ 1: ĐATK I + môn tự chọn; Kỳ 2: ĐATK II).
+                Còn {remaining_credits.toFixed(1)} TC, hạn mức hiện tại {maxCreditsPerSemester} TC/kỳ. Về mặt khối lượng, cần ít nhất <strong>{theoreticalMinSemesters} học kỳ</strong>; thời gian thực tế còn phụ thuộc điều kiện học phần và lịch mở lớp.
               </div>
             </div>
           </div>
