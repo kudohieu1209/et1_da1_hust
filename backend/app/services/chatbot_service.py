@@ -240,7 +240,17 @@ class ChatbotService:
             if detected_codes:
                 return self._handle_simulation(detected_codes[0])
 
-        # 2. Xử lý câu hỏi đề xuất môn học / gợi ý kỳ tới / định hướng chuyên sâu
+        # 2. Câu nói có "kỳ tới" nhưng nêu rõ môn và hỏi
+        # "cần gì/học trước" là kiểm tra điều kiện, không phải gợi ý môn.
+        course_condition_terms = [
+            "học được không", "đăng ký được", "cùng lúc",
+            "đồng thời", "tiên quyết", "song hành", "cần môn", "cần học",
+            "học trước", "cần những gì", "cần những môn", "môn gì trước", "cần gì",
+        ]
+        if detected_codes and self._has_any(msg_lower, course_condition_terms):
+            return self._handle_course_check(detected_codes, effective_message)
+
+        # 3. Xử lý câu hỏi đề xuất môn học / gợi ý kỳ tới / định hướng chuyên sâu
         if self._has_any(msg_lower, ["nên học", "nên đăng ký", "gợi ý", "tư vấn môn", "kỳ tới", "kỳ sau", "kỳ 7", "kỳ 8", "chọn môn", "định hướng", "theo hướng", "chọn hướng", "hướng nào", "hướng chuyên"]):
             target_track = None
             if self._has_any(msg_lower, ["vi mạch", "bán dẫn", "ic", "vlsi"]):
@@ -254,14 +264,14 @@ class ChatbotService:
 
             return self._handle_recommendation(target_track)
 
-        # 3. Ưu tiên RAG nếu câu hỏi hỏi về Đề cương chi tiết môn học / Nội dung môn / Phần mềm, công cụ, tool thực hành
+        # 4. Ưu tiên RAG nếu câu hỏi hỏi về Đề cương chi tiết môn học / Nội dung môn / Phần mềm, công cụ, tool thực hành
         is_syllabus_query = self._has_any(msg_lower, [
             "nội dung", "học gì", "học những gì", "đề cương", "phần mềm", 
             "công cụ", "tool", "thực hành gì", "kiến thức", "giáo trình", 
             "tài liệu", "dạy gì", "làm gì", "mô tả môn"
         ])
 
-        # 4. Ưu tiên RAG nếu câu hỏi hỏi về văn bản quy chế / quy định / tín chỉ / cảnh cáo / tốt nghiệp / học cải thiện
+        # 5. Ưu tiên RAG nếu câu hỏi hỏi về văn bản quy chế / quy định / tín chỉ / cảnh cáo / tốt nghiệp / học cải thiện
         is_explicit_regulation = self._has_any(msg_lower, [
             "quy chế", "quy định", "tối thiểu", "tối đa", "bao nhiêu tín chỉ", "giới hạn tín chỉ",
             "học bổng", "cảnh cáo", "cảnh báo học tập", "buộc thôi học", "rút học phần", "điểm w", "thủ tục", 
@@ -273,20 +283,20 @@ class ChatbotService:
         if is_syllabus_query or is_explicit_regulation:
             return self._handle_rag_query(effective_message, history, detected_codes=detected_codes if is_syllabus_query else None)
 
-        # 5. Xử lý câu hỏi về tiến độ học tập cá nhân / Degree Audit / CPA / Bằng Khá / Cải thiện điểm
+        # 6. Xử lý câu hỏi về tiến độ học tập cá nhân / Degree Audit / CPA / Bằng Khá / Cải thiện điểm
         if self._has_any(msg_lower, ["tiến độ", "còn thiếu", "tích lũy", "cpa", "gpa", "bảng điểm", "bằng khá", "bằng giỏi", "nợ môn", "kéo điểm", "cải thiện"]):
             return self._handle_audit()
 
-        # 6. Xử lý kiểm tra môn học cụ thể (điều kiện đăng ký, học được không, môn X cần gì)
+        # 7. Xử lý kiểm tra môn học cụ thể (điều kiện đăng ký, học được không, môn X cần gì)
         is_course_question = self._has_any(msg_lower, ["điều kiện", "học được không", "được không", "đăng ký được", "cùng lúc", "đồng thời", "tiên quyết", "song hành", "môn"])
         if detected_codes and (is_course_question or len(detected_codes) >= 2 or re.search(r'\b[A-Z]{2,3}\s*\d{4}[A-Z]?\b', message.upper())):
             return self._handle_course_check(detected_codes, effective_message)
 
-        # 7. Câu hỏi chào hỏi thông thường
+        # 8. Câu hỏi chào hỏi thông thường
         if any(msg_lower.strip() == k for k in ["chào", "chào bạn", "hello", "hi", "alo", "menu", "help", "bạn là ai"]):
             return self._handle_general_query(message)
 
-        # 8. RAG (Retrieval-Augmented Generation) cho các câu hỏi tổng quát về CTĐT và Quy chế
+        # 9. RAG (Retrieval-Augmented Generation) cho các câu hỏi tổng quát về CTĐT và Quy chế
         return self._handle_rag_query(effective_message, history)
 
     def _handle_rag_query(self, message: str, history: Optional[List[Dict[str, str]]] = None, detected_codes: Optional[List[str]] = None) -> Dict[str, Any]:
