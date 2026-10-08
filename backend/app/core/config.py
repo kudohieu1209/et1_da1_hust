@@ -34,10 +34,13 @@ GEMINI_EMBEDDING_MODEL = "text-embedding-004"
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
+# Danh sách origin của frontend, phân tách bằng dấu phẩy. Không dùng "*" vì
+# CORSMiddleware bật allow_credentials.
 CORS_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:5173",
-    "*"
+    origin.strip()
+    for origin in os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173",
+    ).split(",")
+    if origin.strip()
 ]

@@ -5,7 +5,7 @@ import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 from app.core.config import DATA_DIR, STUDENTS_DIR
-from app.core.hust_rules import GRADE_TO_SCALE4
+from app.core.hust_rules import GRADE_TO_SCALE4, parse_grade_from_line
 from app.services.data_loader import data_loader
 from app.services.curriculum_repository import CurriculumNotFoundError
 
@@ -229,8 +229,10 @@ class AuthService:
                 code_match = re.search(r'\b([A-Z]{2,3}\d{4}[A-Z]?)\b', line.upper())
                 if code_match:
                     code = code_match.group(1)
-                    grade_match = re.search(r'\b([ABCD][+]?|F)\b', line.upper())
-                    grade_letter = grade_match.group(1) if grade_match else "B"
+                    grade_letter = parse_grade_from_line(line[code_match.end():])
+                    if grade_letter is None:
+                        # Không tự gán điểm cho dòng chưa có điểm chữ.
+                        continue
                     
                     c_info = data_loader.get_course(code)
                     c_name = c_info.get("name", f"Học phần {code}") if c_info else f"Học phần {code}"
@@ -257,7 +259,9 @@ class AuthService:
             for item in courses:
                 code = item.get("code")
                 if code:
-                    grade_letter = item.get("letter_grade", "B")
+                    grade_letter = (item.get("letter_grade") or "").strip().upper()
+                    if grade_letter not in GRADE_TO_SCALE4:
+                        continue
                     scale4 = GRADE_TO_SCALE4.get(grade_letter, 0.0)
                     is_passed = (grade_letter != "F")
                     c_info = data_loader.get_course(code)

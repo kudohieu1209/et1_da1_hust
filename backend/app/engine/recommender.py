@@ -1,7 +1,7 @@
 from typing import Dict, List, Set, Any, Optional
 from app.services.data_loader import data_loader
 from app.engine.rule_engine import rule_engine
-from app.core.hust_rules import CREDIT_LIMITS
+from app.core.hust_rules import CREDIT_LIMITS, assess_academic_warning
 
 
 LEGACY_TRACK_ALIASES = {
@@ -35,8 +35,8 @@ class CourseRecommender:
         passed_codes = set(c["code"] for c in student_profile.get("passed_courses", []))
         failed_codes = set(c["code"] for c in student_profile.get("failed_courses", []))
 
-        # Xác định mức cảnh cáo (giả định mức 0 nếu chưa có cảnh cáo)
-        warning_level = 0
+        # Hạn mức tín chỉ theo mức cảnh báo học tập (Điều 19 QĐ 5445)
+        warning_level = assess_academic_warning(student_profile)["level"]
         limit_info = CREDIT_LIMITS.get(warning_level, CREDIT_LIMITS[0])
         allowed_max = limit_info["summer_max"] if is_summer else limit_info["max"]
         target_max_credits = min(max_credits or 20, allowed_max)
@@ -60,7 +60,7 @@ class CourseRecommender:
         track_core_set = set(track_info["core_courses"]) if track_info else set()
 
         # Nhóm 1: Môn nợ (Failed courses)
-        for code in failed_codes:
+        for code in sorted(failed_codes):
             if code not in passed_codes and code not in selected_codes:
                 c = data_loader.get_course(code)
                 if not c:

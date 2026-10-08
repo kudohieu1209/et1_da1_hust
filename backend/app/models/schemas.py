@@ -52,11 +52,13 @@ class CheckEligibilityResponse(BaseModel):
     satisfied_branch: Optional[List[Dict[str, str]]] = None
 
 class DegreeAuditResponse(BaseModel):
-    student_info: Dict[str, str]
+    student_info: Dict[str, Any]
     curriculum: Dict[str, Any]
     cpa: float
     warning_level: int
     warning_description: str
+    warning_basis: str = ""
+    debt_credits: float = 0.0
     credit_limit: Dict[str, Any]
     total_credits_accumulated: float
     total_credits_required: float
