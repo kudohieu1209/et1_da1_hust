@@ -49,6 +49,11 @@ def test_rag_pipeline():
     print(f"   -> Top 1 match: [{res2[0]['metadata'].get('source')}] {res2[0]['text'][:120]}...")
     assert "14" in res2[0]["text"] or "cảnh cáo" in res2[0]["text"].lower(), "Tài liệu phải chứa quy định cảnh cáo mức 2!"
 
+    q3 = "Chương trình ET1 2023 cần bao nhiêu tín chỉ?"
+    res3 = vector_store.similarity_search(q3, k=2)
+    assert "2023" in res3[0]["metadata"].get("source", "")
+    assert "132" in res3[0]["text"], "Retriever phải phân biệt đúng CTĐT ET1-2023 (132 TC)."
+
     # 4. Kiểm tra Hybrid Chatbot Router
     print("\n4. [Hybrid Agent] Kiểm tra điều hướng Intent...")
 
@@ -86,6 +91,12 @@ def test_rag_pipeline():
     print(f"   -> Intent: {ans_rec['intent']}")
     print(f"   -> Track: {ans_rec['data_context']['track_name']}")
     assert ans_rec["intent"] == "COURSE_RECOMMENDATION", "Phải nhận diện intent gợi ý môn vi mạch!"
+
+    # Test case E: Câu demo nêu môn cụ thể phải đi vào engine điều kiện.
+    msg_demo = "Kỳ tới em muốn học vxl và dts thì cần những môn gì trước?"
+    ans_demo = chatbot_service.process_message(msg_demo)
+    assert ans_demo["intent"] == "COURSE_ELIGIBILITY_CHECK"
+    assert "ET3300" in ans_demo["reply"] and "ET3220" in ans_demo["reply"]
 
     print("\n" + "=" * 60)
     print("✅ TẤT CẢ CÁC BÀI TEST RAG & HYBRID AGENT ĐỀU ĐẠT CHUẨN XUẤT SẮC!")

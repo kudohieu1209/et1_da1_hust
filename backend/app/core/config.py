@@ -29,7 +29,7 @@ API_PORT = int(os.getenv("API_PORT", 8000))
 # Cấu hình Gemini LLM
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
-GEMINI_FALLBACK_MODEL = "gemini-1.5-flash"
+GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "")
 GEMINI_EMBEDDING_MODEL = "text-embedding-004"
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
