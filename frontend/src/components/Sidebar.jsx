@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Plus, 
   Award, 
@@ -21,7 +21,6 @@ export default function Sidebar({
   onSelectConversation,
   onOpenSettings,
   onOpenProfileModal,
-  onOpenAuthModal,
   language = 'vi'
 }) {
   const studentInfo = studentProfile?.info || {};

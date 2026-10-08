@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Filter, CheckCircle2, Lock, Unlock, BookOpen, X, ArrowRight, Info, AlertCircle } from 'lucide-react';
+import { Search, X, Info } from 'lucide-react';
+import { apiUrl } from '../api';
 
-export default function RoadmapTab({ studentProfile, onSelectCourse }) {
+export default function RoadmapTab({ studentProfile }) {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filterStatus, setFilterStatus] = useState('ALL'); // ALL | PASSED | ELIGIBLE | BLOCKED
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [courseDetail, setCourseDetail] = useState(null);
-  const [loadingDetail, setLoadingDetail] = useState(false);
 
   const passedCodes = new Set((studentProfile?.passed_courses || []).map(c => c.code));
   const learnedCodes = new Set([
@@ -22,7 +22,7 @@ export default function RoadmapTab({ studentProfile, onSelectCourse }) {
 
   const fetchCourses = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/courses');
+      const res = await fetch(apiUrl('/api/courses'));
       const data = await res.json();
       setCourses(data.courses || []);
     } catch (err) {
@@ -34,15 +34,14 @@ export default function RoadmapTab({ studentProfile, onSelectCourse }) {
 
   const handleOpenCourse = async (course) => {
     setSelectedCourse(course);
-    setLoadingDetail(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/courses/${course.code}`);
+      const res = await fetch(apiUrl(`/api/courses/${course.code}`));
       const data = await res.json();
       setCourseDetail(data);
     } catch (err) {
       console.error('Lỗi nạp chi tiết môn:', err);
     } finally {
-      setLoadingDetail(false);
+      // Không cần trạng thái loading riêng cho dialog nhỏ này.
     }
   };
 
