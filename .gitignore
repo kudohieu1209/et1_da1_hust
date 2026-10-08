@@ -6,6 +6,10 @@ Thumbs.db
 !.vscode/extensions.json
 *.swp
 *.swo
+tmp/
+.codex-finalizer/
+.codex-presentation-build/
+
 
 # Environment variables & secrets
 .env

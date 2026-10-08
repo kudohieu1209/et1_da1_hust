@@ -12,13 +12,20 @@ Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tu
 2. **Deterministic Rule Engine:** Sử dụng dữ liệu CTĐT và bộ quy tắc HUST để kiểm tra điều kiện học phần, rà soát tín chỉ (Degree Audit) theo từng hồ sơ sinh viên và hỗ trợ chọn môn.
 3. **Full-stack Interactive Dashboard:** Giao diện React tập trung vào chat tự nhiên, tiến độ học tập và gợi ý chọn môn theo các mô-đun của chương trình đào tạo đang được hỗ trợ.
 
+## Tài liệu bàn giao
+
+- Báo cáo Đồ án 1: `docs/report/bao_cao_do_an_1_hust_course_advisor.docx`
+- Slide bảo vệ 12 trang: `docs/presentation/hust_course_advisor_bao_cao_do_an_1_hoan_thien.pptx`
+- Yêu cầu và đối chiếu chỉ đạo: `docs/theory/yeu_cau_cua_thay.md`
+- Chạy kiểm thử toàn bộ: `./scripts/test_all.sh`
+
 ---
 
 ## 🏛️ Kiến trúc hệ thống (System Architecture)
 
 ```mermaid
 graph TD
-    User([Sinh viên HUST]) <--> UI[Frontend: React 19 + Tailwind/CSS Dashboard]
+    User([Sinh viên HUST]) <--> UI[Frontend: React 19 + CSS Dashboard]
     UI <--> API[FastAPI Gateway RESTful API]
     
     subgraph Backend_Core [Hệ thống Xử lý Trung tâm (Backend)]
@@ -49,16 +56,20 @@ graph TD
 - Đã có bước trích xuất candidate cho 6 trang CTĐT HTML (5 trang `hp-table` và FL2 dạng bảng thông thường) cùng 6/8 PDF có danh mục học phần (`project/data/raw/hust_curriculum_extractions.json`, `project/data/raw/hust_curriculum_pdf_extractions.json`).
 - Đã ghép 14 candidate HTML/PDF với danh mục 8.310 học phần CTT (`project/data/raw/hust_curriculum_candidates.json`). ET1-2023 đã được phê duyệt qua `project/data/processed/curriculum_approvals.json`; các candidate còn lại vẫn `needs_review` và chưa nạp vào Rule Engine.
 - Lịch sử hội thoại được lưu riêng trong SQLite tại `project/data/processed/chat_history.sqlite3`, gắn với MSSV; ChromaDB chỉ dùng để lưu vector RAG, không lưu hội thoại.
+- Kho RAG tin cậy hiện gồm 5 tài liệu: CTĐT ET1–2022, ET1–2023, Quy chế đào tạo theo Quyết định 5445/QĐ-ĐHBK, Sổ tay sinh viên 2026 và Quyết định học phí 2025–2026. Tài liệu có `RAG_STATUS: UNVERIFIED` không được lập chỉ mục.
+- Giao diện dùng bộ chọn hồ sơ demo, không cung cấp hệ thống xác thực sản xuất. Không triển khai dịch vụ này ra Internet khi chưa bổ sung phân quyền và bảo vệ dữ liệu cá nhân.
 
-Chạy lại pipeline và kiểm thử:
+Thiết lập và chạy toàn bộ kiểm thử:
 
 ```bash
-python3 project/data/scripts/build_curriculum.py
-python3 project/data/scripts/validate_curriculum.py project/data/processed/curricula/et1_2022.json
-python3 project/data/scripts/build_curriculum_document.py
-cd project/backend
-./venv/bin/python -m unittest discover -s tests -v
-./venv/bin/python test_backend.py
+./scripts/setup.sh
+./scripts/test_all.sh
+```
+
+Tái tạo tài liệu RAG đã kiểm chứng từ PDF gốc:
+
+```bash
+python3 project/data/scripts/build_verified_rag_documents.py
 ```
 
 Danh mục chương trình có thể xem qua `GET /api/programs` (lọc bằng `?search=`
@@ -68,7 +79,7 @@ Lấy dữ liệu học phần và chuỗi điều kiện trực tiếp từ CTT
 Chrome để bạn đăng nhập thủ công):
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/scrape_ctt_courses.py --code ET4230
+project/backend/.venv/bin/python project/data/scripts/scrape_ctt_courses.py --code ET4230
 ```
 
 Xem thêm các tùy chọn và chế độ đọc HTML đã lưu tại
@@ -77,13 +88,13 @@ Xem thêm các tùy chọn và chế độ đọc HTML đã lưu tại
 Tạo lại báo cáo candidate CTĐT công khai (review-only):
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/build_hust_curriculum_candidates.py
+project/backend/.venv/bin/python project/data/scripts/build_hust_curriculum_candidates.py
 ```
 
 Phê duyệt và sinh lại dataset ET1–2023 sau khi rà nguồn:
 
 ```bash
-project/backend/venv/bin/python project/data/scripts/promote_hust_curriculum_candidate.py \
+project/backend/.venv/bin/python project/data/scripts/promote_hust_curriculum_candidate.py \
   --candidate ET1-2023
 ```
 
@@ -118,15 +129,18 @@ project/backend/venv/bin/python project/data/scripts/promote_hust_curriculum_can
 
 ## 🛠️ Hướng dẫn cài đặt và chạy thử
 
+### 0. Cài đặt
+```bash
+./scripts/setup.sh
+cp project/backend/.env.example project/backend/.env  # tùy chọn
+```
+
+Không cần Gemini API key để demo: hệ thống sẽ dùng chế độ trích xuất cục bộ có dẫn nguồn. Nếu có key, điền `GEMINI_API_KEY` và model trong `.env`.
+
 ### 1. Khởi động Backend (FastAPI)
 ```bash
 cd project/backend
-# Kích hoạt môi trường ảo (nếu có)
-source venv/bin/activate  # Trên Linux/macOS
-# Cài đặt thư viện
-pip install -r requirements.txt
-# Chạy server
-python run.py
+./.venv/bin/python run.py
 ```
 * Backend sẽ chạy tại: `http://localhost:8000`
 * Swagger API Docs: `http://localhost:8000/docs`
@@ -138,6 +152,7 @@ npm install
 npm run dev
 ```
 * Giao diện Web sẽ chạy tại: `http://localhost:5173`
+* Khi backend không chạy ở `http://localhost:8000`, tạo `project/frontend/.env` và đặt `VITE_API_BASE_URL`.
 
 ---
 
