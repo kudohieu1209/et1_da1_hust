@@ -9,6 +9,7 @@ from app.engine.graph_engine import graph_engine
 from app.engine.recommender import course_recommender
 from app.core.config import GEMINI_API_KEY, OPENAI_API_KEY
 from app.rag.rag_engine import rag_engine
+from app.rag.gemini_service import gemini_service
 
 # Bảng từ đồng nghĩa / tên gọi phổ biến của sinh viên Bách Khoa
 COURSE_ALIASES = {
@@ -106,6 +107,90 @@ COURSE_ALIASES = {
     "truyền số liệu và chuyển tiếp điện văn": "ET4130",
     "định vị và dẫn đường điện tử": "ET4140"
 }
+
+# Câu xã giao: không cần tra tài liệu, chỉ cần đáp lại tự nhiên. Thứ tự quan
+# trọng: "chúc ngủ ngon" phải rơi vào goodnight trước wish.
+SMALL_TALK_PATTERNS = [
+    ("goodnight", r"ngủ(\s+\w+){0,2}\s+ngon|good\s*night|(?<!\w)gn(?!\w)|đi\s+ngủ"),
+    ("thanks", r"cảm\s+ơn|cám\s+ơn|thank|(?<!\w)(tks|thx)(?!\w)"),
+    ("bye", r"tạm\s+biệt|(?<!\w)(bye|bai)(?!\w)|hẹn\s+gặp\s+lại"),
+    ("wish", r"(?<!\w)chúc(?!\w)"),
+    ("howareyou", r"(khỏe|khoẻ)\s+không|dạo\s+này\s+(thế\s+nào|sao)"),
+    ("feeling", r"(?<!\w)(buồn|mệt|chán|stress|căng\s+thẳng|áp\s+lực|lo\s+lắng|cô\s+đơn|nản)(?!\w)"),
+    ("compliment", r"(giỏi|hay|tuyệt|xịn|đỉnh|thông\s+minh)\s+(quá|thế|vậy|ghê)|tuyệt\s+vời|good\s+job"),
+    ("ack", r"^(ok|oke|okay|okela|uk|ừ|ừm|vâng|dạ|được\s+rồi|(ha)+|(hi)+|(he)+|k+)$"),
+]
+# Cảm ơn/chúc/tạm biệt vẫn là xã giao dù nhắc tới chuyện học ("chúc mình qua
+# đồ án"); các nhóm còn lại chỉ tính khi câu không có nội dung học vụ.
+STRONG_SMALL_TALK = {"goodnight", "thanks", "bye", "wish", "ack"}
+# Câu hỏi hoặc lời nhờ kèm theo ("cảm ơn, vậy học phí bao nhiêu?") thì phải trả lời nội dung.
+QUESTION_OR_REQUEST = re.compile(
+    r"\?|(?<!\w)(gì|sao|bao\s+nhiêu|nào|không|chưa|giúp|cho\s+mình|cho\s+em|gợi\s+ý|kiểm\s+tra|xem|tra|hỏi)(?!\w)"
+)
+ACADEMIC_KEYWORDS = [
+    "điều kiện", "tiên quyết", "song hành", "học trước", "đăng ký", "đăng kí",
+    "học phần", "môn học", "tín chỉ", "quy chế", "quy định",
+    "cảnh báo", "cảnh cáo", "buộc thôi học", "học bổng", "học phí",
+    "tốt nghiệp", "đồ án", "thực tập", "cpa", "gpa", "tiến độ",
+    "tích lũy", "bảng điểm", "trượt", "tạch", "nếu rớt", "học lại",
+    "kỳ tới", "kỳ sau", "định hướng", "chuyên sâu", "đề cương", "ngành",
+]
+# Dấu hiệu câu hỏi có thể nằm trong tài liệu trường, dùng khi không gọi được LLM.
+HUST_TOPIC_KEYWORDS = ACADEMIC_KEYWORDS + [
+    "học", "môn", "điểm", "thi", "lịch", "học kỳ", "kỳ học", "lớp", "trường", "hust",
+    "bách khoa", "sinh viên", "giảng viên", "viện", "khoa", "ký túc", "kí túc",
+    "ktx", "miễn giảm", "chương trình", "ctđt", "ngoại ngữ", "tiếng anh", "bảo lưu",
+]
+
+SMALL_TALK_REPLIES = {
+    "goodnight": "Chúc bạn ngủ thật ngon nhé! 🌙 Nghỉ ngơi đủ giấc thì mai học mới hiệu quả. Khi cần xem tiến độ hay chọn môn, cứ quay lại tìm mình.",
+    "thanks": "Không có gì đâu! 😊 Cần kiểm tra điều kiện môn, xem tiến độ hay tra quy chế thì bạn cứ hỏi mình nhé.",
+    "bye": "Tạm biệt bạn! 👋 Chúc bạn học tốt, hẹn gặp lại.",
+    "wish": "Chúc bạn học tập thật tốt, thi đâu qua đó và giữ CPA thật đẹp nhé! 😊 Cần gì cứ nhắn mình.",
+    "howareyou": "Mình vẫn ổn và luôn sẵn sàng hỗ trợ bạn! 😊 Hôm nay bạn muốn xem tiến độ học tập, kiểm tra điều kiện môn hay gợi ý môn kỳ tới?",
+    "feeling": "Nghe có vẻ bạn đang hơi mệt. Học ở Bách Khoa áp lực là chuyện thường, bạn nhớ nghỉ ngơi một chút và chia sẻ với bạn bè, người thân hoặc cố vấn học tập nhé. Nếu đang lo về điểm hay tiến độ, mình có thể cùng bạn xem bảng điểm và lên kế hoạch cho kỳ tới.",
+    "compliment": "Cảm ơn bạn đã khen! 😄 Có gì cần tra cứu thêm thì bạn cứ hỏi mình nhé.",
+    "ack": "Ok bạn! Cần gì thêm cứ nhắn mình nhé.",
+}
+OFF_TOPIC_REPLY = (
+    "Câu này nằm ngoài phạm vi tài liệu mình đang có nên mình chưa trả lời được. 🙏\n\n"
+    "Mình chuyên hỗ trợ sinh viên Bách Khoa về:\n"
+    "- **Điều kiện đăng ký môn** (ví dụ: *Điều kiện học ET3300?*)\n"
+    "- **Gợi ý môn kỳ tới** theo định hướng chuyên ngành\n"
+    "- **Tiến độ học tập, CPA** và các môn còn thiếu\n"
+    "- **Quy chế đào tạo, học phí, học bổng** theo văn bản của trường"
+)
+SMALL_TALK_SUGGESTIONS = [
+    "Xem tiến độ học tập",
+    "Gợi ý môn học kỳ tới",
+    "Điều kiện nhận Đồ án tốt nghiệp",
+]
+
+
+def _contains_keyword(text: str, keywords: List[str]) -> bool:
+    return any(re.search(rf"(?<!\w){re.escape(kw)}(?!\w)", text) for kw in keywords)
+
+
+def detect_small_talk(text: str, detected_codes: Optional[List[str]] = None) -> Optional[str]:
+    """Trả về loại câu xã giao (goodnight, thanks, ...) hoặc None nếu cần trả lời nội dung."""
+    if detected_codes:
+        return None
+    lowered = unicodedata.normalize("NFC", text or "").strip().lower()
+    if not lowered:
+        return None
+    cleaned = " ".join(re.sub(r"[\.,!~:;\-_]+", " ", lowered).split())
+    has_academic = _contains_keyword(lowered, ACADEMIC_KEYWORDS)
+    asks_something = bool(QUESTION_OR_REQUEST.search(lowered))
+    for category, pattern in SMALL_TALK_PATTERNS:
+        if not re.search(pattern, cleaned):
+            continue
+        if category in STRONG_SMALL_TALK:
+            if not asks_something:
+                return category
+        elif not has_academic:
+            return category
+    return None
+
 
 class ChatbotService:
     def __init__(self):
@@ -294,6 +379,11 @@ class ChatbotService:
         msg_lower = effective_message.lower()
         detected_codes = self._detect_courses(effective_message)
 
+        # 0. Câu xã giao (chúc ngủ ngon, cảm ơn, tạm biệt...) không đi tra tài liệu.
+        small_talk = detect_small_talk(effective_message, detected_codes)
+        if small_talk:
+            return self._handle_small_talk(effective_message, small_talk, history)
+
         # 1. Xử lý câu hỏi mô phỏng trượt môn (What-if simulation)
         if self._has_any(msg_lower, ["trượt", "tạch", "nếu rớt", "học lại", "không qua", "ảnh hưởng"]):
             if detected_codes:
@@ -356,7 +446,30 @@ class ChatbotService:
             return self._handle_general_query(message)
 
         # 9. RAG (Retrieval-Augmented Generation) cho các câu hỏi tổng quát về CTĐT và Quy chế
-        return self._handle_rag_query(effective_message, history)
+        result = self._handle_rag_query(effective_message, history)
+        # Không có LLM thì RAG chỉ chép lại các đoạn tài liệu gần nhất; với câu
+        # không dính tới chuyện học/trường, các đoạn đó vô nghĩa với người hỏi.
+        if result.get("model_used") == "rag-knowledge-engine" and not _contains_keyword(msg_lower, HUST_TOPIC_KEYWORDS):
+            return {
+                "reply": OFF_TOPIC_REPLY,
+                "intent": "OUT_OF_SCOPE",
+                "suggested_actions": SMALL_TALK_SUGGESTIONS,
+                "sources": [],
+                "model_used": "rule-based",
+            }
+        return result
+
+    def _handle_small_talk(
+        self, message: str, category: str, history: Optional[List[Dict[str, str]]] = None
+    ) -> Dict[str, Any]:
+        reply = gemini_service.small_talk(message, history)
+        return {
+            "reply": reply or SMALL_TALK_REPLIES[category],
+            "intent": "SMALL_TALK",
+            "suggested_actions": SMALL_TALK_SUGGESTIONS,
+            "sources": [],
+            "model_used": gemini_service.model_name if reply else "rule-based",
+        }
 
     def _handle_rag_query(self, message: str, history: Optional[List[Dict[str, str]]] = None, detected_codes: Optional[List[str]] = None) -> Dict[str, Any]:
         """
