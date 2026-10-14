@@ -18,7 +18,7 @@ import RecommendTab from './components/RecommendTab';
 import SettingsModal from './components/SettingsModal';
 import TranscriptImportModal from './components/TranscriptImportModal';
 import AuthScreen from './components/auth/AuthScreen';
-import { UNAUTHORIZED_EVENT, apiFetch, apiUrl } from './api';
+import { API_BASE_URL, UNAUTHORIZED_EVENT, apiFetch, apiUrl } from './api';
 
 export default function App() {
   // undefined: đang kiểm tra phiên; null: chưa đăng nhập; object: tài khoản từ /api/auth/me.
@@ -123,7 +123,7 @@ export default function App() {
       fetchInitialData();
     } catch (err) {
       console.error('Lỗi kết nối Backend:', err);
-      setAuthNotice(`Không kết nối được máy chủ (${apiUrl('')}). Hãy kiểm tra backend đang chạy.`);
+      setAuthNotice(`Không kết nối được máy chủ (${API_BASE_URL}). Hãy kiểm tra backend đang chạy.`);
       setAccount(null);
     }
   };
