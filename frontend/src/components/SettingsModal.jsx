@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Info, Moon, SlidersHorizontal, Sun, UserRound, X } from 'lucide-react';
+import { Info, KeyRound, Moon, SlidersHorizontal, Sun, UserRound, X } from 'lucide-react';
 import AboutPanel from './account/AboutPanel';
+import AccountSecurity from './account/AccountSecurity';
 import ProfileSettings from './account/ProfileSettings';
 import './account/account.css';
 
 const TABS = [
   { id: 'general', vi: 'Chung', en: 'General', icon: SlidersHorizontal },
   { id: 'profile', vi: 'Hồ sơ', en: 'Profile', icon: UserRound },
+  { id: 'account', vi: 'Tài khoản', en: 'Account', icon: KeyRound },
   { id: 'about', vi: 'Giới thiệu', en: 'About', icon: Info },
 ];
 
@@ -30,8 +32,8 @@ function Segmented({ label, value, options, onChange }) {
 }
 
 /**
- * Hộp thoại Cài đặt: Chung (giao diện, ngôn ngữ), Hồ sơ (tên + ảnh đại diện)
- * và Giới thiệu (số liệu hệ thống lấy từ backend).
+ * Hộp thoại Cài đặt: Chung (giao diện, ngôn ngữ), Hồ sơ (tên + ảnh đại diện),
+ * Tài khoản (đổi mật khẩu, đăng xuất) và Giới thiệu (số liệu hệ thống lấy từ backend).
  */
 export default function SettingsModal({
   isOpen,
@@ -44,7 +46,10 @@ export default function SettingsModal({
   studentProfile,
   auditData,
   onProfileUpdated,
-  onSwitchProfile,
+  onImportTranscript,
+  account,
+  onPasswordChanged,
+  onLogout,
   onShowToast,
 }) {
   const t = (vi, en) => (language === 'vi' ? vi : en);
@@ -165,8 +170,17 @@ export default function SettingsModal({
                 auditData={auditData}
                 language={language}
                 onProfileUpdated={onProfileUpdated}
-                onSwitchProfile={onSwitchProfile}
+                onImportTranscript={onImportTranscript}
                 onShowToast={onShowToast}
+              />
+            )}
+
+            {activeTab === 'account' && (
+              <AccountSecurity
+                account={account}
+                language={language}
+                onPasswordChanged={onPasswordChanged}
+                onLogout={onLogout}
               />
             )}
 

@@ -21,7 +21,7 @@ export default function Sidebar({
   onNewChat,
   onSelectConversation,
   onOpenSettings,
-  onOpenProfileModal,
+  onLogout,
   onOpenImport,
   theme,
   onToggleTheme,
@@ -311,7 +311,7 @@ export default function Sidebar({
         auditData={auditData}
         theme={theme}
         onToggleTheme={onToggleTheme}
-        onSwitchProfile={onOpenProfileModal}
+        onLogout={onLogout}
         onImportTranscript={onOpenImport}
         onOpenSettings={onOpenSettings}
         language={language}

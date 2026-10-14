@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Camera, Loader2, RotateCcw, Users } from 'lucide-react';
-import { apiUrl } from '../../api';
+import { Camera, Loader2, RotateCcw, Upload } from 'lucide-react';
+import { apiFetch, apiUrl } from '../../api';
 import Avatar from './Avatar';
 import { ACCEPTED_AVATAR_TYPES, resizeAvatar } from './imageResize';
 import { AVATAR_GRADIENTS, buildStudentSummary, programLabel } from './studentSummary';
@@ -19,9 +19,9 @@ async function readErrorDetail(response, fallback) {
 
 /**
  * Tab "Hồ sơ": chỉ sửa tên hiển thị và ảnh đại diện. MSSV/lớp/CTĐT đến từ hồ
- * sơ hoặc bảng điểm nên chỉ hiển thị, kèm lối tắt sang "Đổi hồ sơ".
+ * sơ hoặc bảng điểm nên chỉ hiển thị, kèm lối tắt sang "Nhập lại bảng điểm".
  */
-export default function ProfileSettings({ studentProfile, auditData, language, onProfileUpdated, onSwitchProfile, onShowToast }) {
+export default function ProfileSettings({ studentProfile, auditData, language, onProfileUpdated, onImportTranscript, onShowToast }) {
   const t = (vi, en) => (language === 'vi' ? vi : en);
   const summary = buildStudentSummary(studentProfile, auditData);
   const [name, setName] = useState(summary.name);
@@ -74,7 +74,7 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
     }
     setStatus({ state: 'saving', message: '' });
     try {
-      const response = await fetch(apiUrl('/api/student/profile/update'), {
+      const response = await apiFetch(apiUrl('/api/student/profile/update'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(changes),
@@ -165,8 +165,8 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
         <h3>{t('Thông tin đào tạo', 'Academic record')}</h3>
         <p className="settings-hint">
           {t(
-            'Lấy từ hồ sơ và bảng điểm nên không sửa tay ở đây. Muốn thay đổi, hãy đổi hồ sơ hoặc nhập lại bảng điểm.',
-            'Comes from the profile and transcript, so it cannot be edited here. Switch profile or re-import the transcript instead.',
+            'Lấy từ tài khoản và bảng điểm nên không sửa tay ở đây. Muốn cập nhật tiến độ, hãy nhập lại bảng điểm.',
+            'Comes from your account and transcript, so it cannot be edited here. Re-import the transcript to update it.',
           )}
         </p>
         <dl className="settings-readonly">
@@ -178,9 +178,9 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
           <dd>{[summary.programName, program && `(${program})`].filter(Boolean).join(' ') || '—'}</dd>
         </dl>
         <div className="settings-actions" style={{ justifyContent: 'flex-start', marginTop: 10 }}>
-          <button type="button" className="settings-button" onClick={onSwitchProfile}>
-            <Users size={15} aria-hidden="true" />
-            {t('Đổi hồ sơ', 'Switch profile')}
+          <button type="button" className="settings-button" onClick={onImportTranscript}>
+            <Upload size={15} aria-hidden="true" />
+            {t('Nhập lại bảng điểm', 'Re-import transcript')}
           </button>
         </div>
       </section>

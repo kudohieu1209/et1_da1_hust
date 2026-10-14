@@ -14,8 +14,7 @@ import {
 export default function AuditTab({ 
   auditData, 
   onNavigateTab, 
-  onOpenImport, 
-  onOpenProfileModal
+  onOpenImport
 }) {
   if (!auditData) {
     return (
@@ -113,25 +112,6 @@ export default function AuditTab({
                 }}
               >
                 <span>+ Dán bảng điểm CTT</span>
-              </button>
-            )}
-            {onOpenProfileModal && (
-              <button
-                onClick={onOpenProfileModal}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '7px 12px',
-                  borderRadius: '8px',
-                  background: 'var(--bg-card)',
-                  color: 'var(--text-primary)',
-                  border: '1px solid var(--border-subtle)',
-                  fontSize: '0.82rem',
-                  cursor: 'pointer'
-                }}
-              >
-                <span>Chọn hồ sơ mẫu</span>
               </button>
             )}
           </div>

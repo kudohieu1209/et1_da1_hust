@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ChevronsUpDown, Info, Moon, Settings, Sun, Upload, Users } from 'lucide-react';
+import { ChevronsUpDown, Info, LogOut, Moon, Settings, Sun, Upload } from 'lucide-react';
 import Avatar from './Avatar';
 import { buildStudentSummary, formatCpa, programLabel } from './studentSummary';
 import './account.css';
@@ -17,7 +17,7 @@ export default function AccountMenu({
   auditData,
   theme,
   onToggleTheme,
-  onSwitchProfile,
+  onLogout,
   onImportTranscript,
   onOpenSettings,
   language = 'vi',
@@ -172,10 +172,6 @@ export default function AccountMenu({
 
           <div className="account-menu__divider" role="separator" />
 
-          <button type="button" role="menuitem" className="account-menu__item" onClick={run(onSwitchProfile)}>
-            <Users size={16} aria-hidden="true" />
-            <span>{t('Đổi hồ sơ sinh viên', 'Switch student profile')}</span>
-          </button>
           <button type="button" role="menuitem" className="account-menu__item" onClick={run(onImportTranscript)}>
             <Upload size={16} aria-hidden="true" />
             <span>{t('Nhập bảng điểm từ CTT', 'Import transcript from CTT')}</span>
@@ -195,6 +191,13 @@ export default function AccountMenu({
             <Info size={16} aria-hidden="true" />
             <span>{t('Giới thiệu hệ thống', 'About this system')}</span>
           </button>
+
+          <div className="account-menu__divider" role="separator" />
+
+          <button type="button" role="menuitem" className="account-menu__item" onClick={run(onLogout)}>
+            <LogOut size={16} aria-hidden="true" />
+            <span>{t('Đăng xuất', 'Log out')}</span>
+          </button>
         </div>,
         document.body,
       )}
@@ -212,7 +215,7 @@ export default function AccountMenu({
         <Avatar avatar={summary.avatar} initial={summary.initial} size={34} />
         <span className="account-trigger__text">
           <span className="account-trigger__name">
-            {isLoading ? t('Đang tải hồ sơ…', 'Loading profile…') : summary.name || t('Chọn hồ sơ', 'Choose a profile')}
+            {isLoading ? t('Đang tải hồ sơ…', 'Loading profile…') : summary.name || t('Tài khoản', 'Account')}
           </span>
           {subtitle && (
             <span className={`account-trigger__sub${summary.warningLevel > 0 ? ' is-warning' : ''}`}>{subtitle}</span>

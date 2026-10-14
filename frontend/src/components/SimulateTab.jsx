@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AlertTriangle, ShieldAlert, ArrowDownRight, Zap } from 'lucide-react';
-import { apiUrl } from '../api';
+import { apiFetch, apiUrl } from '../api';
 
 export default function SimulateTab() {
   const [selectedCourse, setSelectedCourse] = useState('ET2040');
@@ -24,7 +24,7 @@ export default function SimulateTab() {
     const code = courseToTest || selectedCourse;
     setLoading(true);
     try {
-      const res = await fetch(apiUrl('/api/courses/simulate-impact'), {
+      const res = await apiFetch(apiUrl('/api/courses/simulate-impact'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ failed_course_code: code })

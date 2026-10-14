@@ -16,10 +16,14 @@ import ChatTab from './components/ChatTab';
 import AuditTab from './components/AuditTab';
 import RecommendTab from './components/RecommendTab';
 import SettingsModal from './components/SettingsModal';
-import ProfileModal from './components/ProfileModal';
-import { apiUrl } from './api';
+import TranscriptImportModal from './components/TranscriptImportModal';
+import AuthScreen from './components/auth/AuthScreen';
+import { UNAUTHORIZED_EVENT, apiFetch, apiUrl } from './api';
 
 export default function App() {
+  // undefined: đang kiểm tra phiên; null: chưa đăng nhập; object: tài khoản từ /api/auth/me.
+  const [account, setAccount] = useState(undefined);
+  const [authNotice, setAuthNotice] = useState(null);
   const [activeTab, setActiveTab] = useState('chat');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [studentProfile, setStudentProfile] = useState(null);
@@ -32,8 +36,7 @@ export default function App() {
   const [language, setLanguage] = useState(() => localStorage.getItem('hust_advisor_lang') || 'vi');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [settingsTab, setSettingsTab] = useState('general');
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-  const [profileModalTab, setProfileModalTab] = useState('demo');
+  const [isImportOpen, setIsImportOpen] = useState(false);
 
   // ChatGPT 3-Dots Menu & Pin / Archive States
   const [isChatMenuOpen, setIsChatMenuOpen] = useState(false);
@@ -61,7 +64,14 @@ export default function App() {
   }, [isChatMenuOpen]);
 
   useEffect(() => {
-    fetchInitialData();
+    checkSession();
+  }, []);
+
+  // Bất kỳ API nào trả 401 (phiên hết hạn/bị thu hồi) thì quay về màn đăng nhập.
+  useEffect(() => {
+    const handleUnauthorized = () => resetSession('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
+    window.addEventListener(UNAUTHORIZED_EVENT, handleUnauthorized);
+    return () => window.removeEventListener(UNAUTHORIZED_EVENT, handleUnauthorized);
   }, []);
 
   // Update body class when theme changes
@@ -82,21 +92,78 @@ export default function App() {
   const fetchInitialData = async () => {
     try {
       const [resProfile, resAudit] = await Promise.all([
-        fetch(apiUrl('/api/student/profile')),
-        fetch(apiUrl('/api/student/audit'))
+        apiFetch(apiUrl('/api/student/profile')),
+        apiFetch(apiUrl('/api/student/audit'))
       ]);
 
+      let profile = null;
       if (resProfile.ok) {
-        const data = await resProfile.json();
-        setStudentProfile(data);
+        profile = await resProfile.json();
+        setStudentProfile(profile);
       }
       if (resAudit.ok) {
         const audit = await resAudit.json();
         setAuditData(audit);
       }
+      return profile;
     } catch (err) {
       console.error('Lỗi kết nối Backend:', err);
+      return null;
     }
+  };
+
+  const checkSession = async () => {
+    try {
+      const res = await apiFetch(apiUrl('/api/auth/me'));
+      if (!res.ok) {
+        setAccount(null);
+        return;
+      }
+      setAccount(await res.json());
+      fetchInitialData();
+    } catch (err) {
+      console.error('Lỗi kết nối Backend:', err);
+      setAuthNotice(`Không kết nối được máy chủ (${apiUrl('')}). Hãy kiểm tra backend đang chạy.`);
+      setAccount(null);
+    }
+  };
+
+  // Xóa mọi dữ liệu của người vừa đăng xuất để người sau không thấy.
+  const resetSession = (notice = null) => {
+    setAccount(null);
+    setAuthNotice(notice);
+    setStudentProfile(null);
+    setAuditData(null);
+    setConversations([]);
+    setActiveConversationId(null);
+    setIsChatPinned(false);
+    setActiveTab('chat');
+    setIsSettingsOpen(false);
+    setIsImportOpen(false);
+    setChatKey(prev => prev + 1);
+  };
+
+  const handleAuthenticated = async (accountData) => {
+    setAccount(accountData);
+    setAuthNotice(null);
+    const profile = await fetchInitialData();
+    // Tài khoản mới chưa có bảng điểm: mở ngay hộp nhập bảng điểm.
+    if (profile && !(profile.transcript || []).length) {
+      setIsImportOpen(true);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await apiFetch(apiUrl('/api/auth/logout'), { method: 'POST' });
+    } catch (err) {
+      console.error('Lỗi đăng xuất:', err);
+    }
+    resetSession();
+  };
+
+  const handlePasswordChanged = () => {
+    resetSession('Đã đổi mật khẩu. Vui lòng đăng nhập lại bằng mật khẩu mới.');
   };
 
   const [chatKey, setChatKey] = useState(0);
@@ -104,9 +171,7 @@ export default function App() {
   const refreshConversations = async (studentId = studentProfile?.info?.student_id) => {
     if (!studentId) return;
     try {
-      const res = await fetch(apiUrl('/api/conversations'), {
-        headers: { 'X-Student-ID': studentId }
-      });
+      const res = await apiFetch(apiUrl('/api/conversations'));
       if (res.ok) {
         const data = await res.json();
         setConversations(data.conversations || []);
@@ -153,28 +218,25 @@ export default function App() {
       return;
     }
     const studentId = studentProfile?.info?.student_id;
-    const headers = {
-      'Content-Type': 'application/json',
-      ...(studentId ? { 'X-Student-ID': studentId } : {})
-    };
+    const headers = { 'Content-Type': 'application/json' };
     try {
       if (action === 'pin') {
         const nextPinned = !isChatPinned;
-        const res = await fetch(apiUrl(`/api/conversations/${activeConversationId}`), {
+        const res = await apiFetch(apiUrl(`/api/conversations/${activeConversationId}`), {
           method: 'PATCH', headers, body: JSON.stringify({ is_pinned: nextPinned })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         setIsChatPinned(nextPinned);
         showToast(nextPinned ? (language === 'vi' ? 'Đã ghim đoạn chat' : 'Chat pinned') : (language === 'vi' ? 'Đã bỏ ghim đoạn chat' : 'Chat unpinned'));
       } else if (action === 'archive') {
-        const res = await fetch(apiUrl(`/api/conversations/${activeConversationId}`), {
+        const res = await apiFetch(apiUrl(`/api/conversations/${activeConversationId}`), {
           method: 'PATCH', headers, body: JSON.stringify({ is_archived: true })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         handleNewChat();
         showToast(language === 'vi' ? 'Đã lưu trữ đoạn chat' : 'Chat archived');
       } else if (action === 'delete') {
-        const res = await fetch(apiUrl(`/api/conversations/${activeConversationId}`), {
+        const res = await apiFetch(apiUrl(`/api/conversations/${activeConversationId}`), {
           method: 'DELETE', headers
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -189,8 +251,8 @@ export default function App() {
   };
 
   const handleOpenImport = () => {
-    setProfileModalTab('import');
-    setIsProfileModalOpen(true);
+    setIsSettingsOpen(false);
+    setIsImportOpen(true);
   };
 
   // Ổn định tham chiếu: SettingsModal gắn/gỡ listener Esc theo onClose.
@@ -206,10 +268,17 @@ export default function App() {
     if (data.audit) setAuditData(data.audit);
   };
 
-  const handleOpenProfileModal = () => {
-    setProfileModalTab('demo');
-    setIsProfileModalOpen(true);
-  };
+  if (account === undefined) {
+    return (
+      <div className="auth-loading" role="status">
+        {language === 'vi' ? 'Đang kiểm tra đăng nhập…' : 'Checking session…'}
+      </div>
+    );
+  }
+
+  if (account === null) {
+    return <AuthScreen onAuthenticated={handleAuthenticated} notice={authNotice} language={language} />;
+  }
 
   return (
     <div style={{ height: '100vh', display: 'flex', overflow: 'hidden', background: 'var(--bg-dark)' }}>
@@ -226,7 +295,7 @@ export default function App() {
         onNewChat={handleNewChat}
         onSelectConversation={handleSelectConversation}
         onOpenSettings={handleOpenSettings}
-        onOpenProfileModal={handleOpenProfileModal}
+        onLogout={handleLogout}
         onOpenImport={handleOpenImport}
         theme={theme}
         onToggleTheme={() => setTheme(current => (current === 'light' ? 'dark' : 'light'))}
@@ -516,8 +585,6 @@ export default function App() {
                 onConversationCreated={handleConversationCreated}
                 onConversationUpdated={() => refreshConversations()}
                 onOpenImport={handleOpenImport}
-                onOpenProfileModal={handleOpenProfileModal}
-                onOpenAuthModal={handleOpenProfileModal}
                 language={language}
               />
             )}
@@ -535,8 +602,6 @@ export default function App() {
                     auditData={auditData} 
                     onNavigateTab={setActiveTab}
                     onOpenImport={handleOpenImport}
-                    onOpenProfileModal={handleOpenProfileModal}
-                    onOpenAuthModal={handleOpenProfileModal}
                   />
                 )}
 
@@ -561,24 +626,19 @@ export default function App() {
         studentProfile={studentProfile}
         auditData={auditData}
         onProfileUpdated={handleProfileUpdated}
-        onSwitchProfile={() => {
-          setIsSettingsOpen(false);
-          handleOpenProfileModal();
-        }}
+        onImportTranscript={handleOpenImport}
+        account={account}
+        onPasswordChanged={handlePasswordChanged}
+        onLogout={handleLogout}
         onShowToast={showToast}
       />
 
-      {/* 4. Student Profile Switcher & Import Modal */}
-      <ProfileModal
-        isOpen={isProfileModalOpen}
-        onClose={() => setIsProfileModalOpen(false)}
-        currentStudentId={studentProfile?.info?.student_id}
-        initialTab={profileModalTab}
-        studentProfile={studentProfile}
-        onProfileSwitched={(data) => {
-          if (data.profile) setStudentProfile(data.profile);
-          if (data.audit) setAuditData(data.audit);
-        }}
+      {/* 4. Nhập bảng điểm CTT cho tài khoản đang đăng nhập */}
+      <TranscriptImportModal
+        isOpen={isImportOpen}
+        onClose={() => setIsImportOpen(false)}
+        onImported={handleProfileUpdated}
+        hasTranscript={Boolean(studentProfile?.transcript?.length)}
         language={language}
       />
     </div>

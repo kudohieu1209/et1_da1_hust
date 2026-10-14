@@ -12,7 +12,7 @@ import {
   ThumbsDown,
   RotateCcw
 } from 'lucide-react';
-import { API_BASE_URL, apiUrl } from '../api';
+import { API_BASE_URL, apiFetch, apiUrl, readError } from '../api';
 import BrandLogo from './BrandLogo';
 import StudentWelcome from './StudentWelcome';
 
@@ -59,9 +59,7 @@ export default function ChatTab({
     }
 
     setLoading(true);
-    fetch(apiUrl(`/api/conversations/${conversationId}`), {
-      headers: studentId ? { 'X-Student-ID': studentId } : {}
-    })
+    apiFetch(apiUrl(`/api/conversations/${conversationId}`))
       .then(res => res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`)))
       .then(data => {
         if (cancelled) return;
@@ -163,14 +161,10 @@ export default function ChatTab({
 
     try {
       const historyToSend = [...messagesRef.current, userMsg].slice(-6);
-      const res = await fetch(apiUrl('/api/chat'), {
+      const res = await apiFetch(apiUrl('/api/chat'), {
         method: 'POST',
-        // The demo auth layer identifies the active profile by MSSV. This
-        // header also scopes conversation history on the backend.
-        headers: {
-          'Content-Type': 'application/json',
-          ...(studentId ? { 'X-Student-ID': studentId } : {})
-        },
+        // Backend xác định sinh viên qua cookie phiên đăng nhập.
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: query,
           history: historyToSend,
@@ -179,7 +173,10 @@ export default function ChatTab({
       });
 
       if (!res.ok) {
-        throw new Error(`HTTP error: ${res.status}`);
+        const detail = res.status === 401
+          ? 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.'
+          : await readError(res, `Máy chủ báo lỗi (HTTP ${res.status}). Vui lòng thử lại.`);
+        throw Object.assign(new Error(detail), { isHttpError: true });
       }
 
       const data = await res.json();
@@ -205,7 +202,9 @@ export default function ChatTab({
         ...prev,
         {
           role: 'assistant',
-          content: `❌ Không thể kết nối tới Backend server (${API_BASE_URL}). Bạn vui lòng kiểm tra xem server FastAPI đang chạy nhé!`,
+          content: err.isHttpError
+            ? `❌ ${err.message}`
+            : `❌ Không thể kết nối tới Backend server (${API_BASE_URL}). Bạn vui lòng kiểm tra xem server FastAPI đang chạy nhé!`,
           suggested_actions: ["Thử lại", "Kiểm tra kết nối"]
         }
       ]);
