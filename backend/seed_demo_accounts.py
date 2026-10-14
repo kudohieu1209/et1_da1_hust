@@ -3,8 +3,10 @@
     python seed_demo_accounts.py                    # tạo tài khoản còn thiếu
     python seed_demo_accounts.py --reset-password   # cấp mật khẩu mới cho mọi tài khoản demo
     python seed_demo_accounts.py --admin 20220001   # cấp quyền quản trị cho một MSSV
+    python seed_demo_accounts.py --reset-password --password Demo@2026
+                                                    # đặt chung mật khẩu cố định (ghi trong README) để demo
 
-Mật khẩu sinh ngẫu nhiên và CHỈ in ra màn hình (không ghi file, không commit).
+Mặc định mật khẩu sinh ngẫu nhiên và CHỈ in ra màn hình (không ghi file, không commit).
 Ghi kết quả vào nơi an toàn; quên thì chạy lại với --reset-password.
 Dùng cùng kho với backend: MongoDB nếu .env có MONGODB_URI, ngược lại SQLite cục bộ.
 """
@@ -13,7 +15,7 @@ import secrets
 import sys
 from datetime import datetime, timezone
 
-from app.auth.passwords import hash_password
+from app.auth.passwords import PasswordPolicyError, hash_password, validate_password
 from app.auth.runtime import auth_service
 from app.auth.store import UserExistsError
 from app.core.config import MONGODB_URI
@@ -29,7 +31,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--reset-password", action="store_true", help="Cấp mật khẩu mới cho tài khoản demo đã có")
     parser.add_argument("--admin", metavar="MSSV", help="Cấp quyền quản trị cho MSSV này")
+    parser.add_argument("--password", help="Dùng mật khẩu này cho mọi tài khoản demo thay vì sinh ngẫu nhiên")
     args = parser.parse_args()
+    if args.password:
+        try:
+            validate_password(args.password)
+        except PasswordPolicyError as exc:
+            print(f"--password không hợp lệ: {exc}", file=sys.stderr)
+            return 1
+    new_password = (lambda: args.password) if args.password else _demo_password
 
     store = auth_service.store
     print(f"Kho tài khoản: {'MongoDB ' + redact_uri(MONGODB_URI) if MONGODB_URI else 'SQLite cục bộ'}\n")
@@ -40,7 +50,7 @@ def main() -> int:
         name = info.get("student_name", "")
         existing = store.get_user(student_id)
         if existing is None:
-            password = _demo_password()
+            password = new_password()
             try:
                 store.create_user({
                     "student_id": student_id,
@@ -52,7 +62,7 @@ def main() -> int:
                 continue
             rows.append((student_id, name, password, "tạo mới"))
         elif args.reset_password and existing["is_demo"]:
-            password = _demo_password()
+            password = new_password()
             store.set_password(student_id, hash_password(password))
             store.delete_sessions_for(student_id)
             rows.append((student_id, name, password, "đổi mật khẩu"))

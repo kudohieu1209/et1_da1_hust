@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Loader2, RefreshCw } from 'lucide-react';
-import { apiUrl } from '../../api';
+import { apiFetch, apiUrl } from '../../api';
 
 async function getJson(path) {
-  const response = await fetch(apiUrl(path));
+  const response = await apiFetch(apiUrl(path));
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   return response.json();
 }
@@ -43,7 +43,7 @@ export default function AboutPanel({ language }) {
   const handleReindex = async () => {
     setReindex({ state: 'running', message: '' });
     try {
-      const response = await fetch(apiUrl('/api/rag/sync?force=true'), { method: 'POST' });
+      const response = await apiFetch(apiUrl('/api/rag/sync?force=true'), { method: 'POST' });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const result = await response.json();
       setReindex({

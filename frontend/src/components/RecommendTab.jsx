@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Cpu, Wifi, Radio, HeartPulse, CheckCircle, Sparkles, Sliders } from 'lucide-react';
-import { apiUrl } from '../api';
+import { apiFetch, apiUrl } from '../api';
 
 const TRACK_VISUALS = [
   { icon: Radio, color: 'var(--brand-accent)', bg: 'rgba(213, 19, 42, 0.08)' },
@@ -20,7 +20,7 @@ export default function RecommendTab() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(apiUrl('/api/student/tracks'))
+    apiFetch(apiUrl('/api/student/tracks'))
       .then(res => res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`)))
       .then(data => {
         const loaded = (data.tracks || []).map((track, index) => ({
@@ -40,7 +40,7 @@ export default function RecommendTab() {
   const fetchRecommendation = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(apiUrl('/api/student/recommend'), {
+      const res = await apiFetch(apiUrl('/api/student/recommend'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

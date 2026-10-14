@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, X, Info } from 'lucide-react';
-import { apiUrl } from '../api';
+import { apiFetch, apiUrl } from '../api';
 
 export default function RoadmapTab({ studentProfile }) {
   const [courses, setCourses] = useState([]);
@@ -22,7 +22,7 @@ export default function RoadmapTab({ studentProfile }) {
 
   const fetchCourses = async () => {
     try {
-      const res = await fetch(apiUrl('/api/courses'));
+      const res = await apiFetch(apiUrl('/api/courses'));
       const data = await res.json();
       setCourses(data.courses || []);
     } catch (err) {
@@ -35,7 +35,7 @@ export default function RoadmapTab({ studentProfile }) {
   const handleOpenCourse = async (course) => {
     setSelectedCourse(course);
     try {
-      const res = await fetch(apiUrl(`/api/courses/${course.code}`));
+      const res = await apiFetch(apiUrl(`/api/courses/${course.code}`));
       const data = await res.json();
       setCourseDetail(data);
     } catch (err) {

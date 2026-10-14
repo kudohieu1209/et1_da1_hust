@@ -57,7 +57,7 @@ graph TD
 - Đã ghép 14 candidate HTML/PDF với danh mục 8.310 học phần CTT (`project/data/raw/hust_curriculum_candidates.json`). ET1-2023 đã được phê duyệt qua `project/data/processed/curriculum_approvals.json`; các candidate còn lại vẫn `needs_review` và chưa nạp vào Rule Engine.
 - Lịch sử hội thoại và hồ sơ sinh viên được lưu trong **MongoDB** (collection `conversations`, `messages`, `student_profiles`) khi đặt `MONGODB_URI`; nếu để trống, hệ thống chạy offline bằng SQLite (`project/data/processed/chat_history.sqlite3`) và file `project/data/processed/students/*.json`. ChromaDB chỉ dùng để lưu vector RAG, không lưu hội thoại.
 - Kho RAG tin cậy hiện gồm 5 tài liệu: CTĐT ET1–2022, ET1–2023, Quy chế đào tạo theo Quyết định 5445/QĐ-ĐHBK, Sổ tay sinh viên 2026 và Quyết định học phí 2025–2026. Tài liệu có `RAG_STATUS: UNVERIFIED` không được lập chỉ mục.
-- Giao diện dùng bộ chọn hồ sơ demo, không cung cấp hệ thống xác thực sản xuất. Không triển khai dịch vụ này ra Internet khi chưa bổ sung phân quyền và bảo vệ dữ liệu cá nhân.
+- Sinh viên đăng nhập bằng **MSSV + mật khẩu** (tự đăng ký); phiên nằm trong cookie HttpOnly, mỗi người chỉ thấy hồ sơ, bảng điểm và hội thoại của mình. Chưa có HTTPS hay quản trị người dùng, nên chưa triển khai ra Internet.
 
 Thiết lập và chạy toàn bộ kiểm thử:
 
@@ -88,6 +88,28 @@ cd project/backend
 Nếu `MONGODB_URI` đã đặt mà không kết nối được, backend dừng ngay khi khởi động
 và báo lỗi (mật khẩu được che) thay vì âm thầm ghi sang kho cục bộ. `GET /` cho
 biết backend đang dùng kho nào. Kiểm thử luôn chạy trên kho cục bộ và `mongomock`.
+
+### Tài khoản và đăng nhập
+
+- Mở web sẽ gặp màn **Đăng nhập / Đăng ký**. Đăng ký cần MSSV (8 chữ số), họ tên, lớp có khóa (`K67`/`K68`) và mật khẩu ≥ 8 ký tự; xong sẽ được mời dán bảng điểm từ CTT.
+- Đăng xuất: menu tài khoản ở góc dưới thanh bên → **Đăng xuất**. Đổi mật khẩu: **Cài đặt → Tài khoản**.
+- Mở giao diện bằng `http://localhost:5173` (không dùng `127.0.0.1`) để trình duyệt gửi cookie đăng nhập tới `http://localhost:8000`.
+
+**Tài khoản demo** (tạo từ các hồ sơ có sẵn trong kho hồ sơ, đăng nhập tay như tài khoản thường):
+
+```bash
+cd project/backend
+./.venv/bin/python seed_demo_accounts.py --reset-password --password Demo@2026
+```
+
+| MSSV | Hồ sơ | Mật khẩu |
+|---|---|---|
+| 20220001 | Mai Duy Hiếu (K67) | `Demo@2026` |
+| 20223123 | Trần Thị Minh Trang (K67, học lực Giỏi) | `Demo@2026` |
+| 20224567 | Lê Hoàng Long (K67, cảnh báo mức 2) | `Demo@2026` |
+| 20231890 | Phạm Quang Huy (K68) | `Demo@2026` |
+
+Chạy lại lệnh trên trước buổi bảo vệ để đưa mật khẩu demo về `Demo@2026`. Lệnh chỉ đổi mật khẩu tài khoản demo, không động tới tài khoản sinh viên tự đăng ký.
 
 ### Đánh giá định lượng
 
