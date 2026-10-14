@@ -109,7 +109,7 @@ cd project/backend
 | 20224567 | Lê Hoàng Long (K67, cảnh báo mức 2) | `Demo@2026` |
 | 20231890 | Phạm Quang Huy (K68) | `Demo@2026` |
 
-Chạy lại lệnh trên trước buổi bảo vệ để đưa mật khẩu demo về `Demo@2026`. Lệnh chỉ đổi mật khẩu tài khoản demo, không động tới tài khoản sinh viên tự đăng ký.
+Máy mới clone (chưa có hồ sơ demo, vì dữ liệu cá nhân không đưa lên git) vẫn chạy được: sinh viên tự đăng ký và nhập bảng điểm. Tài khoản demo chỉ có khi đã chép `project/data/processed/students/` sang. Chạy lại lệnh trên trước buổi bảo vệ để đưa mật khẩu demo về `Demo@2026`. Lệnh chỉ đổi mật khẩu tài khoản demo, không động tới tài khoản sinh viên tự đăng ký.
 
 ### Đánh giá định lượng
 

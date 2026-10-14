@@ -76,6 +76,18 @@ def _build_state(profile: Dict[str, Any], curriculum: Dict[str, Any], student_id
     )
 
 
+def _placeholder_profile() -> Dict[str, Any]:
+    """Hồ sơ rỗng gắn với CTĐT đầu tiên đang hỗ trợ."""
+    program_code, version = curriculum_repository.available_keys[0]
+    return {
+        "info": {"student_id": "", "program_code": program_code, "curriculum_version": version},
+        "transcript": [],
+        "passed_courses": [],
+        "failed_courses": [],
+        "total_courses_completed": 0,
+    }
+
+
 class DataLoader:
     """Compatibility facade backed by a versioned curriculum dataset.
 
@@ -140,11 +152,15 @@ class DataLoader:
         self.aux_courses = aux_courses
 
         student_id = self._state.student_id if self._state else DEFAULT_STUDENT_ID
-        profile = self._profiles.get(student_id)
-        if profile is None:
-            if not STUDENT_PROFILE_FILE.exists():
-                raise FileNotFoundError(f"Không tìm thấy hồ sơ sinh viên {student_id}")
+        profile = self._profiles.get(student_id) if student_id else None
+        if profile is None and STUDENT_PROFILE_FILE.exists():
             profile = self._read_json(STUDENT_PROFILE_FILE)
+        if profile is None:
+            # Máy mới clone không có hồ sơ demo (dữ liệu cá nhân bị .gitignore).
+            # Request của sinh viên luôn chạy trong profile_scope với hồ sơ của
+            # chính họ, nên hồ sơ mặc định chỉ cần hợp lệ để backend khởi động.
+            student_id = ""
+            profile = _placeholder_profile()
         curriculum = curriculum_repository.resolve_profile(profile)
         self._activate(profile, curriculum, student_id)
 
