@@ -1,4 +1,5 @@
 import React from 'react';
+import BrandLogo from './BrandLogo';
 import { Sparkles, CheckCircle2, Award } from 'lucide-react';
 
 export default function Header({ studentProfile, auditData, activeTab, setActiveTab }) {
@@ -18,7 +19,7 @@ export default function Header({ studentProfile, auditData, activeTab, setActive
   return (
     <header style={{
       borderBottom: '1px solid var(--border-subtle)',
-      background: 'rgba(9, 13, 22, 0.85)',
+      background: 'var(--bg-surface)',
       backdropFilter: 'blur(20px)',
       position: 'sticky',
       top: 0,
@@ -36,21 +37,7 @@ export default function Header({ studentProfile, auditData, activeTab, setActive
       }}>
         {/* Logo & Major */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-          <div style={{
-            width: '46px',
-            height: '46px',
-            borderRadius: '12px',
-            background: 'linear-gradient(135deg, var(--hust-red), #881337)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 4px 18px var(--hust-red-glow)',
-            border: '1px solid rgba(255, 255, 255, 0.2)'
-          }}>
-            <span style={{ fontFamily: 'var(--font-heading)', fontWeight: '800', fontSize: '1.25rem', color: '#fff' }}>
-              BK
-            </span>
-          </div>
+          <BrandLogo size={46} decorative />
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <h1 style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
@@ -91,7 +78,7 @@ export default function Header({ studentProfile, auditData, activeTab, setActive
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '2px', fontSize: '0.78rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>
-                CPA: <strong style={{ color: '#0284c7' }}>{cpa.toFixed(2)}</strong>
+                CPA: <strong style={{ color: 'var(--brand-accent)' }}>{cpa.toFixed(2)}</strong>
               </span>
               <span style={{ color: 'var(--border-subtle)' }}>•</span>
               <span style={{ color: 'var(--text-secondary)' }}>
@@ -134,7 +121,7 @@ export default function Header({ studentProfile, auditData, activeTab, setActive
                 whiteSpace: 'nowrap'
               }}
             >
-              <Icon size={17} color={isActive ? 'var(--hust-red)' : 'var(--text-muted)'} />
+              <Icon size={17} color={isActive ? 'var(--brand-accent)' : 'var(--text-muted)'} />
               {item.label}
             </button>
           );

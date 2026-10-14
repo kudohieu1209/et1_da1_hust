@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   Menu, 
   Sparkles, 
@@ -11,6 +11,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import Sidebar from './components/Sidebar';
+import BrandLogo from './components/BrandLogo';
 import ChatTab from './components/ChatTab';
 import AuditTab from './components/AuditTab';
 import RecommendTab from './components/RecommendTab';
@@ -30,6 +31,7 @@ export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('hust_advisor_theme') || 'dark');
   const [language, setLanguage] = useState(() => localStorage.getItem('hust_advisor_lang') || 'vi');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [settingsTab, setSettingsTab] = useState('general');
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [profileModalTab, setProfileModalTab] = useState('demo');
 
@@ -191,6 +193,19 @@ export default function App() {
     setIsProfileModalOpen(true);
   };
 
+  // Ổn định tham chiếu: SettingsModal gắn/gỡ listener Esc theo onClose.
+  const handleCloseSettings = useCallback(() => setIsSettingsOpen(false), []);
+
+  const handleOpenSettings = (tab = 'general') => {
+    setSettingsTab(tab);
+    setIsSettingsOpen(true);
+  };
+
+  const handleProfileUpdated = (data) => {
+    if (data.profile) setStudentProfile(data.profile);
+    if (data.audit) setAuditData(data.audit);
+  };
+
   const handleOpenProfileModal = () => {
     setProfileModalTab('demo');
     setIsProfileModalOpen(true);
@@ -210,9 +225,11 @@ export default function App() {
         activeConversationId={activeConversationId}
         onNewChat={handleNewChat}
         onSelectConversation={handleSelectConversation}
-        onOpenSettings={() => setIsSettingsOpen(true)}
+        onOpenSettings={handleOpenSettings}
         onOpenProfileModal={handleOpenProfileModal}
-        onOpenAuthModal={handleOpenProfileModal}
+        onOpenImport={handleOpenImport}
+        theme={theme}
+        onToggleTheme={() => setTheme(current => (current === 'light' ? 'dark' : 'light'))}
         language={language}
       />
 
@@ -268,6 +285,7 @@ export default function App() {
                 <Menu size={18} />
               </button>
             )}
+            {!isSidebarOpen && <BrandLogo size={28} />}
 
           </div>
 
@@ -375,7 +393,7 @@ export default function App() {
                   onMouseEnter={e => e.currentTarget.style.background = 'var(--sidebar-hover)'}
                   onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                 >
-                  <Pin size={16} color={isChatPinned ? '#c8102e' : 'var(--text-muted)'} />
+                  <Pin size={16} color={isChatPinned ? 'var(--brand-accent)' : 'var(--text-muted)'} />
                   <span>
                     {isChatPinned 
                       ? (language === 'vi' ? 'Bỏ ghim đoạn chat' : 'Unpin chat') 
@@ -426,7 +444,7 @@ export default function App() {
                     borderRadius: '8px',
                     border: 'none',
                     background: 'transparent',
-                    color: '#ef4444',
+                    color: 'var(--danger)',
                     fontSize: '0.85rem',
                     fontWeight: '500',
                     cursor: 'pointer',
@@ -437,7 +455,7 @@ export default function App() {
                   onMouseEnter={e => e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)'}
                   onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                 >
-                  <Trash2 size={16} color="#ef4444" />
+                  <Trash2 size={16} color="var(--danger)" />
                   <span>{language === 'vi' ? 'Xóa' : 'Delete'}</span>
                 </button>
 
@@ -480,7 +498,7 @@ export default function App() {
         {/* Apple Dynamic Island Toast Notification */}
         {toastMessage && (
           <div className="apple-dynamic-island">
-            <Sparkles size={14} color="#10b981" />
+            <Sparkles size={14} color="var(--success)" />
             <span>{toastMessage}</span>
           </div>
         )}
@@ -534,17 +552,19 @@ export default function App() {
       {/* 3. Settings Dialog Modal */}
       <SettingsModal 
         isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
+        onClose={handleCloseSettings}
+        initialTab={settingsTab}
         theme={theme}
         setTheme={setTheme}
         language={language}
         setLanguage={setLanguage}
         studentProfile={studentProfile}
-        setStudentProfile={setStudentProfile}
         auditData={auditData}
-        setAuditData={setAuditData}
-        onResetChat={handleNewChat}
-        onOpenAuthModal={handleOpenProfileModal}
+        onProfileUpdated={handleProfileUpdated}
+        onSwitchProfile={() => {
+          setIsSettingsOpen(false);
+          handleOpenProfileModal();
+        }}
         onShowToast={showToast}
       />
 

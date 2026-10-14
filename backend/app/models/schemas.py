@@ -1,5 +1,43 @@
 from typing import List, Optional, Dict, Any
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+# Ảnh đại diện đã được frontend thu về ~256px; giới hạn này chặn ảnh gốc nhiều
+# MB bị lưu vào hồ sơ (và bị gửi lại trong mọi phản hồi audit).
+MAX_AVATAR_DATA_URL_LENGTH = 300_000
+AVATAR_DATA_URL_PATTERN = r"^(data:image/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+)?$"
+AVATAR_GRADIENT_PATTERN = r"^linear-gradient\(135deg, #[0-9a-fA-F]{6}, #[0-9a-fA-F]{6}\)$"
+
+
+class TranscriptImportRequest(BaseModel):
+    """Bảng điểm copy từ CTT. MSSV/tên/lớp lấy từ tài khoản đăng nhập; các
+    trường đó nếu client còn gửi kèm sẽ bị bỏ qua (không ghi đè danh tính)."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    raw_text: str = Field(..., min_length=1, max_length=100_000)
+    warning_level: Optional[int] = Field(None, ge=0, le=3)
+
+
+class ProfileDisplayUpdate(BaseModel):
+    """Các trường hiển thị sinh viên được tự sửa trong Cài đặt.
+
+    MSSV, lớp, CTĐT quyết định kết quả rà soát nên không nằm ở đây: chúng chỉ
+    đến từ hồ sơ hoặc bảng điểm nhập từ CTT. Trường lạ bị từ chối (422).
+    """
+
+    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
+
+    student_name: Optional[str] = Field(None, min_length=1, max_length=80)
+    avatar_url: Optional[str] = Field(
+        None, max_length=MAX_AVATAR_DATA_URL_LENGTH, pattern=AVATAR_DATA_URL_PATTERN
+    )
+    avatar_emoji: Optional[str] = Field(None, max_length=8)
+    avatar_gradient: Optional[str] = Field(None, pattern=AVATAR_GRADIENT_PATTERN)
+
+    @field_validator("student_name")
+    @classmethod
+    def _collapse_inner_spaces(cls, value: Optional[str]) -> Optional[str]:
+        return " ".join(value.split()) if value is not None else value
 
 class CourseConditionItem(BaseModel):
     code: str

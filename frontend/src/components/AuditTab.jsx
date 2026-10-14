@@ -38,7 +38,7 @@ export default function AuditTab({
     completion_percentage = 0,
     passed_count = 0,
     failed_count = 0,
-    academic_classification = { rank: 'Trung bình', color: '#f59e0b', desc: '2.00 ≤ CPA < 2.50' },
+    academic_classification = { rank: 'Trung bình', color: 'var(--warning)', desc: '2.00 ≤ CPA < 2.50' },
     target_kha_advice = null,
     unlearned_compulsory_courses = [],
     unlearned_elective_courses = [],
@@ -46,6 +46,11 @@ export default function AuditTab({
     non_credit_requirements = [],
     graduation_ready = false
   } = auditData;
+
+  const classificationTone = ['Xuất sắc', 'Giỏi', 'Khá'].includes(academic_classification.rank)
+    ? 'success'
+    : ['Yếu', 'Kém'].includes(academic_classification.rank) ? 'danger' : 'warning';
+  const classificationColor = `var(--${classificationTone})`;
 
   const remaining_credits = Math.max(0, total_credits_required - total_credits_accumulated);
   const compulsory_credits_missing = unlearned_compulsory_courses.reduce((sum, c) => sum + (c.credits || 0), 0);
@@ -70,8 +75,8 @@ export default function AuditTab({
         <div style={{
           padding: '16px 20px',
           borderRadius: '14px',
-          background: 'linear-gradient(135deg, rgba(200, 16, 46, 0.08), rgba(56, 189, 248, 0.08))',
-          border: '1px solid rgba(200, 16, 46, 0.25)',
+          background: 'linear-gradient(135deg, rgba(213, 19, 42, 0.08), rgba(213, 19, 42, 0.08))',
+          border: '1px solid rgba(213, 19, 42, 0.25)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -79,7 +84,7 @@ export default function AuditTab({
           gap: '14px'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <AlertTriangle size={24} color="#f59e0b" style={{ flexShrink: 0 }} />
+            <AlertTriangle size={24} color="var(--warning)" style={{ flexShrink: 0 }} />
             <div>
               <div style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '0.94rem' }}>
                 Hồ sơ sinh viên chưa có môn học nào hoàn thành (0 / {total_credits_required} tín chỉ)
@@ -99,7 +104,7 @@ export default function AuditTab({
                   gap: '6px',
                   padding: '7px 14px',
                   borderRadius: '8px',
-                  background: 'var(--accent-red)',
+                  background: 'var(--hust-red)',
                   color: '#fff',
                   border: 'none',
                   fontWeight: '600',
@@ -175,7 +180,7 @@ export default function AuditTab({
             fontSize: '0.82rem'
           }}>
             <span style={{ color: 'var(--text-muted)' }}>CPA: </span>
-            <strong style={{ color: academic_classification.color || 'var(--warning)' }}>{cpa.toFixed(2)}</strong>
+            <strong style={{ color: classificationColor }}>{cpa.toFixed(2)}</strong>
           </div>
         </div>
       </div>
@@ -228,8 +233,8 @@ export default function AuditTab({
                 />
                 <defs>
                   <linearGradient id="hustProgressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#c8102e" />
-                    <stop offset="100%" stopColor="#f43f5e" />
+                    <stop offset="0%" stopColor="var(--hust-red)" />
+                    <stop offset="100%" stopColor="var(--brand-gold)" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -257,7 +262,7 @@ export default function AuditTab({
               <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
                 Tín chỉ tích lũy
               </div>
-              <div style={{ fontSize: '0.78rem', color: '#c8102e', fontWeight: '600', marginTop: '4px' }}>
+              <div style={{ fontSize: '0.78rem', color: 'var(--brand-accent)', fontWeight: '600', marginTop: '4px' }}>
                 Còn thiếu {remaining_credits.toFixed(1)} TC
               </div>
             </div>
@@ -280,10 +285,7 @@ export default function AuditTab({
             <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: '700', letterSpacing: '0.04em' }}>
               ĐIỂM CPA HIỆN TẠI
             </span>
-            <span className="badge" style={{
-              background: `${academic_classification.color}1a`,
-              color: academic_classification.color,
-              border: `1px solid ${academic_classification.color}40`,
+            <span className={`badge badge-${classificationTone}`} style={{
               fontSize: '0.7rem',
               fontWeight: '700'
             }}>
@@ -295,7 +297,7 @@ export default function AuditTab({
             <div style={{
               fontSize: '2.1rem',
               fontWeight: '800',
-              color: academic_classification.color || 'var(--warning)',
+              color: classificationColor,
               lineHeight: '1.1'
             }}>
               {cpa.toFixed(2)}
@@ -394,7 +396,7 @@ export default function AuditTab({
             alignItems: 'center',
             gap: '6px',
             fontSize: '0.75rem',
-            color: 'var(--indigo)',
+            color: 'var(--brand-accent)',
             fontWeight: '600'
           }}>
             <Calendar size={14} />
@@ -445,8 +447,8 @@ export default function AuditTab({
         <div style={{
           padding: '16px 20px',
           borderRadius: 'var(--radius-lg)',
-          background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%)',
-          border: '1px solid rgba(14, 165, 233, 0.25)',
+          background: 'linear-gradient(135deg, rgba(213, 19, 42, 0.08) 0%, rgba(213, 19, 42, 0.08) 100%)',
+          border: '1px solid rgba(213, 19, 42, 0.25)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -458,8 +460,8 @@ export default function AuditTab({
               width: '36px',
               height: '36px',
               borderRadius: '10px',
-              background: 'rgba(14, 165, 233, 0.15)',
-              color: '#0284c7',
+              background: 'rgba(213, 19, 42, 0.15)',
+              color: 'var(--brand-accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -473,7 +475,7 @@ export default function AuditTab({
                 <span className="badge badge-indigo" style={{ fontSize: '0.68rem', padding: '2px 8px' }}>Khuyến nghị</span>
               </div>
               <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginTop: '4px', lineHeight: '1.45', margin: 0 }}>
-                Để nâng mức tốt nghiệp từ <strong>Trung bình ({cpa.toFixed(2)})</strong> lên <strong>Khá (≥ 2.50)</strong>, bạn cần đạt GPA trung bình ~<strong style={{ color: '#0284c7' }}>{target_kha_advice.gpa_needed_remaining}</strong> trong {target_kha_advice.remaining_credits} TC còn lại. 
+                Để nâng mức tốt nghiệp từ <strong>Trung bình ({cpa.toFixed(2)})</strong> lên <strong>Khá (≥ 2.50)</strong>, bạn cần đạt GPA trung bình ~<strong style={{ color: 'var(--brand-accent)' }}>{target_kha_advice.gpa_needed_remaining}</strong> trong {target_kha_advice.remaining_credits} TC còn lại.
                 <span style={{ color: 'var(--text-primary)', fontWeight: '500' }}> Phương án tối ưu: </span> 
                 Đăng ký học <strong>cải thiện 2 - 3 môn điểm C/D</strong> ở các kỳ tới để giảm tải áp lực GPA môn mới xuống mức an toàn (~3.0 - 3.2).
               </p>
@@ -544,12 +546,12 @@ export default function AuditTab({
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                         <span style={{
                           fontWeight: '800',
-                          color: '#0284c7',
+                          color: 'var(--brand-accent)',
                           fontFamily: 'monospace',
                           fontSize: '1rem',
                           padding: '2px 6px',
                           borderRadius: '4px',
-                          background: 'rgba(2, 132, 199, 0.1)'
+                          background: 'rgba(213, 19, 42, 0.1)'
                         }}>
                           {course.code}
                         </span>
@@ -580,11 +582,11 @@ export default function AuditTab({
                   width: '32px',
                   height: '32px',
                   borderRadius: '8px',
-                  background: 'rgba(99, 102, 241, 0.12)',
+                  background: 'rgba(213, 19, 42, 0.12)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: 'var(--indigo)'
+                  color: 'var(--brand-accent)'
                 }}>
                   <Layers size={18} />
                 </div>
@@ -646,7 +648,7 @@ export default function AuditTab({
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: 'var(--hust-red)'
+                  color: 'var(--brand-accent)'
                 }}>
                   <GraduationCap size={20} />
                 </div>
@@ -806,7 +808,7 @@ export default function AuditTab({
               height: '38px',
               borderRadius: '10px',
               background: 'var(--hust-red-glow)',
-              color: 'var(--hust-red)',
+              color: 'var(--brand-accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

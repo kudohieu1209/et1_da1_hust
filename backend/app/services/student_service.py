@@ -213,25 +213,18 @@ class StudentService:
             "pending_requirements": pending_reqs,
         }
 
-    def list_profiles(self) -> List[Dict[str, Any]]:
-        return data_loader.list_available_profiles()
+    def import_transcript(self, data: Dict[str, Any], student_id: str) -> Dict[str, Any]:
+        """Thay bảng điểm của sinh viên đang đăng nhập bằng bảng điểm copy từ CTT.
 
-    def switch_student(self, student_id: str) -> Dict[str, Any]:
-        data_loader.load_student_profile(student_id)
-        return {
-            "status": "success",
-            "active_student_id": student_id,
-            "profile": self.get_profile(),
-            "audit": self.audit_degree(),
-        }
-
-    def import_transcript(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """Import a personal transcript from copied CTT text or course objects."""
+        Danh tính (MSSV, tên, lớp, CTĐT) lấy từ tài khoản, không lấy từ dữ
+        liệu client gửi lên, nên không thể ghi đè hồ sơ của người khác.
+        """
         import re
 
-        student_id = data.get("student_id", "custom").strip()
-        student_name = data.get("student_name", "Sinh viên Tự nhập").strip()
-        class_name = data.get("class_name", "Điện tử 01 - K67").strip()
+        key = data_loader.find_profile_key(student_id)
+        existing = data_loader.profiles.get(key) if key else None
+        if existing is None:
+            raise FileNotFoundError(f"Tài khoản {student_id} chưa có hồ sơ học tập.")
         raw_text = data.get("raw_text", "")
         transcript = []
 
@@ -273,26 +266,19 @@ class StudentService:
                 "Không đọc được học phần nào có điểm chữ hợp lệ (A+, A, B+, B, C+, C, D+, D, F)."
             )
 
+        info = dict(existing.get("info", {}))
+        if data.get("warning_level") is not None:
+            # Mức cảnh báo học tập hiển thị trên CTT (0-3), nếu sinh viên nhập.
+            info["warning_level"] = data.get("warning_level")
         custom_profile = {
-            "info": {
-                "program_id": data.get("program_id", "1654"),
-                "program_code": data.get("program_code", "ET1"),
-                "curriculum_version": str(data.get("curriculum_version", "2022")),
-                "program_name": "Kỹ thuật Điện tử - Viễn thông",
-                "student_id": student_id,
-                "student_name": student_name,
-                "class_name": class_name,
-                "badge": "Tự nhập CTT",
-                "persona": f"Hồ sơ cá nhân của {student_name} ({student_id})",
-                # Mức cảnh báo học tập hiển thị trên CTT (0-3), nếu sinh viên nhập.
-                "warning_level": data.get("warning_level"),
-            },
+            **existing,
+            "info": info,
             "total_courses_completed": sum(item["is_passed"] for item in transcript),
             "passed_courses": [item for item in transcript if item["is_passed"]],
             "failed_courses": [item for item in transcript if not item["is_passed"]],
             "transcript": transcript,
         }
-        data_loader.save_custom_profile(custom_profile)
+        data_loader.save_profile_for(student_id, custom_profile)
         return {
             "status": "success",
             "message": f"Đã nạp thành công bảng điểm gồm {len(transcript)} môn học!"
@@ -302,8 +288,8 @@ class StudentService:
             "audit": self.audit_degree(),
         }
 
-    def update_profile(self, payload: Dict[str, Any]) -> Dict[str, Any]:
-        profile = data_loader.update_profile_info(payload)
+    def update_profile(self, payload: Dict[str, Any], student_id: str) -> Dict[str, Any]:
+        profile = data_loader.update_profile_info_for(student_id, payload)
         return {
             "status": "success",
             "message": "Cập nhật thông tin hồ sơ thành công!",

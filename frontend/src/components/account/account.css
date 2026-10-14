@@ -1,0 +1,574 @@
+/* Khu vực tài khoản (cuối sidebar) và hộp thoại Cài đặt.
+   Chỉ dùng design token có sẵn trong index.css để tự theo theme sáng/tối. */
+
+/* ---------- Avatar ---------- */
+.account-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.account-avatar__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Trigger ---------- */
+.account {
+  position: relative;
+  padding: 8px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--sidebar-footer-bg);
+}
+
+.account-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 7px 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md, 10px);
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--dur-fast, 150ms) ease, border-color var(--dur-fast, 150ms) ease;
+}
+
+.account-trigger:hover,
+.account-trigger[aria-expanded='true'] {
+  background: var(--sidebar-hover);
+}
+
+.account-trigger[aria-expanded='true'] {
+  border-color: var(--border-subtle);
+}
+
+.account-trigger:focus-visible,
+.account-menu__item:focus-visible,
+.settings-tab:focus-visible,
+.settings-segment button:focus-visible,
+.settings-swatch:focus-visible,
+.settings-button:focus-visible,
+.settings-close:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
+
+.account-trigger__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.account-trigger__name,
+.account-trigger__sub {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.account-trigger__name {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.account-trigger__sub {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.account-trigger__sub.is-warning {
+  color: var(--danger);
+}
+
+.account-trigger__chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+/* ---------- Menu ---------- */
+/* Render qua portal; left/bottom/width do AccountMenu tính từ vị trí nút. */
+.account-menu {
+  position: fixed;
+  z-index: 900;
+  max-width: calc(100vw - 16px);
+  padding: 6px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg, 14px);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-md);
+  transform-origin: bottom center;
+  animation: account-menu-in 160ms var(--ease-apple, ease-out);
+}
+
+@keyframes account-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.account-menu__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px 6px;
+}
+
+.account-menu__identity {
+  min-width: 0;
+}
+
+.account-menu__name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.account-menu__meta {
+  margin-top: 2px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.account-menu__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 2px 8px 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md, 10px);
+  background: var(--border-subtle);
+}
+
+.account-menu__stats > div {
+  padding: 7px 8px;
+  background: var(--bg-card);
+  min-width: 0;
+}
+
+.account-menu__stats dt {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.account-menu__stats dd {
+  margin: 2px 0 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.account-menu__stats small {
+  display: block;
+  margin-top: 1px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.account-menu__warning {
+  margin: 0 8px 8px;
+  padding: 6px 9px;
+  border-radius: var(--radius-sm, 8px);
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.account-menu__divider {
+  height: 1px;
+  margin: 4px 6px;
+  background: var(--border-subtle);
+}
+
+.account-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: var(--radius-sm, 8px);
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.account-menu__item:hover,
+.account-menu__item:focus-visible {
+  background: var(--sidebar-hover);
+  color: var(--text-primary);
+}
+
+.account-menu__item svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.account-menu__item:hover svg,
+.account-menu__item:focus-visible svg {
+  color: var(--brand-accent);
+}
+
+/* ---------- Settings dialog ---------- */
+.settings-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 640px;
+  /* Chiều cao cố định: đổi tab không làm hộp thoại co giãn. */
+  height: min(600px, 90vh);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  background: var(--bg-surface);
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.settings-header h2 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.settings-close {
+  display: inline-flex;
+  padding: 6px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.settings-close:hover {
+  background: var(--sidebar-hover);
+  color: var(--text-primary);
+}
+
+.settings-body {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  min-height: 0;
+  flex: 1;
+}
+
+.settings-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 8px;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+}
+
+.settings-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.settings-tab:hover {
+  background: var(--sidebar-hover);
+  color: var(--text-primary);
+}
+
+.settings-tab[aria-selected='true'] {
+  background: var(--brand-soft);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.settings-tab[aria-selected='true'] svg {
+  color: var(--brand-accent);
+}
+
+.settings-panel {
+  padding: 18px 20px 20px;
+  overflow-y: auto;
+}
+
+.settings-section + .settings-section {
+  margin-top: 22px;
+}
+
+.settings-section h3 {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.settings-hint {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.settings-segment {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--bg-card);
+}
+
+.settings-segment button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.83rem;
+  cursor: pointer;
+}
+
+.settings-segment button[aria-checked='true'] {
+  background: var(--brand-soft);
+  color: var(--text-primary);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--border-hust, var(--border-focus));
+}
+
+.settings-segment button[aria-checked='true'] svg {
+  color: var(--brand-accent);
+}
+
+.settings-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.settings-avatar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.settings-swatches {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.settings-swatch {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.settings-swatch[aria-checked='true'] {
+  border-color: var(--text-primary);
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.settings-field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.settings-input {
+  padding: 9px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.settings-input:focus {
+  outline: none;
+  border-color: var(--border-focus, var(--brand-accent));
+}
+
+.settings-readonly {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 16px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--bg-card);
+  font-size: 0.83rem;
+}
+
+.settings-readonly dt {
+  color: var(--text-muted);
+}
+
+.settings-readonly dd {
+  margin: 0;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.settings-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settings-button:hover:not(:disabled) {
+  background: var(--sidebar-hover);
+}
+
+.settings-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings-button--primary {
+  border-color: transparent;
+  background: var(--brand-gradient, var(--hust-red));
+  color: #fff;
+}
+
+.settings-button--primary:hover:not(:disabled) {
+  background: var(--hust-red-hover, var(--hust-red));
+}
+
+.settings-status {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.settings-status.is-error {
+  color: var(--danger);
+}
+
+.settings-advanced {
+  margin-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 12px;
+}
+
+.settings-advanced summary {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.settings-advanced[open] summary {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 560px) {
+  .settings-body {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
+
+.settings-window .spin {
+  animation: settings-spin 0.9s linear infinite;
+}
+
+@keyframes settings-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .account-menu,
+  .settings-window .spin {
+    animation: none;
+  }
+}

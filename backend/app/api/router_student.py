@@ -1,23 +1,34 @@
-from fastapi import APIRouter, HTTPException
-from typing import Dict, Any
+from fastapi import APIRouter, Depends, HTTPException
+from app.auth.dependencies import current_student, student_scope
 from app.services.student_service import student_service
 from app.engine.recommender import course_recommender
 from app.services.data_loader import data_loader
 from app.services.curriculum_repository import CurriculumNotFoundError
-from app.models.schemas import DegreeAuditResponse, RecommendationRequest, RecommendationResponse
+from app.models.schemas import (
+    DegreeAuditResponse,
+    ProfileDisplayUpdate,
+    RecommendationRequest,
+    RecommendationResponse,
+    TranscriptImportRequest,
+)
 
-router = APIRouter(prefix="/api/student", tags=["Student & Degree Audit"])
+# Mọi endpoint chạy trong scope hồ sơ của sinh viên đang đăng nhập (cookie phiên).
+router = APIRouter(
+    prefix="/api/student",
+    tags=["Student & Degree Audit"],
+    dependencies=[Depends(student_scope)],
+)
 
 @router.get("/profile")
 def get_student_profile():
-    """Lấy thông tin sinh viên và bảng điểm các môn đã học"""
+    """Thông tin và bảng điểm của sinh viên đang đăng nhập."""
     return student_service.get_profile()
 
 @router.post("/profile/update")
-def update_student_profile(payload: Dict[str, Any]):
-    """Cập nhật thông tin sinh viên (họ tên, avatar, lớp, MSSV, CTĐT...)"""
+def update_student_profile(payload: ProfileDisplayUpdate, student_id: str = Depends(current_student)):
+    """Cập nhật tên hiển thị và ảnh đại diện. MSSV/lớp/CTĐT không sửa tay được."""
     try:
-        return student_service.update_profile(payload)
+        return student_service.update_profile(payload.model_dump(exclude_unset=True), student_id)
     except CurriculumNotFoundError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
@@ -27,31 +38,17 @@ def get_degree_audit():
     audit = student_service.audit_degree()
     return DegreeAuditResponse(**audit)
 
-@router.get("/profiles")
-def list_student_profiles():
-    """Liệt kê danh sách các hồ sơ sinh viên Demo (Hiếu K67, Trang Giỏi, Long Cảnh báo, Huy K68,...)"""
-    return student_service.list_profiles()
-
-@router.post("/switch")
-def switch_student_profile(payload: Dict[str, Any]):
-    """Chuyển đổi hồ sơ sinh viên đang hoạt động"""
-    student_id = payload.get("student_id", "20220001")
-    try:
-        return student_service.switch_student(student_id)
-    except (CurriculumNotFoundError, FileNotFoundError) as exc:
-        raise HTTPException(status_code=422, detail=str(exc)) from exc
-
 @router.post("/import")
-def import_student_transcript(payload: Dict[str, Any]):
-    """Nhập bảng điểm cá nhân của sinh viên (từ text copy CTT hoặc JSON)"""
+def import_student_transcript(payload: TranscriptImportRequest, student_id: str = Depends(current_student)):
+    """Thay bảng điểm của sinh viên đang đăng nhập bằng nội dung copy từ CTT."""
     try:
-        return student_service.import_transcript(payload)
+        return student_service.import_transcript(payload.model_dump(exclude_none=True), student_id)
     except (CurriculumNotFoundError, ValueError) as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 @router.get("/tracks")
 def get_available_tracks():
-    """Danh sách các mô-đun lấy từ CTĐT đang hoạt động."""
+    """Danh sách các mô-đun lấy từ CTĐT của sinh viên."""
     return {"tracks": data_loader.get_module_tracks()}
 
 @router.post("/recommend", response_model=RecommendationResponse)

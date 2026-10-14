@@ -131,9 +131,9 @@ export default function RoadmapTab({ studentProfile }) {
             style={{
               padding: '6px 14px',
               borderRadius: 'var(--radius-full)',
-              border: filterStatus === 'ALL' ? '1px solid var(--indigo)' : '1px solid var(--border-subtle)',
-              background: filterStatus === 'ALL' ? 'var(--indigo-glow)' : 'rgba(255, 255, 255, 0.04)',
-              color: filterStatus === 'ALL' ? '#fff' : 'var(--text-secondary)',
+              border: filterStatus === 'ALL' ? '1px solid var(--brand-accent)' : '1px solid var(--border-subtle)',
+              background: filterStatus === 'ALL' ? 'var(--brand-soft)' : 'rgba(255, 255, 255, 0.04)',
+              color: filterStatus === 'ALL' ? 'var(--brand-accent)' : 'var(--text-secondary)',
               fontSize: '0.84rem',
               fontWeight: '600',
               cursor: 'pointer'
@@ -161,9 +161,9 @@ export default function RoadmapTab({ studentProfile }) {
             style={{
               padding: '6px 14px',
               borderRadius: 'var(--radius-full)',
-              border: filterStatus === 'ELIGIBLE' ? '1px solid var(--sky)' : '1px solid var(--border-subtle)',
-              background: filterStatus === 'ELIGIBLE' ? 'rgba(14, 165, 233, 0.15)' : 'rgba(255, 255, 255, 0.04)',
-              color: filterStatus === 'ELIGIBLE' ? '#38bdf8' : 'var(--text-secondary)',
+              border: filterStatus === 'ELIGIBLE' ? '1px solid var(--brand-accent)' : '1px solid var(--border-subtle)',
+              background: filterStatus === 'ELIGIBLE' ? 'rgba(213, 19, 42, 0.15)' : 'rgba(255, 255, 255, 0.04)',
+              color: filterStatus === 'ELIGIBLE' ? 'var(--brand-accent)' : 'var(--text-secondary)',
               fontSize: '0.84rem',
               fontWeight: '600',
               cursor: 'pointer'
@@ -178,7 +178,7 @@ export default function RoadmapTab({ studentProfile }) {
               borderRadius: 'var(--radius-full)',
               border: filterStatus === 'BLOCKED' ? '1px solid var(--danger)' : '1px solid var(--border-subtle)',
               background: filterStatus === 'BLOCKED' ? 'var(--danger-bg)' : 'rgba(255, 255, 255, 0.04)',
-              color: filterStatus === 'BLOCKED' ? '#fda4af' : 'var(--text-secondary)',
+              color: filterStatus === 'BLOCKED' ? 'var(--brand-accent)' : 'var(--text-secondary)',
               fontSize: '0.84rem',
               fontWeight: '600',
               cursor: 'pointer'
@@ -229,8 +229,8 @@ export default function RoadmapTab({ studentProfile }) {
                       width: '26px',
                       height: '26px',
                       borderRadius: '6px',
-                      background: sem <= 4 ? 'rgba(99, 102, 241, 0.2)' : 'rgba(200, 16, 46, 0.2)',
-                      color: sem <= 4 ? '#818cf8' : '#fda4af',
+                      background: sem <= 4 ? 'rgba(213, 19, 42, 0.2)' : 'rgba(213, 19, 42, 0.2)',
+                      color: sem <= 4 ? 'var(--brand-accent)' : 'var(--brand-accent)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -262,7 +262,7 @@ export default function RoadmapTab({ studentProfile }) {
                       borderColor = 'rgba(244, 63, 94, 0.3)';
                       statusBadge = <span className="badge badge-danger" style={{ fontSize: '0.68rem', padding: '2px 6px' }}>Bị chặn</span>;
                     } else {
-                      borderColor = 'rgba(14, 165, 233, 0.3)';
+                      borderColor = 'rgba(213, 19, 42, 0.3)';
                       statusBadge = <span className="badge badge-indigo" style={{ fontSize: '0.68rem', padding: '2px 6px' }}>Mở khóa</span>;
                     }
 
@@ -306,7 +306,7 @@ export default function RoadmapTab({ studentProfile }) {
                         }}>
                           <span>{c.credits} TC • {c.is_compulsory ? 'Bắt buộc' : 'Tự chọn'}</span>
                           {c.raw_condition && (
-                            <span style={{ color: '#94a3b8', fontStyle: 'italic' }}>
+                            <span style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
                               ĐK: {c.raw_condition.length > 12 ? c.raw_condition.slice(0, 12) + '...' : c.raw_condition}
                             </span>
                           )}
@@ -390,7 +390,7 @@ export default function RoadmapTab({ studentProfile }) {
               borderRadius: 'var(--radius-md)',
               border: '1px solid var(--border-subtle)'
             }}>
-              <h4 style={{ fontSize: '0.92rem', color: 'var(--indigo)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <h4 style={{ fontSize: '0.92rem', color: 'var(--brand-accent)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Info size={16} />
                 Điều kiện đăng ký chính thức trên CTT HUST:
               </h4>
@@ -430,7 +430,7 @@ export default function RoadmapTab({ studentProfile }) {
                   </div>
                 </div>
               ) : (
-                <p style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
                   ✅ Môn học này <strong>hoàn toàn không có ràng buộc điều kiện</strong>. Sinh viên được phép đăng ký tự do theo khung CTĐT!
                 </p>
               )}
@@ -439,7 +439,7 @@ export default function RoadmapTab({ studentProfile }) {
             {/* Unlocks Next Courses */}
             {courseDetail?.unlocks_courses && courseDetail.unlocks_courses.length > 0 && (
               <div style={{ marginTop: '20px' }}>
-                <h4 style={{ fontSize: '0.92rem', color: '#f8fafc', marginBottom: '10px' }}>
+                <h4 style={{ fontSize: '0.92rem', color: 'var(--text-primary)', marginBottom: '10px' }}>
                   🔓 Môn này là điều kiện để mở khóa các môn tiếp theo:
                 </h4>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
