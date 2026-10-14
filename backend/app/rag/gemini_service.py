@@ -15,6 +15,15 @@ NGUYÊN TẮC TRẢ LỜI CỐT LÕI:
 - TUYỆT ĐỐI KHÔNG BỊA ĐẶT quy chế nếu tài liệu không đề cập. Nếu không đủ dữ liệu, hãy hướng dẫn sinh viên tra cứu thêm trên ctt.hust.edu.vn hoặc liên hệ Bàn Một cửa C1.
 """
 
+SMALL_TALK_PROMPT = """Bạn là HUST Advisor, trợ lý học tập thân thiện của sinh viên Đại học Bách khoa Hà Nội.
+Sinh viên đang nói chuyện xã giao (chào hỏi, cảm ơn, chúc, tạm biệt, tâm sự).
+- Trả lời bằng tiếng Việt, ngắn gọn 1–3 câu, ấm áp và tự nhiên; có thể dùng một emoji.
+- Không đưa ra quy chế, điểm số, số liệu hay thông tin về trường.
+- Nếu sinh viên than mệt/áp lực, hãy động viên và gợi ý nghỉ ngơi hoặc chia sẻ với cố vấn học tập, người thân.
+- Khi phù hợp, nhắc nhẹ rằng bạn có thể giúp xem tiến độ học tập, kiểm tra điều kiện môn hoặc gợi ý môn kỳ tới.
+"""
+
+
 def clean_display_source(name: str) -> str:
     """Quy đổi tên file kỹ thuật (.md, .txt, .pdf) sang tên văn bản chính thức của trường"""
     if not name:
@@ -150,6 +159,36 @@ class GeminiService:
 
         # Nếu tất cả các model đều lỗi, trả về fallback synthesis
         return self._fallback_synthesis(user_query, context_chunks, structured_data)
+
+    def small_talk(self, message: str, history: Optional[List[Dict[str, str]]] = None) -> Optional[str]:
+        """Đáp câu xã giao bằng Gemini; trả None nếu không gọi được để bên gọi dùng câu mẫu."""
+        if not self.is_configured():
+            return None
+        lines = []
+        for item in (history or [])[-4:]:
+            role = "Sinh viên" if item.get("role") == "user" else "Trợ lý"
+            content = (item.get("content") or "").strip()
+            if content:
+                lines.append(f"{role}: {content[:500]}")
+        lines.append(f"Sinh viên: {message}")
+        prompt = "\n".join(lines)
+        try:
+            response = self.client.models.generate_content(
+                model=self.model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    system_instruction=SMALL_TALK_PROMPT,
+                    temperature=0.7,
+                    max_output_tokens=300,
+                    # Câu xã giao không cần suy luận; tránh "thinking" ăn hết token đầu ra.
+                    thinking_config=types.ThinkingConfig(thinking_budget=0),
+                ),
+            )
+            text = (response.text or "").strip() if response else ""
+            return text or None
+        except Exception as e:
+            print(f"[GeminiService] Trả lời xã giao thất bại: {e}")
+            return None
 
     def _fallback_synthesis(
         self,
