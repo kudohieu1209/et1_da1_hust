@@ -148,11 +148,11 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
 
   const getBadgeColor = (badge) => {
     switch (badge) {
-      case 'Pilot Benchmark': return { bg: 'rgba(200, 16, 46, 0.15)', text: '#f43f5e', border: 'rgba(200, 16, 46, 0.3)' };
-      case 'Học lực Giỏi': return { bg: 'rgba(16, 185, 129, 0.15)', text: '#10b981', border: 'rgba(16, 185, 129, 0.3)' };
-      case 'Cảnh báo Mức 2': return { bg: 'rgba(239, 68, 68, 0.15)', text: '#ef4444', border: 'rgba(239, 68, 68, 0.3)' };
-      case 'Sinh viên K68': return { bg: 'rgba(56, 189, 248, 0.15)', text: '#38bdf8', border: 'rgba(56, 189, 248, 0.3)' };
-      default: return { bg: 'rgba(168, 85, 247, 0.15)', text: '#a855f7', border: 'rgba(168, 85, 247, 0.3)' };
+      case 'Pilot Benchmark': return { bg: 'rgba(213, 19, 42, 0.15)', text: 'var(--danger)', border: 'rgba(213, 19, 42, 0.3)' };
+      case 'Học lực Giỏi': return { bg: 'rgba(16, 185, 129, 0.15)', text: 'var(--success)', border: 'rgba(16, 185, 129, 0.3)' };
+      case 'Cảnh báo Mức 2': return { bg: 'rgba(239, 68, 68, 0.15)', text: 'var(--danger)', border: 'rgba(239, 68, 68, 0.3)' };
+      case 'Sinh viên K68': return { bg: 'rgba(213, 19, 42, 0.15)', text: 'var(--brand-accent)', border: 'rgba(213, 19, 42, 0.3)' };
+      default: return { bg: 'rgba(246, 196, 0, 0.15)', text: 'var(--gold-ink)', border: 'rgba(246, 196, 0, 0.3)' };
     }
   };
 
@@ -194,7 +194,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
               width: '36px',
               height: '36px',
               borderRadius: '10px',
-              background: 'linear-gradient(135deg, #c8102e, #990000)',
+              background: 'var(--brand-gradient)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -248,14 +248,14 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
               padding: '12px 16px',
               background: 'transparent',
               border: 'none',
-              borderBottom: activeTab === 'demo' ? '2px solid #c8102e' : '2px solid transparent',
+              borderBottom: activeTab === 'demo' ? '2px solid var(--hust-red)' : '2px solid transparent',
               color: activeTab === 'demo' ? 'var(--text-primary)' : 'var(--text-muted)',
               fontWeight: activeTab === 'demo' ? '600' : '400',
               fontSize: '0.88rem',
               cursor: 'pointer'
             }}
           >
-            <UserCheck size={16} color={activeTab === 'demo' ? '#c8102e' : 'currentColor'} />
+            <UserCheck size={16} color={activeTab === 'demo' ? 'var(--brand-accent)' : 'currentColor'} />
             {language === 'vi' ? 'Hồ sơ Sinh viên Mẫu' : 'Demo Benchmark Profiles'}
           </button>
 
@@ -268,14 +268,14 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
               padding: '12px 16px',
               background: 'transparent',
               border: 'none',
-              borderBottom: activeTab === 'import' ? '2px solid #c8102e' : '2px solid transparent',
+              borderBottom: activeTab === 'import' ? '2px solid var(--hust-red)' : '2px solid transparent',
               color: activeTab === 'import' ? 'var(--text-primary)' : 'var(--text-muted)',
               fontWeight: activeTab === 'import' ? '600' : '400',
               fontSize: '0.88rem',
               cursor: 'pointer'
             }}
           >
-            <UploadCloud size={16} color={activeTab === 'import' ? '#c8102e' : 'currentColor'} />
+            <UploadCloud size={16} color={activeTab === 'import' ? 'var(--brand-accent)' : 'currentColor'} />
             {language === 'vi' ? 'Nhập bảng điểm CTT' : 'Import CTT Transcript'}
           </button>
         </div>
@@ -292,7 +292,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
 
               {loading ? (
                 <div style={{ display: 'flex', justifyContent: 'center', padding: '30px' }}>
-                  <Loader2 size={28} className="spin" color="#c8102e" />
+                  <Loader2 size={28} className="spin" color="var(--brand-accent)" />
                 </div>
               ) : (
                 profiles.map((p) => {
@@ -308,7 +308,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                         padding: '14px 16px',
                         borderRadius: '12px',
                         background: isActive ? 'var(--bg-card-hover)' : 'var(--bg-card)',
-                        border: isActive ? '2px solid #c8102e' : '1px solid var(--border-subtle)',
+                        border: isActive ? '2px solid var(--hust-red)' : '1px solid var(--border-subtle)',
                         cursor: isActive ? 'default' : 'pointer',
                         transition: 'all 0.2s ease',
                         display: 'flex',
@@ -317,7 +317,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                         gap: '14px'
                       }}
                       onMouseEnter={e => {
-                        if (!isActive) e.currentTarget.style.borderColor = 'rgba(200, 16, 46, 0.4)';
+                        if (!isActive) e.currentTarget.style.borderColor = 'rgba(213, 19, 42, 0.4)';
                       }}
                       onMouseLeave={e => {
                         if (!isActive) e.currentTarget.style.borderColor = 'var(--border-subtle)';
@@ -360,7 +360,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                             background: 'var(--bg-surface)',
                             border: '1px solid var(--border-subtle)'
                           }}>
-                            CPA: <strong style={{ color: '#f59e0b' }}>{p.cpa.toFixed(2)}</strong>
+                            CPA: <strong style={{ color: 'var(--warning)' }}>{p.cpa.toFixed(2)}</strong>
                           </span>
                           <span style={{
                             padding: '3px 8px',
@@ -368,7 +368,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                             background: 'var(--bg-surface)',
                             border: '1px solid var(--border-subtle)'
                           }}>
-                            Tích lũy: <strong style={{ color: '#10b981' }}>{p.accumulated_credits} TC</strong>
+                            Tích lũy: <strong style={{ color: 'var(--success)' }}>{p.accumulated_credits} TC</strong>
                           </span>
                         </div>
                       </div>
@@ -379,7 +379,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                             display: 'flex',
                             alignItems: 'center',
                             gap: '5px',
-                            color: '#10b981',
+                            color: 'var(--success)',
                             fontSize: '0.8rem',
                             fontWeight: '600'
                           }}>
@@ -387,7 +387,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                             <span>Đang dùng</span>
                           </div>
                         ) : isSwitching ? (
-                          <Loader2 size={18} className="spin" color="#c8102e" />
+                          <Loader2 size={18} className="spin" color="var(--brand-accent)" />
                         ) : (
                           <button
                             style={{
@@ -415,8 +415,8 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
           {activeTab === 'import' && (
             <form onSubmit={handleImportSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div style={{
-                background: 'rgba(56, 189, 248, 0.08)',
-                border: '1px solid rgba(56, 189, 248, 0.25)',
+                background: 'rgba(213, 19, 42, 0.08)',
+                border: '1px solid rgba(213, 19, 42, 0.25)',
                 borderRadius: '10px',
                 padding: '12px 14px',
                 fontSize: '0.8rem',
@@ -501,7 +501,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                     style={{
                       background: 'transparent',
                       border: 'none',
-                      color: '#38bdf8',
+                      color: 'var(--brand-accent)',
                       fontSize: '0.76rem',
                       cursor: 'pointer',
                       textDecoration: 'underline'
@@ -536,7 +536,7 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                   borderRadius: '6px',
                   fontSize: '0.8rem',
                   background: importMessage.type === 'success' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-                  color: importMessage.type === 'success' ? '#10b981' : '#ef4444',
+                  color: importMessage.type === 'success' ? 'var(--success)' : 'var(--danger)',
                   border: `1px solid ${importMessage.type === 'success' ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`
                 }}>
                   {importMessage.text}
@@ -569,12 +569,12 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`
                     padding: '8px 18px',
                     borderRadius: '8px',
                     border: 'none',
-                    background: 'linear-gradient(135deg, #c8102e, #990000)',
+                    background: 'var(--brand-gradient)',
                     color: '#fff',
                     fontSize: '0.84rem',
                     fontWeight: '600',
                     cursor: 'pointer',
-                    boxShadow: '0 2px 8px rgba(200, 16, 46, 0.3)'
+                    boxShadow: '0 2px 8px rgba(213, 19, 42, 0.3)'
                   }}
                 >
                   {importing ? <Loader2 size={16} className="spin" /> : <UploadCloud size={16} />}

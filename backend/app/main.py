@@ -1,8 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
-from app.core.config import CORS_ORIGINS
+from app.core.config import CORS_ORIGINS, MONGODB_URI, SESSION_COOKIE_NAME
+from app.api.router_auth import router as auth_router
 from app.api.router_courses import router as courses_router
 from app.api.router_student import router as student_router
 from app.api.router_chat import router as chat_router
@@ -41,7 +43,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+UNSAFE_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
+
+
+@app.middleware("http")
+async def reject_cross_site_writes(request: Request, call_next):
+    """Chống CSRF lớp thứ hai (ngoài SameSite=Lax): request ghi dữ liệu kèm
+    cookie phiên mà Origin không thuộc danh sách frontend thì bị từ chối."""
+    if request.method in UNSAFE_METHODS and SESSION_COOKIE_NAME in request.cookies:
+        origin = request.headers.get("origin")
+        if origin and origin not in CORS_ORIGINS:
+            return JSONResponse(status_code=403, content={"detail": "Nguồn gửi yêu cầu không được phép."})
+    return await call_next(request)
+
+
 # Routers
+app.include_router(auth_router)
 app.include_router(courses_router)
 app.include_router(student_router)
 app.include_router(chat_router)
@@ -55,6 +72,7 @@ def root():
         "system": "HUST Course Advisor & RAG AI Agent",
         "scope": "Sinh viên Đại học Bách Khoa Hà Nội",
         "data_scope": "Bản thử nghiệm hiện tại đang sử dụng dữ liệu của một chương trình đào tạo.",
+        "storage": "mongodb" if MONGODB_URI else "local (SQLite + JSON)",
         "rag_status": "/api/rag/status",
         "docs_url": "/docs",
         "status": "online"

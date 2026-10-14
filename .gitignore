@@ -31,6 +31,7 @@ dist/
 # Virtual Environments
 venv/
 .venv/
+.venv-win/
 env/
 ENV/
 
@@ -50,6 +51,8 @@ pnpm-debug.log*
 *.sqlite3-journal
 *.sqlite
 vector_db/
+vector_db_test/
+vector_db.broken-*/
 
 # Large files (>100MB exceeds GitHub push limits)
 project/data/raw/So tay sinh vien_2026.pdf
@@ -60,3 +63,6 @@ project/data/raw/et1_curiculum_files/
 project/data/processed/student_profile.json
 project/data/processed/students/
 project/data/processed/users/
+
+# Báo cáo đánh giá chạy tạm (giữ lại baseline.* để so sánh)
+project/eval/reports/latest.*

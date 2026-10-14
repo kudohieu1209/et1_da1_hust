@@ -1,11 +1,17 @@
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
+from app.auth.dependencies import student_scope
 from typing import List, Optional, Dict, Any
 from app.services.data_loader import data_loader
 from app.engine.rule_engine import rule_engine
 from app.engine.graph_engine import graph_engine
 from app.models.schemas import CheckEligibilityRequest, CheckEligibilityResponse, ImpactSimulationRequest, ImpactSimulationResponse
 
-router = APIRouter(prefix="/api/courses", tags=["Courses & Rules"])
+# CTĐT phụ thuộc khóa của sinh viên đăng nhập, nên mọi endpoint chạy trong scope hồ sơ.
+router = APIRouter(
+    prefix="/api/courses",
+    tags=["Courses & Rules"],
+    dependencies=[Depends(student_scope)],
+)
 
 @router.get("/curriculum")
 def get_active_curriculum():

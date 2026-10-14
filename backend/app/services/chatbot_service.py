@@ -215,6 +215,65 @@ class ChatbotService:
             for keyword in keywords
         )
 
+    @staticmethod
+    def _is_greeting_or_intro(text: str, detected_codes: Optional[List[str]] = None) -> bool:
+        """Nhận diện các câu chào hỏi, hỏi thông tin/danh tính trợ lý, hoặc yêu cầu giới thiệu bản thân.
+        
+        Không bắt các câu có chứa mã môn học hoặc câu hỏi học thuật có nội dung thực sự.
+        """
+        if detected_codes:
+            return False
+
+        msg_clean = unicodedata.normalize("NFC", text or "").strip().lower()
+        if not msg_clean:
+            return False
+
+        # Các từ khóa nội dung học thuật/quy chế thực sự -> không phải câu chào thuần túy
+        substantive_keywords = [
+            "điều kiện", "tiên quyết", "song hành", "học trước", "đăng ký",
+            "học phần", "môn học", "tín chỉ", "quy chế", "quy định",
+            "cảnh báo", "cảnh cáo", "buộc thôi học", "học bổng", "học phí",
+            "tốt nghiệp", "đồ án", "thực tập", "cpa", "gpa", "tiến độ",
+            "tích lũy", "bảng điểm", "trượt", "tạch", "nếu rớt", "học lại",
+            "kỳ tới", "kỳ sau", "định hướng", "chuyên sâu", "đề cương", "ngành"
+        ]
+        if any(re.search(rf"(?<!\w){re.escape(kw)}(?!\w)", msg_clean) for kw in substantive_keywords):
+            return False
+
+        # Chuẩn hóa khoảng trắng và dấu câu
+        cleaned = re.sub(r"[\.,!~:;\-_]+", " ", msg_clean)
+        cleaned = " ".join(cleaned.split())
+
+        # 1. Chào hỏi đơn thuần (kèm hậu tố thân mật: nha, nhé, ơi, ạ, ...)
+        # vd: "chào", "chào bạn", "xin chào", "xin chào!", "chào bot", "hello", "hi bạn", "alo"
+        greeting_pattern = r"^(xin\s+)?chào(\s+(bạn|cậu|bot|ad|admin|mọi người))?(\s+(ạ|ơi|nha|nhé|nhá|nè|ha|nhỉ))?$"
+        hello_pattern = r"^(hello|hi|hey|alo|halo)(\s+(bạn|cậu|bot|ad|admin))?(\s+(ạ|ơi|nha|nhé|nhá|nè|ha|nhỉ))?$"
+        if re.fullmatch(greeting_pattern, cleaned) or re.fullmatch(hello_pattern, cleaned):
+            return True
+
+        # 2. Câu hỏi danh tính trợ lý (bạn là ai, bạn là ?, bạn là gì, tên bạn là gì)
+        # vd: "bạn là ?", "bạn là ai", "bạn là ai thế?", "bạn là ai vậy", "bạn tên là gì"
+        identity_pattern = r"^((xin\s+)?chào\s+(bạn\s+|bot\s+|ad\s+)?)?((bạn|cậu|mày)\s+là\s*(ai|\?|gì)|(bạn|cậu)\s+tên\s+(là\s+)?gì|tên\s+(của\s+)?(bạn|cậu)\s+là\s+gì)(\s+(thế|vậy|đấy|nhỉ|đó|ạ|hả|nhở))?\??$"
+        if re.match(identity_pattern, msg_clean) or re.match(identity_pattern, cleaned):
+            return True
+
+        # 3. Yêu cầu giới thiệu bản thân
+        # vd: "giới thiệu bản thân đi", "giới thiệu về bản thân", "bạn giới thiệu về bản thân bạn đi", "tự giới thiệu"
+        intro_pattern = r"(giới\s+thiệu\s+(chút\s+)?(về\s+)?(bản\s+thân|bạn|mình)|tự\s+giới\s+thiệu)"
+        if re.search(intro_pattern, cleaned):
+            return True
+
+        # 4. Câu hỏi năng lực / menu trợ giúp
+        # vd: "bạn có thể làm gì", "bạn giúp được gì", "bạn làm được gì", "menu", "help"
+        capability_pattern = r"^((xin\s+)?chào\s+(bạn\s+|bot\s+)?)?(bạn|bot)\s+((có\s+thể\s+)?(làm|giúp|hỗ\s+trợ)(\s+được)?\s+(gì|những\s+gì)|chức\s+năng\s+gì)"
+        if re.search(capability_pattern, cleaned):
+            return True
+
+        if cleaned in {"menu", "help", "trợ giúp", "hướng dẫn", "bắt đầu"}:
+            return True
+
+        return False
+
     def process_message(self, message: str, history: Optional[List[Dict[str, str]]] = None) -> Dict[str, Any]:
         """
         Xử lý tin nhắn của sinh viên theo kiến trúc Hybrid Agent:
@@ -268,7 +327,7 @@ class ChatbotService:
         is_syllabus_query = self._has_any(msg_lower, [
             "nội dung", "học gì", "học những gì", "đề cương", "phần mềm", 
             "công cụ", "tool", "thực hành gì", "kiến thức", "giáo trình", 
-            "tài liệu", "dạy gì", "làm gì", "mô tả môn"
+            "tài liệu", "dạy gì", "mô tả môn"
         ])
 
         # 5. Ưu tiên RAG nếu câu hỏi hỏi về văn bản quy chế / quy định / tín chỉ / cảnh cáo / tốt nghiệp / học cải thiện
@@ -292,8 +351,8 @@ class ChatbotService:
         if detected_codes and (is_course_question or len(detected_codes) >= 2 or re.search(r'\b[A-Z]{2,3}\s*\d{4}[A-Z]?\b', message.upper())):
             return self._handle_course_check(detected_codes, effective_message)
 
-        # 8. Câu hỏi chào hỏi thông thường
-        if any(msg_lower.strip() == k for k in ["chào", "chào bạn", "hello", "hi", "alo", "menu", "help", "bạn là ai"]):
+        # 8. Câu hỏi chào hỏi thông thường / giới thiệu bản thân
+        if self._is_greeting_or_intro(effective_message, detected_codes):
             return self._handle_general_query(message)
 
         # 9. RAG (Retrieval-Augmented Generation) cho các câu hỏi tổng quát về CTĐT và Quy chế
@@ -304,7 +363,14 @@ class ChatbotService:
         Truy vấn kiến thức CTĐT và Quy chế đào tạo HUST qua RAG + Gemini LLM.
         Nếu sinh viên hỏi về một môn cụ thể, kết hợp thêm kiểm tra điều kiện cá nhân.
         """
-        rag_res = rag_engine.query(message, k=4, history=history)
+        try:
+            rag_res = rag_engine.query(message, k=4, history=history)
+        except Exception as e:
+            # Lỗi kho vector (vd. chỉ mục ChromaDB hỏng) không được làm sập
+            # /api/chat: phản hồi 500 thiếu header CORS khiến trình duyệt báo
+            # nhầm là mất kết nối backend.
+            print(f"[ChatbotService] RAG không khả dụng: {e!r}")
+            return self._rag_unavailable_reply()
         reply = rag_res["reply"]
 
         # Nếu hỏi về môn học cụ thể, đối chiếu thêm với tiến độ sinh viên
@@ -351,6 +417,26 @@ class ChatbotService:
                 "retrieved_chunks": rag_res.get("retrieved_chunks", []),
                 "context_chunks_count": rag_res.get("context_chunks_count", 0)
             }
+        }
+
+    @staticmethod
+    def _rag_unavailable_reply() -> Dict[str, Any]:
+        return {
+            "reply": (
+                "⚠️ Kho tài liệu quy chế đang gặp sự cố nên mình chưa tra cứu được câu này. "
+                "Bạn thử lại sau ít phút, hoặc xem trực tiếp trên ctt.hust.edu.vn.\n\n"
+                "Các chức năng dựa trên CTĐT vẫn dùng bình thường: kiểm tra điều kiện học phần, "
+                "gợi ý môn kỳ tới và rà soát tiến độ học tập."
+            ),
+            "intent": "RAG_HUST_KNOWLEDGE",
+            "suggested_actions": [
+                "Xem tiến độ học tập",
+                "Gợi ý môn học kỳ tới",
+                "Điều kiện môn Mạng máy tính",
+            ],
+            "sources": [],
+            "model_used": "rag-unavailable",
+            "data_context": {"retrieved_chunks": [], "context_chunks_count": 0},
         }
 
     @staticmethod

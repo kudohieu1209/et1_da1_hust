@@ -13,9 +13,12 @@ import {
   RotateCcw
 } from 'lucide-react';
 import { API_BASE_URL, apiUrl } from '../api';
+import BrandLogo from './BrandLogo';
+import StudentWelcome from './StudentWelcome';
 
 export default function ChatTab({ 
   onOpenImport,
+  studentProfile,
   studentId,
   conversationId,
   onConversationCreated,
@@ -31,6 +34,20 @@ export default function ChatTab({
   const messagesRef = useRef(messages);
   messagesRef.current = messages;
   const recognitionRef = useRef(null);
+  const textareaRef = useRef(null);
+
+  // Auto-resize textarea dynamically based on content (up to 160px)
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = '36px';
+      if (input) {
+        const scrollH = textareaRef.current.scrollHeight;
+        if (scrollH > 36) {
+          textareaRef.current.style.height = `${Math.min(scrollH, 160)}px`;
+        }
+      }
+    }
+  }, [input]);
 
   // Load the selected conversation from SQLite. A new chat has no ID until
   // its first message is accepted by the backend.
@@ -139,6 +156,9 @@ export default function ChatTab({
     const userMsg = { role: 'user', content: query };
     setMessages(prev => [...prev, userMsg]);
     setInput('');
+    if (textareaRef.current) {
+      textareaRef.current.style.height = '36px';
+    }
     setLoading(true);
 
     try {
@@ -225,13 +245,13 @@ export default function ChatTab({
       if (token.startsWith('`') && token.endsWith('`') && token.length >= 2) {
         return (
           <code key={idx} style={{
-            background: 'rgba(56, 189, 248, 0.12)',
+            background: 'rgba(213, 19, 42, 0.12)',
             padding: '2px 6px',
             borderRadius: '4px',
-            color: '#38bdf8',
+            color: 'var(--brand-accent)',
             fontSize: '0.88em',
             fontFamily: 'monospace',
-            border: '1px solid rgba(56, 189, 248, 0.2)'
+            border: '1px solid rgba(213, 19, 42, 0.2)'
           }}>
             {token.slice(1, -1)}
           </code>
@@ -293,7 +313,7 @@ export default function ChatTab({
             alignItems: 'baseline', 
             lineHeight: '1.5' 
           }}>
-            <span style={{ color: '#38bdf8', fontWeight: 'bold', fontSize: '0.9em', flexShrink: 0 }}>–</span>
+            <span style={{ color: 'var(--brand-accent)', fontWeight: 'bold', fontSize: '0.9em', flexShrink: 0 }}>–</span>
             <div style={{ color: 'var(--text-secondary)', flex: 1 }}>{parseInlineTokens(subBulletMatch[1])}</div>
           </div>
         );
@@ -310,7 +330,7 @@ export default function ChatTab({
             alignItems: 'baseline', 
             lineHeight: '1.55' 
           }}>
-            <span style={{ color: '#c8102e', fontWeight: 'bold', fontSize: '1.1em', lineHeight: 1, flexShrink: 0 }}>•</span>
+            <span style={{ color: 'var(--brand-accent)', fontWeight: 'bold', fontSize: '1.1em', lineHeight: 1, flexShrink: 0 }}>•</span>
             <div style={{ color: 'var(--text-primary)', flex: 1 }}>{parseInlineTokens(rootBulletMatch[1])}</div>
           </div>
         );
@@ -328,7 +348,7 @@ export default function ChatTab({
             alignItems: 'baseline', 
             lineHeight: '1.55' 
           }}>
-            <span style={{ color: '#c8102e', fontWeight: '700', minWidth: '18px', flexShrink: 0 }}>{numMatch[2]}.</span>
+            <span style={{ color: 'var(--brand-accent)', fontWeight: '700', minWidth: '18px', flexShrink: 0 }}>{numMatch[2]}.</span>
             <div style={{ color: 'var(--text-primary)', flex: 1 }}>{parseInlineTokens(numMatch[3])}</div>
           </div>
         );
@@ -345,35 +365,77 @@ export default function ChatTab({
 
   const hasChatStarted = messages.length > 0;
 
+  const suggestionItems = [
+    {
+      id: 'thesis',
+      emoji: '🎓',
+      text: language === 'vi' ? 'Kiểm tra điều kiện nhận Đồ án tốt nghiệp tại HUST' : 'Check graduation thesis criteria at HUST',
+      query: language === 'vi'
+        ? 'Điều kiện để được nhận Đồ án tốt nghiệp tại HUST là gì? Em cần chuẩn bị những gì?'
+        : 'What are the requirements for Graduation Thesis and degree completion at HUST?'
+    },
+    {
+      id: 'cpa',
+      emoji: '📈',
+      text: language === 'vi' ? 'Kế hoạch cải thiện CPA lên bằng Khá (≥ 2.50)' : 'CPA improvement plan to reach Good standing (≥ 2.50)',
+      query: language === 'vi'
+        ? 'CPA hiện tại của em đang là 2.26. Em cần làm gì và học cải thiện những môn nào để kéo CPA lên bằng Khá?'
+        : 'My current CPA is 2.26. Which courses should I retake to raise my CPA to Good standing?'
+    },
+    {
+      id: 'warning',
+      emoji: '⚠️',
+      text: language === 'vi' ? 'Quy chế Cảnh báo học tập mức 1 & mức 2 của HUST' : 'HUST Academic Warning Level 1 & 2 regulations',
+      query: language === 'vi'
+        ? 'Quy chế cảnh báo học tập mức 1 và mức 2 của Đại học Bách Khoa Hà Nội quy định như thế nào?'
+        : 'What are the rules and credit limits for Academic Warning Level 1 and 2 at HUST?'
+    },
+    {
+      id: 'enroll',
+      emoji: '📅',
+      text: language === 'vi' ? 'Gợi ý danh sách môn nên đăng ký trong kỳ tới' : 'Course registration suggestions for next term',
+      query: language === 'vi'
+        ? 'Gợi ý cho em danh sách các môn nên đăng ký trong kỳ tới dựa trên tiến độ học tập hiện tại'
+        : 'Which courses should I register for next semester based on my current progress?'
+    }
+  ];
+
   const renderInputCapsule = (isCentered = false) => (
     <div style={{
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'flex-end',
       background: 'var(--bg-surface)',
       border: '1px solid var(--border-subtle)',
-      borderRadius: '28px',
-      padding: '10px 14px 10px 18px',
-      boxShadow: isCentered ? '0 4px 20px rgba(0,0,0,0.06)' : 'var(--shadow-md)',
+      borderRadius: '26px',
+      padding: '8px 10px 8px 12px',
+      boxShadow: isCentered ? '0 4px 24px rgba(0, 0, 0, 0.06)' : 'var(--shadow-md)',
       backdropFilter: 'blur(20px)',
       transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
-      width: '100%'
+      width: '100%',
+      boxSizing: 'border-box'
     }}>
       {/* Attachment Button (+) like ChatGPT */}
       <button
         type="button"
         onClick={onOpenImport}
-        title={language === 'vi' ? 'Đính kèm / Dán bảng điểm CTT' : 'Attach / Paste CTT Transcript'}
+        title={language === 'vi' ? 'Dán / Nhập bảng điểm CTT Bách Khoa' : 'Attach / Paste HUST CTT Transcript'}
         style={{
+          width: '36px',
+          height: '36px',
+          minWidth: '36px',
+          minHeight: '36px',
           background: 'transparent',
           border: 'none',
           color: 'var(--text-muted)',
           cursor: 'pointer',
-          padding: '6px',
           borderRadius: '50%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          marginRight: '8px'
+          margin: 0,
+          marginRight: '4px',
+          flexShrink: 0,
+          transition: 'color 0.15s ease'
         }}
         onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
         onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
@@ -381,11 +443,20 @@ export default function ChatTab({
         <Plus size={19} />
       </button>
 
-      <input
-        type="text"
+      {/* Auto-expanding Textarea (up to 160px height) */}
+      <textarea
+        ref={textareaRef}
+        rows={1}
         autoFocus={isCentered}
         value={input}
-        onChange={e => setInput(e.target.value)}
+        onChange={e => {
+          setInput(e.target.value);
+          e.target.style.height = '36px';
+          const scrollH = e.target.scrollHeight;
+          if (scrollH > 36) {
+            e.target.style.height = `${Math.min(scrollH, 160)}px`;
+          }
+        }}
         onKeyDown={handleKeyDown}
         placeholder={isListening 
           ? (language === 'vi' ? 'Đang lắng nghe... Hãy nói câu hỏi của bạn' : 'Listening... Speak now') 
@@ -394,11 +465,21 @@ export default function ChatTab({
           flex: 1,
           background: 'transparent',
           border: 'none',
-          color: isListening ? '#c8102e' : 'var(--text-primary)',
+          color: isListening ? 'var(--brand-accent)' : 'var(--text-primary)',
           fontWeight: isListening ? '600' : 'normal',
-          fontSize: '0.98rem',
+          fontSize: '0.96rem',
           outline: 'none',
-          fontFamily: 'inherit'
+          fontFamily: 'inherit',
+          resize: 'none',
+          lineHeight: '20px',
+          height: '36px',
+          minHeight: '36px',
+          maxHeight: '160px',
+          boxSizing: 'border-box',
+          overflowY: (textareaRef.current && textareaRef.current.scrollHeight > 160) ? 'auto' : 'hidden',
+          padding: '8px 4px',
+          margin: '0 8px 0 2px',
+          display: 'block'
         }}
       />
 
@@ -412,18 +493,21 @@ export default function ChatTab({
         style={{
           width: '36px',
           height: '36px',
+          minWidth: '36px',
+          minHeight: '36px',
           borderRadius: '50%',
-          background: isListening ? '#c8102e' : 'transparent',
+          background: isListening ? 'var(--hust-red)' : 'transparent',
           color: isListening ? '#fff' : 'var(--text-muted)',
-          border: isListening ? '1px solid #c8102e' : 'none',
+          border: isListening ? '1px solid var(--hust-red)' : 'none',
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           transition: 'all 0.2s ease',
           flexShrink: 0,
+          margin: 0,
           marginRight: '6px',
-          boxShadow: isListening ? '0 0 12px rgba(200, 16, 46, 0.6)' : 'none'
+          boxShadow: isListening ? '0 0 12px rgba(213, 19, 42, 0.6)' : 'none'
         }}
         onMouseEnter={e => {
           if (!isListening) {
@@ -438,7 +522,7 @@ export default function ChatTab({
           }
         }}
       >
-        {isListening ? <MicOff size={18} /> : <Mic size={18} />}
+        {isListening ? <MicOff size={17} /> : <Mic size={17} />}
       </button>
 
       {/* Circular Send Button */}
@@ -446,12 +530,14 @@ export default function ChatTab({
         onClick={() => handleSend()}
         disabled={!input.trim() || loading}
         type="button"
-        title={language === 'vi' ? 'Gửi tin nhắn' : 'Send message'}
+        title={language === 'vi' ? 'Gửi tin nhắn (Enter)' : 'Send message (Enter)'}
         style={{
           width: '36px',
           height: '36px',
+          minWidth: '36px',
+          minHeight: '36px',
           borderRadius: '50%',
-          background: input.trim() ? '#c8102e' : 'var(--sidebar-hover)',
+          background: input.trim() ? 'var(--hust-red)' : 'var(--sidebar-hover)',
           color: input.trim() ? '#fff' : 'var(--text-muted)',
           border: 'none',
           cursor: input.trim() && !loading ? 'pointer' : 'default',
@@ -460,15 +546,16 @@ export default function ChatTab({
           justifyContent: 'center',
           transition: 'all 0.2s ease',
           flexShrink: 0,
-          boxShadow: input.trim() ? '0 2px 10px rgba(200, 16, 46, 0.4)' : 'none'
+          margin: 0,
+          boxShadow: input.trim() ? '0 2px 10px rgba(213, 19, 42, 0.4)' : 'none'
         }}
       >
-        <Send size={16} />
+        <Send size={15} />
       </button>
     </div>
   );
 
-  // 🌟 ChatGPT Empty State: Title and Input Capsule Centered in Viewport
+  // 🌟 ChatGPT Empty State: Title, Input Capsule, and 4 Suggestion Cards
   if (!hasChatStarted) {
     return (
       <div style={{
@@ -476,8 +563,10 @@ export default function ChatTab({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
-        padding: '0 20px',
+        justifyContent: 'safe center',
+        padding: '24px 20px',
+        minHeight: 0,
+        overflowY: 'auto',
         position: 'relative',
         background: 'transparent'
       }}>
@@ -487,16 +576,17 @@ export default function ChatTab({
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '22px',
-          marginTop: '-40px'
+          gap: '20px',
+          flexShrink: 0
         }}>
-          {/* ChatGPT Title */}
+          {/* Header Title */}
+          <StudentWelcome language={language} />
           <h1 style={{
             fontSize: '1.9rem',
             fontWeight: '600',
             color: 'var(--text-primary)',
             letterSpacing: '-0.02em',
-            margin: 0,
+            margin: '0 0 2px 0',
             textAlign: 'center'
           }}>
             {language === 'vi' ? 'Chúng ta nên bắt đầu từ đâu?' : 'Where should we start?'}
@@ -505,6 +595,59 @@ export default function ChatTab({
           {/* Centered Input Capsule */}
           <div style={{ width: '100%' }}>
             {renderInputCapsule(true)}
+          </div>
+
+          {/* Compact Suggestion Row / List (ChatGPT Minimal Style) */}
+          <div style={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            gap: '2px',
+            marginTop: '2px',
+            padding: '0 6px'
+          }}>
+            {suggestionItems.map(item => (
+              <button
+                key={item.id}
+                onClick={() => !loading && handleSend(item.query)}
+                className="apple-press"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: '7px 12px',
+                  borderRadius: '10px',
+                  border: 'none',
+                  background: 'transparent',
+                  color: 'var(--text-muted)',
+                  fontSize: '0.88rem',
+                  cursor: loading ? 'default' : 'pointer',
+                  textAlign: 'left',
+                  width: '100%',
+                  transition: 'all 0.15s ease'
+                }}
+                onMouseEnter={e => {
+                  if (!loading) {
+                    e.currentTarget.style.background = 'var(--sidebar-hover)';
+                    e.currentTarget.style.color = 'var(--text-primary)';
+                  }
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.color = 'var(--text-muted)';
+                }}
+              >
+                <span style={{ fontSize: '0.96rem', flexShrink: 0, lineHeight: 1 }}>{item.emoji}</span>
+                <span style={{
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap'
+                }}>
+                  {item.text}
+                </span>
+              </button>
+            ))}
           </div>
 
         </div>
@@ -550,7 +693,7 @@ export default function ChatTab({
                   <div style={{
                     maxWidth: '80%',
                     padding: '12px 20px',
-                    borderRadius: '20px 20px 4px 20px',
+                    borderRadius: '20px',
                     background: 'var(--chat-user-bubble)',
                     border: '1px solid var(--chat-user-bubble-border)',
                     color: 'var(--text-primary)',
@@ -558,7 +701,7 @@ export default function ChatTab({
                     fontWeight: '500',
                     lineHeight: '1.55',
                     wordBreak: 'break-word',
-                    boxShadow: '0 3px 12px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
+                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'
                   }}>
                     {msg.content}
                   </div>
@@ -579,6 +722,12 @@ export default function ChatTab({
                   margin: '6px 0 18px 0'
                 }}
               >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                  <BrandLogo size={32} decorative />
+                  <span style={{ fontSize: '0.8rem', fontWeight: '600', color: 'var(--text-secondary)' }}>
+                    HUST Advisor
+                  </span>
+                </div>
                 {/* AI Text Content */}
                 <div style={{
                   width: '100%',
@@ -603,7 +752,7 @@ export default function ChatTab({
                         display: 'flex', 
                         alignItems: 'center', 
                         gap: '6px', 
-                        color: '#c8102e', 
+                        color: 'var(--brand-accent)',
                         fontSize: '0.78rem', 
                         fontWeight: '700' 
                       }}>
@@ -633,9 +782,9 @@ export default function ChatTab({
                               title={s.title || cleanName}
                               style={{
                                 fontSize: '0.74rem',
-                                background: 'rgba(200, 16, 46, 0.08)',
+                                background: 'rgba(213, 19, 42, 0.08)',
                                 color: 'var(--text-secondary)',
-                                border: '1px solid rgba(200, 16, 46, 0.2)',
+                                border: '1px solid rgba(213, 19, 42, 0.2)',
                                 padding: '3px 8px',
                                 borderRadius: '6px',
                                 display: 'flex',
@@ -684,7 +833,7 @@ export default function ChatTab({
                       e.currentTarget.style.background = 'transparent';
                     }}
                   >
-                    {copiedIndex === index ? <Check size={15} color="#10b981" /> : <Copy size={15} />}
+                    {copiedIndex === index ? <Check size={15} color="var(--success)" /> : <Copy size={15} />}
                   </button>
 
                   <button
@@ -804,7 +953,7 @@ export default function ChatTab({
                           e.currentTarget.style.color = 'var(--text-secondary)';
                         }}
                       >
-                        <Sparkles size={12} color="#38bdf8" />
+                        <Sparkles size={12} color="var(--brand-accent)" />
                         <span>{act}</span>
                       </button>
                     ))}
@@ -816,7 +965,8 @@ export default function ChatTab({
 
           {/* Loading Indicator with Apple Siri Fluid Wave */}
           {loading && (
-            <div className="apple-bubble-ai" style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+            <div className="apple-bubble-ai" style={{ display: 'flex', alignItems: 'center', gap: '8px', width: '100%' }}>
+              <BrandLogo size={32} />
               <div style={{
                 padding: '10px 18px',
                 borderRadius: '20px',

@@ -1,31 +1,26 @@
-from typing import Optional
 
-from fastapi import APIRouter, Header, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 
+from app.auth.dependencies import current_student
 from app.models.schemas import ConversationCreateRequest, ConversationUpdateRequest
 from app.services.conversation_service import (
     ConversationNotFoundError,
     conversation_service,
 )
-from app.services.data_loader import data_loader
 
 
 router = APIRouter(prefix="/api/conversations", tags=["Conversation History"])
 
 
-def _resolve_student_id(x_student_id: Optional[str]) -> str:
-    return (x_student_id or data_loader.current_student_id or "demo").strip()
-
-
 @router.get("")
 def list_conversations(
     include_archived: bool = Query(False),
-    x_student_id: Optional[str] = Header(None),
+    student_id: str = Depends(current_student),
 ):
-    """List the signed-in student's non-archived conversations."""
+    """Đoạn chat của sinh viên đang đăng nhập (chủ sở hữu lấy từ phiên, không từ header)."""
     return {
         "conversations": conversation_service.list(
-            _resolve_student_id(x_student_id), include_archived=include_archived
+            student_id, include_archived=include_archived
         )
     }
 
@@ -33,15 +28,15 @@ def list_conversations(
 @router.post("")
 def create_conversation(
     req: ConversationCreateRequest,
-    x_student_id: Optional[str] = Header(None),
+    student_id: str = Depends(current_student),
 ):
-    return conversation_service.create(_resolve_student_id(x_student_id), req.title)
+    return conversation_service.create(student_id, req.title)
 
 
 @router.get("/{conversation_id}")
-def get_conversation(conversation_id: str, x_student_id: Optional[str] = Header(None)):
+def get_conversation(conversation_id: str, student_id: str = Depends(current_student)):
     try:
-        return conversation_service.get(conversation_id, _resolve_student_id(x_student_id))
+        return conversation_service.get(conversation_id, student_id)
     except ConversationNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
 
@@ -50,12 +45,12 @@ def get_conversation(conversation_id: str, x_student_id: Optional[str] = Header(
 def update_conversation(
     conversation_id: str,
     req: ConversationUpdateRequest,
-    x_student_id: Optional[str] = Header(None),
+    student_id: str = Depends(current_student),
 ):
     try:
         return conversation_service.update(
             conversation_id,
-            _resolve_student_id(x_student_id),
+            student_id,
             title=req.title,
             is_archived=req.is_archived,
             is_pinned=req.is_pinned,
@@ -67,9 +62,9 @@ def update_conversation(
 
 
 @router.delete("/{conversation_id}")
-def delete_conversation(conversation_id: str, x_student_id: Optional[str] = Header(None)):
+def delete_conversation(conversation_id: str, student_id: str = Depends(current_student)):
     try:
-        conversation_service.delete(conversation_id, _resolve_student_id(x_student_id))
+        conversation_service.delete(conversation_id, student_id)
     except ConversationNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     return {"success": True, "conversation_id": conversation_id}

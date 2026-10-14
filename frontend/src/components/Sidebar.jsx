@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import BrandLogo from './BrandLogo';
+import AccountMenu from './account/AccountMenu';
 import { 
   Plus, 
   Award, 
   CheckCircle2, 
   ChevronLeft, 
-  Sparkles,
-  Settings
+  Sparkles
 } from 'lucide-react';
 
 export default function Sidebar({ 
@@ -21,10 +22,57 @@ export default function Sidebar({
   onSelectConversation,
   onOpenSettings,
   onOpenProfileModal,
+  onOpenImport,
+  theme,
+  onToggleTheme,
   language = 'vi'
 }) {
-  const studentInfo = studentProfile?.info || {};
-  const cpa = auditData?.cpa ?? 2.26;
+
+  // Resizable sidebar width (persisted in localStorage)
+  const [width, setWidth] = useState(() => {
+    const saved = localStorage.getItem('hust_advisor_sidebar_width');
+    const parsed = parseInt(saved, 10);
+    return !isNaN(parsed) && parsed >= 220 && parsed <= 500 ? parsed : 260;
+  });
+  const [isResizing, setIsResizing] = useState(false);
+
+  useEffect(() => {
+    if (!isResizing) return;
+
+    const handleMouseMove = (e) => {
+      const newWidth = Math.min(Math.max(e.clientX, 220), 500);
+      setWidth(newWidth);
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+      localStorage.setItem('hust_advisor_sidebar_width', width);
+    };
+
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    };
+  }, [isResizing, width]);
+
+  const startResizing = (e) => {
+    e.preventDefault();
+    setIsResizing(true);
+  };
+
+  const handleDoubleClick = () => {
+    setWidth(260);
+    localStorage.setItem('hust_advisor_sidebar_width', 260);
+  };
 
   const toolItems = [
     { id: 'audit', label: language === 'vi' ? 'Tiến độ học tập & CPA' : 'Degree Audit & CPA', icon: Award },
@@ -34,9 +82,9 @@ export default function Sidebar({
   return (
     <aside 
       style={{
-        width: isOpen ? '260px' : '0px',
-        minWidth: isOpen ? '260px' : '0px',
-        transition: 'width 0.32s var(--ease-apple), min-width 0.32s var(--ease-apple)',
+        width: isOpen ? `${width}px` : '0px',
+        minWidth: isOpen ? `${width}px` : '0px',
+        transition: isResizing ? 'none' : 'width 0.32s var(--ease-apple), min-width 0.32s var(--ease-apple)',
         height: '100vh',
         background: 'var(--sidebar-bg)',
         borderRight: isOpen ? '1px solid var(--border-subtle)' : 'none',
@@ -52,21 +100,7 @@ export default function Sidebar({
       <div style={{ padding: '16px 14px 12px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '8px',
-              background: 'linear-gradient(135deg, #c8102e, #990000)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: '900',
-              fontSize: '0.88rem',
-              color: '#fff',
-              boxShadow: '0 2px 8px rgba(200, 16, 46, 0.4)'
-            }}>
-              BK
-            </div>
+            <BrandLogo size={36} decorative />
             <div>
               <div style={{ fontSize: '0.92rem', fontWeight: '700', color: 'var(--text-primary)', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
                 HUST Advisor
@@ -106,8 +140,8 @@ export default function Sidebar({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            padding: '10px 14px',
-            borderRadius: '10px',
+            padding: '10px 16px',
+            borderRadius: 'var(--radius-full)',
             border: '1px solid var(--border-subtle)',
             background: 'var(--sidebar-newchat-bg)',
             color: 'var(--text-primary)',
@@ -119,7 +153,7 @@ export default function Sidebar({
           }}
           onMouseEnter={e => {
             e.currentTarget.style.background = 'var(--sidebar-hover)';
-            e.currentTarget.style.borderColor = 'rgba(200, 16, 46, 0.3)';
+            e.currentTarget.style.borderColor = 'rgba(213, 19, 42, 0.3)';
           }}
           onMouseLeave={e => {
             e.currentTarget.style.background = 'var(--sidebar-newchat-bg)';
@@ -127,10 +161,10 @@ export default function Sidebar({
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Plus size={16} color="#c8102e" />
+            <Plus size={16} color="var(--brand-accent)" />
             <span>Đoạn chat mới</span>
           </div>
-          <Sparkles size={14} color="#38bdf8" />
+          <Sparkles size={14} color="var(--gold-ink)" />
         </button>
       </div>
 
@@ -171,7 +205,7 @@ export default function Sidebar({
                     padding: '8px 10px',
                     borderRadius: '8px',
                     border: 'none',
-                    background: isActive ? 'rgba(200, 16, 46, 0.15)' : 'transparent',
+                    background: isActive ? 'rgba(213, 19, 42, 0.15)' : 'transparent',
                     color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
                     fontWeight: isActive ? '700' : '500',
                     fontSize: '0.84rem',
@@ -192,17 +226,17 @@ export default function Sidebar({
                     }
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-                    <Icon size={16} color={isActive ? '#c8102e' : 'var(--text-muted)'} />
-                    <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '170px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '9px', minWidth: 0, flex: 1 }}>
+                    <Icon size={16} color={isActive ? 'var(--brand-accent)' : 'var(--text-muted)'} style={{ flexShrink: 0 }} />
+                    <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flex: 1 }}>
                       {item.label}
                     </span>
                   </div>
                   {item.badge && (
                     <span style={{ 
                       fontSize: '0.65rem', 
-                      background: 'rgba(200, 16, 46, 0.15)', 
-                      color: '#c8102e', 
+                      background: 'rgba(213, 19, 42, 0.15)',
+                      color: 'var(--brand-accent)',
                       padding: '2px 6px', 
                       borderRadius: '4px',
                       fontWeight: '700'
@@ -272,110 +306,43 @@ export default function Sidebar({
 
       </div>
 
-      {/* Sidebar Footer: Student Profile Card */}
-      <div style={{
-        padding: '10px 12px',
-        borderTop: '1px solid var(--border-subtle)',
-        background: 'var(--sidebar-footer-bg)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: '6px'
-      }}>
-        {/* Clickable Profile Info (Avatar + Name + CPA) */}
-        <div 
-          onClick={onOpenProfileModal}
-          title={language === 'vi' ? 'Nhấp để đổi hồ sơ sinh viên' : 'Click to switch student profile'}
-          style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '10px', 
-            overflow: 'hidden',
-            cursor: 'pointer',
-            flex: 1,
-            padding: '5px 6px',
-            borderRadius: '8px',
-            transition: 'all 0.15s ease'
-          }}
-          onMouseEnter={e => e.currentTarget.style.background = 'var(--sidebar-hover)'}
-          onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-        >
-          {/* Avatar */}
-          <div style={{
-            width: '34px',
-            height: '34px',
-            borderRadius: '50%',
-            background: studentInfo.avatar_gradient || 'linear-gradient(135deg, #6366f1, #38bdf8)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff',
-            fontWeight: '700',
-            fontSize: studentInfo.avatar_emoji ? '1.05rem' : '0.88rem',
-            flexShrink: 0,
-            overflow: 'hidden'
-          }}>
-            {studentInfo.avatar_url ? (
-              <img src={studentInfo.avatar_url} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            ) : (
-              studentInfo.avatar_emoji || (studentInfo.student_name || 'H').charAt(0)
-            )}
-          </div>
+      <AccountMenu
+        studentProfile={studentProfile}
+        auditData={auditData}
+        theme={theme}
+        onToggleTheme={onToggleTheme}
+        onSwitchProfile={onOpenProfileModal}
+        onImportTranscript={onOpenImport}
+        onOpenSettings={onOpenSettings}
+        language={language}
+      />
 
-          {/* 2 Lines: Dòng 1 tên, Dòng 2 CPA */}
-          <div style={{ overflow: 'hidden', flex: 1, display: 'flex', flexDirection: 'column', gap: '2px' }}>
-            <div style={{ 
-              fontSize: '0.85rem', 
-              fontWeight: '600', 
-              color: 'var(--text-primary)', 
-              whiteSpace: 'nowrap', 
-              overflow: 'hidden', 
-              textOverflow: 'ellipsis' 
-            }}>
-              {studentInfo.student_name || 'Nguyễn Văn Hiếu'}
-            </div>
-            <div style={{ 
-              fontSize: '0.74rem', 
-              color: 'var(--text-muted)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px'
-            }}>
-              <span>CPA:</span>
-              <strong style={{ color: '#f59e0b', fontWeight: '600' }}>{cpa.toFixed(2)}</strong>
-            </div>
-          </div>
-        </div>
-
-        {/* Settings Button */}
-        <button
-          onClick={onOpenSettings}
-          title={language === 'vi' ? 'Cài đặt' : 'Settings'}
+      {/* Draggable Resize Handle on right edge */}
+      {isOpen && (
+        <div
+          onMouseDown={startResizing}
+          onDoubleClick={handleDoubleClick}
+          title={language === 'vi' ? 'Kéo để chỉnh độ rộng thanh bên (Nhấp đúp để đặt lại)' : 'Drag to resize sidebar (Double-click to reset)'}
           style={{
-            background: 'transparent',
-            border: 'none',
-            color: 'var(--text-muted)',
-            cursor: 'pointer',
-            padding: '7px',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'all 0.15s ease',
-            flexShrink: 0
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            width: '5px',
+            height: '100%',
+            cursor: 'col-resize',
+            zIndex: 100,
+            userSelect: 'none',
+            background: isResizing ? 'var(--brand-accent, #c8102e)' : 'transparent',
+            transition: 'background 0.15s ease'
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.color = 'var(--text-primary)';
-            e.currentTarget.style.background = 'var(--sidebar-hover)';
+            if (!isResizing) e.currentTarget.style.background = 'rgba(200, 16, 46, 0.4)';
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.color = 'var(--text-muted)';
-            e.currentTarget.style.background = 'transparent';
+            if (!isResizing) e.currentTarget.style.background = 'transparent';
           }}
-        >
-          <Settings size={18} />
-        </button>
-      </div>
+        />
+      )}
     </aside>
   );
 }

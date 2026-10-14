@@ -1,25 +1,121 @@
 import json
 import re
-from typing import Any, Dict, List, Optional
+import threading
+from contextlib import contextmanager
+from contextvars import ContextVar, Token
+from dataclasses import dataclass
+from typing import Any, Dict, Iterator, List, Optional, Tuple
 
-from app.core.config import RAW_CONDITIONS_FILE, STUDENT_PROFILE_FILE, STUDENTS_DIR
+from app.core.config import RAW_CONDITIONS_FILE, STUDENT_PROFILE_FILE
 from app.services.curriculum_repository import (
     CurriculumNotFoundError,
     curriculum_repository,
 )
+from app.services.profile_repository import create_profile_repository, is_valid_profile_key
+
+DEFAULT_STUDENT_ID = "20220001"
+
+
+@dataclass(frozen=True)
+class ProfileState:
+    """Ảnh chụp hồ sơ sinh viên cùng CTĐT tương ứng.
+
+    Được thay bằng một phép gán duy nhất nên luồng đọc không bao giờ thấy hồ sơ
+    của người này đi kèm danh mục môn của CTĐT khác.
+    """
+
+    student_id: str
+    profile: Dict[str, Any]
+    curriculum: Dict[str, Any]
+    courses: Dict[str, Dict[str, Any]]
+    rules: Dict[str, Dict[str, Any]]
+
+
+# Hồ sơ riêng của request hiện tại (đặt bởi profile_scope). Mỗi luồng/tác vụ
+# có context riêng nên không ảnh hưởng request khác.
+_scoped_state: ContextVar[Optional[ProfileState]] = ContextVar("scoped_profile_state", default=None)
+
+
+def _build_rules(courses: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    rules = {}
+    for course in courses.values():
+        condition = course.get("registration_condition", {})
+        branches = [
+            [
+                {"code": item["course_code"], "type": item["relation"]}
+                for item in branch.get("all_of", [])
+            ]
+            for branch in condition.get("any_of", [])
+        ]
+        flat = {"PREREQUISITE": set(), "PRIOR": set(), "COREQUISITE": set()}
+        for branch in branches:
+            for item in branch:
+                flat[item["type"]].add(item["code"])
+        rules[course["code"]] = {
+            **course,
+            "raw_condition": condition.get("raw", ""),
+            "condition_tree": branches,
+            "flat_prerequisites": sorted(flat["PREREQUISITE"]),
+            "flat_prior_courses": sorted(flat["PRIOR"]),
+            "flat_corequisites": sorted(flat["COREQUISITE"]),
+            "min_credits_accumulated": int(
+                condition.get("min_credits_accumulated", 0) or 0
+            ),
+        }
+    return rules
+
+
+def _build_state(profile: Dict[str, Any], curriculum: Dict[str, Any], student_id: str) -> ProfileState:
+    courses = {course["code"]: dict(course) for course in curriculum["courses"]}
+    return ProfileState(
+        student_id=student_id,
+        profile=profile,
+        curriculum=curriculum,
+        courses=courses,
+        rules=_build_rules(courses),
+    )
 
 
 class DataLoader:
-    """Compatibility facade backed by a versioned curriculum dataset."""
+    """Compatibility facade backed by a versioned curriculum dataset.
 
-    def __init__(self):
-        self.courses: Dict[str, Dict[str, Any]] = {}
+    Hồ sơ "đang hoạt động" (``_state``) dùng chung cho cả tiến trình và chỉ
+    được thay khi giữ ``_lock``. Request cần trả lời theo một sinh viên cụ thể
+    dùng ``profile_scope``: hồ sơ đó chỉ hiển thị trong context của request ấy.
+    """
+
+    def __init__(self, profiles=None):
+        # Kho hồ sơ: MongoDB nếu cấu hình MONGODB_URI, ngược lại file cục bộ.
+        self._profiles = profiles if profiles is not None else create_profile_repository()
         self.aux_courses: Dict[str, Dict[str, Any]] = {}
-        self.rules: Dict[str, Dict[str, Any]] = {}
-        self.student_profile: Dict[str, Any] = {}
-        self.curriculum: Dict[str, Any] = {}
-        self.current_student_id = "20220001"
+        self._state: Optional[ProfileState] = None
+        self._lock = threading.RLock()
         self.reload()
+
+    # Giữ tên thuộc tính cũ để engine/service không phải sửa.
+    @property
+    def _active(self) -> ProfileState:
+        return _scoped_state.get() or self._state
+
+    @property
+    def student_profile(self) -> Dict[str, Any]:
+        return self._active.profile
+
+    @property
+    def curriculum(self) -> Dict[str, Any]:
+        return self._active.curriculum
+
+    @property
+    def courses(self) -> Dict[str, Dict[str, Any]]:
+        return self._active.courses
+
+    @property
+    def rules(self) -> Dict[str, Dict[str, Any]]:
+        return self._active.rules
+
+    @property
+    def current_student_id(self) -> str:
+        return self._active.student_id
 
     @staticmethod
     def _read_json(path):
@@ -27,129 +123,140 @@ class DataLoader:
             return json.load(stream)
 
     def reload(self):
+        with self._lock:
+            self._reload_unlocked()
+
+    def _reload_unlocked(self):
         curriculum_repository.reload()
 
-        self.aux_courses = {}
+        aux_courses = {}
         if RAW_CONDITIONS_FILE.exists():
             for course in self._read_json(RAW_CONDITIONS_FILE):
-                self.aux_courses[course["code"]] = {
+                aux_courses[course["code"]] = {
                     "code": course["code"],
                     "name": course["name"],
                     "credits": float(course.get("credits", 0) or 0),
                 }
+        self.aux_courses = aux_courses
 
-        student_file = STUDENTS_DIR / f"{self.current_student_id}.json"
-        if not student_file.exists():
-            student_file = STUDENT_PROFILE_FILE
-        if not student_file.exists():
-            raise FileNotFoundError(f"Không tìm thấy hồ sơ sinh viên: {student_file}")
-
-        profile = self._read_json(student_file)
+        student_id = self._state.student_id if self._state else DEFAULT_STUDENT_ID
+        profile = self._profiles.get(student_id)
+        if profile is None:
+            if not STUDENT_PROFILE_FILE.exists():
+                raise FileNotFoundError(f"Không tìm thấy hồ sơ sinh viên {student_id}")
+            profile = self._read_json(STUDENT_PROFILE_FILE)
         curriculum = curriculum_repository.resolve_profile(profile)
-        self._activate(profile, curriculum, self.current_student_id)
+        self._activate(profile, curriculum, student_id)
 
     def _activate(
         self,
         profile: Dict[str, Any],
         curriculum: Dict[str, Any],
         student_id: str,
-    ) -> None:
-        self.student_profile = profile
-        self.curriculum = curriculum
-        self.current_student_id = student_id
-        self.courses = {course["code"]: dict(course) for course in curriculum["courses"]}
-        self.rules = {}
-        for course in self.courses.values():
-            condition = course.get("registration_condition", {})
-            branches = [
-                [
-                    {"code": item["course_code"], "type": item["relation"]}
-                    for item in branch.get("all_of", [])
-                ]
-                for branch in condition.get("any_of", [])
-            ]
-            flat = {"PREREQUISITE": set(), "PRIOR": set(), "COREQUISITE": set()}
-            for branch in branches:
-                for item in branch:
-                    flat[item["type"]].add(item["code"])
-            self.rules[course["code"]] = {
-                **course,
-                "raw_condition": condition.get("raw", ""),
-                "condition_tree": branches,
-                "flat_prerequisites": sorted(flat["PREREQUISITE"]),
-                "flat_prior_courses": sorted(flat["PRIOR"]),
-                "flat_corequisites": sorted(flat["COREQUISITE"]),
-                "min_credits_accumulated": int(
-                    condition.get("min_credits_accumulated", 0) or 0
-                ),
-            }
+    ) -> ProfileState:
+        """Đổi hồ sơ đang hoạt động; chỉ gọi khi đang giữ ``_lock``."""
+        state = _build_state(profile, curriculum, student_id)
+        self._state = state
         program = curriculum["program"]
         print(
             f"[INFO] DataLoader: {program['program_code']}-{program['curriculum_version']}, "
-            f"{len(self.courses)} môn, {len(curriculum['groups'])} nhóm, "
+            f"{len(state.courses)} môn, {len(curriculum['groups'])} nhóm, "
             f"SV {profile.get('info', {}).get('student_name', 'N/A')}"
         )
+        return state
+
+    def _read_profile(self, student_id: str) -> Tuple[Dict[str, Any], Dict[str, Any]]:
+        """Đọc hồ sơ và CTĐT đã kiểm chứng tương ứng, chưa kích hoạt."""
+        if not is_valid_profile_key(student_id):
+            raise FileNotFoundError(f"Mã hồ sơ không hợp lệ: {student_id!r}")
+        profile = self._profiles.get(student_id)
+        if profile is None:
+            raise FileNotFoundError(f"Không tìm thấy hồ sơ sinh viên {student_id}")
+        return profile, curriculum_repository.resolve_profile(profile)
 
     def load_student_profile(self, student_id: str) -> Dict[str, Any]:
         """Activate a profile only when its exact verified curriculum exists."""
-        target_path = STUDENTS_DIR / f"{student_id}.json"
-        if not target_path.exists():
-            raise FileNotFoundError(f"Không tìm thấy hồ sơ sinh viên {student_id}")
-        profile = self._read_json(target_path)
+        profile, curriculum = self._read_profile(student_id)
+        with self._lock:
+            return self._activate(profile, curriculum, student_id).profile
+
+    def find_profile_key(self, student_id: Optional[str]) -> Optional[str]:
+        """Tên file hồ sơ (không đuôi) ứng với MSSV, hoặc None nếu không có.
+
+        Hồ sơ nhập tay được lưu dưới khóa "custom" nên ngoài khớp khóa còn so
+        với ``info.student_id`` bên trong từng hồ sơ.
+        """
+        return self._profiles.find_key(str(student_id or "").strip())
+
+    @contextmanager
+    def profile_scope(self, student_id: Optional[str]) -> Iterator[None]:
+        """Trong khối ``with``, mọi getter trả về hồ sơ của ``student_id``.
+
+        Chỉ context hiện tại thấy hồ sơ này: hồ sơ đang hoạt động không đổi và
+        không giữ khóa, nên request khác (kể cả /switch) vẫn chạy song song.
+        MSSV không có hồ sơ (vd. "demo") giữ nguyên hồ sơ đang thấy.
+        """
+        key = self.find_profile_key(student_id)
+        if key is None or key == self.current_student_id:
+            yield
+            return
+        token = self.enter_scope(self.load_scope_state(key))
+        try:
+            yield
+        finally:
+            self.exit_scope(token)
+
+    # --- Scope theo người đăng nhập --------------------------------------
+    # Tách đọc (I/O, chạy trong threadpool) khỏi việc đặt ContextVar (phải
+    # chạy trong context của request để endpoint đồng bộ thừa hưởng được).
+    @property
+    def profiles(self):
+        return self._profiles
+
+    def load_scope_state(self, student_id: str) -> ProfileState:
+        key = self.find_profile_key(student_id)
+        if key is None:
+            raise FileNotFoundError(f"Tài khoản {student_id} chưa có hồ sơ học tập.")
+        profile, curriculum = self._read_profile(key)
+        return _build_state(profile, curriculum, key)
+
+    @staticmethod
+    def enter_scope(state: ProfileState) -> Token:
+        return _scoped_state.set(state)
+
+    @staticmethod
+    def exit_scope(token: Token) -> None:
+        _scoped_state.reset(token)
+
+    def save_profile_for(self, student_id: str, profile: Dict[str, Any]) -> Dict[str, Any]:
+        """Ghi hồ sơ của một sinh viên cụ thể (không phải hồ sơ đang hoạt động).
+
+        Nếu request hiện tại đang ở scope của sinh viên đó thì cập nhật luôn
+        scope, để phần còn lại của request (vd. audit) thấy dữ liệu mới.
+        """
+        key = self.find_profile_key(student_id) or student_id
         curriculum = curriculum_repository.resolve_profile(profile)
-        self._activate(profile, curriculum, student_id)
-        return self.student_profile
+        with self._lock:
+            self._profiles.save(key, profile)
+            state = _build_state(profile, curriculum, key)
+            if self._state is not None and self._state.student_id == key:
+                self._state = state
+        scoped = _scoped_state.get()
+        if scoped is not None and scoped.student_id == key:
+            _scoped_state.set(state)
+        return profile
 
-    def list_available_profiles(self) -> List[Dict[str, Any]]:
-        profiles = []
-        if not STUDENTS_DIR.exists():
-            return profiles
-        for path in sorted(STUDENTS_DIR.glob("*.json")):
-            try:
-                data = self._read_json(path)
-                info = data.get("info", {})
-                total_points = cpa_credits = accumulated = 0.0
-                for item in data.get("transcript", []):
-                    credits = float(item.get("credits", 0.0))
-                    if not item["code"].startswith("PE") and credits > 0:
-                        if item.get("is_passed", True):
-                            accumulated += credits
-                        total_points += float(item.get("numeric_grade", 0.0)) * credits
-                        cpa_credits += credits
-                try:
-                    resolved = curriculum_repository.resolve_profile(data)["program"]
-                    supported = True
-                    curriculum_version = resolved["curriculum_version"]
-                except CurriculumNotFoundError:
-                    supported = False
-                    curriculum_version = curriculum_repository._infer_version(info)
-                profiles.append({
-                    "id": path.stem,
-                    "student_id": info.get("student_id", path.stem),
-                    "name": info.get("student_name", "Sinh viên Demo"),
-                    "class_name": info.get("class_name", ""),
-                    "badge": info.get("badge", "Demo"),
-                    "persona": info.get("persona", "Hồ sơ sinh viên HUST"),
-                    "cpa": round(total_points / cpa_credits, 2) if cpa_credits else 0.0,
-                    "accumulated_credits": accumulated,
-                    "is_active": path.stem == self.current_student_id,
-                    "curriculum_version": curriculum_version,
-                    "curriculum_supported": supported,
-                })
-            except Exception as exc:
-                print(f"[WARN] Lỗi đọc profile {path}: {exc}")
-        return profiles
-
-    def save_custom_profile(self, profile_data: Dict[str, Any]) -> Dict[str, Any]:
-        # Resolve before writing so an unsupported profile cannot silently replace
-        # the active, working profile.
-        curriculum = curriculum_repository.resolve_profile(profile_data)
-        STUDENTS_DIR.mkdir(parents=True, exist_ok=True)
-        custom_path = STUDENTS_DIR / "custom.json"
-        with custom_path.open("w", encoding="utf-8") as stream:
-            json.dump(profile_data, stream, ensure_ascii=False, indent=2)
-        self._activate(profile_data, curriculum, "custom")
-        return self.student_profile
+    def update_profile_info_for(self, student_id: str, updates: Dict[str, Any]) -> Dict[str, Any]:
+        key = self.find_profile_key(student_id)
+        current = self._profiles.get(key) if key else None
+        if current is None:
+            raise FileNotFoundError(f"Tài khoản {student_id} chưa có hồ sơ học tập.")
+        candidate = json.loads(json.dumps(current))
+        candidate.setdefault("info", {})
+        for field, value in updates.items():
+            if value is not None:
+                candidate["info"][field] = value
+        return self.save_profile_for(student_id, candidate)
 
     def get_course(self, code: str) -> Optional[Dict[str, Any]]:
         return self.courses.get(code) or self.aux_courses.get(code)
@@ -244,23 +351,6 @@ class DataLoader:
                 if not any(item["id"] == module_id for item in modules):
                     modules.append({"id": module_id, "name": name, "group_id": group_id})
         return modules
-
-    def update_profile_info(self, updates: Dict[str, Any]) -> Dict[str, Any]:
-        candidate = json.loads(json.dumps(self.student_profile))
-        candidate.setdefault("info", {})
-        for key, value in updates.items():
-            if value is not None:
-                candidate["info"][key] = value
-        curriculum = curriculum_repository.resolve_profile(candidate)
-
-        target_path = STUDENTS_DIR / f"{self.current_student_id}.json"
-        if not target_path.exists():
-            target_path = STUDENTS_DIR / "custom.json"
-        STUDENTS_DIR.mkdir(parents=True, exist_ok=True)
-        with target_path.open("w", encoding="utf-8") as stream:
-            json.dump(candidate, stream, ensure_ascii=False, indent=2)
-        self._activate(candidate, curriculum, self.current_student_id)
-        return self.student_profile
 
 
 data_loader = DataLoader()

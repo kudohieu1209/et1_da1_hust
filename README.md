@@ -14,9 +14,9 @@ Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tu
 
 ## Tài liệu bàn giao
 
-- Báo cáo Đồ án 1: `docs/report/bao_cao_do_an_1_hust_course_advisor.docx`
-- Slide bảo vệ 12 trang: `docs/presentation/hust_course_advisor_bao_cao_do_an_1_hoan_thien.pptx`
+- Báo cáo tiến độ: `docs/report/bao_cao_tien_do.pdf` (nguồn LaTeX trong `docs/report/figure/`)
 - Yêu cầu và đối chiếu chỉ đạo: `docs/theory/yeu_cau_cua_thay.md`
+- Bộ đánh giá định lượng: `project/eval/` (kết quả mốc: `project/eval/reports/baseline.md`)
 - Chạy kiểm thử toàn bộ: `./scripts/test_all.sh`
 
 ---
@@ -42,7 +42,7 @@ graph TD
         Rule <--> CurriculumDB[(Dữ liệu CTĐT & điều kiện)]
         Rule <--> StudentData[(Hồ sơ sinh viên: Điểm, CPA, Cảnh cáo)]
         Rec <--> CurriculumDB
-        API <--> ChatDB[(SQLite: conversations & messages)]
+        API <--> ChatDB[(MongoDB: conversations, messages, student_profiles)]
     end
 ```
 
@@ -55,7 +55,7 @@ graph TD
 - Đã rà liên kết CTĐT trên trang chi tiết của cả 68 chương trình: `project/data/raw/hust_program_curriculum_sources.json`. Manifest lưu nguồn chính thức và trạng thái truy cập (snapshot hiện tại: 46 nguồn HTTP 2xx); dữ liệu này chưa được coi là CTĐT chuẩn hóa cho đến khi kiểm tra cấu trúc và điều kiện học phần.
 - Đã có bước trích xuất candidate cho 6 trang CTĐT HTML (5 trang `hp-table` và FL2 dạng bảng thông thường) cùng 6/8 PDF có danh mục học phần (`project/data/raw/hust_curriculum_extractions.json`, `project/data/raw/hust_curriculum_pdf_extractions.json`).
 - Đã ghép 14 candidate HTML/PDF với danh mục 8.310 học phần CTT (`project/data/raw/hust_curriculum_candidates.json`). ET1-2023 đã được phê duyệt qua `project/data/processed/curriculum_approvals.json`; các candidate còn lại vẫn `needs_review` và chưa nạp vào Rule Engine.
-- Lịch sử hội thoại được lưu riêng trong SQLite tại `project/data/processed/chat_history.sqlite3`, gắn với MSSV; ChromaDB chỉ dùng để lưu vector RAG, không lưu hội thoại.
+- Lịch sử hội thoại và hồ sơ sinh viên được lưu trong **MongoDB** (collection `conversations`, `messages`, `student_profiles`) khi đặt `MONGODB_URI`; nếu để trống, hệ thống chạy offline bằng SQLite (`project/data/processed/chat_history.sqlite3`) và file `project/data/processed/students/*.json`. ChromaDB chỉ dùng để lưu vector RAG, không lưu hội thoại.
 - Kho RAG tin cậy hiện gồm 5 tài liệu: CTĐT ET1–2022, ET1–2023, Quy chế đào tạo theo Quyết định 5445/QĐ-ĐHBK, Sổ tay sinh viên 2026 và Quyết định học phí 2025–2026. Tài liệu có `RAG_STATUS: UNVERIFIED` không được lập chỉ mục.
 - Giao diện dùng bộ chọn hồ sơ demo, không cung cấp hệ thống xác thực sản xuất. Không triển khai dịch vụ này ra Internet khi chưa bổ sung phân quyền và bảo vệ dữ liệu cá nhân.
 
@@ -65,6 +65,49 @@ Thiết lập và chạy toàn bộ kiểm thử:
 ./scripts/setup.sh
 ./scripts/test_all.sh
 ```
+
+Trên Windows (Git Bash), venv backend nằm ở `project/backend/.venv-win` để không
+ghi đè `.venv` của Linux khi dùng chung ổ đĩa; thay `.venv/bin/python` bằng
+`.venv-win/Scripts/python.exe` trong các lệnh bên dưới.
+
+### MongoDB (hội thoại và hồ sơ sinh viên)
+
+1. Tạo cluster miễn phí **MongoDB Atlas M0**, tạo database user riêng cho ứng dụng
+   và chỉ thêm IP máy của bạn vào *Network Access* (không mở `0.0.0.0/0`, vì hồ sơ
+   chứa bảng điểm cá nhân).
+2. Điền `MONGODB_URI` (Connect → Drivers → Python) và `MONGODB_DB` vào
+   `project/backend/.env` (xem `.env.example`).
+3. Chuyển dữ liệu cục bộ hiện có lên MongoDB (chạy lại nhiều lần vẫn an toàn):
+
+```bash
+cd project/backend
+./.venv/bin/python migrate_to_mongodb.py --dry-run
+./.venv/bin/python migrate_to_mongodb.py
+```
+
+Nếu `MONGODB_URI` đã đặt mà không kết nối được, backend dừng ngay khi khởi động
+và báo lỗi (mật khẩu được che) thay vì âm thầm ghi sang kho cục bộ. `GET /` cho
+biết backend đang dùng kho nào. Kiểm thử luôn chạy trên kho cục bộ và `mongomock`.
+
+### Đánh giá định lượng
+
+`project/eval/golden_questions.jsonl` gồm 96 câu hỏi có đáp án chuẩn trích nguyên
+văn từ các văn bản đã kiểm chứng (quy chế, học phí, học bổng, CTĐT) và các câu
+kiểm tra điều kiện, gợi ý môn, rà soát tiến độ. Bộ chạy đo độ chính xác phân loại
+ý định, trích xuất mã môn, Recall@k/MRR của truy xuất và tỉ lệ câu trả lời chứa ý
+chính; mặc định tắt LLM để kết quả tất định.
+
+```bash
+project/backend/.venv/bin/python project/eval/run_eval.py --label baseline   # ghi eval/reports/
+project/backend/.venv/bin/python project/eval/run_eval.py --check            # thoát mã 1 nếu thụt lùi
+```
+
+Ngưỡng chống thụt lùi nằm ở `project/eval/thresholds.json`; chỉ nâng ngưỡng khi
+một thay đổi đã cải thiện chỉ số.
+
+ChromaDB lưu file cục bộ không chịu được nhiều tiến trình cùng mở. `test_all.sh`
+vì vậy đặt `VECTOR_DB_DIR=project/data/vector_db_test`; khi chạy `run_eval.py`
+riêng lúc backend dev đang bật, hãy đặt biến này tương tự.
 
 Tái tạo tài liệu RAG đã kiểm chứng từ PDF gốc:
 
@@ -163,4 +206,4 @@ npm run dev
 3. **Tra cứu quy chế đào tạo (RAG):** *"Quy định cảnh cáo học tập mức 1 được đăng ký tối đa bao nhiêu tín chỉ?"* -> RAG trích dẫn chính xác Điều khoản trong Quy chế Đào tạo ĐHBK Hà Nội.
 4. **Rà soát tốt nghiệp (Audit Tab):** Tiến độ được tính theo đúng phiên bản CTĐT; ET1–2022 có 126 tín chỉ, ET1–2023 có 132 tín chỉ, còn Ngoại ngữ/GDTC/GDQP được theo dõi tách biệt.
 
-5. **Lịch sử hội thoại:** Gửi vài câu hỏi, tải lại trang hoặc chọn một mục trong “Gần đây” để kiểm tra hội thoại được khôi phục từ SQLite. Các nút ghim, lưu trữ và xóa cập nhật bản ghi hội thoại tương ứng.
+5. **Lịch sử hội thoại:** Gửi vài câu hỏi, tải lại trang hoặc chọn một mục trong “Gần đây” để kiểm tra hội thoại được khôi phục từ MongoDB. Các nút ghim, lưu trữ và xóa cập nhật bản ghi hội thoại tương ứng.

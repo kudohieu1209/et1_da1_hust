@@ -1,0 +1,2 @@
+# Chỉ dùng cho kiểm thử
+mongomock>=4.1.0

@@ -8,7 +8,6 @@ from app.engine.graph_engine import graph_engine
 from app.engine.recommender import course_recommender
 from app.engine.rule_engine import rule_engine
 from app.services.chatbot_service import chatbot_service
-from app.services.auth_service import auth_service
 from app.services.curriculum_repository import (
     CurriculumNotFoundError,
     curriculum_repository,
@@ -115,11 +114,11 @@ class VersionedCurriculumTests(unittest.TestCase):
         self.assertEqual(data_loader.get_program()["total_required_credits"], 132)
         self.assertEqual(len(data_loader.get_module_tracks()), 5)
 
-    def test_k68_login_activates_matching_curriculum(self):
-        result = auth_service.login({"student_id": "20231890", "password": "123456"})
-        self.assertTrue(result["success"])
-        self.assertEqual(result["user"]["info"]["curriculum_version"], "2023")
-        self.assertEqual(data_loader.get_program()["curriculum_version"], "2023")
+    def test_k68_scope_uses_matching_curriculum_for_audit(self):
+        with data_loader.profile_scope("20231890"):
+            audit = student_service.audit_degree()
+            self.assertEqual(data_loader.get_program()["curriculum_version"], "2023")
+        self.assertEqual(audit["total_credits_required"], 132)
 
     def test_recommender_accepts_official_module_id(self):
         recommendation = course_recommender.recommend(target_track="MOD6", max_credits=20)
