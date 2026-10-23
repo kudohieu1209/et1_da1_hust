@@ -46,6 +46,23 @@ yarn-error.log*
 pnpm-debug.log*
 .oxlint-cache
 
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
 # Databases & Vector DB
 *.sqlite3
 *.sqlite3-journal
