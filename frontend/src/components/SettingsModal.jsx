@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Info, KeyRound, Moon, SlidersHorizontal, Sun, UserRound, X } from 'lucide-react';
+import { Brain, Info, KeyRound, Moon, SlidersHorizontal, Sun, UserRound, X } from 'lucide-react';
 import AboutPanel from './account/AboutPanel';
 import AccountSecurity from './account/AccountSecurity';
 import ProfileSettings from './account/ProfileSettings';
+import AdvisingMemory from './account/AdvisingMemory';
 import './account/account.css';
 
 const TABS = [
   { id: 'general', vi: 'Chung', en: 'General', icon: SlidersHorizontal },
   { id: 'profile', vi: 'Hồ sơ', en: 'Profile', icon: UserRound },
+  { id: 'memory', vi: 'Ghi nhớ học tập', en: 'Study preferences', icon: Brain },
   { id: 'account', vi: 'Tài khoản', en: 'Account', icon: KeyRound },
   { id: 'about', vi: 'Giới thiệu', en: 'About', icon: Info },
 ];
@@ -184,6 +186,7 @@ export default function SettingsModal({
               />
             )}
 
+            {activeTab === 'memory' && <AdvisingMemory language={language} />}
             {activeTab === 'about' && <AboutPanel language={language} />}
           </div>
         </div>

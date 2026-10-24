@@ -1,8 +1,6 @@
 import itertools
-import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 
 from app.auth.passwords import PasswordPolicyError
 from app.auth.service import (
@@ -16,9 +14,11 @@ from app.auth.service import (
     RegistrationError,
     TooManyAttemptsError,
 )
-from app.auth.store import SqliteAuthStore, UserExistsError
+from app.auth.store import MongoAuthStore, UserExistsError
 from app.services.curriculum_repository import CurriculumNotFoundError
-from app.services.profile_repository import FileProfileRepository
+from app.services.profile_repository import MongoProfileRepository
+from testing_support import isolated_database
+from unittest import mock
 
 PASSWORD = "mat-khau-2026"
 
@@ -36,12 +36,13 @@ class FakeClock:
 
 class AuthServiceTests(unittest.TestCase):
     def setUp(self):
-        temp_dir = tempfile.TemporaryDirectory()
-        self.addCleanup(temp_dir.cleanup)
-        root = Path(temp_dir.name)
-        self.store = SqliteAuthStore(root / "auth.sqlite3")
-        self.profiles = FileProfileRepository(root / "students")
+        database = isolated_database()
+        self.store = MongoAuthStore(database)
+        self.profiles = MongoProfileRepository(database)
         self.clock = FakeClock()
+        ttl_clock = mock.patch("mongomock.utcnow", side_effect=lambda: self.clock.now.replace(tzinfo=None))
+        ttl_clock.start()
+        self.addCleanup(ttl_clock.stop)
         self.service = AuthService(self.store, self.profiles, clock=self.clock)
         # Mỗi lần đăng ký một IP riêng, để giới hạn đăng ký theo IP không
         # ảnh hưởng các test khác (giới hạn đó có test riêng).

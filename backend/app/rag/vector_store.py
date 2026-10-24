@@ -8,6 +8,7 @@ from chromadb.config import Settings
 
 from app.core.config import VECTOR_DB_DIR
 from app.rag.document_loader import document_loader, DocumentChunk
+from app.rag.lexical_search import bm25_scores
 
 class VectorStoreManager:
     def __init__(self, persist_dir: Path = VECTOR_DB_DIR):
@@ -44,6 +45,10 @@ class VectorStoreManager:
 
         chunks = document_loader.load_all_chunks()
         if not chunks:
+            if self.collection:
+                existing_ids = self.collection.get().get("ids", [])
+                if existing_ids:
+                    self.collection.delete(ids=existing_ids)
             return {"status": "empty", "message": "Không tìm thấy tài liệu nào trong data/documents/", "count": 0}
 
         if force and self.client:
@@ -79,6 +84,11 @@ class VectorStoreManager:
                 "document_type": str(meta.get("document_type", "general")),
                 "effective_period": str(meta.get("effective_period", "")),
                 "source_url": str(meta.get("source_url", "")),
+                "page": int(meta.get("page", 0)),
+                "article": str(meta.get("article", "")),
+                "section": str(meta.get("section", "")),
+                "clause": str(meta.get("clause", "")),
+                "education_level": str(meta.get("education_level", "general")),
             }
             metadatas.append(clean_meta)
             ids.append(chunk_id)
@@ -112,194 +122,127 @@ class VectorStoreManager:
         }
 
     def similarity_search(self, query: str, k: int = 4) -> List[Dict[str, Any]]:
-        """
-        Tìm kiếm lai (Hybrid Retrieval): Kết hợp Semantic Search (Vector) 
-        và Exact Code / Article Token Matching để đảm bảo chính xác 100% khi tra cứu
-        mã học phần (ET4340, ET3290...), điều khoản quy chế (Điều 3, Điều 9...), hoặc thuật ngữ.
-        """
-        try:
-            if not self.collection or self.collection.count() == 0:
-                self.sync_documents()
-        except Exception:
-            self._init_client()
-            if not self.collection or self.collection.count() == 0:
-                self.sync_documents()
-
+        """Combine BM25 scores and vector ranks within the requested academic scope."""
+        if k <= 0:
+            return []
+        if not self.collection or self.collection.count() == 0:
+            self.sync_documents()
         if not self.collection:
             return []
 
-        normalized_synonyms = {"cảnh cáo học tập": "cảnh báo học tập"}
-        # Xếp loại -> loại học bổng chỉ có nghĩa trong câu hỏi về học bổng
-        # ("môn này khá khó" không liên quan học bổng loại C).
-        if re.search(r"học bổng", query, flags=re.IGNORECASE):
-            normalized_synonyms.update({
-                "xuất sắc": "loại A",
-                "giỏi": "loại B",
-                "khá": "loại C",
-            })
-        search_query = query
-        for phrase, replacement in normalized_synonyms.items():
-            # Ranh giới từ: tránh "khác" -> "loại Cc".
-            search_query = re.sub(
-                rf"(?<!\w){re.escape(phrase)}(?!\w)", replacement, search_query, flags=re.IGNORECASE
-            )
-        query_upper = f"{query} {search_query}".upper()
-        # 1. Trích xuất mã học phần (vd: ET4340, ET 4230 -> ET4230)
-        norm_query = re.sub(r'\b([A-Z]{2,3})\s+(\d{4}[A-Z]?)\b', r'\1\2', query_upper)
-        course_codes = re.findall(r'\b([A-Z]{2,3}\d{4}[A-Z]?)\b', norm_query)
-
-        # 2. Trích xuất điều khoản (vd: Điều 3, Điều 9)
-        article_matches = re.findall(r'\b(ĐIỀU\s+\d+)\b', norm_query)
-
-        # 3. Vector Semantic Search
-        actual_k = min(k * 2, self.collection.count())
-        semantic_chunks = []
+        search_query = query.replace("cảnh cáo học tập", "cảnh báo học tập")
+        # The active supported curricula are bachelor's programmes. Explicit
+        # graduate-level questions and article numbers override that default.
+        requested_level = next((level for term, level in (
+            ("thạc sĩ", "master"), ("tiến sĩ", "doctorate"), ("nghiên cứu sinh", "doctorate"),
+            ("kỹ sư", "engineer"),
+        ) if term in query.lower()), "undergraduate")
+        search_query = re.sub("cử nhân", "đại học", search_query, flags=re.I)
+        if "học bổng" in search_query.lower():
+            search_query = re.sub(r"loại A\b", "loại xuất sắc", search_query, flags=re.I)
+            search_query = re.sub(r"loại B\b", "loại giỏi", search_query, flags=re.I)
+            search_query = re.sub(r"loại C\b", "loại khá", search_query, flags=re.I)
+        corpus = self.collection.get(include=["documents", "metadatas"])
+        rows = [
+            {"id": identifier, "text": document, "metadata": metadata or {}}
+            for identifier, document, metadata in zip(corpus["ids"], corpus["documents"], corpus["metadatas"])
+        ]
+        if not rows:
+            return []
+        lexical = bm25_scores(search_query, [
+            f"{row['metadata'].get('title', '')}\n{row['text']}" for row in rows
+        ])
+        lexical_order = sorted(range(len(rows)), key=lambda index: lexical[index], reverse=True)
+        lexical_ranks = {rows[index]["id"]: rank for rank, index in enumerate(lexical_order, 1) if lexical[index] > 0}
+        semantic_ranks = {}
         try:
-            results = self.collection.query(
-                query_texts=[search_query],
-                n_results=actual_k
-            )
-            if results and "documents" in results and results["documents"]:
-                docs = results["documents"][0]
-                metas = results["metadatas"][0] if "metadatas" in results else [{}] * len(docs)
-                dists = results["distances"][0] if "distances" in results and results["distances"] else [1.0] * len(docs)
-                for doc, meta, dist in zip(docs, metas, dists):
-                    semantic_chunks.append({
-                        "text": doc,
-                        "metadata": meta,
-                        "distance": dist
-                    })
-        except Exception as e:
-            print(f"[VectorStoreManager] Lỗi query vector: {e}")
+            semantic = self.collection.query(query_texts=[search_query], n_results=min(k * 4, len(rows)))
+            semantic_ranks = {identifier: rank for rank, identifier in enumerate(semantic["ids"][0], 1)}
+        except Exception as exc:
+            print(f"[VectorStoreManager] Vector search unavailable; using BM25: {type(exc).__name__}")
 
-        # 4. Lexical scan trên corpus nhỏ. Nguồn quy chế có nhiều con số và
-        # thuật ngữ gần nhau nên semantic search đơn thuần dễ nhầm Điều.
-        lexical_chunks = []
-        stop_words = {"SINH", "VIÊN", "ĐƯỢC", "BAO", "NHIÊU", "CHO", "CỦA", "VÀ", "LÀ", "CÓ"}
-        lexical_tokens = {
-            token for token in re.findall(r"[A-ZÀ-ỸĐ]+|\d+", query_upper)
-            if len(token) > 2 and token not in stop_words
-        }
-        try:
-            all_data = self.collection.get(include=["documents", "metadatas"])
-            for doc, meta in zip(all_data.get("documents", []), all_data.get("metadatas", [])):
-                searchable = f"{doc} {meta.get('source', '')} {meta.get('effective_period', '')}".upper()
-                matches = sum(1 for token in lexical_tokens if token in searchable)
-                scholarship_exact = (
-                    "HỌC BỔNG" in query_upper
-                    and (
-                        (("LOẠI A" in query_upper or "XUẤT SẮC" in query_upper) and "HỌC BỔNG LOẠI XUẤT SẮC" in searchable)
-                        or ("LOẠI B" in query_upper and "HỌC BỔNG LOẠI GIỎI" in searchable)
-                        or ("LOẠI C" in query_upper and "HỌC BỔNG LOẠI KHÁ" in searchable)
-                    )
-                )
-                thesis_exact = (
-                    ("ĐỒ ÁN TỐT NGHIỆP" in query_upper or "ĐATN" in query_upper)
-                    and "SINH VIÊN ĐƯỢC GIAO ĐỀ TÀI ĐATN" in searchable
-                )
-                if scholarship_exact or thesis_exact or matches >= max(2, min(4, len(lexical_tokens))):
-                    lexical_chunks.append({
-                        "text": doc,
-                        "metadata": meta,
-                        "distance": 0.05 if scholarship_exact or thesis_exact else max(0.05, 0.95 - matches * 0.10),
-                    })
-            lexical_chunks.sort(key=lambda item: item["distance"])
-        except Exception as e:
-            print(f"[VectorStoreManager] Lỗi scan lexical: {e}")
+        years = set(re.findall(r"\b20\d{2}\b", query))
+        codes = set(re.findall(r"\b[A-Z]{2,3}\d{4}[A-Z]?\b", query.upper()))
+        articles = set(re.findall(r"điều\s+(\d+)\b", query.lower()))
+        is_curriculum = bool(re.search(r"\bET\d\b|mô[ -]đun|mô đun|ctđt", query, re.I))
+        preferred_type = "tuition_decision" if "học phí" in query.lower() else (
+            "student_handbook" if "học bổng" in query.lower() else "academic_regulation"
+        )
+        if preferred_type in {"tuition_decision", "student_handbook"}:
+            # A programme code identifies the student, not the document type.
+            is_curriculum = False
+        max_lexical = max(lexical) or 1
+        ranked = []
+        for index, row in enumerate(rows):
+            identifier = row["id"]
+            if identifier not in lexical_ranks:
+                continue
+            metadata = row["metadata"]
+            article_number = re.search(r"Điều\s+(\d+)\b", metadata.get("article", ""))
+            explicit_article = bool(articles and article_number and article_number.group(1) in articles)
+            scope = metadata.get("education_level", "general")
+            if scope not in {"general", requested_level} and not explicit_article:
+                continue
+            if is_curriculum and metadata.get("document_type") != "curriculum":
+                continue
+            score = lexical[index] / max_lexical
+            if identifier in semantic_ranks:
+                score += 0.10 / semantic_ranks[identifier]
+            if metadata.get("document_type") == preferred_type:
+                score *= 1.25
+            if metadata.get("document_type") == "curriculum" and years:
+                if not any(year in metadata.get("effective_period", "") for year in years):
+                    continue
+            if codes and all(code in row["text"].upper() for code in codes):
+                score += 0.02
+            if explicit_article:
+                score += 0.02
+            row["distance"] = 1 / (1 + lexical[index])
+            row["retrieval_score"] = score
+            ranked.append(row)
+        ranked.sort(key=lambda row: row["retrieval_score"], reverse=True)
+        # Return whole numbered clauses when a point matches. Conditions such
+        # as graduation or dismissal must retain their AND/OR lead-in and peers.
+        def clause_key(row):
+            meta = row["metadata"]
+            if not meta.get("clause"):
+                return (row["id"],)
+            return (meta.get("file_name"), meta.get("article"), meta["clause"],
+                    0 if meta.get("article") else meta.get("page", 0))
 
-        # 5. Exact Token Matching từ bộ sưu tập
-        exact_chunks = []
-        target_tokens = set(course_codes + article_matches)
-        if target_tokens:
-            try:
-                all_data = self.collection.get(include=["documents", "metadatas"])
-                if all_data and "documents" in all_data:
-                    for doc, meta in zip(all_data["documents"], all_data["metadatas"]):
-                        doc_upper = doc.upper()
-                        for tok in target_tokens:
-                            if tok in doc_upper:
-                                # Ưu tiên cao hơn nếu token nằm ở tiêu đề/dòng đầu
-                                first_lines = "\n".join(doc.splitlines()[:3]).upper()
-                                is_in_title = tok in first_lines
-                                dist = 0.02 if is_in_title else 0.08
-                                exact_chunks.append({
-                                    "text": doc,
-                                    "metadata": meta,
-                                    "distance": dist
-                                })
-                                break
-            except Exception as e:
-                print(f"[VectorStoreManager] Lỗi scan exact token: {e}")
-
-        # 6. Rerank theo từ khóa và phiên bản. Embedding tiếng Việt không
-        # luôn đặt đúng năm CTĐT; điểm lexical giúp query "ET1 2023"
-        # không bị trả về tài liệu 2022.
-        normalized_query_tokens = set(re.findall(r"[A-ZÀ-Ỹa-zà-ỹĐđ]+|\d{4}", query_upper))
-
-        def rerank_distance(item: Dict[str, Any]) -> float:
-            searchable = f"{item['text']} {item['metadata'].get('source', '')} {item['metadata'].get('effective_period', '')}".upper()
-            overlap = sum(1 for token in normalized_query_tokens if len(token) > 2 and token in searchable)
-            score = float(item.get("distance", 1.0)) - min(overlap, 8) * 0.035
-            requested_years = re.findall(r"\b20\d{2}\b", query_upper)
-            for year in requested_years:
-                score += -0.35 if year in searchable else 0.20
-            domain_terms = {
-                "HỌC BỔNG": "student_handbook",
-                "HỌC PHÍ": "tuition_decision",
-                "CẢNH BÁO": "academic_regulation",
-                "BUỘC THÔI HỌC": "academic_regulation",
-                "TỐT NGHIỆP": "academic_regulation",
-            }
-            doc_type = item["metadata"].get("document_type", "")
-            for term, preferred_type in domain_terms.items():
-                if term in query_upper and doc_type == preferred_type:
-                    score -= 0.30
-            if "CẢNH BÁO HỌC TẬP" in query_upper:
-                score += -0.75 if "CẢNH BÁO HỌC TẬP" in searchable else 0.45
-                if "MỨC 2" in query_upper and "MỨC 2" in searchable:
-                    score -= 0.35
-            if "HỌC BỔNG" in query_upper:
-                score += -0.55 if "HỌC BỔNG" in searchable else 0.35
-                scholarship_targets = {
-                    "LOẠI A": "HỌC BỔNG LOẠI XUẤT SẮC",
-                    "XUẤT SẮC": "HỌC BỔNG LOẠI XUẤT SẮC",
-                    "LOẠI B": "HỌC BỔNG LOẠI GIỎI",
-                    "LOẠI C": "HỌC BỔNG LOẠI KHÁ",
-                }
-                for query_term, document_term in scholarship_targets.items():
-                    if query_term in query_upper:
-                        score += -0.90 if document_term in searchable else 0.25
-            if "ĐỒ ÁN TỐT NGHIỆP" in query_upper or "ĐATN" in query_upper:
-                score += -0.90 if "SINH VIÊN ĐƯỢC GIAO ĐỀ TÀI ĐATN" in searchable else 0.20
-            return score
-
-        # 7. Hợp nhất, khử trùng lặp và sắp xếp theo điểm tăng dần
-        seen_texts = set()
-        merged = []
-
-        # Đưa exact matches trước (được gán distance nhỏ)
-        exact_chunks.sort(key=lambda x: x["distance"])
-        for item in exact_chunks:
-            normalized_text = item["text"].strip()
-            if normalized_text not in seen_texts:
-                seen_texts.add(normalized_text)
-                merged.append(item)
-
-        for item in lexical_chunks[: k * 3]:
-            normalized_text = item["text"].strip()
-            if normalized_text not in seen_texts:
-                seen_texts.add(normalized_text)
-                merged.append(item)
-
-        # Đưa semantic chunks tiếp theo
-        for item in semantic_chunks:
-            normalized_text = item["text"].strip()
-            if normalized_text not in seen_texts:
-                seen_texts.add(normalized_text)
-                merged.append(item)
-
-        merged.sort(key=rerank_distance)
-        return merged[:k]
+        groups = {}
+        for row in rows:
+            groups.setdefault(clause_key(row), []).append(row)
+        selected = []
+        seen = set()
+        for row in ranked:
+            key = clause_key(row)
+            if key in seen:
+                continue
+            siblings = sorted(groups[key], key=lambda item: item["metadata"].get("chunk_index", 0))
+            meta = row["metadata"]
+            if meta.get("clause") and len(siblings) > 1:
+                header = "\n".join(dict.fromkeys(meta.get(field, "") for field in ("article", "section", "clause") if meta.get(field)))
+                bodies = []
+                for sibling in siblings:
+                    sibling_meta = sibling["metadata"]
+                    prefix = "\n".join(dict.fromkeys(sibling_meta.get(field, "") for field in ("article", "section", "clause") if sibling_meta.get(field)))
+                    body = sibling["text"].removeprefix(prefix).strip()
+                    if body and body != meta["clause"] and body not in bodies:
+                        bodies.append(body)
+                expanded = "\n\n".join([header, *bodies])
+                if len(expanded) <= 4000:
+                    pages = [item["metadata"].get("page", 0) for item in siblings]
+                    row = {**row, "text": expanded, "metadata": {
+                        **meta, "page": min(pages), "page_end": max(pages),
+                    }}
+                else:
+                    key = (row["id"],)
+            seen.add(key)
+            selected.append(row)
+            if len(selected) == k:
+                break
+        return selected
 
     def get_stats(self) -> Dict[str, Any]:
         """Lấy thống kê trạng thái hiện tại của Vector Store"""

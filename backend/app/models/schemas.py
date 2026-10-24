@@ -1,4 +1,4 @@
-from typing import List, Optional, Dict, Any
+from typing import Annotated, List, Literal, Optional, Dict, Any
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 # Ảnh đại diện đã được frontend thu về ~256px; giới hạn này chặn ảnh gốc nhiều
@@ -16,6 +16,8 @@ class TranscriptImportRequest(BaseModel):
 
     raw_text: str = Field(..., min_length=1, max_length=100_000)
     warning_level: Optional[int] = Field(None, ge=0, le=3)
+    course_credit_overrides: Dict[str, Annotated[float, Field(ge=0, allow_inf_nan=False)]] = Field(default_factory=dict)
+    non_credit_status: Dict[str, Literal["completed", "incomplete", "unverified"]] = Field(default_factory=dict)
 
 
 class ProfileDisplayUpdate(BaseModel):
@@ -76,6 +78,15 @@ class CheckEligibilityRequest(BaseModel):
     course_code: str
     simulated_passed_codes: Optional[List[str]] = None
 
+
+class AdvisingMemoryUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    enabled: bool = False
+    target_track: Optional[str] = Field(None, pattern=r"^MOD[1-6]$")
+    max_credits: Optional[int] = Field(None, ge=1, le=30, strict=True)
+    target_cpa: Optional[float] = Field(None, ge=0, le=4, allow_inf_nan=False)
+
 class CheckEligibilityResponse(BaseModel):
     course_code: str
     course_name: str
@@ -93,7 +104,8 @@ class DegreeAuditResponse(BaseModel):
     student_info: Dict[str, Any]
     curriculum: Dict[str, Any]
     cpa: float
-    warning_level: int
+    warning_level: Optional[int]
+    warning_status: str = "unverified"
     warning_description: str
     warning_basis: str = ""
     debt_credits: float = 0.0
@@ -110,6 +122,7 @@ class DegreeAuditResponse(BaseModel):
     academic_classification: Optional[Dict[str, Any]] = None
     target_kha_advice: Optional[Dict[str, Any]] = None
     graduation_ready: bool
+    graduation_status: str = "unverified"
     pending_requirements: List[str]
 
 class RecommendationRequest(BaseModel):
@@ -153,7 +166,7 @@ class ChatMessage(BaseModel):
     content: str
 
 class ChatRequest(BaseModel):
-    message: str
+    message: str = Field(..., min_length=1, max_length=4000)
     history: Optional[List[ChatMessage]] = []
     conversation_id: Optional[str] = None
 

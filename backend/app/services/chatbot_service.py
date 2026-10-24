@@ -10,6 +10,7 @@ from app.engine.recommender import course_recommender
 from app.core.config import GEMINI_API_KEY, OPENAI_API_KEY
 from app.rag.rag_engine import rag_engine
 from app.rag.gemini_service import gemini_service
+from app.services.conversation_context import previous_focus, resolve_followup
 
 # Bảng từ đồng nghĩa / tên gọi phổ biến của sinh viên Bách Khoa
 COURSE_ALIASES = {
@@ -331,7 +332,7 @@ class ChatbotService:
 
         # 1. Chào hỏi đơn thuần (kèm hậu tố thân mật: nha, nhé, ơi, ạ, ...)
         # vd: "chào", "chào bạn", "xin chào", "xin chào!", "chào bot", "hello", "hi bạn", "alo"
-        greeting_pattern = r"^(xin\s+)?chào(\s+(bạn|cậu|bot|ad|admin|mọi người))?(\s+(ạ|ơi|nha|nhé|nhá|nè|ha|nhỉ))?$"
+        greeting_pattern = r"^(xin\s+)?chào(\s+(bạn|cậu|bot|ad|admin|mọi người|trợ lý|cố vấn))?(\s+(ạ|ơi|nha|nhé|nhá|nè|ha|nhỉ))?$"
         hello_pattern = r"^(hello|hi|hey|alo|halo)(\s+(bạn|cậu|bot|ad|admin))?(\s+(ạ|ơi|nha|nhé|nhá|nè|ha|nhỉ))?$"
         if re.fullmatch(greeting_pattern, cleaned) or re.fullmatch(hello_pattern, cleaned):
             return True
@@ -359,7 +360,31 @@ class ChatbotService:
 
         return False
 
-    def process_message(self, message: str, history: Optional[List[Dict[str, str]]] = None) -> Dict[str, Any]:
+    def process_message(self, message: str, history: Optional[List[Dict[str, Any]]] = None, *, preferences=None) -> Dict[str, Any]:
+        history = (history or [])[-12:]
+        message = unicodedata.normalize("NFC", message or "").strip()
+        focus = previous_focus(history, self._detect_courses, self._is_repeat_request)
+        if self._is_repeat_request(message):
+            message = focus.get("topic_query") or self._last_substantive_user_message(history, message) or message
+        effective, clarification = resolve_followup(message, focus, self._detect_courses)
+        if clarification:
+            return {
+                "reply": clarification, "intent": "CONTEXT_CLARIFICATION", "sources": [],
+                "suggested_actions": focus.get("course_codes", []), "model_used": "rule-based",
+                "data_context": {"conversation_context": focus},
+            }
+        # Structured context is for reference resolution only; LLM history stays text.
+        text_history = [{"role": item["role"], "content": item["content"]} for item in history
+                        if item.get("role") in {"user", "assistant"}]
+        result = self._process_message(effective, text_history, preferences=preferences)
+        if result.get("intent") not in {"SMALL_TALK", "GENERAL_GREETING", "OUT_OF_SCOPE"}:
+            focus = {"course_codes": self._detect_courses(effective), "topic_query": effective[:1200]}
+        context = dict(result.get("data_context") or {})
+        context["conversation_context"] = focus
+        result["data_context"] = context
+        return result
+
+    def _process_message(self, message: str, history: Optional[List[Dict[str, str]]] = None, *, preferences=None) -> Dict[str, Any]:
         """
         Xử lý tin nhắn của sinh viên theo kiến trúc Hybrid Agent:
         1. Phân loại Intent (Simulation, Recommendation, Degree Audit, Course Eligibility)
@@ -396,8 +421,22 @@ class ChatbotService:
             "đồng thời", "tiên quyết", "song hành", "cần môn", "cần học",
             "học trước", "cần những gì", "cần những môn", "môn gì trước", "cần gì",
         ]
-        if detected_codes and self._has_any(msg_lower, course_condition_terms):
+        if detected_codes and (self._has_any(msg_lower, course_condition_terms) or re.search(
+            r"(?:học|đăng k[ýí]).*\b(?:được|chưa)\b", msg_lower
+        )):
             return self._handle_course_check(detected_codes, effective_message)
+
+        if re.search(r"(?:điểm|ký hiệu)\s+[abcdfrwi](?:\+)?\b", msg_lower) or re.search(
+            r"(?:xếp|trình độ|sinh viên).*(?:năm thứ|năm [1-6])", msg_lower
+        ):
+            return self._handle_rag_query(effective_message, history)
+        # Personal progress takes precedence over generic credit-policy keywords.
+        if self._has_any(msg_lower, ["còn thiếu", "bảng điểm"]) or (
+            "tiến độ" in msg_lower and "chậm tiến độ" not in msg_lower
+        ):
+            return self._handle_audit()
+        if re.search(r"chuyển.*(?:chương trình|ngành)", msg_lower):
+            return self._handle_rag_query(effective_message, history)
 
         # 3. Xử lý câu hỏi đề xuất môn học / gợi ý kỳ tới / định hướng chuyên sâu
         if self._has_any(msg_lower, ["nên học", "nên đăng ký", "gợi ý", "tư vấn môn", "kỳ tới", "kỳ sau", "kỳ 7", "kỳ 8", "chọn môn", "định hướng", "theo hướng", "chọn hướng", "hướng nào", "hướng chuyên"]):
@@ -411,7 +450,17 @@ class ChatbotService:
             elif self._has_any(msg_lower, ["y sinh", "biomedical"]):
                 target_track = "BIOMEDICAL"
 
-            return self._handle_recommendation(target_track)
+            memory = preferences or {}
+            remembered_track = memory.get("target_track") if target_track is None else None
+            explicit_credits = re.search(r"\b([1-9]\d?)\s*(?:tín chỉ|tc)\b", msg_lower)
+            max_credits = int(explicit_credits[1]) if explicit_credits else memory.get("max_credits")
+            # Explicit chat choices take priority over the saved default.
+            return self._handle_recommendation(
+                target_track or remembered_track, max_credits=max_credits,
+                memory_used={key: memory[key] for key in ("max_credits", "target_cpa")
+                             if memory.get(key) is not None and not (key == "max_credits" and explicit_credits)}
+                            | ({"target_track": remembered_track} if remembered_track else {}),
+            )
 
         # 4. Ưu tiên RAG nếu câu hỏi hỏi về Đề cương chi tiết môn học / Nội dung môn / Phần mềm, công cụ, tool thực hành
         is_syllabus_query = self._has_any(msg_lower, [
@@ -757,8 +806,10 @@ class ChatbotService:
             "data_context": {"check_results": results}
         }
 
-    def _handle_recommendation(self, target_track: Optional[str]) -> Dict[str, Any]:
-        rec = course_recommender.recommend(target_track=target_track)
+    def _handle_recommendation(self, target_track: Optional[str], *, max_credits=None, memory_used=None) -> Dict[str, Any]:
+        rec = course_recommender.recommend(target_track=target_track, max_credits=max_credits)
+        if memory_used:
+            rec["memory_used"] = memory_used
         courses = rec["recommended_courses"]
         
         reply_lines = [
@@ -766,6 +817,11 @@ class ChatbotService:
             f"💡 *{rec['advice_note']}*\n",
             f"**Tổng số tín chỉ đề xuất:** `{rec['total_credits_suggested']}` / `{rec['max_allowed_credits']}` TC\n"
         ]
+
+        if memory_used:
+            reply_lines.append("🧠 Đã dùng mục tiêu bạn lưu trong **Cài đặt → Ghi nhớ học tập**. Hạn mức vẫn được kiểm tra theo hồ sơ hiện tại.\n")
+            if memory_used.get("target_cpa") is not None:
+                reply_lines.append(f"🎯 Mục tiêu CPA đã lưu: **{memory_used['target_cpa']:.2f}/4.0**. Danh sách này chưa mô phỏng điểm để đạt mục tiêu CPA.\n")
 
         for idx, c in enumerate(courses, 1):
             comp_badge = "[Bắt buộc]" if c["is_compulsory"] else "[Tự chọn]"
@@ -798,7 +854,7 @@ class ChatbotService:
             f"- **Chương trình:** {info.get('program_name', 'Chương trình đang hoạt động')}",
             f"- **Điểm CPA hiện tại:** `{audit['cpa']:.2f}` / 4.0",
             f"- **Xếp loại học lực hiện tại:** **{classification.get('rank', 'Trung bình')}** ({classification.get('desc', 'Đạt chuẩn tốt nghiệp')})",
-            f"- **Tình trạng học tập:** {audit['warning_description']} (Giới hạn đăng ký: {audit['credit_limit']['max']} TC/kỳ chính)",
+            f"- **Tình trạng học tập:** {audit['warning_description']} ({'Hạn mức kế hoạch tạm thời' if audit['credit_limit'].get('is_provisional') else 'Giới hạn đăng ký'}: {audit['credit_limit']['max']} TC/kỳ chính)",
             f"  - *Căn cứ:* {audit.get('warning_basis', '')}",
             f"- **Tín chỉ tích lũy:** `{audit['total_credits_accumulated']:.1f}` / `{audit['total_credits_required']}` TC (**{audit['completion_percentage']}%** hoàn thành)",
             f"- **Số môn đã qua:** {audit['passed_count']} môn | **Số môn chưa đạt:** {audit['failed_count']} môn\n",
@@ -816,11 +872,13 @@ class ChatbotService:
         if audit['cpa'] < 2.50 and kha_advice:
             reply_lines.append(f"\n🎯 **Mục tiêu tốt nghiệp bằng KHÁ (CPA ≥ 2.50):**")
             reply_lines.append(f"- Điểm CPA hiện tại là **{audit['cpa']}** (loại {classification.get('rank', 'Trung bình')}). Trong {kha_advice.get('remaining_credits', 0):g} TC còn lại:")
-            if kha_advice.get("is_achievable"):
+            if not kha_advice.get("remaining_credits"):
+                reply_lines.append("  - Đã đủ khối lượng tín chỉ; cần xem phương án **học cải thiện điểm** để nâng CPA. Không còn tín chỉ mới để phân bổ GPA mục tiêu.")
+            elif kha_advice.get("is_achievable"):
                 reply_lines.append(f"  - Nếu chỉ học môn mới: Cần đạt GPA trung bình ~**{kha_advice.get('gpa_needed_remaining')}** cho phần còn lại.")
             else:
                 reply_lines.append("  - Chỉ học các môn mới thì **không đủ** để đạt CPA 2.50 (cần GPA > 4.0).")
-            reply_lines.append(f"  - **Giải pháp dễ hơn nhiều:** Đăng ký học **cải thiện điểm** 1 - 2 môn điểm D/D+ (Giải tích, Đại số, Vật lý, Điện tử số...) để nâng điểm kéo CPA lên ≥ 2.50!")
+            reply_lines.append("  - Có thể xem thêm phương án học cải thiện các môn điểm thấp; số môn và mức điểm cần đạt phải tính theo bảng điểm cụ thể.")
 
         return {
             "reply": "\n".join(reply_lines),

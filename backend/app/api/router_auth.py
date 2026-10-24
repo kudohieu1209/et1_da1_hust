@@ -83,9 +83,15 @@ def _account_view(student_id: str) -> dict:
 
 
 @router.post("/register", status_code=201)
-async def register(payload: RegisterRequest, response: Response):
+async def register(payload: RegisterRequest, request: Request, response: Response):
+    # ASGI server resolves forwarded addresses only for its configured trusted proxies.
+    client_ip = request.client.host if request.client else "unknown"
     try:
-        token = await run_in_threadpool(runtime.auth_service.register, **payload.model_dump())
+        token = await run_in_threadpool(runtime.auth_service.register, **payload.model_dump(), client_ip=client_ip)
+    except TooManyAttemptsError as exc:
+        raise HTTPException(
+            status_code=429, detail=str(exc), headers={"Retry-After": str(exc.retry_after_seconds)}
+        ) from exc
     except UserExistsError as exc:
         raise HTTPException(status_code=409, detail="MSSV này đã có tài khoản. Hãy đăng nhập.") from exc
     except ProfileExistsError as exc:

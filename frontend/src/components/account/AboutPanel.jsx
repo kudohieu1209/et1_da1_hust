@@ -22,7 +22,7 @@ export default function AboutPanel({ language }) {
     const [curriculum, rag, server] = await Promise.allSettled([
       getJson('/api/courses/curriculum'),
       getJson('/api/rag/status'),
-      getJson('/'),
+      getJson('/api/system'),
     ]);
     setData({
       curriculum: curriculum.status === 'fulfilled' ? curriculum.value : null,

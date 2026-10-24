@@ -6,7 +6,7 @@ from contextvars import ContextVar, Token
 from dataclasses import dataclass
 from typing import Any, Dict, Iterator, List, Optional, Tuple
 
-from app.core.config import RAW_CONDITIONS_FILE, STUDENT_PROFILE_FILE
+from app.core.config import RAW_CONDITIONS_FILE
 from app.services.curriculum_repository import (
     CurriculumNotFoundError,
     curriculum_repository,
@@ -97,7 +97,7 @@ class DataLoader:
     """
 
     def __init__(self, profiles=None):
-        # Kho hồ sơ: MongoDB nếu cấu hình MONGODB_URI, ngược lại file cục bộ.
+        # Kho hồ sơ nghiệp vụ dùng MongoDB; kiểm thử tiêm repository riêng.
         self._profiles = profiles if profiles is not None else create_profile_repository()
         self.aux_courses: Dict[str, Dict[str, Any]] = {}
         self._state: Optional[ProfileState] = None
@@ -153,8 +153,6 @@ class DataLoader:
 
         student_id = self._state.student_id if self._state else DEFAULT_STUDENT_ID
         profile = self._profiles.get(student_id) if student_id else None
-        if profile is None and STUDENT_PROFILE_FILE.exists():
-            profile = self._read_json(STUDENT_PROFILE_FILE)
         if profile is None:
             # Máy mới clone không có hồ sơ demo (dữ liệu cá nhân bị .gitignore).
             # Request của sinh viên luôn chạy trong profile_scope với hồ sơ của

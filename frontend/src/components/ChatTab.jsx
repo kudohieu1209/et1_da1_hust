@@ -12,13 +12,13 @@ import {
   ThumbsDown,
   RotateCcw
 } from 'lucide-react';
-import { API_BASE_URL, apiFetch, apiUrl, readError } from '../api';
+import { apiFetch, apiUrl, readError } from '../api';
 import BrandLogo from './BrandLogo';
 import StudentWelcome from './StudentWelcome';
+import StudentState from './StudentState';
 
 export default function ChatTab({ 
   onOpenImport,
-  studentProfile,
   studentId,
   conversationId,
   onConversationCreated,
@@ -28,11 +28,12 @@ export default function ChatTab({
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [sendError, setSendError] = useState(null);
+  const [historyError, setHistoryError] = useState(false);
+  const [historyRetry, setHistoryRetry] = useState(0);
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [isListening, setIsListening] = useState(false);
   const messagesEndRef = useRef(null);
-  const messagesRef = useRef(messages);
-  messagesRef.current = messages;
   const recognitionRef = useRef(null);
   const textareaRef = useRef(null);
 
@@ -49,10 +50,12 @@ export default function ChatTab({
     }
   }, [input]);
 
-  // Load the selected conversation from SQLite. A new chat has no ID until
+  // Load the selected conversation from the API. A new chat has no ID until
   // its first message is accepted by the backend.
   useEffect(() => {
     let cancelled = false;
+    setSendError(null);
+    setHistoryError(false);
     if (!conversationId) {
       setMessages([]);
       return undefined;
@@ -76,6 +79,7 @@ export default function ChatTab({
         if (!cancelled) {
           console.error('Lỗi tải đoạn chat:', err);
           setMessages([]);
+          setHistoryError(true);
         }
       })
       .finally(() => {
@@ -83,7 +87,7 @@ export default function ChatTab({
       });
 
     return () => { cancelled = true; };
-  }, [conversationId, studentId]);
+  }, [conversationId, studentId, historyRetry]);
 
   const toggleListening = () => {
     if (isListening) {
@@ -144,30 +148,31 @@ export default function ChatTab({
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, loading]);
+  }, [messages, loading, sendError]);
 
-  const handleSend = async (textToSend) => {
+  const handleSend = async (textToSend, isRetry = false) => {
     const query = typeof textToSend === 'string' ? textToSend.trim() : input.trim();
     if (!query || loading) return;
 
     // Guaranteed instant functional state update: Appends user question bubble immediately
     const userMsg = { role: 'user', content: query };
-    setMessages(prev => [...prev, userMsg]);
-    setInput('');
+    if (!isRetry) {
+      setMessages(prev => [...prev, userMsg]);
+      setInput('');
+    }
+    setSendError(null);
     if (textareaRef.current) {
       textareaRef.current.style.height = '36px';
     }
     setLoading(true);
 
     try {
-      const historyToSend = [...messagesRef.current, userMsg].slice(-6);
       const res = await apiFetch(apiUrl('/api/chat'), {
         method: 'POST',
         // Backend xác định sinh viên qua cookie phiên đăng nhập.
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: query,
-          history: historyToSend,
           conversation_id: conversationId || null
         })
       });
@@ -176,7 +181,7 @@ export default function ChatTab({
         const detail = res.status === 401
           ? 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.'
           : await readError(res, `Máy chủ báo lỗi (HTTP ${res.status}). Vui lòng thử lại.`);
-        throw Object.assign(new Error(detail), { isHttpError: true });
+        throw Object.assign(new Error(detail), { isHttpError: true, status: res.status });
       }
 
       const data = await res.json();
@@ -198,16 +203,13 @@ export default function ChatTab({
       }
     } catch (err) {
       console.error('Chat error:', err);
-      setMessages(prev => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: err.isHttpError
-            ? `❌ ${err.message}`
-            : `❌ Không thể kết nối tới Backend server (${API_BASE_URL}). Bạn vui lòng kiểm tra xem server FastAPI đang chạy nhé!`,
-          suggested_actions: ["Thử lại", "Kiểm tra kết nối"]
-        }
-      ]);
+      setSendError({
+        query,
+        variant: err.isHttpError && err.status < 500 ? 'error' : 'offline',
+        message: err.isHttpError ? err.message : (language === 'vi'
+          ? 'Chưa kết nối được máy chủ. Câu hỏi của bạn vẫn được giữ ở đây; hãy kiểm tra mạng rồi thử lại.'
+          : 'The server could not be reached. Your question is still here; check your connection and retry.'),
+      });
     } finally {
       setLoading(false);
     }
@@ -229,7 +231,7 @@ export default function ChatTab({
   // Helper to parse inline Markdown (bold, code, italic)
   const parseInlineTokens = (rawText) => {
     if (!rawText) return null;
-    const regex = /(\*\*.*?\*\*|`.*?`|\*.*?\*)/g;
+    const regex = /(\*\*.*?\*\*|`.*?`|\*.*?\*|\[[^\]]+\]\(https?:\/\/[^\s)]+\))/g;
     const tokens = rawText.split(regex);
 
     return tokens.map((token, idx) => {
@@ -237,7 +239,7 @@ export default function ChatTab({
       if (token.startsWith('**') && token.endsWith('**') && token.length >= 4) {
         return (
           <strong key={idx} style={{ color: 'var(--text-primary)', fontWeight: '700' }}>
-            {token.slice(2, -2)}
+            {parseInlineTokens(token.slice(2, -2))}
           </strong>
         );
       }
@@ -262,6 +264,10 @@ export default function ChatTab({
             {token.slice(1, -1)}
           </em>
         );
+      }
+      const link = token.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/);
+      if (link) {
+        return <a key={idx} href={link[2]} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-accent)' }}>{link[1]}</a>;
       }
       return token;
     });
@@ -554,6 +560,21 @@ export default function ChatTab({
     </div>
   );
 
+  if (historyError) {
+    return <div style={{ maxWidth: '700px', margin: '32px auto', padding: '0 20px' }}>
+      <StudentState variant="offline" role="alert"
+        title={language === 'vi' ? 'Chưa tải được cuộc trò chuyện' : 'Could not load this conversation'}
+        description={language === 'vi' ? 'Lịch sử chưa tải được từ máy chủ. Hãy thử kết nối lại để tiếp tục đoạn chat này.' : 'The server could not load the history. Retry to continue this conversation.'}
+        actionLabel={language === 'vi' ? 'Thử lại' : 'Retry'} onAction={() => setHistoryRetry(current => current + 1)} />
+    </div>;
+  }
+
+  if (conversationId && loading && !hasChatStarted) {
+    return <p role="status" style={{ padding: '32px', textAlign: 'center', color: 'var(--text-secondary)' }}>
+      {language === 'vi' ? 'Đang tải cuộc trò chuyện…' : 'Loading conversation…'}
+    </p>;
+  }
+
   // 🌟 ChatGPT Empty State: Title, Input Capsule, and 4 Suggestion Cards
   if (!hasChatStarted) {
     return (
@@ -775,9 +796,11 @@ export default function ChatTab({
                         {msg.sources.map((s, idx) => {
                           const rawName = s.source || s.title || 'Quy chế HUST';
                           const cleanName = String(rawName).replace(/\.(md|txt|pdf)$/i, '').replace(/_/g, ' ');
+                          const SourceTag = /^https?:\/\//i.test(s.source_url || '') ? 'a' : 'span';
                           return (
-                            <span 
+                            <SourceTag
                               key={idx} 
+                              {...(SourceTag === 'a' ? { href: s.source_url, target: '_blank', rel: 'noopener noreferrer' } : {})}
                               title={s.title || cleanName}
                               style={{
                                 fontSize: '0.74rem',
@@ -791,8 +814,8 @@ export default function ChatTab({
                                 gap: '4px'
                               }}
                             >
-                              📜 {cleanName}
-                            </span>
+                              📜 {cleanName}{s.effective_period ? ` · ${s.effective_period}` : ''}
+                            </SourceTag>
                           );
                         })}
                       </div>
@@ -961,6 +984,12 @@ export default function ChatTab({
               </div>
             );
           })}
+
+          {sendError && <StudentState variant={sendError.variant} role="alert" compact
+            title={language === 'vi' ? 'Chưa gửi được câu hỏi' : 'Could not send your question'}
+            description={sendError.message}
+            actionLabel={language === 'vi' ? 'Thử lại câu hỏi' : 'Retry question'}
+            onAction={() => handleSend(sendError.query, true)} />}
 
           {/* Loading Indicator with Apple Siri Fluid Wave */}
           {loading && (

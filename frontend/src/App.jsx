@@ -123,7 +123,7 @@ export default function App() {
       fetchInitialData();
     } catch (err) {
       console.error('Lỗi kết nối Backend:', err);
-      setAuthNotice(`Không kết nối được máy chủ (${API_BASE_URL}). Hãy kiểm tra backend đang chạy.`);
+      setAuthNotice(`Không kết nối được máy chủ (${API_BASE_URL || 'API cùng địa chỉ web'}). Hãy kiểm tra backend đang chạy.`);
       setAccount(null);
     }
   };
@@ -602,6 +602,8 @@ export default function App() {
                     auditData={auditData} 
                     onNavigateTab={setActiveTab}
                     onOpenImport={handleOpenImport}
+                    hasTranscript={studentProfile ? (studentProfile.transcript || []).length > 0 : undefined}
+                    language={language}
                   />
                 )}
 
@@ -639,6 +641,7 @@ export default function App() {
         onClose={() => setIsImportOpen(false)}
         onImported={handleProfileUpdated}
         hasTranscript={Boolean(studentProfile?.transcript?.length)}
+        auditData={auditData}
         language={language}
       />
     </div>

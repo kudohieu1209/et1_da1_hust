@@ -1,7 +1,7 @@
 from typing import Dict, List, Set, Any, Optional
 from app.services.data_loader import data_loader
 from app.engine.rule_engine import rule_engine
-from app.core.hust_rules import CREDIT_LIMITS, assess_academic_warning
+from app.core.hust_rules import assess_academic_warning, credit_limits_for_warning
 
 
 LEGACY_TRACK_ALIASES = {
@@ -36,8 +36,8 @@ class CourseRecommender:
         failed_codes = set(c["code"] for c in student_profile.get("failed_courses", []))
 
         # Hạn mức tín chỉ theo mức cảnh báo học tập (Điều 19 QĐ 5445)
-        warning_level = assess_academic_warning(student_profile)["level"]
-        limit_info = CREDIT_LIMITS.get(warning_level, CREDIT_LIMITS[0])
+        warning = assess_academic_warning(student_profile)
+        limit_info = credit_limits_for_warning(warning)
         allowed_max = limit_info["summer_max"] if is_summer else limit_info["max"]
         target_max_credits = min(max_credits or 20, allowed_max)
 
@@ -185,10 +185,12 @@ class CourseRecommender:
 
         advice_note = (
             f"Hệ thống đã đề xuất {len(recommended_items)} môn học với tổng cộng {current_credits:.1f} tín chỉ "
-            f"(trong giới hạn an toàn {target_max_credits} TC). "
+            f"(hạn mức lập kế hoạch {target_max_credits} TC). "
         )
+        if limit_info["is_provisional"]:
+            advice_note += "Chưa xác định mức cảnh báo; tạm giới hạn kế hoạch ở 14 TC/kỳ chính. Hãy đối chiếu CTT trước khi đăng ký. "
         if track_info:
-            advice_note += f"Đã tối ưu hóa theo định hướng: {track_info['name']}."
+            advice_note += f"Ưu tiên theo định hướng: {track_info['name']}."
         else:
             advice_note += (
                 f"Bạn có thể chọn một trong {len(tracks)} mô-đun chính thức "

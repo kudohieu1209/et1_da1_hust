@@ -39,6 +39,7 @@ class GradeParsingTests(unittest.TestCase):
 
     def test_missing_grade_returns_none_instead_of_default(self):
         self.assertIsNone(parse_grade_from_line("MI1111 Giải tích I 4"))
+        self.assertIsNone(parse_grade_from_line("IT3040 Ngôn ngữ C 3"))
 
 
 class AcademicWarningTests(unittest.TestCase):
@@ -70,7 +71,8 @@ class AcademicWarningTests(unittest.TestCase):
     def test_low_cpa_alone_does_not_trigger_warning(self):
         passed = [_course("ET2040", 3.0, "D", 1.0)]
         result = assess_academic_warning({"info": {}, "passed_courses": passed})
-        self.assertEqual(result["level"], 0)
+        self.assertIsNone(result["level"])
+        self.assertEqual(result["status"], "unverified")
 
 
 class ActiveProfileTestCase(unittest.TestCase):
@@ -87,6 +89,65 @@ class ActiveProfileTestCase(unittest.TestCase):
 
 
 class AuditTests(ActiveProfileTestCase):
+    def _finish_curriculum(self, grade="C", scale4=2.0):
+        profile = copy.deepcopy(self.base_profile)
+        profile["transcript"] = [_course(c["code"], c["credits"], grade, scale4)
+                                 for c in data_loader.get_all_courses()]
+        profile["passed_courses"] = profile["transcript"]
+        profile["failed_courses"] = []
+        profile.pop("non_credit_status", None)
+        self.activate(profile)
+        return profile
+
+    def test_no_remaining_credits_below_target_requires_improvement(self):
+        self._finish_curriculum()
+        audit = student_service.audit_degree()
+        target = audit["target_kha_advice"]
+        self.assertEqual(target["remaining_credits"], 0)
+        self.assertIsNone(target["gpa_needed_remaining"])
+        self.assertFalse(target["is_achievable"])
+        self.assertEqual(target["status"], "requires_grade_improvement")
+        reply = chatbot_service._handle_audit()["reply"]
+        self.assertNotIn("GPA trung bình ~**0", reply)
+        self.assertIn("học cải thiện", reply)
+
+    def test_no_remaining_credits_above_target_is_already_achieved(self):
+        self._finish_curriculum("B", 3.0)
+        target = student_service.audit_degree()["target_kha_advice"]
+        self.assertEqual(target["status"], "already_achieved")
+        self.assertTrue(target["is_achievable"])
+
+    def test_extra_electives_do_not_replace_missing_compulsory_credits(self):
+        profile = self._finish_curriculum()
+        profile["passed_courses"] = [c for c in profile["passed_courses"] if c["code"] != "MI1111"]
+        self.activate(profile)
+        audit = student_service.audit_degree()
+        self.assertLess(audit["total_credits_accumulated"], audit["total_credits_required"])
+
+    def test_non_credit_requirements_distinguish_unknown_and_incomplete(self):
+        profile = self._finish_curriculum()
+        audit = student_service.audit_degree()
+        self.assertFalse(audit["graduation_ready"])
+        self.assertEqual(audit["graduation_status"], "unverified")
+        profile["non_credit_status"] = {item["requirement_id"]: "completed" for item in audit["non_credit_requirements"]}
+        self.activate(profile)
+        self.assertTrue(student_service.audit_degree()["graduation_ready"])
+        profile["non_credit_status"][next(iter(profile["non_credit_status"]))] = "incomplete"
+        self.activate(profile)
+        self.assertEqual(student_service.audit_degree()["graduation_status"], "incomplete")
+
+    def test_unknown_warning_uses_provisional_limit_in_audit_and_recommendation(self):
+        profile = copy.deepcopy(self.base_profile)
+        profile["info"].pop("warning_level", None)
+        profile["failed_courses"] = []
+        self.activate(profile)
+        audit = student_service.audit_degree()
+        self.assertIsNone(audit["warning_level"])
+        self.assertTrue(audit["credit_limit"]["is_provisional"])
+        rec = course_recommender.recommend(max_credits=24)
+        self.assertLessEqual(rec["total_credits_suggested"], 14)
+        self.assertIn("Chưa xác định", rec["advice_note"])
+
     def test_cpa_uses_highest_attempt(self):
         profile = copy.deepcopy(self.base_profile)
         profile["transcript"] = [

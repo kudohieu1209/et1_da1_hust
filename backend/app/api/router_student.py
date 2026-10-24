@@ -4,7 +4,9 @@ from app.services.student_service import student_service
 from app.engine.recommender import course_recommender
 from app.services.data_loader import data_loader
 from app.services.curriculum_repository import CurriculumNotFoundError
+from app.services.student_memory import student_memory
 from app.models.schemas import (
+    AdvisingMemoryUpdate,
     DegreeAuditResponse,
     ProfileDisplayUpdate,
     RecommendationRequest,
@@ -18,6 +20,23 @@ router = APIRouter(
     tags=["Student & Degree Audit"],
     dependencies=[Depends(student_scope)],
 )
+
+
+@router.get("/memory")
+def get_advising_memory(student_id: str = Depends(current_student)):
+    return student_memory.get(student_id)
+
+
+@router.put("/memory")
+def update_advising_memory(payload: AdvisingMemoryUpdate, student_id: str = Depends(current_student)):
+    if payload.target_track and payload.target_track not in {track["id"] for track in data_loader.get_module_tracks()}:
+        raise HTTPException(status_code=422, detail="Mô-đun không thuộc CTĐT hiện tại của bạn.")
+    return student_memory.save(student_id, payload, data_loader.get_program())
+
+
+@router.delete("/memory", status_code=204)
+def delete_advising_memory(student_id: str = Depends(current_student)):
+    student_memory.delete(student_id)
 
 @router.get("/profile")
 def get_student_profile():
@@ -42,7 +61,7 @@ def get_degree_audit():
 def import_student_transcript(payload: TranscriptImportRequest, student_id: str = Depends(current_student)):
     """Thay bảng điểm của sinh viên đang đăng nhập bằng nội dung copy từ CTT."""
     try:
-        return student_service.import_transcript(payload.model_dump(exclude_none=True), student_id)
+        return student_service.import_transcript(payload.model_dump(exclude_unset=True), student_id)
     except (CurriculumNotFoundError, ValueError) as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
@@ -53,7 +72,7 @@ def get_available_tracks():
 
 @router.post("/recommend", response_model=RecommendationResponse)
 def recommend_courses(req: RecommendationRequest):
-    """Thuật toán gợi ý danh sách môn học tối ưu cho kỳ tiếp theo theo định hướng chuyên ngành"""
+    """Đề xuất danh sách học phần kỳ tiếp theo theo định hướng chuyên ngành."""
     try:
         rec = course_recommender.recommend(
             target_track=req.target_track,

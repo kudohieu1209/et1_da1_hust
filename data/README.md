@@ -169,3 +169,8 @@ Bản tóm tắt dễ đọc cho quá trình duyệt nằm ở
 
 Các tài liệu demo cũ có marker `RAG_STATUS: UNVERIFIED` được giữ lại để
 đối chiếu, nhưng `DocumentLoader` sẽ không đưa chúng vào kho vector.
+
+
+Ghi chú snapshot công khai: `raw/program_sources/TROY-IT.html` là trang Google
+Drive đã lưu; các client API key nhúng từ trang gốc đã được ẩn. File này là bản
+tham khảo ngoại tuyến, không phải nguồn CTĐT đã được phê duyệt cho Rule Engine.

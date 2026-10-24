@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
-from app.core.config import CORS_ORIGINS, MONGODB_URI, SESSION_COOKIE_NAME
+from app.core.config import CORS_ORIGINS, SESSION_COOKIE_NAME
 from app.api.router_auth import router as auth_router
 from app.api.router_courses import router as courses_router
 from app.api.router_student import router as student_router
@@ -17,12 +17,9 @@ from app.rag.rag_engine import rag_engine
 async def lifespan(app: FastAPI):
     # Khởi tạo và tự động đồng bộ tài liệu vào ChromaDB khi backend khởi động
     try:
-        status = rag_engine.get_status()
-        if status["vector_store"]["total_chunks"] == 0:
-            print("[Startup] Vector DB rỗng, tự động đồng bộ tài liệu từ data/documents/...")
-            rag_engine.sync_knowledge_base()
-        else:
-            print(f"[Startup] Vector DB sẵn sàng với {status['vector_store']['total_chunks']} chunks.")
+        # Reconcile approvals and chunk metadata even when the index already exists.
+        result = rag_engine.sync_knowledge_base()
+        print(f"[Startup] Đã đồng bộ kho RAG đã phê duyệt: {result.get('total_chunks', 0)} chunks.")
     except Exception as e:
         print(f"[Startup] Cảnh báo đồng bộ RAG: {e}")
     yield
@@ -50,7 +47,9 @@ UNSAFE_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
 async def reject_cross_site_writes(request: Request, call_next):
     """Chống CSRF lớp thứ hai (ngoài SameSite=Lax): request ghi dữ liệu kèm
     cookie phiên mà Origin không thuộc danh sách frontend thì bị từ chối."""
-    if request.method in UNSAFE_METHODS and SESSION_COOKIE_NAME in request.cookies:
+    if request.method in UNSAFE_METHODS and (
+        SESSION_COOKIE_NAME in request.cookies or request.url.path.startswith("/api/auth/")
+    ):
         origin = request.headers.get("origin")
         if origin and origin not in CORS_ORIGINS:
             return JSONResponse(status_code=403, content={"detail": "Nguồn gửi yêu cầu không được phép."})
@@ -67,12 +66,13 @@ app.include_router(conversations_router)
 app.include_router(programs_router)
 
 @app.get("/")
+@app.get("/api/system")
 def root():
     return {
         "system": "HUST Course Advisor & RAG AI Agent",
         "scope": "Sinh viên Đại học Bách Khoa Hà Nội",
         "data_scope": "Bản thử nghiệm hiện tại đang sử dụng dữ liệu của một chương trình đào tạo.",
-        "storage": "mongodb" if MONGODB_URI else "local (SQLite + JSON)",
+        "storage": "mongodb",
         "rag_status": "/api/rag/status",
         "docs_url": "/docs",
         "status": "online"

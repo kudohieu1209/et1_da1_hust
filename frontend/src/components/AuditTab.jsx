@@ -1,4 +1,5 @@
 import React from 'react';
+import { AcademicMilestone, TranscriptEmptyState } from './StudentState';
 import {
   CheckCircle2,
   AlertTriangle,
@@ -14,7 +15,9 @@ import {
 export default function AuditTab({ 
   auditData, 
   onNavigateTab, 
-  onOpenImport
+  onOpenImport,
+  hasTranscript,
+  language = 'vi'
 }) {
   if (!auditData) {
     return (
@@ -29,8 +32,9 @@ export default function AuditTab({
     student_info = {},
     curriculum = {},
     cpa = 0,
-    warning_level = 0,
-    warning_description = 'Bình thường',
+    warning_level = null,
+    warning_description = 'Chưa xác định mức cảnh báo',
+    warning_basis = '',
     credit_limit = {},
     total_credits_accumulated = 0,
     total_credits_required = 0,
@@ -43,13 +47,16 @@ export default function AuditTab({
     unlearned_elective_courses = [],
     graduation_group_audit = [],
     non_credit_requirements = [],
-    graduation_ready = false
+    graduation_ready = false,
+    graduation_status = 'unverified'
   } = auditData;
 
   const classificationTone = ['Xuất sắc', 'Giỏi', 'Khá'].includes(academic_classification.rank)
     ? 'success'
     : ['Yếu', 'Kém'].includes(academic_classification.rank) ? 'danger' : 'warning';
   const classificationColor = `var(--${classificationTone})`;
+  const warningTone = warning_level == null || warning_level > 0 ? 'warning' : 'success';
+  const requirementLabels = { completed: 'Đã hoàn thành (theo khai báo)', incomplete: 'Chưa hoàn thành', unverified: 'Chưa xác minh' };
 
   const remaining_credits = Math.max(0, total_credits_required - total_credits_accumulated);
   const compulsory_credits_missing = unlearned_compulsory_courses.reduce((sum, c) => sum + (c.credits || 0), 0);
@@ -69,54 +76,10 @@ export default function AuditTab({
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', paddingBottom: '32px' }}>
-      {/* If Fresh Account with 0 courses */}
-      {passed_count === 0 && (
-        <div style={{
-          padding: '16px 20px',
-          borderRadius: '14px',
-          background: 'linear-gradient(135deg, rgba(213, 19, 42, 0.08), rgba(213, 19, 42, 0.08))',
-          border: '1px solid rgba(213, 19, 42, 0.25)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '14px'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <AlertTriangle size={24} color="var(--warning)" style={{ flexShrink: 0 }} />
-            <div>
-              <div style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '0.94rem' }}>
-                Hồ sơ sinh viên chưa có môn học nào hoàn thành (0 / {total_credits_required} tín chỉ)
-              </div>
-              <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
-                Bạn có thể sao chép bảng điểm từ trang ctt.hust.edu.vn và dán vào đây để hệ thống tự động tính CPA, số tín chỉ tích lũy và kiểm tra điều kiện tốt nghiệp.
-              </div>
-            </div>
-          </div>
-          <div style={{ display: 'flex', gap: '8px' }}>
-            {onOpenImport && (
-              <button
-                onClick={onOpenImport}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '7px 14px',
-                  borderRadius: '8px',
-                  background: 'var(--hust-red)',
-                  color: '#fff',
-                  border: 'none',
-                  fontWeight: '600',
-                  fontSize: '0.82rem',
-                  cursor: 'pointer'
-                }}
-              >
-                <span>+ Dán bảng điểm CTT</span>
-              </button>
-            )}
-          </div>
-        </div>
+      {(hasTranscript ?? (passed_count + failed_count > 0)) === false && (
+        <TranscriptEmptyState onImport={onOpenImport} language={language} />
       )}
+      <AcademicMilestone auditData={auditData} language={language} />
       {/* 1. Standardized Page Header */}
       <div style={{
         display: 'flex',
@@ -184,7 +147,7 @@ export default function AuditTab({
               TIẾN ĐỘ TÍN CHỈ
             </span>
             <span className="badge badge-success" style={{ fontSize: '0.7rem' }}>
-              Gần cán đích
+              {completion_percentage >= 90 ? 'Gần cán đích' : 'Đang tích lũy'}
             </span>
           </div>
 
@@ -316,20 +279,20 @@ export default function AuditTab({
             <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: '700', letterSpacing: '0.04em' }}>
               CẢNH BÁO HỌC TẬP
             </span>
-            <span className="badge badge-success" style={{ fontSize: '0.7rem' }}>
-              Mức {warning_level}
+            <span className={`badge badge-${warningTone}`} style={{ fontSize: '0.7rem' }}>
+              {warning_level == null ? 'Chưa xác định' : `Mức ${warning_level}`}
             </span>
           </div>
 
           <div style={{ margin: '6px 0' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <ShieldCheck size={24} color="var(--success)" />
-              <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--success)' }}>
+              <ShieldCheck size={24} color={`var(--${warningTone})`} />
+              <span style={{ fontSize: '1.25rem', fontWeight: '700', color: `var(--${warningTone})` }}>
                 {warning_description}
               </span>
             </div>
             <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
-              Hồ sơ học tập an toàn, không có nguy cơ xử lý học vụ.
+              {warning_basis || 'Hãy đối chiếu mức cảnh báo hiện tại trên CTT.'}
             </div>
           </div>
 
@@ -341,7 +304,7 @@ export default function AuditTab({
             borderRadius: 'var(--radius-sm)',
             border: '1px solid var(--border-subtle)'
           }}>
-            Hạn mức đăng ký: <strong style={{ color: 'var(--text-primary)' }}>Tối đa {credit_limit.max || 24} TC</strong> / kỳ chính
+            {credit_limit.is_provisional ? 'Hạn mức kế hoạch tạm thời' : 'Hạn mức đăng ký'}: <strong style={{ color: 'var(--text-primary)' }}>Tối đa {credit_limit.max || 14} TC</strong> / kỳ chính
           </div>
         </div>
 
@@ -358,7 +321,7 @@ export default function AuditTab({
               XÉT TỐT NGHIỆP
             </span>
             <span className={graduation_ready ? "badge badge-success" : "badge badge-warning"} style={{ fontSize: '0.7rem' }}>
-              {graduation_ready ? "Đủ điều kiện" : "Đang hoàn thiện"}
+              {graduation_ready ? 'Đạt theo hồ sơ khai báo' : graduation_status === 'unverified' ? 'Chưa xác minh' : 'Đang hoàn thiện'}
             </span>
           </div>
 
@@ -380,7 +343,7 @@ export default function AuditTab({
             fontWeight: '600'
           }}>
             <Calendar size={14} />
-            <span>Ít nhất {theoreticalMinSemesters} học kỳ theo giới hạn tín chỉ</span>
+            <span>{credit_limit.is_provisional ? 'Dự kiến' : 'Ít nhất'} {theoreticalMinSemesters} học kỳ {credit_limit.is_provisional ? 'với hạn mức kế hoạch tạm thời' : 'theo giới hạn tín chỉ'}</span>
           </div>
         </div>
       </div>
@@ -451,13 +414,18 @@ export default function AuditTab({
             </div>
             <div>
               <div style={{ fontSize: '0.92rem', fontWeight: '700', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span>Chiến lược Nâng hạng Bằng Khá (CPA ≥ 2.50) từ AI Advisor</span>
+                <span>Mục tiêu CPA ≥ 2.50</span>
                 <span className="badge badge-indigo" style={{ fontSize: '0.68rem', padding: '2px 8px' }}>Khuyến nghị</span>
               </div>
               <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginTop: '4px', lineHeight: '1.45', margin: 0 }}>
-                Để nâng mức tốt nghiệp từ <strong>Trung bình ({cpa.toFixed(2)})</strong> lên <strong>Khá (≥ 2.50)</strong>, bạn cần đạt GPA trung bình ~<strong style={{ color: 'var(--brand-accent)' }}>{target_kha_advice.gpa_needed_remaining}</strong> trong {target_kha_advice.remaining_credits} TC còn lại.
-                <span style={{ color: 'var(--text-primary)', fontWeight: '500' }}> Phương án tối ưu: </span> 
-                Đăng ký học <strong>cải thiện 2 - 3 môn điểm C/D</strong> ở các kỳ tới để giảm tải áp lực GPA môn mới xuống mức an toàn (~3.0 - 3.2).
+                {target_kha_advice.remaining_credits === 0 ? (
+                  <>Bạn đã đủ khối lượng tín chỉ nhưng CPA hiện tại là <strong>{cpa.toFixed(2)}</strong>. Cần xem phương án học cải thiện để đạt CPA 2.50.</>
+                ) : target_kha_advice.is_achievable ? (
+                  <>Với CPA hiện tại <strong>{cpa.toFixed(2)}</strong>, GPA trung bình cần đạt cho {target_kha_advice.remaining_credits} TC còn lại là <strong>{target_kha_advice.gpa_needed_remaining}</strong>.</>
+                ) : (
+                  <>Chỉ hoàn thành {target_kha_advice.remaining_credits} TC còn lại chưa đủ đạt CPA 2.50 vì GPA cần đạt vượt 4.0. Cần xem thêm phương án học cải thiện.</>
+                )}
+                {' '}Ước tính dựa trên bảng điểm đã nhập; số môn và mức điểm cải thiện cần được tính riêng.
               </p>
             </div>
           </div>
@@ -764,12 +732,15 @@ export default function AuditTab({
                       Chứng chỉ GDTC, GDQP & Chuẩn tiếng Anh
                     </div>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
-                      {non_credit_requirements.length} nhóm không tính tín chỉ; cần đối chiếu chứng chỉ/chuẩn đầu ra trong hồ sơ chính thức.
+                      {non_credit_requirements.map((item) => (
+                        <div key={item.group_id}>{item.name}: {requirementLabels[item.status] || 'Chưa xác minh'}</div>
+                      ))}
+                      Đối chiếu hồ sơ chính thức; cập nhật khi nhập bảng điểm.
                     </div>
                   </div>
                 </div>
                 <span className="badge badge-warning" style={{ fontSize: '0.7rem' }}>
-                  Chưa xác minh
+                  {non_credit_requirements.length > 0 && non_credit_requirements.every((item) => item.status === 'completed') ? 'Đã khai báo hoàn thành' : 'Cần đối chiếu'}
                 </span>
               </div>
             </div>
@@ -801,7 +772,7 @@ export default function AuditTab({
                 Dự báo Kế hoạch Tốt nghiệp
               </div>
               <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '2px', lineHeight: '1.4' }}>
-                Còn {remaining_credits.toFixed(1)} TC, hạn mức hiện tại {maxCreditsPerSemester} TC/kỳ. Về mặt khối lượng, cần ít nhất <strong>{theoreticalMinSemesters} học kỳ</strong>; thời gian thực tế còn phụ thuộc điều kiện học phần và lịch mở lớp.
+                Còn {remaining_credits.toFixed(1)} TC, {credit_limit.is_provisional ? 'hạn mức kế hoạch tạm thời' : 'hạn mức đăng ký'} {maxCreditsPerSemester} TC/kỳ. {credit_limit.is_provisional ? 'Nếu giữ hạn mức này, dự kiến' : 'Về mặt khối lượng, cần ít nhất'} <strong>{theoreticalMinSemesters} học kỳ</strong>; thời gian thực tế còn phụ thuộc điều kiện học phần và lịch mở lớp.
               </div>
             </div>
           </div>

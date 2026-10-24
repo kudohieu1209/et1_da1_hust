@@ -1,4 +1,3 @@
-import json
 import sys
 import threading
 import unittest
@@ -6,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.core.config import STUDENTS_DIR
+from testing_support import sample_profiles
 from app.services.data_loader import data_loader
 
 
@@ -49,10 +48,7 @@ class ProfileScopeTests(unittest.TestCase):
         self.assertEqual(data_loader.current_student_id, "20224567")
 
     def test_resolves_profile_file_by_info_student_id(self):
-        custom_path = STUDENTS_DIR / "custom.json"
-        if not custom_path.exists():
-            self.skipTest("Không có hồ sơ custom.json cục bộ")
-        student_id = json.loads(custom_path.read_text(encoding="utf-8"))["info"]["student_id"]
+        student_id = sample_profiles()["custom"]["info"]["student_id"]
 
         self.assertEqual(data_loader.find_profile_key(student_id), "custom")
 

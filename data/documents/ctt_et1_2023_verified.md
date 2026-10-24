@@ -1,3 +1,9 @@
+---
+rag_status: VERIFIED
+document_type: curriculum
+effective_period: CTĐT ET1 2023
+---
+
 # CTĐT ET1–2023 đã chuẩn hóa
 
 > Trạng thái: VERIFIED_DATASET. Tài liệu này được sinh tự động từ các snapshot nguồn đã khai báo; không phải bản mô tả do mô hình ngôn ngữ tự soạn.

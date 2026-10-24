@@ -9,6 +9,10 @@ Thumbs.db
 tmp/
 .codex-finalizer/
 .codex-presentation-build/
+.codex-remote-attachments/
+
+# Tài liệu thực tập kỹ thuật giữ cục bộ, không thuộc bàn giao Đồ án 1.
+/report/
 
 
 # Environment variables & secrets
@@ -66,6 +70,8 @@ pnpm-debug.log*
 # Databases & Vector DB
 *.sqlite3
 *.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
 *.sqlite
 vector_db/
 vector_db_test/
@@ -80,6 +86,8 @@ project/data/raw/et1_curiculum_files/
 project/data/processed/student_profile.json
 project/data/processed/students/
 project/data/processed/users/
+project/data/legacy_backup/
 
 # Báo cáo đánh giá chạy tạm (giữ lại baseline.* để so sánh)
 project/eval/reports/latest.*
+project/eval/reports/validation_latest.*

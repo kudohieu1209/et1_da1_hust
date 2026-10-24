@@ -1,8 +1,6 @@
 """Kho hồ sơ sinh viên (thông tin + bảng điểm).
 
-Hai cài đặt có cùng giao diện:
-- ``MongoProfileRepository``: collection ``student_profiles`` trên MongoDB.
-- ``FileProfileRepository``: các file ``students/*.json`` cục bộ (offline).
+Hồ sơ nghiệp vụ chỉ lưu tại collection ``student_profiles`` của MongoDB.
 
 Khóa hồ sơ là tên file cũ (MSSV hoặc "custom"). Khóa luôn được kiểm tra vì
 nó đến từ header/payload và từng được ghép vào đường dẫn file.
@@ -10,12 +8,10 @@ nó đến từ header/payload và từng được ghép vào đường dẫn fi
 import json
 import re
 from datetime import datetime, timezone
-from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 from pymongo import ASCENDING
 
-from app.core.config import STUDENTS_DIR
 from app.services.mongo_client import get_mongo_database
 
 PROFILE_KEY_PATTERN = re.compile(r"[A-Za-z0-9_-]{1,32}")
@@ -29,51 +25,6 @@ def _require_valid_key(key: Any) -> str:
     if not is_valid_profile_key(key):
         raise ValueError(f"Mã hồ sơ không hợp lệ: {key!r}")
     return key
-
-
-class FileProfileRepository:
-    def __init__(self, directory: Path = STUDENTS_DIR):
-        self.directory = Path(directory)
-
-    def _path(self, key: str) -> Path:
-        return self.directory / f"{key}.json"
-
-    @staticmethod
-    def _read(path: Path) -> Dict[str, Any]:
-        with path.open("r", encoding="utf-8") as stream:
-            return json.load(stream)
-
-    def get(self, key: str) -> Optional[Dict[str, Any]]:
-        if not is_valid_profile_key(key) or not self._path(key).exists():
-            return None
-        return self._read(self._path(key))
-
-    def list(self) -> List[Tuple[str, Dict[str, Any]]]:
-        if not self.directory.exists():
-            return []
-        profiles = []
-        for path in sorted(self.directory.glob("*.json")):
-            try:
-                profiles.append((path.stem, self._read(path)))
-            except (OSError, ValueError) as exc:
-                print(f"[WARN] Bỏ qua hồ sơ lỗi {path.name}: {exc}")
-        return profiles
-
-    def find_key(self, student_id: str) -> Optional[str]:
-        if not is_valid_profile_key(student_id):
-            return None
-        if self._path(student_id).exists():
-            return student_id
-        for key, profile in self.list():
-            if str(profile.get("info", {}).get("student_id", "")) == student_id:
-                return key
-        return None
-
-    def save(self, key: str, profile: Dict[str, Any]) -> None:
-        path = self._path(_require_valid_key(key))
-        self.directory.mkdir(parents=True, exist_ok=True)
-        with path.open("w", encoding="utf-8") as stream:
-            json.dump(profile, stream, ensure_ascii=False, indent=2)
 
 
 class MongoProfileRepository:
@@ -120,7 +71,4 @@ class MongoProfileRepository:
 
 
 def create_profile_repository():
-    database = get_mongo_database()
-    if database is not None:
-        return MongoProfileRepository(database)
-    return FileProfileRepository()
+    return MongoProfileRepository(get_mongo_database())

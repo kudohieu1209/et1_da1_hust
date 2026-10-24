@@ -1,11 +1,8 @@
-import json
-import tempfile
 import unittest
-from pathlib import Path
 
 import mongomock
 
-from app.services.profile_repository import FileProfileRepository, MongoProfileRepository
+from app.services.profile_repository import MongoProfileRepository
 
 
 def _profile(student_id, name="SV"):
@@ -53,19 +50,6 @@ class ProfileRepositoryContract:
                 self.assertIsNone(self.repository.find_key(unsafe))
                 with self.assertRaises(ValueError):
                     self.repository.save(unsafe, _profile("1"))
-
-
-class FileProfileRepositoryTests(ProfileRepositoryContract, unittest.TestCase):
-    def make_repository(self):
-        self.temp_dir = tempfile.TemporaryDirectory()
-        self.addCleanup(self.temp_dir.cleanup)
-        return FileProfileRepository(Path(self.temp_dir.name) / "students")
-
-    def test_reads_profiles_written_by_previous_versions(self):
-        directory = Path(self.temp_dir.name) / "students"
-        directory.mkdir(parents=True, exist_ok=True)
-        (directory / "20231890.json").write_text(json.dumps(_profile("20231890")), encoding="utf-8")
-        self.assertEqual(self.repository.find_key("20231890"), "20231890")
 
 
 class MongoProfileRepositoryTests(ProfileRepositoryContract, unittest.TestCase):

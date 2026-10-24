@@ -23,6 +23,6 @@ fi
 VENV_PYTHON="$(venv_python "$VENV_DIR")"
 "$VENV_PYTHON" -m pip install --upgrade pip
 "$VENV_PYTHON" -m pip install -r "$BACKEND_DIR/requirements.txt" -r "$BACKEND_DIR/requirements-dev.txt"
-npm --prefix "$FRONTEND_DIR" install
+npm --prefix "$FRONTEND_DIR" ci
 
-echo "Setup complete ($VENV_DIR). Copy project/backend/.env.example to project/backend/.env if you want Gemini responses."
+echo "Setup complete ($VENV_DIR). Copy project/backend/.env.example to project/backend/.env and configure MONGODB_URI before starting. Gemini is optional."

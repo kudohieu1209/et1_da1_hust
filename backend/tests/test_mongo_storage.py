@@ -1,5 +1,4 @@
 """DataLoader chạy trên kho hồ sơ MongoDB và cấu hình kết nối MongoDB."""
-import json
 import sys
 import unittest
 from pathlib import Path
@@ -9,7 +8,7 @@ import mongomock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.core.config import STUDENTS_DIR
+from testing_support import sample_profiles
 from app.services import mongo_client
 from app.services.data_loader import DataLoader
 from app.services.profile_repository import MongoProfileRepository
@@ -19,10 +18,7 @@ K68_ID = "20231890"
 
 
 def _local_profile(key):
-    path = STUDENTS_DIR / f"{key}.json"
-    if not path.exists():
-        raise unittest.SkipTest(f"Không có hồ sơ demo cục bộ {key}.json")
-    return json.loads(path.read_text(encoding="utf-8"))
+    return sample_profiles()[key]
 
 
 class DataLoaderOnMongoTests(unittest.TestCase):
@@ -74,10 +70,11 @@ class MongoClientConfigTests(unittest.TestCase):
         self.assertNotIn("S3cret", redacted)
         self.assertIn("advisor:***@cluster0", redacted)
 
-    def test_empty_uri_means_local_storage(self):
+    def test_empty_uri_is_a_configuration_error(self):
         mongo_client.get_mongo_database.cache_clear()
         with mock.patch.object(mongo_client, "MONGODB_URI", ""):
-            self.assertIsNone(mongo_client.get_mongo_database())
+            with self.assertRaises(mongo_client.MongoConfigurationError):
+                mongo_client.connect_mongo_database()
 
     def test_unreachable_server_fails_fast_without_leaking_password(self):
         mongo_client.get_mongo_database.cache_clear()
@@ -85,7 +82,7 @@ class MongoClientConfigTests(unittest.TestCase):
         with mock.patch.object(mongo_client, "MONGODB_URI", uri), \
                 mock.patch.object(mongo_client, "CONNECT_TIMEOUT_MS", 200):
             with self.assertRaises(mongo_client.MongoConfigurationError) as raised:
-                mongo_client.get_mongo_database()
+                mongo_client.connect_mongo_database()
         self.assertNotIn("S3cret", str(raised.exception))
 
 

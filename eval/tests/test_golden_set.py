@@ -6,7 +6,7 @@ EVAL_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(EVAL_DIR))
 sys.path.insert(0, str(EVAL_DIR.parent / "backend"))
 
-from app.rag.document_loader import UNVERIFIED_MARKER
+from app.rag.document_loader import DocumentLoader
 from golden_set import KNOWN_INTENTS, load_golden_set
 from metrics import normalize_text
 
@@ -16,7 +16,7 @@ DOCUMENTS_DIR = EVAL_DIR.parent / "data" / "documents"
 class GoldenSetIntegrityTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.items = load_golden_set(EVAL_DIR / "golden_questions.jsonl")
+        cls.items = load_golden_set(EVAL_DIR / "golden_questions.jsonl") + load_golden_set(EVAL_DIR / "validation_questions.jsonl")
 
     def test_ids_are_unique(self):
         ids = [item["id"] for item in self.items]
@@ -33,8 +33,7 @@ class GoldenSetIntegrityTests(unittest.TestCase):
                 with self.subTest(item=item["id"], quote=evidence["contains"]):
                     path = DOCUMENTS_DIR / evidence["file"]
                     text = path.read_text(encoding="utf-8")
-                    # Cùng tiêu chí với DocumentLoader.get_document_files.
-                    self.assertNotIn(UNVERIFIED_MARKER, text[:500])
+                    self.assertIn(path, DocumentLoader(DOCUMENTS_DIR).get_document_files())
                     self.assertIn(normalize_text(evidence["contains"]), normalize_text(text))
 
     def test_rag_questions_have_retrieval_evidence(self):

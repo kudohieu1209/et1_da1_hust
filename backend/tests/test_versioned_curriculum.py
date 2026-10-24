@@ -119,6 +119,7 @@ class VersionedCurriculumTests(unittest.TestCase):
             audit = student_service.audit_degree()
             self.assertEqual(data_loader.get_program()["curriculum_version"], "2023")
         self.assertEqual(audit["total_credits_required"], 132)
+        self.assertEqual({item["requirement_id"] for item in audit["non_credit_requirements"]}, {"220", "230", "240"})
 
     def test_recommender_accepts_official_module_id(self):
         recommendation = course_recommender.recommend(target_track="MOD6", max_credits=20)

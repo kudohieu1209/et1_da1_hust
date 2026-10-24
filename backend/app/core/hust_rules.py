@@ -34,7 +34,7 @@ CREDIT_LIMITS = {
 # Điều 19.1c: số TC nợ đọng từ đầu khóa lớn hơn 24 -> cảnh báo mức 3.
 MAX_DEBT_CREDITS_BEFORE_LEVEL3 = 24
 
-_GRADE_TOKEN = re.compile(r"(?<![A-Z0-9])([ABCD]\+?|F)(?![A-Z0-9+])")
+_GRADE_TOKEN = re.compile(r"(?<![A-Z0-9])([ABCD]\+?|F)\s*$")
 
 
 def parse_grade_from_line(line: str) -> Optional[str]:
@@ -75,12 +75,20 @@ def assess_academic_warning(profile: Dict[str, Any]) -> Dict[str, Any]:
         level = 3
         basis = f"Nợ đọng {owed:g} TC > {MAX_DEBT_CREDITS_BEFORE_LEVEL3} TC (Điều 19.1c QĐ 5445)"
     else:
-        level = 0
+        level = None
         basis = (
             "Không có mức cảnh báo trong hồ sơ; bảng điểm chưa có thông tin học kỳ "
             "nên chưa xét được Điều 19.1a,b"
         )
-    return {"level": level, "basis": basis, "debt_credits": owed}
+    return {"level": level, "basis": basis, "debt_credits": owed, "status": "unverified" if level is None else "determined"}
+
+
+def credit_limits_for_warning(warning: Dict[str, Any]) -> Dict[str, Any]:
+    """Use a conservative planning cap until the student's warning level is known."""
+    if warning["level"] is None:
+        return {**CREDIT_LIMITS[2], "is_provisional": True,
+                "desc": "Hạn mức lập kế hoạch tạm thời; cần đối chiếu mức cảnh báo trên CTT"}
+    return {**CREDIT_LIMITS[warning["level"]], "is_provisional": False}
 
 # Academic policy constants belong here. Curriculum-specific totals (126, 132,
 # ...) are loaded from the matching versioned curriculum dataset.
