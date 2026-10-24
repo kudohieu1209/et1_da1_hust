@@ -3,7 +3,7 @@ import { Camera, Loader2, RotateCcw, Upload } from 'lucide-react';
 import { apiFetch, apiUrl } from '../../api';
 import Avatar from './Avatar';
 import { ACCEPTED_AVATAR_TYPES, resizeAvatar } from './imageResize';
-import { AVATAR_GRADIENTS, buildStudentSummary, programLabel } from './studentSummary';
+import { AVATAR_GRADIENTS, buildStudentSummary, getInitials, programLabel } from './studentSummary';
 
 /** Chuỗi lỗi đọc được từ phản hồi FastAPI (detail dạng chuỗi hoặc danh sách lỗi Pydantic). */
 async function readErrorDetail(response, fallback) {
@@ -101,7 +101,7 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
           {t('Ảnh được cắt vuông và thu về 256px trước khi lưu.', 'Images are cropped square and resized to 256px before saving.')}
         </p>
         <div className="settings-avatar-row">
-          <Avatar avatar={avatar} initial={(trimmedName.charAt(0) || summary.initial).toUpperCase()} size={64} />
+          <Avatar avatar={avatar} initial={getInitials(trimmedName)} size={64} />
           <div>
             <div className="settings-avatar-actions">
               <button type="button" className="settings-button" onClick={() => fileInputRef.current?.click()}>

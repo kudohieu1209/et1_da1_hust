@@ -15,22 +15,15 @@ DOCUMENTS_DIR = PROJECT_DIR / "data" / "documents"
 # ChromaDB lưu file cục bộ không an toàn khi nhiều tiến trình cùng mở, nên
 # kiểm thử/đánh giá trỏ biến này sang thư mục riêng khi backend dev đang chạy.
 VECTOR_DB_DIR = Path(os.getenv("VECTOR_DB_DIR") or PROJECT_DIR / "data" / "vector_db")
-# MongoDB lưu hội thoại và hồ sơ sinh viên. Để trống để dùng kho cục bộ:
-# SQLite cho hội thoại, file students/*.json cho hồ sơ (chế độ offline).
+# MongoDB là kho nghiệp vụ duy nhất; ChromaDB chỉ phục vụ chỉ mục RAG.
 MONGODB_URI = os.getenv("MONGODB_URI", "").strip()
 MONGODB_DB = os.getenv("MONGODB_DB", "hust_course_advisor").strip() or "hust_course_advisor"
-# Kho hội thoại cục bộ khi không cấu hình MongoDB (ChromaDB chỉ phục vụ RAG).
-CHAT_DB_PATH = DATA_DIR / "chat_history.sqlite3"
-# Tài khoản + phiên đăng nhập khi không cấu hình MongoDB.
-AUTH_DB_PATH = Path(os.getenv("AUTH_DB_PATH") or DATA_DIR / "auth.sqlite3")
 
 # Cookie phiên đăng nhập (HttpOnly, SameSite=Lax). Đặt COOKIE_SECURE=true khi
 # chạy sau HTTPS để cookie không bao giờ đi qua HTTP thường.
 SESSION_COOKIE_NAME = "hust_session"
 COOKIE_SECURE = os.getenv("COOKIE_SECURE", "false").strip().lower() in {"1", "true", "yes"}
 
-STUDENT_PROFILE_FILE = DATA_DIR / "student_profile.json"
-STUDENTS_DIR = DATA_DIR / "students"
 RAW_CONDITIONS_FILE = PROJECT_DIR / "data" / "raw" / "ctt_et_conditions.json"
 PROGRAM_CATALOG_FILE = PROJECT_DIR / "data" / "raw" / "hust_undergraduate_programs.json"
 PROGRAM_SOURCES_FILE = PROJECT_DIR / "data" / "raw" / "hust_program_curriculum_sources.json"

@@ -1,12 +1,9 @@
-import tempfile
 import unittest
-from pathlib import Path
 
 import mongomock
 
 from app.services.conversation_service import (
     ConversationNotFoundError,
-    ConversationService,
     MongoConversationService,
 )
 
@@ -123,16 +120,6 @@ class ConversationContract:
         self.assertEqual(self.service.ensure(created["id"], "sv")["id"], created["id"])
         with self.assertRaises(ConversationNotFoundError):
             self.service.ensure(created["id"], "khác")
-
-
-class SqliteConversationServiceTests(ConversationContract, unittest.TestCase):
-    def make_service(self):
-        self.temp_dir = tempfile.TemporaryDirectory()
-        self.addCleanup(self.temp_dir.cleanup)
-        return ConversationService(Path(self.temp_dir.name) / "chat.sqlite3")
-
-    def reopen(self, service):
-        return ConversationService(service.db_path)
 
 
 class MongoConversationServiceTests(ConversationContract, unittest.TestCase):

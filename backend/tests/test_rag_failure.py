@@ -35,6 +35,18 @@ class RagFailureTests(unittest.TestCase):
             response = chatbot_service.process_message("Tiến độ học tập của em thế nào?")
         self.assertEqual(response["intent"], "DEGREE_AUDIT")
 
+    def test_old_fee_document_is_not_used_to_assert_a_new_years_fee(self):
+        chunk = {"text": "Học phí 630 nghìn đồng", "metadata": {
+            "document_type": "tuition_decision", "effective_period": "Năm học 2025-2026",
+        }}
+        with mock.patch.object(rag_engine.vector_store, "similarity_search", return_value=[chunk]), \
+                mock.patch.object(rag_engine.gemini, "generate_response") as generate:
+            response = rag_engine.query("Học phí năm học 2026-2027 là bao nhiêu?")
+        generate.assert_not_called()
+        self.assertEqual(response["model_used"], "insufficient-evidence")
+        self.assertEqual(response["sources"], [])
+        self.assertNotIn("630", response["reply"])
+
 
 if __name__ == "__main__":
     unittest.main()

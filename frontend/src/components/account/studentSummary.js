@@ -2,17 +2,24 @@
 // quả rà soát (/api/student/audit). Không có giá trị mặc định giả: khi chưa tải
 // xong, các trường số là null để giao diện hiện "—" thay vì số sai.
 
-export const DEFAULT_AVATAR_GRADIENT = 'linear-gradient(135deg, #d3132a, #8f1423)';
+export const DEFAULT_AVATAR_GRADIENT = 'linear-gradient(135deg, #fff3d6, #fff3d6)';
 
 // Phải khớp AVATAR_GRADIENT_PATTERN của backend (schemas.ProfileDisplayUpdate).
 export const AVATAR_GRADIENTS = [
-  { id: 'hust', vi: 'Đỏ Bách Khoa', en: 'HUST red', value: DEFAULT_AVATAR_GRADIENT },
+  { id: 'cream', vi: 'Kem Bách Khoa', en: 'HUST cream', value: DEFAULT_AVATAR_GRADIENT },
+  { id: 'hust', vi: 'Đỏ Bách Khoa', en: 'HUST red', value: 'linear-gradient(135deg, #d3132a, #8f1423)' },
   { id: 'burgundy', vi: 'Đỏ trầm', en: 'Burgundy', value: 'linear-gradient(135deg, #a91024, #710619)' },
   { id: 'gold', vi: 'Vàng trầm', en: 'Deep gold', value: 'linear-gradient(135deg, #946b00, #735400)' },
   { id: 'charcoal', vi: 'Xám than', en: 'Charcoal', value: 'linear-gradient(135deg, #525254, #222224)' },
 ];
 
 const formatCredits = (value) => (Number.isInteger(value) ? String(value) : value.toFixed(1));
+
+export function getInitials(name) {
+  const words = String(name || '').normalize('NFC').trim().split(/\s+/).filter(Boolean);
+  if (!words.length) return '?';
+  return (Array.from(words[0])[0] + (words.length > 1 ? Array.from(words.at(-1))[0] : '')).toLocaleUpperCase('vi-VN');
+}
 
 /**
  * @param {{ info?: Record<string, any> } | null} profile
@@ -29,7 +36,7 @@ export function buildStudentSummary(profile, audit) {
 
   return {
     name,
-    initial: (name.charAt(0) || '?').toUpperCase(),
+    initial: getInitials(name),
     studentId: info.student_id || '',
     className: info.class_name || '',
     programCode,
@@ -37,7 +44,7 @@ export function buildStudentSummary(profile, audit) {
     programName: curriculum.name || info.program_name || '',
     cpa: typeof audit?.cpa === 'number' ? audit.cpa : null,
     rank: audit?.academic_classification?.rank || null,
-    warningLevel: Number(audit?.warning_level) || 0,
+    warningLevel: typeof audit?.warning_level === 'number' ? audit.warning_level : null,
     warningText: audit?.warning_description || '',
     completion: typeof audit?.completion_percentage === 'number' ? audit.completion_percentage : null,
     creditsText:

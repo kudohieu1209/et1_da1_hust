@@ -86,7 +86,7 @@ class GeminiService:
         Sinh câu trả lời sử dụng Gemini LLM + Context từ RAG + Dữ liệu cấu trúc
         """
         # Nếu chưa cấu hình Gemini API, dùng template synthesis từ RAG chunks
-        if not self.is_configured():
+        if not self.is_configured() or not context_chunks and not structured_data:
             return self._fallback_synthesis(user_query, context_chunks, structured_data)
 
         # Chuẩn bị Prompt tổng hợp
@@ -97,7 +97,11 @@ class GeminiService:
             for idx, chunk in enumerate(context_chunks, 1):
                 src = clean_display_source(chunk.get("metadata", {}).get("source", "Tài liệu HUST"))
                 title = chunk.get("metadata", {}).get("title", "")
-                prompt_parts.append(f"--- [Nguồn {idx}: {src} - {title}] ---\n{chunk.get('text', '')}\n")
+                meta = chunk.get("metadata", {})
+                prompt_parts.append(
+                    f"--- [Nguồn {idx}: {src} - {title}; trang PDF {meta.get('page', '')}; "
+                    f"phạm vi: {meta.get('effective_period', '')}; URL: {meta.get('source_url', '')}] ---\n{chunk.get('text', '')}\n"
+                )
 
         if structured_data:
             import json
@@ -145,7 +149,9 @@ class GeminiService:
                             src_name = clean_display_source(meta.get("source", ""))
                             title = meta.get("title", "")
                             if src_name and src_name not in [s["source"] for s in sources]:
-                                sources.append({"source": src_name, "title": title})
+                                sources.append({"source": src_name, "title": title,
+                                                "source_url": meta.get("source_url", ""),
+                                                "effective_period": meta.get("effective_period", "")})
 
                     return {
                         "reply": response.text.strip(),
@@ -231,65 +237,26 @@ class GeminiService:
             src = clean_display_source(meta.get("source", "Quy chế Đào tạo ĐHBK Hà Nội"))
             title = meta.get("title", "")
             if src not in [s["source"] for s in sources]:
-                sources.append({"source": src, "title": title})
+                sources.append({"source": src, "title": title, "source_url": meta.get("source_url", ""), "effective_period": meta.get("effective_period", "")})
 
-        question = (user_query or "").lower()
-        is_curriculum_question = any(term in question for term in (
-            "ctđt", "chương trình đào tạo", "mô-đun",
-            "mô đun", "132", "126", "cấu trúc chương trình"
-        ))
-
-        if is_curriculum_question:
-            # Tóm tắt từ các dòng dữ liệu, không chép nguyên cả chunk RAG.
-            all_lines = [
-                line.strip()
-                for chunk in valid_chunks
-                for line in chunk.get("text", "").splitlines()
-                if line.strip()
-            ]
-            wanted = []
-            prefixes = (
-                "- Tổng tín chỉ Cử nhân:",
-                "- Tiếng Anh,", "- Lý luận chính trị", "- Khối kiến thức Toán",
-                "- Cơ sở và cốt lõi", "- Khối kiến thức bổ trợ",
-                "- Chọn 1 trong ", "- Thực tập:", "- Đồ án/"
-            )
-            for line in all_lines:
-                if line.startswith(prefixes) and line not in wanted:
-                    wanted.append(line)
-            title_line = next((line for line in all_lines if line.startswith("# CTĐT ")), "")
-            program_name = title_line.removeprefix("# ").strip() or "CTĐT đang hoạt động"
-            total_line = next(
-                (line for line in wanted if line.startswith("- Tổng tín chỉ Cử nhân:")),
-                "- Tổng tín chỉ Cử nhân: chưa xác định từ tài liệu.",
-            )
-            reply_lines.extend([
-                f"Chào bạn! Theo **{program_name}**:",
-                "",
-                total_line,
-            ])
-            reply_lines.extend(line for line in wanted if not line.startswith("- Tổng tín chỉ Cử nhân:"))
-            reply_lines.extend([
-                "",
-                "Lưu ý: Ngoại ngữ/GDTC/GDQP được theo dõi ngoài tổng tín chỉ tốt nghiệp của phiên bản đang hoạt động.",
-            ])
-        else:
-            # Trích các đoạn đã được retriever xếp hạng. Đây là chế độ
-            # không có LLM: ưu tiên trung thực và truy vết nguồn hơn diễn giải.
-            reply_lines.append("Mình tra được các nội dung liên quan trong nguồn HUST đã kiểm chứng:")
-            for chunk in valid_chunks[:3]:
-                meta = chunk.get("metadata", {})
-                source = clean_display_source(meta.get("source", "Tài liệu HUST"))
-                raw = chunk.get("text", "").strip()
-                raw = "\n".join(line for line in raw.splitlines() if not line.strip().startswith("#"))
-                excerpt = raw[:900].strip()
-                if len(raw) > 900:
-                    excerpt += "…"
-                reply_lines.extend(["", f"**{source}:**", excerpt])
-            reply_lines.extend([
-                "",
-                "*Lưu ý: đây là chế độ trích xuất tại chỗ khi chưa cấu hình Gemini; hãy đối chiếu PDF gốc nếu dùng cho quyết định học vụ quan trọng.*",
-            ])
+        # Extractive mode quotes the retrieved evidence without inventing a summary.
+        reply_lines.append("Mình tra được các nội dung liên quan trong nguồn HUST đã kiểm chứng:")
+        for chunk in valid_chunks[:4]:
+            meta = chunk.get("metadata", {})
+            source = clean_display_source(meta.get("source", "Tài liệu HUST"))
+            location = meta.get("article") or meta.get("section", "")
+            page = meta.get("page", 0)
+            page_end = meta.get("page_end", page)
+            url = meta.get("source_url", "")
+            if url and page and url.lower().endswith(".pdf"):
+                url += f"#page={page}"
+            label = f"{source} · {location}" if location else source
+            if page:
+                label += f" · trang PDF {page}" + (f"–{page_end}" if page_end != page else "")
+            citation = f"[{label}]({url})" if url else label
+            period = meta.get("effective_period", "")
+            reply_lines.extend(["", f"**{citation}** ({period}):", chunk["text"].strip()])
+        reply_lines.extend(["", "*Đây là nội dung trích xuất, chưa phải câu trả lời tổng hợp từ Gemini. Phạm vi áp dụng theo tài liệu được dẫn.*"])
 
         return {
             "reply": "\n".join(reply_lines).strip(),

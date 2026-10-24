@@ -1,12 +1,10 @@
 """Kết nối MongoDB dùng chung cho các kho dữ liệu.
 
-Khi ``MONGODB_URI`` rỗng, hệ thống dùng kho cục bộ (SQLite + file JSON) để
-vẫn chạy được offline. Khi đã cấu hình mà không kết nối được thì dừng ngay lúc
-khởi động thay vì âm thầm ghi dữ liệu sang chỗ khác.
+MongoDB là kho nghiệp vụ duy nhất. Thiếu cấu hình hoặc không kết nối được
+thì dừng khởi động với lỗi rõ ràng.
 """
 import re
 from functools import lru_cache
-from typing import Optional
 
 from pymongo import MongoClient
 from pymongo.database import Database
@@ -26,10 +24,9 @@ def redact_uri(uri: str) -> str:
     return re.sub(r"(mongodb(?:\+srv)?://[^:/@]+):[^@]+@", r"\1:***@", uri)
 
 
-@lru_cache(maxsize=1)
-def get_mongo_database() -> Optional[Database]:
+def connect_mongo_database() -> Database:
     if not MONGODB_URI:
-        return None
+        raise MongoConfigurationError("Thiếu MONGODB_URI. Hãy cấu hình MongoDB local hoặc Atlas trước khi khởi động.")
     client = MongoClient(
         MONGODB_URI,
         serverSelectionTimeoutMS=CONNECT_TIMEOUT_MS,
@@ -41,8 +38,12 @@ def get_mongo_database() -> Optional[Database]:
         client.close()
         raise MongoConfigurationError(
             f"Không kết nối được MongoDB ({redact_uri(MONGODB_URI)}): {exc.__class__.__name__}. "
-            "Kiểm tra MONGODB_URI, mật khẩu và IP Access List trên Atlas, "
-            "hoặc để trống MONGODB_URI để chạy bằng kho cục bộ."
+            "Kiểm tra MONGODB_URI, thông tin xác thực và kết nối tới MongoDB."
         ) from None
     print(f"[INFO] MongoDB: đã kết nối {redact_uri(MONGODB_URI)}, database '{MONGODB_DB}'.")
     return client[MONGODB_DB]
+
+
+@lru_cache(maxsize=1)
+def get_mongo_database() -> Database:
+    return connect_mongo_database()

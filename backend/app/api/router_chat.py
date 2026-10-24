@@ -3,6 +3,8 @@ from app.auth.dependencies import current_student, student_scope
 from app.services.chatbot_service import chatbot_service
 from app.models.schemas import ChatRequest, ChatResponse
 from app.services.conversation_service import ConversationNotFoundError, conversation_service
+from app.services.student_memory import student_memory
+from app.services.data_loader import data_loader
 
 # Trả lời theo hồ sơ của sinh viên đang đăng nhập (scope mở bởi student_scope).
 router = APIRouter(prefix="/api/chat", tags=["Chatbot Agent"], dependencies=[Depends(student_scope)])
@@ -24,20 +26,15 @@ def chat_with_bot(req: ChatRequest, student_id: str = Depends(current_student)):
     except ConversationNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
 
-    if stored_messages:
-        history_data = [
-            {"role": item["role"], "content": item["content"]}
-            for item in stored_messages
-        ]
-    else:
-        # Backward compatibility for clients that still send history. The
-        # current question is not repeated in the context because it is saved
-        # immediately after the response is generated.
-        history_data = [{"role": m.role, "content": m.content} for m in req.history] if req.history else []
-        if history_data and history_data[-1]["role"] == "user" and history_data[-1]["content"] == req.message:
-            history_data.pop()
+    # Only owned, persisted messages establish context. Client-supplied history
+    # cannot seed another conversation or fabricate assistant tool results.
+    history_data = [
+        {"role": item["role"], "content": item["content"], "data_context": item.get("data_context")}
+        for item in stored_messages
+    ]
 
-    result = chatbot_service.process_message(req.message, history_data)
+    preferences = student_memory.for_advising(student_id, data_loader.get_program(), data_loader.get_module_tracks())
+    result = chatbot_service.process_message(req.message, history_data, preferences=preferences)
     try:
         # Chỉ tạo bản ghi khi chatbot xử lý thành công, tránh để các đoạn chat
         # rỗng xuất hiện trong Sidebar nếu backend/LLM gặp lỗi.

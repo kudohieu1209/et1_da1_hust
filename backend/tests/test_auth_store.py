@@ -1,11 +1,10 @@
-import tempfile
 import unittest
+from unittest import mock
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 
 import mongomock
 
-from app.auth.store import MongoAuthStore, SqliteAuthStore, UserExistsError
+from app.auth.store import MongoAuthStore, UserExistsError
 
 NOW = datetime(2026, 10, 15, 8, 0, tzinfo=timezone.utc)
 
@@ -87,26 +86,12 @@ class AuthStoreContract:
         self.assertIsNotNone(self.store.get_session("hash-c"))
 
 
-class SqliteAuthStoreTests(AuthStoreContract, unittest.TestCase):
-    def make_store(self):
-        temp_dir = tempfile.TemporaryDirectory()
-        self.addCleanup(temp_dir.cleanup)
-        return SqliteAuthStore(Path(temp_dir.name) / "auth.sqlite3")
-
-
-class SqliteSessionCleanupTests(unittest.TestCase):
-    def test_creating_a_session_purges_expired_ones(self):
-        temp_dir = tempfile.TemporaryDirectory()
-        self.addCleanup(temp_dir.cleanup)
-        store = SqliteAuthStore(Path(temp_dir.name) / "auth.sqlite3")
-        store.create_session("old", "20220001", NOW - timedelta(days=9), NOW - timedelta(days=2))
-        store.create_session("new", "20220001", NOW, NOW + timedelta(days=7))
-        self.assertIsNone(store.get_session("old"))
-        self.assertIsNotNone(store.get_session("new"))
-
-
 class MongoAuthStoreTests(AuthStoreContract, unittest.TestCase):
     def make_store(self):
+        # mongomock's TTL index uses wall-clock time; freeze it to the contract clock.
+        clock = mock.patch("mongomock.utcnow", return_value=NOW.replace(tzinfo=None))
+        clock.start()
+        self.addCleanup(clock.stop)
         return MongoAuthStore(mongomock.MongoClient()["advisor_test"])
 
 

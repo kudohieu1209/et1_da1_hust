@@ -1,10 +1,11 @@
+import math
 from typing import Any, Dict, List
 
 from app.core.hust_rules import (
-    CREDIT_LIMITS,
     GRADE_TO_SCALE4,
     MIN_GRADUATION_CPA,
     assess_academic_warning,
+    credit_limits_for_warning,
     get_academic_classification,
     parse_grade_from_line,
 )
@@ -14,6 +15,23 @@ from app.services.data_loader import data_loader
 class StudentService:
     def get_profile(self) -> Dict[str, Any]:
         return data_loader.get_student_profile()
+
+    @staticmethod
+    def _non_credit_groups() -> List[Dict[str, Any]]:
+        # Source group numbers differ between the 2022 CTT and 2023 public snapshots.
+        groups = []
+        for group in data_loader.get_groups():
+            name = group["name"].lower()
+            if "thể chất" in name:
+                requirement_id = "220"
+            elif "quốc phòng" in name:
+                requirement_id = "230"
+            elif "tiếng anh" in name or "ngoại ngữ" in name:
+                requirement_id = "240"
+            else:
+                continue
+            groups.append({**group, "requirement_id": requirement_id})
+        return groups
 
     @staticmethod
     def _credits_for_codes(codes, course_map) -> float:
@@ -93,7 +111,7 @@ class StudentService:
 
         warning = assess_academic_warning(profile)
         warning_level = warning["level"]
-        limit_info = CREDIT_LIMITS.get(warning_level, CREDIT_LIMITS[0])
+        limit_info = credit_limits_for_warning(warning)
 
         path = data_loader.get_graduation_path()
         program = data_loader.get_program()
@@ -117,9 +135,9 @@ class StudentService:
             for group_id in path_group_ids
             for code in groups[group_id]["course_codes"]
         }
-        total_accumulated_credits = self._credits_for_codes(
-            passed_codes & degree_course_codes, course_map
-        )
+        # Excess electives or courses from several alternative modules cannot
+        # compensate for a missing compulsory graduation component.
+        total_accumulated_credits = sum(component["earned_credits"] for component in group_audit)
 
         unlearned_compulsory = []
         unlearned_elective = []
@@ -154,7 +172,13 @@ class StudentService:
         )
         final_cpa_credits = cpa_credits - failed_degree_credits + remaining_credits
         points_needed_for_kha = 2.50 * final_cpa_credits - total_grade_points
-        gpa_needed_for_kha = max(0.0, round(points_needed_for_kha / remaining_credits, 2)) if remaining_credits else 0.0
+        needed = max(0.0, points_needed_for_kha / remaining_credits) if remaining_credits else None
+        if cpa_credits and total_grade_points / cpa_credits >= 2.50:
+            target_status = "already_achieved"
+        elif not remaining_credits:
+            target_status = "requires_grade_improvement"
+        else:
+            target_status = "achievable" if needed <= 4.0 else "requires_grade_improvement"
 
         pending_reqs = []
         for component in group_audit:
@@ -165,20 +189,28 @@ class StudentService:
         if cpa < MIN_GRADUATION_CPA:
             pending_reqs.append(f"CPA cần đạt tối thiểu {MIN_GRADUATION_CPA:.1f} (hiện tại: {cpa})")
 
+        declared_requirements = profile.get("non_credit_status", {})
         non_credit_groups = [
             {
                 "group_id": group["id"],
+                "requirement_id": group["requirement_id"],
                 "name": group["name"],
                 "course_codes": group["course_codes"],
-                "note": "Yêu cầu không tính vào tổng tín chỉ; cần đối chiếu quy định chuẩn đầu ra.",
+                "status": declared_requirements.get(group["requirement_id"], "unverified"),
+                "note": "Theo khai báo của sinh viên từ CTT; không thay thế xác nhận tốt nghiệp của nhà trường.",
             }
-            for group in data_loader.get_groups()
-            if group.get("source_group_code") in {"220", "230", "240"}
+            for group in self._non_credit_groups()
         ]
-        if non_credit_groups:
-            pending_reqs.append(
-                "Chưa xác minh các yêu cầu không tính tín chỉ: GDTC, GDQP và Tiếng Anh"
-            )
+        academic_requirements_met = not pending_reqs
+        for requirement in non_credit_groups:
+            if requirement["status"] != "completed":
+                label = "Chưa đạt" if requirement["status"] == "incomplete" else "Chưa xác minh"
+                pending_reqs.append(f"{label}: {requirement['name']}")
+        graduation_status = "completed" if not pending_reqs else (
+            "incomplete" if not academic_requirements_met or any(
+                item["status"] == "incomplete" for item in non_credit_groups
+            ) else "unverified"
+        )
 
         return {
             "student_info": info,
@@ -191,12 +223,14 @@ class StudentService:
             "cpa": cpa,
             "academic_classification": classification,
             "target_kha_advice": {
-                "gpa_needed_remaining": gpa_needed_for_kha,
+                "status": target_status,
+                "gpa_needed_remaining": math.ceil(needed * 100 - 1e-9) / 100 if needed is not None else None,
                 "remaining_credits": remaining_credits,
-                "is_achievable": gpa_needed_for_kha <= 4.0,
+                "is_achievable": target_status in {"achievable", "already_achieved"},
             },
             "warning_level": warning_level,
-            "warning_description": limit_info["desc"],
+            "warning_status": warning["status"],
+            "warning_description": "Chưa xác định mức cảnh báo" if warning_level is None else limit_info["desc"],
             "warning_basis": warning["basis"],
             "debt_credits": warning["debt_credits"],
             "credit_limit": limit_info,
@@ -210,6 +244,7 @@ class StudentService:
             "graduation_group_audit": group_audit,
             "non_credit_requirements": non_credit_groups,
             "graduation_ready": not pending_reqs,
+            "graduation_status": graduation_status,
             "pending_requirements": pending_reqs,
         }
 
@@ -227,6 +262,16 @@ class StudentService:
             raise FileNotFoundError(f"Tài khoản {student_id} chưa có hồ sơ học tập.")
         raw_text = data.get("raw_text", "")
         transcript = []
+        unresolved = []
+        overrides = data.get("course_credit_overrides", {})
+        non_credit_status = data.get("non_credit_status", {})
+        valid_requirement_ids = {
+            group["requirement_id"] for group in self._non_credit_groups()
+        }
+        if set(non_credit_status) - valid_requirement_ids or any(
+            status not in {"completed", "incomplete", "unverified"} for status in non_credit_status.values()
+        ):
+            raise ValueError("Trạng thái chuẩn đầu ra hoặc nhóm yêu cầu không hợp lệ.")
 
         source_items = []
         skipped = []
@@ -252,14 +297,29 @@ class StudentService:
                 skipped.append(item.get("_line") or code)
                 continue
             course = data_loader.get_course(code)
+            credits = course.get("credits") if course else overrides.get(code, item.get("credits"))
+            if credits is None:
+                unresolved.append({"code": code, "letter_grade": letter, "line": item.get("_line", code)})
+                continue
+            credits = float(credits)
+            if not math.isfinite(credits) or credits < 0:
+                raise ValueError(f"Số tín chỉ của {code} phải là số hữu hạn không âm.")
             transcript.append({
                 "code": code,
                 "name": item.get("name") or (course.get("name") if course else f"Học phần {code}"),
-                "credits": float(item.get("credits") or (course.get("credits", 3.0) if course else 3.0)),
+                "credits": credits,
                 "letter_grade": letter,
                 "numeric_grade": GRADE_TO_SCALE4.get(letter, 0.0),
                 "is_passed": letter != "F",
             })
+
+        if unresolved:
+            return {
+                "status": "needs_confirmation",
+                "message": "Chưa lưu bảng điểm. Hãy xác nhận số tín chỉ từ CTT cho các học phần ngoài danh mục.",
+                "unresolved_courses": unresolved,
+                "skipped_lines": skipped,
+            }
 
         if not transcript:
             raise ValueError(
@@ -267,12 +327,16 @@ class StudentService:
             )
 
         info = dict(existing.get("info", {}))
-        if data.get("warning_level") is not None:
+        if "warning_level" in data:
             # Mức cảnh báo học tập hiển thị trên CTT (0-3), nếu sinh viên nhập.
-            info["warning_level"] = data.get("warning_level")
+            if data["warning_level"] is None:
+                info.pop("warning_level", None)
+            else:
+                info["warning_level"] = data["warning_level"]
         custom_profile = {
             **existing,
             "info": info,
+            "non_credit_status": {**existing.get("non_credit_status", {}), **non_credit_status},
             "total_courses_completed": sum(item["is_passed"] for item in transcript),
             "passed_courses": [item for item in transcript if item["is_passed"]],
             "failed_courses": [item for item in transcript if not item["is_passed"]],

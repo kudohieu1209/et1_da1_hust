@@ -8,7 +8,7 @@
 
 Mặc định mật khẩu sinh ngẫu nhiên và CHỈ in ra màn hình (không ghi file, không commit).
 Ghi kết quả vào nơi an toàn; quên thì chạy lại với --reset-password.
-Dùng cùng kho với backend: MongoDB nếu .env có MONGODB_URI, ngược lại SQLite cục bộ.
+Dùng cùng kho MongoDB với backend.
 """
 import argparse
 import secrets
@@ -42,7 +42,7 @@ def main() -> int:
     new_password = (lambda: args.password) if args.password else _demo_password
 
     store = auth_service.store
-    print(f"Kho tài khoản: {'MongoDB ' + redact_uri(MONGODB_URI) if MONGODB_URI else 'SQLite cục bộ'}\n")
+    print(f"Kho tài khoản: {'MongoDB ' + redact_uri(MONGODB_URI)}\n")
     rows = []
     for key, profile in auth_service.profiles.list():
         info = profile.get("info", {})

@@ -20,6 +20,12 @@ def render_curriculum_document(data: dict[str, Any]) -> str:
     courses = {course["code"]: course for course in data["courses"]}
     bachelor = next(path for path in data["graduation_paths"] if path["id"] == "bachelor")
     lines = [
+        "---",
+        "rag_status: VERIFIED",
+        "document_type: curriculum",
+        f"effective_period: CTĐT {program['program_code']} {program['curriculum_version']}",
+        "---",
+        "",
         f"# CTĐT {program['program_code']}–{program['curriculum_version']} đã chuẩn hóa",
         "",
         "> Trạng thái: VERIFIED_DATASET. Tài liệu này được sinh tự động từ các snapshot nguồn đã khai báo; "

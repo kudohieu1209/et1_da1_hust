@@ -1,16 +1,18 @@
-# React + Vite
+# Frontend HUST Course Advisor
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React + Vite. Cần Node.js 22.12+; chạy `npm ci`, sau đó `npm run dev` tại thư mục
+này. Backend chạy cổng 8000. Vite chuyển tiếp `/api` tới `127.0.0.1:8000`, nên cả
+`localhost:5173` và `127.0.0.1:5173` đều dùng cookie phiên cùng địa chỉ với web.
 
-Currently, two official plugins are available:
+- `npm run lint`: kiểm tra mã bằng Oxlint.
+- `npm run build`: tạo bản tĩnh trong `dist/`.
+- `npm run preview`: chỉ xem bản build; không thay thế reverse proxy production.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Để trống `VITE_API_BASE_URL` khi web có reverse proxy `/api` cùng origin. Nếu đặt
+URL khác, backend cần cho phép đúng origin và cookie phải phù hợp quan hệ same-site
+của tên miền; không chỉ thay URL là đủ. Khóa MongoDB/Gemini chỉ nằm ở backend,
+không đặt trong biến `VITE_*` vì các biến này được đóng gói vào mã trình duyệt.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Hướng dẫn cài đặt, dữ liệu demo tổng hợp và giới hạn: [README gốc](../../README.md),
+[bàn giao](../../docs/handoff.md). Các trang `*-preview.html` ở máy tác giả chỉ là
+công cụ xem thử thiết kế, không phải luồng ứng dụng được bàn giao.

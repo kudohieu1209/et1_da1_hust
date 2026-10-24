@@ -1,5 +1,6 @@
 import os
 import hashlib
+import json
 import re
 from pathlib import Path
 from typing import List, Dict, Any
@@ -47,12 +48,23 @@ class DocumentLoader:
         files = []
         for ext in ["*.md", "*.txt", "*.pdf"]:
             for path in self.doc_dir.glob(ext):
-                if path.suffix.lower() in {".md", ".txt"}:
-                    head = path.read_text(encoding="utf-8", errors="ignore")[:500]
-                    if UNVERIFIED_MARKER in head:
-                        continue
+                if self._document_metadata(path).get("rag_status", "").upper() != "VERIFIED":
+                    continue
                 files.append(path)
         return sorted(files)
+
+    def _document_metadata(self, path: Path) -> Dict[str, str]:
+        if path.suffix.lower() in {".md", ".txt"}:
+            text = self._read_text_file(path)
+            if UNVERIFIED_MARKER in text[:500]:
+                return {}
+            return self._parse_front_matter(text)[0]
+        # PDFs require an explicit approval sidecar; a filename is not approval.
+        try:
+            metadata = json.loads(path.with_suffix(path.suffix + ".metadata.json").read_text(encoding="utf-8"))
+            return metadata if isinstance(metadata, dict) else {}
+        except (OSError, ValueError):
+            return {}
 
     def calculate_file_hash(self, file_path: Path) -> str:
         """Tính MD5 hash của file để nhận diện thay đổi"""
@@ -70,6 +82,7 @@ class DocumentLoader:
     def _parse_front_matter(text: str) -> tuple[Dict[str, str], str]:
         """Read the small YAML-like metadata block used by verified documents."""
         metadata: Dict[str, str] = {}
+        text = text.lstrip("\ufeff")
         if not text.startswith("---\n"):
             return metadata, text
         end = text.find("\n---\n", 4)
@@ -153,6 +166,93 @@ class DocumentLoader:
 
         return [rc.strip() for rc in refined_chunks if rc.strip()]
 
+    def _structured_chunks(self, text: str, document_type: str = "") -> List[tuple[str, Dict[str, Any]]]:
+        """Keep page, article and section context when splitting legal clauses/tables."""
+        result = []
+        buffer = []
+        page = 0
+        article = ""
+        section = ""
+        clause = ""
+        education_level = "general"
+        awaiting_chapter_title = False
+        in_contents = False
+
+        def flush():
+            if not buffer:
+                return
+            content = "\n".join(buffer).strip()
+            context = "\n".join(dict.fromkeys(value for value in (article, section, clause) if value))
+            for part in self._split_text_into_chunks(content, chunk_size=1400, overlap=150):
+                if section == "Nguồn và truy vết" or part.startswith((
+                    "> Trạng thái:", "Bản trích xuất", "Trích các trang PDF", "Dữ liệu danh tính",
+                )):
+                    continue
+                if len(re.sub(r"\s+", " ", part).strip()) < 20:
+                    continue
+                result.append((f"{context}\n\n{part}".strip(), {
+                    "page": page, "article": article, "section": section, "clause": clause,
+                    "education_level": education_level,
+                }))
+            buffer.clear()
+
+        for line in text.splitlines():
+            stripped = line.strip()
+            page_match = re.match(r"(?:## Trang PDF |--- \[Trang )(\d+)", stripped)
+            if page_match:
+                flush()
+                page = int(page_match.group(1))
+                section = ""
+                if document_type and document_type != "academic_regulation":
+                    article = ""
+                    clause = ""
+                in_contents = False
+                continue
+            if stripped == "MỤC LỤC":
+                flush()
+                in_contents = True
+            if in_contents or re.search(r"\.{4,}", stripped):
+                continue
+            if re.fullmatch(r"CHƯƠNG\s+[IVXLCDM]+", stripped):
+                flush()
+                article = section = clause = ""
+                awaiting_chapter_title = True
+                continue
+            if awaiting_chapter_title and stripped:
+                education_level = next((level for title, level in (
+                    ("ĐÀO TẠO ĐẠI HỌC", "undergraduate"), ("ĐÀO TẠO KỸ SƯ", "engineer"),
+                    ("ĐÀO TẠO THẠC SĨ", "master"), ("ĐÀO TẠO TIẾN SĨ", "doctorate"),
+                ) if title in stripped.upper()), "general")
+                awaiting_chapter_title = False
+                continue
+            article_match = re.match(r"Điều\s+\d+[.:]\s+.+", stripped)
+            if article_match and not re.search(r"\.{3,}", stripped):
+                flush()
+                article = stripped
+                section = ""
+                clause = ""
+                continue
+            if re.match(r"#{1,6}\s", stripped):
+                flush()
+                section = stripped.lstrip("# ")
+                clause = ""
+                continue
+            # Do not mix independent clauses or module alternatives in a chunk.
+            if re.match(r"\d+[.)]\s+", stripped):
+                flush()
+                clause = stripped
+            elif re.match(r"[a-zđ]\)\s+", stripped):
+                # A point inherits the full lead-in of its numbered clause,
+                # including PDF line wraps (e.g. "giảm một mức" on the next line).
+                if buffer and re.match(r"\d+[.)]\s+", buffer[0].strip()):
+                    clause = "\n".join(buffer).strip()
+                flush()
+            elif re.match(r"- Mô-đun \d+:", stripped):
+                flush()
+            buffer.append(line)
+        flush()
+        return result
+
     def load_all_chunks(self) -> List[DocumentChunk]:
         """Nạp toàn bộ tài liệu và chia thành các chunks kèm metadata sạch sẽ"""
         files = self.get_document_files()
@@ -171,15 +271,16 @@ class DocumentLoader:
                 continue
 
             file_hash = self.calculate_file_hash(file_path)
-            document_metadata, content_text = self._parse_front_matter(raw_text)
-            chunks = self._split_text_into_chunks(content_text)
+            _, content_text = self._parse_front_matter(raw_text)
+            document_metadata = self._document_metadata(file_path)
+            chunks = self._structured_chunks(content_text, document_metadata.get("document_type", ""))
 
             # Lấy tiêu đề từ dòng đầu tiên nếu là markdown (# Tiêu đề)
             first_line = content_text.strip().split("\n")[0].replace("#", "").strip()
             title = first_line if first_line else format_document_display_name(file_path.name)
 
             valid_idx = 0
-            for chunk_text in chunks:
+            for chunk_text, location in chunks:
                 cleaned_chunk = chunk_text.strip()
                 # Bỏ qua các chunk chỉ chứa tiêu đề thuần túy hoặc quá ngắn (< 60 ký tự) không mang thông tin
                 lines = [line.strip() for line in cleaned_chunk.splitlines() if line.strip()]
@@ -187,7 +288,7 @@ class DocumentLoader:
                 if not non_header_lines or len(" ".join(non_header_lines)) < 40:
                     continue
 
-                chunk_title = title
+                chunk_title = location.get("article") or location.get("section") or title
                 if ext == ".pdf":
                     match_page = re.search(r'---\s*\[Trang\s*(\d+)\]\s*---', cleaned_chunk)
                     if match_page:
@@ -208,6 +309,7 @@ class DocumentLoader:
                         "document_type": document_metadata.get("document_type", "general"),
                         "effective_period": document_metadata.get("effective_period", ""),
                         "source_url": document_metadata.get("source_url", ""),
+                        **location,
                     }
                 )
                 all_chunks.append(chunk)

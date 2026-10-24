@@ -1,6 +1,12 @@
-# CTĐT ET1–2022 đã chuẩn hóa từ CTT
+---
+rag_status: VERIFIED
+document_type: curriculum
+effective_period: CTĐT ET1 2022
+---
 
-> Trạng thái: VERIFIED_DATASET. Tài liệu này được sinh tự động từ snapshot CTT; không phải bản mô tả do mô hình ngôn ngữ tự soạn.
+# CTĐT ET1–2022 đã chuẩn hóa
+
+> Trạng thái: VERIFIED_DATASET. Tài liệu này được sinh tự động từ các snapshot nguồn đã khai báo; không phải bản mô tả do mô hình ngôn ngữ tự soạn.
 
 ## Nhận dạng chương trình
 
@@ -10,7 +16,7 @@
 - Phiên bản: 2022
 - Tổng tín chỉ Cử nhân: 126
 - Công thức gốc: `LLCT:13+ TKHCB:32+ CSCLN:52+ KTBT:6+ (MOD1:15)|(MOD2:15)|(MOD3:15)|(MOD4:15)|(MOD5:15)|(MOD6:15)+ TT:2+ ĐAKLTN:6`
-- Tiếng Anh, Giáo dục thể chất và Giáo dục quốc phòng có 0 tín chỉ trong bảng CTĐT này; không phải phần chênh lệch giữa 126 và 132.
+- Ngoại ngữ, Giáo dục thể chất và Giáo dục quốc phòng được theo dõi ngoài tổng tín chỉ tốt nghiệp của snapshot này; không tự cộng thêm vào tổng yêu cầu.
 
 ## Các thành phần tốt nghiệp
 

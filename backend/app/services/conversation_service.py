@@ -3,22 +3,16 @@
 The RAG vector store is intentionally not used for chat history. Conversation
 and message records need ownership, ordering, update and delete semantics.
 
-Hai cài đặt có cùng API công khai:
-- ``MongoConversationService``: MongoDB (mặc định khi cấu hình MONGODB_URI).
-- ``ConversationService``: SQLite cục bộ, dùng khi chạy offline/không có Mongo.
+MongoDB is the only application conversation store.
 """
 
 import json
-import sqlite3
 import uuid
-from contextlib import contextmanager
 from datetime import datetime, timezone
-from pathlib import Path
-from typing import Any, Dict, Iterator, List, Optional
+from typing import Any, Dict, List, Optional
 
 from pymongo import ASCENDING, DESCENDING, ReturnDocument
 
-from app.core.config import CHAT_DB_PATH
 from app.services.mongo_client import get_mongo_database
 
 DEFAULT_TITLE = "Đoạn chat mới"
@@ -63,281 +57,10 @@ def _clean_title(title: str) -> str:
     return cleaned[:MAX_TITLE_LENGTH]
 
 
-class ConversationService:
-    def __init__(self, db_path: Path = CHAT_DB_PATH):
-        self.db_path = Path(db_path)
-        self.db_path.parent.mkdir(parents=True, exist_ok=True)
-        self._initialize()
-
-    @contextmanager
-    def _connect(self) -> Iterator[sqlite3.Connection]:
-        connection = sqlite3.connect(str(self.db_path), timeout=10)
-        connection.row_factory = sqlite3.Row
-        connection.execute("PRAGMA foreign_keys = ON")
-        try:
-            yield connection
-            connection.commit()
-        except Exception:
-            connection.rollback()
-            raise
-        finally:
-            connection.close()
-
-    def _initialize(self) -> None:
-        with self._connect() as connection:
-            connection.execute("PRAGMA journal_mode = WAL")
-            connection.executescript(
-                """
-                CREATE TABLE IF NOT EXISTS conversations (
-                    id TEXT PRIMARY KEY,
-                    student_id TEXT NOT NULL,
-                    title TEXT NOT NULL DEFAULT 'Đoạn chat mới',
-                    is_archived INTEGER NOT NULL DEFAULT 0 CHECK (is_archived IN (0, 1)),
-                    is_pinned INTEGER NOT NULL DEFAULT 0 CHECK (is_pinned IN (0, 1)),
-                    created_at TEXT NOT NULL,
-                    updated_at TEXT NOT NULL
-                );
-
-                CREATE INDEX IF NOT EXISTS idx_conversations_owner_updated
-                    ON conversations(student_id, is_archived, updated_at DESC);
-
-                CREATE TABLE IF NOT EXISTS messages (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    conversation_id TEXT NOT NULL,
-                    role TEXT NOT NULL CHECK (role IN ('user', 'assistant', 'system')),
-                    content TEXT NOT NULL,
-                    suggested_actions_json TEXT,
-                    data_context_json TEXT,
-                    sources_json TEXT,
-                    model_used TEXT,
-                    created_at TEXT NOT NULL,
-                    FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE CASCADE
-                );
-
-                CREATE INDEX IF NOT EXISTS idx_messages_conversation_order
-                    ON messages(conversation_id, created_at, id);
-                """
-            )
-
-    @staticmethod
-    def _json_dumps(value: Any) -> Optional[str]:
-        if value is None:
-            return None
-        return json.dumps(value, ensure_ascii=False)
-
-    @staticmethod
-    def _json_loads(value: Optional[str], default: Any) -> Any:
-        if not value:
-            return default
-        try:
-            return json.loads(value)
-        except (TypeError, json.JSONDecodeError):
-            return default
-
-    @staticmethod
-    def _summary(row: sqlite3.Row) -> Dict[str, Any]:
-        return {
-            "id": row["id"],
-            "student_id": row["student_id"],
-            "title": row["title"],
-            "is_archived": bool(row["is_archived"]),
-            "is_pinned": bool(row["is_pinned"]),
-            "created_at": row["created_at"],
-            "updated_at": row["updated_at"],
-            "message_count": int(row["message_count"] or 0),
-            "last_message_preview": row["last_message_preview"] or "",
-        }
-
-    def _get_owned_row(self, connection: sqlite3.Connection, conversation_id: str, student_id: str) -> sqlite3.Row:
-        row = connection.execute(
-            "SELECT * FROM conversations WHERE id = ? AND student_id = ?",
-            (conversation_id, student_id),
-        ).fetchone()
-        if row is None:
-            raise ConversationNotFoundError(NOT_FOUND_MESSAGE)
-        return row
-
-    def create(self, student_id: str, title: Optional[str] = None) -> Dict[str, Any]:
-        student_id = _require_student_id(student_id)
-        conversation_id = str(uuid.uuid4())
-        now = _now()
-        conversation_title = (title or DEFAULT_TITLE).strip() or DEFAULT_TITLE
-        with self._connect() as connection:
-            connection.execute(
-                """
-                INSERT INTO conversations(id, student_id, title, created_at, updated_at)
-                VALUES (?, ?, ?, ?, ?)
-                """,
-                (conversation_id, student_id, conversation_title, now, now),
-            )
-        return self.get(conversation_id, student_id, include_messages=False)
-
-    def ensure(self, conversation_id: Optional[str], student_id: str) -> Dict[str, Any]:
-        if conversation_id:
-            return self.get(conversation_id, student_id, include_messages=False)
-        return self.create(student_id)
-
-    def list(self, student_id: str, include_archived: bool = False) -> List[Dict[str, Any]]:
-        query = """
-            SELECT c.*,
-                   (SELECT COUNT(*) FROM messages m WHERE m.conversation_id = c.id) AS message_count,
-                   (SELECT m.content FROM messages m
-                      WHERE m.conversation_id = c.id
-                      ORDER BY m.created_at DESC, m.id DESC LIMIT 1) AS last_message_preview
-            FROM conversations c
-            WHERE c.student_id = ?
-        """
-        params: List[Any] = [str(student_id)]
-        if not include_archived:
-            query += " AND c.is_archived = 0"
-        query += " ORDER BY c.is_pinned DESC, c.updated_at DESC"
-        with self._connect() as connection:
-            rows = connection.execute(query, params).fetchall()
-        return [self._summary(row) for row in rows]
-
-    def _message_from_row(self, row: sqlite3.Row) -> Dict[str, Any]:
-        return {
-            "id": int(row["id"]),
-            "conversation_id": row["conversation_id"],
-            "role": row["role"],
-            "content": row["content"],
-            "suggested_actions": self._json_loads(row["suggested_actions_json"], []),
-            "data_context": self._json_loads(row["data_context_json"], None),
-            "sources": self._json_loads(row["sources_json"], []),
-            "model_used": row["model_used"],
-            "created_at": row["created_at"],
-        }
-
-    def get_messages(self, conversation_id: str, student_id: str, limit: Optional[int] = None) -> List[Dict[str, Any]]:
-        with self._connect() as connection:
-            self._get_owned_row(connection, conversation_id, student_id)
-            rows = connection.execute(
-                """
-                SELECT * FROM messages
-                WHERE conversation_id = ?
-                ORDER BY created_at ASC, id ASC
-                """,
-                (conversation_id,),
-            ).fetchall()
-        messages = [self._message_from_row(row) for row in rows]
-        return messages[-limit:] if limit and limit > 0 else messages
-
-    def get(self, conversation_id: str, student_id: str, include_messages: bool = True) -> Dict[str, Any]:
-        with self._connect() as connection:
-            row = connection.execute(
-                """
-                SELECT c.*,
-                       (SELECT COUNT(*) FROM messages m WHERE m.conversation_id = c.id) AS message_count,
-                       (SELECT m.content FROM messages m
-                          WHERE m.conversation_id = c.id
-                          ORDER BY m.created_at DESC, m.id DESC LIMIT 1) AS last_message_preview
-                FROM conversations c
-                WHERE c.id = ? AND c.student_id = ?
-                """,
-                (conversation_id, str(student_id)),
-            ).fetchone()
-            if row is None:
-                raise ConversationNotFoundError(NOT_FOUND_MESSAGE)
-            result = self._summary(row)
-            if include_messages:
-                message_rows = connection.execute(
-                    "SELECT * FROM messages WHERE conversation_id = ? ORDER BY created_at ASC, id ASC",
-                    (conversation_id,),
-                ).fetchall()
-                result["messages"] = [self._message_from_row(item) for item in message_rows]
-            return result
-
-    def append_message(
-        self,
-        conversation_id: str,
-        student_id: str,
-        role: str,
-        content: str,
-        *,
-        suggested_actions: Optional[List[str]] = None,
-        data_context: Optional[Dict[str, Any]] = None,
-        sources: Optional[List[Dict[str, Any]]] = None,
-        model_used: Optional[str] = None,
-    ) -> Dict[str, Any]:
-        _validate_message(role, content)
-        now = _now()
-        with self._connect() as connection:
-            conversation = self._get_owned_row(connection, conversation_id, student_id)
-            cursor = connection.execute(
-                """
-                INSERT INTO messages(
-                    conversation_id, role, content, suggested_actions_json,
-                    data_context_json, sources_json, model_used, created_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    conversation_id,
-                    role,
-                    str(content),
-                    self._json_dumps(suggested_actions),
-                    self._json_dumps(data_context),
-                    self._json_dumps(sources),
-                    model_used,
-                    now,
-                ),
-            )
-            title = conversation["title"]
-            if role == "user" and title == DEFAULT_TITLE:
-                title = _title_from_message(content)
-            connection.execute(
-                "UPDATE conversations SET title = ?, updated_at = ? WHERE id = ?",
-                (title, now, conversation_id),
-            )
-            row = connection.execute("SELECT * FROM messages WHERE id = ?", (cursor.lastrowid,)).fetchone()
-        return self._message_from_row(row)
-
-    def update(
-        self,
-        conversation_id: str,
-        student_id: str,
-        *,
-        title: Optional[str] = None,
-        is_archived: Optional[bool] = None,
-        is_pinned: Optional[bool] = None,
-    ) -> Dict[str, Any]:
-        changes = []
-        values: List[Any] = []
-        if title is not None:
-            changes.append("title = ?")
-            values.append(_clean_title(title))
-        if is_archived is not None:
-            changes.append("is_archived = ?")
-            values.append(int(bool(is_archived)))
-        if is_pinned is not None:
-            changes.append("is_pinned = ?")
-            values.append(int(bool(is_pinned)))
-        if not changes:
-            return self.get(conversation_id, student_id, include_messages=False)
-
-        changes.append("updated_at = ?")
-        values.append(_now())
-        values.extend([conversation_id, str(student_id)])
-        with self._connect() as connection:
-            self._get_owned_row(connection, conversation_id, student_id)
-            connection.execute(
-                f"UPDATE conversations SET {', '.join(changes)} WHERE id = ? AND student_id = ?",
-                values,
-            )
-        return self.get(conversation_id, student_id, include_messages=False)
-
-    def delete(self, conversation_id: str, student_id: str) -> None:
-        with self._connect() as connection:
-            self._get_owned_row(connection, conversation_id, student_id)
-            connection.execute(
-                "DELETE FROM conversations WHERE id = ? AND student_id = ?",
-                (conversation_id, str(student_id)),
-            )
-
-
 def _json_compatible(value: Any) -> Any:
     """Chuẩn hóa giá trị như khi lưu JSON (tuple→list, khóa số→chuỗi).
 
-    Giữ cho MongoDB và SQLite trả về dữ liệu giống hệt nhau, đồng thời từ chối
+    Giữ dữ liệu trả về tương thích JSON, đồng thời từ chối
     sớm các giá trị không tuần tự hóa được.
     """
     if value is None:
@@ -346,12 +69,12 @@ def _json_compatible(value: Any) -> Any:
 
 
 class MongoConversationService:
-    """Kho hội thoại trên MongoDB, cùng API với ``ConversationService``.
+    """Kho hội thoại trên MongoDB.
 
     - ``conversations``: mỗi đoạn chat một document; ``message_count`` và
       ``last_message_preview`` được ghi sẵn để liệt kê không cần đếm lại.
     - ``messages``: tin nhắn tách riêng vì ``data_context`` có thể lớn; ``id``
-      là số nguyên tăng dần lấy từ ``counters`` để API không đổi so với SQLite.
+      là số nguyên tăng dần lấy từ ``counters`` để giữ thứ tự ổn định.
     """
 
     def __init__(self, database):
@@ -447,8 +170,12 @@ class MongoConversationService:
 
     def get_messages(self, conversation_id: str, student_id: str, limit: Optional[int] = None) -> List[Dict[str, Any]]:
         self._owned(conversation_id, student_id)
-        messages = self._ordered_messages(conversation_id)
-        return messages[-limit:] if limit and limit > 0 else messages
+        if limit and limit > 0:
+            cursor = self._messages.find({"conversation_id": str(conversation_id)}).sort(
+                [("created_at", DESCENDING), ("id", DESCENDING)]
+            ).limit(limit)
+            return list(reversed([self._message(item) for item in cursor]))
+        return self._ordered_messages(conversation_id)
 
     def get(self, conversation_id: str, student_id: str, include_messages: bool = True) -> Dict[str, Any]:
         result = self._summary(self._owned(conversation_id, student_id))
@@ -523,10 +250,7 @@ class MongoConversationService:
 
 
 def create_conversation_service():
-    database = get_mongo_database()
-    if database is not None:
-        return MongoConversationService(database)
-    return ConversationService()
+    return MongoConversationService(get_mongo_database())
 
 
 conversation_service = create_conversation_service()

@@ -1,4 +1,5 @@
 import os
+import re
 from typing import List, Dict, Any, Optional
 from app.rag.document_loader import document_loader
 from app.rag.vector_store import vector_store
@@ -25,6 +26,21 @@ class RAGEngine:
         # 1. Thu thập văn bản liên quan từ Vector Store
         retrieved_chunks = self.vector_store.similarity_search(question, k=k)
 
+        # A dated source cannot establish a fee for a different year or current term.
+        if "học phí" in question.lower():
+            requested_periods = re.findall(r"(20\d{2})\s*[-–/]\s*(20\d{2})", question)
+            periods = [chunk["metadata"].get("effective_period", "") for chunk in retrieved_chunks
+                       if chunk["metadata"].get("document_type") == "tuition_decision"]
+            unsupported_period = any(not any(left in period and right in period for period in periods)
+                                     for left, right in requested_periods)
+            current_term = re.search(r"hiện tại|hiện nay|năm nay|kỳ này|20\d{2}\.\d", question.lower())
+            if unsupported_period or current_term:
+                return {
+                    "reply": "Kho chưa có văn bản học phí được xác nhận cho thời gian bạn hỏi. Các mức đã lưu chỉ áp dụng cho năm học ghi trên nguồn; hãy tra thông báo đúng năm học/học kỳ trên CTT HUST.",
+                    "sources": [], "model_used": "insufficient-evidence",
+                    "context_chunks_count": 0, "retrieved_chunks": [],
+                }
+
         # 2. Sinh câu trả lời qua Gemini LLM
         gemini_result = self.gemini.generate_response(
             user_query=question,
@@ -43,7 +59,12 @@ class RAGEngine:
                     "source": c["metadata"].get("source", ""),
                     "title": c["metadata"].get("title", ""),
                     "snippet": c["text"][:200] + "...",
-                    "distance": c.get("distance", 0.0)
+                    "distance": c.get("distance", 0.0),
+                    "source_url": c["metadata"].get("source_url", ""),
+                    "page": c["metadata"].get("page", 0),
+                    "page_end": c["metadata"].get("page_end", c["metadata"].get("page", 0)),
+                    "article": c["metadata"].get("article", ""),
+                    "effective_period": c["metadata"].get("effective_period", ""),
                 }
                 for c in retrieved_chunks
             ]

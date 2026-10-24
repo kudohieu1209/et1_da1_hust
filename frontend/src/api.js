@@ -1,4 +1,6 @@
-export const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+// Local Vite proxies /api on the frontend origin so HttpOnly SameSite cookies
+// work with either localhost or 127.0.0.1. Deployments may set an explicit base.
+export const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
 
 /** Phát ra khi backend trả 401 (chưa đăng nhập / phiên hết hạn). App lắng nghe để về màn đăng nhập. */
 export const UNAUTHORIZED_EVENT = 'hust:unauthorized';
