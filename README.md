@@ -249,17 +249,29 @@ cp project/backend/.env.example project/backend/.env  # bắt buộc cấu hình
 MongoDB là bắt buộc. Không cần Gemini API key để demo: hệ thống sẽ dùng chế độ trích xuất cục bộ có dẫn nguồn. Nếu có key, điền `GEMINI_API_KEY` và model trong `.env`.
 
 ### 1. Khởi động Backend (FastAPI)
+
+PowerShell trên Windows:
+
+```powershell
+cd project/backend
+& ./.venv-win/Scripts/python.exe run.py
+```
+
+Linux/macOS:
+
 ```bash
 cd project/backend
 ./.venv/bin/python run.py
 ```
+
+Git Bash trên Windows dùng `./.venv-win/Scripts/python.exe run.py`.
 * Backend sẽ chạy tại: `http://localhost:8000`
 * Swagger API Docs: `http://localhost:8000/docs`
 
 ### 2. Khởi động Frontend (React + Vite)
 ```bash
 cd project/frontend
-npm install
+npm ci
 npm run dev
 ```
 * Giao diện Web sẽ chạy tại: `http://localhost:5173`
