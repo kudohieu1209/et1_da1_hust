@@ -24,7 +24,7 @@ class CurriculumPipelineTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.data = build_curriculum(
-            DATA_DIR / "raw" / "et1_curiculum.html",
+            DATA_DIR / "tests" / "fixtures" / "ctt_et1_2022_curriculum_only.html",
             DATA_DIR / "raw" / "ctt_et_conditions.json",
             "ET1",
         )
@@ -99,6 +99,8 @@ class CurriculumPipelineTest(unittest.TestCase):
         serialized = json.dumps(self.data, ensure_ascii=False)
         self.assertNotIn("20220001", serialized)
         self.assertNotIn("Mai Duy Hiếu", serialized)
+        self.assertNotIn("10000001", serialized)
+        self.assertNotIn("SINH VIÊN GIẢ LẬP", serialized)
         self.assertFalse(self.data["sources"][0]["personal_data_included_in_output"])
 
     def test_validator_accepts_generated_dataset(self) -> None:
