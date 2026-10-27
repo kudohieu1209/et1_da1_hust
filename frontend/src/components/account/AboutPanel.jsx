@@ -12,7 +12,7 @@ async function getJson(path) {
  * Tab "Giới thiệu": số liệu thật lấy từ backend (CTĐT đang dùng, kho tài liệu
  * RAG, mô hình ngôn ngữ, nơi lưu dữ liệu) thay cho các con số viết cứng.
  */
-export default function AboutPanel({ language }) {
+export default function AboutPanel({ language, isAdmin = false }) {
   const t = (vi, en) => (language === 'vi' ? vi : en);
   const [data, setData] = useState({ curriculum: null, rag: null, server: null });
   const [errors, setErrors] = useState({});
@@ -84,7 +84,14 @@ export default function AboutPanel({ language }) {
           ) : loading}
 
           <dt>{t('Kho tài liệu', 'Documents')}</dt>
-          {errors.rag ? unavailable : rag ? (
+          {errors.rag ? unavailable : rag?.vector_store?.error ? (
+            <dd className="settings-status is-error">
+              {t(
+                `${rag.total_documents} văn bản; chỉ mục tìm kiếm lỗi, cần lập chỉ mục lại`,
+                `${rag.total_documents} documents; search index is broken and needs re-indexing`,
+              )}
+            </dd>
+          ) : rag ? (
             <dd>
               {t(
                 `${rag.total_documents} văn bản đã kiểm chứng, ${rag.vector_store?.total_chunks ?? 0} đoạn`,
@@ -112,6 +119,7 @@ export default function AboutPanel({ language }) {
         )}
       </section>
 
+      {isAdmin && (
       <details className="settings-advanced">
         <summary>{t('Nâng cao (dành cho quản trị)', 'Advanced (administrators)')}</summary>
         <p className="settings-hint">
@@ -136,6 +144,7 @@ export default function AboutPanel({ language }) {
           )}
         </div>
       </details>
+      )}
     </div>
   );
 }

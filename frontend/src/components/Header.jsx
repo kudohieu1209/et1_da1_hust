@@ -70,11 +70,13 @@ export default function Header({ studentProfile, auditData, activeTab, setActive
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ fontSize: '0.88rem', fontWeight: '700', color: 'var(--text-primary)' }}>
-                {studentInfo.student_name || 'Mai Duy Hiếu'}
+                {studentInfo.student_name || 'Sinh viên'}
               </span>
-              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                ({studentInfo.student_id || '20220001'})
-              </span>
+              {studentInfo.student_id && (
+                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                  ({studentInfo.student_id})
+                </span>
+              )}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '2px', fontSize: '0.78rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>

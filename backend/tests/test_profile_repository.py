@@ -17,7 +17,7 @@ class ProfileRepositoryContract:
         self.repository = self.make_repository()
 
     def test_saved_profile_round_trips_exactly(self):
-        profile = _profile("20220001", "Mai Duy Hiếu")
+        profile = _profile("20220001", "Nguyễn Văn A")
         self.repository.save("20220001", profile)
         self.assertEqual(self.repository.get("20220001"), profile)
 

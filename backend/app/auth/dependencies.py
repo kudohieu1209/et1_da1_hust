@@ -4,17 +4,25 @@
 context của request, và endpoint đồng bộ (chạy trong threadpool) nhận bản
 sao context đó, nên mọi engine đọc ``data_loader`` đều thấy đúng hồ sơ.
 """
+from datetime import datetime, timedelta, timezone
 from typing import AsyncIterator
 
 from fastapi import Depends, HTTPException, Request
 from starlette.concurrency import run_in_threadpool
 
 from app.auth import runtime
+from app.auth.service import SlidingWindowLimiter
 from app.core.config import SESSION_COOKIE_NAME
 from app.services.curriculum_repository import CurriculumNotFoundError
 from app.services.data_loader import data_loader
 
 UNAUTHENTICATED = "Bạn cần đăng nhập để tiếp tục."
+# Mỗi câu hỏi chat/RAG có thể gọi Gemini (tốn quota) nên giới hạn theo tài khoản.
+LLM_WINDOW = timedelta(minutes=1)
+LLM_MAX_REQUESTS = 20
+LLM_RATE_LIMITED = "Bạn gửi câu hỏi quá nhanh. Vui lòng đợi {seconds} giây rồi thử lại."
+
+llm_limiter = SlidingWindowLimiter(LLM_WINDOW, LLM_MAX_REQUESTS)
 
 
 async def current_student(request: Request) -> str:
@@ -29,6 +37,17 @@ async def current_admin(student_id: str = Depends(current_student)) -> str:
     user = await run_in_threadpool(runtime.auth_service.get_user, student_id)
     if not user or not user["is_admin"]:
         raise HTTPException(status_code=403, detail="Chức năng này chỉ dành cho quản trị viên.")
+    return student_id
+
+
+async def llm_rate_limit(student_id: str = Depends(current_student)) -> str:
+    wait = llm_limiter.hit(student_id, datetime.now(timezone.utc))
+    if wait is not None:
+        raise HTTPException(
+            status_code=429,
+            detail=LLM_RATE_LIMITED.format(seconds=wait),
+            headers={"Retry-After": str(wait)},
+        )
     return student_id
 
 

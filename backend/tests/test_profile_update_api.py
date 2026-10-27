@@ -34,10 +34,10 @@ class ProfileUpdateApiTests(unittest.TestCase):
         self.addCleanup(patcher.stop)
 
     def test_accepts_display_fields_and_passes_only_provided_ones(self):
-        response = self.client.post(ENDPOINT, json={"student_name": "  Mai Duy Hiếu  ", "avatar_url": TINY_PNG})
+        response = self.client.post(ENDPOINT, json={"student_name": "  Nguyễn Văn A  ", "avatar_url": TINY_PNG})
 
         self.assertEqual(response.status_code, 200, response.text)
-        self.update_profile.assert_called_once_with({"student_name": "Mai Duy Hiếu", "avatar_url": TINY_PNG}, "20220001")
+        self.update_profile.assert_called_once_with({"student_name": "Nguyễn Văn A", "avatar_url": TINY_PNG}, "20220001")
 
     def test_empty_avatar_url_clears_uploaded_photo(self):
         response = self.client.post(ENDPOINT, json={"avatar_url": ""})

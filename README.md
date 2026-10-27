@@ -1,7 +1,7 @@
 # HUST Course Advisor & Degree Audit Engine
 
 > **Đồ án 1 (HUST - 2026.1):** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên Đại học Bách Khoa Hà Nội. Bản thử nghiệm hiện hỗ trợ CTĐT ET1–2022 và ET1–2023.  
-> **Sinh viên thực hiện:** Mai Duy Hiếu - MSSV: 20220001  
+> **Sinh viên thực hiện:** Mai Duy Hiếu  
 
 ---
 

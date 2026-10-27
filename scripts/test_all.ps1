@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 $repoDirectory = Split-Path -Parent $PSScriptRoot
 $backendDirectory = Join-Path $repoDirectory 'project/backend'
 $frontendDirectory = Join-Path $repoDirectory 'project/frontend'

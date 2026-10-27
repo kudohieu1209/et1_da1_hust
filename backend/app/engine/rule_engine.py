@@ -43,7 +43,7 @@ class RuleEngine:
                 "course_name": course_code,
                 "is_eligible": False,
                 "status": "NOT_FOUND",
-                "reasons": [f"Không tìm thấy môn học {course_code} trong cơ sở dữ liệu CTĐT ET1."],
+                "reasons": [f"Không tìm thấy môn học {course_code} trong chương trình đào tạo của bạn."],
                 "missing_prerequisites": [],
                 "missing_prior_courses": [],
                 "missing_alternative_branches": []

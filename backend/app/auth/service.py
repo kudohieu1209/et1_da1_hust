@@ -73,7 +73,7 @@ def _utcnow() -> datetime:
     return datetime.now(timezone.utc)
 
 
-class _SlidingWindowLimiter:
+class SlidingWindowLimiter:
     def __init__(self, window: timedelta, max_events: int):
         self.window = window
         self.max_events = max_events
@@ -119,10 +119,10 @@ class AuthService:
         self.store = store
         self.profiles = profiles
         self.clock = clock
-        self._ip_limiter = _SlidingWindowLimiter(IP_WINDOW, IP_MAX_ATTEMPTS)
-        self._pair_failures = _SlidingWindowLimiter(LOCK_DURATION, PER_IP_FAILURE_LIMIT)
-        self._register_limiter = _SlidingWindowLimiter(REGISTER_WINDOW, REGISTER_MAX_PER_IP)
-        self._password_change_failures = _SlidingWindowLimiter(LOCK_DURATION, PASSWORD_CHANGE_FAILURE_LIMIT)
+        self._ip_limiter = SlidingWindowLimiter(IP_WINDOW, IP_MAX_ATTEMPTS)
+        self._pair_failures = SlidingWindowLimiter(LOCK_DURATION, PER_IP_FAILURE_LIMIT)
+        self._register_limiter = SlidingWindowLimiter(REGISTER_WINDOW, REGISTER_MAX_PER_IP)
+        self._password_change_failures = SlidingWindowLimiter(LOCK_DURATION, PASSWORD_CHANGE_FAILURE_LIMIT)
 
     # --- Phiên ---------------------------------------------------------
     def _start_session(self, student_id: str) -> str:

@@ -542,11 +542,13 @@ class ChatbotService:
                 student_profile = data_loader.get_student_profile()
                 check_res = rule_engine.check_eligibility(code, student_profile)
                 c_name = check_res.get("course_name", "")
-                
+                profile_id = student_profile.get("info", {}).get("student_id")
+                header = f"Đối chiếu hồ sơ cá nhân (MSSV {profile_id})" if profile_id else "Đối chiếu hồ sơ cá nhân"
+
                 if check_res["status"] == "ALREADY_PASSED":
-                    elig_note = f"\n\n---\n👤 **Đối chiếu hồ sơ cá nhân (MSSV {student_profile.get('info', {}).get('student_id', '20220001')}):**\n⭐ Bạn đã hoàn thành môn học này ({code} - {c_name})."
+                    elig_note = f"\n\n---\n👤 **{header}:**\n⭐ Bạn đã hoàn thành môn học này ({code} - {c_name})."
                 elif check_res["is_eligible"]:
-                    elig_note = f"\n\n---\n👤 **Đối chiếu hồ sơ cá nhân (MSSV {student_profile.get('info', {}).get('student_id', '20220001')}):**\n✅ **Bạn đã ĐỦ ĐIỀU KIỆN** để đăng ký học môn `{code}` ({c_name}) trong kỳ tới!"
+                    elig_note = f"\n\n---\n👤 **{header}:**\n✅ **Bạn đã ĐỦ ĐIỀU KIỆN** để đăng ký học môn `{code}` ({c_name}) trong kỳ tới!"
                 else:
                     alternatives = check_res.get("missing_alternative_branches", [])
                     if alternatives:
@@ -557,7 +559,7 @@ class ChatbotService:
                         )
                     else:
                         reason_text = "; ".join(check_res.get("reasons", []))
-                    elig_note = f"\n\n---\n👤 **Đối chiếu hồ sơ cá nhân (MSSV {student_profile.get('info', {}).get('student_id', '20220001')}):**\n⚠️ **Hiện tại bạn CHƯA ĐỦ ĐIỀU KIỆN** đăng ký môn `{code}`: {reason_text}."
+                    elig_note = f"\n\n---\n👤 **{header}:**\n⚠️ **Hiện tại bạn CHƯA ĐỦ ĐIỀU KIỆN** đăng ký môn `{code}`: {reason_text}."
                 reply += elig_note
             except Exception as e:
                 print(f"[ChatbotService] Lỗi đối chiếu điều kiện môn học: {e}")

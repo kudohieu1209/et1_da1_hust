@@ -2,7 +2,7 @@ import os
 from typing import List, Dict, Any, Optional
 from google import genai
 from google.genai import types
-from app.core.config import GEMINI_API_KEY, GEMINI_MODEL, GEMINI_FALLBACK_MODEL
+from app.core.config import GEMINI_API_KEY, GEMINI_MODEL, GEMINI_FALLBACK_MODEL, GEMINI_TIMEOUT_SECONDS
 
 HUST_SYSTEM_PROMPT = """Bạn là Trợ lý Cố vấn Học tập & Đào tạo của Đại học Bách khoa Hà Nội.
 Nhiệm vụ của bạn là giải thích quy chế, chính sách sinh viên và chương trình đào tạo dựa trên dữ liệu được cung cấp. Hiện hệ thống có dữ liệu cấu trúc ET1–2022 và ET1–2023; khi câu hỏi thuộc ngành hoặc phiên bản chưa có dữ liệu, phải nói rõ giới hạn này thay vì suy đoán.
@@ -57,7 +57,11 @@ class GeminiService:
         key = self.api_key or os.getenv("GEMINI_API_KEY", "")
         if key:
             try:
-                self.client = genai.Client(api_key=key)
+                self.client = genai.Client(
+                    api_key=key,
+                    # HttpOptions.timeout tính bằng mili giây.
+                    http_options=types.HttpOptions(timeout=int(GEMINI_TIMEOUT_SECONDS * 1000)),
+                )
                 print(f"[GeminiService] Khởi tạo Gemini Client thành công với model {self.model_name}.")
             except Exception as e:
                 print(f"[GeminiService] Lỗi khởi tạo Gemini Client: {e}")

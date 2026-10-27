@@ -1,15 +1,15 @@
 from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
 from app.rag.rag_engine import rag_engine
 from app.rag.gemini_service import gemini_service
-from app.auth.dependencies import current_admin, current_student
+from app.auth.dependencies import current_admin, llm_rate_limit
 
 router = APIRouter(prefix="/api/rag", tags=["RAG & AI Engine"])
 
 class RAGQueryRequest(BaseModel):
     query: str
-    k: Optional[int] = 4
+    k: Optional[int] = Field(default=4, ge=1, le=10)
 
 class ConfigKeyRequest(BaseModel):
     api_key: str
@@ -25,7 +25,7 @@ def sync_knowledge_base(force: Optional[bool] = False):
     result = rag_engine.sync_knowledge_base(force=force)
     return result
 
-@router.post("/query", dependencies=[Depends(current_student)])
+@router.post("/query", dependencies=[Depends(llm_rate_limit)])
 def query_rag(req: RAGQueryRequest):
     """Truy vấn trực tiếp kiến thức quy chế qua RAG + Gemini"""
     if not req.query.strip():

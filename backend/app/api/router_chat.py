@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException
-from app.auth.dependencies import current_student, student_scope
+from app.auth.dependencies import current_student, llm_rate_limit, student_scope
 from app.services.chatbot_service import chatbot_service
 from app.models.schemas import ChatRequest, ChatResponse
 from app.services.conversation_service import ConversationNotFoundError, conversation_service
@@ -9,7 +9,7 @@ from app.services.data_loader import data_loader
 # Trả lời theo hồ sơ của sinh viên đang đăng nhập (scope mở bởi student_scope).
 router = APIRouter(prefix="/api/chat", tags=["Chatbot Agent"], dependencies=[Depends(student_scope)])
 
-@router.post("", response_model=ChatResponse)
+@router.post("", response_model=ChatResponse, dependencies=[Depends(llm_rate_limit)])
 def chat_with_bot(req: ChatRequest, student_id: str = Depends(current_student)):
     """
     Endpoint tương tác với Chatbot tư vấn chọn môn học HUST:
