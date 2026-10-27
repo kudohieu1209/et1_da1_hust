@@ -27,7 +27,7 @@ graph TD
     User([Sinh viên HUST]) <--> UI[Frontend: React 19 + CSS Dashboard]
     UI <--> API[FastAPI Gateway RESTful API]
     
-    subgraph Backend_Core [Hệ thống Xử lý Trung tâm (Backend)]
+    subgraph Backend_Core ["Hệ thống Xử lý Trung tâm (Backend)"]
         API <--> Router[Intent Classifier & Course Entity Extractor]
         
         Router -->|Câu hỏi quy chế / Đề cương| RAG[RAG Pipeline]
@@ -39,9 +39,9 @@ graph TD
         RAG <--> Gemini[Google Gemini LLM / Flash]
         
         Rule <--> CurriculumDB[(Dữ liệu CTĐT & điều kiện)]
-        Rule <--> StudentData[(Hồ sơ sinh viên: Điểm, CPA, Cảnh cáo)]
+        Rule <--> StudentData[("Hồ sơ sinh viên: Điểm, CPA, Cảnh cáo")]
         Rec <--> CurriculumDB
-        API <--> ChatDB[(MongoDB: users, sessions, profiles, conversations, memory)]
+        API <--> ChatDB[("MongoDB: users, sessions, profiles, conversations, memory")]
     end
 ```
 
@@ -57,7 +57,7 @@ graph TD
 - **MongoDB là kho nghiệp vụ duy nhất**: `users`, `sessions`, `student_profiles`, `conversations`, `messages`, `student_memory` và bộ đếm `counters`. Backend bắt buộc có `MONGODB_URI`; không còn nhánh SQLite hay ghi hồ sơ JSON. CTĐT và tài liệu nguồn vẫn là dataset có phiên bản. ChromaDB chỉ phục vụ RAG; file SQLite nội bộ của Chroma được giữ nguyên.
 - Hội thoại dùng context từ 12 tin nhắn gần nhất của đúng tài khoản; hiểu “môn đó cần gì?”, “nếu trượt thì sao?”, yêu cầu làm rõ khi có nhiều môn. Lịch sử client gửi lên không được dùng để thiết lập context.
 - **Cài đặt → Ghi nhớ học tập**: tự chọn bật/tắt, sửa hoặc xóa định hướng, tải tín chỉ mong muốn và mục tiêu CPA. Mặc định tắt; chatbot không tự trích xuất mục tiêu từ tin nhắn. Gợi ý môn dùng định hướng/tín chỉ đã lưu, ưu tiên lựa chọn trong câu hỏi và luôn áp giới hạn học vụ. CPA hiện được lưu và nhắc lại, chưa có bộ mô phỏng điểm theo mục tiêu cá nhân.
-- Kho RAG tin cậy hiện gồm 5 tài liệu: CTĐT ET1–2022, ET1–2023, Quy chế đào tạo theo Quyết định 5445/QĐ-ĐHBK, Sổ tay sinh viên 2026 và Quyết định học phí 2025–2026. Chỉ tài liệu có metadata `rag_status: VERIFIED` mới được lập chỉ mục; PDF cần sidecar `<tên-file>.pdf.metadata.json` có trạng thái tương ứng. Kho được đồng bộ lại khi khởi động để loại nguồn đã thu hồi phê duyệt.
+- Kho RAG tin cậy hiện gồm 14 tài liệu: CTĐT ET1–2022, ET1–2023, Quy chế đào tạo theo Quyết định 5445/QĐ-ĐHBK, Sổ tay sinh viên 2026, Quyết định học phí 2025–2026 và 2026–2027, Kế hoạch năm học 2026–2027, Quy chế công tác sinh viên, Quy định đánh giá rèn luyện, Quy định chuẩn ngoại ngữ K70 và K71, Quy định miễn giảm học phí, Quy định học bổng Trần Đại Nghĩa và học bổng trao đổi. Các văn bản quy chế, học phí, học bổng áp dụng cho sinh viên mọi ngành; chỉ phần CTĐT là riêng ET1. Chỉ tài liệu có metadata `rag_status: VERIFIED` mới được lập chỉ mục; PDF cần sidecar `<tên-file>.pdf.metadata.json` có trạng thái tương ứng. Kho được đồng bộ lại khi khởi động để loại nguồn đã thu hồi phê duyệt.
 - Sinh viên đăng nhập bằng **MSSV + mật khẩu** (tự đăng ký); phiên nằm trong cookie HttpOnly, mỗi người chỉ thấy hồ sơ, bảng điểm và hội thoại của mình. Bản bàn giao chạy local; chưa nghiệm thu triển khai Internet/HTTPS hay quản trị người dùng đầy đủ.
 
 ### Chuẩn bị trên máy mới
