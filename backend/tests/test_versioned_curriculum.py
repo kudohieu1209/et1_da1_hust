@@ -1,4 +1,6 @@
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -10,6 +12,7 @@ from app.engine.rule_engine import rule_engine
 from app.services.chatbot_service import chatbot_service
 from app.services.curriculum_repository import (
     CurriculumNotFoundError,
+    CurriculumRepository,
     curriculum_repository,
 )
 from app.services.data_loader import data_loader
@@ -125,6 +128,41 @@ class VersionedCurriculumTests(unittest.TestCase):
         recommendation = course_recommender.recommend(target_track="MOD6", max_credits=20)
         self.assertEqual(recommendation["target_track"], "MOD6")
         self.assertIn("Mô đun 6", recommendation["track_name"])
+
+
+
+def _write_dataset(folder: Path, name: str, version: str, cohorts: list[str] | None) -> None:
+    data = {"program": {"program_id": "BF1", "program_code": "BF1", "curriculum_version": version}, "courses": []}
+    if cohorts:
+        data["applies_to_cohorts"] = cohorts
+    (folder / name).write_text(json.dumps(data), encoding="utf-8")
+
+
+class CohortLookupTests(unittest.TestCase):
+    def test_dataset_serves_exactly_the_cohorts_it_declares(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            _write_dataset(Path(tmp), "bf1_2022.json", "2022", ["K68", "K69"])
+            repository = CurriculumRepository(Path(tmp))
+            profile = {"info": {"program_code": "BF1", "class_name": "Sinh học 01 - K69"}}
+            self.assertEqual(repository.resolve_profile(profile)["program"]["curriculum_version"], "2022")
+            profile["info"]["curriculum_version"] = "2022"
+            self.assertTrue(repository.supports_profile(profile))
+            self.assertEqual(len(repository.list_programs()), 1)
+            with self.assertRaises(CurriculumNotFoundError):
+                repository.get("BF1", "2022")  # K67 is not listed by the source
+
+    def test_two_datasets_for_one_cohort_are_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            _write_dataset(Path(tmp), "a.json", "2022", ["K68"])
+            _write_dataset(Path(tmp), "b.json", "2023", None)
+            with self.assertRaises(ValueError):
+                CurriculumRepository(Path(tmp))
+
+    def test_imported_program_resolves_for_its_cohort(self):
+        profile = {"info": {"program_code": "EE1", "class_name": "Điện 01 - K68"}}
+        curriculum = curriculum_repository.resolve_profile(profile)
+        self.assertEqual(curriculum["program"]["total_required_credits"], 132)
+        self.assertIn("chưa đối chiếu thủ công", curriculum["build_warnings"][0])
 
 
 if __name__ == "__main__":

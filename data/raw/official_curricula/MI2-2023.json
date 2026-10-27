@@ -1,0 +1,603 @@
+{
+  "admission_code": "MI2",
+  "name": "Hệ thống thông tin quản lý",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://fami.hust.edu.vn/ctdt-cu-nhan-thong-thong-tin-quan-ly-cho-cac-khoa-tu-k62/",
+  "source_title": "» CTĐT Cử nhân Hệ thống thông tin quản lý cho các khóa từ K62",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 12,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1110",
+          "name": "Những NLCB của CN Mác-Lênin I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1120",
+          "name": "Những NLCB của CN Mác-Lênin II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1050",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1130",
+          "name": "Đường lối CM của Đảng CSVN",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất (5TC)",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (bắt buộc)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (bắt buộc)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục Tự chọn thể dục 1",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng – An ninh (165 tiết)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI2020",
+          "name": "Xác suất thống kê",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PH1110",
+          "name": "Vật lý đại cương I",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1120",
+          "name": "Vật lý đại cương II",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "IT1110",
+          "name": "Tin học đại cương",
+          "credits": 4.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI3010",
+          "name": "Toán rời rạc",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI3041",
+          "name": "Giải tích số",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 47,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI2001",
+          "name": "Nhập môn HTTTQL",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI3370",
+          "name": "Hệ điều hành",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI3310",
+          "name": "Kỹ thuật lập trình",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "MI3060",
+          "name": "Cấu trúc dữ liệu và giải thuật",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "MI3090",
+          "name": "Cơ sở dữ liệu",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "MI3031",
+          "name": "Suy luận thống kê",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "MI4060",
+          "name": "Hệ thống và mạng máy tính",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "MI3130",
+          "name": "Toán kinh tế",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "MI3380",
+          "name": "Đồ án I",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "MI3120",
+          "name": "Phân tích và thiết kế hệ thống",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "MI4260",
+          "name": "An toàn HTTT",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "MI3390",
+          "name": "Đồ án II",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EM3102",
+          "name": "Kinh tế học đại cương",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3190",
+          "name": "Hành vi tổ chức",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3211",
+          "name": "Nguyên lý Marketing",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM4527",
+          "name": "Kế toán doanh nghiệp (BTL)",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM4210",
+          "name": "Khởi sự kinh doanh",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2030",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Tin học quản lý",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM3310",
+          "name": "Mô phỏng hoạt động kinh doanh",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM4430",
+          "name": "Quản trị đổi mới",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "MI4344",
+          "name": "Kiến trúc máy tính",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "MI4090",
+          "name": "Lập trình hướng đối tượng",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "MI4374",
+          "name": "Thiết kế, cài đặt và quản trị mạng",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "MI4414",
+          "name": "Quản trị dự án CNTT",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "MI4392",
+          "name": "Công nghệ Web và kinh doanh điện tử",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Khoa học dữ liệu trong kinh tế quản lý",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI4024",
+          "name": "Phân tích số liệu",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "MI4214",
+          "name": "Kho dữ liệu và kinh doanh thông minh",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "MI4216",
+          "name": "Hệ hỗ trợ quyết định",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "MI4304",
+          "name": "Hê thống phân tán",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EM4336",
+          "name": "Thương mại điện tử (BTL)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EM3417",
+          "name": "Quản trị sản xuất",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM4212",
+          "name": "Phân tích kinh doanh",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 3: Ứng dụng toán trong kinh tế",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI4050",
+          "name": "Chuỗi thời gian",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "MI4114",
+          "name": "Mô phỏng ngẫu nhiên và ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "MI4162",
+          "name": "Lập trình tính toán",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "MI4341",
+          "name": "Một số phương pháp toán học trong tài chính",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EM3519",
+          "name": "Tài chính doanh nghiệp",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM3130",
+          "name": "Kinh tế lượng",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI4800",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "MI4900",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2023 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
+    "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang None, bảng 1, dòng 13: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang None, bảng 1, dòng 14: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang None, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục Quốc phòng – An ninh (165 tiết): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Mô đun 1: Tin học quản lý: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Mô đun 2: Khoa học dữ liệu trong kinh tế quản lý: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Mô đun 3: Ứng dụng toán trong kinh tế: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Học kỳ đọc từ đúng 8 cột KỲ HỌC DỰ KIẾN của bảng HTML; ô trống hoặc không tách chắc chắn để suggested_semester=null. Không gán học kỳ từ chữ số trong mã học phần.",
+    "Trang ghi từ K62 nhưng vẫn liệt kê hệ học phần chính trị SSH1110/SSH1120 cũ; chưa có xác nhận bảng này là bản hiện hành của K68. applies_to_cohorts=null để không khẳng định chỉ từ tiêu đề chung.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

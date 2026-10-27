@@ -1,0 +1,500 @@
+{
+  "admission_code": "BF2",
+  "name": "Kỹ thuật Thực phẩm",
+  "curriculum_version": null,
+  "applies_to_cohorts": [
+    "K68",
+    "K69"
+  ],
+  "total_credits": 132,
+  "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=kt_thuc_pham_cu_nhan_ky_su_bac_7_2020.pdf",
+  "source_title": "Chương trình đào tạo Kỹ thuật Thực phẩm",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương (Scocial science and Humanities)",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin (Principles of Marxism-Leninism)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác-Lênin (Political economy of Marxism- Leninism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1051",
+          "name": "Tư tưởng Hồ Chí Minh (Ho-Chi- Minh’s Thought)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học (Science socialism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng Cộng sản Việt Nam (History of Commnist party of Vietnam)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương General Law",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (bắt buộc) Theory in sport",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (bắt buộc)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục Tự chọn thể dục 1 Elective course 1",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 Elective course 2",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 Elective course 3",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh (165 tiết) Military Education",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng Vietnam Communist Party’s Direction on the National Defense",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh Introduction to the National Defense",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) General Military Education",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I English I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh II English II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1112",
+          "name": "Giải tích I Analysis I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1122",
+          "name": "Giải tích II Analysis II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1132",
+          "name": "Giải tích III Analysis III",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1142",
+          "name": "Đại số Algebra",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI3180",
+          "name": "Xác suất thống kê và qui hoạch thực nghiệm Experimental probability- statistics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1111",
+          "name": "Vật lý đại cương I Physics I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1121",
+          "name": "Vật lý đại cương II Physics II",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1140",
+          "name": "Tin học đại cương Introduction to computer science",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1131",
+          "name": "Vật lý đại cương III Physics III",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1018",
+          "name": "Hóa học I Chemistry",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3224",
+          "name": "Hoá hữu cơ Organic chemistry",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3081",
+          "name": "Hóa lý Physical chemistry",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3082",
+          "name": "Thí nghiệm hóa lý Physical chemistry laboratory practice",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành Basic and Core of Engineering",
+      "kind": "block",
+      "required_credits": 48,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH3316",
+          "name": "Hoá phân tích Analytical chemistry",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3318",
+          "name": "Thí nghiệm hóa phân tích Experiments in analytical chemistry",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE2012",
+          "name": "Kỹ thuật điện Electrotechniques",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2015",
+          "name": "Đồ họa kỹ thuật cơ bản Descriptive geometry",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF2511",
+          "name": "Nhập môn công nghệ thực phẩm Introduction to food technology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3531",
+          "name": "Quá trình và thiết bị công nghệ thực phẩm I Process and equipment in food technology I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3532",
+          "name": "Quá trình và thiết bị công nghệ thực phẩm II Process and equipment in food technology II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3533",
+          "name": "Quá trình và thiết bị công nghệ thực phẩm III Process and equipment in food technology III",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3534",
+          "name": "Kỹ thuật đo lường và lý thuyết điều khiển tự động trong công nghệ thực phẩm Techniques for measuring and automatic control in food technology",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3525",
+          "name": "Quản lý chất lượng trong công nghiệp thực phẩm Quality management in food industry",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3536",
+          "name": "Đồ án I – Quá trình và thiết bị công nghệ thực phẩm",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3507",
+          "name": "Hoá sinh Biochemistry",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3508",
+          "name": "Thí nghiệm hóa sinh Experiments in biochemistry",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3509",
+          "name": "Vi sinh vật thực phẩm Food microbiology",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3501",
+          "name": "Thí nghiệm vi sinh vật thực phẩm Experiments in food microbiology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3522",
+          "name": "Vật lý học thực phẩm Food physics",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3513",
+          "name": "Công nghệ thực phẩm đại cương General food technology",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3524",
+          "name": "Phương pháp đánh giá chất lượng thực phẩm Analytical methods in food quality assessment",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3514",
+          "name": "Dinh dưỡng Nutrition",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF3515",
+          "name": "An toàn thực phẩm Food safety",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ Soft skills",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương Introduction to management",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng Applied psychology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật Technology and technical design thinking",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp Industrial design",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF2020",
+          "name": "Technical writing and presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Công nghệ Thực phẩm Module 1: Food Technology",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "BF4511",
+          "name": "Enzyme trong Công nghệ Thực phẩm Enzymes in Food Technology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4512",
+          "name": "Bao bì thực phẩm Food packaging",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4521",
+          "name": "Phụ gia thực phẩm Food additives",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4514",
+          "name": "Công nghệ lạnh thực phẩm Refrigeration technology for food production",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Trang trường dẫn bản chương trình cử nhân/kỹ sư cho K69 trở về trước. Bìa ghi 2020; chưa tìm thấy bản sửa đổi có niên hiệu 2023. curriculum_version=null để không trình bày đây là bản ban hành 2023.",
+    "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2023 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 13, bảng 1, dòng 2: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 13, bảng 1, dòng 3: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 13, bảng 1, dòng 4: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục Quốc phòng - An ninh (165 tiết) Military Education: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 124 TC; total_credits=132 TC; chênh lệch -8 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
+  ]
+}

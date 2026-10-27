@@ -2,6 +2,9 @@
 
 The file name is deliberately not part of the lookup contract. A curriculum is
 identified by the program metadata contained in the validated JSON itself.
+Lookup keys are (program_code, entry year of the cohort): K67 entered in 2022,
+K68 in 2023, ... A dataset that lists ``applies_to_cohorts`` serves exactly
+those cohorts; otherwise its curriculum_version is taken as the entry year.
 """
 
 from __future__ import annotations
@@ -36,11 +39,12 @@ class CurriculumRepository:
             version = str(program.get("curriculum_version", ""))
             if not code or not version or not isinstance(data.get("courses"), list):
                 raise ValueError(f"Curriculum không hợp lệ: {path}")
-            key = (code, version)
-            if key in curricula:
-                raise ValueError(f"Trùng curriculum {code}-{version}: {path}")
             data["_dataset_file"] = str(path)
-            curricula[key] = data
+            for year in self._entry_years(data, version, path):
+                key = (code, year)
+                if key in curricula:
+                    raise ValueError(f"Trùng curriculum {code} cho năm nhập học {year}: {path}")
+                curricula[key] = data
             aliases[str(program.get("program_id", "")).upper()] = code
             aliases[code] = code
         self._curricula = curricula
@@ -51,7 +55,8 @@ class CurriculumRepository:
         return sorted(self._curricula)
 
     def list_programs(self) -> list[Dict[str, Any]]:
-        return [dict(data["program"]) for data in self._curricula.values()]
+        unique = {id(data): data for data in self._curricula.values()}
+        return [dict(data["program"]) for data in unique.values()]
 
     def get(self, program: str, version: str) -> Dict[str, Any]:
         code = self._program_id_aliases.get(str(program).upper(), str(program).upper())
@@ -67,24 +72,24 @@ class CurriculumRepository:
     def resolve_profile(self, profile: Dict[str, Any]) -> Dict[str, Any]:
         info = profile.get("info", {})
         program = str(info.get("program_code") or info.get("program_id") or "").upper()
-        version = str(info.get("curriculum_version") or "")
-        inferred_version = self._infer_version(info)
-        if not version:
-            version = inferred_version or ""
-        elif inferred_version and version != inferred_version:
-            # A cohort must not silently use a different curriculum snapshot
-            # just because an old profile contains a stale explicit version.
-            raise CurriculumNotFoundError(
-                f"Hồ sơ {info.get('student_id', '')} thuộc khóa {inferred_version} "
-                f"nhưng đang trỏ tới CTĐT {version}."
-            )
+        stored_version = str(info.get("curriculum_version") or "")
+        entry_year = self._infer_version(info)
         if not program:
             raise CurriculumNotFoundError("Hồ sơ sinh viên thiếu program_code/program_id.")
-        if not version:
+        if not (entry_year or stored_version):
             raise CurriculumNotFoundError(
                 "Không xác định được phiên bản CTĐT từ hồ sơ sinh viên."
             )
-        return self.get(program, version)
+        curriculum = self.get(program, entry_year or stored_version)
+        actual_version = str(curriculum["program"]["curriculum_version"])
+        if entry_year and stored_version and stored_version != actual_version:
+            # A cohort must not silently use a different curriculum snapshot
+            # just because an old profile contains a stale explicit version.
+            raise CurriculumNotFoundError(
+                f"Hồ sơ {info.get('student_id', '')} thuộc khóa {entry_year} "
+                f"nhưng đang trỏ tới CTĐT {stored_version}."
+            )
+        return curriculum
 
     def supports_profile(self, profile: Dict[str, Any]) -> bool:
         try:
@@ -92,6 +97,16 @@ class CurriculumRepository:
             return True
         except CurriculumNotFoundError:
             return False
+
+    @staticmethod
+    def _entry_years(data: Dict[str, Any], version: str, path: Path) -> list[str]:
+        years = []
+        for cohort in data.get("applies_to_cohorts") or []:
+            match = re.fullmatch(r"K(\d{2})", str(cohort).strip().upper())
+            if not match:
+                raise ValueError(f"Khóa áp dụng không hợp lệ {cohort!r}: {path}")
+            years.append(str(1955 + int(match.group(1))))
+        return sorted(set(years)) or [version]
 
     @staticmethod
     def _infer_version(info: Dict[str, Any]) -> Optional[str]:

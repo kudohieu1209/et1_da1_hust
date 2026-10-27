@@ -1,0 +1,672 @@
+{
+  "admission_code": "FL3",
+  "name": "Tiếng Trung Khoa học và Công nghệ",
+  "curriculum_version": "2025",
+  "applies_to_cohorts": [
+    "K70"
+  ],
+  "total_credits": 136,
+  "source_url": "https://sofl.hust.edu.vn/nganh-fl3",
+  "source_title": "Danh mục học phần và kế hoạch học tập chuẩn — Tiếng Trung Khoa học và Công nghệ",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Đại cương 12 + LLCT/Pháp luật 13 + ngoại ngữ II 10 (chọn 1/3 Pháp, Nhật, Anh) + cơ sở/cốt lõi 71 + bổ trợ tự chọn 6 + chọn 1 trong 2 mô đun chuyên ngành 15 + thực tập/ĐATN 9 = 136 TC. Nguồn ghi tổng chưa bao gồm GDTC và GDQP.",
+  "groups": [
+    {
+      "name": "Kiến thức giáo dục đại cương",
+      "kind": "block",
+      "required_credits": 12,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT1130",
+          "name": "Introduction to Computer Science",
+          "credits": 2,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FL1320",
+          "name": "Introduction to Vietnamese Culture",
+          "credits": 2,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "ED3070",
+          "name": "Introduction to Science and Technology",
+          "credits": 2,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1330",
+          "name": "Vietnamese Language in Practice",
+          "credits": 2,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FLC1001",
+          "name": "Study and Research Methodology",
+          "credits": 2,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2002",
+          "name": "Introduction to Chinese for Science and Technology",
+          "credits": 2,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Philosophy of Marxism and Leninism",
+          "credits": 3,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Political Economics of Marxism and Leninism",
+          "credits": 2,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Scientific Socialism",
+          "credits": 2,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "History of Vietnamese Communist Party",
+          "credits": 2,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Ho Chi Minh Ideology",
+          "credits": 2,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "General Law",
+          "credits": 2,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": 0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Sports theory",
+          "credits": 1,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Elective course 1",
+          "credits": 1,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Elective course 2",
+          "credits": 1,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Elective course 3",
+          "credits": 1,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Elective course 4",
+          "credits": 1,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh",
+      "kind": "block",
+      "required_credits": 0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Vietnam Communist Party’s direction on defense and security",
+          "credits": 0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Introduction to the National Defense",
+          "credits": 0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "General Military Education",
+          "credits": 0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Infantry Cambat Techniques and Tactics",
+          "credits": 0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Ngoại ngữ II — Tiếng Pháp",
+      "kind": "module",
+      "required_credits": 10,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1421",
+          "name": "French I",
+          "credits": 3,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1422",
+          "name": "French II",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FL1423",
+          "name": "French III",
+          "credits": 2,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FL1424",
+          "name": "French IV",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Ngoại ngữ II — Tiếng Nhật",
+      "kind": "module",
+      "required_credits": 10,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1431",
+          "name": "Japanese I",
+          "credits": 3,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1432",
+          "name": "Japanese II",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FL1433",
+          "name": "Japanese III",
+          "credits": 2,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FL1434",
+          "name": "Japanese IV",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Ngoại ngữ II — Tiếng Anh",
+      "kind": "module",
+      "required_credits": 10,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1451",
+          "name": "English I",
+          "credits": 3,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1452",
+          "name": "English II",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FL1453",
+          "name": "English III",
+          "credits": 2,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FL1454",
+          "name": "English IV",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 71,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FLC1101",
+          "name": "Chinese 1A",
+          "credits": 3,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FLC1102",
+          "name": "Chinese 1B",
+          "credits": 3,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FLC1103",
+          "name": "Chinese 2A",
+          "credits": 3,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FLC1104",
+          "name": "Chinese 2B",
+          "credits": 3,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2105",
+          "name": "Chinese 3A",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2106",
+          "name": "Chinese 3B",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2201",
+          "name": "Chinese 3C",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2202",
+          "name": "Chinese 3D",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2203",
+          "name": "Chinese 4A",
+          "credits": 3,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2204",
+          "name": "Chinese 4B",
+          "credits": 3,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2205",
+          "name": "Chinese 4C",
+          "credits": 3,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2206",
+          "name": "Chinese 4D",
+          "credits": 3,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2301",
+          "name": "Chinese for Information Technology",
+          "credits": 2,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FLC2302",
+          "name": "Chinese for Electrical and Electronic Engineering",
+          "credits": 2,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3303",
+          "name": "Chinese for Materials Science",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3304",
+          "name": "Chinese for Mechanical Engineering and Automotive Engineering",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3305",
+          "name": "Chinese for Environmental and Life Sciences",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "FL1310",
+          "name": "Introduction to Linguistics",
+          "credits": 2,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3401",
+          "name": "Lexicology and Syntax",
+          "credits": 3,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3402",
+          "name": "Introduction to China",
+          "credits": 3,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3403",
+          "name": "Research Methodology",
+          "credits": 3,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3404",
+          "name": "Theory of Translation and Interpretation",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3405",
+          "name": "Translation and Interpreting Practice",
+          "credits": 2,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3406",
+          "name": "Chinese phonetics and characters",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3407",
+          "name": "Chinese Literature",
+          "credits": 2,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3408",
+          "name": "Chinese Teaching Methodology",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4409",
+          "name": "Vietnamese-Chinese Contrastive Linguistics",
+          "credits": 2,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL3571",
+          "name": "Communication Skills",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLC1501",
+          "name": "Critical Thinking",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3502",
+          "name": "The Use of AI in Language Teaching, Translation and Interpreting",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3503",
+          "name": "Chinese for Journalism and Communication",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4504",
+          "name": "Project Management in Science and Technology",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4505",
+          "name": "Chinese for Economics and Business",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FLC3601",
+          "name": "Translation and Interpretation Profession",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3602",
+          "name": "Translation Technology",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4603",
+          "name": "Management of Digital Translation Projects",
+          "credits": 3,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4604",
+          "name": "Scientific and Technical Translation",
+          "credits": 3,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4605",
+          "name": "Scientific and Technical Interpreting",
+          "credits": 3,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FLC3701",
+          "name": "Theory and Methods of Teaching",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "FLC3702",
+          "name": "Lesson Design Skills and Development of Learning Materials",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4703",
+          "name": "Assessment and Evaluation",
+          "credits": 3,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4704",
+          "name": "Use of Technology in Teaching",
+          "credits": 3,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4705",
+          "name": "Practical Teaching of Chinese for Science and Technology",
+          "credits": 3,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập và Đồ án tốt nghiệp",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FLC4801",
+          "name": "Work placement",
+          "credits": 3,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "FLC4802",
+          "name": "Graduation Project",
+          "credits": 6,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Đối chiếu trực quan sáu ảnh bảng học phần trên trang khoa; dùng tên tiếng Anh được in trong cùng ô, không tự dịch.",
+    "FL3 bắt đầu tuyển sinh năm 2025/K70 theo thông tin chính thức tại https://sofl.hust.edu.vn/tai-sao-chon-sofl và bài https://hust.edu.vn/vi/news/hoat-dong-chung/sau-nam-dau-gay-sot-nganh-fl3-bach-khoa-ha-noi-tiep-tuc-hut-thi-sinh-vi-dieu-gi-655894.html . Không có CTĐT FL3 cho K68/2023; phiên bản 2025 được định danh theo khóa tuyển đầu tiên, ảnh không có ngày ban hành riêng.",
+    "GDTC tiêu đề khối ghi 0 TC nhưng các học phần bên trong ghi 1 TC; giữ cả hai mức của nguồn, counts_toward_degree=false. Không đổi required_credits thành 5.",
+    "Ngoại ngữ II là phần chuyên môn của chương trình ngôn ngữ và tính tốt nghiệp; chỉ chọn một trong ba ngoại ngữ.",
+    "Các lựa chọn GDTC không có mã: code=null. Kỳ học của GDTC và bổ trợ không ghi: suggested_semester=null. compulsory=null khi nguồn không đánh dấu trực tiếp.",
+    "MIL1240 dùng tên tiếng Anh có chữ Cambat đúng cách in trong ảnh; không tự sửa tên nguồn.",
+    "Ảnh nguồn: https://sofl.hust.edu.vn/documents/20242/329261/00+Danh+m%E1%BB%A5c+h%E1%BB%8Dc+ph%E1%BA%A7n+v%C3%A0+k%E1%BA%BF+ho%E1%BA%A1ch+h%E1%BB%8Dc+t%E1%BA%ADp+chu%E1%BA%A9n+p1_page-0001.jpg/668d74fb-360b-47d5-861f-e776cbd15ab9?t=1752562341835",
+    "Ảnh nguồn: https://sofl.hust.edu.vn/documents/20242/329261/02.+Quy%E1%BA%BFt+%C4%91%E1%BB%8Bnh+ph%C3%AA+duy%E1%BB%87t+Khung+CT%C4%90T_Ti%E1%BA%BFng+Trung+KH-CN%281%29_page-0004.jpg/9a5383b4-300b-4c36-86ea-8a0632ee0782?t=1752561178247",
+    "Ảnh nguồn: https://sofl.hust.edu.vn/documents/20242/329261/3.+Quy%E1%BA%BFt+%C4%91%E1%BB%8Bnh+ph%C3%AA+duy%E1%BB%87t+Khung+CT%C4%90T_Ti%E1%BA%BFng+Trung+KH-CN%281%29_page-0005.jpg/a6b0686a-d9f8-4210-bcf5-d79864ffc8b4?t=1752561194330",
+    "Ảnh nguồn: https://sofl.hust.edu.vn/documents/20242/329261/04.+Quy%E1%BA%BFt+%C4%91%E1%BB%8Bnh+ph%C3%AA+duy%E1%BB%87t+Khung+CT%C4%90T_Ti%E1%BA%BFng+Trung+KH-CN%281%29_page-0006.jpg/25f31462-8b44-4749-b05c-cc5f5c7b5bcd?t=1752561608695",
+    "Ảnh nguồn: https://sofl.hust.edu.vn/documents/20242/329261/05.+Quy%E1%BA%BFt+%C4%91%E1%BB%8Bnh+ph%C3%AA+duy%E1%BB%87t+Khung+CT%C4%90T_Ti%E1%BA%BFng+Trung+KH-CN%281%29_page-0007.jpg/d24bb509-ddd8-4630-a2d5-b40c01a9781e?t=1752561220218",
+    "Ảnh nguồn: https://sofl.hust.edu.vn/documents/20242/329261/6.Quy%E1%BA%BFt+%C4%91%E1%BB%8Bnh+ph%C3%AA+duy%E1%BB%87t+Khung+CT%C4%90T_Ti%E1%BA%BFng+Trung+KH-CN%281%29_page-0008.jpg/07cdd8b2-04ea-4a43-89f6-5fa6dda48ee5?t=1752561233752",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 136 TC; total_credits=136 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

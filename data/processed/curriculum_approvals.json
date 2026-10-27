@@ -12,6 +12,66 @@
         "79/79 học phần khớp snapshot danh mục CTT; 29 chuỗi điều kiện được giữ nguyên và parse theo slash=OR, comma=AND.",
         "Công thức được suy ra từ các ngưỡng khối kiến thức và lựa chọn một trong năm mô-đun; riêng khối Thực tập & tốt nghiệp giữ ngưỡng công bố 8 TC."
       ]
+    },
+    {
+      "candidate_id": "BF1-2022",
+      "status": "approved",
+      "approved_by": "automatic-checks",
+      "output_file": "data/processed/curricula/bf1_2022.json",
+      "notes": [
+        "Kiểm tra tự động, chưa đối chiếu thủ công.",
+        "78 học phần khớp danh mục CTT; tổng ngưỡng các khối bằng 132 TC công bố."
+      ]
+    },
+    {
+      "candidate_id": "EE1-2023",
+      "status": "approved",
+      "approved_by": "automatic-checks",
+      "output_file": "data/processed/curricula/ee1_2023.json",
+      "notes": [
+        "Kiểm tra tự động, chưa đối chiếu thủ công.",
+        "75 học phần khớp danh mục CTT; tổng ngưỡng các khối bằng 132 TC công bố."
+      ]
+    },
+    {
+      "candidate_id": "EE2-2023",
+      "status": "approved",
+      "approved_by": "automatic-checks",
+      "output_file": "data/processed/curricula/ee2_2023.json",
+      "notes": [
+        "Kiểm tra tự động, chưa đối chiếu thủ công.",
+        "71 học phần khớp danh mục CTT; tổng ngưỡng các khối bằng 132 TC công bố."
+      ]
+    },
+    {
+      "candidate_id": "ET2-2023",
+      "status": "approved",
+      "approved_by": "automatic-checks",
+      "output_file": "data/processed/curricula/et2_2023.json",
+      "notes": [
+        "Kiểm tra tự động, chưa đối chiếu thủ công.",
+        "81 học phần khớp danh mục CTT; tổng ngưỡng các khối bằng 132 TC công bố."
+      ]
+    },
+    {
+      "candidate_id": "EV2-2022",
+      "status": "approved",
+      "approved_by": "automatic-checks",
+      "output_file": "data/processed/curricula/ev2_2022.json",
+      "notes": [
+        "Kiểm tra tự động, chưa đối chiếu thủ công.",
+        "69 học phần khớp danh mục CTT; tổng ngưỡng các khối bằng 132 TC công bố."
+      ]
+    },
+    {
+      "candidate_id": "FL2-2022",
+      "status": "approved",
+      "approved_by": "automatic-checks",
+      "output_file": "data/processed/curricula/fl2_2022.json",
+      "notes": [
+        "Kiểm tra tự động, chưa đối chiếu thủ công.",
+        "56 học phần khớp danh mục CTT; tổng ngưỡng các khối bằng 131 TC công bố."
+      ]
     }
   ]
 }

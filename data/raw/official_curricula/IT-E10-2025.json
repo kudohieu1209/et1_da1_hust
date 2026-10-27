@@ -1,0 +1,83 @@
+{
+  "admission_code": "IT-E10",
+  "name": "Khoa học Dữ liệu và Trí tuệ Nhân tạo",
+  "curriculum_version": "2025",
+  "applies_to_cohorts": null,
+  "total_credits": 132,
+  "source_url": "https://soict.hust.edu.vn/wp-content/uploads/Thông-tin-chương-trình-DS-AI_2025_vn.pdf",
+  "source_title": "Thông tin tổng quan chương trình đào tạo cử nhân Khoa học dữ liệu",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Tổng các khối 132 TC; bổ trợ gồm 6 TC xã hội/khởi nghiệp/kỹ năng và 3 TC Technical Writing and Presentation. Nguồn ghi tiếng Anh tích lũy 6 TC và có miễn học theo chứng chỉ; thực tập từ trình độ năm thứ ba.",
+  "groups": [
+    {
+      "name": "Toán và khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Lý luận chính trị - Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Giáo dục thể chất / Giáo dục quốc phòng an ninh",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": []
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 49,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Kiến thức chuyên ngành",
+      "kind": "block",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Thực tập kỹ thuật",
+      "kind": "block",
+      "required_credits": 2,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Đồ án tốt nghiệp cử nhân",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": []
+    }
+  ],
+  "notes": [
+    "CHƯA ĐẦY ĐỦ DANH MỤC HỌC PHẦN: PDF một trang chỉ có cấu trúc chung và ví dụ nội dung, không có bảng mã/TC từng học phần; giữ courses=[] ở các khối, không điền từ bộ môn/khóa khác.",
+    "Tên tệp DS-AI_2025_vn.pdf xác định phiên bản tổng quan 2025; không ghi khóa áp dụng nên applies_to_cohorts=null.",
+    "Tiếng Anh có câu được tính tích lũy 6 tín chỉ nên counts_toward_degree=true theo nguồn này.",
+    "GDTC/GDQP không ghi số TC tối thiểu bằng tín chỉ nên required_credits=null; các khối còn lại cộng 132 TC.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

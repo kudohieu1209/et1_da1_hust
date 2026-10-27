@@ -1,0 +1,926 @@
+{
+  "admission_code": "TX1",
+  "name": "Công nghệ Dệt May",
+  "curriculum_version": null,
+  "applies_to_cohorts": [
+    "K68"
+  ],
+  "total_credits": null,
+  "source_url": "https://bktextile.hust.edu.vn/documents/71926/0/Khung+CT%C4%90T/74967b23-496a-4b62-8de4-85e3e0f10801",
+  "source_title": "Chương trình đào tạo Công nghệ Dệt May",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác- Lênin (Philosophy of Marxism and Leninism)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế- chính trị Mác- Lênin (Political Economics of Marxism and Leninism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học (Scientific Socialism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng CSVN",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh (Ho-Chi-Minh Thought)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (General Law)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất (Physical Education)",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Theory in Sport)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (Swimming)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục (Elective courses) Tự chọn thể dục 1 (Elective course 1)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 (Elective course 2)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 (Elective course 3)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "QS chung (General Military Education)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh (English)",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1131",
+          "name": "Tiếng Anh cơ sở 1 (General English 1)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1132",
+          "name": "Tiếng Anh cơ sở 2 (General English 2)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1112",
+          "name": "Giải tích I (Analysis I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1122",
+          "name": "Giải tích II (Analysis II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1132",
+          "name": "Giải tích III (Analysis III)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1142",
+          "name": "Đại số (Algebra)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2021",
+          "name": "Xác suất thống kê (Probability and Statistics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2010",
+          "name": "Phương pháp tính (Numerical Methods)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1111",
+          "name": "Vật lý đại cương I (Physics I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1121",
+          "name": "Vật lý đại cương II (Physics II)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1131",
+          "name": "Vật lý đại cương III (Physics III)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1140",
+          "name": "Tin học đại cương (Introduction to Computer Science)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1017",
+          "name": "Hóa học (Chemistry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3223",
+          "name": "Hóa hữu cơ (Organic Chemistry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "kind": "block",
+      "required_credits": 47,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE2012",
+          "name": "Kỹ thuật điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2015",
+          "name": "Đồ họa kỹ thuật cơ bản",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE2012",
+          "name": "Kỹ thuật nhiệt",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3211",
+          "name": "Nguyên lý máy",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX2001",
+          "name": "Nhập môn kỹ thuật dệt may (Introduction to textile and clothing technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3090",
+          "name": "Cơ sở mỹ thuật sản phẩm dệt may (Basic aesthetic principles for textile and garment product)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3180",
+          "name": "Cấu trúc sợi vải (Structure of yarn and fabric)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3140",
+          "name": "Tiếng Anh chuyên ngành dệt may (Technical English for textile and clothing)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3150",
+          "name": "Vật liệu dệt may (Textile and garment materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3060",
+          "name": "Thực hành kiểm tra và phân tích vật liệu dệt may (Physical testing of textile)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3101",
+          "name": "Đồ án thiết kế (Design project)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3030",
+          "name": "Marketing dệt may (Textile marketing)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3161",
+          "name": "Thực hành sợi, vải (Yarn and fabric practice)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3143",
+          "name": "Cơ sở xử lý hoá học sản phẩm dệt may (Introduction of textile chemical processing)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3010",
+          "name": "Quản lý sản xuất dệt may (Product management in textile and garment industry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3131",
+          "name": "Quản lý chất lượng dệt may (Quality management in textile and garment industry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4581",
+          "name": "Công nghệ kéo sợi xơ ngắn (Short staple spinning technology )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4591",
+          "name": "Công nghệ dệt kim cơ bản (Fundamentals in knitting technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4601",
+          "name": "Công nghệ dệt thoi 1 (Weaving technology 1)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4503",
+          "name": "Khoa học màu sắc (Science of colour)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3070",
+          "name": "An toàn lao động và môi trường dệt may (Labor safety and environment protection in textile and garment industry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4432",
+          "name": "Hệ thống công nghệ quá trình may (Technological systems of sewing process)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4352",
+          "name": "Thực hành may cơ bản (Basic sewing practice)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4372",
+          "name": "Thực hành may nâng cao (Advanced sewing practice)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4502",
+          "name": "Công nghệ gia công sản phẩm may (Technology of clothing fabrication)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4382",
+          "name": "Thiết kế trang phục (Clothing design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4462",
+          "name": "Thực hành thiết kế trang phục (Clothing design practice)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ (Soft skills)",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and technical design thinking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX2020",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Công nghệ sản xuất sản phẩm dệt (Module 1: Textile production technology)",
+      "kind": "module",
+      "required_credits": 18,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "TEX4471",
+          "name": "Công nghệ không dệt (Nonwoven Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4611",
+          "name": "Công nghệ dệt thoi 2 (Weaving technology 2)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4451",
+          "name": "Kỹ thuật dệt kim hoa (Pattern knitting techniques)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4621",
+          "name": "Công nghệ kéo sợi xơ dài (Long staple spinning technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4631",
+          "name": "Thiết kế dây chuyền sợi dệt (Design of textile technological line)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4551",
+          "name": "Thực hành dệt 1 (Textile practice 1)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4641",
+          "name": "Cấu trúc sợi (Yarn structure)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3081",
+          "name": "Cấu trúc vải dệt thoi (Woven fabric structure)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3091",
+          "name": "Cấu trúc vải dệt kim (Knitted fabric structure)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4900",
+          "name": "Thực tập kỹ thuật (Bachelor Internship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4910",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Công nghệ may (Modul 2: Clothing technology)",
+      "kind": "module",
+      "required_credits": 18,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "TEX4332",
+          "name": "Thiết bị may công nghiệp (Industrial garment equipments)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4442",
+          "name": "Công nghệ sản xuất sản phẩm may (Technology of clothing manufacturing)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4422",
+          "name": "Thiết kế dây chuyền may (Design of sewing line)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4002",
+          "name": "Thiết kế công nghệ quá trình sản xuất may (Technology design of garment production)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4282",
+          "name": "Thiết kế mẫu sản xuất (Production pattern making)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4272",
+          "name": "Thiết kế sản phẩm may theo đơn hàng (Applied product design in garment industry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4512",
+          "name": "Ứng dụng công nghệ thông tin trong công nghiệp may (Informatics applying in garment industry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4900",
+          "name": "Thực tập kỹ thuật (Bachelor Internship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4910",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 3: Vật liệu và Công nghệ hoàn tất sản phẩm dệt may (Modul 3: Textile material and finishing)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH3071",
+          "name": "Hóa lý (Physical chemistry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4023",
+          "name": "Hóa học thuốc nhuộm (Chemistry of dyestuff)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4463",
+          "name": "Công nghệ và thiết bị tiền xử lý sản phẩm dệt (Pretreatment process of textile materials: technologies and equipments)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4523",
+          "name": "Phân tích thành phần hoá học vật liệu dệt may (Chemical testing of textile)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4473",
+          "name": "Công nghệ và thiết bị nhuộm – in hoa sản phẩm dệt (Technology of dyeing and printing in textile)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4513",
+          "name": "Công nghệ và thiết bị hoàn tất sản phẩm dệt may (Textile finishing technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4453",
+          "name": "Thực hành công nghệ nhuộm – in hoa - hoàn tất sản phẩm dệt may (Practice of dyeing – printing and finishing technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX5253",
+          "name": "Kiểm soát chất lượng sản phẩm nhuộm và hoàn tất (Quality control in dyeing and finishing products)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4900",
+          "name": "Thực tập kỹ thuật (Bachelor Internship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4910",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 4: Thiết kế thời trang và da giầy (Modul 4: Fashion design and footwear)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "TEX4455",
+          "name": "Hình họa thời trang (Fashion sketching)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4465",
+          "name": "Thiết kế mỹ thuật trang phục (Fashion design principles)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4475",
+          "name": "Tin học ứng dụng trong thiết kế mỹ thuật trang phục (Applied informatics in fashion design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4125",
+          "name": "Tạo mẫu thời trang trên ma-nơ-canh (Fashion draping)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4445",
+          "name": "Phát triển ý tưởng thời trang (Fashion concept development)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4485",
+          "name": "Thiết kế bộ sưu tập thời trang (Fashion collection design)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4495",
+          "name": "Thiết kế và công nghệ sản xuất giầy (Footwear design and technology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4505",
+          "name": "Thiết kế và công nghệ sản phẩm da (Design and technology of leather goods)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4900",
+          "name": "Thực tập kỹ thuật (Bachelor internship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4910",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 5: Thiết kế vải dệt may (Modul 5: Textile fabric design)",
+      "kind": "module",
+      "required_credits": 18,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "TEX4016",
+          "name": "Thiết kế sản phẩm sợi (Yarn product design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4026",
+          "name": "Thiết kế vải dệt thoi đơn giản (Simple woven fabric design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4116",
+          "name": "Thiết kế sản phẩm vải dệt kim (Knitted fabric design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4106",
+          "name": "Thực hành phân tích và thiết kế vải 1 (Practice fabric analysis and design 1)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4066",
+          "name": "Nguyên lý tạo màu sản phẩm dệt may (Principles of textile coloration)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4382",
+          "name": "Thiết kế trang phục (Clothing design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4076",
+          "name": "Phát triển ý tưởng hoa văn (Fabric pattern concept development)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4086",
+          "name": "Thực hành tạo màu sản phẩm dệt may (Practice of textile coloration)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4096",
+          "name": "Tin học ứng dụng trong thiết kế vải (Applied informatics in fabrics design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4900",
+          "name": "Thực tập kỹ thuật (Bachelor internship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX4910",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Tiêu đề chính thức ghi TỪ K67 nên bao gồm K68; chưa có năm phiên bản riêng. Chỉ lấy bậc cử nhân, không cộng phần kỹ sư ở sau.",
+    "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2023 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 1, bảng 1, dòng 13: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 1, bảng 1, dòng 14: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 1, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Mô đun 3: Vật liệu và Công nghệ hoàn tất sản phẩm dệt may (Modul 3: Textile material and finishing): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Mô đun 4: Thiết kế thời trang và da giầy (Modul 4: Fashion design and footwear): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

@@ -1,0 +1,482 @@
+{
+  "admission_code": "ET-E16",
+  "name": "Truyền thông số và Kỹ thuật đa phương tiện (Chương trình tiên tiến)",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": null,
+  "total_credits": 132,
+  "source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e16/",
+  "source_title": "Truyền thông số và Kỹ thuật đa phương tiện | Trường Điện - Điện tử",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: None TC; Cơ sở và cốt lõi ngành: 22.0 TC; Thực tập & tốt nghiệp: 2.0 TC; Lý luận chính trị & Pháp luật: None TC; Kiến thức bổ trợ: None TC. Nguồn không nêu quy tắc lựa chọn mô-đun..",
+  "groups": [
+    {
+      "name": "Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1016",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1036",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI2036",
+          "name": "Xác suất thống kê và tín hiệu ngẫu nhiên",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1026",
+          "name": "Giải tích II",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1046",
+          "name": "Phương trình vi phân và chuỗi",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1016",
+          "name": "Vật lý đại cương I",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ET2072E",
+          "name": "Lý thuyết thông tin",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1026",
+          "name": "Vật lý đại cương II",
+          "credits": 4.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ET2060E",
+          "name": "Tín hiệu và hệ thống",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 22.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4370E",
+          "name": "Kỹ thuật truyền hình",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET2001E",
+          "name": "Nhập môn truyền thông số và KT đa phương tiện",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "ET2031E",
+          "name": "Kỹ thuật lập trình C/C++",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ET2101E",
+          "name": "Cấu trúc dữ liệu và giải thuật",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ET3221E",
+          "name": "Điện tử số",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ET4020E",
+          "name": "Xử lý số tín hiệu",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET4262E",
+          "name": "Nén và mã hóa dữ liệu đa phương tiện",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET4730E",
+          "name": "Đồ họa máy tính",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET3302E",
+          "name": "Kỹ thuật vi xử lý",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "AC2040E",
+          "name": "Cở sở dữ liệu",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "AC3010E",
+          "name": "Phân tích và thiết kế hệ thống",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET4071E",
+          "name": "Cơ sở truyền số liệu",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ET4591E",
+          "name": "Xử lý ảnh số",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "AC3110E",
+          "name": "Xử lý ngôn ngữ tự nhiên",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ET4720E",
+          "name": "Xử lý tín hiệu âm thanh",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "AC3120E",
+          "name": "Học máy cơ bản",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ET4291E",
+          "name": "Hệ điều hành",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ET4430E",
+          "name": "Lập trình nâng cao",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET4041E",
+          "name": "Kiến trúc máy tính",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET4230E",
+          "name": "Mạng máy tính",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "AC4110E",
+          "name": "Phân tích và trực quan hóa dữ liệu",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "AC4120E",
+          "name": "Kỹ xảo điện ảnh",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "AC4130E",
+          "name": "Lập trinh game",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET4760E",
+          "name": "Truyền thông đa phương tiện",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET3291E",
+          "name": "Đồ án thiết kế I",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "AC4150E",
+          "name": "Tương tác người - máy",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4750E",
+          "name": "Kỹ thuật lập trình nội dung số",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4362E",
+          "name": "Hệ thống nhúng đa phương tiện",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "AC4140E",
+          "name": "Lập trình web và ứng dụng di động",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4740E",
+          "name": "Thực tại ảo và thực tại tăng cường",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET3292E",
+          "name": "Đồ án nghiên cứu Đa phương tiện",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4011E",
+          "name": "Đồ án thiết kế II",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "ET4900E",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "ET4923E",
+          "name": "Đồ án nghiên cứu Cử nhân",
+          "credits": 8.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập & tốt nghiệp",
+      "kind": "block",
+      "required_credits": 2.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET3270E",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Lý luận chính trị & Pháp luật",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET2022",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Nguồn ghi Phiên bản 2023 nhưng không nêu khóa áp dụng; applies_to_cohorts=null, không tự gán K68 chỉ từ năm phiên bản.",
+    "Bảng không đánh dấu bắt buộc/tự chọn cho mọi học phần; compulsory=null khi không có nhãn rõ ràng.",
+    "Tín chỉ đọc từ số đứng trước dấu ngoặc của thời lượng học phần; không lấy tổng giờ hoặc số tín chỉ trong danh mục làm số tín chỉ tối thiểu của khối.",
+    "Toán và Khoa học cơ bản: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Lý luận chính trị & Pháp luật: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Kiến thức bổ trợ: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Bản HTML chính thức được lưu tại data/raw/program_sources/ET-E16.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công."
+  ]
+}

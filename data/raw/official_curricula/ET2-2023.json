@@ -1,0 +1,732 @@
+{
+  "admission_code": "ET2",
+  "name": "Kỹ thuật Y sinh",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": null,
+  "total_credits": 132,
+  "source_url": "https://seee.hust.edu.vn/vi/dao-tao/et2/",
+  "source_title": "Kỹ thuật Y sinh | Trường Điện - Điện tử",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: 32.0 TC; Cơ sở và cốt lõi ngành: 49.0 TC; Thực tập & tốt nghiệp: 8.0 TC; Lý luận chính trị & Pháp luật: 13.0 TC; Kiến thức bổ trợ: 9.0 TC. Chuyên ngành (chọn 1 mô đun).",
+  "groups": [
+    {
+      "name": "Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "PH1111",
+          "name": "Vật lý đại cương I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1122",
+          "name": "Vật lý đại cương II",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "CH1018",
+          "name": "Hoá học",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "IT1110",
+          "name": "Tin học đại cương",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI2020",
+          "name": "Xác suất thống kê",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "BF1601",
+          "name": "Sinh học đại cương",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 49.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET1017",
+          "name": "Nhập môn kỹ thuật y sinh",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ET2031",
+          "name": "Kỹ thuật lập trình C/C++",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ET2050",
+          "name": "Lý thuyết mạch",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ET4457",
+          "name": "Giải phẫu và sinh lý",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET2061",
+          "name": "Tín hiệu và hệ thống y sinh",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET2041",
+          "name": "Cấu kiện điện tử",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET3231",
+          "name": "Điện tử tương tự",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET3047",
+          "name": "Cơ sinh",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "BF2601",
+          "name": "Hóa sinh y sinh",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET3176",
+          "name": "Thiết kế kỹ thuật y sinh I",
+          "credits": 1.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ET4111",
+          "name": "Kỹ thuật đo lường y sinh",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ET3303",
+          "name": "Điện tử số và kỹ thuật vi xử lý",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ET3167",
+          "name": "Cấu trúc dữ liệu y sinh",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "BF3601",
+          "name": "Sinh học tế bào và miễn dịch học",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ET3178",
+          "name": "Thiết kế kỹ thuật y sinh II",
+          "credits": 1.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ET3168",
+          "name": "Phương pháp thống kê dữ liệu y sinh",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET4100",
+          "name": "Cơ sở điện sinh học",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET4551",
+          "name": "An toàn trong kỹ thuật y sinh",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "BF3602",
+          "name": "Sinh học phân tử",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET4216",
+          "name": "Thiết kế Kỹ thuật y sinh III",
+          "credits": 1.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET4218",
+          "name": "Thiết kế Kỹ thuật y sinh IV",
+          "credits": 1.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Thiết bị và hình ảnh y sinh",
+      "kind": "module",
+      "required_credits": 21.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4480",
+          "name": "Công nghệ chẩn đoán hình ảnh I",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4121",
+          "name": "Thiết bị điện tử y sinh I",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4471",
+          "name": "Mạch xử lý tín hiệu y sinh",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4500",
+          "name": "Xử lý ảnh y tế",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4235",
+          "name": "IoT trong y tế",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4361",
+          "name": "Hệ thống nhúng và thiết kế giao tiếp nhúng",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4713",
+          "name": "Lập trình ứng dụng y sinh",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Tin học y sinh",
+      "kind": "module",
+      "required_credits": 21.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4248",
+          "name": "Học máy trong y tế",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4570",
+          "name": "Xử lý tín hiệu y sinh số",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4650",
+          "name": "Thông tin y tế",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4596",
+          "name": "Tin sinh học",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4235",
+          "name": "IoT trong y tế",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4503",
+          "name": "Nhập môn y tế số",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4713",
+          "name": "Lập trình ứng dụng y sinh",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 3: Tế bào và sinh học tái tạo",
+      "kind": "module",
+      "required_credits": 21.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "BF4601",
+          "name": "Công nghệ tế bào và mô",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4602",
+          "name": "Phát triển sinh phẩm y tế",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4603",
+          "name": "Ứng dụng của vật liệu sinh học trong chữa trị bệnh",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4608",
+          "name": "Quản lý chất lượng trong KTYS",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4121",
+          "name": "Thiết bị điện tử y sinh I",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4503",
+          "name": "Nhập môn y tế số",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4611",
+          "name": "Dược phẩm sinh học",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 4: Phân tích y sinh và chẩn đoán phân tử",
+      "kind": "module",
+      "required_credits": 21.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "BF4604",
+          "name": "Kỹ thuật phân tích y sinh",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4605",
+          "name": "Kỹ thuật chẩn đoán phân tử",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4606",
+          "name": "Kỹ thuật miễn dịch và enzyme",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4607",
+          "name": "Phát triển sinh phẩm chẩn đoán",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4608",
+          "name": "Quản lý chất lượng trong KTYS",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4612",
+          "name": "Cảm biến sinh học cho chẩn đoán phân tử",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4503",
+          "name": "Nhập môn y tế số",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập & tốt nghiệp",
+      "kind": "block",
+      "required_credits": 8.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET3271",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "ET4901",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "ET4924",
+          "name": "Đồ án nghiên cứu Cử nhân (dành cho SV học tích hợp CN-ThS)",
+          "credits": 8.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Lý luận chính trị & Pháp luật",
+      "kind": "block",
+      "required_credits": 13.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 9.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ET2022",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Ngoại ngữ",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "FL1131",
+          "name": "Tiếng Anh cơ sở 1",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1132",
+          "name": "Tiếng Anh cơ sở 2",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1133",
+          "name": "Tiếng Anh cơ sở 3",
+          "credits": 4.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "FL1134",
+          "name": "Tiếng Anh cơ sở 4",
+          "credits": 4.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "FL1135",
+          "name": "Tiếng Anh cơ sở 5",
+          "credits": 4.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": 5.0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận TDTT",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng – An ninh",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng và an ninh",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Nguồn ghi Phiên bản 2023 nhưng không nêu khóa áp dụng; applies_to_cohorts=null, không tự gán K68 chỉ từ năm phiên bản.",
+    "Bảng không đánh dấu bắt buộc/tự chọn cho mọi học phần; compulsory=null khi không có nhãn rõ ràng.",
+    "Tín chỉ đọc từ số đứng trước dấu ngoặc của thời lượng học phần; không lấy tổng giờ hoặc số tín chỉ trong danh mục làm số tín chỉ tối thiểu của khối.",
+    "Ngoại ngữ: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "PE1014: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1210: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1220: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1230: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1240: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "Giáo dục Quốc phòng – An ninh: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Đối chiếu tổng: các khối tính tốt nghiệp + một mô-đun = 132 TC, bằng total_credits.",
+    "Bản HTML chính thức được lưu tại data/raw/program_sources/ET2.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công."
+  ]
+}

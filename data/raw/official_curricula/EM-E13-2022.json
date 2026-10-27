@@ -1,0 +1,580 @@
+{
+  "admission_code": "EM-E13",
+  "name": "Phân tích kinh doanh (Chương trình tiên tiến)",
+  "curriculum_version": null,
+  "applies_to_cohorts": [
+    "K65",
+    "K66"
+  ],
+  "total_credits": null,
+  "source_url": "https://sem.hust.edu.vn/chuong-trinh-tien-tien-phan-tich-kinh-doanh",
+  "source_title": "Kế hoạch học tập chuẩn — Phân tích kinh doanh (Chương trình tiên tiến)",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Year 1 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Phylosophy of Marxism and Leninism",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Introduction to the Legal Environments",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1016",
+          "name": "Calculus I",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1036",
+          "name": "Algebra",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EM1100",
+          "name": "Principles of Microeconomics",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 1 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1121",
+          "name": "Political Economics of Marxism and Leninism",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI2026",
+          "name": "Probability and Statistics",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI3131",
+          "name": "Mathematical Economics",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "IT1016",
+          "name": "Introduction to IT",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1110E",
+          "name": "Principles of Macroeconomics",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1800",
+          "name": "Introduction to the Major of Business Analytics",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 2 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1131",
+          "name": "Scientific Socialism",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM2131",
+          "name": "Mathematics for Business and Commerce",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3230E",
+          "name": "Applied Statistics",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3500E",
+          "name": "Principles of Accounting",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI3093E",
+          "name": "Database",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI4074E",
+          "name": "Mathematics for Business Analytics",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM1322",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 2 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "MI1046",
+          "name": "Differential Equations and Series",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM2301E",
+          "name": "Introduction to IT for Business",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3211E",
+          "name": "Principles of Marketing",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3190E",
+          "name": "Organizational Behavior",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3417E",
+          "name": "Operations Management",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3519E",
+          "name": "Corporate Finance",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 3 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1141",
+          "name": "History of Vietnamese Communist Party",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM2800E",
+          "name": "Business Process Management",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM3222",
+          "name": "Business Law",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM4413E",
+          "name": "Human Resource Management",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM3301E",
+          "name": "Business Ethics",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM4716E",
+          "name": "Managerial Accounting",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM4526E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "MI4062E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 3 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1151",
+          "name": "Ho Chi Minh Ideology",
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM4218E",
+          "name": "Management Information Systems",
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM4416E",
+          "name": "Strategy Management",
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "MI4062E",
+          "name": "Applied Data Science for Business",
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM3535E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM4315E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "MI4215E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 4 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM3801E",
+          "name": "Corporate Performance Management",
+          "credits": null,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EM3820E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EM4534E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "MI3600E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EM4334E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EM4810E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 4 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4350",
+          "name": "Graduation Internship",
+          "credits": null,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EM4351E",
+          "name": "Graduation Thesis",
+          "credits": null,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EM4352E",
+          "name": "Research-Based Capstone Project",
+          "credits": null,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM3535E",
+          "name": "Phân tích tài chính (Financial Analytics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4534E",
+          "name": "Quản trị rủi ro (Risk Management)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM3820E",
+          "name": "Phân tích định hướng (Prescriptive Business Analytics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4810E",
+          "name": "Dự báo kinh doanh (Business Forecasting)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4315E",
+          "name": "Nghiên cứu marketing (Marketing Research)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "MI4062E",
+          "name": "Khoa học dữ liệu ứng dụng trong kinh doanh (BTL) (Applied Data Science for Business)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4334E",
+          "name": "Phân tích marketing (BTL) (Marketing Analytics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "MI3600E",
+          "name": "Phân tích dữ liệu lớn và tri thức kinh doanh (Big Data and Business Intelligence)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4526E",
+          "name": "Đầu tư tài chính (Financial Investment)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Danh mục lựa chọn được công bố trong sơ đồ",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "MI4215E",
+          "name": "Hệ thống hỗ trợ ra quyết định (Decision Support Systems)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Nguồn HUST công bố PDF đính kèm: https://drive.google.com/uc?export=download&id=1v5lPRqY87cM6ov_0PSViWPigApbVpp5C.",
+    "Đây là sơ đồ kế hoạch học tập. Nhiều môn chỉ được ghi mã, không ghi tên hoặc TC; giữ name/credits=null cho các dữ liệu không được ghi tại sơ đồ. Không lấy số TC của cả học kỳ gán cho từng môn.",
+    "Không có tổng TC và quy tắc tốt nghiệp toàn CTĐT trong sơ đồ nên total_credits, graduation_rule=null. required_credits=null ở nhóm lịch theo kỳ vì sơ đồ không công bố một mức tích lũy cho cả nhóm đó; counts_toward_degree=null với các nhóm lịch trộn nhiều loại môn.",
+    "Trang trường ghi cho K65–K66; không khẳng định tài liệu này là bản 2022/K67. curriculum_version sẽ được đặt null vì không có năm phiên bản trực tiếp.",
+    "CHƯA ĐỦ DỮ LIỆU ĐỂ KIỂM TRA TỔNG TC: không cộng các mô-đun/lộ trình thay thế và không coi null là 0. Các nhóm Year/Semester chỉ giúp giữ vị trí môn trong sơ đồ nguồn, chưa phải phân khối tốt nghiệp."
+  ]
+}

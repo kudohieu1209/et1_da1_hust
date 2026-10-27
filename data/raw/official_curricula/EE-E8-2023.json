@@ -1,0 +1,649 @@
+{
+  "admission_code": "EE-E8",
+  "name": "Kỹ thuật Điều khiển - Tự động hóa (Chương trình tiên tiến)",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": null,
+  "total_credits": 132,
+  "source_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-e8/",
+  "source_title": "Kỹ thuật Điều khiển - Tự động hóa | Trường Điện - Điện tử",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: 31.0 TC; Cơ sở và cốt lõi ngành: 47.0 TC; Thực tập & tốt nghiệp: 16.0 TC; Lý luận chính trị & Pháp luật: 13.0 TC; Kiến thức bổ trợ: 9.0 TC. Chuyên ngành (chọn 1 mô đun).",
+  "groups": [
+    {
+      "name": "Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 31.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1016",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1036",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "IT1016",
+          "name": "Tin học đại cương",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1026",
+          "name": "Giải tích II",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1046",
+          "name": "Phương trình vi phân và chuỗi",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1016",
+          "name": "Vật lý đại cương I",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI2036",
+          "name": "Xác suất thống kê và tín hiệu ngẫu nhiên",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI2044",
+          "name": "Phương pháp tính",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PH1026",
+          "name": "Vật lý đại cương II",
+          "credits": 4.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 47.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE1026E",
+          "name": "Nhập môn ngành Kỹ thuật điều khiển và Tự động hóa",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EE2001E",
+          "name": "Tín hiệu và hệ thống",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EE2021E",
+          "name": "Lý thuyết mạch điện I",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EE3030E",
+          "name": "Nguyên lý trường điện từ",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EE2110E",
+          "name": "Thiết kế điện tử",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EE3140E",
+          "name": "Máy điện",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EE3288E",
+          "name": "Lý thuyết điều khiển tuyến tính",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EE3410E",
+          "name": "Điện tử công suất",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EE2130E",
+          "name": "Thiết kế hệ thống số",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE3110E",
+          "name": "Kỹ thuật đo lường",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE3491E",
+          "name": "Kỹ thuật lập trình",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE2022E",
+          "name": "Lý thuyết mạch điện II",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE3816E",
+          "name": "Đồ án I",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE3480E",
+          "name": "Vi xử lý và kiến trúc máy tính",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3510E",
+          "name": "Truyền động điện",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3826E",
+          "name": "Đồ án II",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3424E",
+          "name": "Hệ thống cung cấp điện",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Định hướng chuyên sâu / Mô đun (24 TC)",
+      "kind": "module",
+      "required_credits": 24.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE4221E",
+          "name": "Điều khiển logic và PLC",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE3550E",
+          "name": "Điều khiển quá trình",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE4435E",
+          "name": "Hệ thống điều khiển số",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE4335E",
+          "name": "Trí tuệ nhân tạo trong hệ thống tự động hóa",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3601E",
+          "name": "Hệ thống đo và điều khiển công nghiệp",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE4251E",
+          "name": "Thiết kế hệ thống nhúng",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE4331E",
+          "name": "Điều khiển Điện tử công suất",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE4343E",
+          "name": "Robot và phương tiện tự hành",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE4166E",
+          "name": "Điều khiển hệ thống năng lượng tái tạo",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập & tốt nghiệp",
+      "kind": "block",
+      "required_credits": 16.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE3916E",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EE4906E",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EE4922E",
+          "name": "Đồ án nghiên cứu Cử nhân (CTTT ĐKTĐH)",
+          "credits": 8.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Lý luận chính trị & Pháp luật",
+      "kind": "block",
+      "required_credits": 13.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 9.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE2023",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220E",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Ngoại ngữ",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "FL1120",
+          "name": "IELTS Listening 1",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1121",
+          "name": "IELTS Speaking 1",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1122",
+          "name": "IELTS Reading 1",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1123",
+          "name": "IELTS Writing 1",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1124",
+          "name": "IELTS Listening 2",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1125",
+          "name": "IELTS Speaking 2",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1126",
+          "name": "IELTS Reading 2",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1127",
+          "name": "IELTS Writing 2",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1141",
+          "name": "Practical Grammar for Writing",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1142",
+          "name": "Communication Skills 1",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1143",
+          "name": "Working with texts 1",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1144",
+          "name": "Listening",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1145",
+          "name": "Speaking",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1146",
+          "name": "Reading",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1147",
+          "name": "Writing",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1148",
+          "name": "Foundation Writing",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1149",
+          "name": "Communication Skills 2",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1150",
+          "name": "Working with texts 2",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": 5.0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng – An ninh",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng CSVN",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng và an ninh",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Nguồn ghi Phiên bản 2023 nhưng không nêu khóa áp dụng; applies_to_cohorts=null, không tự gán K68 chỉ từ năm phiên bản.",
+    "Bảng không đánh dấu bắt buộc/tự chọn cho mọi học phần; compulsory=null khi không có nhãn rõ ràng.",
+    "Tín chỉ đọc từ số đứng trước dấu ngoặc của thời lượng học phần; không lấy tổng giờ hoặc số tín chỉ trong danh mục làm số tín chỉ tối thiểu của khối.",
+    "FL1120: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1121: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1122: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1123: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1124: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1125: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1126: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1127: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1141: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1142: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1143: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1144: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1145: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1146: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1147: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1148: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1149: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "FL1150: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "Ngoại ngữ: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "PE1014: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1210: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1220: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1230: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1240: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "Giáo dục Quốc phòng – An ninh: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Tổng required_credits các khối tính tốt nghiệp, chỉ tính một mô-đun: 140 TC; total_credits=132 TC; chênh lệch +8 TC. Giữ nguyên các mức nguồn, không tự cân bằng.",
+    "Bản HTML chính thức được lưu tại data/raw/program_sources/EE-E8.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công."
+  ]
+}

@@ -1,0 +1,842 @@
+{
+  "admission_code": "MS1",
+  "name": "Kỹ thuật Vật liệu",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": [
+    "K68"
+  ],
+  "total_credits": 132,
+  "source_url": "https://smse.hust.edu.vn/uploads/smse/dao-tao/2023_07/mse-k65-khung-ct-cu-nhan-2023-10-19-upload-web.pdf",
+  "source_title": "CTĐT Kỹ thuật Vật liệu — 9108f0ab7584b143.pdf",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Cốt lõi chung 38 TC + chọn một mô-đun cốt lõi định hướng 10 TC; khối tự chọn chuyên ngành chọn theo mô-đun 16 TC tương ứng. Hai nhóm mô-đun là hai lần lựa chọn riêng. Thực tập 2 + ĐATN 6 hoặc ĐANC 8 nếu học tích hợp. Tổng công bố 132 TC.",
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác – Lênin (Philosophy of Marxism and Leninism)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin (Political Economics of Marxism and Leninism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh (Ho Chi Minh Ideology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học (Scientific Socialism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam (History of Vietnamese Communist Party)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (Introduction to the Legal Environment)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất (Physical Education)",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Theory in Sport)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (Swimming)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục (Elective courses) Tự chọn thể dục 1 (Elective course 1)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 (Elective course 2)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 (Elective course 3)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) (General Military Education)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh (English)",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I (English I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh II (English II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111",
+          "name": "Giải tích I (Calculus I)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II (Calculus II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III (Calculus III)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số (Algebra)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1110",
+          "name": "Vật lý đại cương I (Physics I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1120",
+          "name": "Vật lý đại cương II (Physics II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1140",
+          "name": "Tin học đại cương (Introduction to Computer Science)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1012",
+          "name": "Hóa học (Chemistry I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1015",
+          "name": "Hoá học II (Chemistry II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2011",
+          "name": "Đồ họa kỹ thuật I (Engineering Graphics I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành chung (Basic and General Core of Engineering)",
+      "kind": "block",
+      "required_credits": 38,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE1010",
+          "name": "Nhập môn KH&KT vật liệu (Introduction to materials science and engineering)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE2012",
+          "name": "Kỹ thuật điện",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE2013",
+          "name": "Khoa học vật liệu đại cương (Fundametal of Materials Science)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE2023",
+          "name": "Sự hình thành tổ chức tế vi vật liệu (Microstructural evolution in Materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE2020",
+          "name": "Nhiệt động học vật liệu (Thermodynamics of Materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE2040",
+          "name": "Hóa học chất rắn (Solid State Chemistry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE2025",
+          "name": "Phương pháp tính toán vật liệu (Computational Methods for Materials Scientists and Engineers)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3030",
+          "name": "Các phương pháp kiểm tra và đánh giá vật liệu (Materials characterization and testing)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3025",
+          "name": "Tính chất quang, điện, từ của vật liệu (Electronic, optical and magnetic properties of Materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3031",
+          "name": "Các quá trình trong kỹ thuật vật liệu (Materials Processing in materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3401",
+          "name": "Hành vi cơ nhiệt của vật liệu (ThermoMechanical Behaviour of Materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3113",
+          "name": "Đồ án: Lựa chọn vật liệu (Materials Selection Project)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3141",
+          "name": "Mô hình hóa và mô phỏng vật liệu (Introduction to Modeling and Simulation)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE2060",
+          "name": "Thí nghiệm I (Lab 1)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3019",
+          "name": "Thí nghiệm II (Lab 2)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Modul 1: Cốt lõi theo định hướng Công nghệ vật liệu (Modul 1: Core of Materials Technology)",
+      "kind": "module",
+      "required_credits": 10,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE3061",
+          "name": "Kỹ thuật môi trường trong công nghiệp (Environmental Engineering in Industry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3071",
+          "name": "Vật liệu kỹ thuật (Engineering Materials)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3082",
+          "name": "Thiết kế chi tiết máy (Machine Element Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3027",
+          "name": "Công nghệ tạo hình vật liệu (Forming processing in materials)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3028",
+          "name": "Luyện kim vật lý (Physical metallurgy)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Modul 2: Cốt lõi theo định hướng Vật liệu tiên tiến và Cấu trúc nano (Modul 2: Core of Advanced Materials and nanostructured)",
+      "kind": "module",
+      "required_credits": 10,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE3122",
+          "name": "Vật liệu nano (Nanostructured materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3131",
+          "name": "Công nghệ vật liệu cấu trúc nano (Nanostructured materials processing technology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3151",
+          "name": "Công nghệ vật liệu tiên tiến (Advanced Materials Processing)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE3161",
+          "name": "Tính năng vật liệu trong các môi trường đặc biệt (Materials for extreme conditions)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ (Soft skills)",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE2024",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1.1: Kỹ thuật gang thép (Module 1.1: Iron and Steel Making)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE4101",
+          "name": "Luyện thép (Steelmaking)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4111",
+          "name": "Luyện gang lò cao (Blast furnace ironmaking)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4122",
+          "name": "Tinh luyện và đúc phôi thép (Refining and steel casting)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4132",
+          "name": "Luyện kim phi cốc (Alternative Ironmaking Routes)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4141",
+          "name": "Xử lý & tái chế chất thải trong luyện kim (Waste Treatment and Utilization in Metallurgy)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4152",
+          "name": "Đồ án CN&TB luyện gang thép (Academic project on Iron and steelmaking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1.2: Cơ học vật liệu và công nghệ tạo hình (Module 1.2: Materials mechanics and metal forming)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE4199",
+          "name": "Lý thuyết biến dạng tạo hình (Metal forming Therory)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4219",
+          "name": "Thiết bị gia công tạo hình vật liệu (Metal forming Equipment)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4229",
+          "name": "Đồ án CN&TB (Project)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4239",
+          "name": "Tự động hóa quá trình sản xuất (Manufactured process Automation)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4259",
+          "name": "Công nghệ tạo hình tấm (Sheet metal forming technology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4269",
+          "name": "Công nghệ tạo hình khối (Bulk metal forming technology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1.3: Vật liệu và Công nghệ đúc (Module 1.3: Materials and Foundry Technology)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE4302",
+          "name": "Đồ án thiết kế đúc (Casting design Project)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4312",
+          "name": "Hợp kim và công nghệ nấu luyện (Alloys and melting technology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4322",
+          "name": "Các phương pháp làm khuôn (Moulding methods)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4332",
+          "name": "Cơ sở kỹ thuật đúc (Fundamentals of foundry engineering)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4342",
+          "name": "Sự hình thành tổ chức hợp kim (Structure formation of alloys)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4362",
+          "name": "Xử lý số liệu và quy hoạch thực nghiệm (Design and analysis of experiments)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4372",
+          "name": "Kỹ thuật mô phỏng số đúc (Casting simulation technique)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1.4: Vật liệu màu và Compozit (Module 1.4: Non-Ferrous Metal Materials & Composite)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE4401",
+          "name": "Cơ sở lý thuyết luyện kim màu (Introduction of Non-ferrous metallurgy)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4412",
+          "name": "Luyện kim màu nặng (Extractive of Heavy non-ferrous metals)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4423",
+          "name": "Luyện kim màu nhẹ (Extractive metallurgy of light metals)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4431",
+          "name": "Luyện kim bột (Powder metallurgy)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4442",
+          "name": "Đồ án môn học (Design project)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4452",
+          "name": "Chuẩn bị liệu cho luyện kim (Raw Materials Preparation for Extractive Metallurgy)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4453",
+          "name": "Vật liệu compozit (Composite materials)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1.5: Vật liệu học, xử lý nhiệt và bề mặt (Module 1.5: Materials Science, Heat and Surface Treatment)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE4502",
+          "name": "Công nghệ và thiết bị nhiệt luyện (Heat treatment technology and equipments)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4512",
+          "name": "Công nghệ xử lý bề mặt (Surface Treatment Technology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4522",
+          "name": "Ăn mòn và bảo vệ kim loại (Corrosion and materials protection)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4532",
+          "name": "Hợp kim hệ sắt (Ferrous alloy)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4542",
+          "name": "Hợp kim phi sắt",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4552",
+          "name": "Đồ án thiết kế xưởng nhiệt luyện (Course Project on Designing Heat Treatment Workshop)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2.1: Vật liệu tiên tiến và cấu trúc nano (Module 2.1: Advanced materials and nanostructured)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE4601",
+          "name": "KH & KT vật liệu y sinh (Biomaterials Science and Engineering)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4611",
+          "name": "Vật liệu năng lượng sạch (Clean energy materials)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4621",
+          "name": "Vật liệu compozit (Composite Materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4631",
+          "name": "Vật liệu nano trong hàng không và vận tải (Nano materials for aerospace & automobiles)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4641",
+          "name": "Công nghệ bề mặt và màng mỏng (Surface and thin film technology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4651",
+          "name": "Vật liệu vô định hình (Amorphous Materials)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân (Engineering Practicum and Bachelor Thesis)",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MSE4990",
+          "name": "Thực tập kỹ thuật (Engineering Practicum)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4999",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4989",
+          "name": "Đồ án nghiên cứu",
+          "credits": 8.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Trang đầu ghi Áp dụng từ khóa k65; tên tệp chính thức ghi ngày cập nhật 2023-10-19. Phạm vi khóa ghi K68 là khóa được yêu cầu nằm trong từ K65.",
+    "Cấu trúc chung trang 1 ghi cốt lõi chung 34 và theo định hướng 14, nhưng bảng học phần ghi 38 và 10. required_credits giữ các mức 38 và 10 của bảng chi tiết; không trộn hai cấu trúc.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 3, bảng 1, dòng 3: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 3, bảng 1, dòng 4: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 3, bảng 1, dòng 5: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

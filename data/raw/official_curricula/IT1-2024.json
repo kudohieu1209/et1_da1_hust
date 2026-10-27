@@ -1,0 +1,74 @@
+{
+  "admission_code": "IT1",
+  "name": "CNTT: Khoa học Máy tính",
+  "curriculum_version": "2024",
+  "applies_to_cohorts": [
+    "K68"
+  ],
+  "total_credits": null,
+  "source_url": "https://soict.hust.edu.vn/wp-content/uploads/07.-QD-cap-nhat-CTDT-cu-nhan_Truong-CNTT_K68_K69-3.pdf",
+  "source_title": "Quyết định 12966/QĐ-ĐHBK ngày 27/12/2024 — Cập nhật các chương trình đào tạo cử nhân thuộc Trường CNTT&TT",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Riêng K68: IT4653 chuyển từ mô-đun 3 lên Cơ sở/cốt lõi ngành, thay IT4480 (2 TC); thêm IT5425 vào mô-đun 3. Tổng TC của các khối không đổi. IT4480/IT4653 được công bố là hai học phần thay thế nhau khi xét công nhận.",
+  "groups": [
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4653",
+          "name": "Học sâu và ứng dụng",
+          "credits": 2,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Module 3: Định hướng Phân tích dữ liệu thông minh",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT5425",
+          "name": "Quản trị dữ liệu và trực quan hóa",
+          "credits": 2,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Điều chỉnh kỳ học",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "IT3190",
+          "name": "Nhập môn Học máy và khai phá dữ liệu",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "IT3160",
+          "name": "Nhập môn Trí tuệ nhân tạo",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "CHỈ LÀ PHỤ LỤC ĐIỀU CHỈNH, CHƯA PHẢI TOÀN BỘ CTĐT: chỉ những học phần thay đổi được chép; không dùng danh mục này để kết luận đã đủ điều kiện tốt nghiệp.",
+    "curriculum_version=2024 theo quyết định ký ngày 27/12/2024; điều 2 cho áp dụng từ học kỳ 2 năm học 2024–2025. Bài công bố tháng 02/2025: https://soict.hust.edu.vn/thong-bao-ve-viec-cap-nhat-cac-ctdt-k68-k69.html.",
+    "Quyết định ghi tổng TC của các khối không thay đổi nhưng không ghi tổng TC toàn CTĐT; total_credits=null. required_credits chỉ ghi số có trong quyết định, các khối còn lại để null.",
+    "Các học phần chỉ đổi học kỳ không nêu lại số TC giữ credits=null; compulsory=null nếu quyết định không xác định bắt buộc/tự chọn. counts_toward_degree=null với nhóm chỉ liệt kê điều chỉnh lịch, chưa có phân khối rõ.",
+    "Không thể kiểm tra tổng required_credits với toàn bộ total_credits từ phụ lục điều chỉnh này."
+  ]
+}

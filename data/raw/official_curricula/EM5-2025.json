@@ -1,0 +1,643 @@
+{
+  "admission_code": "EM5",
+  "name": "Tài chính - Ngân hàng",
+  "curriculum_version": "2025",
+  "applies_to_cohorts": [
+    "K70"
+  ],
+  "total_credits": null,
+  "source_url": "https://sem.hust.edu.vn/chuong-trinh-cu-nhan-tai-chinh-ngan-hang",
+  "source_title": "Kế hoạch học tập chuẩn — Tài chính - Ngân hàng",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Year 1 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "MI1113",
+          "name": "",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1143",
+          "name": "",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "IT1130",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EM1100",
+          "name": "Kinh tế học vi mô đại cương/Principles of Microeconomics",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EM1500",
+          "name": "Nhập môn ngành TCNH/Introduction to the Major of Finance-Banking (2TC)",
+          "credits": 2,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 1 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM1170",
+          "name": "",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI2020",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1110",
+          "name": "Kinh tế học vĩ mô đại cương/Principles of Macroeconomics",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM3500",
+          "name": "Nguyên lý kế toán/Principles of Accounting (3TC)",
+          "credits": 3,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM3511",
+          "name": "Lý thuyết tài chính tiền tệ/Theory of Finance and Monetary (2TC)",
+          "credits": 2,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM3222",
+          "name": "Luật Kinh doanh/ Business law (2TC)",
+          "credits": 2,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 2 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI3131",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM2713",
+          "name": "Kế toán tài chính 1/Financial Accounting 1 (3TC)",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3230",
+          "name": "Thống kê ứng dụng/Applied Statistics (3TC)",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3211",
+          "name": "Nguyên lý marketing/Principles of Marketing (3TC)",
+          "credits": 3,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3301",
+          "name": "Đạo đức kinh doanh/ Business Ethics (2TC)",
+          "credits": 2,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3140",
+          "name": "Kinh tế quốc tế/ International Ecônmics (2TC)",
+          "credits": 2,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 2 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1121",
+          "name": "",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "MI1133",
+          "name": "",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM2132",
+          "name": "",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM2300",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM4531",
+          "name": "Thị trường chứng khoán/ Stock Market (2TC)",
+          "credits": 2,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3519",
+          "name": "Tài chính doanh nghiệp/ Corporate Finance (3TC)",
+          "credits": 3,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3300",
+          "name": "Quản trị quy trình KD/Business Process",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3527",
+          "name": "Anh văn CN Tài chính ngân hàng/English for Finance - Banking (2TC) Management (2TC)",
+          "credits": 2,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 3 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1131",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM3130",
+          "name": "Kinh tế lượng/Econometrics (3TC)",
+          "credits": 3,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM4542",
+          "name": "Thuế và Hệ thống thuế/Tax and Taxation System",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM3417",
+          "name": "Quản trị sản xuất/ Operations Management (3TC) (2TC)",
+          "credits": 3,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM4528",
+          "name": "Bảo hiểm/Insurance (2TC) Tự chọn định hướng/Concentration - 3TC/Credits",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM1522",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 3 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1141",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM3537",
+          "name": "Những vấn đề đương đại của Công nghệ tài chính/Contemprary Issues of Fintech (3TC)",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM2730",
+          "name": "Báo cáo tài chính/ Financial Reporting (2TC)",
+          "credits": 2,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM4413",
+          "name": "Quản trị nhân lực/HRM (3TC) Tự chọn định hướng/Concentration - 2 Credits",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM4435",
+          "name": "Quản trị dự án/Project Management (3TC)",
+          "credits": 3,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 4 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1151",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 4 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4550",
+          "name": "Thực tập tốt nghiệp/Graduation Internship",
+          "credits": null,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EM4551",
+          "name": "Khóa luận tốt nghiệp/Bachelor Thesis",
+          "credits": null,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn định hướng/Concentration 1 (22 Credits)",
+      "kind": "module",
+      "required_credits": 22,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM4522",
+          "name": "Quản trị tài chính/Financial Management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4526",
+          "name": "Đầu tư tài chính/Financial Investment",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4535",
+          "name": "Phân tích tài chính/Financial Analysis",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4536",
+          "name": "Kiểm toán cơ bản/Fundamentals of Auditing",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4541",
+          "name": "Nghiệp vụ ngân hàng/Banking Operations",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4716",
+          "name": "Kế toán quản trị/Managerial Accounting",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MI3600",
+          "name": "Phân tích dữ liệu và Tri thức kinh doanh",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4729",
+          "name": "Kiểm toán tài chính",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn định hướng/Concentration 2 (22 Credits )",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM4520",
+          "name": "Tín dụng ngân hàng TM/Bank Credit Management",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4522",
+          "name": "Quản trị tài chính/Financial Management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4533",
+          "name": "Quản trị rủi ro/Risk Management",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4535",
+          "name": "Phân tích tài chính/Financial Analysis",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4541",
+          "name": "Nghiệp vụ ngân hàng/Banking Operations",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4711",
+          "name": "Q.trị KD ng.hàng thương mại/Commercial Bank Management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4728",
+          "name": "Kiểm soát nội bộ/Internal Control",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MI3600",
+          "name": "Phân tích dữ liệu và Tri thức kinh doanh",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4716",
+          "name": "Kế toán quản trị (BTL)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "INTERNSHIP (22 Credits)",
+      "kind": "module",
+      "required_credits": 22,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM4017",
+          "name": "Marketing dịch vụ tài chính/Financial Service Marketing",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4020",
+          "name": "Tín dụng NHTM ƯD/Applied Bank Credit Management",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4033",
+          "name": "Quản trị rủi ro tài chính/Financial Risk Management",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4035",
+          "name": "Phân tích tài chính ƯD/Applied Financial Analysis",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4522",
+          "name": "Quản trị tài chính/Financial Management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4540",
+          "name": "Chuyên đề/Field Study",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4541",
+          "name": "Nghiệp vụ ngân hàng/Banking Operations",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MI3600",
+          "name": "Phân tích dữ liệu và Tri thức kinh doanh",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4526",
+          "name": "Đầu tư tài chính",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn định hướng/Concentration 4 (22 Credits)",
+      "kind": "module",
+      "required_credits": 22,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM4533",
+          "name": "Quản trị rủi ro/Risk Management 2",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4536",
+          "name": "Kiểm toán cơ bản/Fundamentals of Auditing",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4716",
+          "name": "Kế toán quản trị/Managerial Accounting",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4811",
+          "name": "Dự báo kinh doanh/Business Forecasting",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MI3600",
+          "name": "Phân tích dữ liệu và tri thức kinh doanh/Data Analysis and Business Intelligence",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MI4064",
+          "name": "Khoa học dữ liệu ứng dụng trong KD/Applied Data Science for Business",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4541",
+          "name": "Nghiệp vụ ngân hàng",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4331",
+          "name": "Marketing kỹ thuật số",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Nguồn HUST công bố PDF đính kèm: https://drive.google.com/uc?export=download&id=1nUlTf2dfdmOpHFAOKPc_Lr81hilOAFY1.",
+    "Đây là sơ đồ kế hoạch học tập. Nhiều môn chỉ được ghi mã, không ghi tên hoặc TC; giữ name/credits=null cho các dữ liệu không được ghi tại sơ đồ. Không lấy số TC của cả học kỳ gán cho từng môn.",
+    "Không có tổng TC và quy tắc tốt nghiệp toàn CTĐT trong sơ đồ nên total_credits, graduation_rule=null. required_credits=null ở nhóm lịch theo kỳ vì sơ đồ không công bố một mức tích lũy cho cả nhóm đó; counts_toward_degree=null với các nhóm lịch trộn nhiều loại môn.",
+    "Trang trường ghi Kế hoạch học tập chuẩn từ 70; phiên bản theo năm tuyển sinh 2025.",
+    "CHƯA ĐỦ DỮ LIỆU ĐỂ KIỂM TRA TỔNG TC: không cộng các mô-đun/lộ trình thay thế và không coi null là 0. Các nhóm Year/Semester chỉ giúp giữ vị trí môn trong sơ đồ nguồn, chưa phải phân khối tốt nghiệp."
+  ]
+}

@@ -1,0 +1,1549 @@
+{
+  "schema_version": "1.0.0",
+  "program": {
+    "program_id": "EV2",
+    "program_code": "EV2",
+    "name": "Quản lý Tài nguyên và Môi trường",
+    "curriculum_version": "2022",
+    "degree_level": "BACHELOR",
+    "total_required_credits": 132
+  },
+  "sources": [
+    {
+      "id": "public_curriculum_ev2",
+      "kind": "PUBLIC_HUST_CURRICULUM_EXTRACTION",
+      "file": "data/raw/official_curricula/EV2-2022.json",
+      "sha256": "7480e34c4d79fd6485634b1cb3644918a61eea48178e6d25e5a771182de6b474",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    }
+  ],
+  "graduation_paths": [
+    {
+      "id": "bachelor",
+      "name": "Quản lý Tài nguyên và Môi trường 2022 (Cử nhân)",
+      "raw_expression": "Tích lũy các khối chung; chọn một trong hai mô-đun 16 TC. Tốt nghiệp cử nhân dùng thực tập 2 + ĐATN 6; sinh viên tích hợp có lựa chọn ĐANC 8. Nguồn công bố tổng cử nhân 132 TC.",
+      "components": [
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_1",
+          "required_credits": 13
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_2",
+          "required_credits": 6
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_3",
+          "required_credits": 32
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_4",
+          "required_credits": 9
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_5",
+          "required_credits": 48
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_6",
+          "required_credits": 8
+        },
+        {
+          "type": "ONE_OF_GROUPS",
+          "required_credits": 16,
+          "options": [
+            {
+              "group_id": "group_mod_1",
+              "required_credits": 16
+            },
+            {
+              "group_id": "group_mod_2",
+              "required_credits": 16
+            }
+          ]
+        }
+      ],
+      "total_required_credits": 132,
+      "source_order": 0
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_khoi_1",
+      "source_group_code": "KHOI1",
+      "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "course_count_reported": 6,
+      "catalog_credits": 13,
+      "course_codes": [
+        "SSH1111",
+        "SSH1121",
+        "SSH1131",
+        "SSH1141",
+        "SSH1151",
+        "EM1170"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_2",
+      "source_group_code": "KHOI2",
+      "name": "Tiếng Anh (English)",
+      "course_count_reported": 2,
+      "catalog_credits": 6,
+      "course_codes": [
+        "FL1131",
+        "FL1132"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_3",
+      "source_group_code": "KHOI3",
+      "name": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "course_count_reported": 13,
+      "catalog_credits": 32,
+      "course_codes": [
+        "MI1112",
+        "MI1122",
+        "MI1132",
+        "MI1142",
+        "MI2021",
+        "PH1111",
+        "PH1121",
+        "PH1131",
+        "IT1140",
+        "CH1018",
+        "CH3071",
+        "CH3072",
+        "ME2015"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_4",
+      "source_group_code": "KHOI4",
+      "name": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "course_count_reported": 7,
+      "catalog_credits": 15,
+      "course_codes": [
+        "EM1010",
+        "EM1180",
+        "ED3280",
+        "ED3220",
+        "ET3262",
+        "TEX3123",
+        "EV2020"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_5",
+      "source_group_code": "KHOI5",
+      "name": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "course_count_reported": 21,
+      "catalog_credits": 48,
+      "course_codes": [
+        "EV1250",
+        "EV2251",
+        "EV2252",
+        "EV2253",
+        "EV3106",
+        "EV2225",
+        "EV3254",
+        "EV3226",
+        "EV3225",
+        "EV3227",
+        "EV3121",
+        "EV4223",
+        "EV3255",
+        "EV3256",
+        "EV3257",
+        "EV3258",
+        "EV3259",
+        "EV3260",
+        "EV3261",
+        "EV3262",
+        "EV3109"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_6",
+      "source_group_code": "KHOI6",
+      "name": "Thực tập kỹ thuật và đồ án tốt nghiệp (Áp dụng đối với SV tốt nghiệp cử nhân, không đăng ký chương trình tích hợp)",
+      "course_count_reported": 3,
+      "catalog_credits": 16,
+      "course_codes": [
+        "EV3298",
+        "EV4324",
+        "EV4905"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_7",
+      "source_group_code": "KHOI7",
+      "name": "Giáo dục thể chất (Physical Education)",
+      "course_count_reported": 2,
+      "catalog_credits": 2,
+      "course_codes": [
+        "PE1014",
+        "PE1024"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_khoi_8",
+      "source_group_code": "KHOI8",
+      "name": "Giáo dục Quốc phòng – An ninh (165 tiết) (Military Education)",
+      "course_count_reported": 3,
+      "catalog_credits": 0,
+      "course_codes": [
+        "MIL1110",
+        "MIL1120",
+        "MIL1130"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_mod_1",
+      "source_group_code": "MOD1",
+      "name": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "course_count_reported": 8,
+      "catalog_credits": 16,
+      "course_codes": [
+        "EV4263",
+        "EV4264",
+        "EV2212",
+        "EV4265",
+        "EV4266",
+        "EV4272",
+        "EV4227",
+        "EV4229"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_2",
+      "source_group_code": "MOD2",
+      "name": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu (Module 2: Energy, Environment and Climate Change)",
+      "course_count_reported": 8,
+      "catalog_credits": 16,
+      "course_codes": [
+        "EV2212",
+        "EV4225",
+        "EV4265",
+        "EV4269",
+        "EV4267",
+        "EV4272",
+        "EV4268",
+        "EV4227"
+      ],
+      "counts_toward_degree_credits": true
+    }
+  ],
+  "courses": [
+    {
+      "code": "SSH1111",
+      "name": "Triết học Mác-Lênin (Philosophy of Marxism and Leninism)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1121",
+      "name": "Kinh tế chính trị Mác-Lênin (Political Economics of Marxism and Leninism)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "SSH1111",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "SSH1111",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "SSH1131",
+      "name": "Chủ nghĩa xã hội khoa học (Scientific Socialism)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1141",
+      "name": "Lịch sử Đảng Cộng sản Việt Nam (History of Vietnamese Communist Party)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1151",
+      "name": "Tư tưởng Hồ Chí Minh (Ho-Chi-Minh Ideology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1170",
+      "name": "Pháp luật đại cương (General Law)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1131",
+      "name": "Tiếng Anh cơ sở 1 (Basic English 1)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tiếng Anh (English)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1132",
+      "name": "Tiếng Anh cơ sở 2 (Basic English 2)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tiếng Anh (English)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1112",
+      "name": "Giải tích I (Calculus I)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1122",
+      "name": "Giải tích II (Calculus II)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1132",
+      "name": "Giải tích III (Calculus III)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1142",
+      "name": "Đại số (Algebra)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI2021",
+      "name": "Xác suất thống kê (Probability and statistics)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1111",
+      "name": "Vật lý đại cương I (Physics I)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1121",
+      "name": "Vật lý đại cương II (Physics II)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1131",
+      "name": "Vật lý đại cương III (Physics III)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "IT1140",
+      "name": "Tin học đại cương (Introduction to Computer Science)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "TCNTT",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "CH1018",
+      "name": "Hoá học I (Chemistry I)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "CH3071",
+      "name": "Hoá lý (Physical Chemistry)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "CH1017/CH1010/CH1012/CH1018",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH1017",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1012",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1018",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "CH3072",
+      "name": "Thí nghiệm hoá lý (Physical Chemistry Lab)",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "CH3071=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH3071",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "ME2015",
+      "name": "Đồ họa kỹ thuật cơ bản (Fundamental Engineering Graphics)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1010",
+      "name": "Quản trị học đại cương (Introduction to Management)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1180",
+      "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ED3280",
+      "name": "Tâm lý học ứng dụng (Applied Psychology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ED3220",
+      "name": "Kỹ năng mềm (Soft Skills)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET3262",
+      "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "department": "TDDT",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TEX3123",
+      "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "department": "TVL",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV2020",
+      "name": "Technical Writing and Presentation",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV1250",
+      "name": "Nhập môn quản lý tài nguyên và môi trường (Introduction of Natural Resources and Environmental Management)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV2251",
+      "name": "Các quá trình cơ bản trong công nghệ môi trường I (Basic processes in environmental technology I)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV2252",
+      "name": "Các quá trình cơ bản trong công nghệ môi trường II (Basic processes in environmental technology II)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV2253",
+      "name": "Môi trường và xã hội (Environment and Society)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3106",
+      "name": "Hóa học môi trường (Environmental Chemistry)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV2225",
+      "name": "Sinh thái học môi trường (Environmental Ecology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3254",
+      "name": "Đồ án I (Project I )",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3226",
+      "name": "Quản lý chất thải rắn (Solid Waste Management)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3225",
+      "name": "Quản lý chất thải nguy hại (Hazardous waste Management)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3227",
+      "name": "Mô hình hóa môi trường (Environmental Modeling)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3121",
+      "name": "Độc học môi trường (Environmental Toxicology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "(EV3114,(EV3117/EV3113))/EV3106",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "EV3114",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV3117",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "EV3113",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "EV3106",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EV4223",
+      "name": "Đánh giá tác động môi trường (Environmental Impact Assessment)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3255",
+      "name": "Năng lượng và tài nguyên khoáng sản (Energy and mineral resources)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3256",
+      "name": "Quan trắc và đánh giá chất lượng môi trường (Environmental quality monitoring and evaluation)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3257",
+      "name": "Kinh tế tài nguyên và môi trường (Natural resources and environmental economics)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3258",
+      "name": "Viễn thám và GIS ứng dụng trong quản lý tài nguyên và môi trường (Remote sensing and GIS applied in Natural Resources and Environmental Management)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3259",
+      "name": "Thống kê sinh thái (Ecological statistics)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3260",
+      "name": "Đặc tính hoá tài nguyên (Characterization of resources)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3261",
+      "name": "Quản lý tổng hợp tài nguyên nước (Integrated water resources management)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3262",
+      "name": "Bảo tồn và quản lý tài nguyên đất (Soil conservation and management)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV3109",
+      "name": "Kỹ thuật kiểm soát ô nhiễm không khí (Air pollution control engineering)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "EV3103/EV2252",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "EV3103",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "EV2252",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EV3298",
+      "name": "Thực tập kỹ thuật (Techical Intership)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Thực tập kỹ thuật và đồ án tốt nghiệp (Áp dụng đối với SV tốt nghiệp cử nhân, không đăng ký chương trình tích hợp)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4324",
+      "name": "Đồ án tốt nghiệp (QLMT) (Bachelor Graduation Thesis)",
+      "credits": 6,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Thực tập kỹ thuật và đồ án tốt nghiệp (Áp dụng đối với SV tốt nghiệp cử nhân, không đăng ký chương trình tích hợp)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "EV3254,EV3226,EV3261,EV3262,EV4223,EV3298",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "EV3254",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV3226",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV3261",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV3262",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV4223",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV3298",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EV4905",
+      "name": "Đồ án nghiên cứu Cử nhân (QLMT) (Bachelor Research-based Thesis)",
+      "credits": 8,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Thực tập kỹ thuật và đồ án tốt nghiệp (Áp dụng đối với SV tốt nghiệp cử nhân, không đăng ký chương trình tích hợp)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "EV3254,EV3226,EV3261,EV3262,EV4223",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "EV3254",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV3226",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV3261",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV3262",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "EV4223",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "PE1014",
+      "name": "Lý luận thể dục thể thao (Theory in Sport)",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất (Physical Education)",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE1024",
+      "name": "Bơi lội (Swimming)",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất (Physical Education)",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1110",
+      "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng – An ninh (165 tiết) (Military Education)",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1120",
+      "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng – An ninh (165 tiết) (Military Education)",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "MIL1110",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MIL1110",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "MIL1130",
+      "name": "Quân sự chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) (General Military Education)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng – An ninh (165 tiết) (Military Education)",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "MIL1120",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MIL1120",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EV4263",
+      "name": "Kinh tế xanh lam (Blue economy)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4264",
+      "name": "Công nghệ sinh học hướng tới kinh tế tuần hoàn (Biotechnology towards circular economy)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV2212",
+      "name": "Các quá trình sản xuất cơ bản (Fundamental Production Process)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4265",
+      "name": "Bảo toàn và hiệu quả năng lượng (Energy conservation and efficiency)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4266",
+      "name": "Sản xuất và tiêu dùng bền vững (Sustainable production and consumption)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4272",
+      "name": "Đồ án II-QLMT (Project II -QLMT)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4227",
+      "name": "Quản lý môi trường đô thị và Khu Công nghiệp (Environmental Management of Urban and Industrial zone)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4229",
+      "name": "Luật và chính sách môi trường (Environmental Laws and Policy)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4225",
+      "name": "Nguyên lý sản xuất sạch hơn (Cleaner Production Principles)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu (Module 2: Energy, Environment and Climate Change)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4269",
+      "name": "Đánh giá tính dễ bị tổn thương do biến đổi khí hậu (Climate Change Vulnerability Assessment)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu (Module 2: Energy, Environment and Climate Change)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4267",
+      "name": "Giảm nhẹ và thích ứng với biến đổi khí hậu (Mitigation and adaptation to climate change)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu (Module 2: Energy, Environment and Climate Change)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EV4268",
+      "name": "Năng lượng từ chất thải (Energy from waste)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu (Module 2: Energy, Environment and Climate Change)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    }
+  ],
+  "non_credit_group_ids": [
+    "group_khoi_7",
+    "group_khoi_8"
+  ],
+  "build_warnings": [
+    "CTĐT EV2-2022 được nhập tự động từ tài liệu công khai: https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=2022_scls_ev2_ql_tai_nguyen_moi_truong_khung_ctdt.pdf (truy cập 2026-10-27). Kiểm tra tự động, chưa đối chiếu thủ công.",
+    "FL1131: CTT ghi 0 TC; dùng 3 TC theo CTĐT.",
+    "FL1132: CTT ghi 0 TC; dùng 3 TC theo CTĐT.",
+    "PE1014: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "PE1024: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "Giáo dục thể chất (Physical Education): bỏ dòng không có mã học phần cụ thể (trống – Tự chọn trong danh mục (Elective courses) Tự chọn thể dục 1 (Elective course 1)).",
+    "Giáo dục thể chất (Physical Education): bỏ dòng không có mã học phần cụ thể (trống – Tự chọn thể dục 2 (Elective course 2)).",
+    "Giáo dục thể chất (Physical Education): bỏ dòng không có mã học phần cụ thể (trống – Tự chọn thể dục 3 (Elective course 3))."
+  ],
+  "applies_to_cohorts": [
+    "K68",
+    "K69"
+  ]
+}
