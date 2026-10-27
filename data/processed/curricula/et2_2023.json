@@ -13,7 +13,7 @@
       "id": "public_curriculum_et2",
       "kind": "PUBLIC_HUST_CURRICULUM_EXTRACTION",
       "file": "data/raw/official_curricula/ET2-2023.json",
-      "sha256": "6afb1492f1dc4b203481c5d1abb442d648fdc9e6aa6c64ea3af31e39c6fae2e5",
+      "sha256": "1efc371c388f1c9a46b110495dd3b31ab56d7cccedf9c4419634ccd9a3e2abc8",
       "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
       "contains_personal_data": false,
       "personal_data_included_in_output": false

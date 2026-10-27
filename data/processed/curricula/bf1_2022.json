@@ -13,7 +13,7 @@
       "id": "public_curriculum_bf1",
       "kind": "PUBLIC_HUST_CURRICULUM_EXTRACTION",
       "file": "data/raw/official_curricula/BF1-2022.json",
-      "sha256": "5f305b183b53705f456ccdc32784991f974fc29829f086f87cf370f42dde2850",
+      "sha256": "ccfe26af7fdb89cc3561226e487a34ac8fc73db617ffffa7ed13facc3e67febf",
       "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
       "contains_personal_data": false,
       "personal_data_included_in_output": false

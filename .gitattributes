@@ -1,0 +1,2 @@
+# Dataset CTĐT ghi SHA-256 của file nguồn: giữ nguyên LF trên mọi máy để mã băm khớp.
+/data/raw/official_curricula/*.json text eol=lf
