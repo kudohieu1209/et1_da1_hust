@@ -1,15 +1,12 @@
 import './StudentState.css';
-
-const IMAGES = {
-  transcript: '/brand/hust-student-transcript.png',
-  offline: '/brand/hust-student-offline.png',
-  achievement: '/brand/hust-student-achievement.png',
-};
+import useMascot from '../useMascot';
 
 export default function StudentState({ variant, title, description, actionLabel, onAction, compact = false, role = 'status' }) {
+  const { mascot } = useMascot();
+  const image = mascot.states[variant];
   return (
     <div className={`student-state student-state--${variant}${compact ? ' student-state--compact' : ''}`} role={role}>
-      {IMAGES[variant] && <img className="student-state__image" src={IMAGES[variant]} alt="" loading="lazy" decoding="async" width="160" height="160" />}
+      {image && <img className="student-state__image" src={image} alt="" loading="lazy" decoding="async" width="160" height="160" />}
       <div className="student-state__content">
         <h3>{title}</h3>
         <p>{description}</p>

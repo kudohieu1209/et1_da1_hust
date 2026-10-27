@@ -4,6 +4,7 @@ import AboutPanel from './account/AboutPanel';
 import AccountSecurity from './account/AccountSecurity';
 import ProfileSettings from './account/ProfileSettings';
 import AdvisingMemory from './account/AdvisingMemory';
+import MascotPicker from './MascotPicker';
 import './account/account.css';
 
 const TABS = [
@@ -135,6 +136,9 @@ export default function SettingsModal({
           >
             {activeTab === 'general' && (
               <>
+                <section className="settings-section">
+                  <MascotPicker language={language} />
+                </section>
                 <section className="settings-section">
                   <h3>{t('Giao diện', 'Appearance')}</h3>
                   <p className="settings-hint">{t('Lưu trên trình duyệt này.', 'Saved in this browser.')}</p>
