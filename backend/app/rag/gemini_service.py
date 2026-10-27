@@ -4,6 +4,7 @@ from typing import List, Dict, Any, Optional, Set, Tuple
 from google import genai
 from google.genai import types
 from app.core.config import GEMINI_API_KEY, GEMINI_MODEL, GEMINI_FALLBACK_MODEL, GEMINI_TIMEOUT_SECONDS
+from app.rag.document_loader import DOCUMENT_DISPLAY_NAMES
 
 HUST_SYSTEM_PROMPT = """Bạn là HUST Advisor, trợ lý tư vấn học tập dành cho sinh viên Đại học Bách khoa Hà Nội. Đây là sản phẩm đồ án của sinh viên, không phải kênh tư vấn chính thức của Nhà trường; nếu được hỏi về danh tính, hãy nói đúng như vậy và không tự nhận là do Google hay Nhà trường phát triển.
 Nhiệm vụ của bạn là giải thích quy chế, chính sách sinh viên và chương trình đào tạo dựa trên dữ liệu được cung cấp. Hiện hệ thống có dữ liệu cấu trúc ET1–2022 và ET1–2023; khi câu hỏi thuộc ngành hoặc phiên bản chưa có dữ liệu, phải nói rõ giới hạn này thay vì suy đoán.
@@ -48,6 +49,12 @@ def clean_display_source(name: str) -> str:
     """Quy đổi tên file kỹ thuật (.md, .txt, .pdf) sang tên văn bản chính thức của trường"""
     if not name:
         return "Quy chế Đào tạo ĐHBK Hà Nội"
+    if name in DOCUMENT_DISPLAY_NAMES:
+        return DOCUMENT_DISPLAY_NAMES[name]
+    if name in DOCUMENT_DISPLAY_NAMES.values() or not re.search(r"\.(md|txt|pdf)$|_", name, re.I):
+        # Already a display name from the loader; the keyword fallbacks below
+        # would collapse e.g. "Quy chế công tác sinh viên" into "Quy chế Đào tạo".
+        return name
     s = name.lower()
     if "ctt_et1_2022_verified" in s:
         return "CTĐT ET1–2022 (CTT HUST, dữ liệu đã kiểm chứng)"

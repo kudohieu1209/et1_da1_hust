@@ -13,15 +13,25 @@ Trích các trang PDF 14-18 về học bổng khuyến khích học tập và c�
 
 ## Thông tin tra cứu chính
 
+### Học bổng khuyến khích học tập: các loại và mức học bổng
+
 Theo trang PDF 16 (trang in 30) về Học bổng khuyến khích học tập:
 
-### Học bổng loại xuất sắc (Loại A)
-
-- GPA từ 3,6 và điểm rèn luyện học kỳ từ 90; mức học bổng bằng 1,5 lần mức loại C.
+- Loại A (xuất sắc): GPA từ 3,6 và điểm rèn luyện học kỳ từ 90; mức học bổng bằng 1,5 lần mức loại C.
 - Loại B (giỏi): GPA từ 3,2 và điểm rèn luyện học kỳ từ 80; mức học bổng bằng 1,2 lần mức loại C.
 - Loại C (khá): GPA từ 2,5 và điểm rèn luyện học kỳ từ 65; mức học bổng bằng tổng học phí của các học phần có tính điểm GPA của học kỳ chính liền trước.
 
+### Các trường hợp không được xét học bổng khuyến khích học tập
+
 Không xét cấp trong các trường hợp được liệt kê trên cùng trang: bị kỷ luật từ khiển trách; không đạt ngưỡng đăng ký tín chỉ; học quá thời gian chuẩn; hoặc thuộc chương trình đối tác nước ngoài cấp một văn bằng duy nhất. Dòng ngưỡng 15 tín chỉ trong bản gốc in "ít nhất hơn 15", có dấu hiệu lỗi biên tập; hệ thống không tự sửa nghĩa và khuyến nghị xác nhận với Ban Công tác sinh viên.
+
+### Học bổng Trần Đại Nghĩa: mức học bổng và nguyên tắc xét
+
+Theo trang PDF 17 (trang in 32):
+
+- Học bổng Trần Đại Nghĩa có 2 mức tương ứng với 50% và 100% học phí sinh viên phải đóng trong học kỳ xét, cấp học bổng.
+- Học bổng được xét, cấp theo học kỳ, mỗi học kỳ xét 01 lần vào đầu học kỳ.
+- Không xét, cấp cho sinh viên không đăng ký học tập tại thời điểm xét; sinh viên đang trong thời gian bị kỷ luật từ mức cảnh cáo trở lên; sinh viên đã được nhận học bổng KKHT hoặc học bổng tài trợ trong học kỳ xét; sinh viên diện chế độ chính sách được miễn, giảm học phí theo quy định của Nhà nước.
 
 ## Trang PDF 14
 

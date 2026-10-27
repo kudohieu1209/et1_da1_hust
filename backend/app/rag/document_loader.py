@@ -20,21 +20,32 @@ class DocumentChunk:
             "metadata": self.metadata
         }
 
+DOCUMENT_DISPLAY_NAMES = {
+    "ctt_et1_2022_verified.md": "CTĐT ET1–2022 (CTT HUST, dữ liệu đã kiểm chứng)",
+    "ctt_et1_2023_verified.md": "CTĐT ET1–2023 (HUST, dữ liệu đã chuẩn hóa)",
+    "quy_che_dao_tao_2025_verified.md": "Quy chế đào tạo HUST 2025 (QĐ 5445/QĐ-ĐHBK)",
+    "so_tay_sinh_vien_2026_verified.md": "Sổ tay sinh viên HUST 2026",
+    "hoc_phi_2025_2026_verified.md": "Quyết định học phí HUST 2025-2026 (QĐ 10232/QĐ-ĐHBK)",
+    "hoc_phi_2026_2027_verified.md": "Quyết định học phí HUST 2026-2027 (QĐ 12006/QĐ-ĐHBK)",
+    "quy_dinh_ngoai_ngu_k71_verified.md": "Quy định ngoại ngữ từ K71 (QĐ 10828/QĐ-ĐHBK)",
+    "quy_dinh_ngoai_ngu_k70_verified.md": "Quy định ngoại ngữ K70 (QĐ 10728/QĐ-ĐHBK)",
+    "quy_dinh_ren_luyen_2026_verified.md": "Quy định đánh giá rèn luyện 2026 (QĐ 10911/QĐ-ĐHBK)",
+    "quy_che_cong_tac_sinh_vien_2026_verified.md": "Quy chế công tác sinh viên 2026 (QĐ 10370/QĐ-ĐHBK)",
+    "quy_dinh_mien_giam_hoc_phi_verified.md": "Quy định miễn, giảm học phí (QĐ 10969/QĐ-ĐHBK)",
+    "quy_dinh_hoc_bong_tran_dai_nghia_verified.md": "Quy định Học bổng Trần Đại Nghĩa (QĐ 11865/QĐ-ĐHBK)",
+    "quy_dinh_hoc_bong_trao_doi_verified.md": "Quy định học bổng trao đổi nước ngoài (QĐ 12044/QĐ-ĐHBK)",
+    "ke_hoach_nam_hoc_2026_2027_verified.md": "Khung kế hoạch năm học 2026-2027 (HUST)",
+    "quy_che_dao_tao_dai_hoc_hust.md": "Quy chế Đào tạo Đại học Chính quy (HUST)",
+    "chuong_trinh_dao_tao_et1.md": "Chương trình đào tạo Cử nhân Kỹ thuật Điện tử - Viễn thông",
+    "de_cuong_chi_tiet_mon_hoc_et1.md": "Đề cương chi tiết học phần chuyên ngành (ET1)",
+    "so_tay_sinh_vien_2026.pdf": "Sổ tay Sinh viên Đại học Bách Khoa Hà Nội",
+}
+
+
 def format_document_display_name(filename: str) -> str:
     """Quy đổi tên file kỹ thuật (.md, .txt, .pdf) sang tên văn bản chính thức của trường"""
-    name_map = {
-        "ctt_et1_2022_verified.md": "CTĐT ET1–2022 (CTT HUST, dữ liệu đã kiểm chứng)",
-        "ctt_et1_2023_verified.md": "CTĐT ET1–2023 (HUST, dữ liệu đã chuẩn hóa)",
-        "quy_che_dao_tao_2025_verified.md": "Quy chế đào tạo HUST 2025 (QĐ 5445/QĐ-ĐHBK)",
-        "so_tay_sinh_vien_2026_verified.md": "Sổ tay sinh viên HUST 2026",
-        "hoc_phi_2025_2026_verified.md": "Quyết định học phí HUST 2025-2026",
-        "quy_che_dao_tao_dai_hoc_hust.md": "Quy chế Đào tạo Đại học Chính quy (HUST)",
-        "chuong_trinh_dao_tao_et1.md": "Chương trình đào tạo Cử nhân Kỹ thuật Điện tử - Viễn thông",
-        "de_cuong_chi_tiet_mon_hoc_et1.md": "Đề cương chi tiết học phần chuyên ngành (ET1)",
-        "so_tay_sinh_vien_2026.pdf": "Sổ tay Sinh viên Đại học Bách Khoa Hà Nội",
-    }
-    if filename in name_map:
-        return name_map[filename]
+    if filename in DOCUMENT_DISPLAY_NAMES:
+        return DOCUMENT_DISPLAY_NAMES[filename]
     stem = Path(filename).stem
     return stem.replace("_", " ").strip().title()
 
@@ -225,6 +236,20 @@ class DocumentLoader:
                 ) if title in stripped.upper()), "general")
                 awaiting_chapter_title = False
                 continue
+            if document_type == "tuition_decision":
+                # Fee appendices split by training mode (I/II/III); sub-items
+                # such as "1) Các chương trình đào tạo chuẩn" repeat in each.
+                if re.fullmatch(r"Phụ lục\s+[IVX]+", stripped):
+                    flush()
+                    education_level = "general"
+                elif re.match(r"[IVX]+\.\s+", stripped):
+                    flush()
+                    lowered = stripped.lower()
+                    education_level = next((level for term, level in (
+                        # Section I also covers KSCS fees, so keep it general.
+                        ("đại học chính quy", "general"), ("vừa làm vừa học", "continuing"),
+                        ("thường xuyên", "continuing"), ("sau đại học", "postgraduate"),
+                    ) if term in lowered), education_level)
             article_match = re.match(r"Điều\s+\d+[.:]\s+.+", stripped)
             if article_match and not re.search(r"\.{3,}", stripped):
                 flush()

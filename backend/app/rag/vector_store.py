@@ -1,6 +1,7 @@
 import os
 import json
 import re
+from datetime import date
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import chromadb
@@ -8,7 +9,73 @@ from chromadb.config import Settings
 
 from app.core.config import VECTOR_DB_DIR
 from app.rag.document_loader import document_loader, DocumentChunk
-from app.rag.lexical_search import bm25_scores
+from app.rag.lexical_search import bm25_scores, tokenize
+
+# Strong enough that a topical document (e.g. a fee table) outranks another
+# document type that merely repeats the programme names in the question.
+PREFERRED_TYPE_BOOST = 1.5
+
+# Topic keywords -> document types whose chunks get a ranking boost. Several
+# topics may match one question (e.g. scholarship conditions on conduct score).
+TOPIC_DOCUMENT_TYPES = (
+    (("miễn giảm", "miễn, giảm", "giảm học phí", "hỗ trợ chi phí học tập"), {"tuition_support_regulation"}),
+    (("học phí",), {"tuition_decision"}),
+    (("khuyến khích học tập", "kkht"), {"student_handbook"}),
+    (("ngoại ngữ", "tiếng anh", "toeic", "ielts", "toefl", "vstep", "aptis"), {"language_regulation"}),
+    (("rèn luyện", "drl"), {"conduct_regulation"}),
+    (("kỷ luật", "khen thưởng", "công tác sinh viên", "nghĩa vụ của sinh viên", "quyền của sinh viên"),
+     {"student_affairs_regulation"}),
+    (("kế hoạch năm học", "lịch năm học", "rút học phần", "rút bớt", "nghỉ tết", "tuần thi",
+      "khai giảng", "bắt đầu học kỳ", "kết thúc học kỳ", "lịch thi"), {"academic_calendar"}),
+)
+
+
+def lexical_text(row: Dict[str, Any]) -> str:
+    """Chunk text for BM25, completed with the document-name words it lacks.
+
+    An article title such as "Điều 8. Mức Học bổng" omits which scholarship it
+    governs. Adding only the missing words avoids double-counting the name in
+    chunks that already repeat it.
+    """
+    metadata = row["metadata"]
+    body = f"{metadata.get('title', '')}\n{row['text']}"
+    present = set(tokenize(body))
+    missing = [word for word in re.findall(r"[^\W_]+", metadata.get("source", ""))
+               if word.lower() not in present]
+    return f"{' '.join(missing)}\n{body}"
+
+
+def preferred_document_types(query: str) -> set:
+    """Document types a question is about; quy chế đào tạo when no topic matches."""
+    lowered = query.lower()
+    types = set()
+    for keywords, document_types in TOPIC_DOCUMENT_TYPES:
+        if any(re.search(rf"\b{re.escape(keyword)}\b", lowered) for keyword in keywords):
+            types |= document_types
+    if "tuition_support_regulation" in types:
+        # "miễn giảm học phí" is about exemptions, not the fee schedule.
+        types.discard("tuition_decision")
+    if re.search(r"\bhọc bổng\b", lowered):
+        # The handbook summarises every scholarship and governs KKHT, the one
+        # meant when none is named; dedicated rules hold the named ones.
+        types.add("student_handbook")
+        if re.search(r"\b(trần đại nghĩa|tđn|trao đổi)\b", lowered):
+            types.add("scholarship_regulation")
+        # Discipline or conduct terms here are eligibility conditions, which
+        # the scholarship documents themselves state.
+        types -= {"student_affairs_regulation", "conduct_regulation"}
+    return types or {"academic_regulation"}
+
+
+def requested_academic_year(query: str, today: Optional[date] = None) -> str:
+    """The academic year named in the query, else the one in progress (starts in August)."""
+    match = re.search(r"\b(20\d{2})\s*[-–/]\s*(20\d{2})\b", query)
+    if match:
+        return f"{match.group(1)}-{match.group(2)}"
+    today = today or date.today()
+    start = today.year if today.month >= 8 else today.year - 1
+    return f"{start}-{start + 1}"
+
 
 class VectorStoreManager:
     def __init__(self, persist_dir: Path = VECTOR_DB_DIR):
@@ -135,8 +202,12 @@ class VectorStoreManager:
         # graduate-level questions and article numbers override that default.
         requested_level = next((level for term, level in (
             ("thạc sĩ", "master"), ("tiến sĩ", "doctorate"), ("nghiên cứu sinh", "doctorate"),
-            ("kỹ sư", "engineer"),
+            ("kỹ sư", "engineer"), ("sau đại học", "postgraduate"),
+            ("vừa làm vừa học", "continuing"), ("đào tạo thường xuyên", "continuing"),
         ) if term in query.lower()), "undergraduate")
+        allowed_levels = {"general", requested_level}
+        if requested_level in {"master", "doctorate"}:
+            allowed_levels.add("postgraduate")
         search_query = re.sub("cử nhân", "đại học", search_query, flags=re.I)
         if "học bổng" in search_query.lower():
             search_query = re.sub(r"loại A\b", "loại xuất sắc", search_query, flags=re.I)
@@ -149,9 +220,7 @@ class VectorStoreManager:
         ]
         if not rows:
             return []
-        lexical = bm25_scores(search_query, [
-            f"{row['metadata'].get('title', '')}\n{row['text']}" for row in rows
-        ])
+        lexical = bm25_scores(search_query, [lexical_text(row) for row in rows])
         lexical_order = sorted(range(len(rows)), key=lambda index: lexical[index], reverse=True)
         lexical_ranks = {rows[index]["id"]: rank for rank, index in enumerate(lexical_order, 1) if lexical[index] > 0}
         semantic_ranks = {}
@@ -165,10 +234,9 @@ class VectorStoreManager:
         codes = set(re.findall(r"\b[A-Z]{2,3}\d{4}[A-Z]?\b", query.upper()))
         articles = set(re.findall(r"điều\s+(\d+)\b", query.lower()))
         is_curriculum = bool(re.search(r"\bET\d\b|mô[ -]đun|mô đun|ctđt", query, re.I))
-        preferred_type = "tuition_decision" if "học phí" in query.lower() else (
-            "student_handbook" if "học bổng" in query.lower() else "academic_regulation"
-        )
-        if preferred_type in {"tuition_decision", "student_handbook"}:
+        preferred_types = preferred_document_types(query)
+        academic_year = requested_academic_year(query)
+        if preferred_types != {"academic_regulation"}:
             # A programme code identifies the student, not the document type.
             is_curriculum = False
         max_lexical = max(lexical) or 1
@@ -181,15 +249,18 @@ class VectorStoreManager:
             article_number = re.search(r"Điều\s+(\d+)\b", metadata.get("article", ""))
             explicit_article = bool(articles and article_number and article_number.group(1) in articles)
             scope = metadata.get("education_level", "general")
-            if scope not in {"general", requested_level} and not explicit_article:
+            if scope not in allowed_levels and not explicit_article:
                 continue
             if is_curriculum and metadata.get("document_type") != "curriculum":
                 continue
             score = lexical[index] / max_lexical
             if identifier in semantic_ranks:
                 score += 0.10 / semantic_ranks[identifier]
-            if metadata.get("document_type") == preferred_type:
-                score *= 1.25
+            if metadata.get("document_type") in preferred_types:
+                score *= PREFERRED_TYPE_BOOST
+            if metadata.get("document_type") == "tuition_decision" and academic_year in metadata.get("effective_period", ""):
+                # Fee decisions differ only by year; prefer the requested one.
+                score *= 1.15
             if metadata.get("document_type") == "curriculum" and years:
                 if not any(year in metadata.get("effective_period", "") for year in years):
                     continue
