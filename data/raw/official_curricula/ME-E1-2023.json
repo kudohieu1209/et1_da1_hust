@@ -1,0 +1,642 @@
+{
+  "admission_code": "ME-E1",
+  "name": "Kỹ thuật Cơ điện tử (Chương trình tiên tiến)",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": 133,
+  "source_url": "https://sme.hust.edu.vn/dao-tao/elitech-chuong-trinh-tien-tien-ky-thuat-co-dien-tu.html",
+  "source_title": "Chương trình đào tạo Kỹ thuật Cơ điện tử (Chương trình tiên tiến)",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương Political Theory + General Law",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác – Lênin Philosophy of Marxism and Leninism",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác – Lênin Political Economics of Marxism and Leninism",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học Scientific Socialism",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam History of Vietnamese Communist Party",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh Ho Chi Minh Ideology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương Introduction to the Legal Environment",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất Physical Education",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao Sports theory",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn (4 HP) Tự chọn thể dục 1 Elective exercise 1",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 Elective exercise 2",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 Elective exercise 3",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 4 Elective exercise 4",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh National Defense Education",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam Vietnam Communist Party’s direction on defense and secutity",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng và an ninh Introduction to the National Defense",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung General Military Education",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật Infantry combat techniques and tactics",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 33,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1016",
+          "name": "Giải tích I Calculus I",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1026",
+          "name": "Giải tích II Calculus II",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1046",
+          "name": "Phương trình vi phân và chuỗi Differential Equations and Series",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1036",
+          "name": "Đại số Algebra",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1016",
+          "name": "Vật lý đại cương I Physics I",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1026",
+          "name": "Vật lý đại cương II Physics II",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1016",
+          "name": "Tin học đại cương Introduction to Informatics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2036",
+          "name": "Xác suất thống kê và tín hiệu ngẫu nhiên Probability, Statistics and Random Signals",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2111E",
+          "name": "Phương pháp số trong kỹ thuật Numerical Methods in Engineering",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2016E",
+          "name": "Vẽ kỹ thuật I Engineering Graphics I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành Basic and Core of Engineering",
+      "kind": "block",
+      "required_credits": 49,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ME2032E",
+          "name": "Công nghệ Cơ khí cơ bản Fundamentals of Mechanical Manufacturing Technology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2201E",
+          "name": "Đồ họa kỹ thuật II Technical Graphics II",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2100E",
+          "name": "Nhập môn Cơ điện tử Introduction to Mechatronics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE2012E",
+          "name": "Kỹ thuật điện Fundamentals of Electrical Engineering",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET2012E",
+          "name": "Kỹ thuật điện tử Electronic Engineering",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2112E",
+          "name": "Cơ học kỹ thuật 1 Engineering Mechanics 1",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2102E",
+          "name": "Sức bền vật liệu Strength of Materials",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2211E",
+          "name": "Cơ học kỹ thuật 2 Engineering Mechanics 2",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3051E",
+          "name": "Phương pháp phần tử hữu hạn Finite Element Method",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3210E",
+          "name": "Nguyên lý máy Theory of Machine and Mechanism",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3359E",
+          "name": "Điều khiển hệ thống Cơ điện tử Control of Mechatronic Systems",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3116E",
+          "name": "Vật liệu kỹ thuật Engineering materials",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3216E",
+          "name": "Chi tiết máy Machine Elements",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3072E",
+          "name": "Kỹ thuật đo",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3012E",
+          "name": "Cấu trúc dữ liệu và thuật toán Data Structures and Algorithms",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3031E",
+          "name": "Công nghệ chế tạo máy Manufacturing Technology",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3209E",
+          "name": "Robotics Robotics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE2012E",
+          "name": "Kỹ thuật nhiệt Thermal Engineering",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3213E",
+          "name": "Kỹ thuật lập trình trong cơ điện tử Programming in Mechatronics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE3600E",
+          "name": "Kỹ thuật thủy khí Hydrodynamics",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3302E",
+          "name": "Đồ án thiết kế hệ thống Cơ điện tử 1 Mechatronics System Design Project 1",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ xã hội Soft skill Courses",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ME2021E",
+          "name": "Technical Writing and Presentation Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm Product Promotion Design",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp Industrial Design",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3125",
+          "name": "Công thái học Ergonomics",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3126",
+          "name": "Phát triển ý tưởng sản phẩm công nghệ Technology Product Ideation and Development",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương Introduction to Management",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp Business Culture and Entrepreneurship",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm Soft Skills",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp Innovation and Entrepreneurship + Trọng số: 0.5",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật Technology and technical design thinking + Trọng số 0.6",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Thiết bị tự động Modul 1: Automatic equipment",
+      "kind": "module",
+      "required_credits": 21,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ME3215E",
+          "name": "Cơ sở máy CNC CNC Machine Fundamental",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4513E",
+          "name": "Cơ cấu chấp hành và điều khiển Actuators and Control",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4516E",
+          "name": "Thiết kế hệ thống điều khiển số",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4507E",
+          "name": "Robot công nghiệp (Industrial robot)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4169E",
+          "name": "Vi xử lý Microprocessors",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4501E",
+          "name": "PLC và mạng công nghiệp PLC and Industrial Network",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4605E",
+          "name": "Đồ án thiết kế hệ thống Cơ điện tử 2 Mechatronics System Design Project 2",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4511E",
+          "name": "Cảm biến & xử lý tín hiệu Sensors and Signal Processing",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4602E",
+          "name": "Thực tập xưởng Thiết bị tự động Internship: automatic equipments",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Robot và Hệ thống Cơ điện tử thông minh Modul 2: Robot and Intelligent mechatronics system",
+      "kind": "module",
+      "required_credits": 21,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ME4169E",
+          "name": "Vi xử lý Microprocessors",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4517E",
+          "name": "AI trong Cơ điện tử AI in Mechatronics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4605E",
+          "name": "Đồ án thiết kế hệ thống Cơ điện tử 2 Mechatronics System Design Project 2",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4514E",
+          "name": "IIoT và ứng dụng IIoT and Application",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4509E",
+          "name": "Xử lý ảnh Image Processing",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4511E",
+          "name": "Cảm biến & xử lý tín hiệu Sensors and Signal Processing",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4512E",
+          "name": "Robot tự hành Autonomous Robots",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4519E",
+          "name": "Robot cộng tác Collaborative Robots",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4604E",
+          "name": "Thực tập xưởng HTCĐT TM (Internship: intelligent mechatronics systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp cử nhân Engineering Internship and Bachelor Graduation Project",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ME4258E",
+          "name": "Thực tập kỹ thuật Engineering Practicum",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4992E",
+          "name": "Đồ án tốt nghiệp cử nhân Bachelor Final Project",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4995E",
+          "name": "Đồ án nghiên cứu Cử nhân Bachelor’s Research Project",
+          "credits": 8.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "PDF có mã ME-E1 trên tiêu đề; tổng ghi 133 TC. Không lấy nhãn mã ngành rỗng trên manifest crawler làm thông tin áp dụng.",
+    "Tệp đính kèm do trang trường/khoa chính thức dẫn tới: https://drive.google.com/uc?export=download&id=1oKaGJ5xoW36uj6wDpc1FLZ6TyVkckwF-. source_url là trang HUST công bố tệp; không dùng tài liệu do bên thứ ba tự đăng.",
+    "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2023 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
+    "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 1, bảng 1, dòng 12: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 1, bảng 1, dòng 13: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 1, bảng 1, dòng 14: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 1, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục thể chất Physical Education: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Giáo dục Quốc phòng - An ninh National Defense Education: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 133 TC; total_credits=133 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

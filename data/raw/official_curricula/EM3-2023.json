@@ -1,0 +1,265 @@
+{
+  "admission_code": "EM3",
+  "name": "Quản trị kinh doanh",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://sem.hust.edu.vn/chuong-trinh-tich-hop-quan-tri-kinh-doanh",
+  "source_title": "Chương trình tích hợp Quản trị kinh doanh - Trường Kinh tế",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": null,
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM1100",
+          "name": "Kinh tế vi mô đại cương ( Principles of Microeconomics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1110",
+          "name": "Kinh tế học vĩ mô đại cương ( Principles of Macroeconomics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương ( Introduction to the Legal Environment )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM2300",
+          "name": "Tin học kinh tế cơ sở ( Introduction to IT for Business )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3222",
+          "name": "Luật kinh doanh ( Business Legal Environment )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3511",
+          "name": "Lý thuyết tài chính tiền tệ ( Theory of Finance and Monetary )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1300",
+          "name": "Nhập môn Quản trị kinh doanh ( Introduction to the Major of Business Administration )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1322",
+          "name": "Academic Writing and Presentation ( Academic Writing and Presentation )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3140",
+          "name": "Kinh tế quốc tế ( International Economics )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3211",
+          "name": "Nguyên lý marketing ( Principles of marketing )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4542",
+          "name": "Thuế và hệ thống thuế ( Taxation )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3230",
+          "name": "THỐNG KÊ ỨNG DỤNG ( Applied Statistics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3300",
+          "name": "Quản trị quy trình kinh doanh ( Business Process Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3310",
+          "name": "Mô phỏng hoạt động kinh doanh ( Business Simulation )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3417",
+          "name": "Quản trị sản xuất (BTL) ( OPERATIONS MANAGEMENT )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3432",
+          "name": "QUẢN TRỊ CHUỖI CUNG ỨNG ( SUPPLY CHAIN MANAGEMENT )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3500",
+          "name": "Nguyên lý kế toán ( Principles of Accounting )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM2200",
+          "name": "Giao tiếp kinh doanh ( BUSINESS COMMUNICATION )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3519",
+          "name": "Quản trị tài chính doanh nghiệp / Tài chính doanh nghiệp ( Corporate Finance )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4212",
+          "name": "Phân tích kinh doanh ( Corporate Performance Analysis )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4218",
+          "name": "Hệ thống thông tin quản lý ( Management Information Systems )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4413",
+          "name": "Quản trị nhân lực ( Human Resource Management )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4416",
+          "name": "Quản trị chiến lược ( Strategy Management )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3301",
+          "name": "Đạo đức kinh doanh ( BUSINESS ETHICS )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4210",
+          "name": "KHỞI SỰ KINH DOANH ( Business Start-up )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4216",
+          "name": "Phương pháp nghiên cứu trong KD ( Research Methods in Business )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4323",
+          "name": "Quản trị thương hiệu ( Branding Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4336",
+          "name": "Thương mại điện tử ( Electronic Commerce )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4435",
+          "name": "Quản trị dự án ( Project Management )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4811",
+          "name": "DỰ BÁO KINH DOANH ( Business Forecasting )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4313",
+          "name": "Quản trị marketing ( Marketing Management )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4317",
+          "name": "Marketing dịch vụ ( Service marketing )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4331",
+          "name": "Marketing kỹ thuật số ( Digital Marketing )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4335",
+          "name": "Nghiên cứu Marketing ( Marketing Research )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "CHƯA XÁC NHẬN ĐÚNG PHIÊN BẢN K68: đây là các bảng mô tả học phần đang công bố trên trang trường, chưa ghi ngày ban hành hoặc khóa áp dụng cho toàn danh mục. curriculum_version, applies_to_cohorts=null.",
+    "Nhóm name=null vì chưa có phân khối tốt nghiệp chắc chắn cho danh mục mô tả này; required_credits, counts_toward_degree, total_credits, graduation_rule=null. Không suy ra tổng CTĐT từ các mô tả học phần.",
+    "Số TC lấy đúng trường Khối lượng bằng tín chỉ; không nhầm với số ECTS, tiết học hoặc giờ tự học. compulsory chỉ đọc dấu ☑ ở Vai trò học phần; suggested_semester=null nếu bảng ghi dấu gạch hoặc không có kỳ.",
+    "Đã tìm thấy liên kết kế hoạch học tập từ K68 trên trang trường nhưng tệp Drive chặn tải; công cụ Google Drive kết nối cũng yêu cầu xác thực lại. Không đọc được toàn bộ sơ đồ K68 để hợp nhất."
+  ]
+}

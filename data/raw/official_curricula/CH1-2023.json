@@ -1,0 +1,876 @@
+{
+  "admission_code": "CH1",
+  "name": "Kỹ thuật Hóa học",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": [
+    "K68",
+    "K69"
+  ],
+  "total_credits": 132,
+  "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=KTHH_Cu_nhan_Thac_si_2023.pdf",
+  "source_title": "CTĐT Kỹ thuật Hóa học — 54216fa6e0a395f5.pdf",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Chọn một trong sáu mô-đun định hướng, mỗi mô-đun 16 TC. Phần tốt nghiệp 8 TC: thực tập 2 TC + đồ án tốt nghiệp 6 TC, hoặc đồ án nghiên cứu 8 TC cho lộ trình tích hợp. Tổng cử nhân nguồn công bố 132 TC.",
+  "groups": [
+    {
+      "name": "A1. Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "kind": "block",
+      "required_credits": 12,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1110",
+          "name": "Những NLCB của CN Mác-Lênin I (Fundamental Principles of Marxism- Leninism I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1120",
+          "name": "Những NLCB của CN Mác-Lênin II (Fundamental Principles of Marxism- Leninism II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1050",
+          "name": "Tư tưởng Hồ Chí Minh (Ho-Chi-Minh’s Thought)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1130",
+          "name": "Đường lối CM của Đảng CSVN (Revolution Policy of Vietnamese Communist Party)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1170",
+          "name": "Pháp luật đại cương (General Law)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "A2. Giáo dục thể chất (Physical Education)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Theory in Sport)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (Swimming)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục (Elective courses) Tự chọn thể dục 1 (Elective course 1)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 (Elective course 2)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 (Elective course 3)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "A3. Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) (General Military Education)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "A4. Tiếng Anh (English)",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I (English I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh II (English II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "A5. Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1112",
+          "name": "Giải tích I (Calculus I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1122",
+          "name": "Giải tích II (Calculus II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1132",
+          "name": "Giải tích III (Calculus III)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1142",
+          "name": "Đại số (Algebra)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1111",
+          "name": "Vật lý đại cương I (Physics I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1121",
+          "name": "Vật lý đại cương II (Physics II)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1131",
+          "name": "Vật lý đại cương III (Physics III)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1140",
+          "name": "Tin học đại cương (Introduction to Computer Science)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2021",
+          "name": "Xác suất thống kê (Probability and Statistics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1012",
+          "name": "Hóa học 1 (Chemistry I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1015",
+          "name": "Hóa học II (Chemistry II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2015",
+          "name": "Đồ họa kỹ thuật cơ bản (Fundamentals of Technical Graphics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B1. Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "kind": "block",
+      "required_credits": 48,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH2000",
+          "name": "Nhập môn Kỹ thuật Hóa học (Introduction to Chemical Engineering)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3120",
+          "name": "Hóa vô cơ (Inorganic Chemistry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3130",
+          "name": "Thí nghiệm Hóa vô cơ (Inorganic Chemistry Lab)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3220",
+          "name": "Hóa hữu cơ (Organic Chemistry)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3230",
+          "name": "Thí nghiệm Hóa hữu cơ (Organic Chemistry Lab)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3051",
+          "name": "Hóa lý I (Physical Chemistry I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3052",
+          "name": "Thí nghiệm Hóa lý I (Physical Chemistry Lab I)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3061",
+          "name": "Hóa lý II (Physical Chemistry II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3062",
+          "name": "Thí nghiệm Hóa lý II (Physical Chemistry Lab II)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3330",
+          "name": "Hóa phân tích (Analytical Chemistry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3340",
+          "name": "Thí nghiệm Hóa phân tích (Analytical Chemistry Lab)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3323",
+          "name": "Phương pháp phân tích bằng công cụ (Instrumental methods of chemical analysis)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3324",
+          "name": "Thực hành phân tích bằng công cụ (Instrumental Methods of Analysis Lab)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3400",
+          "name": "Quá trình và Thiết bị CN Hóa học 1 (Các quá trình thủy lực và thủy cơ) (Chemical Engineering 1: Fluid mechanics and solid mechanics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3412",
+          "name": "Quá trình và Thiết bị CN Hóa học II (Các quá trình nhiệt) (Chemical Engineering II: Heat transfer)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3420",
+          "name": "Quá trình và thiết bị công nghệ hóa học III (Các quá trình chuyển khối) (Chemical Engineering III: Mass transfer)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3480",
+          "name": "Thí nghiệm quá trình thiết bị I (Chemical Process Engineering Lab I)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3490",
+          "name": "Thí nghiệm quá trình thiết bị II (Chemical Process Engineering Lab II)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3440",
+          "name": "Đồ án quá trình và thiết bị công nghệ hoá học (Process and Equipment Design in Chemical Engineering)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE2090",
+          "name": "Kỹ thuật điện và điều khiển quá trình (Electrical Engineering and Process Control)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3452",
+          "name": "Mô phỏng trong công nghệ hóa học (Process Simulation in Chemical Engineering)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3456",
+          "name": "Cơ khí ứng dụng (Applied Mechanics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4780",
+          "name": "An toàn trong nhà máy hóa chất (Safety in Chemical Plant)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B2. Kiến thức bổ trợ (Soft skills)",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH2020",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp (Innovation and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B3-1. Mô đun: Kỹ thuật Lọc hóa dầu (Module: Petroleum refinery and petrochemical engineering)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH4032",
+          "name": "Hóa học dầu mỏ-khí (Oil and Gas Chemistry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4047",
+          "name": "Sản phẩm dầu mỏ và phụ gia (Petroleum Products and Additives)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4030",
+          "name": "Động học xúc tác (Kinetics and Catalysis)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4036",
+          "name": "Công nghệ chế biến dầu (Petroleum refining)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4008",
+          "name": "Công nghệ chế biến khí (Technology of Natural and Petroleum Gas Processing)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4040",
+          "name": "Công nghệ tổng hợp hữu cơ hóa dầu (Organic Synthesis and Petrochemical Processes)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4014",
+          "name": "Thí nghiệm chuyên ngành I (Petrochemical Lab I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B3-2. Mô đun: Kỹ thuật Hóa dược và bảo vệ thực vật (Module: Pharmaceutical chemistry and pesticide engineering Engineering)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH4510",
+          "name": "Hóa dược đại cương (General Pharmaceutical Chemistry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4497",
+          "name": "Các quá trình cơ bản tổng hợp hữu cơ, hóa dược (Basic Processes of",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4490",
+          "name": "Cơ sở kỹ thuật bào chế (Basic Pharmaceutics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4499",
+          "name": "Hóa sinh (Biochemistry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4512",
+          "name": "Phân tích cấu trúc bằng phổ (Spectrometric Identification of Organic Compounds)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4486",
+          "name": "Hóa học bảo vệ thực vật (Pesticide Chemistry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4501",
+          "name": "Thí nghiệm chuyên ngành hóa dược I (Pharmaceutical Chemistry Lab I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B3-3. Mô đun: Kỹ thuật Polyme và giấy (Module: Polymer and paper engineering)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH4421",
+          "name": "Hoá học và hoá lý polyme (Polymer Chemistry and Physics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4085",
+          "name": "Hóa học chất tạo màng và sơn (Chemistry of Binder and Paint)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4086",
+          "name": "Công nghệ chất dẻo (Plastics Processing)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4102",
+          "name": "Công nghệ cao su và compozit (Polymer Composite and Rubber Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4455",
+          "name": "Công nghệ sản xuất bột giấy (Pulping Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4457",
+          "name": "Công nghệ sản xuất giấy (Papermaking Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4088",
+          "name": "Thí nghiệm chuyên ngành Polyme- Giấy (Pulping and Polymer Lab)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4089",
+          "name": "Đồ án chuyên ngành Polyme - Giấy (Polymer and Paper Engineering Design Project)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B3-4. Mô đun: Kỹ thuật Vô cơ – Điện hóa (Module: Inorganic and electrochemical engineering)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH4263",
+          "name": "Thiết kế nhà máy hóa chất (Chemical Plant Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4251",
+          "name": "Công nghệ muối khoáng (Mineral Salt Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4257",
+          "name": "Chế biến khoáng sản (Minerals Processing Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4276",
+          "name": "Vật liệu vô cơ (Inorganic Materials)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4131",
+          "name": "Công nghệ điện hóa (Electrochemistry - Theory and Practice)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4155",
+          "name": "Ăn mòn và bảo vệ kim loại (Corrosion and Protection of Metals)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4265",
+          "name": "Thí nghiệm chuyên ngành vô cơ- điện hóa (Inorganic and Electrochemical Lab)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B3-5. Mô đun: Kỹ thuật Vật liệu silicat (Module: Ceramic engineering)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH4199",
+          "name": "Tinh thể và khoáng vật học silicat (Crystal Chemistry and Silicate Mineralogy)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4209",
+          "name": "Hóa lý silicat I (Physical Chemistry of the Silicates I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4220",
+          "name": "Hoá lý silicat II (Physical Chemistry of the Silicates II)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4214",
+          "name": "Lò công nghiệp silicat (Furnaces in Silicate Industry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4196",
+          "name": "Công nghệ vật liệu kết dính (Cement Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4198",
+          "name": "Công nghệ gốm sứ (Ceramic Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4200",
+          "name": "Công nghệ thuỷ tinh (Glass Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B3-6. Mô đun: Kỹ thuật Quá trình thiết bị và máy hóa chất (Module: Chemical process engineering and equipment)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH3474",
+          "name": "Kỹ thuật hóa học đại cương (General Chemical Engineering)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3481",
+          "name": "Quy hoạch thực nghiệm (Experiments Design in Chemical Engineering)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH5656",
+          "name": "Đường ống bể chứa (Pipeline Engineering and Storage Tanks)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4659",
+          "name": "Đồ án chuyên ngành quá trình thiết bị máy hóa chất (Chemical Engineering and Process Equipment Design Project)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3454",
+          "name": "Phương pháp số trong công nghệ hoá học (Numerical Methods in Chemical Engineering)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2201",
+          "name": "Đồ họa kỹ thuật II (Technical Graphics II)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH5665",
+          "name": "Cơ sở thiết kế thiết bị hóa chất (Chemical Engineering Equipment Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH5658",
+          "name": "Máy gia công vật liệu rắn (Solid Materials Processing Machinery)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B4. Đồ án tốt nghiệp (Bachelor research-based thesis)",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH3900",
+          "name": "Thực tập kỹ thuật (Engineering Practicum)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4900",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4904",
+          "name": "Đồ án nghiên cứu bậc cử nhân (Bachelor Research-based Thesis)",
+          "credits": 8.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Tên tệp chính thức KTHH_Cu_nhan_Thac_si_2023.pdf. Trang https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-hoa-hoc/ dẫn bản áp dụng cho K69 trở về trước. Bản này ghi LLCT/Pháp luật 12 TC, khác nhiều bản mới ghi 13 TC; giữ đúng 12 TC của tài liệu này.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 5, bảng 1, dòng 14: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 5, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 5, bảng 1, dòng 16: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "A2. Giáo dục thể chất (Physical Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "A3. Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 131 TC; total_credits=132 TC; chênh lệch -1 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
+  ]
+}

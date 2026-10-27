@@ -1,0 +1,1387 @@
+{
+  "schema_version": "1.0.0",
+  "program": {
+    "program_id": "FL2",
+    "program_code": "FL2",
+    "name": "Tiếng Anh Chuyên nghiệp Quốc tế",
+    "curriculum_version": "2022",
+    "degree_level": "BACHELOR",
+    "total_required_credits": 131
+  },
+  "sources": [
+    {
+      "id": "public_curriculum_fl2",
+      "kind": "PUBLIC_HUST_CURRICULUM_EXTRACTION",
+      "file": "data/raw/official_curricula/FL2-2022.json",
+      "sha256": "3f94dbab1ded7e88c03920cad4c59f2d2720c0eb22a1b5b3f7a4d32871b59f39",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    }
+  ],
+  "graduation_paths": [
+    {
+      "id": "bachelor",
+      "name": "Tiếng Anh Chuyên nghiệp Quốc tế 2022 (Cử nhân)",
+      "raw_expression": "Giáo dục đại cương 18 TC + Ngoại ngữ 2 chọn 1 trong 3 ngoại ngữ (Pháp/Nhật/Trung) 10 TC + cơ sở/cốt lõi 87 TC + chọn 1 trong 2 môn FLE4101/FLE4104 (4 TC) + thực tập 4 TC + khóa luận 8 TC = 131 TC. GDTC, GDQP không tính trong tổng 131 TC.",
+      "components": [
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_1",
+          "required_credits": 18
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_2",
+          "required_credits": 10
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_3",
+          "required_credits": 87
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_4",
+          "required_credits": 4
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_5",
+          "required_credits": 4
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_6",
+          "required_credits": 8
+        }
+      ],
+      "total_required_credits": 131,
+      "source_order": 0
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_khoi_1",
+      "source_group_code": "KHOI1",
+      "name": "Giáo dục đại cương",
+      "course_count_reported": 8,
+      "catalog_credits": 18,
+      "course_codes": [
+        "SSH1110",
+        "SSH1120",
+        "SSH1050",
+        "SSH1130",
+        "IT1130",
+        "EM1170",
+        "FL1320",
+        "FL1330"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_2",
+      "source_group_code": "KHOI2",
+      "name": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "course_count_reported": 12,
+      "catalog_credits": 30,
+      "course_codes": [
+        "FL1421",
+        "FL1422",
+        "FL1423",
+        "FL1424",
+        "FL1431",
+        "FL1432",
+        "FL1433",
+        "FL1434",
+        "FL1441",
+        "FL1442",
+        "FL1443",
+        "FL1444"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_3",
+      "source_group_code": "KHOI3",
+      "name": "Cơ sở và cốt lõi ngành",
+      "course_count_reported": 24,
+      "catalog_credits": 87,
+      "course_codes": [
+        "FLE1101",
+        "FLE1204",
+        "FLE2108",
+        "FLE1102",
+        "FLE1205",
+        "FLE2109",
+        "FLE1103",
+        "FLE1206",
+        "FLE1207",
+        "FLE2110",
+        "FLE2214",
+        "FLE2111",
+        "FLE2215",
+        "FLE2212",
+        "FLE3101",
+        "FLE3205",
+        "FLE2213",
+        "FLE3102",
+        "FLE3206",
+        "FLE4102",
+        "FLE3103",
+        "FLE3207",
+        "FLE4103",
+        "FLE3204"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_4",
+      "source_group_code": "KHOI4",
+      "name": "Môn tự chọn (chọn 1 trong 2 môn)",
+      "course_count_reported": 2,
+      "catalog_credits": 8,
+      "course_codes": [
+        "FLE4101",
+        "FLE4104"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_5",
+      "source_group_code": "KHOI5",
+      "name": "Work Placement (Thực tập tốt nghiệp)",
+      "course_count_reported": 1,
+      "catalog_credits": 4,
+      "course_codes": [
+        "FLE4205"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_6",
+      "source_group_code": "KHOI6",
+      "name": "Graduation Paper in English (Khóa luận tốt nghiệp)",
+      "course_count_reported": 1,
+      "catalog_credits": 8,
+      "course_codes": [
+        "FLE4206"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_7",
+      "source_group_code": "KHOI7",
+      "name": "Giáo dục thể chất",
+      "course_count_reported": 5,
+      "catalog_credits": 5,
+      "course_codes": [
+        "PE1010",
+        "PE1020",
+        "PE1030",
+        "PE2010",
+        "PE2020"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_khoi_8",
+      "source_group_code": "KHOI8",
+      "name": "Giáo dục Quốc phòng – An ninh",
+      "course_count_reported": 3,
+      "catalog_credits": 10,
+      "course_codes": [
+        "MIL1110",
+        "MIL1120",
+        "MIL1130"
+      ],
+      "counts_toward_degree_credits": false
+    }
+  ],
+  "courses": [
+    {
+      "code": "SSH1110",
+      "name": "Những nguyên lý cơ bản của CN Mác-Lênin I",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Giáo dục đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1120",
+      "name": "Những nguyên lý cơ bản của CN Mác-Lênin II",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Giáo dục đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1050",
+      "name": "Tư tưởng Hồ Chí Minh",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Giáo dục đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1130",
+      "name": "Đường lối Cách mạng của Đảng Cộng sản Việt Nam",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Giáo dục đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "IT1130",
+      "name": "Tin học đại cương",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Giáo dục đại cương",
+      "department": "TCNTT",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1170",
+      "name": "Pháp luật đại cương",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Giáo dục đại cương",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1320",
+      "name": "Cơ sở văn hóa Việt Nam",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Giáo dục đại cương",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1330",
+      "name": "Tiếng Việt thực hành",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Giáo dục đại cương",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1421",
+      "name": "Tiếng Pháp I",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1422",
+      "name": "Tiếng Pháp II",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1421",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1421",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1423",
+      "name": "Tiếng Pháp III",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1422,FL1421",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1422",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1421",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1424",
+      "name": "Tiếng Pháp IV",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1423,FL1421,FL1422",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1423",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1421",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1422",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1431",
+      "name": "Tiếng Nhật I",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1432",
+      "name": "Tiếng Nhật II",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1431/FL1410",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1431",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1410",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1433",
+      "name": "Tiếng Nhật III",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1432/FL1420",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1432",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1420",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1434",
+      "name": "Tiếng Nhật IV",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1433,FL1431,FL1432",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1433",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1431",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1432",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1441",
+      "name": "Tiếng Trung I",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1442",
+      "name": "Tiếng Trung II",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1441",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1441",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1443",
+      "name": "Tiếng Trung III",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1442,FL1441",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1442",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1441",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1444",
+      "name": "Tiếng Trung IV",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1443,FL1442,FL1441",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1443",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1442",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1441",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE1101",
+      "name": "Language Communication Skills 1 (Kỹ năng giao tiếp bằng tiếng Anh 1)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE1204",
+      "name": "Language Communication Skills 2 (Kỹ năng giao tiếp bằng tiếng Anh 2)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1101",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1101",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE2108",
+      "name": "Language Communication Skills 3 (Kỹ năng giao tiếp bằng tiếng Anh 3)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1204",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1204",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE1102",
+      "name": "Dealing with Texts 1 (Kỹ năng đọc và xử lý văn bản tiếng Anh 1)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE1205",
+      "name": "Dealing with Texts 2 (Kỹ năng đọc và xử lý văn bản tiếng Anh 2)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1102",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1102",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE2109",
+      "name": "Dealing with Texts 3 (Kỹ năng đọc và xử lý văn bản tiếng Anh 3)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1205",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1205",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE1103",
+      "name": "Learning to Learn 1 (Kỹ năng học tập 1)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE1206",
+      "name": "Learning to Learn 2 (Kỹ năng học tập 2)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1103",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1103",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE1207",
+      "name": "Professional Skills 1 (Kỹ năng nghề nghiệp 1)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE2110",
+      "name": "Professional Skills 2 (Kỹ năng nghề nghiệp 2)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1207",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1207",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE2214",
+      "name": "Professional Skills 3 (Kỹ năng nghề nghiệp 3) (BTL)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE2110",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE2110",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE2111",
+      "name": "International Studies 1 (Quốc tế học 1)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1205",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1205",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE2215",
+      "name": "International Studies 2 (Quốc tế học 2)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1205",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1205",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE2212",
+      "name": "English for Professional Purposes 1 (Tiếng Anh chuyên ngành 1)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE2108",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE2108",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE3101",
+      "name": "English for Professional Purposes 2 (Tiếng Anh chuyên ngành 2)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE3205",
+      "name": "English for Professional Purposes 3 (Tiếng Anh chuyên ngành 3)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE2213",
+      "name": "Theory of Translation and Interpretation (Lý thuyết biên-phiên dịch)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLE1206",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE1206",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE3102",
+      "name": "Translation and Interpretation Practice 1 (Thực hành biên-phiên dịch 1)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE3206",
+      "name": "Translation and Interpretation Practice 2 (Thực hành biên-phiên dịch 2)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE4102",
+      "name": "Translation and Interpretation Practice 3 ((Thực hành biên-phiên dịch 3)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE3103",
+      "name": "Language Awareness (Nhận thức ngôn ngữ)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE3207",
+      "name": "Phonetics and Phonology (Ngữ âm và âm vị học)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE4103",
+      "name": "English Literature (Văn học Anh)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE3204",
+      "name": "Research Methodology (Phương pháp nghiên cứu khoa học) (BTL)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE4101",
+      "name": "English for Professional Purposes 4 (Tiếng Anh chuyên ngành 4)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Môn tự chọn (chọn 1 trong 2 môn)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE4104",
+      "name": "Introduction to English Language Teaching (Phương pháp giảng dạy tiếng Anh) (BTL)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Môn tự chọn (chọn 1 trong 2 môn)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FLE4205",
+      "name": "Work Placement (Thực tập tốt nghiệp)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Work Placement (Thực tập tốt nghiệp)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "FLE3206",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE3206",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FLE4206",
+      "name": "Graduation Paper in English (Khóa luận tốt nghiệp)",
+      "credits": 8,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Graduation Paper in English (Khóa luận tốt nghiệp)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "FLE3204",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLE3204",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "PE1010",
+      "name": "Giáo dục thể chất A",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE1020",
+      "name": "Giáo dục thể chất B",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE1030",
+      "name": "Giáo dục thể chất C",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2010",
+      "name": "Giáo dục thể chất D",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE2020",
+      "name": "Giáo dục thể chất E",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "PE2010",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "PE2010",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "MIL1110",
+      "name": "Đường lối quân sự của Đảng Cộng sản Việt Nam",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng – An ninh",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1120",
+      "name": "Công tác Quốc phòng – An ninh",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng – An ninh",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "MIL1110",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MIL1110",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "MIL1130",
+      "name": "Quân sự chung",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng – An ninh",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "MIL1120",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MIL1120",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "non_credit_group_ids": [
+    "group_khoi_7",
+    "group_khoi_8"
+  ],
+  "build_warnings": [
+    "CTĐT FL2-2022 được nhập tự động từ tài liệu công khai: https://sofl.hust.edu.vn/nganh-fl2 (truy cập 2026-10-27). Kiểm tra tự động, chưa đối chiếu thủ công.",
+    "PE1010: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "PE1020: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "PE1030: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "PE2010: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "PE2020: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "MIL1110: CTT ghi 0 TC; dùng 3 TC theo CTĐT.",
+    "MIL1120: CTT ghi 0 TC; dùng 3 TC theo CTĐT.",
+    "MIL1130: CTT ghi 0 TC; dùng 4 TC theo CTĐT."
+  ]
+}

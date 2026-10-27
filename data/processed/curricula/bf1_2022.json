@@ -1,0 +1,2206 @@
+{
+  "schema_version": "1.0.0",
+  "program": {
+    "program_id": "BF1",
+    "program_code": "BF1",
+    "name": "Kỹ thuật Sinh học",
+    "curriculum_version": "2022",
+    "degree_level": "BACHELOR",
+    "total_required_credits": 132
+  },
+  "sources": [
+    {
+      "id": "public_curriculum_bf1",
+      "kind": "PUBLIC_HUST_CURRICULUM_EXTRACTION",
+      "file": "data/raw/official_curricula/BF1-2022.json",
+      "sha256": "5f305b183b53705f456ccdc32784991f974fc29829f086f87cf370f42dde2850",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    }
+  ],
+  "graduation_paths": [
+    {
+      "id": "bachelor",
+      "name": "Kỹ thuật Sinh học 2022 (Cử nhân)",
+      "raw_expression": "LLCT/Pháp luật 13 + Toán/KHCB 32 + Tiếng Anh 6 + cơ sở/cốt lõi 48 + bổ trợ 9 + chọn mô-đun định hướng 16 + tốt nghiệp 8 = 132 TC. Sinh viên không học tích hợp dùng BF4781 (2 TC) và BF4791 (6 TC); học tích hợp dùng BF4792 (8 TC).",
+      "components": [
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_1",
+          "required_credits": 13
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_2",
+          "required_credits": 6
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_3",
+          "required_credits": 32
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_4",
+          "required_credits": 48
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_5",
+          "required_credits": 9
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_6",
+          "required_credits": 8
+        },
+        {
+          "type": "ONE_OF_GROUPS",
+          "required_credits": 16,
+          "options": [
+            {
+              "group_id": "group_mod_1",
+              "required_credits": 16
+            },
+            {
+              "group_id": "group_mod_2",
+              "required_credits": 16
+            },
+            {
+              "group_id": "group_mod_3",
+              "required_credits": 16
+            },
+            {
+              "group_id": "group_mod_4",
+              "required_credits": 16
+            }
+          ]
+        }
+      ],
+      "total_required_credits": 132,
+      "source_order": 0
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_khoi_1",
+      "source_group_code": "KHOI1",
+      "name": "Lý luận chính trị + Pháp luật đại",
+      "course_count_reported": 6,
+      "catalog_credits": 13,
+      "course_codes": [
+        "SSH1111",
+        "SSH1121",
+        "SSH1151",
+        "SSH1131",
+        "SSH1141",
+        "EM1170"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_2",
+      "source_group_code": "KHOI2",
+      "name": "Tiếng Anh (English)",
+      "course_count_reported": 2,
+      "catalog_credits": 6,
+      "course_codes": [
+        "FL1100",
+        "FL1101"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_3",
+      "source_group_code": "KHOI3",
+      "name": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "course_count_reported": 13,
+      "catalog_credits": 32,
+      "course_codes": [
+        "MI1112",
+        "MI1122",
+        "MI1132",
+        "MI1142",
+        "MI3180",
+        "PH1111",
+        "PH1121",
+        "PH1131",
+        "IT1140",
+        "CH1018",
+        "CH3224",
+        "CH3081",
+        "CH3082"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_4",
+      "source_group_code": "KHOI4",
+      "name": "Cơ sở và cốt lõi ngành (Basic and",
+      "course_count_reported": 22,
+      "catalog_credits": 48,
+      "course_codes": [
+        "CH3316",
+        "CH3318",
+        "EE2012",
+        "ME2015",
+        "BF2701",
+        "BF3711",
+        "BF3712",
+        "BF3713",
+        "BF4725",
+        "BF4726",
+        "BF3714",
+        "BF2702",
+        "BF2703",
+        "BF3701",
+        "BF3702",
+        "BF3703",
+        "BF3704",
+        "BF3705",
+        "BF3706",
+        "BF3707",
+        "BF3708",
+        "BF4727"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_5",
+      "source_group_code": "KHOI5",
+      "name": "Kiến thức bổ trợ (Soft skills)",
+      "course_count_reported": 7,
+      "catalog_credits": 15,
+      "course_codes": [
+        "EM1010",
+        "EM1180",
+        "ED3280",
+        "ED3220",
+        "ET3262",
+        "TEX3123",
+        "BF2020"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_6",
+      "source_group_code": "KHOI6",
+      "name": "Đồ án tốt nghiệp Cử nhân nghiên",
+      "course_count_reported": 3,
+      "catalog_credits": 16,
+      "course_codes": [
+        "BF4792",
+        "BF4781",
+        "BF4791"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_7",
+      "source_group_code": "KHOI7",
+      "name": "Giáo dục thể chất (Physical",
+      "course_count_reported": 2,
+      "catalog_credits": 2,
+      "course_codes": [
+        "PE1014",
+        "PE1024"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_khoi_8",
+      "source_group_code": "KHOI8",
+      "name": "Giáo dục Quốc phòng - An ninh (165",
+      "course_count_reported": 3,
+      "catalog_credits": 0,
+      "course_codes": [
+        "MIL1110",
+        "MIL1120",
+        "MIL1130"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_mod_1",
+      "source_group_code": "MOD1",
+      "name": "Mô đun 1: Công nghệ sinh học Môi trường (Module 1: Environmental Biotechnology)",
+      "course_count_reported": 7,
+      "catalog_credits": 16,
+      "course_codes": [
+        "BF4701",
+        "BF4702",
+        "BF4703",
+        "EV4241",
+        "BF4704",
+        "BF4705",
+        "BF4709"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_2",
+      "source_group_code": "MOD2",
+      "name": "Mô đun 2: Công nghệ sinh học Thực phẩm (Module 2: Food Biotechnology)",
+      "course_count_reported": 7,
+      "catalog_credits": 16,
+      "course_codes": [
+        "BF4705",
+        "BF4706",
+        "BF4707",
+        "BF4511",
+        "BF4708",
+        "BF4701",
+        "BF4721"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_3",
+      "source_group_code": "MOD3",
+      "name": "Mô đun 3: Công nghệ sinh học công nghiệp (Module 3: Industrial Biotechnology)",
+      "course_count_reported": 7,
+      "catalog_credits": 16,
+      "course_codes": [
+        "BF4705",
+        "BF4709",
+        "BF4711",
+        "BF4712",
+        "BF4708",
+        "BF4701",
+        "BF4718"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_4",
+      "source_group_code": "MOD4",
+      "name": "Mô đun 4: Kỹ thuật sinh học phân tử và tế bào (Module 4: Molecular Biological and Cell Engineering)",
+      "course_count_reported": 7,
+      "catalog_credits": 16,
+      "course_codes": [
+        "BF4713",
+        "BF4714",
+        "BF4715",
+        "BF4716",
+        "BF4717",
+        "BF4705",
+        "BF4709"
+      ],
+      "counts_toward_degree_credits": true
+    }
+  ],
+  "courses": [
+    {
+      "code": "SSH1111",
+      "name": "Triết học Mác - Lênin (Principles of Marxism-Leninism)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1121",
+      "name": "Kinh tế chính trị Mác-Lênin (Political economy of Marxism- Leninism)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "SSH1111",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "SSH1111",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "SSH1151",
+      "name": "Tư tưởng Hồ Chí Minh (Ho-Chi- Minh’s Thought)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1131",
+      "name": "Chủ nghĩa xã hội khoa học (Science socialism)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1141",
+      "name": "Lịch sử Đảng Cộng sản Việt Nam (History of Commnist party of Vietnam)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1170",
+      "name": "Pháp luật đại cương General Law",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1100",
+      "name": "Tiếng Anh I (English I)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tiếng Anh (English)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1101",
+      "name": "Tiếng Anh II (English II)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tiếng Anh (English)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1112",
+      "name": "Giải tích I (Calculus I)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1122",
+      "name": "Giải tích II (Calculus II)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1132",
+      "name": "Giải tích III (Calculus III)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1142",
+      "name": "Đại số (Algebra)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI3180",
+      "name": "Xác suất thống kê và qui hoạch thực nghiệm (Exprimental Probability- Statistics)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1111",
+      "name": "Vật lý đại cương I (Physics I)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1121",
+      "name": "Vật lý đại cương II (Physics II)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1131",
+      "name": "Vật lý đại cương III (Physics III)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "IT1140",
+      "name": "Tin học đại cương (Introduction to Computer Science)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "TCNTT",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "CH1018",
+      "name": "Hóa học (Chemistry)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "CH3224",
+      "name": "Hoá hữu cơ (Organic Chemistry)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "CH1010/CH1012/CH1018/CH1017",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH1010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1012",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1018",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1017",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "CH3081",
+      "name": "Hóa lý (Physical Chemistry)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "CH1018/CH1010/CH1012/CH1017",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH1018",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1012",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1017",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "CH3082",
+      "name": "Thí nghiệm hóa lý (Physical Chemistry Lab)",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "CH3081=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH3081",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "CH3316",
+      "name": "Hoá phân tích (Analytical Chemistry)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "CH1018/CH1010/CH1012/CH1017",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH1018",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1010",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1012",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "CH1017",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "CH3318",
+      "name": "Thí nghiệm hóa phân tích (Experiments in Analytical Chemistry)",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "CH3316=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH3316",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EE2012",
+      "name": "Kỹ thuật điện (Fundamentals of Electrical Engineering)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "TDDT",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME2015",
+      "name": "Đồ họa kỹ thuật cơ bản (Basic Engineering Graphics)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "BF2701",
+      "name": "Nhập môn kỹ thuật",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "BF3711",
+      "name": "Quá trình và thiết bị CNSH I (Process and Equipment in Biotechnology I)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "PH1111",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "PH1111",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3712",
+      "name": "Quá trình và thiết bị CNSH II (Process and Equipment in Biotechnology II)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "PH1111,PH1121,CH3081",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "PH1111",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "PH1121",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "CH3081",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3713",
+      "name": "Quá trình và thiết bị CNSH III (Process and Equipment in Biotechnology III)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3701,BF3712=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3701",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3712",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4725",
+      "name": "Kỹ thuật đo lường và điều khiển tự động trong CNSH (Techniques for Measuring and Automatic control in Biotechnology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "BF4726",
+      "name": "Quản lý chất lượng trong CNSH (Quality Product Management in Biotechnology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "BF3714",
+      "name": "Đồ án quá trình và thiết bị CNSH (Project of Processing and Equipments in Bioengineering)",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3711,BF3712",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3711",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3712",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF2702",
+      "name": "Hóa sinh (Biochemistry)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "CH3224",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH3224",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF2703",
+      "name": "Thí nghiệm hóa sinh (Experiments in Biochemistry)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "CH3318,BF2702=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "CH3318",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF2702",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3701",
+      "name": "Vi sinh vật I (Microbiology I)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF2702",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3702",
+      "name": "Thí nghiệm vi sinh vật (Experiments in Microbiology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3701=,BF2703=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3701",
+                "relation": "COREQUISITE"
+              },
+              {
+                "course_code": "BF2703",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3703",
+      "name": "Sinh học tế bào (Cell Biology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF2702,BF3701=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3701",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3704",
+      "name": "Miễn dịch học (Immunology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF2702,BF3703=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3703",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3705",
+      "name": "Di truyền học và Sinh học phân tử (Genetics and Molecular Biology)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF2702",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3706",
+      "name": "Kỹ thuật gen (Genetic Engineering)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3705",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3705",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3707",
+      "name": "Tin sinh học (Bioinformatics)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3705",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3705",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF3708",
+      "name": "Phương pháp phân tích trong CNSH (Analytical",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF2703",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2703",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4727",
+      "name": "Đồ án chuyên ngành KTSH (Project work in Bioenginering",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3714",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3714",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EM1010",
+      "name": "Quản trị học đại cương (Introduction to Management)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1180",
+      "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ED3280",
+      "name": "Tâm lý học ứng dụng (Applied Psychology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ED3220",
+      "name": "Kỹ năng mềm (Soft Skills)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET3262",
+      "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "TDDT",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TEX3123",
+      "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "TVL",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "BF2020",
+      "name": "Technical Writing and Presentation",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "BF2702/BF2702E/BF3507/BF3507E",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702E",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "BF3507",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "BF3507E",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4792",
+      "name": "Đồ án nghiên cứu tốt nghiệp cử nhân (Bachelor Thesis)",
+      "credits": 8,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Đồ án tốt nghiệp Cử nhân nghiên",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "((BF2702,BF3701,BF3713,BF3704,BF3706)!)((BF4705),(BF4709/BF4716/BF4701)),(BF4727)=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3701",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3713",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3704",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3706!BF4705",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF4709",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "BF4716",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "BF4701",
+                "relation": "COREQUISITE"
+              },
+              {
+                "course_code": "BF4727",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4781",
+      "name": "Thực tập kỹ thuật (Engineering",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Đồ án tốt nghiệp Cử nhân nghiên",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "BF3701=,BF3711=,BF3712=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3701",
+                "relation": "COREQUISITE"
+              },
+              {
+                "course_code": "BF3711",
+                "relation": "COREQUISITE"
+              },
+              {
+                "course_code": "BF3712",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4791",
+      "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+      "credits": 6,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Đồ án tốt nghiệp Cử nhân nghiên",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "((BF2702,BF3701,BF3713,BF3704,BF3706)!)((BF4781),(BF4709/BF4716/BF4701)),(BF4727)=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3701",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3713",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3704",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3706!BF4781",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF4709",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "BF4716",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "BF4701",
+                "relation": "COREQUISITE"
+              },
+              {
+                "course_code": "BF4727",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "PE1014",
+      "name": "Lý luận thể dục thể thao (Theory in sport)",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất (Physical",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE1024",
+      "name": "Bơi lội (Swimming)",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất (Physical",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1110",
+      "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh (165",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1120",
+      "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh (165",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "MIL1110",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MIL1110",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "MIL1130",
+      "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh (165",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "MIL1120",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "MIL1120",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4701",
+      "name": "Kỹ thuật sinh học xử lý chất thải (Biological Engineering for Waste Treatment)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Công nghệ sinh học Môi trường (Module 1: Environmental Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2",
+        "group_mod_3"
+      ],
+      "registration_condition": {
+        "raw": "BF3701",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3701",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4702",
+      "name": "Độc tố học môi trường (Environmental Toxicology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Công nghệ sinh học Môi trường (Module 1: Environmental Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1"
+      ],
+      "registration_condition": {
+        "raw": "BF3703",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3703",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4703",
+      "name": "Vi sinh vật II - môi trường (Microorganisms II - Environmental Microbiology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Công nghệ sinh học Môi trường (Module 1: Environmental Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1"
+      ],
+      "registration_condition": {
+        "raw": "BF4701=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF4701",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EV4241",
+      "name": "Quản lý môi trường (Environmental Management)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Công nghệ sinh học Môi trường (Module 1: Environmental Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "BF4704",
+      "name": "TN Kỹ thuật sinh học xử lý chất thải (Practical work in Biological Engineering for",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Công nghệ sinh học Môi trường (Module 1: Environmental Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1"
+      ],
+      "registration_condition": {
+        "raw": "BF3701,BF4701=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3701",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF4701",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4705",
+      "name": "Kỹ thuật lên men (Fermentation Engineering)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Công nghệ sinh học Môi trường (Module 1: Environmental Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2",
+        "group_mod_3",
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3713=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3713",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4709",
+      "name": "Kỹ thuật thu hồi hoàn thiện sản phẩm (Downstream processing)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 1: Công nghệ sinh học Môi trường (Module 1: Environmental Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_3",
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3713,BF4705=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3713",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF4705",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4706",
+      "name": "Kỹ thuật phân tích phân tử trong CNTP (Molecular and Immunological Methods in Food Industry)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Công nghệ sinh học Thực phẩm (Module 2: Food Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "BF2702",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4707",
+      "name": "Vi sinh vật II - thực phẩm (Microorganisms II - Food Technology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Công nghệ sinh học Thực phẩm (Module 2: Food Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "BF3701",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3701",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4511",
+      "name": "Enzym trong công nghệ thực phẩm (Enzyme in Food Technology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Công nghệ sinh học Thực phẩm (Module 2: Food Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "BF3507,BF3509",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3507",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF3509",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4708",
+      "name": "Thí nghiệm kỹ thuật lên men (Practical work in Fermentation Engineering)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Công nghệ sinh học Thực phẩm (Module 2: Food Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2",
+        "group_mod_3"
+      ],
+      "registration_condition": {
+        "raw": "BF3702,BF4705=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3702",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "BF4705",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4721",
+      "name": "Sinh vật biến đổi gen và ứng dụng (Genetically Modified Organism and Application)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 2: Công nghệ sinh học Thực phẩm (Module 2: Food Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "BF3705",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3705",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4711",
+      "name": "Vi sinh vật II - công nghiệp (Microbiology II - Industrial Microbiology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Công nghệ sinh học công nghiệp (Module 3: Industrial Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_3"
+      ],
+      "registration_condition": {
+        "raw": "BF3701",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3701",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4712",
+      "name": "Enzyme học (Enzymology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Công nghệ sinh học công nghiệp (Module 3: Industrial Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_3"
+      ],
+      "registration_condition": {
+        "raw": "BF3701",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3701",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4718",
+      "name": "Kỹ thuật thu nhận Hợp chất có hoạt tính sinh học từ thực vật (Techniques for Obtaining Bioactive Compounds from Plant)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 3: Công nghệ sinh học công nghiệp (Module 3: Industrial Biotechnology)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_3"
+      ],
+      "registration_condition": {
+        "raw": "BF2702",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF2702",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4713",
+      "name": "Công nghệ tế bào động vật (Animal Cell Technology)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 4: Kỹ thuật sinh học phân tử và tế bào (Module 4: Molecular Biological and Cell Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3703",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3703",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4714",
+      "name": "Kỹ thuật phân tích và chẩn đoán phân tử (Molecular Diagnostics)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 4: Kỹ thuật sinh học phân tử và tế bào (Module 4: Molecular Biological and Cell Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "BF4715",
+      "name": "Kỹ thuật nuôi cấy vi rút (Techniques of Virus Cultivation)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 4: Kỹ thuật sinh học phân tử và tế bào (Module 4: Molecular Biological and Cell Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "BF4713=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF4713",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4716",
+      "name": "Công nghệ DNA tái tổ hợp (Recombinant DNA Technology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 4: Kỹ thuật sinh học phân tử và tế bào (Module 4: Molecular Biological and Cell Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "BF3706",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF3706",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "BF4717",
+      "name": "TN Kỹ thuật DNA tái tổ hợp (Methodology in Recombinant DNA Technology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Mô đun 4: Kỹ thuật sinh học phân tử và tế bào (Module 4: Molecular Biological and Cell Engineering)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "BF4716=",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "BF4716",
+                "relation": "COREQUISITE"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "non_credit_group_ids": [
+    "group_khoi_7",
+    "group_khoi_8"
+  ],
+  "build_warnings": [
+    "CTĐT BF1-2022 được nhập tự động từ tài liệu công khai: https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=KT_Sinh_hoc_Khung_KTSH_Cu_nhan_Thac_sy.pdf (truy cập 2026-10-27). Kiểm tra tự động, chưa đối chiếu thủ công.",
+    "FL1100: CTT ghi 0 TC; dùng 3 TC theo CTĐT.",
+    "FL1101: CTT ghi 0 TC; dùng 3 TC theo CTĐT.",
+    "PE1014: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "PE1024: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "Giáo dục thể chất (Physical: bỏ dòng không có mã học phần cụ thể (trống – Tự chọn trong danh mục (Elective courses) Tự chọn thể dục 1 (Elective course 1)).",
+    "Giáo dục thể chất (Physical: bỏ dòng không có mã học phần cụ thể (trống – Tự chọn thể dục 2 (Elective course 2)).",
+    "Giáo dục thể chất (Physical: bỏ dòng không có mã học phần cụ thể (trống – Tự chọn thể dục 3 (Elective course 3))."
+  ],
+  "applies_to_cohorts": [
+    "K68",
+    "K69"
+  ]
+}

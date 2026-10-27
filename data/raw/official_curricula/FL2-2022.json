@@ -1,0 +1,481 @@
+{
+  "admission_code": "FL2",
+  "name": "Tiếng Anh Chuyên nghiệp Quốc tế",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": null,
+  "total_credits": 131,
+  "source_url": "https://sofl.hust.edu.vn/nganh-fl2",
+  "source_title": "Khoa Ngoại ngữ",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Giáo dục đại cương 18 TC + Ngoại ngữ 2 chọn 1 trong 3 ngoại ngữ (Pháp/Nhật/Trung) 10 TC + cơ sở/cốt lõi 87 TC + chọn 1 trong 2 môn FLE4101/FLE4104 (4 TC) + thực tập 4 TC + khóa luận 8 TC = 131 TC. GDTC, GDQP không tính trong tổng 131 TC.",
+  "groups": [
+    {
+      "name": "Giáo dục đại cương",
+      "kind": "block",
+      "required_credits": 18,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1110",
+          "name": "Những nguyên lý cơ bản của CN Mác-Lênin I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1120",
+          "name": "Những nguyên lý cơ bản của CN Mác-Lênin II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1050",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1130",
+          "name": "Đường lối Cách mạng của Đảng Cộng sản Việt Nam",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1130",
+          "name": "Tin học đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1320",
+          "name": "Cơ sở văn hóa Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1330",
+          "name": "Tiếng Việt thực hành",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1010",
+          "name": "Giáo dục thể chất A",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE1020",
+          "name": "Giáo dục thể chất B",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE1030",
+          "name": "Giáo dục thể chất C",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE2010",
+          "name": "Giáo dục thể chất D",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE2020",
+          "name": "Giáo dục thể chất E",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng – An ninh",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng Cộng sản Việt Nam",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác Quốc phòng – An ninh",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "Quân sự chung",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Ngoại ngữ 2 (chọn 1 trong 3 ngoại ngữ)",
+      "kind": "block",
+      "required_credits": 10,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1421",
+          "name": "Tiếng Pháp I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1422",
+          "name": "Tiếng Pháp II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1423",
+          "name": "Tiếng Pháp III",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1424",
+          "name": "Tiếng Pháp IV",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1431",
+          "name": "Tiếng Nhật I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1432",
+          "name": "Tiếng Nhật II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1433",
+          "name": "Tiếng Nhật III",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1434",
+          "name": "Tiếng Nhật IV",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1441",
+          "name": "Tiếng Trung I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1442",
+          "name": "Tiếng Trung II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1443",
+          "name": "Tiếng Trung III",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1444",
+          "name": "Tiếng Trung IV",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 87,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FLE1101",
+          "name": "Language Communication Skills 1 (Kỹ năng giao tiếp bằng tiếng Anh 1)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE1204",
+          "name": "Language Communication Skills 2 (Kỹ năng giao tiếp bằng tiếng Anh 2)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE2108",
+          "name": "Language Communication Skills 3 (Kỹ năng giao tiếp bằng tiếng Anh 3)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE1102",
+          "name": "Dealing with Texts 1 (Kỹ năng đọc và xử lý văn bản tiếng Anh 1)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE1205",
+          "name": "Dealing with Texts 2 (Kỹ năng đọc và xử lý văn bản tiếng Anh 2)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE2109",
+          "name": "Dealing with Texts 3 (Kỹ năng đọc và xử lý văn bản tiếng Anh 3)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE1103",
+          "name": "Learning to Learn 1 (Kỹ năng học tập 1)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE1206",
+          "name": "Learning to Learn 2 (Kỹ năng học tập 2)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE1207",
+          "name": "Professional Skills 1 (Kỹ năng nghề nghiệp 1)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE2110",
+          "name": "Professional Skills 2 (Kỹ năng nghề nghiệp 2)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE2214",
+          "name": "Professional Skills 3 (Kỹ năng nghề nghiệp 3) (BTL)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE2111",
+          "name": "International Studies 1 (Quốc tế học 1)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE2215",
+          "name": "International Studies 2 (Quốc tế học 2)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE2212",
+          "name": "English for Professional Purposes 1 (Tiếng Anh chuyên ngành 1)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE3101",
+          "name": "English for Professional Purposes 2 (Tiếng Anh chuyên ngành 2)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE3205",
+          "name": "English for Professional Purposes 3 (Tiếng Anh chuyên ngành 3)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE2213",
+          "name": "Theory of Translation and Interpretation (Lý thuyết biên-phiên dịch)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE3102",
+          "name": "Translation and Interpretation Practice 1 (Thực hành biên-phiên dịch 1)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE3206",
+          "name": "Translation and Interpretation Practice 2 (Thực hành biên-phiên dịch 2)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE4102",
+          "name": "Translation and Interpretation Practice 3 ((Thực hành biên-phiên dịch 3)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE3103",
+          "name": "Language Awareness (Nhận thức ngôn ngữ)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE3207",
+          "name": "Phonetics and Phonology (Ngữ âm và âm vị học)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE4103",
+          "name": "English Literature (Văn học Anh)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE3204",
+          "name": "Research Methodology (Phương pháp nghiên cứu khoa học) (BTL)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Môn tự chọn (chọn 1 trong 2 môn)",
+      "kind": "block",
+      "required_credits": 4,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FLE4101",
+          "name": "English for Professional Purposes 4 (Tiếng Anh chuyên ngành 4)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FLE4104",
+          "name": "Introduction to English Language Teaching (Phương pháp giảng dạy tiếng Anh) (BTL)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Work Placement (Thực tập tốt nghiệp)",
+      "kind": "block",
+      "required_credits": 4,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FLE4205",
+          "name": "Work Placement (Thực tập tốt nghiệp)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Graduation Paper in English (Khóa luận tốt nghiệp)",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FLE4206",
+          "name": "Graduation Paper in English (Khóa luận tốt nghiệp)",
+          "credits": 8.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Giáo dục thể chất: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Giáo dục Quốc phòng – An ninh: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "Học kỳ đọc từ đúng 8 cột KỲ HỌC DỰ KIẾN của bảng HTML; ô trống hoặc không tách chắc chắn để suggested_semester=null. Không gán học kỳ từ chữ số trong mã học phần.",
+    "Bảng thông tin cơ bản ghi Lần chỉnh sửa thứ hai: 2022 (triển khai từ 2021); giữ phiên bản 2022. Chưa có dòng xác nhận riêng K68.",
+    "Ngoại ngữ 2 tính vào tổng 131 TC vì thuộc cấu trúc ngành Ngôn ngữ Anh, khác ngoại ngữ điều kiện ngoài tổng TC ở một số ngành kỹ thuật.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 131 TC; total_credits=131 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

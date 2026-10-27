@@ -1,0 +1,101 @@
+{
+  "admission_code": "IT1",
+  "name": "CNTT: Khoa học Máy tính",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": [
+    "K68"
+  ],
+  "total_credits": null,
+  "source_url": "https://soict.hust.edu.vn/wp-content/uploads/TB-ca%CC%A3%CC%82p-nha%CC%A3%CC%82t-CTDT.pdf",
+  "source_title": "Danh sách các học phần thay đổi và kế hoạch học tập chuẩn áp dụng từ K68",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Danh sách học phần điều chỉnh kế hoạch học tập chuẩn - CTĐT Khoa học máy tính",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "IT1108",
+          "name": "Nhập môn lập trình",
+          "credits": 4,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "IT3020",
+          "name": "Toán rời rac",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "IT3011",
+          "name": "Cấu trúc dữ liệu và thuật toán",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "IT3030",
+          "name": "Kiến trúc máy tính",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "IT3100",
+          "name": "Lập trình hướng đối tượng",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "IT3040",
+          "name": "Kỹ thuật lập trình",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "IT3080",
+          "name": "Mạng máy tính",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "IT3170",
+          "name": "Thuật toán ứng dụng",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "IT2030",
+          "name": "Technical Writing and Presentation",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "CHƯA ĐẦY ĐỦ CTĐT: nguồn là thông báo điều chỉnh áp dụng từ K68, không phải toàn bộ khung chương trình. Chỉ chép 10 học phần trong mục II trang PDF 2; không lấy CTĐT K70 gán ngược cho K68.",
+    "Nguồn thông báo chính thức https://soict.hust.edu.vn/thong-bao-cap-nhat-khung-chuong-trinh-va-ke-hoach-hoc-tap-chuan-cho-cac-ctdt.html xác định thay đổi có hiệu lực từ học kỳ 2023-1, cho K68 trở đi. curriculum_version=2023 chỉ phiên bản thay đổi áp dụng cho K68.",
+    "total_credits, required_credits, counts_toward_degree và graduation_rule=null vì tài liệu điều chỉnh không công bố tổng khung, phân khối và điều kiện tốt nghiệp. Không thể kiểm tra tổng TC với tài liệu này.",
+    "Chỉ IT1108 được tài liệu này ghi rõ 4(3-0-2-8); credits=null cho 9 học phần còn lại. compulsory=null vì tài liệu không ghi trạng thái.",
+    "Tên Toán rời rac được giữ theo bảng gốc.",
+    "Tìm thấy quyết định 12966/QĐ-ĐHBK ngày 27/12/2024 điều chỉnh tiếp cho riêng K68, áp dụng từ 2024-2025.2: https://soict.hust.edu.vn/wp-content/uploads/07.-QD-cap-nhat-CTDT-cu-nhan_Truong-CNTT_K68_K69-3.pdf. Tách riêng bản 2024."
+  ]
+}

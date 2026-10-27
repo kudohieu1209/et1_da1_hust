@@ -1,0 +1,600 @@
+{
+  "admission_code": "IT-E10",
+  "name": "Khoa học Dữ liệu và Trí tuệ Nhân tạo",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://soict.hust.edu.vn/wp-content/uploads/CTĐT-DSAI-CuNhan060421-Web.pdf",
+  "source_title": "Chương trình đào tạo Khoa học Dữ liệu và Trí tuệ Nhân tạo",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng Cộng sản Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh (Ho-Chi- Minh’s Thought)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (General Law)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất (5TC) (Physical Education)",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Theory in Sport)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (Swimming)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục (Elective courses) Tự chọn thể dục 1 (Elective course 1)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 (Elective course 2)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 (Elective course 3)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh (165 tiết)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) (General Military Education)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1114",
+          "name": "Grammar for writing",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1115",
+          "name": "English Communication Skills 1 (ECS1)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1116",
+          "name": "Skills integration 1 (SI1)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1117",
+          "name": "Foundation Writing for IELTS",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1118",
+          "name": "English Communication Skills 2 (ECS2)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1119",
+          "name": "Skills integration 2 (SI2)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1120",
+          "name": "IELTS Listening 1",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1121",
+          "name": "IELTS Speaking 1",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1122",
+          "name": "IELTS Reading 1",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1123",
+          "name": "IELTS Writing 1",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1124",
+          "name": "IELTS Listening 2",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1125",
+          "name": "IELTS Speaking 2",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1126",
+          "name": "IELTS Reading 2",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1127",
+          "name": "IELTS Writing 2",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111E",
+          "name": "Calculus I",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121E",
+          "name": "Calculus II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131E",
+          "name": "Calculus III",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141E",
+          "name": "Algebra",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1110E",
+          "name": "Basic physics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1110E",
+          "name": "Introduction to Programming",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2020E",
+          "name": "Probability and Statistics I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3020E",
+          "name": "Discrete Mathematics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3052E",
+          "name": "Fundamentals of optimization",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT2022E",
+          "name": "Applied Statistics and Experimental Design",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 49,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT3090E",
+          "name": "Database",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3160E",
+          "name": "Introduction to Artificial Intelligence",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3010E",
+          "name": "Data Structures and Algorithms",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3100E",
+          "name": "Object-oriented Programming",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3190E",
+          "name": "Machine Learning",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4142E",
+          "name": "Introduction to Data Science",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3030E",
+          "name": "Computer Architecture",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3070E",
+          "name": "Operating System",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3080E",
+          "name": "Computer Networks",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3910E",
+          "name": "Project I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3320E",
+          "name": "Introduction to Deep Learning",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4010E",
+          "name": "Introduction to Cryptography and Security",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3180E",
+          "name": "Introduction to Software Engineering",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4772E",
+          "name": "Natural Language Processing",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4343E",
+          "name": "Computer Vision",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4130E",
+          "name": "Parallel and Distributed Programming",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4023E",
+          "name": "Data Visualization",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3930E",
+          "name": "Project II",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Bắt buộc (Mandatory)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT2030",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn (Elective)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "TEXT3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức chuyên ngành",
+      "kind": "block",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4043E",
+          "name": "Big Data Storage and Processing",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4063E",
+          "name": "Introduction to Business Analytics",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3120E",
+          "name": "Systems Analysis and Design",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4868E",
+          "name": "Web Mining",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4033E",
+          "name": "Mathematical Modelling",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3940E",
+          "name": "Project III",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4991E",
+          "name": "Internship",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4995E",
+          "name": "Bachelor thesis",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Tiêu đề ghi TỪ NĂM 2020; đây là bản nền chính thức. Chưa xác minh toàn bộ bản hợp nhất K68 nên curriculum_version=null. Có điều chỉnh học kỳ từ K68 trong thông báo 2023-1, chưa áp ngược vào bản nền khi không có quan hệ phiên bản đầy đủ.",
+    "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2023 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
+    "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 1, bảng 1, dòng 14: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 1, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 1, bảng 1, dòng 16: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục Quốc phòng - An ninh (165 tiết): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Bắt buộc (Mandatory): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Tự chọn (Elective): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

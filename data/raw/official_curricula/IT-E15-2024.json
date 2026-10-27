@@ -1,0 +1,53 @@
+{
+  "admission_code": "IT-E15",
+  "name": "An toàn không gian số (Chương trình tiên tiến)",
+  "curriculum_version": "2024",
+  "applies_to_cohorts": [
+    "K68"
+  ],
+  "total_credits": null,
+  "source_url": "https://soict.hust.edu.vn/wp-content/uploads/07.-QD-cap-nhat-CTDT-cu-nhan_Truong-CNTT_K68_K69-3.pdf",
+  "source_title": "Quyết định 12966/QĐ-ĐHBK ngày 27/12/2024 — Cập nhật các chương trình đào tạo cử nhân thuộc Trường CNTT&TT",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT3320E",
+          "name": "Nhập môn học sâu",
+          "credits": 2,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Điều chỉnh kỳ học",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "IT4432E",
+          "name": "Hệ thống xác thực sinh trắc học",
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "CHỈ LÀ PHỤ LỤC ĐIỀU CHỈNH, CHƯA PHẢI TOÀN BỘ CTĐT: chỉ những học phần thay đổi được chép; không dùng danh mục này để kết luận đã đủ điều kiện tốt nghiệp.",
+    "curriculum_version=2024 theo quyết định ký ngày 27/12/2024; điều 2 cho áp dụng từ học kỳ 2 năm học 2024–2025. Bài công bố tháng 02/2025: https://soict.hust.edu.vn/thong-bao-ve-viec-cap-nhat-cac-ctdt-k68-k69.html.",
+    "Quyết định ghi tổng TC của các khối không thay đổi nhưng không ghi tổng TC toàn CTĐT; total_credits=null. required_credits chỉ ghi số có trong quyết định, các khối còn lại để null.",
+    "Các học phần chỉ đổi học kỳ không nêu lại số TC giữ credits=null; compulsory=null nếu quyết định không xác định bắt buộc/tự chọn. counts_toward_degree=null với nhóm chỉ liệt kê điều chỉnh lịch, chưa có phân khối rõ.",
+    "Không thể kiểm tra tổng required_credits với toàn bộ total_credits từ phụ lục điều chỉnh này.",
+    "graduation_rule=null vì phụ lục không chép toàn bộ điều kiện tốt nghiệp của CTĐT."
+  ]
+}

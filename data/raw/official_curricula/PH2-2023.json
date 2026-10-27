@@ -1,0 +1,485 @@
+{
+  "admission_code": "PH2",
+  "name": "Kỹ thuật hạt nhân",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": 132,
+  "source_url": "https://sep.hust.edu.vn/dao-tao/khung-ctdt/cu-nhan-ky-thuat-hat-nhan.html",
+  "source_title": "Cử nhân Kỹ thuật Hạt nhân | Khoa Vật lý kỹ thuật - Đại học Bách khoa Hà Nội",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Tích lũy các khối chung và chọn 1/2 mô đun, 16 TC/mô đun theo tiêu đề khối tự chọn; thực tập 2 TC + ĐATN 6 TC. Tổng nguồn công bố 132 TC.",
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 12.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1110",
+          "name": "Những NLCB của CN Mác-Lênin I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1120",
+          "name": "Những NLCB của CN Mác-Lênin II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1050",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1130",
+          "name": "Đường lối CM của Đảng CSVN",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Ngoại ngữ",
+      "kind": "block",
+      "required_credits": 6.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1200",
+          "name": "Tiếng Anh II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI2021",
+          "name": "Xác suất thống kê",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PH1110",
+          "name": "Vật lý đại cương I",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1120",
+          "name": "Vật lý đại cương II",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "IT1110",
+          "name": "Tin học đại cương",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1130",
+          "name": "Vật lý đại cương III",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ME2015",
+          "name": "Đồ họa kỹ thuật cơ bản",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 49.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "NE2000",
+          "name": "Nhập môn ngành KTHN",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "PH3015",
+          "name": "Toán cho kỹ thuật hạt nhân",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PH3060",
+          "name": "Cơ học lượng tử",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "NE3015",
+          "name": "Vật lý hạt nhân",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "NE3016",
+          "name": "Tương tác bức xạ với vật chất",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "NE3017",
+          "name": "Phương pháp Monte Carlo trong kỹ thuật hạt nhân",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE3025",
+          "name": "Đầu dò bức xạ",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE3026",
+          "name": "Đo đạc thực nghiệm hạt nhân",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE3027",
+          "name": "PP tính toán số và lập trình ứng dụng",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "NE3035",
+          "name": "Liều lượng học và an toàn bức xạ",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE3036",
+          "name": "Che chắn bức xạ",
+          "credits": 3.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "NE3037",
+          "name": "Cơ sở máy gia tốc",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "NE3038",
+          "name": "Kỹ thuật phân tích hạt nhân",
+          "credits": 3.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "NE3041",
+          "name": "Kỹ thuật điện tử",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "NE3042",
+          "name": "Điện tử số hạt nhân",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "NE3043",
+          "name": "Thiết bị hạt nhân",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "NE3051",
+          "name": "Thực tập cơ sở",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "NE3052",
+          "name": "Thực tập kỹ thuật hạt nhân",
+          "credits": 4.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ xã hội (chọn ít nhất 9 TC)",
+      "kind": "block",
+      "required_credits": 9.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH2020",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn theo định hướng ứng dụng (chọn 1/2 mô đun, 16 TC/mô đun)",
+      "kind": "block",
+      "required_credits": 16.0,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Mô đun 1: Kỹ thuật hạt nhân ứng dụng trong công nghiệp",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "NE4302",
+          "name": "Truyền nhiệt và nhiệt động học kỹ thuật",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE4303",
+          "name": "Vật lý lò phản ứng hạt nhân",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE4304",
+          "name": "Thủy nhiệt hạt nhân",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "NE4305",
+          "name": "Cơ sở ứng dụng bức xạ",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "NE4306",
+          "name": "Kiểm tra không phá mẫu NDT",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "NE4301",
+          "name": "Cơ sở vật lý môi trường",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Vật lý Y học Bức xạ",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "NE4401",
+          "name": "Giải phẫu học sinh lý đại cương",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE4402",
+          "name": "Sinh học bức xạ",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE4403",
+          "name": "Vật lý hình ảnh y học",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "NE4404",
+          "name": "Điện quang y tế đại cương",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "NE4405",
+          "name": "Xạ trị ung thư đại cương",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "NE4406",
+          "name": "Y học hạt nhân đại cương",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và đồ án tốt nghiệp Cử nhân",
+      "kind": "block",
+      "required_credits": 8.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "NE3053",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "NE4903",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Chép bảng học phần chi tiết trên trang HUST. Học kỳ đọc sau khi mở rộng đúng colspan/rowspan thành các cột 1–8; ô trống, ô 0 hoặc lịch trải nhiều kỳ để suggested_semester=null.",
+    "compulsory=null nếu nguồn không đánh dấu rõ bắt buộc/tự chọn; mã và TC giữ theo ô nguồn. Các hàng lựa chọn GDTC không ghi mã có code=null.",
+    "Không có năm phiên bản rõ cho bảng chi tiết; curriculum_version=null. Hậu tố 2023 chỉ năm tra cứu, không xác nhận bản ban hành năm đó.",
+    "Chưa có bằng chứng xác định bảng chi tiết này áp dụng riêng K68; applies_to_cohorts=null.",
+    "Nguồn công bố nhiều mục khung tổng quan; không tự đồng nhất tổng quan K70 với bảng chi tiết khi trang chưa ghi rõ phạm vi.",
+    "Hai mô-đun cùng required_credits=16 được áp dụng theo tiêu đề cha ghi rõ chọn 1/2 mô đun, 16 TC/mô đun; không suy ra bằng tổng học phần.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 148 TC; total_credits=132 TC; chênh lệch +16 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
+  ]
+}

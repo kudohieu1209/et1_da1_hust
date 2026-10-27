@@ -1,0 +1,633 @@
+{
+  "admission_code": "CH-E11",
+  "name": "Kỹ thuật Hóa dược (Chương trình tiên tiến)",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://husteduvn-my.sharepoint.com/:x:/g/personal/giang_nguyenle_hust_edu_vn/ER5HgJykOcRLjZFQc-OAVPgB_l23IqvgV8hyV5Ho3Z9tYg?e=xZYxsd",
+  "source_title": "CHƯƠNG TRÌNH TIÊN TIẾN CỬ NHÂN HÓA DƯỢC",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "A-1 - Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 13.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất (5TC)",
+      "kind": "block",
+      "required_credits": 5.0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận TDTT",
+          "credits": 1.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội",
+          "credits": 1.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Physical Education C",
+          "credits": 1.0,
+          "suggested_semester": 3,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Physical Education D",
+          "credits": 1.0,
+          "suggested_semester": 4,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Physical Education E",
+          "credits": 1.0,
+          "suggested_semester": 5,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục quốc phòng an ninh",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng-an ninh",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và KCT bắn súng AK",
+          "credits": 4.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 6.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1114",
+          "name": "Grammar for writing",
+          "credits": 1.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1115",
+          "name": "English communication skills 1",
+          "credits": 1.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1116",
+          "name": "Skills integration 1",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1117",
+          "name": "Foundation writing for IELTS",
+          "credits": 1.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1118",
+          "name": "English communication skills 2",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1119",
+          "name": "Skills integration 2",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1120",
+          "name": "IELTS listening 1",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1121",
+          "name": "IELTS speaking 1",
+          "credits": 1.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1122",
+          "name": "IELTS reading 1",
+          "credits": 1.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1123",
+          "name": "IELTS writing 1",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1124",
+          "name": "IELTS listening 2",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1125",
+          "name": "IELTS speaking 2",
+          "credits": 1.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1126",
+          "name": "IELTS reading 2",
+          "credits": 1.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1127",
+          "name": "IELTS writing 2",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1016",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1036",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1026",
+          "name": "Giải tích II",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI2026",
+          "name": "Xác suất thống kê",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "CH1012E",
+          "name": "Hóa học I",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "IT1016",
+          "name": "Tin học đại cương",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "CH1015E",
+          "name": "Hóa học II",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "CH3200E",
+          "name": "Hóa hữu cơ I",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "CH3006E",
+          "name": "Hóa lý",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "CH3330E",
+          "name": "Hóa phân tích",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B-1-Cơ sở cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 48.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH2040E",
+          "name": "Các nguyên lý của kỹ thuật quá trình",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "CH2041E",
+          "name": "Cơ học chất lỏng",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "CH3480E",
+          "name": "Thí nghiệm quá trình thiết bị I",
+          "credits": 1.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "CH2043E",
+          "name": "Truyền nhiệt và Chuyển khối",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "CH3231E",
+          "name": "Thí nghiệm hoá hữu cơ I",
+          "credits": 1.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "CH3210E",
+          "name": "Hóa hữu cơ II",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "CH3490E",
+          "name": "Thí nghiệm quá trình thiết bị II",
+          "credits": 1.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "CH2014E",
+          "name": "Hoá sinh đại cương",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "CH3007E",
+          "name": "Thí nghiệm Hóa lý",
+          "credits": 1.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "CH3232E",
+          "name": "Thí nghiệm hoá hữu cơ II",
+          "credits": 1.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "CH3340E",
+          "name": "Thí nghiệm Hóa phân tích",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "CH4481E",
+          "name": "Phân tích cấu trúc bằng phổ",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "CH4490E",
+          "name": "Cơ sở kỹ thuật bào chế",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "CH4510E",
+          "name": "Hoá dược đại cương",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "CH4602E",
+          "name": "Các quá trình phân tách",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "CH3840E",
+          "name": "Động học và thiết kế thiết bị phản ứng",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH4400E",
+          "name": "Thiết bị và điều khiển quá trình",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH3452E",
+          "name": "Mô phỏng và khái niệm thiết kế",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH4827E",
+          "name": "Hóa hợp chất thiên nhiên",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH4516E",
+          "name": "Seminar",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "CH4517E",
+          "name": "Tương quan giữa cấu trúc và hoạt tính",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "CH5606E",
+          "name": "Kỹ thuật tách và tinh chế",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức định hướng chuyên ngành",
+      "kind": "block",
+      "required_credits": 19.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH4492E",
+          "name": "Hoá dược I",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "CH4484E",
+          "name": "Tổng hợp hóa dược nâng cao",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH4496E",
+          "name": "Hoá dược II",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH4500E",
+          "name": "Thí nghiệm hóa dược I",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH4502E",
+          "name": "Đồ án nghiên cứu",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH3853E",
+          "name": "Nghiên cứu và phát triển thuốc",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "CH4501E",
+          "name": "Thí nghiệm hoá dược II",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "BF4661E",
+          "name": "Quản lý chất lượng trong công nghiệp dược phẩm và thực phẩm",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "CH4833E",
+          "name": "Hương liệu và mỹ phẩm",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ xã hội (Tự chọn 6TC)",
+      "kind": "block",
+      "required_credits": 6.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": false
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": false
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": false
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân",
+      "kind": "block",
+      "required_credits": 8.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH3900E",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "CH4900E",
+          "name": "Đồ án tốt nghiệp Cử nhân",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Sheet CTTT Hoa duoc K64 -PA1.Ed1; tên sheet nhắc K64 nhưng không nêu thời hạn áp dụng cho K68. Không suy ra phiên bản 2023 từ năm tuyển sinh cần tra cứu; curriculum_version và applies_to_cohorts=null.",
+    "Nguồn là tệp công khai do trang tuyển sinh HUST dẫn tới; đọc cột B mã HP, C tên tiếng Việt (hoặc D khi C trống), E khối lượng, F:M học kỳ. Không đọc các mã điều kiện học phần ở O:Q thành học phần CTĐT.",
+    "Không có tổng TC toàn khóa được ghi rõ; total_credits=null. Tiêu đề Tiếng Anh ghi 6 TC nhưng danh mục các môn tiếng Anh có tổng 24 TC; giữ required_credits=6 theo tiêu đề.",
+    "Mã SSH1170 Pháp luật đại cương giữ nguyên như Excel, không đổi thành EM1170. Dấu trắng thừa cuối ô mã được loại bỏ, không thêm hoặc đổi ký tự trong mã.",
+    "Các hàng GDTC có mã trống giữ code=null; tên lấy theo ô có ghi trong chính hàng. compulsory=null khi không có nhãn bắt buộc; số học kỳ đọc trực tiếp F:M.",
+    "graduation_rule=null vì chưa có công thức tốt nghiệp hoặc quy tắc chọn đủ các khối cho K68 trong tệp.",
+    "Tổng các mức required_credits đọc được (mỗi nhóm lựa chọn chỉ tính một lần): 132 TC. Đây là phép kiểm tra, không thay thế total_credits chưa được nguồn ghi rõ."
+  ]
+}

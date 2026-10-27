@@ -1,0 +1,638 @@
+{
+  "admission_code": "EE-E18",
+  "name": "Hệ thống điện và năng lượng tái tạo (Chương trình tiên tiến)",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": null,
+  "total_credits": 132,
+  "source_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-e18/",
+  "source_title": "Hệ thống Điện và Năng lượng tái tạo | Trường Điện - Điện tử",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: None TC; Cơ sở và cốt lõi ngành: None TC; Thực tập & tốt nghiệp: None TC; Lý luận chính trị & Pháp luật: None TC; Kiến thức bổ trợ: None TC; Kiến thức chung: None TC; Luận văn tốt nghiệp: None TC. Chuyên ngành (chọn 1 mô đun).",
+  "groups": [
+    {
+      "name": "Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1016",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "IT1016",
+          "name": "Tin học đại cương",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1026",
+          "name": "Giải tích II",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1036",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1016",
+          "name": "Vật lý đại cương I",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1046",
+          "name": "Phương trình vi phân và chuỗi",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PH1026",
+          "name": "Vật lý đại cương II",
+          "credits": 4.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "MI2036",
+          "name": "Xác suất thống kê và tín hiệu ngẫu nhiên",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE1024E",
+          "name": "Nhập môn ngành Điện",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EE2001E",
+          "name": "Tín hiệu và hệ thống",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE2110E",
+          "name": "Thiết kế điện tử",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE3490E",
+          "name": "Kỹ thuật lập trình",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE3706",
+          "name": "Mạch tuyến tính 1",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EE3600E",
+          "name": "Hệ thống truyền thông công nghiệp",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE2130E",
+          "name": "Thiết kế hệ thống số",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3726",
+          "name": "Mạch tuyến tính 2",
+          "credits": 4.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3110E",
+          "name": "Kỹ thuật đo lường",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3140E",
+          "name": "Máy điện",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3288E",
+          "name": "Lý thuyết điều khiển tuyến tính",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE3810E",
+          "name": "Đồ án I",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EE4020E",
+          "name": "Ngắn mạch trong hệ thống điện",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE3101E",
+          "name": "Các nguồn năng lượng tái tạo",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE4010E",
+          "name": "Phân tích Hệ thống điện",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE3410E",
+          "name": "Điện tử công suất",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE3821E",
+          "name": "Đồ án II",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun hệ thống điện",
+      "kind": "module",
+      "required_credits": 16.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE4040E",
+          "name": "Bảo vệ và điều khiển hệ thống điện",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE4032E",
+          "name": "Nhà máy điện và trạm biến áp",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE3426E",
+          "name": "Lưới điện phân phối",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "EE4052E",
+          "name": "Kỹ thuật điện cao áp",
+          "credits": 3.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EE4462E",
+          "name": "Nhà máy điện gió và mặt trời",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EE4466E",
+          "name": "Lưới điện thông minh và microgrid",
+          "credits": 3.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập & tốt nghiệp",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE4920E",
+          "name": "Đồ án nghiên cứu Cử nhân (CTTT Hệ thống điện)",
+          "credits": 8.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Lý luận chính trị & Pháp luật",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1110",
+          "name": "Những NLCB của CNML I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng-An ninh",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1120",
+          "name": "Những NLCB của CNML II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và KCT bắn súng AK",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1050",
+          "name": "Tư tưởng HCM",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1130",
+          "name": "Đường lối CM của ĐCSVN",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Ngoại ngữ",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "FL1016",
+          "name": "Kỹ năng nói TA I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1017",
+          "name": "Kỹ năng nghe TA I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1018",
+          "name": "Kỹ năng đọc TA I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1019",
+          "name": "Kỹ năng viết TA I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1022",
+          "name": "Kỹ năng tổng hợp I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1026",
+          "name": "Kỹ năng nói TA II",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1027",
+          "name": "Kỹ năng nghe TA II",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1028",
+          "name": "Kỹ năng đọc TA II",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1029",
+          "name": "Kỹ năng viết TA II",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "FL1031",
+          "name": "Kỹ năng tổng hợp II",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức chung",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SS6013",
+          "name": "Triết học",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Luận văn tốt nghiệp",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "LV6001",
+          "name": "Luận văn tốt nghiệp",
+          "credits": 15.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức ngành mở rộng",
+      "kind": "module",
+      "required_credits": 12.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "DX6000",
+          "name": "Đồ án đề xuất (dành cho SV không học chương trình tích hợp)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EExxxx",
+          "name": "Bổ sung 6 TC từ khối tự chọn cử nhân",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Mô đun hệ thống điện",
+      "kind": "module",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6056E",
+          "name": "Tối ưu hóa chế độ hệ thống điện",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6141E",
+          "name": "Thị trường điện",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6301E",
+          "name": "Hệ thống truyền tải điện xoay chiều linh hoạt (FACTS)",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EE6010E",
+          "name": "Seminar 1",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EE6020E",
+          "name": "Seminar 2",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun hệ thống điện",
+      "kind": "module",
+      "required_credits": 16.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6181E",
+          "name": "Chất lượng điện năng trong hệ thống điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6036E",
+          "name": "Ổn định của HTĐ",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6133E",
+          "name": "Bảo vệ hệ thống điện nâng cao",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6313E",
+          "name": "Phân tích độ tin cậy hệ thống điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6037E",
+          "name": "Nhà máy thủy điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6460E",
+          "name": "Tích hợp các nguồn năng lượng mới",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6232E",
+          "name": "SCADA trong hệ thống điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6466E",
+          "name": "Lưới điện thông minh",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Nguồn ghi Phiên bản 2023 nhưng không nêu khóa áp dụng; applies_to_cohorts=null, không tự gán K68 chỉ từ năm phiên bản.",
+    "Bảng không đánh dấu bắt buộc/tự chọn cho mọi học phần; compulsory=null khi không có nhãn rõ ràng.",
+    "Tín chỉ đọc từ số đứng trước dấu ngoặc của thời lượng học phần; không lấy tổng giờ hoặc số tín chỉ trong danh mục làm số tín chỉ tối thiểu của khối.",
+    "Toán và Khoa học cơ bản: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Cơ sở và cốt lõi ngành: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Thực tập & tốt nghiệp: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "MIL1110: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1120: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "MIL1130: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
+    "Lý luận chính trị & Pháp luật: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Kiến thức bổ trợ: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Ngoại ngữ: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Kiến thức chung: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "Luận văn tốt nghiệp: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
+    "EExxxx: mã giữ nguyên như nguồn; đây là mã mẫu cho lựa chọn, không thay bằng mã học phần tự đoán.",
+    "Bản HTML chính thức được lưu tại data/raw/program_sources/EE-E18.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công."
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "admission_code": "EM2",
+  "name": "Quản lý công nghiệp",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://sem.hust.edu.vn/chuong-trinh-tich-hop-quan-ly-cong-nghiep",
+  "source_title": "Chương trình tích hợp Quản lý công nghiệp​ - Trường Kinh tế",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": null,
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM1100",
+          "name": "Kinh tế vi mô đại cương ( Principles of Microeconomics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1110",
+          "name": "Kinh tế học vĩ mô đại cương ( Principles of Macroeconomics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương ( Introduction to the Legal Environment )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM2300",
+          "name": "Tin học kinh tế cơ sở ( Introduction to IT for Business )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4125",
+          "name": "Kinh tế tài nguyên và môi trường ( Natural Resources and Environment Economics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1400",
+          "name": "Nhập môn Quản lý công nghiệp ( Introduction of Industrial Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1422",
+          "name": "Academic Writing and Presentation ( ACADEMIC WRITING AND PRESENTATION )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM2120",
+          "name": "Kinh tế và quản lý công nghiệp ( Managerial Economics )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM2420",
+          "name": "KỸ THUẬT HỆ THỐNG CÔNG NGHIỆP ( INDUSTRIAL SYSTEMS ENGINEERING )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3211",
+          "name": "Nguyên lý marketing ( Principles of marketing )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3222",
+          "name": "Luật kinh doanh ( Business Legal Environment )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3230",
+          "name": "THỐNG KÊ ỨNG DỤNG ( Applied Statistics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3300",
+          "name": "Quản trị quy trình kinh doanh ( Business Process Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3417",
+          "name": "Quản trị sản xuất (BTL) ( OPERATIONS MANAGEMENT )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3419",
+          "name": "Hệ thống sản xuất tích hợp máy tính ( Computer Integrated Manufacturing System )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3432",
+          "name": "QUẢN TRỊ CHUỖI CUNG ỨNG ( SUPPLY CHAIN MANAGEMENT )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4212",
+          "name": "Phân tích kinh doanh ( Corporate Performance Analysis )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4218",
+          "name": "Hệ thống thông tin quản lý ( Management Information Systems )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4411",
+          "name": "Anh văn chuyên ngành QLCN ( English for Industrial Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4412",
+          "name": "Quản trị chất lượng ( Quality Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4425",
+          "name": "Mô hình tối ưu ( Optimization Model )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4430",
+          "name": "Quản trị đổi mới ( Innovation Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4435",
+          "name": "Quản trị dự án ( Project Management )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4436",
+          "name": "Quản trị dự án ( Project Management )",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3414",
+          "name": "Tổ chức lao động ( Workforce Planning )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4420",
+          "name": "Quản lý bảo trì công nghiệp ( Industrial maintenance management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4421",
+          "name": "Mô phỏng hệ thống ( System Simulation )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4423",
+          "name": "THIẾT KẾ HỆ THỐNG SẢN XUẤT ( PRODUCTION SYSTEM DESIGN )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4446",
+          "name": "Cải tiến năng suất (BTL) ( Productivity Improvement )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4448",
+          "name": "Kiểm soát chất lượng ( Quality Control )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4457",
+          "name": "Lập kế hoạch và điều độ sản xuất (BTL) ( Production Planning and Scheduling )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM2105",
+          "name": "Kỹ thuật nghiệp vụ ngoại thương ( Foreign Trade Terms and Technique )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4429",
+          "name": "QUẢN TRỊ MUA SẮM ( PURCHASING MANAGEMENT )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4443",
+          "name": "Quản lý dự trữ và kho hàng (BTL) ( Inventory and Warehouse Management )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4445",
+          "name": "QUẢN LÝ VẬN TẢI ( TRANSPORTATION MANAGEMENT )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4014",
+          "name": "Tổ chức lao động II ( Workforce Planning II )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4046",
+          "name": "CẢI TIẾN NĂNG SUẤT II ( PRODUCTIVITY IMPROVEMENT )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4048",
+          "name": "Kiểm soát chất lượng II ( Quality Control II )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4440",
+          "name": "Chuyên đề (BTL) ( Seminar )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4400",
+          "name": "Thực tập chuyên ngành QLCN ( Industrial Management Internship Program )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4401",
+          "name": "Quản trị năng suất trong sản xuất ( Productivity Management in Manufacturing )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4402",
+          "name": "Quản trị năng suất trong dịch vụ ( Productivity Management in Service )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4403",
+          "name": "Năng suất số ( Digital Productivity )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "CHƯA XÁC NHẬN ĐÚNG PHIÊN BẢN K68: đây là các bảng mô tả học phần đang công bố trên trang trường, chưa ghi ngày ban hành hoặc khóa áp dụng cho toàn danh mục. curriculum_version, applies_to_cohorts=null.",
+    "Nhóm name=null vì chưa có phân khối tốt nghiệp chắc chắn cho danh mục mô tả này; required_credits, counts_toward_degree, total_credits, graduation_rule=null. Không suy ra tổng CTĐT từ các mô tả học phần.",
+    "Số TC lấy đúng trường Khối lượng bằng tín chỉ; không nhầm với số ECTS, tiết học hoặc giờ tự học. compulsory chỉ đọc dấu ☑ ở Vai trò học phần; suggested_semester=null nếu bảng ghi dấu gạch hoặc không có kỳ.",
+    "Đã tìm thấy liên kết kế hoạch học tập từ K68 trên trang trường nhưng tệp Drive chặn tải; công cụ Google Drive kết nối cũng yêu cầu xác thực lại. Không đọc được toàn bộ sơ đồ K68 để hợp nhất."
+  ]
+}

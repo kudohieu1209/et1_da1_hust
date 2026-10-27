@@ -1,0 +1,578 @@
+{
+  "admission_code": "TE-EP",
+  "name": "Cơ khí hàng không (Chương trình Việt - Pháp PFIEV)",
+  "curriculum_version": "2025",
+  "applies_to_cohorts": [
+    "K70"
+  ],
+  "total_credits": null,
+  "source_url": "https://sme.hust.edu.vn/uploads/sme/dao-tao/2025_07/teep-2026-phu-luc-qd-10396-phe-duyet-ctdt-co-khi-hang-khong-pfiev_k70.pdf",
+  "source_title": "Chương trình đào tạo Cơ khí hàng không (Chương trình Việt - Pháp PFIEV)",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "LLCT:13+TKHCB:32+CSCLN:46+KTBT:9+(MOD1:18)+TPPFIEV:6+(TT:2+ĐAKLTN:6)",
+  "groups": [
+    {
+      "name": null,
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "PExxxx",
+          "name": "Tự chọn học tích lũy 4 TC",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "PExxxx",
+          "name": null,
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PExxxx",
+          "name": null,
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PExxxx",
+          "name": null,
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - an ninh (165 tiết)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng và an ninh",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối Ngoại ngữ cơ sở",
+      "kind": "block",
+      "required_credits": 0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "FL1801",
+          "name": "Tiếng Pháp PFIEV 1",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1802",
+          "name": "Tiếng Pháp PFIEV 2",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1803",
+          "name": "Tiếng Pháp PFIEV 3",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1804",
+          "name": "Tiếng Pháp PFIEV 4",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối Ngoại ngữ tăng cường",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "FL1805",
+          "name": "Tiếng Pháp PFIEV 5",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1806",
+          "name": "Tiếng Pháp PFIEV 6",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Lý luận chính trị & Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT1014",
+          "name": "Tin học đại cương",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1111",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1014",
+          "name": "Vật lý I",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2020",
+          "name": "Vẽ kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2034",
+          "name": "Xác suất thống kê",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2044",
+          "name": "Phương pháp tính",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1024",
+          "name": "Vật lý II",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 46,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "TE2801",
+          "name": "Nhập môn kỹ thuật hàng không",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH2034",
+          "name": "Cơ học vật rắn và sóng cơ",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE2822",
+          "name": "Nhiệt học và cơ học chất lưu",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE2012",
+          "name": "Kỹ thuật điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET2010",
+          "name": "Kỹ thuật điện tử",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3041",
+          "name": "Sức bền vật liệu",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME4531",
+          "name": "Kỹ thuật cơ học",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE4861",
+          "name": "Tiếng Anh chuyên ngành",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE2820",
+          "name": "Cảm biến và thiết bị đo trong hàng không",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE3603",
+          "name": "Kỹ thuật thủy khí",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE4870",
+          "name": "Khí động lực học cơ bản",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE5880",
+          "name": "Các hệ thống trên máy bay",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE5920",
+          "name": "Luật hàng không",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3100",
+          "name": "Thực tập công nhân",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE3820",
+          "name": "Đồ án thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE4820",
+          "name": "Kết cấu hàng không",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE4880",
+          "name": "Động cơ và thiết bị đẩy I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE5830",
+          "name": "Vật liệu hàng không",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1807",
+          "name": "Tiếng Pháp học thuật và hội nhập nghề nghiệp (bắt buộc)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp (tự chọn)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (tự chọn)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (tự chọn)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (tự chọn)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (tự chọn)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (tự chọn)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (tự chọn)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm (tự chọn)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn theo mô đun",
+      "kind": "block",
+      "required_credits": 18,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "TE4900",
+          "name": "Máy thủy lực I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE5840",
+          "name": "Truyền động tự động thủy khí",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE3822",
+          "name": "Thiết kế chế tạo bằng máy tính",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE4840",
+          "name": "Kỹ thuật điện-điện tử trên máy bay",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE4890",
+          "name": "Cơ học vật bay I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE4921",
+          "name": "Cơ học phá hủy",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE5900",
+          "name": "Kiểm tra và bảo dưỡng máy bay",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE5910",
+          "name": "Khai thác và quản lý máy bay",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp cử nhân",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "TE4005",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TE4995",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Áp dụng từ khóa tuyển sinh 2025 (K70), tài liệu cập nhật 2026. Công thức tiếng Việt có TPPFIEV:6, công thức tiếng Anh ở trang cuối thiếu phần này; giữ mâu thuẫn.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 2, bảng 1, dòng 3: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 2, bảng 1, dòng 4: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 2, bảng 1, dòng 5: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "None: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Giáo dục Quốc phòng - an ninh (165 tiết): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

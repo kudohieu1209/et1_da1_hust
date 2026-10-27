@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AlertCircle, Eye, EyeOff, Loader2, LogIn, UserPlus } from 'lucide-react';
 import BrandLogo from '../BrandLogo';
 import { apiFetch, apiUrl, readError } from '../../api';
@@ -6,14 +6,14 @@ import './auth.css';
 
 const MIN_PASSWORD_LENGTH = 8;
 
-// Hiện chỉ ET1 có CTĐT đã kiểm chứng (K67 → bản 2022, K68 → bản 2023).
-const PROGRAMS = [{ code: 'ET1', name: 'Kỹ thuật Điện tử - Viễn thông' }];
+// Danh sách dự phòng khi chưa tải được /api/programs: ET1 là CTĐT đã đối chiếu thủ công.
+const FALLBACK_PROGRAMS = [{ code: 'ET1', name: 'Điện tử và Viễn thông', cohorts: ['K67', 'K68'] }];
 
 const EMPTY_REGISTER = {
   student_id: '',
   student_name: '',
   class_name: '',
-  program_code: PROGRAMS[0].code,
+  program_code: FALLBACK_PROGRAMS[0].code,
   password: '',
   confirm: '',
 };
@@ -53,8 +53,30 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
   const [mode, setMode] = useState('login');
   const [login, setLogin] = useState({ student_id: '', password: '' });
   const [register, setRegister] = useState(EMPTY_REGISTER);
+  const [programs, setPrograms] = useState(FALLBACK_PROGRAMS);
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await apiFetch(apiUrl('/api/programs?supported_only=true'));
+        if (!res.ok) return;
+        const data = await res.json();
+        const loaded = (data.programs || [])
+          .map((p) => ({ code: p.admission_code, name: p.name, cohorts: p.supported_cohorts || [] }))
+          .sort((a, b) => a.code.localeCompare(b.code));
+        if (!cancelled && loaded.length) setPrograms(loaded);
+      } catch {
+        // Giữ danh sách dự phòng; backend vẫn kiểm tra lại khi đăng ký.
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
+  const selectedProgram = programs.find((p) => p.code === register.program_code) || programs[0];
+  const cohortHint = selectedProgram?.cohorts?.join(', ') || '—';
 
   const switchMode = (next) => {
     setMode(next);
@@ -233,11 +255,11 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
             <label className="auth-field">
               <span>{t('Chương trình đào tạo', 'Program')}</span>
               <select className="auth-input" value={register.program_code} onChange={setRegisterField('program_code')}>
-                {PROGRAMS.map((p) => (
+                {programs.map((p) => (
                   <option key={p.code} value={p.code}>{p.code} – {p.name}</option>
                 ))}
               </select>
-              <small>{t('Hiện hỗ trợ khóa K67 (CTĐT 2022) và K68 (CTĐT 2023).', 'Supports K67 (2022) and K68 (2023).')}</small>
+              <small>{t(`Khóa được hỗ trợ: ${cohortHint}.`, `Supported cohorts: ${cohortHint}.`)}</small>
             </label>
             <div className="auth-row">
               <div className="auth-field">

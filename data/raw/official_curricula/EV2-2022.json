@@ -1,0 +1,641 @@
+{
+  "admission_code": "EV2",
+  "name": "Quản lý Tài nguyên và Môi trường",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": [
+    "K68",
+    "K69"
+  ],
+  "total_credits": 132,
+  "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=2022_scls_ev2_ql_tai_nguyen_moi_truong_khung_ctdt.pdf",
+  "source_title": "CTĐT Quản lý Tài nguyên và Môi trường — 1ddf6bcd7fd99021.pdf",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": "Tích lũy các khối chung; chọn một trong hai mô-đun 16 TC. Tốt nghiệp cử nhân dùng thực tập 2 + ĐATN 6; sinh viên tích hợp có lựa chọn ĐANC 8. Nguồn công bố tổng cử nhân 132 TC.",
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác-Lênin (Philosophy of Marxism and Leninism)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác-Lênin (Political Economics of Marxism and Leninism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học (Scientific Socialism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng Cộng sản Việt Nam (History of Vietnamese Communist Party)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh (Ho-Chi-Minh Ideology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (General Law)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất (Physical Education)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Theory in Sport)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (Swimming)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục (Elective courses) Tự chọn thể dục 1 (Elective course 1)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 (Elective course 2)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 (Elective course 3)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng – An ninh (165 tiết) (Military Education)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng (Vietnam Communist Party’s Direction on the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh (Introduction to the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "Quân sự chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) (General Military Education)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh (English)",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1131",
+          "name": "Tiếng Anh cơ sở 1 (Basic English 1)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1132",
+          "name": "Tiếng Anh cơ sở 2 (Basic English 2)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1112",
+          "name": "Giải tích I (Calculus I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1122",
+          "name": "Giải tích II (Calculus II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1132",
+          "name": "Giải tích III (Calculus III)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1142",
+          "name": "Đại số (Algebra)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2021",
+          "name": "Xác suất thống kê (Probability and statistics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1111",
+          "name": "Vật lý đại cương I (Physics I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1121",
+          "name": "Vật lý đại cương II (Physics II)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1131",
+          "name": "Vật lý đại cương III (Physics III)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1140",
+          "name": "Tin học đại cương (Introduction to Computer Science)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1018",
+          "name": "Hoá học I (Chemistry I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3071",
+          "name": "Hoá lý (Physical Chemistry)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH3072",
+          "name": "Thí nghiệm hoá lý (Physical Chemistry Lab)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2015",
+          "name": "Đồ họa kỹ thuật cơ bản (Fundamental Engineering Graphics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ (Soft skills) Thời gian linh hoạt theo kế hoạch học tập của sinh viên",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV2020",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "kind": "block",
+      "required_credits": 48,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EV1250",
+          "name": "Nhập môn quản lý tài nguyên và môi trường (Introduction of Natural Resources and Environmental Management)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV2251",
+          "name": "Các quá trình cơ bản trong công nghệ môi trường I (Basic processes in environmental technology I)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV2252",
+          "name": "Các quá trình cơ bản trong công nghệ môi trường II (Basic processes in environmental technology II)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV2253",
+          "name": "Môi trường và xã hội (Environment and Society)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3106",
+          "name": "Hóa học môi trường (Environmental Chemistry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV2225",
+          "name": "Sinh thái học môi trường (Environmental Ecology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3254",
+          "name": "Đồ án I (Project I )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3226",
+          "name": "Quản lý chất thải rắn (Solid Waste Management)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3225",
+          "name": "Quản lý chất thải nguy hại (Hazardous waste Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3227",
+          "name": "Mô hình hóa môi trường (Environmental Modeling)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3121",
+          "name": "Độc học môi trường (Environmental Toxicology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4223",
+          "name": "Đánh giá tác động môi trường (Environmental Impact Assessment)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3255",
+          "name": "Năng lượng và tài nguyên khoáng sản (Energy and mineral resources)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3256",
+          "name": "Quan trắc và đánh giá chất lượng môi trường (Environmental quality monitoring and evaluation)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3257",
+          "name": "Kinh tế tài nguyên và môi trường (Natural resources and environmental economics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3258",
+          "name": "Viễn thám và GIS ứng dụng trong quản lý tài nguyên và môi trường (Remote sensing and GIS applied in Natural Resources and Environmental Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3259",
+          "name": "Thống kê sinh thái (Ecological statistics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3260",
+          "name": "Đặc tính hoá tài nguyên (Characterization of resources)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3261",
+          "name": "Quản lý tổng hợp tài nguyên nước (Integrated water resources management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3262",
+          "name": "Bảo tồn và quản lý tài nguyên đất (Soil conservation and management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV3109",
+          "name": "Kỹ thuật kiểm soát ô nhiễm không khí (Air pollution control engineering)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững (Module 1: Circulatory economy and sustainable development)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EV4263",
+          "name": "Kinh tế xanh lam (Blue economy)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4264",
+          "name": "Công nghệ sinh học hướng tới kinh tế tuần hoàn (Biotechnology towards circular economy)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV2212",
+          "name": "Các quá trình sản xuất cơ bản (Fundamental Production Process)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4265",
+          "name": "Bảo toàn và hiệu quả năng lượng (Energy conservation and efficiency)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4266",
+          "name": "Sản xuất và tiêu dùng bền vững (Sustainable production and consumption)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4272",
+          "name": "Đồ án II-QLMT (Project II -QLMT)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4227",
+          "name": "Quản lý môi trường đô thị và Khu Công nghiệp (Environmental Management of Urban and Industrial zone)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4229",
+          "name": "Luật và chính sách môi trường (Environmental Laws and Policy)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu (Module 2: Energy, Environment and Climate Change)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EV2212",
+          "name": "Các quá trình sản xuất cơ bản (Fundamental Production Process)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4225",
+          "name": "Nguyên lý sản xuất sạch hơn (Cleaner Production Principles)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4265",
+          "name": "Bảo toàn và hiệu quả năng lượng (Energy conservation and efficiency)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4269",
+          "name": "Đánh giá tính dễ bị tổn thương do biến đổi khí hậu (Climate Change Vulnerability Assessment)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4267",
+          "name": "Giảm nhẹ và thích ứng với biến đổi khí hậu (Mitigation and adaptation to climate change)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4272",
+          "name": "Đồ án II-QLMT (Project II -QLMT)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4268",
+          "name": "Năng lượng từ chất thải (Energy from waste)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4227",
+          "name": "Quản lý môi trường đô thị và Khu Công nghiệp (Environmental Management of Urban and Industrial zone)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và đồ án tốt nghiệp (Áp dụng đối với SV tốt nghiệp cử nhân, không đăng ký chương trình tích hợp)",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EV3298",
+          "name": "Thực tập kỹ thuật (Techical Intership)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4324",
+          "name": "Đồ án tốt nghiệp (QLMT) (Bachelor Graduation Thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4905",
+          "name": "Đồ án nghiên cứu Cử nhân (QLMT) (Bachelor Research-based Thesis)",
+          "credits": 8.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Quyết định 1093/QĐ-ĐHBK-ĐT ngày 10/06/2022. Trang https://scls.hust.edu.vn/vi/dao-tao/quan-ly-tai-nguyen-va-moi-truong/ dẫn tệp phiên bản 2022 cho K69 trở về trước.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 8, bảng 1, dòng 14: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 8, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 8, bảng 1, dòng 16: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục thể chất (Physical Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Giáo dục Quốc phòng – An ninh (165 tiết) (Military Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

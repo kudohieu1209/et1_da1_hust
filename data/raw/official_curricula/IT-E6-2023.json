@@ -1,0 +1,512 @@
+{
+  "admission_code": "IT-E6",
+  "name": "Công nghệ thông tin (Việt-Nhật) (Chương trình tiên tiến)",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Hedspi-program.pdf",
+  "source_title": "Chương trình đào tạo Công nghệ thông tin (Việt-Nhật) (Chương trình tiên tiến)",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": null,
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác-Lênin",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác-",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng Cộng",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận TDTT",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng-",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và KCT bắn",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh TOEIC I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1102",
+          "name": "Tiếng Anh TOEIC II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Nhật",
+      "kind": "block",
+      "required_credits": 7,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "JP1132",
+          "name": "Tiếng Nhật 3",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "JP2111",
+          "name": "Tiếng Nhật 4",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "JP2126",
+          "name": "Tiếng Nhật 5",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "JP2132",
+          "name": "Tiếng Nhật 6",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "JP2210",
+          "name": "Tiếng Nhật 7",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "JP2220",
+          "name": "Tiếng Nhật 8",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "JP1110",
+          "name": "Tiếng Nhật 1",
+          "credits": 5.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "JP1120",
+          "name": "Tiếng Nhật 2",
+          "credits": 5.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Nhật chuyên",
+      "kind": "block",
+      "required_credits": 4,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "JP3110",
+          "name": "Tiếng Nhật chuyên ngành 1",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "JP3120",
+          "name": "Tiếng Nhật chuyên ngành 2",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Toán và khoa học cơ",
+      "kind": "block",
+      "required_credits": 33,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1144",
+          "name": "Đại số tuyến tính (Algebra )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1114",
+          "name": "Giải tích 1 (Calculus I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1124",
+          "name": "Giải tích 2 (Calculus II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1134",
+          "name": "Phương trình vi phân và Chuỗi (DE and Series)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2021",
+          "name": "Xác suất thống kê (Probability and Statistic)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1110",
+          "name": "Vật lý đại cương (Basic Physics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3420",
+          "name": "Điện tử cho CNTT (Electronics for Information Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT2140",
+          "name": "Điện tử cho CNTT lab (Electronics for Information Technology lab)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT2110",
+          "name": "Nhập môn CNTT và TT (Introduction to ICT)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT2120",
+          "name": "Kiến thức máy tính (Computer Literacy)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3020",
+          "name": "Toán rời rạc (Discrete Math)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4110",
+          "name": "Tính toán khoa học (Scientific computing)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4172",
+          "name": "Xử lý tín hiệu (Signal processing)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi",
+      "kind": "block",
+      "required_credits": 53,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT3362",
+          "name": "Kỹ năng ITSS 1 (học bằng tiếng Nhật) (FE-ITS Practice in Japanese 1)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3382",
+          "name": "Kỹ năng ITSS 2 (học bằng tiếng Nhật) (FE-ITS Practice in Japanese 2)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3210",
+          "name": "Ngôn ngữ lập trình C",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3220",
+          "name": "Thực hành ngôn ngữ",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4593",
+          "name": "Nhập môn kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3011",
+          "name": "Cấu trúc dữ liệu và",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3230",
+          "name": "Lập trình C (cơ bản)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3170",
+          "name": "Thuật toán ứng dụng (Applied Algorithms )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4082",
+          "name": "Kỹ thuật phần mềm",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3070",
+          "name": "Nguyên lý hệ điều",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3080",
+          "name": "Mạng máy tính (Computer Networks)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3292",
+          "name": "Cơ sở dữ liệu (Database)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3290",
+          "name": "Thực hành cơ sở dữ",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3160",
+          "name": "Nhập môn Trí tuệ",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3103",
+          "name": "Lập trình hướng đối",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3283",
+          "name": "Kiến trúc máy tính (Computer Architecture)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3280",
+          "name": "Thực hành kiến trúc máy tính (Assembly Language and Computer Architecture Lab)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4015",
+          "name": "Nhập môn an toàn",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT5021",
+          "name": "Nghiên cứu tốt nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT5022",
+          "name": "Nghiên cứu tốt nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4549",
+          "name": "Phát triển phần mềm",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4062",
+          "name": "Thực hành Lập trình",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3323",
+          "name": "Xây dựng chương trình dịch (Compiler Construction)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Bắt buộc - Mandator y",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT2030",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "PDF nền có bìa 2020. Chưa tìm thấy toàn bộ bản K68 hợp nhất. Danh mục là bản nền chính thức; không khẳng định đã chứa điều chỉnh K68.",
+    "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2023 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
+    "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 11, bảng 1, dòng 28: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 11, bảng 1, dòng 30: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "None: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Bắt buộc - Mandator y: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

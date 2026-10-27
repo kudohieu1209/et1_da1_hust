@@ -70,3 +70,6 @@ vector_db.broken-*/
 # Báo cáo đánh giá chạy tạm (giữ lại baseline.* để so sánh)
 /eval/reports/latest.*
 /eval/reports/validation_latest.*
+
+# Tài liệu CTĐT gốc tải về (lớn); bản trích xuất đã làm sạch nằm ở data/raw/official_curricula/
+/data/official_curricula_k67_k70/

@@ -89,6 +89,12 @@ class ProgramCatalog:
         result["curriculum_versions"] = sorted(
             {str(item.get("curriculum_version", "")) for item in matches if item.get("curriculum_version")}
         )
+        # Lookup years are cohort entry years: 2022 → K67, 2023 → K68, ...
+        result["supported_cohorts"] = sorted(
+            f"K{int(year) - 1955}"
+            for code, year in curriculum_repository.available_keys
+            if code == admission_code and year.isdigit()
+        )
         candidates = self.curriculum_candidates.get(admission_code, [])
         result["curriculum_candidates"] = [
             {

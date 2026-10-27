@@ -1,0 +1,628 @@
+{
+  "admission_code": "MS2",
+  "name": "Chương trình Kỹ thuật vi điện tử và công nghệ Nano",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": null,
+  "total_credits": 135,
+  "source_url": "http://itims.edu.vn/chuong-trinh-dao-tao-ky-thuat-vi-dien-tu-va-cong-nghe-nano.html",
+  "source_title": "Chương trình đào tạo Chương trình Kỹ thuật vi điện tử và công nghệ Nano",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác-Lênin (Marxism- Leninism Philosophy)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác-Lênin (Marxism-Leninism Political Economy)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh (Ho-Chi- Minh’s Thought)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học (Scientific socialism)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng (Party History)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (Introduction to Law)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất (Physical Education)",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Theory in Sport)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục (Elective courses) Tự chọn thể dục 1 (Elective course 1)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 (Elective course 2)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 (Elective course 3)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 4 (Elective course 4)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng an ninh",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1131",
+          "name": "Tiếng Anh cơ sở I",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1132",
+          "name": "Tiếng Anh cơ sở II ( General English II)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111",
+          "name": "Giải tích I (Calculus I)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II (Calculus II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III (Calculus III)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số (Algebra)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2021",
+          "name": "Xác suất thống kê (Probability and Statistics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1110",
+          "name": "Vật lý đại cương I (Physics I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1120",
+          "name": "Vật lý đại cương II (Physics II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1130",
+          "name": "Vật lý đại cương III (Physics III)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1110",
+          "name": "Tin học đại cương (Introduction to Computer Science",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1017",
+          "name": "Hoá học (Chemistry)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 49,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MEN1110",
+          "name": "Nhập môn Kỹ thuật Vi điện tử và Công nghệ Nano (Introduction of Microelectronic Engineering and Nanotechnology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3060",
+          "name": "Vật liệu điện tử (Electronic Materials)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3080",
+          "name": "Vật lý bán dẫn và linh kiện (Semiconductor Physics and Devices)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3120",
+          "name": "Vật liệu nano và công nghệ nano (Introduction of nanomaterials and nanotechnology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3020",
+          "name": "Mạch vi điện tử (Microelectronic Circuits)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3110",
+          "name": "Thiết kế lập trình cho kỹ thuật vi điện tử (Programming design for microelectronics engineering)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3040",
+          "name": "Linh kiện vi điện tử mạch tích hợp (Integrated Microelectronic Devices)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3050",
+          "name": "Điện tử số và tương tự (Digital and Analog Electronics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3160",
+          "name": "IoT trong kỹ thuật vi điện tử (Introduction to IoT for microelectronics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3130",
+          "name": "Công nghệ chế tạo bán dẫn (Semiconductor Manufacturing Technology)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3030",
+          "name": "Trường điện từ trong vi điện tử (EM field for microelectronics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3070",
+          "name": "Công nghệ nano trong kỹ thuật vi điện tử (Nanotechnology for Microelectronics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3090",
+          "name": "Phân tích và thiết kế mạch tích hợp số-tương tự (Analysis and Design of Digital-Analog Integrated Circuits)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3100",
+          "name": "Công nghệ phòng sạch (Clean Room Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3010",
+          "name": "Quy hoạch thực nghiệm trong kỹ thuật (Statistics and Design of Experiments)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3140",
+          "name": "Cơ sở đóng gói linh kiện vi điện tử (Fundametal of Microelectronic packaging",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3150",
+          "name": "Công nghệ mạch tích hợp mật độ cao (Technology for very large-scale integration)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3170",
+          "name": "Đồ án I (Project I)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN3180",
+          "name": "Đồ án II (Project II)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ (soft skill)",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm (Product Promotion Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp (Innovation and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN2020",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Kỹ thuật vi điện tử (Microelectronic Engineering)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MEN4091",
+          "name": "Linh kiện MEMS (MEMS devices)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4051",
+          "name": "Điều khiển và Ghép nối thiết bị ngoại vi (Programing and Interfacing for external equipment)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4011",
+          "name": "Mô phỏng và tính toán trong linh kiện vi điện tử (Simulation of microelectronic devices)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4081",
+          "name": "Cảm biến và Thiết bị đo lường (Sensors and Instrumentations)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4021",
+          "name": "Sản xuất linh kiện bán dẫn và kiểm soát quy trình (Semiconductor manufacturing and process control)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4031",
+          "name": "Quang điện tử bán dẫn (Semiconductor Optoelectronics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4041",
+          "name": "Công nghệ hiển thị hình ảnh (Display technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4061",
+          "name": "Thiết bị logic khả trình (Programme Logic Devices - PLD)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Công nghệ nano (Nanotechnology)",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MEN4071",
+          "name": "Công nghệ màng mỏng (Thin Films Technology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4051",
+          "name": "Điều khiển và Ghép nối thiết bị ngoại vi (Programing and Interfacing for external equipment)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4081",
+          "name": "Cảm biến và Thiết bị Đo lường (Sensors and Instrumentations)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4041",
+          "name": "Công nghệ hiển thị hình ảnh (Display technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4131",
+          "name": "Công nghệ nano trong chuyển đổi năng lượng (Nanotechnology for energy conversion)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4111",
+          "name": "Công nghệ tích trữ năng lượng (Electrochemical energy storage)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4121",
+          "name": "Linh kiện nano từ và spintronic (Nanomagnetic and spintronic devices)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4031",
+          "name": "Quang điện tử bán dẫn (Semiconductor Optoelectronics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Đồ án thiết kế, thực tập tốt nghiệp và đồ án tốt nghiệp Cử nhân",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MEN3000",
+          "name": "Thực tập kỹ thuật (Engineering practices)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4900",
+          "name": "Đồ án tốt nghiệp (Bachelor’s thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MEN4901",
+          "name": "Đồ án nghiên cứu (Research-based Bachelor Thesis) Chỉ dành cho SV học tích hợp Cử nhân – Thạc sĩ.",
+          "credits": 8.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Bìa ghi 2023; toàn khóa tích hợp 183 TC, cử nhân 135 TC. Không xác nhận riêng K68 nếu tài liệu không ghi.",
+    "Bảng phân khối Tiếng Anh 8 TC; không thay bằng 6 TC từ khung khác.",
+    "Tệp đính kèm do trang trường/khoa chính thức dẫn tới: https://drive.google.com/uc?export=download&id=1Vrx-pJHclC6H8A6Q5J62RDOTx1LgVUik. source_url là trang HUST công bố tệp; không dùng tài liệu do bên thứ ba tự đăng.",
+    "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 5, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 5, bảng 1, dòng 16: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 5, bảng 1, dòng 17: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 5, bảng 1, dòng 18: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục Quốc phòng - An ninh: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 135 TC; total_credits=135 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

@@ -1,0 +1,662 @@
+{
+  "admission_code": "PH1",
+  "name": "Vật lý kỹ thuật",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": 126,
+  "source_url": "https://sep.hust.edu.vn/dao-tao/khung-ctdt/cu-nhan-vat-ly-ky-thuat.html",
+  "source_title": "Cử nhân Vật lý kỹ thuật | Khoa Vật lý kỹ thuật - Đại học Bách khoa Hà Nội",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Giáo dục thể chất (Physical Education)",
+      "kind": "block",
+      "required_credits": 5.0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (Sport Theory)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 1 (Elective course 1)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2 (Elective course 2)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3 (Elective course 3)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 4 (Elective course 4)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng – An ninh (Military Education) (165 tiết)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam (Vietnam Communist Party’s Direction on the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng và an ninh (Introduction to the National Defense)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung (General Military Education)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật (Infantry combat techniques and tactics)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 8.0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "FL1131",
+          "name": "Tiếng Anh cơ sở I (General English I)",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1132",
+          "name": "Tiếng Anh cơ sở II (General English II)",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1133",
+          "name": "Tiếng Anh cơ sở III (General English III)",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 13.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác-Lênin (Philosophy of Marxism and Leninism)",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác-Lênin (Political Economics of Marxism and Leninism)",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học (Scientific Socialism)",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam (History of Vietnamese Communist Party)",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh (Ho Chi Minh Ideology)",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương (Introduction to the Legal Environment)",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111",
+          "name": "Giải tích I (Calculus I)",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II (Calculus II)",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III (Calculus III)",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số (Algebra)",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI2021",
+          "name": "Xác suất thống kê (Probability and statistics)",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PH1110",
+          "name": "Vật lý đại cương I (Physics I)",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1120",
+          "name": "Vật lý đại cương II (Physics II)",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "IT1110",
+          "name": "Tin học đại cương (Introduction to Informatics)",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1130",
+          "name": "Vật lý đại cương III (Physics III)",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "CH1017",
+          "name": "Hóa học (Chemistry)",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 48.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "PH2010",
+          "name": "Nhập môn Vật lý kỹ thuật (Introduction to Engineering Physics)",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EE2012",
+          "name": "Kỹ thuật điện (Fundamentals of Electrical Engineering)",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ME2115",
+          "name": "Vẽ kỹ thuật trên máy tính (Technical drawing on computers)",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PH3011",
+          "name": "Phương pháp tính toán cho vật lý (Computational Methods for Physics)",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ET2010",
+          "name": "Kỹ thuật điện tử (Fundamentals of Electronic Engineering)",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PH2021",
+          "name": "Đồ án môn học I (Project I )",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PH3351",
+          "name": "Khoa học máy tính cho Vật lý kỹ thuật (Computer Science for Engineering Physics)",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PH3060",
+          "name": "Cơ học lượng tử (Quantum Mechanics)",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PH3030",
+          "name": "Trường điện từ (Electromagnetic Field Theory)",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PH3400",
+          "name": "Cơ sở quang học, quang ĐT (Introduction to optics and optoelectronic)",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PH3110",
+          "name": "Vật lý chất rắn (Solid State Physics)",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PH3120",
+          "name": "Vật lý thống kê (Statistical Physics)",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PH3491",
+          "name": "Phương pháp phân tích và đo lường vật lý (Physical method for materials characterization and measurement)",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PH3471",
+          "name": "Cơ sở vật lý và công nghệ nano (Fundamentals of Nanophysics and Nanotechnology)",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "PH2022",
+          "name": "Đồ án môn học II (Project II)",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "PH3190",
+          "name": "Vật lý và linh kiện bán dẫn (Semiconductor Physics and Devices)",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "PH3410",
+          "name": "Hệ thống nhúng và ứng dụng (Embedded systems and applications)",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ (Soft skills)",
+      "kind": "block",
+      "required_credits": 9.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm (Product Promotion Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp (Innovation and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH2020",
+          "name": "Technical Writing and Presentation (HP bắt buộc)",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn theo định hướng ứng dụng (chọn 1/3 mô đun) (Elective Module)",
+      "kind": "block",
+      "required_credits": 10.0,
+      "counts_toward_degree": true,
+      "courses": []
+    },
+    {
+      "name": "Mô đun 1: Quang học và quang điện tử (Optics and Optoelectronics)",
+      "kind": "module",
+      "required_credits": 10.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "PH3450",
+          "name": "Công nghệ chiếu sáng rắn (Solid-state Lighting)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH4661",
+          "name": "Vật lý laser (Laser Physics)",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH4340",
+          "name": "Linh kiện quang điện tử và ứng dụng (Optoelectronic devices and applications)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH3371",
+          "name": "Pin mặt trời (Photovoltaic Science and Technology)",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Vật lý và công nghệ bán dẫn (Semiconductor Physics and Technology)",
+      "kind": "module",
+      "required_credits": 10.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "PH3600",
+          "name": "Vật lý và công nghệ vật liệu điện tử (Physics and Technology of Electronic Materials)",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH4071",
+          "name": "Công nghệ vi điện tử (Microelectronic Technology)",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH3610",
+          "name": "Mô phỏng quá trình và linh kiện bán dẫn (Semiconductor Devices & Process Simulation)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH3082",
+          "name": "Cảm biến và đo lường (Sensors and Measurement)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 3: Vật lý tin học và ứng dụng (Computational Physics and Applications)",
+      "kind": "module",
+      "required_credits": 10.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "PH3620",
+          "name": "Lập trình ứng dụng trên nền IoT (IoT-based Programming Applications)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH3630",
+          "name": "Phân tích và khai thác dữ liệu (Data Analytics and Data Mining)",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH3640",
+          "name": "Robot và tự động hóa (Robotics and Automation)",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH3650",
+          "name": "Mô hình hóa và mô phỏng vật lý (Modelling and Physics Simulation)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun Tự chọn chung (6 TC) (Elective course)",
+      "kind": "module",
+      "required_credits": 6.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "PH3071",
+          "name": "Vật lý và kỹ thuật chân không (Vacuum Physics and Technique)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH4722",
+          "name": "Quy hoạch thực nghiệm vật lý (Design of Physical Experiments)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH4490",
+          "name": "Kỹ thuật xử lý ảnh và ứng dụng (Image processing and applications)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH3660",
+          "name": "Điều khiển hệ thống công nghiệp (Industrial System Controller)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH4671",
+          "name": "Thiết kế hệ thống chiếu sáng (Lighting system design)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH3440",
+          "name": "Vật liệu tích trữ và biến đổi năng lượng (Materials in Energy Conversion and Storage)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân (Engineering Practicum and Bachelor Thesis)",
+      "kind": "block",
+      "required_credits": 8.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "PH4000",
+          "name": "Thực tập kỹ thuật (Engineering Practicum)",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "PH4900",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Đồ án nghiên cứu Cử nhân (Research based thesis) (dành cho SV học theo CTĐT tích hợp Cử nhân – Thạc sĩ)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "PH4009",
+          "name": "Đồ án nghiên cứu Cử nhân (Vật lý kỹ thuật) (Bachelor of Science Research Project)",
+          "credits": 8.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Chép bảng học phần chi tiết trên trang HUST. Học kỳ đọc sau khi mở rộng đúng colspan/rowspan thành các cột 1–8; ô trống, ô 0 hoặc lịch trải nhiều kỳ để suggested_semester=null.",
+    "compulsory=null nếu nguồn không đánh dấu rõ bắt buộc/tự chọn; mã và TC giữ theo ô nguồn. Các hàng lựa chọn GDTC không ghi mã có code=null.",
+    "Không có năm phiên bản rõ cho bảng chi tiết; curriculum_version=null. Hậu tố 2023 chỉ năm tra cứu, không xác nhận bản ban hành năm đó.",
+    "Chưa có bằng chứng xác định bảng chi tiết này áp dụng riêng K68; applies_to_cohorts=null.",
+    "Nguồn công bố nhiều mục khung tổng quan; không tự đồng nhất tổng quan K70 với bảng chi tiết khi trang chưa ghi rõ phạm vi.",
+    "Nguồn ghi TỔNG CỘNG 126 tín chỉ + 8 tín chỉ (Ngoại ngữ); total_credits=126 tính tốt nghiệp không gồm ngoại ngữ, 8 TC ngoại ngữ ghi riêng, counts_toward_degree=false. Phần cấu trúc chung vẫn trình bày ngoại ngữ trong đại cương.",
+    "Khối tự chọn có các mô-đun định hướng 10 TC và mô-đun tự chọn chung 6 TC; không cộng tất cả các định hướng. Nhà trường có lựa chọn ĐANC 8 TC thay cho thực tập 2 + ĐATN 6.",
+    "Giáo dục Quốc phòng – An ninh (Military Education) (165 tiết): số TC tối thiểu không được ghi rõ ở tiêu đề; required_credits=null.",
+    "Đồ án nghiên cứu Cử nhân (Research based thesis) (dành cho SV học theo CTĐT tích hợp Cử nhân – Thạc sĩ): số TC tối thiểu không được ghi rõ ở tiêu đề; required_credits=null.",
+    "graduation_rule=null: chưa xác minh đủ quy tắc kết hợp mô-đun/ĐANC của bảng chi tiết với các khung tổng quan khác trên cùng trang.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

@@ -1,0 +1,611 @@
+{
+  "admission_code": "HE1",
+  "name": "Kỹ thuật Nhiệt",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-chuan/chuong-trinh-ky-thuat-nhiet-20.html",
+  "source_title": "Chương trình đào tạo Kỹ thuật Nhiệt",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 12,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1110",
+          "name": "Những NLCB của CN Mác-Lênin I",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1120",
+          "name": "Những NLCB của CN Mác-Lênin II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1050",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1130",
+          "name": "Đường lối CM của Đảng CSVN",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (bắt buộc)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (bắt buộc)",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": null,
+          "name": "Tự chọn trong danh mục Tự chọn thể dục 1",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh (165 tiết)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1110",
+          "name": "Đường lối quân sự của Đảng",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1120",
+          "name": "Công tác quốc phòng, an ninh",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1130",
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC)",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 33,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MI2110",
+          "name": "Phương pháp tính và Matlab",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1110",
+          "name": "Vật lý đại cương I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1120",
+          "name": "Vật lý đại cương II",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT1140",
+          "name": "Tin học đại cương",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PH1130",
+          "name": "Vật lý đại cương III",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH1017",
+          "name": "Hóa học",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 49,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ME2015",
+          "name": "Đồ họa kỹ thuật cơ bản",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2030",
+          "name": "Cơ khí đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME2040",
+          "name": "Cơ học kỹ thuật",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET2012",
+          "name": "Kỹ thuật điện tử",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE2012",
+          "name": "Kỹ thuật điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE2000",
+          "name": "Nhập môn kỹ thuật nhiệt - lạnh",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3190",
+          "name": "Sức bền vật liệu",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE3242",
+          "name": "Khí cụ điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3210",
+          "name": "Nguyên lý máy",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE3013",
+          "name": "Nhiệt động kỹ thuật",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE3023",
+          "name": "Truyền nhiệt",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE3011",
+          "name": "Cơ học chất lưu",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE3022",
+          "name": "Đo lường nhiệt",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4025",
+          "name": "Kỹ thuật cháy",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4134",
+          "name": "Cơ sở kỹ thuật lạnh",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE3032",
+          "name": "Cơ sở lý thuyết điều chỉnh quá trình nhiệt",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE3033",
+          "name": "Thiết bị trao đổi nhiệt",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4171",
+          "name": "Cơ sở nguồn và công nghệ năng lượng",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE3017",
+          "name": "Hệ thống cung cấp nhiệt",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE3001",
+          "name": "Đồ án hệ thống cung cấp nhiệt",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE2020",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun: Công nghệ năng lượng và nhiệt điện",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "HE4021",
+          "name": "Lò hơi",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4031",
+          "name": "Tua bin",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4012",
+          "name": "Nhà máy nhiệt điện",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4034",
+          "name": "Hệ thống điều khiển tự động nhà máy nhiệt điện",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4081",
+          "name": "Bơm, quạt, máy nén",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4001",
+          "name": "Đồ án thiết kế nhà máy nhiệt điện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun: Hệ thống và thiết bị nhiệt",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "HE4414",
+          "name": "Kỹ thuật xử lý phát thải",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4033",
+          "name": "Truyền chất và cơ sở kỹ thuật sấy",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4035",
+          "name": "Hệ thống điều khiển quá trình nhiệt - lạnh",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4002",
+          "name": "Đồ án thiết kế hệ thống sấy/lò công nghiệp/hệ thống bơm nhiệt",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun: Công nghệ lạnh và điều hòa không khí",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "HE4212",
+          "name": "Máy và thiết bị lạnh",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4208",
+          "name": "Điều hoà không khí",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4413",
+          "name": "Hệ thống điện công trình",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4410",
+          "name": "Hệ thống vận chuyển không khí và chất tải lạnh",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4081",
+          "name": "Bơm, quạt, máy nén",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4003",
+          "name": "Đồ án thiết kế hệ thống lạnh",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "HE4000",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HE4900",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Tài liệu khung tham khảo được trang HUST https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-chuan/chuong-trinh-ky-thuat-nhiet-20.html công bố; chưa xác định phiên bản/khóa áp dụng.",
+    "Tệp đính kèm do trang trường/khoa chính thức dẫn tới: https://husteduvn-my.sharepoint.com/:b:/g/personal/sme_hust_edu_vn/ESiN4HKvW-9Emw8tv4oX3sIBf7iBIvjF7K763qAcOrg_uQ?e=Q3pE0T&download=1. source_url là trang HUST công bố tệp; không dùng tài liệu do bên thứ ba tự đăng.",
+    "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2023 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
+    "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
+    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
+    "Trang 2, bảng 1, dòng 11: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 2, bảng 1, dòng 12: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Trang 2, bảng 1, dòng 13: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
+    "Giáo dục Quốc phòng - An ninh (165 tiết): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Mô đun: Công nghệ năng lượng và nhiệt điện: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Mô đun: Hệ thống và thiết bị nhiệt: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Mô đun: Công nghệ lạnh và điều hòa không khí: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
+    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
+    "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

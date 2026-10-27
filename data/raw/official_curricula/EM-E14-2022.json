@@ -1,0 +1,493 @@
+{
+  "admission_code": "EM-E14",
+  "name": "Logistics và Quản lý chuỗi cung ứng (Chương trình tiên tiến)",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": [
+    "K67"
+  ],
+  "total_credits": null,
+  "source_url": "https://sem.hust.edu.vn/chuong-trinh-tien-tien-logistics-va-quan-ly-chuoi-cung-ung",
+  "source_title": "Kế hoạch học tập chuẩn — Logistics và Quản lý chuỗi cung ứng (Chương trình tiên tiến)",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "Year 1 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Philosophy of Marxism and Leninism",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Introduction to the Legal Environments",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1016",
+          "name": "Analysis I",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1036",
+          "name": "Algebra",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "EM1100",
+          "name": "Principles of Microeconomic",
+          "credits": null,
+          "suggested_semester": 1,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 1 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1121",
+          "name": "Political Economics of Marxism and Leninism",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI2026",
+          "name": "Probability and Statistics",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MI3131",
+          "name": "Mathematical Economics",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "IT1016",
+          "name": "Introduction to IT",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": "Introduction to Management",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1110E",
+          "name": "Principles of Macroeconomics",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1420E",
+          "name": "Introduction to the Major of Logistics & SCM",
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "EM1010",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 2 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1131",
+          "name": "Scientific Socialism",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM2301E",
+          "name": "Introduction to IT for Business",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3231E",
+          "name": "Applied Statistics and Sample Design",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM4432E",
+          "name": "Supply Chain Management",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM4413E",
+          "name": "Human Resource Management",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM3417E",
+          "name": "Operations Management",
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "EM1422",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 2 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1141",
+          "name": "History of Vietnamese Communist Party",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "MI1046",
+          "name": "Differentiation Equations and Series",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3190E",
+          "name": "Organizational Behavior",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM3222",
+          "name": "Business Law",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM4424E",
+          "name": "Production and Service Systems Simulation",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM4431E",
+          "name": "Logistics Management.",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM4444E",
+          "name": "Optimization Models",
+          "credits": null,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 3 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "SSH1151",
+          "name": "Ho Chi Minh Ideology",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM2105E",
+          "name": "Foreign Trade Terms and Technique",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM3415E",
+          "name": "Lean Management",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM3443E",
+          "name": "Inventory and Warehouse Management",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "EM4430E",
+          "name": "Innovation Management",
+          "credits": null,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 3 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4218E",
+          "name": "Management Information Systems",
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM4435E",
+          "name": "Project Management",
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM3418E",
+          "name": "ERP - Enterprise Resource Planning and Process Management",
+          "credits": null,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Year 4 Semester 1",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": []
+    },
+    {
+      "name": "Year 4 Semester 2",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM4450",
+          "name": "Graduation Internship",
+          "credits": null,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EM4451E",
+          "name": "Graduation Thesis",
+          "credits": null,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EM4452E",
+          "name": null,
+          "credits": null,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "CONCENTRATION 1 (18 CrH)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM3424E",
+          "name": "Retail management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM3434E",
+          "name": "E-Logistics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM3434E",
+          "name": "E-Logistics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4100E",
+          "name": "Business communication and negotiation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4429E",
+          "name": "Purchasing management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4110E",
+          "name": "International trade management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4445E",
+          "name": "Transportation management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4429E",
+          "name": "Purchasing management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4534E",
+          "name": "Risk management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4445E",
+          "name": "Transportation management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MI3600E",
+          "name": "Big Data and Bussiness Intelligence",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4534E",
+          "name": "Risk management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "INTERNSHIP (18 CrH)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM3434E",
+          "name": "E-Logistics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4400E",
+          "name": "Applied Purchasing management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4445E",
+          "name": "Transportation management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4454E",
+          "name": "Field Study 1",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4455E",
+          "name": "Field Study 2",
+          "credits": 4.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4456E",
+          "name": "Applied Logistics management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Nguồn HUST công bố PDF đính kèm: https://drive.google.com/uc?export=download&id=1RzB0tPvllkgLKvk9iC4DTIjpSjgMtqNC.",
+    "Đây là sơ đồ kế hoạch học tập. Nhiều môn chỉ được ghi mã, không ghi tên hoặc TC; giữ name/credits=null cho các dữ liệu không được ghi tại sơ đồ. Không lấy số TC của cả học kỳ gán cho từng môn.",
+    "Không có tổng TC và quy tắc tốt nghiệp toàn CTĐT trong sơ đồ nên total_credits, graduation_rule=null. required_credits=null ở nhóm lịch theo kỳ vì sơ đồ không công bố một mức tích lũy cho cả nhóm đó; counts_toward_degree=null với các nhóm lịch trộn nhiều loại môn.",
+    "Trang trường ghi Kế hoạch học tập chuẩn cho K67; phiên bản theo năm tuyển sinh 2022.",
+    "CHƯA ĐỦ DỮ LIỆU ĐỂ KIỂM TRA TỔNG TC: không cộng các mô-đun/lộ trình thay thế và không coi null là 0. Các nhóm Year/Semester chỉ giúp giữ vị trí môn trong sơ đồ nguồn, chưa phải phân khối tốt nghiệp."
+  ]
+}

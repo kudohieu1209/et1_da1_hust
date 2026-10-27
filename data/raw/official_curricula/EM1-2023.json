@@ -1,0 +1,216 @@
+{
+  "admission_code": "EM1",
+  "name": "Quản lý năng lượng",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://sem.hust.edu.vn/chuong-trinh-cu-nhan-quan-ly-nang-luong",
+  "source_title": "Chương trình cử nhân Quản lý Năng lượng - Trường Kinh tế",
+  "retrieved_at": "2026-10-27",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": null,
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "EM1100",
+          "name": "Kinh tế vi mô đại cương ( Principles of Microeconomics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương ( Introduction to the Legal Environment )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM2300",
+          "name": "Tin học kinh tế cơ sở ( Introduction to IT for Business )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1601",
+          "name": "Nhập môn Quản lý năng lượng ( Introduction to the Major of Energy Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3130",
+          "name": "Kinh tế lượng ( Econometrics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3211",
+          "name": "Nguyên lý marketing ( Principles of marketing )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3230",
+          "name": "THỐNG KÊ ỨNG DỤNG ( Applied Statistics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3417",
+          "name": "Quản trị sản xuất (BTL) ( OPERATIONS MANAGEMENT )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM3614",
+          "name": "Phân tích và Quản lý dự án năng lượng ( Energy Project Analysis and Management )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4218",
+          "name": "Hệ thống thông tin quản lý ( Management Information Systems )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4617",
+          "name": "Kinh tế vận hành hệ thống điện ( Power System Operating Economics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4628",
+          "name": "Thị trường năng lượng ( Energy Market )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4629",
+          "name": "Quy hoạch phát triển năng lượng ( Energy System Planning and Development )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4632",
+          "name": "Chính sách năng lượng ( Energy Strategy and Policy )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4643",
+          "name": "Quản lý sử dụng năng lượng trong doanh nghiệp ( Energy management in enterprise )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4736",
+          "name": "Kế toán quản trị ( Managerial Accounting )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4603",
+          "name": "Tài chính cho dự án năng lượng ( Energy Project Financing )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4125",
+          "name": "Kinh tế tài nguyên và môi trường ( Natural Resources and Environment Economics )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4633",
+          "name": "Phân tích và dự báo nhu cầu năng lượng (BTL) ( Energy Demand Analysis and Forecast )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4602",
+          "name": "Chính sách năng lượng II ( Energy Strategy and Policy II )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4604",
+          "name": "Năng lượng tái tạo và phát triển bền vững năng lượng ( Renewables and Sustainable Energy Development )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4028",
+          "name": "Thị trường năng lượng II ( Energy Market II )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4043",
+          "name": "Quản lý sử dụng năng lượng ( Energy Usage Management )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM4640",
+          "name": "Chuyên đề (BTL) ( Seminar )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương ( Introduction to Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp ( Business culture and entrepreneurship )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1622",
+          "name": "Academic Writing and Presentation ( Academic Writing and Presentation )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "CHƯA XÁC NHẬN ĐÚNG PHIÊN BẢN K68: đây là các bảng mô tả học phần đang công bố trên trang trường, chưa ghi ngày ban hành hoặc khóa áp dụng cho toàn danh mục. curriculum_version, applies_to_cohorts=null.",
+    "Nhóm name=null vì chưa có phân khối tốt nghiệp chắc chắn cho danh mục mô tả này; required_credits, counts_toward_degree, total_credits, graduation_rule=null. Không suy ra tổng CTĐT từ các mô tả học phần.",
+    "Số TC lấy đúng trường Khối lượng bằng tín chỉ; không nhầm với số ECTS, tiết học hoặc giờ tự học. compulsory chỉ đọc dấu ☑ ở Vai trò học phần; suggested_semester=null nếu bảng ghi dấu gạch hoặc không có kỳ.",
+    "Đã tìm thấy liên kết kế hoạch học tập từ K68 trên trang trường nhưng tệp Drive chặn tải; công cụ Google Drive kết nối cũng yêu cầu xác thực lại. Không đọc được toàn bộ sơ đồ K68 để hợp nhất."
+  ]
+}
