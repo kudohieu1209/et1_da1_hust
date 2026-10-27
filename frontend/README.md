@@ -13,6 +13,5 @@ URL khác, backend cần cho phép đúng origin và cookie phải phù hợp qu
 của tên miền; không chỉ thay URL là đủ. Khóa MongoDB/Gemini chỉ nằm ở backend,
 không đặt trong biến `VITE_*` vì các biến này được đóng gói vào mã trình duyệt.
 
-Hướng dẫn cài đặt, dữ liệu demo tổng hợp và giới hạn: [README gốc](../../README.md),
-[bàn giao](../../docs/handoff.md). Các trang `*-preview.html` ở máy tác giả chỉ là
+Hướng dẫn cài đặt, dữ liệu demo tổng hợp và giới hạn: [README gốc](../README.md). Các trang `*-preview.html` ở máy tác giả chỉ là
 công cụ xem thử thiết kế, không phải luồng ứng dụng được bàn giao.

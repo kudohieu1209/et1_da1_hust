@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { 
-  Menu, 
+  PanelLeft, 
+  PanelLeftOpen, 
   Sparkles, 
   MoreHorizontal,
   Pin,
@@ -26,6 +27,7 @@ export default function App() {
   const [authNotice, setAuthNotice] = useState(null);
   const [activeTab, setActiveTab] = useState('chat');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarToggleHovered, setIsSidebarToggleHovered] = useState(false);
   const [studentProfile, setStudentProfile] = useState(null);
   const [auditData, setAuditData] = useState(null);
   const [conversations, setConversations] = useState([]);
@@ -297,8 +299,6 @@ export default function App() {
         onOpenSettings={handleOpenSettings}
         onLogout={handleLogout}
         onOpenImport={handleOpenImport}
-        theme={theme}
-        onToggleTheme={() => setTheme(current => (current === 'light' ? 'dark' : 'light'))}
         language={language}
       />
 
@@ -327,12 +327,15 @@ export default function App() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             {!isSidebarOpen && (
               <button
-                onClick={() => setIsSidebarOpen(true)}
+                onClick={() => {
+                  setIsSidebarToggleHovered(false);
+                  setIsSidebarOpen(true);
+                }}
                 title={language === 'vi' ? 'Mở thanh bên' : 'Open Sidebar'}
                 style={{
-                  background: 'transparent',
+                  background: isSidebarToggleHovered ? 'var(--sidebar-hover)' : 'transparent',
                   border: 'none',
-                  color: 'var(--text-secondary)',
+                  color: isSidebarToggleHovered ? 'var(--text-primary)' : 'var(--text-secondary)',
                   cursor: 'pointer',
                   width: '36px',
                   height: '36px',
@@ -342,19 +345,45 @@ export default function App() {
                   justifyContent: 'center',
                   transition: 'all 0.15s ease'
                 }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.color = 'var(--text-primary)';
-                  e.currentTarget.style.background = 'var(--sidebar-hover)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.color = 'var(--text-secondary)';
-                  e.currentTarget.style.background = 'transparent';
-                }}
+                onMouseEnter={() => setIsSidebarToggleHovered(true)}
+                onMouseLeave={() => setIsSidebarToggleHovered(false)}
               >
-                <Menu size={18} />
+                {isSidebarToggleHovered ? <PanelLeftOpen size={18} /> : <PanelLeft size={18} />}
               </button>
             )}
-            {!isSidebarOpen && <BrandLogo size={28} />}
+            {!isSidebarOpen && (
+              <button
+                type="button"
+                onClick={handleNewChat}
+                className="apple-press"
+                title={language === 'vi' ? 'Cuộc trò chuyện mới' : 'New chat'}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  padding: '4px 6px',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  transition: 'background 0.15s ease'
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = 'var(--sidebar-hover)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+              >
+                <BrandLogo size={24} />
+                <span style={{ 
+                  fontSize: '1rem', 
+                  fontWeight: '600', 
+                  color: 'var(--text-primary)', 
+                  letterSpacing: '-0.01em',
+                  lineHeight: 1
+                }}>
+                  HUST Advisor
+                </span>
+              </button>
+            )}
 
           </div>
 

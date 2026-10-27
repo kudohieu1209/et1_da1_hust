@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ChevronsUpDown, Info, LogOut, Moon, Settings, Sun, Upload } from 'lucide-react';
+import { ChevronsUpDown, Info, LogOut, Settings, Upload } from 'lucide-react';
 import Avatar from './Avatar';
 import { buildStudentSummary, formatCpa, programLabel } from './studentSummary';
 import './account.css';
@@ -15,8 +15,6 @@ const MENU_GAP_PX = 6;
 export default function AccountMenu({
   studentProfile,
   auditData,
-  theme,
-  onToggleTheme,
   onLogout,
   onImportTranscript,
   onOpenSettings,
@@ -113,7 +111,6 @@ export default function AccountMenu({
     action?.();
   };
 
-  const isDark = theme !== 'light';
   const subtitle = [program, summary.cpa !== null ? `CPA ${formatCpa(summary.cpa)}` : null]
     .filter(Boolean)
     .join(' · ');
@@ -179,10 +176,6 @@ export default function AccountMenu({
 
           <div className="account-menu__divider" role="separator" />
 
-          <button type="button" role="menuitem" className="account-menu__item" onClick={run(onToggleTheme, true)}>
-            {isDark ? <Sun size={16} aria-hidden="true" /> : <Moon size={16} aria-hidden="true" />}
-            <span>{isDark ? t('Chuyển sang giao diện sáng', 'Switch to light theme') : t('Chuyển sang giao diện tối', 'Switch to dark theme')}</span>
-          </button>
           <button type="button" role="menuitem" className="account-menu__item" onClick={run(() => onOpenSettings('general'))}>
             <Settings size={16} aria-hidden="true" />
             <span>{t('Cài đặt', 'Settings')}</span>

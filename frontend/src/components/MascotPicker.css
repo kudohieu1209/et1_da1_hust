@@ -1,0 +1,15 @@
+.mascot-picker { min-width: 0; padding: 0; margin: 0; border: 0; color: var(--text-primary); }
+.mascot-picker legend { padding: 0; margin-bottom: 4px; font-size: 0.9rem; font-weight: 700; }
+.mascot-picker__hint { margin: 0 0 12px; color: var(--text-muted); font-size: 0.78rem; line-height: 1.5; }
+.mascot-picker__options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.mascot-picker__option { position: relative; cursor: pointer; min-width: 0; }
+.mascot-picker__option input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.mascot-picker__card { position: relative; display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 12px 8px; border: 1px solid var(--border-subtle); border-radius: 14px; background: var(--bg-card); }
+.mascot-picker__art { display: grid; place-items: end center; width: 100%; height: 132px; }
+.mascot-picker__art img { display: block; width: 132px; max-width: 100%; height: 132px; object-fit: contain; }
+.mascot-picker__label { font-size: 0.82rem; font-weight: 600; }
+.mascot-picker__check { position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--brand-accent); color: white; visibility: hidden; }
+.mascot-picker__option:hover .mascot-picker__card { border-color: var(--brand-accent); }
+.mascot-picker__option input:checked + .mascot-picker__card { border-color: var(--brand-accent); background: var(--brand-soft); box-shadow: inset 0 0 0 1px var(--brand-accent); }
+.mascot-picker__option input:checked + .mascot-picker__card .mascot-picker__check { visibility: visible; }
+.mascot-picker__option input:focus-visible + .mascot-picker__card { outline: 2px solid var(--brand-accent); outline-offset: 3px; }

@@ -20,15 +20,6 @@
   animation: student-welcome-arrive 480ms var(--ease-apple) both;
 }
 
-.student-welcome__hand {
-  /* The image bounds remain 1254 square even when clipped to the hand. */
-  transform-box: fill-box;
-  transform-origin: 31.9% 36.04%;
-  animation-name: student-welcome-wave;
-  animation-duration: 650ms;
-  animation-timing-function: ease-in-out;
-}
-
 .student-welcome__blink {
   opacity: 0;
   animation: student-welcome-blink 6.4s steps(1, end) infinite;
@@ -37,12 +28,6 @@
 @keyframes student-welcome-arrive {
   from { opacity: 0; transform: translateY(8px) scale(0.96); }
   to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes student-welcome-wave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-8deg); }
-  65% { transform: rotate(8deg); }
 }
 
 @keyframes student-welcome-blink {
@@ -59,7 +44,6 @@
   .student-welcome { transition: none; }
   .student-welcome:active { transform: none !important; }
   .student-welcome__art,
-  .student-welcome__hand,
   .student-welcome__blink {
     animation: none;
     transform: none;

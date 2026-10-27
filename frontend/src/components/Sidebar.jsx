@@ -5,8 +5,10 @@ import {
   Plus, 
   Award, 
   CheckCircle2, 
-  ChevronLeft, 
-  Sparkles
+  PanelLeft,
+  PanelLeftClose,
+  Search,
+  X
 } from 'lucide-react';
 
 export default function Sidebar({ 
@@ -23,8 +25,6 @@ export default function Sidebar({
   onOpenSettings,
   onLogout,
   onOpenImport,
-  theme,
-  onToggleTheme,
   language = 'vi'
 }) {
 
@@ -35,6 +35,9 @@ export default function Sidebar({
     return !isNaN(parsed) && parsed >= 220 && parsed <= 500 ? parsed : 260;
   });
   const [isResizing, setIsResizing] = useState(false);
+  const [isCollapseHovered, setIsCollapseHovered] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     if (!isResizing) return;
@@ -97,75 +100,195 @@ export default function Sidebar({
       }}
     >
       {/* Sidebar Header: Logo & New Chat */}
-      <div style={{ padding: '16px 14px 12px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div style={{ padding: '14px 12px 10px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <BrandLogo size={36} decorative />
-            <div>
-              <div style={{ fontSize: '0.92rem', fontWeight: '700', color: 'var(--text-primary)', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
-                HUST Advisor
-              </div>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                Tư vấn học tập HUST
-              </div>
-            </div>
-          </div>
-
           <button
-            onClick={() => setIsOpen(false)}
-            title="Thu gọn Sidebar"
-            style={{
+            type="button"
+            onClick={onNewChat}
+            className="apple-press"
+            title={language === 'vi' ? 'Cuộc trò chuyện mới' : 'New chat'}
+            style={{ 
               background: 'transparent',
               border: 'none',
-              color: 'var(--text-muted)',
+              padding: '4px 6px',
+              marginLeft: '-4px',
+              borderRadius: '8px',
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '8px',
               cursor: 'pointer',
-              padding: '6px',
-              borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
+              textAlign: 'left',
+              transition: 'background 0.15s ease'
             }}
-            onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
-            onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
+            onMouseEnter={e => e.currentTarget.style.background = 'var(--sidebar-hover)'}
+            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
           >
-            <ChevronLeft size={18} />
+            <BrandLogo size={24} decorative />
+            <span style={{ 
+              fontSize: '1rem', 
+              fontWeight: '600', 
+              color: 'var(--text-primary)', 
+              letterSpacing: '-0.01em',
+              lineHeight: 1
+            }}>
+              HUST Advisor
+            </span>
           </button>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
+            <button
+              type="button"
+              onClick={() => {
+                setIsSearchOpen(prev => !prev);
+                if (isSearchOpen) setSearchQuery('');
+              }}
+              title={language === 'vi' ? 'Tìm kiếm' : 'Search'}
+              style={{
+                background: isSearchOpen ? 'var(--sidebar-hover)' : 'transparent',
+                border: 'none',
+                color: isSearchOpen ? 'var(--text-primary)' : 'var(--text-muted)',
+                cursor: 'pointer',
+                width: '32px',
+                height: '32px',
+                borderRadius: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.15s ease'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.color = 'var(--text-primary)';
+                e.currentTarget.style.background = 'var(--sidebar-hover)';
+              }}
+              onMouseLeave={e => {
+                if (!isSearchOpen) {
+                  e.currentTarget.style.color = 'var(--text-muted)';
+                  e.currentTarget.style.background = 'transparent';
+                }
+              }}
+            >
+              <Search size={18} />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setIsCollapseHovered(false);
+                setIsOpen(false);
+              }}
+              title={language === 'vi' ? 'Thu gọn thanh bên' : 'Collapse sidebar'}
+              style={{
+                background: isCollapseHovered ? 'var(--sidebar-hover)' : 'transparent',
+                border: 'none',
+                color: isCollapseHovered ? 'var(--text-primary)' : 'var(--text-muted)',
+                cursor: 'pointer',
+                width: '32px',
+                height: '32px',
+                borderRadius: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.15s ease'
+              }}
+              onMouseEnter={() => setIsCollapseHovered(true)}
+              onMouseLeave={() => setIsCollapseHovered(false)}
+            >
+              {isCollapseHovered ? <PanelLeftClose size={18} /> : <PanelLeft size={18} />}
+            </button>
+          </div>
         </div>
 
-        {/* New Chat Button */}
-        <button
-          onClick={onNewChat}
-          className="apple-press"
-          style={{
+        {isSearchOpen && (
+          <div style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '10px 16px',
-            borderRadius: 'var(--radius-full)',
+            gap: '8px',
+            padding: '6px 10px',
+            borderRadius: '8px',
+            background: 'var(--sidebar-hover)',
             border: '1px solid var(--border-subtle)',
-            background: 'var(--sidebar-newchat-bg)',
-            color: 'var(--text-primary)',
-            fontSize: '0.88rem',
-            fontWeight: '600',
-            cursor: 'pointer',
-            width: '100%',
-            boxShadow: 'var(--shadow-sm)'
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.background = 'var(--sidebar-hover)';
-            e.currentTarget.style.borderColor = 'rgba(213, 19, 42, 0.3)';
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.background = 'var(--sidebar-newchat-bg)';
-            e.currentTarget.style.borderColor = 'var(--border-subtle)';
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Plus size={16} color="var(--brand-accent)" />
-            <span>Đoạn chat mới</span>
+            marginTop: '2px'
+          }}>
+            <Search size={14} color="var(--text-muted)" style={{ flexShrink: 0 }} />
+            <input
+              type="text"
+              autoFocus
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              placeholder={language === 'vi' ? 'Tìm cuộc trò chuyện…' : 'Search chats…'}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: 'var(--text-primary)',
+                fontSize: '0.82rem',
+                width: '100%'
+              }}
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '2px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: 'var(--text-muted)'
+                }}
+              >
+                <X size={14} />
+              </button>
+            )}
           </div>
-          <Sparkles size={14} color="var(--gold-ink)" />
-        </button>
+        )}
+
+        {/* New Chat Button - Synchronized with Tool Items */}
+        {(() => {
+          const isNewChatActive = activeTab === 'chat' && !activeConversationId;
+          return (
+            <button
+              onClick={onNewChat}
+              className="apple-press"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                padding: '8px 10px',
+                borderRadius: '8px',
+                border: 'none',
+                background: isNewChatActive ? 'rgba(213, 19, 42, 0.15)' : 'transparent',
+                color: isNewChatActive ? 'var(--text-primary)' : 'var(--text-secondary)',
+                fontWeight: isNewChatActive ? '700' : '500',
+                fontSize: '0.84rem',
+                cursor: 'pointer',
+                textAlign: 'left',
+                width: '100%',
+                transition: 'background 0.15s ease, color 0.15s ease'
+              }}
+              onMouseEnter={e => {
+                if (!isNewChatActive) {
+                  e.currentTarget.style.background = 'var(--sidebar-hover)';
+                  e.currentTarget.style.color = 'var(--text-primary)';
+                }
+              }}
+              onMouseLeave={e => {
+                if (!isNewChatActive) {
+                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.color = 'var(--text-secondary)';
+                }
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '9px', minWidth: 0, flex: 1 }}>
+                <Plus size={16} color="var(--brand-accent)" style={{ flexShrink: 0 }} />
+                <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flex: 1 }}>
+                  {language === 'vi' ? 'Cuộc trò chuyện mới' : 'New chat'}
+                </span>
+              </div>
+            </button>
+          );
+        })()}
       </div>
 
       {/* Middle Scrollable Section: Tools & Conversation History */}
@@ -262,11 +385,22 @@ export default function Sidebar({
             {language === 'vi' ? 'Gần đây' : 'Recent'}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-            {conversations.length === 0 ? (
-              <span style={{ padding: '7px 10px', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-                {language === 'vi' ? 'Chưa có đoạn chat đã lưu' : 'No saved chats yet'}
-              </span>
-            ) : conversations.map(conversation => (
+            {(() => {
+              const displayList = searchQuery.trim()
+                ? conversations.filter(c => (c.title || '').toLowerCase().includes(searchQuery.toLowerCase()))
+                : conversations;
+
+              if (displayList.length === 0) {
+                return (
+                  <span style={{ padding: '7px 10px', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
+                    {searchQuery.trim()
+                      ? (language === 'vi' ? 'Không tìm thấy cuộc trò chuyện' : 'No matching chats found')
+                      : (language === 'vi' ? 'Chưa có đoạn chat đã lưu' : 'No saved chats yet')}
+                  </span>
+                );
+              }
+
+              return displayList.map(conversation => (
               <button
                 key={conversation.id}
                 className="apple-press"
@@ -300,7 +434,8 @@ export default function Sidebar({
                   {conversation.is_pinned ? '📌 ' : ''}{conversation.title}
                 </span>
               </button>
-            ))}
+              ));
+            })()}
           </div>
         </div>
 
@@ -309,8 +444,6 @@ export default function Sidebar({
       <AccountMenu
         studentProfile={studentProfile}
         auditData={auditData}
-        theme={theme}
-        onToggleTheme={onToggleTheme}
         onLogout={onLogout}
         onImportTranscript={onOpenImport}
         onOpenSettings={onOpenSettings}
