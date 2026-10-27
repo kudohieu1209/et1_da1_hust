@@ -187,7 +187,7 @@ export default function SettingsModal({
             )}
 
             {activeTab === 'memory' && <AdvisingMemory language={language} />}
-            {activeTab === 'about' && <AboutPanel language={language} />}
+            {activeTab === 'about' && <AboutPanel language={language} isAdmin={Boolean(account?.is_admin)} />}
           </div>
         </div>
       </div>

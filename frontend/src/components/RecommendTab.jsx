@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Cpu, Wifi, Radio, HeartPulse, CheckCircle, Sparkles, Sliders } from 'lucide-react';
-import { apiFetch, apiUrl } from '../api';
+import { apiFetch, apiUrl, readError } from '../api';
+
+const RECOMMEND_DEBOUNCE_MS = 300;
 
 const TRACK_VISUALS = [
   { icon: Radio, color: 'var(--brand-accent)', bg: 'rgba(213, 19, 42, 0.08)' },
@@ -18,6 +20,7 @@ export default function RecommendTab() {
   const [isSummer, setIsSummer] = useState(false);
   const [recommendation, setRecommendation] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     apiFetch(apiUrl('/api/student/tracks'))
@@ -37,8 +40,9 @@ export default function RecommendTab() {
       .catch(err => console.error('Lỗi tải danh sách mô-đun:', err));
   }, []);
 
-  const fetchRecommendation = useCallback(async () => {
+  const fetchRecommendation = useCallback(async (signal) => {
     setLoading(true);
+    setError('');
     try {
       const res = await apiFetch(apiUrl('/api/student/recommend'), {
         method: 'POST',
@@ -47,19 +51,33 @@ export default function RecommendTab() {
           target_track: selectedTrack,
           max_credits: maxCredits,
           is_summer_term: isSummer
-        })
+        }),
+        signal
       });
-      const data = await res.json();
-      setRecommendation(data);
+      if (!res.ok) {
+        setRecommendation(null);
+        setError(await readError(res, 'Không tải được gợi ý môn học.'));
+        return;
+      }
+      setRecommendation(await res.json());
     } catch (err) {
+      if (err.name === 'AbortError') return;
       console.error('Lỗi gợi ý môn:', err);
+      setRecommendation(null);
+      setError('Không kết nối được máy chủ để lấy gợi ý môn học.');
     } finally {
-      setLoading(false);
+      if (!signal?.aborted) setLoading(false);
     }
   }, [selectedTrack, maxCredits, isSummer]);
 
   useEffect(() => {
-    fetchRecommendation();
+    const controller = new AbortController();
+    // Chờ người dùng thả thanh trượt rồi mới gọi, và hủy yêu cầu cũ khi tham số đổi.
+    const timer = setTimeout(() => fetchRecommendation(controller.signal), RECOMMEND_DEBOUNCE_MS);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
   }, [fetchRecommendation]);
 
   return (
@@ -200,6 +218,10 @@ export default function RecommendTab() {
         {loading ? (
           <div style={{ padding: '30px', textAlign: 'center', color: 'var(--text-secondary)' }}>
             Đang tính toán ma trận môn học tối ưu...
+          </div>
+        ) : error ? (
+          <div role="alert" style={{ padding: '30px', textAlign: 'center', color: 'var(--danger)' }}>
+            {error}
           </div>
         ) : recommendation?.recommended_courses?.length > 0 ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

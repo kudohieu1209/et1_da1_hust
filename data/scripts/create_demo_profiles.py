@@ -10,9 +10,10 @@ base_file = BASE_DIR / "processed" / "student_profile.json"
 with open(base_file, "r", encoding="utf-8") as f:
     base_profile = json.load(f)
 
-# 1. Profile 20220001 (Mai Duy Hiếu - K67 Benchmark)
+# 1. Profile 20220001 (Sinh viên Demo - K67 Benchmark)
 profile_hieu = json.loads(json.dumps(base_profile))
-profile_hieu["info"]["student_name"] = "Mai Duy Hiếu"
+profile_hieu["info"]["student_id"] = "20220001"
+profile_hieu["info"]["student_name"] = "Sinh viên Demo"
 profile_hieu["info"]["class_name"] = "Điện tử 02 - K67"
 profile_hieu["info"]["badge"] = "Pilot Benchmark"
 profile_hieu["info"]["persona"] = "Năm 4 • Cần kéo CPA lên Khá (≥2.50) • Chuẩn bị ĐATN"

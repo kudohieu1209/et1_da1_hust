@@ -245,14 +245,28 @@ class VectorStoreManager:
         return selected
 
     def get_stats(self) -> Dict[str, Any]:
-        """Lấy thống kê trạng thái hiện tại của Vector Store"""
+        """Lấy thống kê trạng thái hiện tại của Vector Store.
+
+        Chỉ mục hỏng không được làm hỏng cả /api/rag/status: trả ``error`` để
+        giao diện vẫn hiển thị được trạng thái mô hình. Không trả đường dẫn
+        thư mục vì endpoint này công khai.
+        """
         try:
             if not self.collection:
                 self._init_client()
             count = self.collection.count() if self.collection else 0
         except Exception:
             self._init_client()
-            count = self.collection.count() if self.collection else 0
+            try:
+                count = self.collection.count() if self.collection else 0
+            except Exception as exc:
+                print(f"[VectorStoreManager] Không đọc được chỉ mục: {exc}")
+                return {
+                    "collection_name": self.collection_name,
+                    "total_chunks": 0,
+                    "indexed_sources": [],
+                    "error": "index_unavailable",
+                }
 
         sources = []
         if self.collection and count > 0:
@@ -267,7 +281,6 @@ class VectorStoreManager:
             "collection_name": self.collection_name,
             "total_chunks": count,
             "indexed_sources": sorted(sources),
-            "persist_dir": str(self.persist_dir)
         }
 
 vector_store = VectorStoreManager()

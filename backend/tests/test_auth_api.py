@@ -9,9 +9,9 @@ from unittest import mock
 from fastapi.testclient import TestClient
 
 from app.api import router_chat, router_conversations, router_student
-from app.auth import runtime
+from app.auth import dependencies, runtime
 from app.auth.passwords import hash_password
-from app.auth.service import PER_IP_FAILURE_LIMIT, AuthService
+from app.auth.service import PER_IP_FAILURE_LIMIT, AuthService, SlidingWindowLimiter
 from app.auth.store import MongoAuthStore
 from app.core.config import SESSION_COOKIE_NAME
 from app.main import app
@@ -45,6 +45,10 @@ class AuthApiTests(unittest.TestCase):
             mock.patch.object(router_conversations, "conversation_service", conversations),
             mock.patch.object(router_chat, "student_memory", memory),
             mock.patch.object(router_student, "student_memory", memory),
+            mock.patch.object(
+                dependencies, "llm_limiter",
+                SlidingWindowLimiter(dependencies.LLM_WINDOW, dependencies.LLM_MAX_REQUESTS),
+            ),
         ):
             patcher.start()
             self.addCleanup(patcher.stop)
@@ -55,6 +59,18 @@ class AuthApiTests(unittest.TestCase):
             response = client.post("/api/auth/login", json={"student_id": student_id, "password": PASSWORD})
             self.assertEqual(response.status_code, 200, response.text)
         return client
+
+    def test_chat_is_rate_limited_per_student(self):
+        client = self._client(K67)
+        other = self._client(K68)
+        with mock.patch.object(dependencies, "llm_limiter", SlidingWindowLimiter(dependencies.LLM_WINDOW, 2)):
+            for _ in range(2):
+                self.assertEqual(client.post("/api/chat", json={"message": "chào"}).status_code, 200)
+            blocked = client.post("/api/chat", json={"message": "chào"})
+            self.assertEqual(blocked.status_code, 429)
+            self.assertIn("Retry-After", blocked.headers)
+            # Hạn mức tính riêng từng tài khoản.
+            self.assertEqual(other.post("/api/chat", json={"message": "chào"}).status_code, 200)
 
     # --- Đăng nhập / phiên ------------------------------------------------
     def test_followup_uses_stored_course_after_reload_and_small_talk(self):

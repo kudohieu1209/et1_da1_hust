@@ -687,7 +687,7 @@ export default function AuditTab({
                 </span>
               </div>
 
-              {/* Item 3: CPA requirement (Passed) */}
+              {/* Item 3: CPA requirement */}
               <div style={{
                 padding: '14px 16px',
                 borderRadius: 'var(--radius-md)',
@@ -705,12 +705,13 @@ export default function AuditTab({
                       Điểm trung bình tích lũy CPA ≥ 2.00
                     </div>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
-                      Hiện tại: <strong style={{ color: 'var(--success)' }}>CPA {cpa.toFixed(2)}</strong> (Đạt chuẩn học lực cử nhân Bách Khoa).
+                      Hiện tại: <strong style={{ color: cpa >= 2.0 ? 'var(--success)' : 'var(--danger)' }}>CPA {cpa.toFixed(2)}</strong>{' '}
+                      {cpa >= 2.0 ? '(Đạt chuẩn học lực cử nhân Bách Khoa).' : '(Chưa đạt mức tối thiểu 2.00 để xét tốt nghiệp).'}
                     </div>
                   </div>
                 </div>
-                <span className="badge badge-success" style={{ fontSize: '0.7rem' }}>
-                  Đạt chuẩn
+                <span className={cpa >= 2.0 ? 'badge badge-success' : 'badge badge-danger'} style={{ fontSize: '0.7rem' }}>
+                  {cpa >= 2.0 ? 'Đạt chuẩn' : 'Chưa đạt'}
                 </span>
               </div>
 

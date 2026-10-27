@@ -912,7 +912,7 @@ export default function ChatTab({
 
                   <button
                     onClick={() => {
-                      const prevUserMsg = messagesRef.current.slice(0, index).reverse().find(m => m.role === 'user');
+                      const prevUserMsg = messages.slice(0, index).reverse().find(m => m.role === 'user');
                       if (prevUserMsg) handleSend(prevUserMsg.content);
                     }}
                     title={language === 'vi' ? 'Tạo lại câu trả lời' : 'Regenerate'}
