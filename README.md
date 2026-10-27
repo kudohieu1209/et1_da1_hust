@@ -12,11 +12,16 @@ Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tu
 2. **Deterministic Rule Engine:** Sử dụng dữ liệu CTĐT và bộ quy tắc HUST để kiểm tra điều kiện học phần, rà soát tín chỉ (Degree Audit) theo từng hồ sơ sinh viên và hỗ trợ chọn môn.
 3. **Full-stack Interactive Dashboard:** Giao diện React tập trung vào chat tự nhiên, tiến độ học tập và gợi ý chọn môn theo các mô-đun của chương trình đào tạo đang được hỗ trợ.
 
-## Tài liệu bàn giao
+## Kết quả đánh giá
 
-- Kết quả bàn giao ngày 24/10/2026: [báo cáo đánh giá 100 câu](eval/reports/handoff_20261024.md) và [20 câu diễn đạt bổ sung](eval/reports/validation_handoff_20261024.md)
-- Kết quả sau khi bổ sung văn bản HUST 2026: [bộ hồi quy](eval/reports/new_documents_20261027.md) và [bộ diễn đạt bổ sung](eval/reports/validation_new_documents_20261027.md)
-- Chạy kiểm thử toàn bộ: `./scripts/test_all.sh`
+Hệ thống được đánh giá tự động trên 108 câu hỏi hồi quy và 20 câu hỏi diễn đạt khác (không dùng khi tinh chỉnh), chế độ không gọi LLM để kết quả lặp lại được:
+
+| Bộ câu hỏi | Phân loại ý định | Truy xuất đúng văn bản (Recall@4) | Câu trả lời chứa ý chính |
+|---|---:|---:|---:|
+| Hồi quy (108 câu) | 100% | 98,6% | 100% |
+| Diễn đạt khác (20 câu) | 100% | 100% | 100% |
+
+Chi tiết: [bộ hồi quy](eval/reports/new_documents_20261027.md), [bộ diễn đạt khác](eval/reports/validation_new_documents_20261027.md). Chạy toàn bộ kiểm thử: `./scripts/test_all.sh`.
 
 ---
 
@@ -58,7 +63,7 @@ graph TD
 - Hội thoại dùng context từ 12 tin nhắn gần nhất của đúng tài khoản; hiểu “môn đó cần gì?”, “nếu trượt thì sao?”, yêu cầu làm rõ khi có nhiều môn. Lịch sử client gửi lên không được dùng để thiết lập context.
 - **Cài đặt → Ghi nhớ học tập**: tự chọn bật/tắt, sửa hoặc xóa định hướng, tải tín chỉ mong muốn và mục tiêu CPA. Mặc định tắt; chatbot không tự trích xuất mục tiêu từ tin nhắn. Gợi ý môn dùng định hướng/tín chỉ đã lưu, ưu tiên lựa chọn trong câu hỏi và luôn áp giới hạn học vụ. CPA hiện được lưu và nhắc lại, chưa có bộ mô phỏng điểm theo mục tiêu cá nhân.
 - Kho RAG tin cậy hiện gồm 14 tài liệu: CTĐT ET1–2022, ET1–2023, Quy chế đào tạo theo Quyết định 5445/QĐ-ĐHBK, Sổ tay sinh viên 2026, Quyết định học phí 2025–2026 và 2026–2027, Kế hoạch năm học 2026–2027, Quy chế công tác sinh viên, Quy định đánh giá rèn luyện, Quy định chuẩn ngoại ngữ K70 và K71, Quy định miễn giảm học phí, Quy định học bổng Trần Đại Nghĩa và học bổng trao đổi. Các văn bản quy chế, học phí, học bổng áp dụng cho sinh viên mọi ngành; chỉ phần CTĐT là riêng ET1. Chỉ tài liệu có metadata `rag_status: VERIFIED` mới được lập chỉ mục; PDF cần sidecar `<tên-file>.pdf.metadata.json` có trạng thái tương ứng. Kho được đồng bộ lại khi khởi động để loại nguồn đã thu hồi phê duyệt.
-- Sinh viên đăng nhập bằng **MSSV + mật khẩu** (tự đăng ký); phiên nằm trong cookie HttpOnly, mỗi người chỉ thấy hồ sơ, bảng điểm và hội thoại của mình. Bản bàn giao chạy local; chưa nghiệm thu triển khai Internet/HTTPS hay quản trị người dùng đầy đủ.
+- Sinh viên đăng nhập bằng **MSSV + mật khẩu** (tự đăng ký); phiên nằm trong cookie HttpOnly, mỗi người chỉ thấy hồ sơ, bảng điểm và hội thoại của mình. Hiện chạy trên máy cục bộ; chưa triển khai Internet/HTTPS hay trang quản trị người dùng.
 
 ### Chuẩn bị trên máy mới
 
@@ -149,7 +154,7 @@ MongoDB; không cần chạy để demo bằng tài khoản tự đăng ký. Kh�
 
 ### Đánh giá định lượng
 
-`eval/golden_questions.jsonl` gồm **100 câu hỏi hồi quy**, có bằng chứng/ý chính đối chiếu
+`eval/golden_questions.jsonl` gồm **108 câu hỏi hồi quy**, có bằng chứng/ý chính đối chiếu
 với các văn bản đã kiểm chứng (quy chế, học phí, học bổng, CTĐT) và các câu
 kiểm tra điều kiện, gợi ý môn, rà soát tiến độ. Bộ chạy đo độ chính xác phân loại
 ý định, trích xuất mã môn, Recall@k/MRR của truy xuất và tỉ lệ câu trả lời chứa ý
@@ -166,10 +171,8 @@ một thay đổi đã cải thiện chỉ số.
 Test/eval mặc định tạo một chỉ mục riêng cho mỗi tiến trình trong
 `data/vector_db_test/`, không dùng chỉ mục của backend. Khi đặt
 `VECTOR_DB_DIR` thủ công, không trỏ tới chỉ mục đang được ứng dụng sử dụng.
-Báo cáo baseline 96 câu ngày 15/10 được giữ để tham khảo lịch sử; không phải
-kết quả của bộ 100 câu hiện tại. “Chứa ý chính” chỉ là khớp cụm từ tự động,
-không phải chấm toàn diện chất lượng LLM. Tập bổ sung vẫn còn ca chưa đạt về
-học phí tiến sĩ; xem báo cáo bàn giao để biết giới hạn.
+Các báo cáo cũ hơn trong `eval/reports/` được giữ để so sánh tiến trình.
+“Chứa ý chính” là khớp cụm từ tự động, không phải chấm toàn diện chất lượng LLM.
 
 Tái tạo tài liệu RAG đã kiểm chứng từ PDF gốc:
 
@@ -273,19 +276,34 @@ npm run dev
 
 ---
 
-## 🎯 Kịch bản Demo tiêu biểu phục vụ Báo cáo
+## 🎯 Một số tình huống sử dụng
 
-1. **Hỏi đáp tự nhiên có từ lóng sinh viên:** *"Kỳ tới em muốn học vxl và dts thì cần những môn gì trước?"* -> Hệ thống tự bóc tách mã môn `ET3300` và `ET3220`, kiểm tra điều kiện học trước và trả lời chính xác.
-2. **Kiểm tra điều kiện học phần:** *"Điều kiện học môn Hệ điều hành là gì?"* -> Rule Engine giải thích các phương án điều kiện và đối chiếu với bảng điểm cá nhân.
-3. **Tra cứu quy chế đào tạo (RAG):** *"Quy định cảnh cáo học tập mức 1 được đăng ký tối đa bao nhiêu tín chỉ?"* -> RAG trích dẫn chính xác Điều khoản trong Quy chế Đào tạo ĐHBK Hà Nội.
-4. **Rà soát tốt nghiệp (Audit Tab):** Tiến độ được tính theo đúng phiên bản CTĐT; ET1–2022 có 126 tín chỉ, ET1–2023 có 132 tín chỉ, còn Ngoại ngữ/GDTC/GDQP được theo dõi tách biệt.
+| Tình huống | Ví dụ câu hỏi của sinh viên | Cách hệ thống xử lý |
+|---|---|---|
+| Hỏi bằng tên viết tắt | “Kỳ tới em muốn học vxl và dts thì cần những môn gì trước?” | Nhận ra `ET3300` (Kỹ thuật vi xử lý) và `ET3220` (Điện tử số), tra điều kiện học trước trong CTĐT. |
+| Kiểm tra điều kiện học phần | “Điều kiện học môn Hệ điều hành là gì?” | Rule Engine liệt kê các phương án điều kiện và đối chiếu với bảng điểm của sinh viên. |
+| Tra cứu quy chế | “Đang bị cảnh báo học tập mức 1 được đăng ký tối đa bao nhiêu tín chỉ?” | Truy xuất điều khoản trong Quy chế đào tạo và trả lời kèm nguồn, số trang. |
+| Học phí, học bổng | “Học phí ngành ET1 năm 2026–2027 là bao nhiêu?”, “Học bổng Trần Đại Nghĩa xét thế nào?” | Chọn đúng văn bản và năm học áp dụng, trích dẫn quyết định tương ứng. |
+| Rà soát tiến độ tốt nghiệp | Mở tab Tiến độ | Tính theo đúng phiên bản CTĐT của khóa (ET1–2022: 126 TC, ET1–2023: 132 TC); Ngoại ngữ, GDTC, GDQP theo dõi riêng. |
+| Hội thoại nhiều lượt | “Môn đó cần gì?”, “Nếu trượt thì sao?” | Hiểu ngữ cảnh từ các tin nhắn trước; lịch sử được lưu theo tài khoản và có thể ghim, lưu trữ, xóa. |
 
-5. **Lịch sử hội thoại:** Gửi vài câu hỏi, tải lại trang hoặc chọn một mục trong “Gần đây” để kiểm tra hội thoại được khôi phục từ MongoDB. Các nút ghim, lưu trữ và xóa cập nhật bản ghi hội thoại tương ứng.
+## Kết quả đạt được và hướng phát triển
 
+**Đã thực hiện**
 
-## Phạm vi bàn giao
+- Đăng nhập bằng MSSV, mỗi sinh viên chỉ xem được hồ sơ và hội thoại của mình.
+- Nhập bảng điểm, có bước xác nhận khi dữ liệu thiếu.
+- Kiểm tra điều kiện học phần và rà soát tiến độ theo phiên bản CTĐT.
+- Hỏi đáp quy chế, học phí, học bổng, rèn luyện, ngoại ngữ có trích dẫn nguồn từ 14 văn bản chính thức của trường.
+- Lưu lịch sử hội thoại và ghi nhớ học tập do sinh viên tự quản lý.
 
-Đã có tài khoản/phiên riêng, nhập bảng điểm có xác nhận dữ liệu thiếu, kiểm tra
-điều kiện học phần, audit theo phiên bản CTĐT, RAG có nguồn, lịch sử/context và
-memory do sinh viên quản lý. Tool Calling do LLM điều phối, planner nhiều kỳ,
-mô phỏng CPA theo mục tiêu cá nhân và smart alerts là hướng phát triển tiếp.
+**Giới hạn hiện tại**
+
+- Rule Engine mới có dữ liệu CTĐT đã kiểm tra của ngành ET1 (2022 và 2023); phần hỏi đáp quy chế dùng được cho sinh viên mọi ngành.
+- Hệ thống chạy trên máy cục bộ, chưa triển khai công khai qua Internet.
+
+**Hướng phát triển**
+
+- Mở rộng CTĐT cho các ngành khác từ dữ liệu đã thu thập.
+- Để LLM tự gọi công cụ (Tool Calling) thay cho bộ phân loại ý định.
+- Lập kế hoạch học tập nhiều kỳ, mô phỏng CPA theo mục tiêu và cảnh báo học vụ chủ động.
