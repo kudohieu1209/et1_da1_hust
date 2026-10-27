@@ -115,6 +115,6 @@ def parse_ctt_html(raw_path: str, output_dir: str):
     print(f" - Số môn SV đã hoàn thành: {len(student_transcript)}")
 
 if __name__ == '__main__':
-    raw = 'project/data/raw/et1_curiculum.html'
-    out = 'project/data/processed'
+    raw = 'data/raw/et1_curiculum.html'
+    out = 'data/processed'
     parse_ctt_html(raw, out)

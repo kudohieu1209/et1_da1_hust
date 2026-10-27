@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Shared helpers for setup.sh and test_all.sh.
 #
-# Linux/macOS dùng project/backend/.venv; Windows (Git Bash) dùng .venv-win để
+# Linux/macOS dùng backend/.venv; Windows (Git Bash) dùng .venv-win để
 # không ghi đè venv Linux khi cùng một ổ đĩa được mở từ hai hệ điều hành.
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-BACKEND_DIR="$REPO_DIR/project/backend"
-FRONTEND_DIR="$REPO_DIR/project/frontend"
+BACKEND_DIR="$REPO_DIR/backend"
+FRONTEND_DIR="$REPO_DIR/frontend"
 
 is_windows() {
   case "$(uname -s)" in
