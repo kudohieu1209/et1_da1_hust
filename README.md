@@ -21,7 +21,7 @@ Hệ thống được đánh giá tự động trên 108 câu hỏi hồi quy v�
 | Hồi quy (108 câu) | 100% | 98,6% | 100% |
 | Diễn đạt khác (20 câu) | 100% | 100% | 100% |
 
-Chi tiết: [bộ hồi quy](eval/reports/new_documents_20261027.md), [bộ diễn đạt khác](eval/reports/validation_new_documents_20261027.md). Chạy toàn bộ kiểm thử: `./scripts/test_all.sh`.
+Chi tiết: [bộ hồi quy](eval/reports/final.md), [bộ diễn đạt khác](eval/reports/validation_final.md). Chạy toàn bộ kiểm thử: `./scripts/test_all.sh`.
 
 ---
 
@@ -171,7 +171,7 @@ một thay đổi đã cải thiện chỉ số.
 Test/eval mặc định tạo một chỉ mục riêng cho mỗi tiến trình trong
 `data/vector_db_test/`, không dùng chỉ mục của backend. Khi đặt
 `VECTOR_DB_DIR` thủ công, không trỏ tới chỉ mục đang được ứng dụng sử dụng.
-Các báo cáo cũ hơn trong `eval/reports/` được giữ để so sánh tiến trình.
+`eval/reports/baseline.md` là kết quả trước khi cải tiến truy xuất (96 câu), dùng để so sánh với `final.md`.
 “Chứa ý chính” là khớp cụm từ tự động, không phải chấm toàn diện chất lượng LLM.
 
 Tái tạo tài liệu RAG đã kiểm chứng từ PDF gốc:

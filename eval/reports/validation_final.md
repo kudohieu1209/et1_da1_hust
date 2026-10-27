@@ -1,4 +1,4 @@
-# Kết quả đánh giá: validation_new_documents_20261027
+# Kết quả đánh giá: validation_final
 
 - Thời điểm (UTC): 2026-10-27T13:26:52+00:00
 - Số câu hỏi: 20; k = 4; độ trễ trung vị: 575 ms

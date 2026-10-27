@@ -1,4 +1,4 @@
-# Kết quả đánh giá: new_documents_20261027
+# Kết quả đánh giá: final
 
 - Thời điểm (UTC): 2026-10-27T13:25:43+00:00
 - Số câu hỏi: 108; k = 4; độ trễ trung vị: 487 ms
