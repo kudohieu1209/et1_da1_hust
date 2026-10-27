@@ -1,10 +1,11 @@
 import os
-from typing import List, Dict, Any, Optional
+import re
+from typing import List, Dict, Any, Optional, Set, Tuple
 from google import genai
 from google.genai import types
 from app.core.config import GEMINI_API_KEY, GEMINI_MODEL, GEMINI_FALLBACK_MODEL, GEMINI_TIMEOUT_SECONDS
 
-HUST_SYSTEM_PROMPT = """Bạn là Trợ lý Cố vấn Học tập & Đào tạo của Đại học Bách khoa Hà Nội.
+HUST_SYSTEM_PROMPT = """Bạn là HUST Advisor, trợ lý tư vấn học tập dành cho sinh viên Đại học Bách khoa Hà Nội. Đây là sản phẩm đồ án của sinh viên, không phải kênh tư vấn chính thức của Nhà trường; nếu được hỏi về danh tính, hãy nói đúng như vậy và không tự nhận là do Google hay Nhà trường phát triển.
 Nhiệm vụ của bạn là giải thích quy chế, chính sách sinh viên và chương trình đào tạo dựa trên dữ liệu được cung cấp. Hiện hệ thống có dữ liệu cấu trúc ET1–2022 và ET1–2023; khi câu hỏi thuộc ngành hoặc phiên bản chưa có dữ liệu, phải nói rõ giới hạn này thay vì suy đoán.
 
 NGUYÊN TẮC TRẢ LỜI CỐT LÕI:
@@ -13,6 +14,7 @@ NGUYÊN TẮC TRẢ LỜI CỐT LÕI:
 - Giọng văn chuẩn mực học thuật, gần gũi, đáng tin cậy, truyền cảm hứng học tập cho sinh viên.
 - Sử dụng định dạng Markdown đẹp mắt: in đậm từ khóa, gạch đầu dòng rõ ràng, bảng biểu nếu cần.
 - TUYỆT ĐỐI KHÔNG BỊA ĐẶT quy chế nếu tài liệu không đề cập. Nếu không đủ dữ liệu, hãy hướng dẫn sinh viên tra cứu thêm trên ctt.hust.edu.vn hoặc liên hệ Bàn Một cửa C1.
+- Dòng CUỐI CÙNG của câu trả lời phải là thẻ liệt kê số thứ tự các nguồn bạn thực sự dùng, ví dụ `[[NGUON: 1,3]]`. Nếu câu trả lời không dựa vào tài liệu nào (chào hỏi, hỏi danh tính, ngoài phạm vi), ghi `[[NGUON: 0]]`.
 """
 
 SMALL_TALK_PROMPT = """Bạn là HUST Advisor, trợ lý học tập thân thiện của sinh viên Đại học Bách khoa Hà Nội.
@@ -22,6 +24,24 @@ Sinh viên đang nói chuyện xã giao (chào hỏi, cảm ơn, chúc, tạm bi
 - Nếu sinh viên than mệt/áp lực, hãy động viên và gợi ý nghỉ ngơi hoặc chia sẻ với cố vấn học tập, người thân.
 - Khi phù hợp, nhắc nhẹ rằng bạn có thể giúp xem tiến độ học tập, kiểm tra điều kiện môn hoặc gợi ý môn kỳ tới.
 """
+
+
+SOURCE_TAG = re.compile(r"`?\[\[\s*NGUON\s*:\s*([\d,\s]*)\]\]`?", re.IGNORECASE)
+
+
+def split_cited_sources(text: str) -> Tuple[str, Optional[Set[int]]]:
+    """Tách thẻ ``[[NGUON: 1,3]]`` khỏi câu trả lời của Gemini.
+
+    Trả về tập số thứ tự nguồn được dùng (rỗng khi mô hình ghi 0), hoặc
+    ``None`` khi mô hình bỏ qua thẻ: khi đó giữ mọi nguồn như trước.
+    """
+    tags = SOURCE_TAG.findall(text)
+    clean = SOURCE_TAG.sub("", text).strip()
+    if not tags:
+        return clean, None
+    cited = {int(n) for tag in tags for n in re.findall(r"\d+", tag)}
+    cited.discard(0)
+    return clean, cited
 
 
 def clean_display_source(name: str) -> str:
@@ -146,9 +166,12 @@ class GeminiService:
                     )
                 )
                 if response and response.text:
+                    reply, cited = split_cited_sources(response.text)
                     sources = []
                     if context_chunks:
-                        for c in context_chunks:
+                        for idx, c in enumerate(context_chunks, 1):
+                            if cited is not None and idx not in cited:
+                                continue
                             meta = c.get("metadata", {})
                             src_name = clean_display_source(meta.get("source", ""))
                             title = meta.get("title", "")
@@ -158,7 +181,7 @@ class GeminiService:
                                                 "effective_period": meta.get("effective_period", "")})
 
                     return {
-                        "reply": response.text.strip(),
+                        "reply": reply,
                         "model_used": model,
                         "success": True,
                         "sources": sources

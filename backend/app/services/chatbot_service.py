@@ -168,8 +168,55 @@ SMALL_TALK_SUGGESTIONS = [
 ]
 
 
+# Gợi ý tiếp theo sau câu trả lời RAG, chọn theo chủ đề câu hỏi (khớp chủ đề đầu tiên).
+RAG_TOPIC_SUGGESTIONS = [
+    (["học phí", "miễn giảm", "đóng tiền", "nộp tiền"], [
+        "Học phí năm học 2025-2026 tính thế nào?",
+        "Rút học phần thì có phải đóng học phí không?",
+        "Không nộp học phí đúng hạn bị xử lý thế nào?",
+        "Học bổng khuyến khích học tập xét thế nào?",
+    ]),
+    (["học bổng"], [
+        "Học bổng khuyến khích học tập xét thế nào?",
+        "Học bổng loại xuất sắc cần điểm bao nhiêu?",
+        "Xem tiến độ học tập",
+    ]),
+    (["tốt nghiệp", "đồ án", "khóa luận", "hạng", "bằng khá", "bằng giỏi"], [
+        "Điều kiện nhận Đồ án tốt nghiệp (Điều 13)",
+        "Hạng tốt nghiệp tính theo CPA thế nào?",
+        "Đăng ký tốt nghiệp cần điều kiện gì?",
+        "Xem tiến độ tốt nghiệp",
+    ]),
+    (["cảnh báo", "cảnh cáo", "thôi học", "bảo lưu", "nghỉ học"], [
+        "Khi nào bị cảnh báo học tập?",
+        "Trường hợp nào bị buộc thôi học?",
+        "Xem tiến độ học tập",
+    ]),
+    (["đăng ký", "tín chỉ", "rút học phần", "học lại", "cải thiện", "kỳ hè", "học kỳ hè"], [
+        "Giới hạn số tín chỉ đăng ký kỳ chính & hè",
+        "Học cải thiện điểm thì tính điểm nào?",
+        "Gợi ý môn học kỳ tới",
+    ]),
+]
+DEFAULT_RAG_SUGGESTIONS = [
+    "Giới hạn số tín chỉ đăng ký kỳ chính & hè",
+    "Điều kiện nhận Đồ án tốt nghiệp (Điều 13)",
+    "Gợi ý chọn môn theo hướng Thiết kế Vi mạch",
+    "Làm sao để kéo điểm CPA lên bằng Khá?",
+]
+
+
 def _contains_keyword(text: str, keywords: List[str]) -> bool:
     return any(re.search(rf"(?<!\w){re.escape(kw)}(?!\w)", text) for kw in keywords)
+
+
+def rag_suggestions(message: str) -> List[str]:
+    """Chọn gợi ý theo chủ đề câu hỏi, bỏ gợi ý trùng với chính câu vừa hỏi."""
+    text = unicodedata.normalize("NFC", message or "").strip().lower()
+    chosen = next((items for keywords, items in RAG_TOPIC_SUGGESTIONS if _contains_keyword(text, keywords)),
+                  DEFAULT_RAG_SUGGESTIONS)
+    asked = text.rstrip("?!. ")
+    return [item for item in chosen if item.lower().rstrip("?!. ") != asked][:4]
 
 
 def detect_small_talk(text: str, detected_codes: Optional[List[str]] = None) -> Optional[str]:
@@ -353,6 +400,17 @@ class ChatbotService:
         # vd: "bạn có thể làm gì", "bạn giúp được gì", "bạn làm được gì", "menu", "help"
         capability_pattern = r"^((xin\s+)?chào\s+(bạn\s+|bot\s+)?)?(bạn|bot)\s+((có\s+thể\s+)?(làm|giúp|hỗ\s+trợ)(\s+được)?\s+(gì|những\s+gì)|chức\s+năng\s+gì)"
         if re.search(capability_pattern, cleaned):
+            return True
+
+        # 5. Hỏi ai tạo ra / dùng mô hình gì
+        # vd: "bạn do ai tạo ra", "ai làm ra bạn", "bạn dùng model gì", "bạn có phải chatgpt không"
+        creator_pattern = (
+            r"((bạn|cậu|bot)\s+(do|được|là do)\s+(ai|người nào|bên nào)\s+(tạo|làm|phát triển|xây dựng|viết)"
+            r"|(ai|người nào|bên nào)\s+(tạo|làm|phát triển|xây dựng|viết)(\s+ra)?\s+(bạn|cậu|bot)"
+            r"|(bạn|cậu|bot)\s+(dùng|chạy|sử dụng)\s+(mô hình|model|ai|llm)\s+(gì|nào)"
+            r"|(bạn|cậu|bot)\s+(có\s+)?phải\s+(là\s+)?(chatgpt|gemini|google))"
+        )
+        if re.search(creator_pattern, cleaned):
             return True
 
         if cleaned in {"menu", "help", "trợ giúp", "hướng dẫn", "bắt đầu"}:
@@ -564,17 +622,10 @@ class ChatbotService:
             except Exception as e:
                 print(f"[ChatbotService] Lỗi đối chiếu điều kiện môn học: {e}")
 
-        suggested = [
-            "Giới hạn số tín chỉ đăng ký kỳ chính & hè",
-            "Điều kiện nhận Đồ án tốt nghiệp (Điều 9)",
-            "Gợi ý chọn môn theo hướng Thiết kế Vi mạch",
-            "Làm sao để kéo điểm CPA lên bằng Khá?"
-        ]
-
         return {
             "reply": reply,
             "intent": "RAG_HUST_KNOWLEDGE",
-            "suggested_actions": suggested,
+            "suggested_actions": rag_suggestions(message),
             "sources": rag_res.get("sources", []),
             "model_used": rag_res.get("model_used", "rag-local"),
             "data_context": {
@@ -927,7 +978,10 @@ class ChatbotService:
 
     def _handle_general_query(self, message: str) -> Dict[str, Any]:
         reply = (
-            "👋 Chào bạn! Mình là Trợ lý AI tư vấn học tập của Đại học Bách Khoa Hà Nội.\n\n"
+            "👋 Chào bạn! Mình là **HUST Advisor**, trợ lý tư vấn học tập dành cho sinh viên Đại học Bách khoa Hà Nội.\n\n"
+            "Mình là sản phẩm đồ án của sinh viên, không phải kênh tư vấn chính thức của Nhà trường. "
+            "Phần kiểm tra điều kiện môn và tiến độ chạy bằng luật theo CTĐT; phần giải thích quy chế "
+            "dùng mô hình Gemini kèm trích dẫn văn bản.\n\n"
             "Mình có thể hỗ trợ bạn:\n"
             "1. **Kiểm tra điều kiện đăng ký:** Nhắn tên hoặc mã môn học bất kỳ (ví dụ: *'điều kiện môn học Mạng máy tính'*, *'Mình học được ET4010 và ET3290 cùng lúc không?'*).\n"
             "2. **Đề xuất chọn môn kỳ tiếp theo:** Nhắn *'Gợi ý môn kỳ tới'* hoặc kèm định hướng (Vi mạch, Nhúng, Viễn thông, Y sinh).\n"

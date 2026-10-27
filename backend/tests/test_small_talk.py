@@ -54,6 +54,15 @@ class SmallTalkReplyTests(unittest.TestCase):
             result = chatbot_service.process_message("ngủ ngon nhé")
         self.assertEqual(result["reply"], "Ngủ ngon nha! 🌙")
 
+    def test_creator_question_gets_intro_not_rag(self):
+        for message in ["bạn do ai tạo ra?", "ai làm ra bạn vậy", "bạn dùng model gì", "bạn có phải chatgpt không"]:
+            with self.subTest(message=message), \
+                    mock.patch.object(chatbot_module.rag_engine, "query") as rag_query:
+                result = chatbot_service.process_message(message)
+            rag_query.assert_not_called()
+            self.assertEqual(result["intent"], "GENERAL_GREETING")
+            self.assertIn("không phải kênh tư vấn chính thức", result["reply"])
+
     def test_off_topic_without_llm_does_not_dump_documents(self):
         fallback = {"reply": "Mình tra được các nội dung liên quan...", "sources": [{"source": "x"}],
                     "model_used": "rag-knowledge-engine"}
