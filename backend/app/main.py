@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
+from urllib.parse import urlsplit
 
 from app.core.config import CORS_ORIGINS, SESSION_COOKIE_NAME
 from app.api.router_auth import router as auth_router
@@ -31,10 +32,25 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+def is_allowed_origin(origin: str | None) -> bool:
+    if not origin:
+        return True
+    if origin in CORS_ORIGINS:
+        return True
+    try:
+        parsed = urlsplit(origin)
+        if parsed.scheme in ("http", "https") and parsed.hostname in ("localhost", "127.0.0.1"):
+            return True
+    except Exception:
+        pass
+    return False
+
+
 # CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -51,7 +67,7 @@ async def reject_cross_site_writes(request: Request, call_next):
         SESSION_COOKIE_NAME in request.cookies or request.url.path.startswith("/api/auth/")
     ):
         origin = request.headers.get("origin")
-        if origin and origin not in CORS_ORIGINS:
+        if origin and not is_allowed_origin(origin):
             return JSONResponse(status_code=403, content={"detail": "Nguồn gửi yêu cầu không được phép."})
     return await call_next(request)
 
