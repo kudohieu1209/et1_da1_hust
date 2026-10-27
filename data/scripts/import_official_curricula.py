@@ -364,7 +364,7 @@ def run(input_dir: Path, catalog_path: Path, output_dir: Path, approvals_path: P
     for path in sorted(input_dir.glob("*.json")):
         raw = sanitize_source(json.loads(path.read_text(encoding="utf-8")))
         target = source_dir / path.name
-        target.write_text(json.dumps(raw, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        target.write_text(json.dumps(raw, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
         if str(raw.get("admission_code") or "").upper() in manual_programs:
             rejected[path.stem] = "đã có dữ liệu được đối chiếu thủ công, giữ bản thủ công"
             continue
@@ -385,11 +385,11 @@ def run(input_dir: Path, catalog_path: Path, output_dir: Path, approvals_path: P
         target = output_dir / output_name(dataset)
         if target.exists():
             raise SystemExit(f"Không ghi đè dataset thủ công: {target}")
-        target.write_text(json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        target.write_text(json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
         auto_entries.append(_approval(dataset, target))
     approvals["approvals"] = manual + auto_entries
-    approvals_path.write_text(json.dumps(approvals, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    report_path.write_text(render_report(accepted, rejected), encoding="utf-8")
+    approvals_path.write_text(json.dumps(approvals, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+    report_path.write_text(render_report(accepted, rejected), encoding="utf-8", newline="\n")
     return accepted, rejected
 
 
