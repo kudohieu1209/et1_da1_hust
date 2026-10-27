@@ -22,11 +22,11 @@ export OPENAI_API_KEY=""
 
 # -t để test được import dưới package "tests" (chạy tests/__init__.py cô lập dữ liệu).
 PYTHONPATH="$BACKEND_DIR" "$PYTHON_BIN" -m unittest discover -s "$BACKEND_DIR/tests" -t "$BACKEND_DIR" -v
-PYTHONPATH="$BACKEND_DIR" "$PYTHON_BIN" -m unittest discover -s "$REPO_DIR/project/data/tests" -v
-"$PYTHON_BIN" -m unittest discover -s "$REPO_DIR/project/eval/tests" -v
-# Bộ đánh giá định lượng: thất bại nếu chỉ số tụt dưới project/eval/thresholds.json.
-"$PYTHON_BIN" "$REPO_DIR/project/eval/run_eval.py" --label latest --check
+PYTHONPATH="$BACKEND_DIR" "$PYTHON_BIN" -m unittest discover -s "$REPO_DIR/data/tests" -v
+"$PYTHON_BIN" -m unittest discover -s "$REPO_DIR/eval/tests" -v
+# Bộ đánh giá định lượng: thất bại nếu chỉ số tụt dưới eval/thresholds.json.
+"$PYTHON_BIN" "$REPO_DIR/eval/run_eval.py" --label latest --check
 # Tập diễn đạt bổ sung được báo cáo riêng, không thay bộ 100 câu gốc.
-"$PYTHON_BIN" "$REPO_DIR/project/eval/run_eval.py" --golden "$REPO_DIR/project/eval/validation_questions.jsonl" --label validation_latest
+"$PYTHON_BIN" "$REPO_DIR/eval/run_eval.py" --golden "$REPO_DIR/eval/validation_questions.jsonl" --label validation_latest
 npm --prefix "$FRONTEND_DIR" run lint
 npm --prefix "$FRONTEND_DIR" run build

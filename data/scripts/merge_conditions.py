@@ -65,9 +65,9 @@ def parse_hust_condition(cond_str: str):
     return parsed_or_branches
 
 def merge_conditions():
-    curriculum_path = 'project/data/processed/courses_et1.json'
-    raw_cond_path = 'project/data/raw/ctt_et_conditions.json'
-    output_path = 'project/data/processed/prerequisites_et1.json'
+    curriculum_path = 'data/processed/courses_et1.json'
+    raw_cond_path = 'data/raw/ctt_et_conditions.json'
+    output_path = 'data/processed/prerequisites_et1.json'
 
     with open(curriculum_path, 'r', encoding='utf-8') as f:
         et1_courses = json.load(f)

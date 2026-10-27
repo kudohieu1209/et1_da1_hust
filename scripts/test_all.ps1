@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 $repoDirectory = Split-Path -Parent $PSScriptRoot
-$backendDirectory = Join-Path $repoDirectory 'project/backend'
-$frontendDirectory = Join-Path $repoDirectory 'project/frontend'
+$backendDirectory = Join-Path $repoDirectory 'backend'
+$frontendDirectory = Join-Path $repoDirectory 'frontend'
 $pythonExecutable = if ($env:PYTHON_BIN) { $env:PYTHON_BIN } else { Join-Path $backendDirectory '.venv-win/Scripts/python.exe' }
 if (-not (Test-Path -LiteralPath $pythonExecutable)) { throw 'Chưa có venv. Hãy thực hiện bước cài đặt trong README.' }
 
@@ -22,10 +22,10 @@ try {
     $env:GOOGLE_API_KEY = ''
     $env:OPENAI_API_KEY = ''
     Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$backendDirectory/tests",'-t',$backendDirectory,'-v')
-    Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$repoDirectory/project/data/tests",'-v')
-    Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$repoDirectory/project/eval/tests",'-v')
-    Invoke-Checked $pythonExecutable @("$repoDirectory/project/eval/run_eval.py",'--label','latest','--check')
-    Invoke-Checked $pythonExecutable @("$repoDirectory/project/eval/run_eval.py",'--golden',"$repoDirectory/project/eval/validation_questions.jsonl",'--label','validation_latest')
+    Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$repoDirectory/data/tests",'-v')
+    Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$repoDirectory/eval/tests",'-v')
+    Invoke-Checked $pythonExecutable @("$repoDirectory/eval/run_eval.py",'--label','latest','--check')
+    Invoke-Checked $pythonExecutable @("$repoDirectory/eval/run_eval.py",'--golden',"$repoDirectory/eval/validation_questions.jsonl",'--label','validation_latest')
     Invoke-Checked 'npm.cmd' @('--prefix',$frontendDirectory,'run','lint')
     Invoke-Checked 'npm.cmd' @('--prefix',$frontendDirectory,'run','build')
 } finally {

@@ -3,8 +3,8 @@
 Mặc định tắt LLM để kết quả tất định, không tốn quota Gemini: chỉ số đo
 router ý định, trích xuất mã môn, truy xuất RAG và câu trả lời trích dẫn.
 
-    python project/eval/run_eval.py --label baseline
-    python project/eval/run_eval.py --check      # thoát mã 1 nếu thụt lùi
+    python eval/run_eval.py --label baseline
+    python eval/run_eval.py --check      # thoát mã 1 nếu thụt lùi
 """
 import argparse
 import hashlib
@@ -164,7 +164,7 @@ def check_thresholds(summary: Dict[str, Any], thresholds: Dict[str, float]) -> L
 
 
 def evaluation_metadata(golden: Path, use_llm: bool) -> Dict[str, Any]:
-    root = EVAL_DIR.parents[1]
+    root = EVAL_DIR.parent
     digest = hashlib.sha256()
     fixture_path = BACKEND_DIR / "testing_support.py"
     digest.update(fixture_path.relative_to(root).as_posix().encode())

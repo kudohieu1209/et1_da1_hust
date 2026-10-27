@@ -136,4 +136,4 @@ profile_huy["total_courses_completed"] = len(huy_courses)
 with open(STUDENTS_DIR / "20231890.json", "w", encoding="utf-8") as f:
     json.dump(profile_huy, f, ensure_ascii=False, indent=2)
 
-print("Đã tạo thành công 4 hồ sơ sinh viên demo trong project/data/processed/students/!")
+print("Đã tạo thành công 4 hồ sơ sinh viên demo trong data/processed/students/!")

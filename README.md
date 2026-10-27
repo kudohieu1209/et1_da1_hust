@@ -14,11 +14,8 @@ Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tu
 
 ## Tài liệu bàn giao
 
-- Báo cáo tiến độ: [MaiDuyHiếu.pdf](docs/report/MaiDuyHiếu.pdf) (nguồn LaTeX: `docs/report/MaiDuyHiếu.tex`)
-- Yêu cầu và đối chiếu chỉ đạo: `docs/theory/yeu_cau_cua_thay.md`
-- Kết quả bàn giao ngày 24/10/2026: [báo cáo đánh giá 100 câu](project/eval/reports/handoff_20261024.md) và [20 câu diễn đạt bổ sung](project/eval/reports/validation_handoff_20261024.md)
-- Hướng dẫn kiểm tra bản clone sạch và giới hạn: [docs/handoff.md](docs/handoff.md)
-- Các đợt cải thiện: [độ tin cậy](docs/theory/reliability_review.md), [MongoDB, context và memory](docs/theory/mongodb_context_memory.md)
+- Kết quả bàn giao ngày 24/10/2026: [báo cáo đánh giá 100 câu](eval/reports/handoff_20261024.md) và [20 câu diễn đạt bổ sung](eval/reports/validation_handoff_20261024.md)
+- Kết quả sau khi bổ sung văn bản HUST 2026: [bộ hồi quy](eval/reports/new_documents_20261027.md) và [bộ diễn đạt bổ sung](eval/reports/validation_new_documents_20261027.md)
 - Chạy kiểm thử toàn bộ: `./scripts/test_all.sh`
 
 ---
@@ -52,11 +49,11 @@ graph TD
 
 - Đã chuẩn hóa và kiểm tra: **ET1, CTĐT 2022 (K67)** — 126 tín chỉ, 117 học phần, 20 nhóm và 6 mô-đun; **ET1, CTĐT 2023 (K68)** — 132 tín chỉ, 79 học phần, 13 nhóm và 5 mô-đun.
 - Backend chọn CTĐT theo `program_code/program_id` và `curriculum_version` của hồ sơ. K67 dùng snapshot 2022, K68 dùng snapshot 2023; không tự chuyển sang phiên bản khác.
-- Nguồn chuẩn hóa: `project/data/processed/curricula/et1_2022.json` và `project/data/processed/curricula/et1_2023.json`. HTML CTT gốc có dữ liệu cá nhân, không được đưa vào dataset sinh ra hoặc công khai.
-- Đã bổ sung snapshot danh mục **68 chương trình đại học** từ trang tuyển sinh chính thức: `project/data/raw/hust_undergraduate_programs.json`. Đây là danh mục lựa chọn/tìm kiếm; hiện ET1 có hai phiên bản CTĐT đã chuẩn hóa.
-- Đã rà liên kết CTĐT trên trang chi tiết của cả 68 chương trình: `project/data/raw/hust_program_curriculum_sources.json`. Manifest lưu nguồn chính thức và trạng thái truy cập (snapshot hiện tại: 46 nguồn HTTP 2xx); dữ liệu này chưa được coi là CTĐT chuẩn hóa cho đến khi kiểm tra cấu trúc và điều kiện học phần.
-- Đã có bước trích xuất candidate cho 6 trang CTĐT HTML (5 trang `hp-table` và FL2 dạng bảng thông thường) cùng 6/8 PDF có danh mục học phần (`project/data/raw/hust_curriculum_extractions.json`, `project/data/raw/hust_curriculum_pdf_extractions.json`).
-- Đã ghép 14 candidate HTML/PDF với danh mục 8.310 học phần CTT (`project/data/raw/hust_curriculum_candidates.json`). ET1-2023 đã được phê duyệt qua `project/data/processed/curriculum_approvals.json`; các candidate còn lại vẫn `needs_review` và chưa nạp vào Rule Engine.
+- Nguồn chuẩn hóa: `data/processed/curricula/et1_2022.json` và `data/processed/curricula/et1_2023.json`. HTML CTT gốc có dữ liệu cá nhân, không được đưa vào dataset sinh ra hoặc công khai.
+- Đã bổ sung snapshot danh mục **68 chương trình đại học** từ trang tuyển sinh chính thức: `data/raw/hust_undergraduate_programs.json`. Đây là danh mục lựa chọn/tìm kiếm; hiện ET1 có hai phiên bản CTĐT đã chuẩn hóa.
+- Đã rà liên kết CTĐT trên trang chi tiết của cả 68 chương trình: `data/raw/hust_program_curriculum_sources.json`. Manifest lưu nguồn chính thức và trạng thái truy cập (snapshot hiện tại: 46 nguồn HTTP 2xx); dữ liệu này chưa được coi là CTĐT chuẩn hóa cho đến khi kiểm tra cấu trúc và điều kiện học phần.
+- Đã có bước trích xuất candidate cho 6 trang CTĐT HTML (5 trang `hp-table` và FL2 dạng bảng thông thường) cùng 6/8 PDF có danh mục học phần (`data/raw/hust_curriculum_extractions.json`, `data/raw/hust_curriculum_pdf_extractions.json`).
+- Đã ghép 14 candidate HTML/PDF với danh mục 8.310 học phần CTT (`data/raw/hust_curriculum_candidates.json`). ET1-2023 đã được phê duyệt qua `data/processed/curriculum_approvals.json`; các candidate còn lại vẫn `needs_review` và chưa nạp vào Rule Engine.
 - **MongoDB là kho nghiệp vụ duy nhất**: `users`, `sessions`, `student_profiles`, `conversations`, `messages`, `student_memory` và bộ đếm `counters`. Backend bắt buộc có `MONGODB_URI`; không còn nhánh SQLite hay ghi hồ sơ JSON. CTĐT và tài liệu nguồn vẫn là dataset có phiên bản. ChromaDB chỉ phục vụ RAG; file SQLite nội bộ của Chroma được giữ nguyên.
 - Hội thoại dùng context từ 12 tin nhắn gần nhất của đúng tài khoản; hiểu “môn đó cần gì?”, “nếu trượt thì sao?”, yêu cầu làm rõ khi có nhiều môn. Lịch sử client gửi lên không được dùng để thiết lập context.
 - **Cài đặt → Ghi nhớ học tập**: tự chọn bật/tắt, sửa hoặc xóa định hướng, tải tín chỉ mong muốn và mục tiêu CPA. Mặc định tắt; chatbot không tự trích xuất mục tiêu từ tin nhắn. Gợi ý môn dùng định hướng/tín chỉ đã lưu, ưu tiên lựa chọn trong câu hỏi và luôn áp giới hạn học vụ. CPA hiện được lưu và nhắc lại, chưa có bộ mô phỏng điểm theo mục tiêu cá nhân.
@@ -72,11 +69,11 @@ Atlas). Không cần MongoDB hay khóa Gemini để chạy kiểm thử; ứng d
 Windows PowerShell, tại thư mục gốc sau khi clone:
 
 ```powershell
-python -m venv project/backend/.venv-win
-& project/backend/.venv-win/Scripts/python.exe -m pip install -r project/backend/requirements.txt -r project/backend/requirements-dev.txt
-npm --prefix project/frontend ci
-Copy-Item project/backend/.env.example project/backend/.env
-# Điền MONGODB_URI vào project/backend/.env trước khi chạy ứng dụng.
+python -m venv backend/.venv-win
+& backend/.venv-win/Scripts/python.exe -m pip install -r backend/requirements.txt -r backend/requirements-dev.txt
+npm --prefix frontend ci
+Copy-Item backend/.env.example backend/.env
+# Điền MONGODB_URI vào backend/.env trước khi chạy ứng dụng.
 & ./scripts/test_all.ps1
 ```
 
@@ -84,7 +81,7 @@ Linux/macOS hoặc Git Bash:
 
 ```bash
 ./scripts/setup.sh
-cp project/backend/.env.example project/backend/.env
+cp backend/.env.example backend/.env
 # Cấu hình MONGODB_URI trong .env trước khi chạy ứng dụng.
 ./scripts/test_all.sh
 ```
@@ -98,11 +95,11 @@ chung venv giữa hai hệ điều hành. Python và Node đã cài phải nằm
    và chỉ thêm IP máy của bạn vào *Network Access* (không mở `0.0.0.0/0`, vì hồ sơ
    chứa bảng điểm cá nhân).
 2. Điền `MONGODB_URI` (Connect → Drivers → Python) và `MONGODB_DB` vào
-   `project/backend/.env` (xem `.env.example`).
+   `backend/.env` (xem `.env.example`).
 3. Chuyển dữ liệu cục bộ hiện có lên MongoDB (chạy lại nhiều lần vẫn an toàn):
 
 ```bash
-cd project/backend
+cd backend
 ./.venv/bin/python migrate_to_mongodb.py --dry-run
 ./.venv/bin/python migrate_to_mongodb.py --check
 ./.venv/bin/python migrate_to_mongodb.py
@@ -120,9 +117,6 @@ Thiếu URI hoặc không kết nối được thì backend dừng khởi độn
 Kiểm thử và eval dùng **mongomock trong bộ nhớ với hồ sơ tổng hợp** từ CTĐT công
 khai; không cần MongoDB thật, không đọc bảng điểm cá nhân. SQLite chỉ còn trong
 công cụ đọc dữ liệu cũ `legacy_storage.py` và phần nội bộ ChromaDB.
-
-Chi tiết chuyển đổi, context, ghi nhớ và kết quả kiểm tra:
-[MongoDB, context và memory](docs/theory/mongodb_context_memory.md).
 
 ### Tài khoản và đăng nhập
 
@@ -155,22 +149,22 @@ MongoDB; không cần chạy để demo bằng tài khoản tự đăng ký. Kh�
 
 ### Đánh giá định lượng
 
-`project/eval/golden_questions.jsonl` gồm **100 câu hỏi hồi quy**, có bằng chứng/ý chính đối chiếu
+`eval/golden_questions.jsonl` gồm **100 câu hỏi hồi quy**, có bằng chứng/ý chính đối chiếu
 với các văn bản đã kiểm chứng (quy chế, học phí, học bổng, CTĐT) và các câu
 kiểm tra điều kiện, gợi ý môn, rà soát tiến độ. Bộ chạy đo độ chính xác phân loại
 ý định, trích xuất mã môn, Recall@k/MRR của truy xuất và tỉ lệ câu trả lời chứa ý
 chính; mặc định tắt LLM để kết quả tất định.
 
 ```bash
-project/backend/.venv/bin/python project/eval/run_eval.py --label latest     # ghi eval/reports/
-project/backend/.venv/bin/python project/eval/run_eval.py --check            # thoát mã 1 nếu thụt lùi
+backend/.venv/bin/python eval/run_eval.py --label latest     # ghi eval/reports/
+backend/.venv/bin/python eval/run_eval.py --check            # thoát mã 1 nếu thụt lùi
 ```
 
-Ngưỡng chống thụt lùi nằm ở `project/eval/thresholds.json`; chỉ nâng ngưỡng khi
+Ngưỡng chống thụt lùi nằm ở `eval/thresholds.json`; chỉ nâng ngưỡng khi
 một thay đổi đã cải thiện chỉ số.
 
 Test/eval mặc định tạo một chỉ mục riêng cho mỗi tiến trình trong
-`project/data/vector_db_test/`, không dùng chỉ mục của backend. Khi đặt
+`data/vector_db_test/`, không dùng chỉ mục của backend. Khi đặt
 `VECTOR_DB_DIR` thủ công, không trỏ tới chỉ mục đang được ứng dụng sử dụng.
 Báo cáo baseline 96 câu ngày 15/10 được giữ để tham khảo lịch sử; không phải
 kết quả của bộ 100 câu hiện tại. “Chứa ý chính” chỉ là khớp cụm từ tự động,
@@ -180,7 +174,7 @@ học phí tiến sĩ; xem báo cáo bàn giao để biết giới hạn.
 Tái tạo tài liệu RAG đã kiểm chứng từ PDF gốc:
 
 ```bash
-python3 project/data/scripts/build_verified_rag_documents.py
+python3 data/scripts/build_verified_rag_documents.py
 ```
 
 Danh mục chương trình có thể xem qua `GET /api/programs` (lọc bằng `?search=`
@@ -190,22 +184,22 @@ Lấy dữ liệu học phần và chuỗi điều kiện trực tiếp từ CTT
 Chrome để bạn đăng nhập thủ công):
 
 ```bash
-project/backend/.venv/bin/python project/data/scripts/scrape_ctt_courses.py --code ET4230
+backend/.venv/bin/python data/scripts/scrape_ctt_courses.py --code ET4230
 ```
 
 Xem thêm các tùy chọn và chế độ đọc HTML đã lưu tại
-[`project/data/README.md`](project/data/README.md).
+[`data/README.md`](data/README.md).
 
 Tạo lại báo cáo candidate CTĐT công khai (review-only):
 
 ```bash
-project/backend/.venv/bin/python project/data/scripts/build_hust_curriculum_candidates.py
+backend/.venv/bin/python data/scripts/build_hust_curriculum_candidates.py
 ```
 
 Phê duyệt và sinh lại dataset ET1–2023 sau khi rà nguồn:
 
 ```bash
-project/backend/.venv/bin/python project/data/scripts/promote_hust_curriculum_candidate.py \
+backend/.venv/bin/python data/scripts/promote_hust_curriculum_candidate.py \
   --candidate ET1-2023
 ```
 
@@ -214,26 +208,26 @@ project/backend/.venv/bin/python project/data/scripts/promote_hust_curriculum_ca
 ## 🚀 Cấu trúc thư mục
 
 ```text
-ĐA1/
-├── project/
-│   ├── backend/               # FastAPI Backend Service
-│   │   ├── app/
-│   │   │   ├── api/           # Các RESTful API Routers (chat, conversations, courses, student, rag, auth)
-│   │   │   ├── core/          # Quy chế HUST (hust_rules.py), Cấu hình (config.py)
-│   │   │   ├── engine/        # Rule Engine, Recommender (Graph là phần mở rộng)
-│   │   │   ├── rag/           # RAG Engine, Document Loader, Chroma Vector Store, Gemini Service
-│   │   │   └── services/      # Chatbot, Conversation, Data Loader, Student Service
-│   │   ├── requirements.txt   # Các thư viện Python phụ thuộc
-│   │   └── run.py             # Script khởi động Backend server
-│   ├── data/                  # Cơ sở dữ liệu và kho tri thức
-│   │   ├── documents/         # Văn bản quy chế, CTĐT, đề cương chi tiết (Markdown)
-│   │   ├── processed/         # CTĐT JSON có phiên bản (không chứa hồ sơ cá nhân)
-│   │   └── scripts/           # Scripts tạo demo profiles, crawl/chuẩn hóa dữ liệu
-│   └── frontend/              # Ứng dụng Web React (Vite)
-│       └── src/
-│           ├── components/    # ChatTab, AuditTab, RecommendTab, Modals
-│           └── App.jsx        # Giao diện chính điều hướng Tabs
-└── docs/                      # Tài liệu đồ án, báo cáo và slide thuyết trình
+.
+├── backend/                   # FastAPI Backend Service
+│   ├── app/
+│   │   ├── api/               # Các RESTful API Routers (chat, conversations, courses, student, rag, auth)
+│   │   ├── core/              # Quy chế HUST (hust_rules.py), Cấu hình (config.py)
+│   │   ├── engine/            # Rule Engine, Recommender (Graph là phần mở rộng)
+│   │   ├── rag/               # RAG Engine, Document Loader, Chroma Vector Store, Gemini Service
+│   │   └── services/          # Chatbot, Conversation, Data Loader, Student Service
+│   ├── requirements.txt       # Các thư viện Python phụ thuộc
+│   └── run.py                 # Script khởi động Backend server
+├── data/                      # Cơ sở dữ liệu và kho tri thức
+│   ├── documents/             # Văn bản quy chế, CTĐT, đề cương chi tiết (Markdown)
+│   ├── processed/             # CTĐT JSON có phiên bản (không chứa hồ sơ cá nhân)
+│   └── scripts/               # Scripts tạo demo profiles, crawl/chuẩn hóa dữ liệu
+├── eval/                      # Bộ câu hỏi đánh giá, ngưỡng và báo cáo
+├── frontend/                  # Ứng dụng Web React (Vite)
+│   └── src/
+│       ├── components/        # ChatTab, AuditTab, RecommendTab, Modals
+│       └── App.jsx            # Giao diện chính điều hướng Tabs
+└── scripts/                   # Cài đặt và chạy toàn bộ kiểm thử
 ```
 
 ---
@@ -243,7 +237,7 @@ project/backend/.venv/bin/python project/data/scripts/promote_hust_curriculum_ca
 ### 0. Cài đặt
 ```bash
 ./scripts/setup.sh
-cp project/backend/.env.example project/backend/.env  # bắt buộc cấu hình MongoDB
+cp backend/.env.example backend/.env  # bắt buộc cấu hình MongoDB
 ```
 
 MongoDB là bắt buộc. Không cần Gemini API key để demo: hệ thống sẽ dùng chế độ trích xuất cục bộ có dẫn nguồn. Nếu có key, điền `GEMINI_API_KEY` và model trong `.env`.
@@ -253,14 +247,14 @@ MongoDB là bắt buộc. Không cần Gemini API key để demo: hệ thống s
 PowerShell trên Windows:
 
 ```powershell
-cd project/backend
+cd backend
 & ./.venv-win/Scripts/python.exe run.py
 ```
 
 Linux/macOS:
 
 ```bash
-cd project/backend
+cd backend
 ./.venv/bin/python run.py
 ```
 
@@ -270,7 +264,7 @@ Git Bash trên Windows dùng `./.venv-win/Scripts/python.exe run.py`.
 
 ### 2. Khởi động Frontend (React + Vite)
 ```bash
-cd project/frontend
+cd frontend
 npm ci
 npm run dev
 ```
@@ -295,6 +289,3 @@ npm run dev
 điều kiện học phần, audit theo phiên bản CTĐT, RAG có nguồn, lịch sử/context và
 memory do sinh viên quản lý. Tool Calling do LLM điều phối, planner nhiều kỳ,
 mô phỏng CPA theo mục tiêu cá nhân và smart alerts là hướng phát triển tiếp.
-
-Tài liệu thực tập kỹ thuật trong thư mục `report/` được giữ cục bộ và không
-thuộc repository bàn giao Đồ án 1. Nguồn/PDF tiến độ ĐA1 nằm ở `docs/report/`.

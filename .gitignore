@@ -7,13 +7,6 @@ Thumbs.db
 *.swp
 *.swo
 tmp/
-.codex-finalizer/
-.codex-presentation-build/
-.codex-remote-attachments/
-
-# Tài liệu thực tập kỹ thuật giữ cục bộ, không thuộc bàn giao Đồ án 1.
-/report/
-
 
 # Environment variables & secrets
 .env
@@ -50,22 +43,8 @@ yarn-error.log*
 pnpm-debug.log*
 .oxlint-cache
 
-# LaTeX auxiliary files
-*.aux
+# Logs
 *.log
-*.out
-*.toc
-*.lof
-*.lot
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-*.xdv
-*.bbl
-*.blg
-*.nav
-*.snm
-*.vrb
 
 # Databases & Vector DB
 *.sqlite3
@@ -78,16 +57,16 @@ vector_db_test/
 vector_db.broken-*/
 
 # Large files (>100MB exceeds GitHub push limits)
-project/data/raw/So tay sinh vien_2026.pdf
+/data/raw/So tay sinh vien_2026.pdf
 
 # Sensitive & Personal Data (bảng điểm cá nhân, thông tin sinh viên CTT)
-project/data/raw/et1_curiculum.html
-project/data/raw/et1_curiculum_files/
-project/data/processed/student_profile.json
-project/data/processed/students/
-project/data/processed/users/
-project/data/legacy_backup/
+/data/raw/et1_curiculum.html
+/data/raw/et1_curiculum_files/
+/data/processed/student_profile.json
+/data/processed/students/
+/data/processed/users/
+/data/legacy_backup/
 
 # Báo cáo đánh giá chạy tạm (giữ lại baseline.* để so sánh)
-project/eval/reports/latest.*
-project/eval/reports/validation_latest.*
+/eval/reports/latest.*
+/eval/reports/validation_latest.*
