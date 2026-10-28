@@ -13,7 +13,7 @@
       "id": "public_curriculum_ee1",
       "kind": "PUBLIC_HUST_CURRICULUM_EXTRACTION",
       "file": "data/raw/official_curricula/EE1-2023.json",
-      "sha256": "808fa32a5ff4d93e10ee467e9b823df3ff9c5ae3ec10d36d746d9bb3345fdb55",
+      "sha256": "b01a8ec0e0afcb0cd63c3c5b5b785005788b0b10460d84b1c5b1eb4a105249c5",
       "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
       "contains_personal_data": false,
       "personal_data_included_in_output": false
@@ -2060,7 +2060,7 @@
     "group_khoi_8"
   ],
   "build_warnings": [
-    "CTĐT EE1-2023 được nhập tự động từ tài liệu công khai: https://seee.hust.edu.vn/vi/dao-tao/ee1/ (truy cập 2026-10-27). Kiểm tra tự động, chưa đối chiếu thủ công.",
+    "CTĐT EE1-2023 được nhập tự động từ tài liệu công khai: https://seee.hust.edu.vn/vi/dao-tao/ee1/ (truy cập 2026-10-28). Kiểm tra tự động, chưa đối chiếu thủ công.",
     "EE3041 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
     "EE3290 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
     "EE3112 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",

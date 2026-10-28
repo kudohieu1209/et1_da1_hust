@@ -1,0 +1,262 @@
+{
+  "admission_code": "M-EE2",
+  "name": "Thạc sĩ Kỹ thuật Điều khiển và Tự động hóa",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": null,
+  "total_credits": 60,
+  "source_url": "https://sdh.hust.edu.vn/default.aspx?CategoryID=136&nid=2953&scid=23",
+  "source_title": "Chương trình đào tạo tích hợp cử nhân–thạc sĩ khoa học Kỹ thuật Điều khiển và Tự động hóa",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Kiến thức chung 3 + ngành rộng 12 + ngành nâng cao 15 + mô đun định hướng nghiên cứu 15 + luận văn 15 = 60 TC. Nguồn cho phép chọn nhiều mô đun nhưng khi chọn phải hoàn thành toàn bộ học phần của mô đun; không cộng toàn bộ các danh mục thay thế thành tổng bắt buộc. Khối ngành rộng 12 TC được công nhận cho người học tích hợp theo quy tắc trong PDF.",
+  "groups": [
+    {
+      "name": "Kiến thức chung (General courses)",
+      "kind": "block",
+      "required_credits": 3.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SS6013",
+          "name": "Triết học (Philosophy)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức ngành rộng (Major knowledge)",
+      "kind": "block",
+      "required_credits": 12.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE3600",
+          "name": "Hệ thống đo và điều khiển công nghiệp (Industrial measurement and control systems)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE3550",
+          "name": "Điều khiển quá trình (Process Control)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "DX6000",
+          "name": "Đồ án đề xuất (Research Proposal Project)",
+          "credits": 6.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở ngành nâng cao (General courses)",
+      "kind": "block",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6312",
+          "name": "Phân tích và điều khiển hệ phi tuyến (Analysis and control of nonlinear systems)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6543",
+          "name": "Cảm biến và xử lý tín hiệu đo (Sensor and Conditioning)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6503",
+          "name": "Xử lý tín hiệu số (Digital signal processing)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6551",
+          "name": "Điện tử công suất nâng cao (Advanced power electronics)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6010",
+          "name": "Seminar 1",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6020",
+          "name": "Seminar 2",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun điều khiển thông minh (Intelligent control systems)",
+      "kind": "module",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6532",
+          "name": "Tối ưu hóa và điều khiển tối ưu (Optimization and optimal control)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6022",
+          "name": "Điều khiển quá trình nâng cao (Advanced process control )",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6445",
+          "name": "Điều khiển mờ và mạng nơ ron (Fuzzy control and neural networks)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6435",
+          "name": "Điều khiển học tăng cường (Reinforcement Learning control)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6334",
+          "name": "Điều khiển hệ đa tác tử (Control of multi-agent systems)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun cảm biến thông minh (Intelligent sensor systems)",
+      "kind": "module",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6424",
+          "name": "Mạng nơ-rôn và học sâu (Neural network and Deep learning)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6447",
+          "name": "Thiết kế FPGA cho hệ thống nhúng (FPGA Design for Embedded systems)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6423",
+          "name": "Xử lý tín hiệu ngẫu nhiên (Stochastic Signal Processing)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6448",
+          "name": "Thu hoạch năng lượng và biến đổi (Energy Harvesting and Conversion)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6446",
+          "name": "Hệ thống cảm biến thông minh ( Smart Sensor Systems)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun tự động hoá nâng cao (Advanced automation)",
+      "kind": "module",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6022",
+          "name": "Điều khiển quá trình nâng cao (Advanced process control )",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6326",
+          "name": "Các phương pháp điều khiển nâng cao cho hệ cơ điện tử và robot (Advanced control for mechatronics and robot)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6425",
+          "name": "Điều khiển nâng cao hệ truyền động điện và điện tử công suất (Advanced Control of electrical drives and power electronics)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6426",
+          "name": "Điều khiển nguồn năng lượng tái tạo sử dụng bộ biến đổi Điện tử công suất (Advanced power electronic control in renewable energy sources)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6328",
+          "name": "Điều khiển chuyển động (Motion control)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Luận văn tốt nghiệp (Graduate thesis)",
+      "kind": "block",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "LV6001",
+          "name": "Luận văn tốt nghiệp",
+          "credits": 15.0,
+          "suggested_semester": 11,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Bậc đào tạo: Thạc sĩ. Mã M-EE2 được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Quyết định 1093/QĐ-ĐHBK-ĐT ngày 10/06/2022 được in trên bìa PDF. Chỉ trích BẬC THẠC SĨ; tổng của bậc này được nguồn ghi rõ 60 TC. Tổng 180 TC trên bìa là CTĐT tích hợp, không phải khối lượng riêng thạc sĩ. Không tính 180−132 thành số TC thạc sĩ vì có công nhận 12 TC ở lộ trình tích hợp.",
+    "Khối ngành rộng 12 TC lấy theo bảng cấu trúc chung trang 3 khi ô tiêu đề danh mục để trống. Luận văn 15 TC theo cấu trúc và dòng LV6001.",
+    "Các mức ký hiệu N/M có giới hạn/ràng buộc, required_credits=null tại danh mục mang mức ký hiệu; xem graduation_rule. Không đổi N/M thành tổng số TC các môn được liệt kê.",
+    "Kỳ học giữ theo các cột 1–11 của bảng tích hợp, khi xác định được duy nhất cột có giá trị. Các ô trống hoặc vị trí cột không tách chắc chắn: suggested_semester=null. compulsory chỉ lấy từ nhãn bắt buộc/tự chọn rõ trong tiêu đề.",
+    "Tệp PDF được trang Sau đại học HUST công bố: https://husteduvn-my.sharepoint.com/:b:/g/personal/sdh_hust_edu_vn/Ef4jIAZb-4VKg3UFvcNHz0IBnMTVhCzsnOed4EJ2B-TG8w?e=XFTeo8&download=1; SHA-256 da45129e384c0a27a7d3ac922fdb032e9bca1c4096a5091fb7ebb67b946d3f04.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 60 TC; total_credits=60 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

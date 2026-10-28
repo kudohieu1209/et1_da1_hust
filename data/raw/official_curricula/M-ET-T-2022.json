@@ -1,0 +1,348 @@
+{
+  "admission_code": "M-ET-T",
+  "name": "Thạc sĩ Kỹ thuật Viễn thông",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": null,
+  "total_credits": 60,
+  "source_url": "https://sdh.hust.edu.vn/default.aspx?CategoryID=136&nid=2953&scid=23",
+  "source_title": "Chương trình đào tạo tích hợp cử nhân–thạc sĩ khoa học Kỹ thuật Viễn thông",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Kiến thức chung 3 + ngành rộng 12 + ngành bắt buộc 14 + ngành tự chọn N TC (4 ≤ N ≤ 7) + mô đun nghiên cứu gồm bắt buộc 2 TC và tự chọn M TC, với M + N = 14 + luận văn 15 = 60 TC. Các mô đun Thông tin–Truyền thông, Điện tử Hàng không–Vũ trụ, Đa phương tiện là các lựa chọn; không cộng tất cả.",
+  "groups": [
+    {
+      "name": "Kiến thức ngành rộng (Major knowledge)",
+      "kind": "block",
+      "required_credits": 12.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4070",
+          "name": "Cơ sở truyền số liệu (Fundamentals of Data Communication)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "ET4230",
+          "name": "Mạng máy tính (Computer Networks)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "DX6000",
+          "name": "Đồ án đề xuất (Research Proposal Project)",
+          "credits": 6.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức chung (General Education)",
+      "kind": "block",
+      "required_credits": 3.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SS6010",
+          "name": "Triết học (Philosophy)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "FL6010",
+          "name": "Tiếng Anh (English)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức ngành bắt buộc (Compulsory specialized knowledge)",
+      "kind": "block",
+      "required_credits": 14.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET6500",
+          "name": "Phương pháp luận nghiên cứu khoa học (Research Methodology)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": true
+        },
+        {
+          "code": "ET6191",
+          "name": "Mô hình hóa hệ thống và các phương pháp mô phỏng số (System modeling and numerical simulation methods)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": true
+        },
+        {
+          "code": "ET6041",
+          "name": "Internet thế hệ mới (New-generation Internet)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": true
+        },
+        {
+          "code": "ET6021",
+          "name": "Xử lý tín hiệu số nâng cao (Advanced Digital Signal Processing)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": true
+        },
+        {
+          "code": "ET6510",
+          "name": null,
+          "credits": 1.0,
+          "suggested_semester": 9,
+          "compulsory": true
+        },
+        {
+          "code": "ET6520",
+          "name": null,
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức ngành tự chọn (Elective specialized knowledge) (Chọn N tín chỉ với 4TC ≤ N ≤ 7TC)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET6540",
+          "name": "An ninh mạng",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET6550",
+          "name": "Điện toán đám mây và điện toán biên (Cloud and edge computing)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET6560",
+          "name": "Lý thuyết thông tin nâng cao và mã hóa kênh (Advanced information theory and channel coding)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET6570",
+          "name": "Nguyên lý và thiết kế mạch siêu cao tần (Principle and design of RF circuits)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET6031",
+          "name": "Phân tích thiết kế hệ thống thông tin vô tuyến (Analysis and design of wireless communication systems)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET6472",
+          "name": "Trí tuệ nhân tạo và ứng dụng (AI and applications)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET6061",
+          "name": "Xử lý tín hiệu không gian - thời gian (Time-Space signal proccessing)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Mô-đun: Kỹ thuật Thông tin – Truyền thông (Module: Communication Engineering)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4081",
+          "name": "Mạng thông tin (Communication Networks)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": true
+        },
+        {
+          "code": "ET4092",
+          "name": "Kỹ thuật siêu cao tần (Microwave engineering)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4411",
+          "name": "Quy hoạch và quản lý mạng viễn thông (Telecom Network Planning and Management)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4330",
+          "name": "Thông tin di động (Mobile Communications)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET5240",
+          "name": "Thông tin vệ tinh (Satellite communications)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4311",
+          "name": "Thông tin quang sợi (Optical Fiber Communication)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Mô-đun: Kỹ thuật Điện tử Hàng không - Vũ trụ (Module: Aerospace Electronic Engineering)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4151",
+          "name": "Mạng thông tin hàng không (Aeronautical communication network)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": true
+        },
+        {
+          "code": "ET5290",
+          "name": "Dẫn đường và quản lý không lưu (Navigation and air trafic management)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET5260",
+          "name": "Định vị sử dụng vệ tinh (Satellite Navigation)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4092",
+          "name": "Kỹ thuật siêu cao tần (Microwave engineering)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET5240",
+          "name": "Thông tin vệ tinh (Satellite communications)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET5270",
+          "name": "Viễn thám và GIS (Remote sensing and GIS)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Mô-đun: Kỹ thuật Đa phương tiện (Module: Multimedia)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET6131",
+          "name": "Xử lý ảnh số (Digital Image Processing)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": true
+        },
+        {
+          "code": "ET4730",
+          "name": "Đồ họa máy tính (Computer graphics)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4750",
+          "name": "Kỹ thuật lập trình nội dung số (Digital media production and presentation engineering)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET6141",
+          "name": "Hệ thống thông tin đa phương tiện (Multimedia information systems)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4740",
+          "name": "Thực tại ảo và thực tại tăng cường (Virtual reality and augmented reality)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4720",
+          "name": "Xử lý tín hiệu âm thanh (Audio signal processing)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Luận văn tốt nghiệp (Master thesis)",
+      "kind": "block",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "LV6001",
+          "name": "Luận văn thạc sĩ khoa học (Master of Science thesis)",
+          "credits": 15.0,
+          "suggested_semester": 11,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Bậc đào tạo: Thạc sĩ. Mã M-ET-T được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Quyết định 1093/QĐ-ĐHBK-ĐT ngày 10/06/2022 được in trên bìa PDF. Chỉ trích BẬC THẠC SĨ; tổng của bậc này được nguồn ghi rõ 60 TC. Tổng 180 TC trên bìa là CTĐT tích hợp, không phải khối lượng riêng thạc sĩ. Không tính 180−132 thành số TC thạc sĩ vì có công nhận 12 TC ở lộ trình tích hợp.",
+    "Khối ngành rộng 12 TC lấy theo bảng cấu trúc chung trang 3 khi ô tiêu đề danh mục để trống. Luận văn 15 TC theo cấu trúc và dòng LV6001.",
+    "Các mức ký hiệu N/M có giới hạn/ràng buộc, required_credits=null tại danh mục mang mức ký hiệu; xem graduation_rule. Không đổi N/M thành tổng số TC các môn được liệt kê.",
+    "Kỳ học giữ theo các cột 1–11 của bảng tích hợp, khi xác định được duy nhất cột có giá trị. Các ô trống hoặc vị trí cột không tách chắc chắn: suggested_semester=null. compulsory chỉ lấy từ nhãn bắt buộc/tự chọn rõ trong tiêu đề.",
+    "Tệp PDF được trang Sau đại học HUST công bố: https://husteduvn-my.sharepoint.com/:b:/g/personal/sdh_hust_edu_vn/ETiPhUTxOLxMq0lRMjLaNsIBp6isa9lVOfxcsuROtWR4EQ?e=KEnzAW&download=1; SHA-256 2840c23f2023977e674d3c7bff9e125251727574b987ca70f0523ea3cc4f86d3.",
+    "Học phần Tiếng Anh FL6010 được bảng ghi khối lượng bằng dấu gạch và phần cấu trúc ghi tự học: credits=null, không đổi dấu gạch thành 0.",
+    "Đối chiếu theo ràng buộc tín chỉ trong nguồn: 3 + 12 + 14 + 2 + (N + M = 14) + 15 = 60 TC, khớp total_credits=60. required_credits=null ở các danh mục riêng N/M vì mức đó là biến có ràng buộc, không phải nguồn thiếu công thức; không cộng toàn bộ học phần được liệt kê."
+  ]
+}

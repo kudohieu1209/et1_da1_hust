@@ -6,7 +6,7 @@
   "total_credits": 132,
   "source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e5/",
   "source_title": "Kỹ thuật Y sinh | Trường Điện - Điện tử",
-  "retrieved_at": "2026-10-27",
+  "retrieved_at": "2026-10-28",
   "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: chưa rõ mức TC tối thiểu; Cơ sở và cốt lõi ngành: 6.0 TC; Thực tập & tốt nghiệp: 8.0 TC; Lý luận chính trị & Pháp luật: chưa rõ mức TC tối thiểu; Kiến thức bổ trợ: chưa rõ mức TC tối thiểu. Nguồn không nêu quy tắc lựa chọn mô-đun..",
   "groups": [
     {
@@ -643,6 +643,8 @@
     "MIL1240: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
     "MIL1230: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
     "Giáo dục Quốc phòng – An ninh: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
-    "Bản HTML chính thức được lưu tại data/raw/program_sources/ET-E5.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công."
+    "Đã tải trực tiếp thành công HTTP 200 ngày 2026-10-28 từ trang CTĐT chính thức SEEE: https://seee.hust.edu.vn/vi/dao-tao/et-e5/; SHA-256 HTML d9660bd512f173661e35d948c6a48a182451be47cd0ce2b880ee52855855f4eb. Đối chiếu danh mục https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/ ; không chỉ dựa vào bản lưu cũ.",
+    "Năm phiên bản và khóa K68 là hai trường thông tin riêng: giữ curriculum_version theo tiêu đề; applies_to_cohorts chỉ ghi khi nguồn chỉ rõ khóa, không đồng nhất hai giá trị nếu trang chưa nêu.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
   ]
 }

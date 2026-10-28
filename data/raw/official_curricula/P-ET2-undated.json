@@ -1,0 +1,20 @@
+{
+  "admission_code": "P-ET2",
+  "name": "Tiến sĩ Kỹ thuật Y sinh",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/",
+  "source_title": "Danh mục chương trình đào tạo — Trường Điện - Điện tử",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [],
+  "notes": [
+    "Bậc đào tạo: Tiến sĩ. Mã P-ET2 được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Danh mục chính thức hiện ghi Đang cập nhật và không gắn liên kết khung/học phần cho chương trình này. Đã lưu tên, mã, bậc đúng danh mục; groups=[] thể hiện chưa thu được bảng CTĐT, không phải một CTĐT đầy đủ.",
+    "curriculum_version, total_credits và graduation_rule=null vì thẻ danh mục không ghi các trường này. Dùng hậu tố undated, không gán năm 2023 hoặc dùng tổng chung của bậc đào tạo cho chương trình riêng.",
+    "Danh mục CTĐT tiến sĩ 2022 của HUST có các tệp Điện, Điều khiển–Tự động hóa, Điện tử và Viễn thông nhưng chưa có tệp riêng Kỹ thuật Y sinh để gắn với P-ET2; không chép chương trình Tiến sĩ Điện tử sang mã P-ET2."
+  ]
+}

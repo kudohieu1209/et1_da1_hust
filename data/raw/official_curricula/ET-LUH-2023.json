@@ -6,7 +6,7 @@
   "total_credits": null,
   "source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-luh/",
   "source_title": "Điện tử - Viễn thông - ĐH Leibniz Hannover | Trường Điện - Điện tử",
-  "retrieved_at": "2026-10-27",
+  "retrieved_at": "2026-10-28",
   "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: 33.0 TC; Cơ sở và cốt lõi ngành: 48.0 TC; Thực tập & tốt nghiệp: 8.0 TC; Lý luận chính trị & Pháp luật: 13.0 TC; Kiến thức bổ trợ: 9.0 TC. Chuyên ngành (chọn 1 mô đun).",
   "groups": [
     {
@@ -547,6 +547,8 @@
     "MIL1230Q: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
     "MIL1240Q: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
     "Giáo dục Quốc phòng – An ninh: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
-    "Bản HTML chính thức được lưu tại data/raw/program_sources/ET-LUH.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công."
+    "Đã tải trực tiếp thành công HTTP 200 ngày 2026-10-28 từ trang CTĐT chính thức SEEE: https://seee.hust.edu.vn/vi/dao-tao/et-luh/; SHA-256 HTML 13f16654d2af01197776616cbaf64c41f6e6e009ec07f694d84fce77e9d45b49. Đối chiếu danh mục https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/ ; không chỉ dựa vào bản lưu cũ.",
+    "Trang không ghi năm phiên bản hoặc khóa áp dụng cho bảng; curriculum_version/applies_to_cohorts=null. Hậu tố 2023 chỉ năm cần tra cứu, không phải xác nhận bản ban hành 2023. Không lấy năm kiểm định ASIIN làm năm CTĐT.",
+    "Tổng các mức required_credits đọc được (mỗi nhóm lựa chọn chỉ tính một lần): 132 TC. Đây là phép kiểm tra, không thay thế total_credits chưa được nguồn ghi rõ."
   ]
 }

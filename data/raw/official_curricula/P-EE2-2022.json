@@ -1,0 +1,577 @@
+{
+  "admission_code": "P-EE2",
+  "name": "Tiến sĩ Kỹ thuật Điều khiển và Tự động hóa",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": null,
+  "total_credits": 106,
+  "source_url": "https://sdh.hust.edu.vn/default.aspx?scid=23&CategoryID=137&nid=2944",
+  "source_title": "Chương trình đào tạo tiến sĩ kỹ thuật — Tiến sĩ Kỹ thuật Điều khiển và Tự động hóa",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Học phần tiến sĩ 8 + tiểu luận tổng quan 2 + ba chuyên đề tiến sĩ, mỗi chuyên đề 2 TC (6 TC) + nghiên cứu khoa học/luận án 90 = 106 TC. Học bổ sung tùy đối tượng A1/A2/A3/A4 theo Bảng 2, nằm ngoài tổng khối tiến sĩ 106 TC: A1 không bổ sung; A2 học CTĐT thạc sĩ định hướng nghiên cứu; A3/A4 có các khoảng bổ sung và quyết định của hội đồng tuyển sinh theo nguồn.",
+  "groups": [
+    {
+      "name": "Học phần bổ sung theo đối tượng đầu vào (ngoài tổng 106 TC)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "EE6312",
+          "name": "Phân tích và điều khiển hệ phi tuyến (Analysis and Control of Nonlinear Systems)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6022",
+          "name": "Điều khiển quá trình nâng cao (Advanced process control)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6541",
+          "name": "Cảm biến và xử lý tín hiệu đo (Sensors and Signal Conditioning)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6543",
+          "name": "Cảm biến và xử lý tín hiệu đo (Sensor and Conditioning)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6322",
+          "name": "Nhận dạng hệ thống (System Identification)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6432",
+          "name": "Xử lý tín hiệu số và ứng dụng (Digital Signal Processing and Application)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6551",
+          "name": "Điện tử công suất nâng cao (Advanced Power Electronics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6433",
+          "name": "Điều khiến tối ưu và bền vững (Optimal and robust control)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6442",
+          "name": "Nhiễu và tương thích trường điện từ (Nhiễu và tương thích trường điện từ)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6112",
+          "name": "Hệ thống giám sát và điều khiển công nghiệp (Industrial Control and Supervisory Systems)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6153",
+          "name": "Kỹ thuật đa phương tiện (Multimedia Technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6163",
+          "name": "Phân tích thiết kế hướng đối tượng (Analysis object-oriented design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6113",
+          "name": "Thiết kế hệ thống nhúng (Embedded Systems Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6242",
+          "name": "Điều khiển Robot (Robot Control)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6252",
+          "name": "Điều khiển chuyển động (Motion Control)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6462",
+          "name": "Điều khiển số nâng cao (Advanced Digital Control)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6272",
+          "name": "Điều khiển truyền động điện (Control of Electrical Drives)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE5452",
+          "name": "Đo lường không phá hủy (Non-destructive Measument)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6222",
+          "name": "Hệ mờ và mạng neural (Fuzzy System and Neural Network)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE5462",
+          "name": "Thiết bị đo y sinh và môi trường (Biomedical equipment and monitoring environment systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE5472",
+          "name": "Mạng truyền thông và mạng tốc độ cao (Communitaion Network and high- speed Network)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE5482",
+          "name": "Hệ thống sản xuất tích hợp máy tính (Computer Integrated Manufactures)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE5492",
+          "name": "Tự động hóa quá trình SX: xi măng, nhiệt điện (Automatic production process: cement, thermal power)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE5512",
+          "name": "Hệ thống điều khiển năng lượng tái tạo (Hệ thống điều khiển năng lượng tái tạo)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE5521",
+          "name": "Điều khiển máy CNC (CNC Machine Control)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6532",
+          "name": "Tối ưu hóa và điều khiển tối ưu (Optimization and optimal control)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6445",
+          "name": "Điều khiển mờ và mạng nơ ron (Fuzzy control and neural networks)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6435",
+          "name": "Điều khiển học tăng cường (Reinforcement Learning control)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6334",
+          "name": "Điều khiển hệ đa tác tử (Control of multi-agent systems)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6423",
+          "name": "Xử lý tín hiệu ngẫu nhiên (Stochastic Signal Processing)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6424",
+          "name": "Mạng nơ-rôn và học sâu (Neural network and Deep learning)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6447",
+          "name": "Thiết kế FPGA cho hệ thống nhúng (FPGA Design for Embedded systems)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6448",
+          "name": "Thu hoạch năng lượng và biến đổi (Energy Harvesting and Conversion)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6446",
+          "name": "Hệ thống cảm biến thông minh (Smart Sensor Systems)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6425",
+          "name": "Điều khiển nâng cao hệ truyền động điện và điện tử công suất (Advanced Control of electrical drives and power electronics)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6426",
+          "name": "Điều khiển nguồn năng lượng tái tạo sử dụng bộ biến đổi Điện tử công suất (Advanced power electronic control in renewable energy sources)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6326",
+          "name": "Các phương pháp điều khiển nâng cao cho hệ cơ điện tử và robot (Advanced control for mechatronics and robot)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6328",
+          "name": "Điều khiển chuyển động (Motion control)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Học phần tiến sĩ — danh mục lựa chọn theo hướng chuyên sâu",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE7210",
+          "name": "Các phương pháp điều khiển nâng cao trong điện tử công suất (Advanced control methods for power electronic systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7220",
+          "name": "Các cấu trúc bộ biến đổi điện tử công suất mới (New control topologies for power electronic systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7230",
+          "name": "Các phần tử bán dẫn mới ứng dụng trong điện tử công suất (New semiconductor power devices)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7240",
+          "name": "Thành tựu mới trong hệ thống truyền động điện (New achievements in motor drive systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7250",
+          "name": "Các phương pháp điều khiển hệ cơ điện tử (Control methods for mechatronic systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7260",
+          "name": "Điều khiển nâng cao cho hệ thống truyền động điện (Advanced Control of Electrical Drives)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7270",
+          "name": "Mô hình hóa hệ truyền động điện (Modelling of Electric Motor Drives)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7275",
+          "name": "Hệ truyền động động cơ đặc biệt (Special electric motor drives)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7280",
+          "name": "Các nghiên cứu mới về kỹ thuật Robot (Overview of the latest research on robots)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7285",
+          "name": "Các phương pháp điều khiển nâng cao ứng dụng cho Robot (Advanced Control for Robot)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7110",
+          "name": "Hệ thống điều khiển rời rạc theo sự kiện (Discrete-Event Control Systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7811",
+          "name": "Điều khiển tối ưu các quá trình (Optimal control techniques for process control systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7871",
+          "name": "Hệ thống sản xuất tích hợp máy tính (Computer Integrated Manufactures)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7881",
+          "name": "Quản lý chất lượng (Quality Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7040",
+          "name": "Các phương pháp điều khiển phi tuyến hiện đại (Modern Control Methods of Nonlinear System)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7050",
+          "name": "Các phương pháp tính trong lý thuyết điều khiển tối ưu (Numerical Mathematic in Optimal Control Theory)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7181",
+          "name": "Các phương pháp quan sát và xấp xỉ trạng thái hệ phi tuyến (States Observation and Estimation of Nonlinear Systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7191",
+          "name": "Ứng dụng các phương pháp điều khiển phi tuyến trong hệ Euler- Lagrange (Application of Nonlinear Control Methods in Control of Euler-Lagrange Systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7201",
+          "name": "Ứng dụng các phương pháp điều khiển dự báo trong điều khiển quá trình (Application of Predictive Control Methods in Process Control)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7211",
+          "name": "Các phương pháp điều khiển đa mô hình (Control Methods for Multimodel Systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7221",
+          "name": "Các phương pháp điều khiển thông minh và ứng dụng (Intelligent Control Methods and Applications)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7231",
+          "name": "Các phương pháp ước lượng nhiễu trong điều khiển thích nghi (Disturbacne estimation methods for nonlinear systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7010",
+          "name": "Lọc số nâng cao (Avanced digital filter)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7020",
+          "name": "Các phương pháp đo lường tiên tiến (Advanced measurement method)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7011",
+          "name": "Kỹ thuật nhận dạng (Pattern recoginition)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7021",
+          "name": "Phân tích và thiết kế hệ cơ sở dữ liệu nâng cao (Advanced database system design and implementation)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7031",
+          "name": "Kỹ thuật tương tác người- máy (Human - computer interaction technology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7041",
+          "name": "Đảm bảo độ chính xác trong đo lường thực nghiệm (Evaluation of uncertainty in measurement)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7051",
+          "name": "An toàn hệ thống thông tin (Information systems security)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7061",
+          "name": "Mô phỏng cảm biến (Modelisation and simulation of sensor)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Tiểu luận tổng quan (General essay)",
+      "kind": "block",
+      "required_credits": 2,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Tiểu luận tổng quan",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Chuyên đề tiến sĩ (Doctoral topics)",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Chuyên đề tiến sĩ",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": null,
+          "name": "Chuyên đề tiến sĩ",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": null,
+          "name": "Chuyên đề tiến sĩ",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Nghiên cứu khoa học và Luận án tiến sĩ",
+      "kind": "block",
+      "required_credits": 90,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Nghiên cứu khoa học và Luận án tiến sĩ",
+          "credits": 90,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Bậc đào tạo: Tiến sĩ. Mã P-EE2 được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Quyết định 1094/QĐ-ĐHBK-ĐT ngày 10/06/2022 được in trên bìa PDF; total_credits=106 theo bìa và Bảng 2.",
+    "Khối bổ sung phụ thuộc đối tượng đầu vào và không thuộc phép cộng 106 TC; required_credits=null vì không có một mức số duy nhất cho mọi đối tượng. counts_toward_degree=false ở khối này chỉ phạm vi ngoài tổng 106 TC, không có nghĩa người học được miễn các yêu cầu bổ sung áp dụng cho mình.",
+    "Tập hợp các danh mục Bảng 4/4.1/4.2... vào khối Học phần tiến sĩ 8 TC theo mức chung Bảng 2. Không tự gán 8 TC riêng cho từng hướng nghiên cứu, không cộng toàn bộ danh mục các hướng thành yêu cầu tích lũy. Các mã có thể xuất hiện lại giữa danh mục bổ sung và tiến sĩ, giữ đúng từng vị trí nguồn.",
+    "Tiểu luận, ba chuyên đề và luận án chỉ được nguồn ghi tên/khối lượng, không công bố mã: code=null. Ba chuyên đề là ba mục 2 TC riêng như Bảng 2 quy định; không tự đặt tên chuyên đề nghiên cứu.",
+    "suggested_semester=null vì danh mục tiến sĩ không công bố kỳ học chuẩn từng môn; tiểu luận chỉ ghi thực hiện trong năm đầu, không suy thành kỳ 1. Các học phần tiến sĩ nằm trong danh mục để chọn đủ 8 TC nên compulsory=false, danh mục bổ sung chưa phân loại từng môn nên compulsory=null.",
+    "Tệp được danh mục Sau đại học HUST áp dụng từ 2022 dẫn: https://drive.google.com/uc?export=download&id=1Tnp99STEhTfDcWLU_3xbRPfUO7v4Et_3; SHA-256 374708200c541ca3fd0070a2553e87f66ca0cfba3adf043745ae11cbbb1f82a2.",
+    "Vị trí các danh mục: Trang 7: BẢNG 3: Danh sách các học phần bổ; Trang 7: TABLE 3: List of additional courses; Trang 10: BẢNG 4.1: Danh mục học phần Tiến sĩ hướng chuyên sâu “Thiết bị và hệ thống điều; Trang 10: BẢNG 4.2: Danh mục học phần Tiến sĩ hướng chuyên sâu “Tự động hóa Công nghiệp”; Trang 11: BẢNG 4.3: Học phần Tiến sĩ hướng chuyên sâu “ Lý thuyết điều khiển và điều khiển tối; Trang 12: BẢNG 4.4: Học phần Tiến sĩ hướng chuyên sâu “Đo lường và xử lý tín hiệu”",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 106 TC; total_credits=106 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

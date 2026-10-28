@@ -1,0 +1,20 @@
+{
+  "admission_code": "E-ET-IC",
+  "name": "Kỹ sư chuyên sâu đặc thù Thiết kế vi mạch",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": 60,
+  "source_url": "https://seee.hust.edu.vn/vi/dao-tao/e-et-ic/",
+  "source_title": "Kỹ sư chuyên sâu đặc thù Thiết kế vi mạch | Trường Điện - Điện tử",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [],
+  "notes": [
+    "Bậc đào tạo: Kỹ sư chuyên sâu. Mã E-ET-IC được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Trang chính thức có giới thiệu/chuẩn đầu ra, phần Khối kiến thức & học phần hiện ghi đang được cập nhật; chưa công bố bảng mã học phần. groups=[] và graduation_rule=null phản ánh trạng thái công bố này, không phải CTĐT đã được trích đầy đủ.",
+    "Không chép khung EE2 sang EE-TN hoặc khung thạc sĩ/điện tử sang E-ET-IC.",
+    "Ô Phiên bản trên trang để trống. Dùng hậu tố undated cho file; curriculum_version=null, không suy năm phiên bản từ năm bắt đầu đào tạo 2025."
+  ]
+}

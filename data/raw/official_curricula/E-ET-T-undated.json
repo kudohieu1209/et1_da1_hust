@@ -1,0 +1,20 @@
+{
+  "admission_code": "E-ET-T",
+  "name": "Kỹ sư chuyên sâu đặc thù Kỹ thuật Viễn thông",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/",
+  "source_title": "Danh mục chương trình đào tạo — Trường Điện - Điện tử",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [],
+  "notes": [
+    "Bậc đào tạo: Kỹ sư chuyên sâu. Mã E-ET-T được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Danh mục chính thức hiện ghi Đang cập nhật và không gắn liên kết khung/học phần cho chương trình này. Đã lưu tên, mã, bậc đúng danh mục; groups=[] thể hiện chưa thu được bảng CTĐT, không phải một CTĐT đầy đủ.",
+    "curriculum_version, total_credits và graduation_rule=null vì thẻ danh mục không ghi các trường này. Dùng hậu tố undated, không gán năm 2023 hoặc dùng tổng chung của bậc đào tạo cho chương trình riêng.",
+    "Đã kiểm tra danh mục kỹ sư chuyên sâu trên trang tuyển sinh HUST và trang Sau đại học áp dụng từ 2024. Các liên kết SEEE cũ trả HTTP 404; trang https://sdh.hust.edu.vn/default.aspx?scid=23&CategoryID=147&nid=3398 hiện chưa có bảng hoặc tệp đính kèm. Không dùng danh mục thạc sĩ thay cho kỹ sư chuyên sâu."
+  ]
+}

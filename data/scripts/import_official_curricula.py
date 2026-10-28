@@ -8,6 +8,8 @@ chưa đối chiếu thủ công" because nobody has compared it line by line wi
 original document yet.
 
 Automatic checks:
+- the admission code is in the undergraduate admission catalog (graduate and
+  specialised-engineer programs are excluded);
 - the curriculum version (or the cohorts it applies to) and the total credits
   are stated in the source;
 - every block counted toward the degree has a minimum credit threshold;
@@ -33,6 +35,7 @@ DATA_DIR = SCRIPT_DIR.parent
 PROJECT_DIR = DATA_DIR.parent
 DEFAULT_INPUT_DIR = DATA_DIR / "raw" / "official_curricula"
 DEFAULT_CATALOG = DATA_DIR / "raw" / "ctt_course_catalog_all.json"
+DEFAULT_PROGRAMS = DATA_DIR / "raw" / "hust_undergraduate_programs.json"
 DEFAULT_OUTPUT_DIR = DATA_DIR / "processed" / "curricula"
 DEFAULT_APPROVALS = DATA_DIR / "processed" / "curriculum_approvals.json"
 DEFAULT_REPORT = DATA_DIR / "reports" / "official_curricula_import.md"
@@ -326,6 +329,21 @@ def load_catalog(path: Path) -> dict[str, dict[str, Any]]:
     return {str(row["code"]).strip().upper(): row for row in rows if row.get("code")}
 
 
+def load_admission_codes(path: Path) -> set[str]:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {str(p["admission_code"]).strip().upper() for p in data["programs"] if p.get("admission_code")}
+
+
+def check_undergraduate(raw: dict[str, Any], admission_codes: set[str]) -> None:
+    """Datasets are built as bachelor curricula, so only undergraduate admission codes qualify."""
+    code = str(raw.get("admission_code") or "").strip().upper()
+    if code not in admission_codes:
+        raise CheckFailed(
+            f"mã {code!r} không có trong danh mục tuyển sinh đại học "
+            "(chương trình sau đại học, kỹ sư chuyên sâu hoặc chương trình xét chọn sau khi nhập học)"
+        )
+
+
 def output_name(dataset: dict[str, Any]) -> str:
     program = dataset["program"]
     return f"{program['program_code'].lower().replace('-', '_')}_{program['curriculum_version']}.json"
@@ -350,8 +368,10 @@ def drop_conflicts(accepted: dict[str, dict[str, Any]], rejected: dict[str, str]
 
 
 def run(input_dir: Path, catalog_path: Path, output_dir: Path, approvals_path: Path, report_path: Path,
-        source_dir: Path | None = None) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
+        source_dir: Path | None = None, programs_path: Path = DEFAULT_PROGRAMS,
+        ) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
     catalog = load_catalog(catalog_path)
+    admission_codes = load_admission_codes(programs_path)
     approvals = json.loads(approvals_path.read_text(encoding="utf-8"))
     manual = [a for a in approvals["approvals"] if a.get("approved_by") != AUTO_APPROVER]
     manual_programs = {str(a["candidate_id"]).rsplit("-", 1)[0].upper() for a in manual}
@@ -373,6 +393,7 @@ def run(input_dir: Path, catalog_path: Path, output_dir: Path, approvals_path: P
         except ValueError:
             source_file = target.as_posix()
         try:
+            check_undergraduate(raw, admission_codes)
             accepted[path.stem] = build_dataset(raw, source_file, _sha256(target), catalog)
         except CheckFailed as exc:
             rejected[path.stem] = str(exc)
@@ -443,12 +464,14 @@ def main() -> int:
     parser.add_argument("--source-dir", type=Path, default=DEFAULT_INPUT_DIR,
                         help="nơi lưu bản nguồn đã làm sạch (được ghi vào sources[].file)")
     parser.add_argument("--catalog", type=Path, default=DEFAULT_CATALOG)
+    parser.add_argument("--programs", type=Path, default=DEFAULT_PROGRAMS,
+                        help="danh mục mã tuyển sinh đại học; mã ngoài danh mục bị từ chối")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--approvals", type=Path, default=DEFAULT_APPROVALS)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     args = parser.parse_args()
     accepted, rejected = run(args.input_dir, args.catalog, args.output_dir, args.approvals,
-                             args.report, args.source_dir)
+                             args.report, args.source_dir, args.programs)
     print(f"[OK] Nhập {len(accepted)} CTĐT; {len(rejected)} tài liệu chưa đạt. Báo cáo: {args.report}")
     return 0
 

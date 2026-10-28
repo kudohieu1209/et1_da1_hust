@@ -6,7 +6,7 @@
   "total_credits": 132,
   "source_url": "https://seee.hust.edu.vn/vi/dao-tao/et1/",
   "source_title": "Kỹ thuật Điện tử - Viễn thông | Trường Điện - Điện tử",
-  "retrieved_at": "2026-10-27",
+  "retrieved_at": "2026-10-28",
   "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: 32.0 TC; Cơ sở và cốt lõi ngành: 49.0 TC; Thực tập & tốt nghiệp: 8.0 TC; Lý luận chính trị & Pháp luật: 13.0 TC; Kiến thức bổ trợ: 9.0 TC. Chuyên ngành (chọn 1 mô đun).",
   "groups": [
     {
@@ -778,6 +778,8 @@
     "MIL1240: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
     "Giáo dục Quốc phòng – An ninh: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
     "Đối chiếu tổng: các khối tính tốt nghiệp + một mô-đun = 132 TC, bằng total_credits.",
-    "Bản HTML chính thức được lưu tại data/raw/program_sources/ET1.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công."
+    "Đã tải trực tiếp thành công HTTP 200 ngày 2026-10-28 từ trang CTĐT chính thức SEEE: https://seee.hust.edu.vn/vi/dao-tao/et1/; SHA-256 HTML c2db11cbb22e936f95a720f1beb7ae9368e10463a2e5be15b4697432aaed225d. Đối chiếu danh mục https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/ ; không chỉ dựa vào bản lưu cũ.",
+    "Năm phiên bản và khóa K68 là hai trường thông tin riêng: giữ curriculum_version theo tiêu đề; applies_to_cohorts chỉ ghi khi nguồn chỉ rõ khóa, không đồng nhất hai giá trị nếu trang chưa nêu.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }
