@@ -1,0 +1,18 @@
+{
+  "admission_code": "TE2",
+  "name": "Kỹ thuật Cơ khí động lực",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-chuan/chuong-trinh-ky-thuat-co-khi-dong-luc-6.html",
+  "source_title": "CHƯƠNG TRÌNH KỸ THUẬT CƠ KHÍ ĐỘNG LỰC",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [],
+  "notes": [
+    "CHƯA THU THẬP ĐƯỢC BẢNG CTĐT: trang Trường Cơ khí dẫn tệp trên SharePoint HUST; truy cập công khai chưa trả về PDF đọc được. TE1/TE2 trả HTTP 403; liên kết TE-E2 trả trang HTML, không phải nội dung PDF.",
+    "Không xác nhận được năm phiên bản/khóa áp dụng hay tổng tín chỉ. Giữ các trường tương ứng null và groups=[]; không điền khung tham khảo của TE3/TE-EP hoặc chương trình khác.",
+    "Hậu tố 2023 chỉ năm cần tra cứu, không xác nhận có bản K68.",
+    "Liên kết CTĐT do trang HUST công bố: https://husteduvn-my.sharepoint.com/personal/bo_tranxuan_hust_edu_vn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fbo%5Ftranxuan%5Fhust%5Fedu%5Fvn%2FDocuments%2FKhung%20ch%C6%B0%C6%A1ng%20tr%C3%ACnh%20%C4%91%C3%A0o%20t%E1%BA%A1o%20c%E1%BB%AD%20nh%E1%BA%ADn%20K%E1%BB%B9%20thu%E1%BA%ADt%20c%C6%A1%20kh%C3%AD%20%C4%91%E1%BB%99ng%20l%E1%BB%B1c%20%28TE2%29%2Epdf&parent=%2Fpersonal%2Fbo%5Ftranxuan%5Fhust%5Fedu%5Fvn%2FDocuments&ga=1"
+  ]
+}

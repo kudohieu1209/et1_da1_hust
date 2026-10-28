@@ -1,0 +1,1484 @@
+{
+  "schema_version": "1.0.0",
+  "program": {
+    "program_id": "TE-EP",
+    "program_code": "TE-EP",
+    "name": "Cơ khí hàng không (Chương trình Việt - Pháp PFIEV)",
+    "curriculum_version": "2023",
+    "degree_level": "BACHELOR",
+    "total_required_credits": 140
+  },
+  "sources": [
+    {
+      "id": "public_curriculum_te_ep",
+      "kind": "PUBLIC_HUST_CURRICULUM_EXTRACTION",
+      "file": "data/raw/official_curricula/TE-EP-2023.json",
+      "sha256": "3b0edfc4feb9f4066035696ea186480e60db9c2270af5a14fc5da431d4e4754f",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    }
+  ],
+  "graduation_paths": [
+    {
+      "id": "bachelor",
+      "name": "Cơ khí hàng không (Chương trình Việt - Pháp PFIEV) 2023 (Cử nhân)",
+      "raw_expression": "Cử nhân: Toán/KHCB 32 + LLCT/Pháp luật 13 + Tiếng Anh 8 + Tiếng Pháp 6 + cơ sở/cốt lõi 46 + bổ trợ 9 + chuyên ngành 18 + thực tập 2 + ĐATN 6 = 140 TC. Không cộng phần kỹ sư 48 TC.",
+      "components": [
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_1",
+          "required_credits": 13
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_2",
+          "required_credits": 8
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_3",
+          "required_credits": 6
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_4",
+          "required_credits": 32
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_5",
+          "required_credits": 46
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_6",
+          "required_credits": 9
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_7",
+          "required_credits": 18
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_8",
+          "required_credits": 2
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_9",
+          "required_credits": 6
+        }
+      ],
+      "total_required_credits": 140,
+      "source_order": 0
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_khoi_1",
+      "source_group_code": "KHOI1",
+      "name": "Lý luận chính trị, Pháp luật đại cương (Law, Politics)",
+      "course_count_reported": 6,
+      "catalog_credits": 13,
+      "course_codes": [
+        "EM1170",
+        "SSH1111",
+        "SSH1121",
+        "SSH1131",
+        "SSH1141",
+        "SSH1151"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_2",
+      "source_group_code": "KHOI2",
+      "name": "Tiếng Anh (English)",
+      "course_count_reported": 2,
+      "catalog_credits": 8,
+      "course_codes": [
+        "FL1132",
+        "FL1133"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_3",
+      "source_group_code": "KHOI3",
+      "name": "Tiếng Pháp (French)",
+      "course_count_reported": 6,
+      "catalog_credits": 18,
+      "course_codes": [
+        "FL1401",
+        "FL1802",
+        "FL1803",
+        "FL1804",
+        "FL1805",
+        "FL1806"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_4",
+      "source_group_code": "KHOI4",
+      "name": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "course_count_reported": 10,
+      "catalog_credits": 32,
+      "course_codes": [
+        "MI1111",
+        "MI1121",
+        "MI1131",
+        "MI1141",
+        "MI2034",
+        "MI2044",
+        "PH1014",
+        "PH1024",
+        "IT1014",
+        "ME2020"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_5",
+      "source_group_code": "KHOI5",
+      "name": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "course_count_reported": 18,
+      "catalog_credits": 46,
+      "course_codes": [
+        "TE2801",
+        "PH2034",
+        "TE2822",
+        "TE2820",
+        "ME3041",
+        "ME4531",
+        "TE3820",
+        "ME3100",
+        "EE2012",
+        "ET2010",
+        "TE3603",
+        "TE5830",
+        "TE4870",
+        "TE5880",
+        "TE4880",
+        "TE4820",
+        "TE4861",
+        "TE5920"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_6",
+      "source_group_code": "KHOI6",
+      "name": "Kiến thức bổ trợ (Soft skills)",
+      "course_count_reported": 9,
+      "catalog_credits": 19,
+      "course_codes": [
+        "FL1807",
+        "EM1180",
+        "ED3220",
+        "ET3262",
+        "EM1010",
+        "ED3280",
+        "CH2021",
+        "ME3124",
+        "ME3123"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_7",
+      "source_group_code": "KHOI7",
+      "name": "Tự chọn theo mô đun (Elective Module)",
+      "course_count_reported": 8,
+      "catalog_credits": 18,
+      "course_codes": [
+        "TE5840",
+        "TE4900",
+        "TE3822",
+        "TE5910",
+        "TE5900",
+        "TE4840",
+        "TE4890",
+        "TE4921"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_8",
+      "source_group_code": "KHOI8",
+      "name": "Thực tập kỹ thuật (Engineering Practicum)",
+      "course_count_reported": 1,
+      "catalog_credits": 2,
+      "course_codes": [
+        "TE4005"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_9",
+      "source_group_code": "KHOI9",
+      "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+      "course_count_reported": 1,
+      "catalog_credits": 6,
+      "course_codes": [
+        "TE4995"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_10",
+      "source_group_code": "KHOI10",
+      "name": "Giáo dục thể chất (Physical Education)",
+      "course_count_reported": 1,
+      "catalog_credits": 0,
+      "course_codes": [
+        "PE1014"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_khoi_11",
+      "source_group_code": "KHOI11",
+      "name": "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "course_count_reported": 4,
+      "catalog_credits": 0,
+      "course_codes": [
+        "MIL1210",
+        "MIL1220",
+        "MIL1230",
+        "MIL1240"
+      ],
+      "counts_toward_degree_credits": false
+    }
+  ],
+  "courses": [
+    {
+      "code": "EM1170",
+      "name": "Pháp luật đại cương (General laws)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị, Pháp luật đại cương (Law, Politics)",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1111",
+      "name": "Triết học Mác - Lênin (Philosophy of Marxism and Leninism)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị, Pháp luật đại cương (Law, Politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1121",
+      "name": "Kinh tế chính trị Mác - Lênin (Political Economics of Marxism and Leninism)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị, Pháp luật đại cương (Law, Politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "SSH1111",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "SSH1111",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "SSH1131",
+      "name": "Chủ nghĩa xã hội",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị, Pháp luật đại cương (Law, Politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1141",
+      "name": "Lịch sử Đảng cộng sản Việt Nam (History of Vietnamese Communist Party)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị, Pháp luật đại cương (Law, Politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "SSH1151",
+      "name": "Tư tưởng Hồ Chí Minh (Ho Chi Minh Ideology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị, Pháp luật đại cương (Law, Politics)",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1132",
+      "name": "Tiếng Anh cơ sở 2 (General English 2)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tiếng Anh (English)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1133",
+      "name": "Tiếng Anh cơ sở 3 (General English 3)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tiếng Anh (English)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1131,FL1132",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1131",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1132",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1401",
+      "name": "Tiếng Pháp KSCLC 1 (PFIEV French 1) Từ K69 đổi thành: FL1801 Tiếng Pháp PFIEV 1 (PFIEV French 1) Thời lượng:",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Tiếng Pháp (French)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1802",
+      "name": "Tiếng Pháp PFIEV 2 (PFIEV French 2)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Tiếng Pháp (French)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1803",
+      "name": "Tiếng Pháp PFIEV 3 (PFIEV French 3)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Tiếng Pháp (French)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FL1802/FL1602/FL1402",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1802",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1602",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1402",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1804",
+      "name": "Tiếng Pháp PFIEV 4 (PFIEV French 4)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Tiếng Pháp (French)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FL1803/FL1603/FL1501",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1803",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1603",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1501",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1805",
+      "name": "Tiếng Pháp PFIEV 5 (PFIEV French 5)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Tiếng Pháp (French)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FL1804/FL1604/FL1502",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1804",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1604",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1502",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "FL1806",
+      "name": "Tiếng Pháp PFIEV 6 (PFIEV French 6)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Tiếng Pháp (French)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FL1805/FL1605/FL1404",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1805",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1605",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1404",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "MI1111",
+      "name": "Giải tích I (Calculus I)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1121",
+      "name": "Giải tích II (Calculus II)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1131",
+      "name": "Giải tích III (Calculus III)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI1141",
+      "name": "Đại số (Algebra)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI2034",
+      "name": "Xác suất thống kê (Probability and Statistics)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MI2044",
+      "name": "Phương pháp tính (Numerical Methods)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "KTTD",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1014",
+      "name": "Vật lý I (Physics I)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH1024",
+      "name": "Vật lý II (Physics II)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "IT1014",
+      "name": "Tin học đại cương (Introduction to Computer Science)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "TCNTT",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME2020",
+      "name": "Vẽ kỹ thuật (Technical Drawing)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Toán và khoa học cơ bản (Mathematics and basic sciences)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE2801",
+      "name": "Nhập môn kỹ thuật hàng không (Introduction to Aerospace Engineering)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PH2034",
+      "name": "Cơ học vật rắn và sóng cơ (Mechanics of Solids and Mechanical Waves)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "VVLKT",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE2822",
+      "name": "Nhiệt học và cơ học chất lưu (Thermodynamics and Fluids Dynamics)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE2820",
+      "name": "Cảm biến và thiết bị đo trong hàng không (Sensors and Measure Instruments in Aerospace)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME3041",
+      "name": "Sức bền vật liệu (Strength of Materials)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME4531",
+      "name": "Kỹ thuật cơ học (Mechanics Engineering)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE3820",
+      "name": "Đồ án thiết kế kỹ thuật (Technical Design Project)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME3100",
+      "name": "Thực tập công nhân (Workshop Practicum)",
+      "credits": 4,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EE2012",
+      "name": "Kỹ thuật điện (Electrical Engineering)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TDDT",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET2010",
+      "name": "Kỹ thuật điện tử",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TDDT",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE3603",
+      "name": "Kỹ thuật thủy khí (Applied Fluid Mechanics)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE5830",
+      "name": "Vật liệu hàng không (Aircraft Materials)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4870",
+      "name": "Khí động lực học cơ bản (Fundamentals of Aerodynamics)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE5880",
+      "name": "Các hệ thống trên máy bay (Aircraft Systems)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4880",
+      "name": "Động cơ và thiết bị đẩy I (Engines and Propulsion I)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4820",
+      "name": "Kết cấu hàng không (Aircraft Structures)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4861",
+      "name": "Tiếng Anh chuyên ngành (English for Aerospace)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE5920",
+      "name": "Luật hàng không (Aviation Regulations)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "FL1807",
+      "name": "Technical Writing and Presentation (French) (Tiếng Pháp học thuật và hội nhập nghề nghiệp)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "FL1801/FL1401,FL1802,FL1803,FL1804",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1801",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1401",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1802",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1803",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1804",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "code": "EM1180",
+      "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and entrepreneurship)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ED3220",
+      "name": "Kỹ năng mềm (Soft Skills)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ET3262",
+      "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "TDDT",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "EM1010",
+      "name": "Quản trị học đại cương (Introduction to Management)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ED3280",
+      "name": "Tâm lý học ứng dụng (Applied Psychology)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "CH2021",
+      "name": "Đổi mới sáng tạo và khởi nghiệp (2021) (Innovation and Entrepreneurship)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "THKHSS",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME3124",
+      "name": "Thiết kế quảng bá sản phẩm (2021) (Product Promotion Design)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "ME3123",
+      "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ (Soft skills)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE5840",
+      "name": "Truyền động tự động thủy khí (Hydraulic and Pneumatic Transmission)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tự chọn theo mô đun (Elective Module)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4900",
+      "name": "Máy thủy lực I (Hydraulic Machines I)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tự chọn theo mô đun (Elective Module)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE3822",
+      "name": "Thiết kế chế tạo bằng máy tính (Computer- Aided Design and Manufacturing)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tự chọn theo mô đun (Elective Module)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE5910",
+      "name": "Khai thác và quản lý máy bay (Aircraft Management and Operations)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tự chọn theo mô đun (Elective Module)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE5900",
+      "name": "Kiểm tra và bảo dưỡng máy bay (Aircraft Inspection and Maintenance)",
+      "credits": 3,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tự chọn theo mô đun (Elective Module)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4840",
+      "name": "Kỹ thuật điện - điện tử trên máy bay (Aircraft Electrical and Electronic Engineering)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tự chọn theo mô đun (Elective Module)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4890",
+      "name": "Cơ học vật bay I (Flight Mechanics I)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tự chọn theo mô đun (Elective Module)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4921",
+      "name": "Cơ học phá huỷ (Fracture Mechanics)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Tự chọn theo mô đun (Elective Module)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4005",
+      "name": "Thực tập kỹ thuật (Engineering Practicum)",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Thực tập kỹ thuật (Engineering Practicum)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_8"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "TE4995",
+      "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+      "credits": 6,
+      "suggested_semester": null,
+      "is_compulsory": true,
+      "category": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+      "department": "TCK",
+      "group_ids": [
+        "group_khoi_9"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "PE1014",
+      "name": "Lý luận TDTT (Physical Education Theory)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất (Physical Education)",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_10"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1210",
+      "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam (Vietnam Communist Party’s direction on defense and secutity)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_11"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1220",
+      "name": "Công tác quốc phòng và an ninh (Introduction to the National Defense)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_11"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1230",
+      "name": "Quân sự chung (General Military Education)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_11"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    },
+    {
+      "code": "MIL1240",
+      "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật (Infantry combat techniques and tactics)",
+      "credits": 0,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_11"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      }
+    }
+  ],
+  "non_credit_group_ids": [
+    "group_khoi_10",
+    "group_khoi_11"
+  ],
+  "build_warnings": [
+    "CTĐT TE-EP-2023 được nhập tự động từ tài liệu công khai: https://sme.hust.edu.vn/uploads/sme/dao-tao/2025_07/teep-2023-phu-luc-phe-duyet-ctdt-co-khi-hang-khong-pfiev_k68-k69.pdf (truy cập 2026-10-27). Kiểm tra tự động, chưa đối chiếu thủ công.",
+    "FL1132: CTT ghi 0 TC; dùng 4 TC theo CTĐT.",
+    "FL1133: CTT ghi 0 TC; dùng 4 TC theo CTĐT.",
+    "FL1802: CTT ghi 0 TC; dùng 3 TC theo CTĐT.",
+    "FL1803: CTT ghi 0 TC; dùng 3 TC theo CTĐT.",
+    "Giáo dục thể chất (Physical Education): bỏ dòng không có mã học phần cụ thể (PExxxx – Tự chọn thể dục 1 (Physical Education Option 1)).",
+    "Giáo dục thể chất (Physical Education): bỏ dòng không có mã học phần cụ thể (PExxxx – Tự chọn thể dục 2 (Physical Education Option 1)).",
+    "Giáo dục thể chất (Physical Education): bỏ dòng không có mã học phần cụ thể (PExxxx – Tự chọn thể dục 3 (Physical Education Option 1)).",
+    "Giáo dục thể chất (Physical Education): bỏ dòng không có mã học phần cụ thể (PExxxx – Tự chọn thể dục 4 (Physical Education Option 1))."
+  ],
+  "applies_to_cohorts": [
+    "K68",
+    "K69"
+  ]
+}

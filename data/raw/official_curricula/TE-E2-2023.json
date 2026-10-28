@@ -1,0 +1,18 @@
+{
+  "admission_code": "TE-E2",
+  "name": "Kỹ thuật Ô tô (Chương trình tiên tiến)",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-elitech/elitech-chuong-trinh-tien-tien-ky-thuat-o-to-22.html",
+  "source_title": "[Elitech] Chương trình tiên tiến Kỹ thuật Ô tô",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [],
+  "notes": [
+    "CHƯA THU THẬP ĐƯỢC BẢNG CTĐT: trang Trường Cơ khí dẫn tệp trên SharePoint HUST; truy cập công khai chưa trả về PDF đọc được. TE1/TE2 trả HTTP 403; liên kết TE-E2 trả trang HTML, không phải nội dung PDF.",
+    "Không xác nhận được năm phiên bản/khóa áp dụng hay tổng tín chỉ. Giữ các trường tương ứng null và groups=[]; không điền khung tham khảo của TE3/TE-EP hoặc chương trình khác.",
+    "Hậu tố 2023 chỉ năm cần tra cứu, không xác nhận có bản K68.",
+    "Liên kết CTĐT do trang HUST công bố: https://husteduvn-my.sharepoint.com/:b:/g/personal/thanh_nguyenhai_hust_edu_vn/Eb9HiLe0emtNmi5jBouaPAsB8BHMOcYKGmgukTbhpIKr2Q?e=8sicCz"
+  ]
+}

@@ -6,13 +6,13 @@
   "total_credits": 132,
   "source_url": "https://smse.hust.edu.vn/vi/dao-tao/dao-tao-dai-hoc/chuong-trinh-khoa-hoc-va-ky-thuat-vat-lieu-cttt-5.html",
   "source_title": "Chương trình đào tạo Khoa học và Kỹ thuật Vật liệu (Chương trình tiên tiến)",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Laws and politics 13 + English 6 + Mathematics/basic sciences 32 + Basic Core 48 + Soft skills 9 + Elective courses 16 + Bachelor Practicum/Thesis 8 = 132 TC. Tốt nghiệp dùng MSE4095E 2 TC + MSE4999E 6 TC, hoặc MSE4989E 8 TC cho chương trình tích hợp. GDTC/GDQP không tính tổng.",
   "groups": [
     {
-      "name": null,
+      "name": "Laws and politics",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 13,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -56,7 +56,58 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Physical Education",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": null,
+          "name": "Physical Education A",
+          "credits": 1,
+          "suggested_semester": 1,
+          "compulsory": null
         },
+        {
+          "code": null,
+          "name": "Physical Education B",
+          "credits": 1,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Physical Education C",
+          "credits": 1,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Physical Education D",
+          "credits": 1,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Physical Education E",
+          "credits": 1,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Military Education",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
         {
           "code": "MIL1110",
           "name": "Vietnam Communist Party’s Direction on the National Defense",
@@ -77,7 +128,15 @@
           "credits": 4.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "English",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "FL1114",
           "name": "Grammar for writing",
@@ -253,7 +312,15 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "Basic Core of Engineering",
+      "kind": "block",
+      "required_credits": 48,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "MSE1012",
           "name": "Introduction to engineering",
@@ -542,27 +609,52 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "Bachelor Practicum and Thesis",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "MSE4095E",
           "name": "Bachelor Practicum",
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
+        },
+        {
+          "code": "MSE4999E",
+          "name": "Bachelor Thesis",
+          "credits": 6,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "MSE4989E",
+          "name": "Research Thesis (For Integrated program)",
+          "credits": 8,
+          "suggested_semester": 8,
+          "compulsory": null
         }
       ]
     }
   ],
   "notes": [
-    "Nguồn là tệp Program Content do trang Khoa học và Kỹ thuật vật liệu dẫn; bản không ghi năm/khóa. Chưa có căn cứ xác nhận áp dụng K68.",
     "Tệp đính kèm do trang trường/khoa chính thức dẫn tới: https://drive.google.com/uc?export=download&id=1-iJ-Sx6ooYzIk5tMsNY9tJNF5zyhWyaM. source_url là trang HUST công bố tệp; không dùng tài liệu do bên thứ ba tự đăng.",
     "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2023 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
     "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
     "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
     "None: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "Military Education: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Năm và khóa của bản không ghi rõ; không xác nhận đây là bản hợp nhất K68. Năm 2023 trong tên file đầu ra là năm cần tra cứu, curriculum_version=null. GDTC không có mã học phần trong bảng nên code=null.",
+    "Đối chiếu ảnh trang 4: ô gộp trích xuất đã nhập hai dòng 78/79; tách đúng MSE4999E (6 TC, kỳ 8) và MSE4989E (8 TC, kỳ 8). Hai lựa chọn thay thế trong cùng khối tốt nghiệp 8 TC, không cộng lặp.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }

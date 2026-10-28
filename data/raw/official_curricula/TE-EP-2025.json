@@ -12,10 +12,10 @@
   "graduation_rule": "LLCT:13+TKHCB:32+CSCLN:46+KTBT:9+(MOD1:18)+TPPFIEV:6+(TT:2+ĐAKLTN:6)",
   "groups": [
     {
-      "name": null,
+      "name": "Giáo dục thể chất",
       "kind": "block",
       "required_credits": null,
-      "counts_toward_degree": true,
+      "counts_toward_degree": false,
       "courses": [
         {
           "code": "PExxxx",
@@ -573,6 +573,7 @@
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Các hàng đầu bảng là học phần Giáo dục thể chất, tách khỏi các khối tính tốt nghiệp. Chưa đọc được mức TC tối thiểu ở tiêu đề khối nên required_credits=null; không tự suy ra bằng số dòng. Phụ lục công bố còn để trống số/ngày quyết định năm 2026, dù ghi áp dụng từ K70 (2025); chưa xác nhận đây là bản có quyết định đã ký.",
+    "Tổng các mức required_credits đọc được (mỗi nhóm lựa chọn chỉ tính một lần): 126 TC. Đây là phép kiểm tra, không thay thế total_credits chưa được nguồn ghi rõ."
   ]
 }

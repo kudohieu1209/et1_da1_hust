@@ -1,0 +1,18 @@
+{
+  "admission_code": "TE1",
+  "name": "Kỹ thuật Ô tô",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-chuan/chuong-trinh-ky-thuat-o-to-7.html",
+  "source_title": "CHƯƠNG TRÌNH KỸ THUẬT Ô TÔ",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [],
+  "notes": [
+    "CHƯA THU THẬP ĐƯỢC BẢNG CTĐT: trang Trường Cơ khí dẫn tệp trên SharePoint HUST; truy cập công khai chưa trả về PDF đọc được. TE1/TE2 trả HTTP 403; liên kết TE-E2 trả trang HTML, không phải nội dung PDF.",
+    "Không xác nhận được năm phiên bản/khóa áp dụng hay tổng tín chỉ. Giữ các trường tương ứng null và groups=[]; không điền khung tham khảo của TE3/TE-EP hoặc chương trình khác.",
+    "Hậu tố 2023 chỉ năm cần tra cứu, không xác nhận có bản K68.",
+    "Liên kết CTĐT do trang HUST công bố: https://husteduvn-my.sharepoint.com/personal/phuc_damhoang_hust_edu_vn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fphuc%5Fdamhoang%5Fhust%5Fedu%5Fvn%2FDocuments%2FGiamDocCtr%C4%90T%2F2025%2FC%C3%A1c%20CT%C4%90T%20KT%20%C3%B4%20t%C3%B4%20%C4%91ang%20v%E1%BA%ADn%20h%C3%A0nh%202025%2FCT%C4%90T%20C%E1%BB%AD%20nh%C3%A2n%2DTh%E1%BA%A1c%20s%E1%BB%B9%20KH%20KT%20OTO%5Fsong%20ng%E1%BB%AF%5FVer%20update%2020230424%2Epdf&parent=%2Fpersonal%2Fphuc%5Fdamhoang%5Fhust%5Fedu%5Fvn%2FDocuments%2FGiamDocCtr%C4%90T%2F2025%2FC%C3%A1c%20CT%C4%90T%20KT%20%C3%B4%20t%C3%B4%20%C4%91ang%20v%E1%BA%ADn%20h%C3%A0nh%202025&ga=1"
+  ]
+}

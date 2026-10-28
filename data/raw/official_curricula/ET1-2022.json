@@ -1,0 +1,1063 @@
+{
+  "admission_code": "ET1",
+  "name": "Điện tử và Viễn thông",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://ctt-sis.hust.edu.vn/Students/StudentProgram.aspx",
+  "source_title": "Chương trình Kỹ thuật Điện tử - Viễn thông 2022 (CN / CN-THS)",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "CN: LLCT:13 + TKHCB:32 + CSCLN:52 + KTBT:6 + (MOD1:15 | MOD2:15 | MOD3:15 | MOD4:15 | MOD5:15 | MOD6:15) + TT:2 + ĐAKLTN:6. CN-THS thay TT:2 + ĐAKLTN:6 bằng DANC:8. Chỉ tính một mô đun và một lộ trình tốt nghiệp.",
+  "groups": [
+    {
+      "name": "Thực tập và ĐATN hoặc Đồ án nghiên cứu (hai lộ trình thay thế)",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4900",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "ET3270",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "ET4920",
+          "name": "Đồ án nghiên cứu Cử nhân (KT Điện tử - Viễn thông)",
+          "credits": 8.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn II",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "PE1015",
+          "name": "Thể dục tay không",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE2261",
+          "name": "Karatedo",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn GDTC C",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE2101",
+          "name": "Bóng chuyền 1",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE2151",
+          "name": "Erobic",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE2201",
+          "name": "Bóng đá 1",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE2251",
+          "name": "Taekwondo 1",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE2301",
+          "name": "Bóng rổ 1",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE2401",
+          "name": "Bóng bàn 1",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE2501",
+          "name": "Cầu lông 1",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE2601",
+          "name": "Chạy",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE2701",
+          "name": "Nhảy cao",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE2801",
+          "name": "Nhảy xa",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE2901",
+          "name": "Xà kép, xà lệch",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PE3101",
+          "name": "Chuyên sâu Bóng chuyền 1",
+          "credits": 0.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "PE3102",
+          "name": "Chuyên sâu Bóng chuyền 2",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PE3103",
+          "name": "Chuyên sâu Bóng chuyền 3",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE3201",
+          "name": "Chuyên sâu Bóng đá 1",
+          "credits": 0.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "PE3202",
+          "name": "Chuyên sâu Bóng đá 2",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PE3203",
+          "name": "Chuyên sâu Bóng đá 3",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "PE3301",
+          "name": "Chuyên sâu Bóng rổ 1",
+          "credits": 0.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "PE3302",
+          "name": "Chuyên sâu Bóng rổ 2",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PE3303",
+          "name": "Chuyên sâu Bóng rổ 3",
+          "credits": 0.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn GDTC D",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE2102",
+          "name": "Bóng chuyền 2",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PE2202",
+          "name": "Bóng đá 2",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PE2252",
+          "name": "Taekwondo 2",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PE2302",
+          "name": "Bóng rổ 2",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PE2402",
+          "name": "Bóng bàn 2",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PE2502",
+          "name": "Cầu lông 2",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PE3104",
+          "name": "Chuyên sâu Bóng chuyền 4",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PE3204",
+          "name": "Chuyên sâu Bóng đá 4",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "PE3304",
+          "name": "Chuyên sâu Bóng rổ 4",
+          "credits": 0.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn GDTC E",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE2103",
+          "name": "Bóng chuyền 3",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PE2203",
+          "name": "Bóng đá 3",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PE2253",
+          "name": "Taekwondo 3",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PE2303",
+          "name": "Bóng rổ 3",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PE2403",
+          "name": "Bóng bàn 3",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PE2503",
+          "name": "Cầu lông 3",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PE3105",
+          "name": "Chuyên sâu Bóng chuyền 5",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PE3205",
+          "name": "Chuyên sâu Bóng đá 5",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "PE3305",
+          "name": "Chuyên sâu Bóng rổ 5",
+          "credits": 0.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác - Lênin",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác - Lênin",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": true
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng cộng sản Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận TDTT",
+          "credits": 0.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+          "credits": 0.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng và an ninh",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "FL1131",
+          "name": "Tiếng Anh cơ sở 1",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "FL1132",
+          "name": "Tiếng Anh cơ sở 2",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1111",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "MI1121",
+          "name": "Giải tích II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        },
+        {
+          "code": "MI1131",
+          "name": "Giải tích III",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": true
+        },
+        {
+          "code": "MI1141",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "MI2020",
+          "name": "Xác suất thống kê",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": true
+        },
+        {
+          "code": "MI2010",
+          "name": "Phương pháp tính",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": true
+        },
+        {
+          "code": "PH1111",
+          "name": "Vật lý đại cương I",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "PH1122",
+          "name": "Vật lý đại cương II",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        },
+        {
+          "code": "PH3330",
+          "name": "Vật lý điện tử",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": true
+        },
+        {
+          "code": "IT1110",
+          "name": "Tin học đại cương",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 52,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET2100",
+          "name": "Cấu trúc dữ liệu và giải thuật",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        },
+        {
+          "code": "ET2000",
+          "name": "Nhập môn kỹ thuật điện tử-viễn thông",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "ET2021",
+          "name": "Thực tập cơ bản",
+          "credits": 2.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "ET2031",
+          "name": "Kỹ thuật lập trình C/C++",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        },
+        {
+          "code": "ET2040",
+          "name": "Cấu kiện điện tử",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        },
+        {
+          "code": "ET2050",
+          "name": "Lý thuyết mạch",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        },
+        {
+          "code": "ET2060",
+          "name": "Tín hiệu và hệ thống",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        },
+        {
+          "code": "ET3210",
+          "name": "Trường điện từ",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        },
+        {
+          "code": "ET2072",
+          "name": "Lý thuyết thông tin",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": true
+        },
+        {
+          "code": "ET3220",
+          "name": "Điện tử số",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": true
+        },
+        {
+          "code": "ET3230",
+          "name": "Điện tử tương tự I",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": true
+        },
+        {
+          "code": "ET3260",
+          "name": "Kỹ thuật phần mềm ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": true
+        },
+        {
+          "code": "ET3280",
+          "name": "Anten và truyền sóng",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": true
+        },
+        {
+          "code": "ET2080",
+          "name": "Cơ sở kỹ thuật đo lường",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": true
+        },
+        {
+          "code": "ET3250",
+          "name": "Thông tin số",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": true
+        },
+        {
+          "code": "ET3241",
+          "name": "Điện tử tương tự II",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": true
+        },
+        {
+          "code": "ET3300",
+          "name": "Kỹ thuật vi xử lý",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": true
+        },
+        {
+          "code": "ET3290",
+          "name": "Đồ án thiết kế I",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": true
+        },
+        {
+          "code": "ET4010",
+          "name": "Đồ án thiết kế II",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": true
+        },
+        {
+          "code": "ET2022",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": true
+        },
+        {
+          "code": "ET4020",
+          "name": "Xử lý tín hiệu số",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "CH2021",
+          "name": "Đổi mới sáng tạo và khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3124",
+          "name": "Thiết kế quảng bá sản phẩm",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET3310",
+          "name": "Lý thuyết mật mã",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4230",
+          "name": "Mạng máy tính",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4250",
+          "name": "Hệ thống viễn thông",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4070",
+          "name": "Cơ sở truyền số liệu",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4291",
+          "name": "Hệ điều hành",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET3310",
+          "name": "Lý thuyết mật mã",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4230",
+          "name": "Mạng máy tính",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4250",
+          "name": "Hệ thống viễn thông",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4070",
+          "name": "Cơ sở truyền số liệu",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET3180",
+          "name": "Thông tin vô tuyến",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 3",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4100",
+          "name": "Cơ sở điện sinh học",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4471",
+          "name": "Mạch xử lý tín hiệu y sinh",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4450",
+          "name": "Giải phẫu và sinh lý học",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4110",
+          "name": "Cảm biến và KT đo lường y sinh",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4480",
+          "name": "Công nghệ chẩn đoán hình ảnh I",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4120",
+          "name": "Thiết bị điện tử y sinh I",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 4",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4130",
+          "name": "Truyền số liệu và chuyển tiếp điện văn",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET3310",
+          "name": "Lý thuyết mật mã",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4250",
+          "name": "Hệ thống viễn thông",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET3180",
+          "name": "Thông tin vô tuyến",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4140",
+          "name": "Định vị và dẫn đường điện tử",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 5",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET3310",
+          "name": "Lý thuyết mật mã",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4230",
+          "name": "Mạng máy tính",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4250",
+          "name": "Hệ thống viễn thông",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4070",
+          "name": "Cơ sở truyền số liệu",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4260",
+          "name": "Đa phương tiện",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ET4370",
+          "name": "Kỹ thuật truyền hình",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 6",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4361",
+          "name": "Hệ thống nhúng và thiết kế giao tiếp nhúng",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4358",
+          "name": "Cơ sở công nghệ vi điện tử",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4340",
+          "name": "Thiết kế VLSI",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4033",
+          "name": "Thiết kế IC tương tự",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET4356",
+          "name": "Kiểm chứng và kiểm tra vi mạch",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Bản lưu HTML của trang CTĐT SIS chính thức tại data/raw/et1_curiculum.html ghi Kỹ thuật Điện tử - Viễn thông 2022. Chỉ đọc bảng gvStudentProgram của chương trình cử nhân, không lấy bảng kỹ sư chuyên sâu/thạc sĩ hoặc dữ liệu điểm, kết quả cá nhân.",
+    "Nguồn không xác nhận khung ET2022 này áp dụng cho K68: applies_to_cohorts=null. Không dùng mã/năm hồ sơ cá nhân để suy ra khóa áp dụng.",
+    "required_credits các khối chính lấy từ công thức điều kiện tốt nghiệp, không lấy Tổng TC của danh mục trong tiêu đề nhóm làm mức tối thiểu. Công thức cho tổng 126 TC nhưng không có trường tổng TC tốt nghiệp được ghi riêng rõ ràng nên total_credits=null.",
+    "Nhóm Tự chọn II không nằm trong công thức tốt nghiệp và không giải thích phạm vi: required_credits/counts_toward_degree=null. GDTC, GDQP, tiếng Anh không nằm trong công thức nên counts_toward_degree=false; mức TC các khối điều kiện chưa ghi rõ là tối thiểu nên required_credits=null.",
+    "credits đọc cột TC ĐT của đúng bảng; giữ cả 0. Kỳ học đọc cột Kỳ học, trống để null. Bắt buộc đọc trạng thái checked/unchecked rõ ràng ở cột tương ứng; trạng thái grayed hoặc không có trạng thái rõ là compulsory=null.",
+    "Các nhóm/lựa chọn học thể chất là danh mục điều kiện có thể có mã và số TC khác với bản giới thiệu 2023; giữ theo nguồn 2022, không hợp nhất hai bản.",
+    "SHA-256 bản HTML nguồn 603eab0e03fe58a358a2120379f2b2f7c1c7ad4b19e94114afa06264e9c3248c.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

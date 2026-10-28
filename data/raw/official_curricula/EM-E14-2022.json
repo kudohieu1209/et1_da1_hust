@@ -343,7 +343,7 @@
     {
       "name": "CONCENTRATION 1 (18 CrH)",
       "kind": "module",
-      "required_credits": null,
+      "required_credits": 18,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -361,6 +361,42 @@
           "compulsory": false
         },
         {
+          "code": "EM4429E",
+          "name": "Purchasing management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4445E",
+          "name": "Transportation management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM4534E",
+          "name": "Risk management",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MI3600E",
+          "name": "Big Data and Bussiness Intelligence",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "CONCENTRATION 2 (18 CrH)",
+      "kind": "module",
+      "required_credits": 18,
+      "counts_toward_degree": true,
+      "courses": [
+        {
           "code": "EM3434E",
           "name": "E-Logistics",
           "credits": 3.0,
@@ -375,13 +411,6 @@
           "compulsory": false
         },
         {
-          "code": "EM4429E",
-          "name": "Purchasing management",
-          "credits": 3.0,
-          "suggested_semester": null,
-          "compulsory": false
-        },
-        {
           "code": "EM4110E",
           "name": "International trade management",
           "credits": 3.0,
@@ -389,13 +418,6 @@
           "compulsory": false
         },
         {
-          "code": "EM4445E",
-          "name": "Transportation management",
-          "credits": 3.0,
-          "suggested_semester": null,
-          "compulsory": false
-        },
-        {
           "code": "EM4429E",
           "name": "Purchasing management",
           "credits": 3.0,
@@ -403,22 +425,8 @@
           "compulsory": false
         },
         {
-          "code": "EM4534E",
-          "name": "Risk management",
-          "credits": 3.0,
-          "suggested_semester": null,
-          "compulsory": false
-        },
-        {
           "code": "EM4445E",
           "name": "Transportation management",
-          "credits": 3.0,
-          "suggested_semester": null,
-          "compulsory": false
-        },
-        {
-          "code": "MI3600E",
-          "name": "Big Data and Bussiness Intelligence",
           "credits": 3.0,
           "suggested_semester": null,
           "compulsory": false
@@ -435,7 +443,7 @@
     {
       "name": "INTERNSHIP (18 CrH)",
       "kind": "module",
-      "required_credits": null,
+      "required_credits": 18,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -488,6 +496,9 @@
     "Đây là sơ đồ kế hoạch học tập. Nhiều môn chỉ được ghi mã, không ghi tên hoặc TC; giữ name/credits=null cho các dữ liệu không được ghi tại sơ đồ. Không lấy số TC của cả học kỳ gán cho từng môn.",
     "Không có tổng TC và quy tắc tốt nghiệp toàn CTĐT trong sơ đồ nên total_credits, graduation_rule=null. required_credits=null ở nhóm lịch theo kỳ vì sơ đồ không công bố một mức tích lũy cho cả nhóm đó; counts_toward_degree=null với các nhóm lịch trộn nhiều loại môn.",
     "Trang trường ghi Kế hoạch học tập chuẩn cho K67; phiên bản theo năm tuyển sinh 2022.",
-    "CHƯA ĐỦ DỮ LIỆU ĐỂ KIỂM TRA TỔNG TC: không cộng các mô-đun/lộ trình thay thế và không coi null là 0. Các nhóm Year/Semester chỉ giúp giữ vị trí môn trong sơ đồ nguồn, chưa phải phân khối tốt nghiệp."
+    "CHƯA ĐỦ DỮ LIỆU ĐỂ KIỂM TRA TỔNG TC: không cộng các mô-đun/lộ trình thay thế và không coi null là 0. Các nhóm Year/Semester chỉ giúp giữ vị trí môn trong sơ đồ nguồn, chưa phải phân khối tốt nghiệp.",
+    "Bảng dưới sơ đồ có sáu cột: mã/tên/TC của lựa chọn 1 ở cột 1–3, lựa chọn 2 ở cột 4–6. Tách đúng CONCENTRATION 1, CONCENTRATION 2 và INTERNSHIP thành ba danh mục thay thế; không nhập danh mục cột phải vào mô đun 1. Nhãn CrH của nguồn được giữ trong tên khối; chưa xác minh quy đổi riêng sang TC HUST.",
+    "EM1010 xuất hiện hai lần trong ô Year 1 Semester 2 của sơ đồ (một lần kèm tên Introduction to Management, một lần cạnh nhóm Complementary); giữ hai dòng vị trí nguồn, chưa tự loại bỏ hay kết luận đó là hai yêu cầu tích lũy.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
   ]
 }

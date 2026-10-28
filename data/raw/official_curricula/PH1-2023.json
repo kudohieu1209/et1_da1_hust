@@ -7,7 +7,7 @@
   "source_url": "https://sep.hust.edu.vn/dao-tao/khung-ctdt/cu-nhan-vat-ly-ky-thuat.html",
   "source_title": "Cử nhân Vật lý kỹ thuật | Khoa Vật lý kỹ thuật - Đại học Bách khoa Hà Nội",
   "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "graduation_rule": "LLCT/Pháp luật 13 + Toán/KHCB 32 + cơ sở/cốt lõi 48 + bổ trợ 9 + chọn một trong ba mô đun định hướng 10 + tự chọn chung 6 + tốt nghiệp 8 = 126 TC. Ngoại ngữ 8 TC ghi ngoài tổng. Tốt nghiệp dùng PH4000 2 + PH4900 6, hoặc PH4009 8 cho sinh viên tích hợp.",
   "groups": [
     {
       "name": "Giáo dục thể chất (Physical Education)",
@@ -444,13 +444,6 @@
       ]
     },
     {
-      "name": "Tự chọn theo định hướng ứng dụng (chọn 1/3 mô đun) (Elective Module)",
-      "kind": "block",
-      "required_credits": 10.0,
-      "counts_toward_degree": true,
-      "courses": []
-    },
-    {
       "name": "Mô đun 1: Quang học và quang điện tử (Optics and Optoelectronics)",
       "kind": "module",
       "required_credits": 10.0,
@@ -609,7 +602,7 @@
       ]
     },
     {
-      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân (Engineering Practicum and Bachelor Thesis)",
+      "name": "Thực tập/ĐATN hoặc Đồ án nghiên cứu cử nhân",
       "kind": "block",
       "required_credits": 8.0,
       "counts_toward_degree": true,
@@ -627,15 +620,7 @@
           "credits": 6.0,
           "suggested_semester": 8,
           "compulsory": null
-        }
-      ]
-    },
-    {
-      "name": "Đồ án nghiên cứu Cử nhân (Research based thesis) (dành cho SV học theo CTĐT tích hợp Cử nhân – Thạc sĩ)",
-      "kind": "block",
-      "required_credits": null,
-      "counts_toward_degree": true,
-      "courses": [
+        },
         {
           "code": "PH4009",
           "name": "Đồ án nghiên cứu Cử nhân (Vật lý kỹ thuật) (Bachelor of Science Research Project)",
@@ -657,6 +642,7 @@
     "Giáo dục Quốc phòng – An ninh (Military Education) (165 tiết): số TC tối thiểu không được ghi rõ ở tiêu đề; required_credits=null.",
     "Đồ án nghiên cứu Cử nhân (Research based thesis) (dành cho SV học theo CTĐT tích hợp Cử nhân – Thạc sĩ): số TC tối thiểu không được ghi rõ ở tiêu đề; required_credits=null.",
     "graduation_rule=null: chưa xác minh đủ quy tắc kết hợp mô-đun/ĐANC của bảng chi tiết với các khung tổng quan khác trên cùng trang.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Tiêu đề cha chọn 1/3 mô đun không cộng thêm 10 TC ngoài mô đun con; gộp lộ trình ĐANC thay thế vào khối tốt nghiệp 8 TC, không tính lặp hai cách tốt nghiệp.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 126 TC; total_credits=126 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }

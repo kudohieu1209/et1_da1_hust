@@ -9,8 +9,8 @@
   "total_credits": 132,
   "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=Hoa_hoc_Chuong_trinh_cu_nhan_thac_si.pdf",
   "source_title": "Chương trình đào tạo Hóa học",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Chọn 16 TC trong danh mục tự chọn định hướng; tốt nghiệp cử nhân riêng dùng CH3902 (2 TC) + CH4901 (6 TC), lộ trình tích hợp dùng CH4903 (8 TC) thay thế. Các phần tốt nghiệp là lựa chọn thay thế, không cộng lặp. Tổng cử nhân nguồn công bố 132 TC.",
   "groups": [
     {
       "name": "A1. Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
@@ -415,15 +415,7 @@
           "credits": 3.0,
           "suggested_semester": null,
           "compulsory": null
-        }
-      ]
-    },
-    {
-      "name": "Kỹ năng xã hội, kỹ năng mềm, khởi nghiệp Tự chọn 6 TC trong các học phần dưới đây",
-      "kind": "block",
-      "required_credits": 6,
-      "counts_toward_degree": true,
-      "courses": [
+        },
         {
           "code": "ED3280",
           "name": "Tâm lý học ứng dụng (Applied Psychology)",
@@ -648,95 +640,19 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "B4.2. Đồ án nghiên cứu cho lộ trình tích hợp",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "CH4903",
           "name": "Đồ án nghiên cứu (Bachelor research-based thesis)",
           "credits": 8.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4833",
-          "name": "Hương liệu và mỹ phẩm (Fragrances",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4829",
-          "name": "Phân tích thành phần và cấu trúc các",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4834",
-          "name": "Tổng hợp các hợp chất có hoạt tính",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4328",
-          "name": "Các phương pháp xử lý nước thải",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4800",
-          "name": "Hóa keo (Colloid Chemistry)",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4801",
-          "name": "Kỹ thuật xúc tác (Catalytic",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4877",
-          "name": "Các phương pháp Phân tích điện hóa",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4882",
-          "name": "Các phương pháp tách trong hóa",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4881",
-          "name": "Xử lý số liệu thực nghiệm trong hoá",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4850",
-          "name": "Hóa học phức chất (Coordination",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4855",
-          "name": "Hóa học xanh (Green Chemistry)",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4859",
-          "name": "Vật liệu y sinh (Biomaterials)",
-          "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
         }
@@ -744,28 +660,18 @@
     }
   ],
   "notes": [
-    "Bìa ghi khung nền 2020; thông tin ban hành ở trang 4 ghi Quyết định 1093/QĐ-ĐHBK-ĐT ngày 10/06/2022. Trang trường dẫn bản cũ cho K69 trở về trước.",
     "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
     "Trang 14, bảng 1, dòng 14: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 14, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 14, bảng 1, dòng 16: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 1: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 3: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 7: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 10: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 12: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 13: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 17: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 20: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 23: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 25: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Trang 18, bảng 1, dòng 26: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "A2. Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
+    "B4.2. Đồ án nghiên cứu cho lộ trình tích hợp: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 131 TC; total_credits=132 TC; chênh lệch -1 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Khối bổ trợ 9 TC gộp danh mục Technical Writing and Presentation và phần tự chọn 6 TC; không cộng 9+6. Tiêu đề phần tốt nghiệp không ghi mức TC khối nên để null dù học phần có 2/6/8 TC. LLCT tiêu đề 13 TC nhưng chỉ có năm học phần tổng 12 TC; giữ nguyên nguồn.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
   ]
 }

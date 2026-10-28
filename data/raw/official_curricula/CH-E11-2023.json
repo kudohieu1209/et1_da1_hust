@@ -4,7 +4,7 @@
   "curriculum_version": null,
   "applies_to_cohorts": null,
   "total_credits": null,
-  "source_url": "https://husteduvn-my.sharepoint.com/:x:/g/personal/giang_nguyenle_hust_edu_vn/ER5HgJykOcRLjZFQc-OAVPgB_l23IqvgV8hyV5Ho3Z9tYg?e=xZYxsd",
+  "source_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/ky-thuat-hoa-duoc-chuong-trinh-tien-tien",
   "source_title": "CHƯƠNG TRÌNH TIÊN TIẾN CỬ NHÂN HÓA DƯỢC",
   "retrieved_at": "2026-10-27",
   "graduation_rule": null,
@@ -628,6 +628,7 @@
     "Mã SSH1170 Pháp luật đại cương giữ nguyên như Excel, không đổi thành EM1170. Dấu trắng thừa cuối ô mã được loại bỏ, không thêm hoặc đổi ký tự trong mã.",
     "Các hàng GDTC có mã trống giữ code=null; tên lấy theo ô có ghi trong chính hàng. compulsory=null khi không có nhãn bắt buộc; số học kỳ đọc trực tiếp F:M.",
     "graduation_rule=null vì chưa có công thức tốt nghiệp hoặc quy tắc chọn đủ các khối cho K68 trong tệp.",
-    "Tổng các mức required_credits đọc được (mỗi nhóm lựa chọn chỉ tính một lần): 132 TC. Đây là phép kiểm tra, không thay thế total_credits chưa được nguồn ghi rõ."
+    "Tổng các mức required_credits đọc được (mỗi nhóm lựa chọn chỉ tính một lần): 132 TC. Đây là phép kiểm tra, không thay thế total_credits chưa được nguồn ghi rõ.",
+    "source_url là trang tuyển sinh HUST công bố liên kết chương trình; tệp Excel do trường dẫn tại https://husteduvn-my.sharepoint.com/:x:/g/personal/giang_nguyenle_hust_edu_vn/ER5HgJykOcRLjZFQc-OAVPgB_l23IqvgV8hyV5Ho3Z9tYg?e=xZYxsd"
   ]
 }

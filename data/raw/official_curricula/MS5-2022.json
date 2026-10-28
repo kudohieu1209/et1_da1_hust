@@ -5,9 +5,9 @@
   "applies_to_cohorts": null,
   "total_credits": 131,
   "source_url": "https://smse.hust.edu.vn/uploads/smse/dao-tao/2023_07/ctdt-cu-nhan-thac-si-kh-kt-in_song-ngu.03.03.2022.pdf",
-  "source_title": "CTĐT Kỹ thuật in — 373efb917721bbd4.pdf",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "source_title": "Chương trình đào tạo Kỹ thuật in",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Chọn một trong hai mô đun định hướng 33 TC. Tốt nghiệp: thực tập CH4692 (2 TC) + đồ án CH4902 (6 TC), hoặc CH4905 đồ án nghiên cứu (8 TC) cho lộ trình tích hợp; phần tốt nghiệp chỉ tính 8 TC một lần. Tổng cử nhân công bố 131 TC.",
   "groups": [
     {
       "name": "A1. Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
@@ -638,7 +638,15 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "B4. Tốt nghiệp cử nhân — hai lộ trình thay thế",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "CH4692",
           "name": "Thực tập kỹ thuật (Technical Internship)",
@@ -659,64 +667,11 @@
           "credits": 8.0,
           "suggested_semester": null,
           "compulsory": null
-        },
-        {
-          "code": "CH3641",
-          "name": "Kỹ thuật chế bản điện tử (Digital Imaging)",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        }
-      ]
-    },
-    {
-      "name": "Mô đun: Kỹ thuật in (Module: Printing Engineering)",
-      "kind": "module",
-      "required_credits": null,
-      "counts_toward_degree": true,
-      "courses": [
-        {
-          "code": "CH4671",
-          "name": "Kỹ thuật in số (Digital Printing)",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4674",
-          "name": "Tổ chức và quản lý sản xuất in (Print production management)",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        }
-      ]
-    },
-    {
-      "name": "Mô đun: Đồ hoạ truyền thông (Module: Media Engineering)",
-      "kind": "module",
-      "required_credits": null,
-      "counts_toward_degree": true,
-      "courses": [
-        {
-          "code": "CH4738",
-          "name": "Mỹ học đại cương (Aesthetics and philosophy of art)",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "CH4677",
-          "name": "Kỹ thuật xử lý ảnh (Image processing)",
-          "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
         }
       ]
     }
   ],
   "notes": [
-    "Tên tệp có 03.03.2022, bìa ghi 2020; chưa xác nhận năm phiên bản 2022 trong nội dung nên curriculum_version=null.",
-    "Tổng cử nhân 131 TC, tổng tích hợp có chỗ 179 TC và bìa thông tin chung 180 TC; không lấy tổng tích hợp làm total_credits của cử nhân.",
     "Chưa xác định được năm phiên bản từ nội dung tài liệu; curriculum_version=null. Hậu tố 2022 là năm cần tra cứu, không phải xác nhận tài liệu được ban hành năm đó.",
     "Nguồn chưa xác nhận khóa áp dụng; applies_to_cohorts=null, không coi tài liệu này là bằng chứng đủ cho K68.",
     "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
@@ -724,12 +679,12 @@
     "Trang 14, bảng 1, dòng 4: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 14, bảng 1, dòng 5: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "A2. Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Mô đun: Kỹ thuật in (Module: Printing Engineering): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Mô đun: Đồ hoạ truyền thông (Module: Media Engineering): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Tên tệp có 03.03.2022 nhưng bìa ghi 2020; chưa xác minh năm ban hành bản này, curriculum_version=null. Không đưa các học phần thạc sĩ bắt đầu ngay trang 17 vào danh mục cử nhân.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 131 TC; total_credits=131 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }

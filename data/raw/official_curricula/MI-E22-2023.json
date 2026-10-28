@@ -1,0 +1,17 @@
+{
+  "admission_code": "MI-E22",
+  "name": "Khoa học tính toán cho các hệ thống thông minh (CTTT)",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://www.hust.edu.vn/vi/tuyen-sinh/nganh-tuyen-sinh/cac-nganh-chuong-trinh-tuyen-sinh-dai-hoc-nam-2026-651865.html",
+  "source_title": "Các ngành/chương trình tuyển sinh Đại học năm 2026",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [],
+  "notes": [
+    "KHÔNG ÁP DỤNG K68: HUST công bố đây là một trong năm ngành/chương trình tuyển sinh mới năm 2026. Không tồn tại khóa tuyển sinh K68/2023 của chương trình này theo danh mục tuyển sinh chính thức.",
+    "Không tạo CTĐT 2022/2023/2024/2025 bằng cách gán khung của ngành gần tên. Các trường curriculum_version, applies_to_cohorts, total_credits và graduation_rule=null; groups=[] vì không có CTĐT thuộc các năm yêu cầu.",
+    "Hậu tố 2023 là năm được yêu cầu tra cứu; đây là bản ghi tình trạng không áp dụng, không phải một CTĐT ban hành năm 2023."
+  ]
+}

@@ -8,8 +8,8 @@
   "total_credits": null,
   "source_url": "https://bktextile.hust.edu.vn/documents/71926/0/Khung+CT%C4%90T/74967b23-496a-4b62-8de4-85e3e0f10801",
   "source_title": "Chương trình đào tạo Công nghệ Dệt May",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Khối chung và chọn một trong năm mô đun định hướng cử nhân. Mỗi danh mục mô đun có Thực tập kỹ thuật TEX4900 (2 TC) và Đồ án tốt nghiệp TEX4910 (6 TC); các học phần này thuộc lộ trình mô đun đã chọn, không cộng lặp cả năm mô đun. Dừng trước BẬC KỸ SƯ ở trang 6.",
   "groups": [
     {
       "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
@@ -921,6 +921,8 @@
     "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Các mức 18 TC ở tiêu đề mô đun được giữ nguyên; một số mô đun không ghi mức ở ô tiêu đề nên required_credits=null, không suy ra từ mô đun khác. Danh mục mô đun gồm cả thực tập/ĐATN; chưa rõ mức 18 TC đã bao gồm hai học phần này hay chưa, không tự cân bằng tổng.",
     "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
   ]
 }

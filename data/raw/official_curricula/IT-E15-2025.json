@@ -6,13 +6,13 @@
   "total_credits": null,
   "source_url": "https://soict.hust.edu.vn/wp-content/uploads/07.-CNTT-Chuong-trinh-dao-tao-An-toan-Khong-gian-so-Cyber-Security_v11112025_Cu_Nhan.pdf",
   "source_title": "Chương trình đào tạo An toàn không gian số (Chương trình tiên tiến)",
-  "retrieved_at": "2026-10-27",
+  "retrieved_at": "2026-10-28",
   "graduation_rule": null,
   "groups": [
     {
       "name": "Lý luận chính trị + Pháp luật đại cương",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 13,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -105,7 +105,7 @@
     {
       "name": "Giáo dục Quốc phòng - An ninh",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 0,
       "counts_toward_degree": false,
       "courses": [
         {
@@ -141,8 +141,8 @@
     {
       "name": "Tiếng Anh (English)",
       "kind": "block",
-      "required_credits": null,
-      "counts_toward_degree": true,
+      "required_credits": 0,
+      "counts_toward_degree": false,
       "courses": [
         {
           "code": "FL1141",
@@ -275,7 +275,7 @@
     {
       "name": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 32,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -353,7 +353,7 @@
     {
       "name": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 52,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -501,7 +501,7 @@
     {
       "name": "Bắt buộc (Mandatory)",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 3,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -510,6 +510,149 @@
           "credits": 3.0,
           "suggested_semester": null,
           "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn (Elective)",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Tự chọn cử nhân (Elective Module)",
+      "kind": "block",
+      "required_credits": 19,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4025E",
+          "name": "Mật mã ứng dụng (Applied Cryptography)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4432E",
+          "name": "Hệ thống xác thực sinh trắc học (Biometric Authentication Systems)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4527E",
+          "name": "Blockchain và ứng dụng (Blockchain and Applications)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4508E",
+          "name": "An toàn phần mềm (Software Security)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4630E",
+          "name": "Phân tích mã độc (Malware Analysis)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4831E",
+          "name": "Phòng chống tấn công mạng (Network Defense)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4450E",
+          "name": "Điều tra số (Digital Forensics)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4413E",
+          "name": "Kiểm thử xâm nhập (Penetration Testing Practice)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3940E",
+          "name": "Project III",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp cử nhân (Engineering Internship and Bachelor Thesis)",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4991E",
+          "name": "Thực tập kỹ thuật (Engineering Internship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4126E",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
         }
       ]
     }
@@ -521,17 +664,12 @@
     "Trang 8, bảng 1, dòng 16: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 8, bảng 1, dòng 17: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 8, bảng 1, dòng 18: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
-    "Lý luận chính trị + Pháp luật đại cương: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Giáo dục Quốc phòng - An ninh: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Tiếng Anh (English): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Cơ sở và cốt lõi ngành (Basic and Core of Engineering): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Bắt buộc (Mandatory): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Tổng các mức required_credits đọc được (mỗi nhóm lựa chọn chỉ tính một lần): 133 TC. Đây là phép kiểm tra, không thay thế total_credits chưa được nguồn ghi rõ."
   ]
 }
