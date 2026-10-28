@@ -1,0 +1,305 @@
+{
+  "admission_code": "M-EE1",
+  "name": "Thạc sĩ Kỹ thuật Điện",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": null,
+  "total_credits": 60,
+  "source_url": "https://sdh.hust.edu.vn/default.aspx?CategoryID=136&nid=2953&scid=23",
+  "source_title": "Chương trình đào tạo tích hợp cử nhân–thạc sĩ khoa học Kỹ thuật Điện",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Kiến thức chung 3 + ngành rộng 12 + ngành nâng cao 15 + mô đun định hướng nghiên cứu 15 + luận văn 15 = 60 TC. Nguồn cho phép chọn nhiều mô đun nhưng khi chọn phải hoàn thành toàn bộ học phần của mô đun; không cộng toàn bộ các danh mục thay thế thành tổng bắt buộc. Khối ngành rộng 12 TC được công nhận cho người học tích hợp theo quy tắc trong PDF.",
+  "groups": [
+    {
+      "name": "Kiến thức chung (General courses)",
+      "kind": "block",
+      "required_credits": 3.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SS6013",
+          "name": "Triết học (Philosophy)",
+          "credits": 3.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức ngành mở rộng (Major courses)",
+      "kind": "block",
+      "required_credits": 12,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE3425",
+          "name": "Hệ thống cung cấp điện",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE3140",
+          "name": "Máy điện I (Electric machines I)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "DX6000",
+          "name": "Đồ án đề xuất (Dành cho sinh viên không học CT tích hợp)",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở ngành nâng cao (Advanced courses)",
+      "kind": "block",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6012",
+          "name": "Các phương pháp tối ưu hóa (Optimization methods)",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EE6301",
+          "name": "Hệ thống truyền tải điện xoay chiều linh hoạt (FACTS) (Flexible AC transmission systems)",
+          "credits": 3.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EE4564",
+          "name": "Máy điện nâng cao (Advanced electric machines)",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "EE6010",
+          "name": "Seminar 1",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6181",
+          "name": "Chất lượng điện năng trong hệ thống điện (Power quality)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6020",
+          "name": "Seminar 2",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun Hệ thống điện (Power systems)",
+      "kind": "module",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6141",
+          "name": "Thị trường điện (Electricity market)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6036",
+          "name": "Ổn định của HTĐ (Power system stabiilty)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6016",
+          "name": "Các phương pháp tính toán phân tích hệ thống",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6061",
+          "name": "Tự động hóa hệ thống điện (Power system automation)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6078",
+          "name": "Quy hoạch phát triển hệ thống điện (Power system planning)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6466",
+          "name": "Lưới điện thông minh (Smart grids)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6133",
+          "name": "Bảo vệ hệ thống điện nâng cao (Advanced power system protection)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun năng lượng tái tạo (Renewable energy systems)",
+      "kind": "module",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6313",
+          "name": "Phân tích độ tin cậy hệ thống điện (Power system reliability analysis)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6241",
+          "name": "Quản lý nhu cầu điện năng (DSM) (Demand Side Management)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6016",
+          "name": "Các phương pháp tính toán phân tích hệ thống điện (Methods for power system analysis)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6037",
+          "name": "Nhà máy thủy điện (Hydro power plants)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6464",
+          "name": "Nhà máy điện gió và mặt trời (Solar and wind power plants)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6061",
+          "name": "Tự động hóa hệ thống điện (Power system automation)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6141",
+          "name": "Thị trường điện (Electricity market)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun thiết bị điện (Electric equipment)",
+      "kind": "module",
+      "required_credits": 15.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE6550",
+          "name": "Công nghệ chế tạo thiết bị điện công nghiệp (Manufacturing technologies of industrial electrical machines)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6565",
+          "name": "Thiết kế máy điện công nghiệp (Design of industrial electrical machines)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6564",
+          "name": "Thiết kế thiết bị đóng cắt và bảo vệ (Design of protective switchgear systems)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "EE6263",
+          "name": "Thiết kế thiết bị điều khiển máy điện (Design of electrical machine control)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6331",
+          "name": "Bảo dưỡng công nghiệp (Industrial maintenance)",
+          "credits": 2,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6571",
+          "name": "Giám sát, chuẩn đoán sự cố trong TBĐ (Condition Monitoring and Fault Diagnosis of Electrical Equipment)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        },
+        {
+          "code": "EE6572",
+          "name": "Mô phỏng số trong thiết kế tối ưu TBĐ (Numerical Modelling and Design of Electrical Equiptment)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Luận văn tốt nghiệp (Graduate thesis)",
+      "kind": "block",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "LV6001",
+          "name": "Luận văn tốt nghiệp",
+          "credits": 15.0,
+          "suggested_semester": 11,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Bậc đào tạo: Thạc sĩ. Mã M-EE1 được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Đối chiếu trực quan đầu trang 6: bổ sung EE6331 Bảo dưỡng công nghiệp, 2 TC, kỳ 10; hàng này nằm ở phần bảng tiếp trang không được bộ trích bảng nhận diện. Đã so toàn bộ mã học phần trong PDF với danh mục JSON.",
+    "Quyết định 1093/QĐ-ĐHBK-ĐT ngày 10/06/2022 được in trên bìa PDF. Chỉ trích BẬC THẠC SĨ; tổng của bậc này được nguồn ghi rõ 60 TC. Tổng 180 TC trên bìa là CTĐT tích hợp, không phải khối lượng riêng thạc sĩ. Không tính 180−132 thành số TC thạc sĩ vì có công nhận 12 TC ở lộ trình tích hợp.",
+    "Khối ngành rộng 12 TC lấy theo bảng cấu trúc chung trang 3 khi ô tiêu đề danh mục để trống. Luận văn 15 TC theo cấu trúc và dòng LV6001.",
+    "Các mức ký hiệu N/M có giới hạn/ràng buộc, required_credits=null tại danh mục mang mức ký hiệu; xem graduation_rule. Không đổi N/M thành tổng số TC các môn được liệt kê.",
+    "Kỳ học giữ theo các cột 1–11 của bảng tích hợp, khi xác định được duy nhất cột có giá trị. Các ô trống hoặc vị trí cột không tách chắc chắn: suggested_semester=null. compulsory chỉ lấy từ nhãn bắt buộc/tự chọn rõ trong tiêu đề.",
+    "Tệp PDF được trang Sau đại học HUST công bố: https://husteduvn-my.sharepoint.com/:b:/g/personal/sdh_hust_edu_vn/EUJNcRQCFDlLjmLATjJUeGIBRsI3XlXZlj028MOID506RQ?e=Urn7Rl&download=1; SHA-256 68f60f1f469f5e71260ce71324a5654cf0e4ad16578f13f8fcbf8530c4b6a9dc.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 60 TC; total_credits=60 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

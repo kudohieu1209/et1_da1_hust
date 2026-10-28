@@ -1,0 +1,256 @@
+{
+  "admission_code": "M-ET-E",
+  "name": "Thạc sĩ Kỹ thuật Điện tử",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": null,
+  "total_credits": 60,
+  "source_url": "https://sdh.hust.edu.vn/default.aspx?CategoryID=136&nid=2953&scid=23",
+  "source_title": "Chương trình đào tạo tích hợp cử nhân–thạc sĩ khoa học Kỹ thuật Điện tử",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Kiến thức chung 3 + ngành rộng 12 + ngành bắt buộc 14 + lựa chọn ngành N TC (4 ≤ N ≤ 7) + lựa chọn mô đun M TC (M + N = 16) + luận văn 15 = 60 TC. Nguồn cho phép chọn một hoặc nhiều mô đun nhưng phải hoàn thành học phần trong mô đun đã chọn; giữ ràng buộc ký hiệu M/N, không gán một mức số cố định cho từng danh mục M/N.",
+  "groups": [
+    {
+      "name": "Kiến thức ngành rộng (Major knowledge)",
+      "kind": "block",
+      "required_credits": 12.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4230",
+          "name": "Mạng máy tính (Computer Networks)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "ET4291",
+          "name": "Hệ điều hành (Operating Systems)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "DX6000",
+          "name": "Đồ án đề xuất (Research Proposal Project)",
+          "credits": 6.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức chung (General Education)",
+      "kind": "block",
+      "required_credits": 3.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SS6010",
+          "name": "Triết học (Philosophy)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": null
+        },
+        {
+          "code": "FL6010",
+          "name": "Tiếng Anh (English)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức ngành bắt buộc (Compulsory specialized knowledge)",
+      "kind": "block",
+      "required_credits": 14.0,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET6500",
+          "name": "Phương pháp luận nghiên cứu khoa học (Research Methodology)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": true
+        },
+        {
+          "code": "ET6530",
+          "name": "Thị giác máy tính (Computer Vision)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": true
+        },
+        {
+          "code": "ET6472",
+          "name": "Trí tuệ nhân tạo và ứng dụng (AI and applications)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": true
+        },
+        {
+          "code": "ET6510",
+          "name": null,
+          "credits": 1.0,
+          "suggested_semester": 9,
+          "compulsory": true
+        },
+        {
+          "code": "ET6520",
+          "name": null,
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức ngành tự chọn (Elective specialized knowledge) (Chọn N tín chỉ với 4TC ≤ N ≤ 7TC)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET6251",
+          "name": "Kiểm tra thiết kế phần cứng số (Digital hardware design verification)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET6231",
+          "name": "Lập trình song song (Parallel programming)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET4700",
+          "name": "Mạng phức và ứng dụng (Complex network and applications)",
+          "credits": 3.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        },
+        {
+          "code": "ET6021",
+          "name": "Xử lý tín hiệu số nâng cao (Advanced digital signal processing)",
+          "credits": 2.0,
+          "suggested_semester": 10,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Mô-đun: Kỹ thuật Điện tử (Module: Electronics Engineering)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4611",
+          "name": "Điện tử công suất (Power electronics)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4031",
+          "name": "Thiết kế, tổng hợp hệ thống số (Digital system design and synthesis)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4340",
+          "name": "Thiết kế VLSI (VLSI design)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4361",
+          "name": "Thiết kế hệ nhúng (Embedded system design)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4032",
+          "name": "Thiết kế IC tương tự (Analog IC design)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Mô-đun: Kỹ thuật Máy tính (Module: Computer Engineering)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ET4041",
+          "name": "Kiến trúc máy tính (Computer Architecture)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4710",
+          "name": "Lập trình ứng dụng di động (Mobile Application programming)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4430",
+          "name": "Lập trình nâng cao (Advanced programming)",
+          "credits": 2.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4060",
+          "name": "Phân tích và thiết kế hướng đối tượng (Object Oriented Analysis and Design)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        },
+        {
+          "code": "ET4361",
+          "name": "Thiết kế hệ nhúng (Embedded system design)",
+          "credits": 3.0,
+          "suggested_semester": 9,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Luận văn tốt nghiệp",
+      "kind": "block",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "LV6001",
+          "name": "Luận văn thạc sĩ khoa học (Master of Science thesis)",
+          "credits": 15.0,
+          "suggested_semester": 11,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Bậc đào tạo: Thạc sĩ. Mã M-ET-E được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Quyết định 1093/QĐ-ĐHBK-ĐT ngày 10/06/2022 được in trên bìa PDF. Chỉ trích BẬC THẠC SĨ; tổng của bậc này được nguồn ghi rõ 60 TC. Tổng 180 TC trên bìa là CTĐT tích hợp, không phải khối lượng riêng thạc sĩ. Không tính 180−132 thành số TC thạc sĩ vì có công nhận 12 TC ở lộ trình tích hợp.",
+    "Khối ngành rộng 12 TC lấy theo bảng cấu trúc chung trang 3 khi ô tiêu đề danh mục để trống. Luận văn 15 TC theo cấu trúc và dòng LV6001.",
+    "Các mức ký hiệu N/M có giới hạn/ràng buộc, required_credits=null tại danh mục mang mức ký hiệu; xem graduation_rule. Không đổi N/M thành tổng số TC các môn được liệt kê.",
+    "Kỳ học giữ theo các cột 1–11 của bảng tích hợp, khi xác định được duy nhất cột có giá trị. Các ô trống hoặc vị trí cột không tách chắc chắn: suggested_semester=null. compulsory chỉ lấy từ nhãn bắt buộc/tự chọn rõ trong tiêu đề.",
+    "Tệp PDF được trang Sau đại học HUST công bố: https://husteduvn-my.sharepoint.com/:b:/g/personal/sdh_hust_edu_vn/EbU6GgBJL8xIvu6NXlOfA4sBV3FNPH8Hc6EcA8wpY04rMA?e=jyDVBm&download=1; SHA-256 fc78c5304d9303545d29b8737b16679948fad07a0908c65ff043c47e4967b421.",
+    "Học phần Tiếng Anh FL6010 được bảng ghi khối lượng bằng dấu gạch và phần cấu trúc ghi tự học: credits=null, không đổi dấu gạch thành 0.",
+    "Đối chiếu theo ràng buộc tín chỉ trong nguồn: 3 + 12 + 14 + (N + M = 16) + 15 = 60 TC, khớp total_credits=60. required_credits=null ở các danh mục riêng N/M vì mức đó là biến có ràng buộc, không phải nguồn thiếu công thức; không cộng toàn bộ học phần được liệt kê."
+  ]
+}

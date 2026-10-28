@@ -1,0 +1,19 @@
+{
+  "admission_code": "EE-TN",
+  "name": "Chương trình tài năng Tự động hóa",
+  "curriculum_version": "2023",
+  "applies_to_cohorts": null,
+  "total_credits": 132,
+  "source_url": "https://seee.hust.edu.vn/vi/dao-tao/ee-tn/",
+  "source_title": "Chương trình tài năng Tự động hóa | Trường Điện - Điện tử",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [],
+  "notes": [
+    "Bậc đào tạo: Đại học. Mã EE-TN được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Trang chính thức có giới thiệu/chuẩn đầu ra, phần Khối kiến thức & học phần hiện ghi đang được cập nhật; chưa công bố bảng mã học phần. groups=[] và graduation_rule=null phản ánh trạng thái công bố này, không phải CTĐT đã được trích đầy đủ.",
+    "Không chép khung EE2 sang EE-TN hoặc khung thạc sĩ/điện tử sang E-ET-IC."
+  ]
+}

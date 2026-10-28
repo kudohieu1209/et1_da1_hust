@@ -1,0 +1,381 @@
+{
+  "admission_code": "P-EE1",
+  "name": "Tiến sĩ Kỹ thuật Điện",
+  "curriculum_version": "2022",
+  "applies_to_cohorts": null,
+  "total_credits": 106,
+  "source_url": "https://sdh.hust.edu.vn/default.aspx?scid=23&CategoryID=137&nid=2944",
+  "source_title": "Chương trình đào tạo tiến sĩ kỹ thuật — Tiến sĩ Kỹ thuật Điện",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Học phần tiến sĩ 8 + tiểu luận tổng quan 2 + ba chuyên đề tiến sĩ, mỗi chuyên đề 2 TC (6 TC) + nghiên cứu khoa học/luận án 90 = 106 TC. Học bổ sung tùy đối tượng A1/A2/A3/A4 theo Bảng 2, nằm ngoài tổng khối tiến sĩ 106 TC: A1 không bổ sung; A2 học CTĐT thạc sĩ định hướng nghiên cứu; A3/A4 có các khoảng bổ sung và quyết định của hội đồng tuyển sinh theo nguồn.",
+  "groups": [
+    {
+      "name": "Học phần bổ sung theo đối tượng đầu vào (ngoài tổng 106 TC)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "EE6011",
+          "name": "Các phương pháp tối ưu hóa Optimization methods",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6021",
+          "name": "Điều khiển điện tử công suất và ứng dụng trong hệ thống điện Power electronics control and applications in power systems",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6111",
+          "name": "Các phương pháp tính toán phân tích hệ thống điện Computtional methods in power sytems",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6031",
+          "name": "Điều khiển số Digital control",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6132",
+          "name": "Bảo vệ hệ thống điện nâng cao Advanced power systems protection",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6161",
+          "name": "Quá điện áp và nối đất trong hệ thống điện Overvoltage and grounding in power systems",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6171",
+          "name": "Truyền tải điện cao áp một chiều HVDC transmission",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6181",
+          "name": "Chất lượng điện năng trong hệ thống điện Power quality",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6211",
+          "name": "Các nguồn điện phân tán Distributed energy resources",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6231",
+          "name": "Hệ thống SCADA và tự động hóa trạm biến áp SCADA and substation automation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6251",
+          "name": "Quá trình quá độ điện từ trong hệ thống điện Electromagneic transient in power systems",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6261",
+          "name": "Phân tích và điều khiển ổn định hệ thống điện Analysis and stability control of power systems",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6271",
+          "name": "Lý thuyết hệ thống System theory",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6281",
+          "name": "Hệ mờ và mạng nơ ron Fuzzy and neural network",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6291",
+          "name": "Các chế độ làm việc không bình thường của hệ thống điện Abnormal state of power systems",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6301",
+          "name": "Hệ thống truyền tải điện xoay chiều linh hoạt (FACTS)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6311",
+          "name": "Phân tích độ tin cậy hệ thống điện Power systems reliability analysis",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6321",
+          "name": "Mô phỏng hệ thống điện Power systems simulation",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6011",
+          "name": "Các phương pháp tối ưu hóa Optimization methods",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6021",
+          "name": "Điều khiển điện tử công suất và ứng dụng trong hệ thống điện Power electronics control and applications in power systems",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6031",
+          "name": "Điều khiển số Digital control",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6431",
+          "name": "Phương pháp tính toán điện từ trường Electromagnetic computational methods",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6421",
+          "name": "Tự động hóa thiết kế thiết bị biến đổi điện cơ Automation of electro-mechanical convert design",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6441",
+          "name": "Mô hình tổng quát máy điện General model of electric machine",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6451",
+          "name": "Máy cắt hiện đại Modern circuit breaker",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6461",
+          "name": "Máy điện đặc biệt Special electric machine",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6511",
+          "name": "Các cấu trúc điển hình của thiết bị điều khiển máy điện Typical structure of electric machine control device",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6531",
+          "name": "Điều khiển số máy điện Digital control of electric machine",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6181",
+          "name": "Chất lượng điện năng trong hệ thống điện Power quality",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EE6281",
+          "name": "Hệ mờ và mạng nơron Fuzzy and neural network",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Học phần tiến sĩ — danh mục lựa chọn theo hướng chuyên sâu",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EE7290",
+          "name": "Các phương pháp tối ưu hóa phi tuyến, ứng dụng trong HTĐ Application of non-linear optimization techniques to improve power system perfomance",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7301",
+          "name": "Điều khiển nhanh QTQĐ trong HTĐ bằng các tác động rời rạc, xấp xỉ tối ưu Fast control of transitional processes in power system using discrete approximately optimal actions",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7311",
+          "name": "Ổn định theo Lyapunov và các ứng dụng trong HTĐ Lyapunov's stability theory and its application in power system",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7321",
+          "name": "Mô hình máy điện ba pha trong hệ tọa độ quay, ứng dụng trong phân tích QTQĐ Model of 3-phase electric machines in rotating coordination system applied in transitional processes analysis",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7331",
+          "name": "Kỹ thuật giám sát điều khiển trên diện rộng cho HTĐ Wide-Area Monitoring and Control for Power System",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7430",
+          "name": "Các phương pháp hiện đại trong nghiên cứu TBĐ The modern methods in research of Electrical Equipment",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7441",
+          "name": "Giải tích máy điện Analysis of electric machines",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7451",
+          "name": "Ước lượng thông số hệ thống động lực học và ứng dụng trong máy điện Parameter estimation of dynamic systems and applications in electric machines",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7461",
+          "name": "Mô hình hóa và điều khiển hiệu năng cao máy điện Modeling and High-Performance Control of Electric Machines",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EE7471",
+          "name": "Khí cụ điện nâng cao Advanced Theory of Circuit Breakers",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Tiểu luận tổng quan (General essay)",
+      "kind": "block",
+      "required_credits": 2,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Tiểu luận tổng quan",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Chuyên đề tiến sĩ (Doctoral topics)",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Chuyên đề tiến sĩ",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": null,
+          "name": "Chuyên đề tiến sĩ",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": null,
+          "name": "Chuyên đề tiến sĩ",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Nghiên cứu khoa học và Luận án tiến sĩ",
+      "kind": "block",
+      "required_credits": 90,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Nghiên cứu khoa học và Luận án tiến sĩ",
+          "credits": 90,
+          "suggested_semester": null,
+          "compulsory": true
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Bậc đào tạo: Tiến sĩ. Mã P-EE1 được chép từ danh mục 29 chương trình SEEE; đây là mã chương trình trên danh mục, không khẳng định là mã xét tuyển đại học trong danh sách 68 ngành.",
+    "Nguồn danh mục xác định tên và bậc: https://seee.hust.edu.vn/vi/dao-tao/chuong-trinh/.",
+    "applies_to_cohorts=null vì nguồn chưa nêu mã khóa áp dụng. Không tự gán K68 cho các CTĐT sau đại học.",
+    "Quyết định 1094/QĐ-ĐHBK-ĐT ngày 10/06/2022 được in trên bìa PDF; total_credits=106 theo bìa và Bảng 2.",
+    "Khối bổ sung phụ thuộc đối tượng đầu vào và không thuộc phép cộng 106 TC; required_credits=null vì không có một mức số duy nhất cho mọi đối tượng. counts_toward_degree=false ở khối này chỉ phạm vi ngoài tổng 106 TC, không có nghĩa người học được miễn các yêu cầu bổ sung áp dụng cho mình.",
+    "Tập hợp các danh mục Bảng 4/4.1/4.2... vào khối Học phần tiến sĩ 8 TC theo mức chung Bảng 2. Không tự gán 8 TC riêng cho từng hướng nghiên cứu, không cộng toàn bộ danh mục các hướng thành yêu cầu tích lũy. Các mã có thể xuất hiện lại giữa danh mục bổ sung và tiến sĩ, giữ đúng từng vị trí nguồn.",
+    "Tiểu luận, ba chuyên đề và luận án chỉ được nguồn ghi tên/khối lượng, không công bố mã: code=null. Ba chuyên đề là ba mục 2 TC riêng như Bảng 2 quy định; không tự đặt tên chuyên đề nghiên cứu.",
+    "suggested_semester=null vì danh mục tiến sĩ không công bố kỳ học chuẩn từng môn; tiểu luận chỉ ghi thực hiện trong năm đầu, không suy thành kỳ 1. Các học phần tiến sĩ nằm trong danh mục để chọn đủ 8 TC nên compulsory=false, danh mục bổ sung chưa phân loại từng môn nên compulsory=null.",
+    "Tệp được danh mục Sau đại học HUST áp dụng từ 2022 dẫn: https://drive.google.com/uc?export=download&id=1puEAiLISuddDYVYRBJUtbGRvzCUN0PAH; SHA-256 f6d97d4d43bc95f91cf97da59386b1de4d6902ca9010fb41404e49ce9c7d54ad.",
+    "Vị trí các danh mục: Trang 6: BẢNG 3.1: Danh sách các học phần bổ sung định hướng “Mạng và hệ thống điện”; Trang 6: TABLE 3.1: List of additional courses in the orientation of “Electrical Systems and Network”; Trang 7: BẢNG 3.2: Danh sách các học phần bổ sung định hướng “Thiết bị điện”; Trang 7: Table 3.2: List of additional courses in the orientation of “Electrical Equipment”; Trang 8: BẢNG 4.1: Danh mục học phần Tiến sĩ hướng chuyên sâu “Mạng và hệ thống điện”; Trang 9: BẢNG 4.2: Danh mục học phần Tiến sĩ hướng chuyên sâu “ Thiết bị điện ”",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 106 TC; total_credits=106 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

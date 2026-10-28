@@ -17,6 +17,7 @@ from import_official_curricula import (
     AUTO_LABEL,
     CheckFailed,
     build_dataset,
+    check_undergraduate,
     drop_conflicts,
     sanitize_source,
 )
@@ -122,6 +123,12 @@ class ImportOfficialCurriculaTest(unittest.TestCase):
     def test_local_extraction_paths_are_removed_from_notes(self) -> None:
         raw = sanitize_source(_source(notes=["Trang 1", "Tệp C:\\Users\\a\\x.pdf", "data/official_curricula_k67_k70/a.pdf"]))
         self.assertEqual(["Trang 1"], raw["notes"])
+
+    def test_programs_outside_the_undergraduate_catalog_are_rejected(self) -> None:
+        check_undergraduate(_source(), {"AA1"})
+        for code in ("M-AA1", "P-AA1", "E-AA1"):
+            with self.assertRaises(CheckFailed):
+                check_undergraduate(_source(admission_code=code), {"AA1"})
 
     def test_two_documents_for_the_same_cohort_are_both_rejected(self) -> None:
         first = _build(_source(applies_to_cohorts=["K68"]))
