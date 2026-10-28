@@ -3,16 +3,16 @@
   "name": "Công nghệ thông tin (Việt-Nhật) (Chương trình tiên tiến)",
   "curriculum_version": null,
   "applies_to_cohorts": null,
-  "total_credits": null,
+  "total_credits": 148,
   "source_url": "https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Hedspi-program.pdf",
   "source_title": "Chương trình đào tạo Công nghệ thông tin (Việt-Nhật) (Chương trình tiên tiến)",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Tích lũy các khối chung; bổ trợ xã hội 9 TC gồm phần bắt buộc và tự chọn 6 TC; chọn một trong hai mô đun định hướng 15 TC; phần tốt nghiệp 8 TC. Chưa xác minh toàn bộ bản hợp nhất áp dụng K68.",
   "groups": [
     {
-      "name": null,
+      "name": "Lý luận chính trị",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 13,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -78,7 +78,15 @@
           "credits": 0.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục quốc phòng-an ninh",
+      "kind": "block",
+      "required_credits": 10,
+      "counts_toward_degree": false,
+      "courses": [
         {
           "code": "MIL1110",
           "name": "Đường lối quân sự của Đảng",
@@ -171,7 +179,15 @@
           "credits": 1.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Nhật không tính CPA",
+      "kind": "block",
+      "required_credits": 16,
+      "counts_toward_degree": false,
+      "courses": [
         {
           "code": "JP1110",
           "name": "Tiếng Nhật 1",
@@ -479,15 +495,179 @@
       ]
     },
     {
-      "name": "Bắt buộc - Mandator y",
+      "name": "Kiến thức bổ trợ xã hội (bắt buộc và tự chọn 6 TC)",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 9,
       "counts_toward_degree": true,
       "courses": [
         {
           "code": "IT2030",
           "name": "Technical Writing and Presentation",
           "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương (Introduction to Management )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (Business Culture and Entrepreneurship )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng (Applied Psychology )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm (Soft Skills )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and Technical Design Thinking )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial Design )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Module 1- AI and Big Data",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4409",
+          "name": "Công nghệ Web và dịch vụ trực tuyến (Web technologies and e- Services)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4785",
+          "name": "Phát triển ứng dụng cho thiết bị di động (Mobile Programming )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4542",
+          "name": "Quản trị phát triển phần mềm (Management of Software Development)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4930",
+          "name": "Nhập môn Khoa học",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT3190",
+          "name": "Học máy và khai phá",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4441",
+          "name": "User Interface and User Experience (Giao diện và trải nghiệm người dùng)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Module 2- AI and IoT",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4409",
+          "name": "Công nghệ Web và dịch vụ trực tuyến (Web technologies and e-Services )",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4785",
+          "name": "Phát triển ứng dụng cho thiết bị di động (Mobile Programming )",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4542",
+          "name": "Quản trị phát triển phần mềm (Management of Software Development)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4210",
+          "name": "Hệ nhúng (Embedded Systems)",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4735",
+          "name": "IoT và ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4651",
+          "name": "Thiết kế và triển khai mạng IP",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Chuyên ngành bắt buộc + Tốt nghiệp",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4948",
+          "name": "Thực tập công nghiệp (ITSS Internship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": true
+        },
+        {
+          "code": "IT4125",
+          "name": "Đồ án tốt nghiệp (Graduation Thesis)",
+          "credits": 6.0,
           "suggested_semester": null,
           "compulsory": true
         }
@@ -502,11 +682,15 @@
     "Trang 11, bảng 1, dòng 28: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 11, bảng 1, dòng 30: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "None: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Bắt buộc - Mandator y: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Gộp danh mục con bắt buộc/tự chọn vào khối bổ trợ 9 TC theo tiêu đề cha; phần tự chọn ghi 6 TC, không cộng thêm 6 TC bên ngoài 9 TC.",
+    "Trang 16 ghi Tổng số tín chỉ 148 ở cuối bảng. Nguồn phân biệt hàng chỉ tính các môn CPA và tất cả các môn; chưa xác định rõ phạm vi 148 so với ngoại ngữ/GDTC/GDQP, giữ nguyên tổng công bố và nêu bất định thay vì tự trừ.",
+    "Trang 11 tiêu đề Giáo dục quốc phòng-an ninh ghi 10 TC nhưng thời lượng từng học phần bắt đầu bằng 0; giữ required_credits=10, credits=0 và counts_toward_degree=false theo khối điều kiện. Không gộp GDQP vào GDTC.",
+    "Trang 10 ghi Lý luận chính trị 13 TC và nêu riêng 7 TC tiếng Nhật tính CPA, ngoài ra có 16 TC tiếng Nhật không tính CPA. Tách JP1110/JP1120 theo hai dòng tiếng Nhật không tính CPA trong bảng, không cộng 16 TC này vào tổng 148 TC. Cấu trúc chung bổ trợ ghi bắt buộc 7 + tự chọn 2 trong khi bảng chi tiết ghi bắt buộc 3 + tự chọn 6; giữ khối 9 TC và nêu mâu thuẫn, không tự hoán đổi môn.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 148 TC; total_credits=148 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }

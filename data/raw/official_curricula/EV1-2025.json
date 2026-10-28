@@ -9,7 +9,7 @@
   "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=2025_scls_ev1_ktmt_khung_k70.pdf",
   "source_title": "Chương trình đào tạo Kỹ thuật Môi trường",
   "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "graduation_rule": "LLCT/Pháp luật 13 + Toán/KHCB 32 + cơ sở/cốt lõi 50 + bổ trợ 9 + chọn một trong ba mô đun 20 + tốt nghiệp 8 = 132 TC. Tốt nghiệp dùng EV3398 2 + EV4398 6 hoặc EV4399 8 cho lộ trình tích hợp. Ngoại ngữ/GDTC/GDQP không tính tổng.",
   "groups": [
     {
       "name": "A1. Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
@@ -675,7 +675,15 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "B4. Tốt nghiệp cử nhân — hai lộ trình thay thế",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "EV3398",
           "name": "Thực tập kỹ thuật (Technical Internship)",
@@ -712,6 +720,7 @@
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 124 TC; total_credits=132 TC; chênh lệch -8 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
+    "Trang 7 có hai tiêu đề B4.1/B4.2, gộp thành một khối tốt nghiệp 8 TC với hai lựa chọn thay thế; không để ba học phần tốt nghiệp trong mô đun 3. Mô đun 3 lặp EV4222/EV4223/EV4224 tại STT 75–77 và 83–85 ngay trong nguồn; giữ các dòng lặp và không tự xóa để cân bằng tín chỉ. Một số ô tín chỉ kỳ học ghi 2 khác thời lượng đầu dòng 3; credits giữ theo biểu thức khối lượng nguồn.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }

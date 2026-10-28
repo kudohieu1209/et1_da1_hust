@@ -7,7 +7,7 @@
   "source_url": "https://seee.hust.edu.vn/vi/dao-tao/et-e9/",
   "source_title": "Hệ thống nhúng thông minh và IoT | Trường Điện - Điện tử",
   "retrieved_at": "2026-10-27",
-  "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: None TC; Cơ sở và cốt lõi ngành: None TC; Thực tập & tốt nghiệp: None TC; Lý luận chính trị & Pháp luật: None TC; Kiến thức bổ trợ: None TC. Chuyên ngành (chọn 1 mô đun).",
+  "graduation_rule": "Các khối tính tốt nghiệp theo mức công bố: Toán và Khoa học cơ bản: chưa rõ mức TC tối thiểu; Cơ sở và cốt lõi ngành: chưa rõ mức TC tối thiểu; Thực tập & tốt nghiệp: chưa rõ mức TC tối thiểu; Lý luận chính trị & Pháp luật: chưa rõ mức TC tối thiểu; Kiến thức bổ trợ: chưa rõ mức TC tối thiểu. Chuyên ngành (chọn 1 mô đun).",
   "groups": [
     {
       "name": "Toán và Khoa học cơ bản",
@@ -567,6 +567,7 @@
     "JP2124: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
     "JP2125: nguồn không ghi đủ số TC trong biểu thức thời lượng; credits=null (không đổi thành 0).",
     "Ngoại ngữ: nguồn không ghi mức TC tối thiểu ở tiêu đề khối; required_credits=null.",
-    "Bản HTML chính thức được lưu tại data/raw/program_sources/ET-E9.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công."
+    "Bản HTML chính thức được lưu tại data/raw/program_sources/ET-E9.html theo manifest tải nguồn năm 2026-09; truy cập trực tiếp SEEE ngày 2026-10-27 bị từ chối kết nối. retrieved_at là ngày đối chiếu lại bản lưu chính thức; không khẳng định tải mới thành công.",
+    "Trong khối thực tập/tốt nghiệp, nguồn HTML lặp mã ET3270/ET4900/ET4920 theo các dòng công bố; giữ nguyên các dòng, không coi tổng danh mục lặp là tổng tích lũy."
   ]
 }

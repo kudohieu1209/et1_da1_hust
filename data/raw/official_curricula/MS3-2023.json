@@ -1,0 +1,634 @@
+{
+  "admission_code": "MS3",
+  "name": "Công nghệ vật liệu polyme và compozit",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://itims.edu.vn/chuong-trinh-dao-tao-cong-nghe-vat-lieu-polyme-va-compozit.html",
+  "source_title": "Khung chương trình đào tạo Công nghệ vật liệu polyme và compozit",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Bậc cử nhân gồm các khối đại cương, cơ sở/cốt lõi, bổ trợ (chọn 9/11 TC), danh mục theo hai mô đun Kỹ thuật vật liệu polyme/Kỹ thuật vật liệu compozit và phần thực tập/đồ án cử nhân. Nguồn không ghi đủ mức TC các khối hoặc quy tắc chọn toàn bộ mô đun để xác minh một tổng tốt nghiệp.",
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Những NLCB của CN Mác-Lênin I (Fundamental Principles of Marxism- Leninism I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Những NLCB của CN Mác-Lênin II (Fundamental Principles of Marxism- Leninism II)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tư tưởng Hồ Chí Minh (Ho-Chi-Minh's Thought)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Đường lối Cách mạng của Đảng CSVN (Revolution Policy of Vietnamese Communist Party)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Pháp luật đại cương (Introduction to the legal environment)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất (5TC) (Physical Education)",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": null,
+          "name": "Giáo dục thể chất A",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Giáo dục thể chất B",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 1",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh (165 tiết) (Military Education)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": null,
+          "name": "Đường lối quân sự của Đảng",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Công tác quốc phòng, an ninh",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "QS chung và chiến thuật, kỹ thuật bắn súng tiểu liên AK (CKC) (General Military Education)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh (English)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": null,
+          "name": "Tiếng Anh I (English I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tiếng Anh II (English II)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản (Mathematics and basic sciences)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Giải tích I (Calculus I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Giải tích II (Calculus I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Giải tích III (Calculus III)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Đại số (Algebra)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Xác suất thống kê (Statistical probaility)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Vật lý đại cương I (Physics I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Vật lý đại cương II (Physics II)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tin học đại cương (IT)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Vật lý đại cương III (Physics III)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Hóa học (Chemistry)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Kỹ thuật điện và điều khiển quá trình (Electrical Engineering and Process Control)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Đồ họa kỹ thuật I (Engineering Graphics I) Giáo dục chuyên nghiệp (Professional education)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành (Basic and Core of Engineering)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Cơ học kỹ thuật (Engineering mechanics)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Sinh thái học vật liệu polyme (Environment aspect of Polymer Materials)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Nhập môn công nghệ polyme và compozit (Introduction to polymer and composite technology)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Quá trình và Thiết bị công nghệ hóa học II (Các quá trình nhiệt) (Chemical Engineering II: Heat Transfer)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Quá trình và thiết bị công nghệ hóa học III (Các quá trình chuyển khối) (Chemical Engineering III: Mass Transfer)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Đồ án hoá công sản xuất vật liệu polyme (Polymer materials project)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "An toàn lao động trong sản xuất vật liệu polyme và compozit (Safety in polymer and composite materials production)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Hóa hữu cơ (Organic chemistry)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Thí nghiệm Hóa hữu cơ (Organic chemistry Lab)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Hóa lý I (Physical chemistry I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Thí nghiệm Hóa lý I (Physical chemistry Lab I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Hóa lý II (Physical chemistry II)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Hoá học polyme (Fundermentals of polymer chemistry)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Thí nghiệm Hoá học polyme (Polymer chemistry experiments)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Hoá lý polyme (Polymer physic)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tuần hoàn tài nguyên không tái tạo (Non renewable resource circulation)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Hoá học chất tạo màng và sơn (Chemistry of binder and paint)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Thí nghiệm chất tạo màng và sơn (Experiment on chemistry of binder and paint)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Công nghệ sản xuất chất dẻo (Plastic manufacture technology)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Công nghệ keo dán (Adhesives technology)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Thí nghiệm keo dán (Adhesives experiments)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Công nghệ vật liệu cao su (Rubber technology)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Thí nghiệm vật liệu cao su (Rubber experiments)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Cấu trúc và tính chất polyme (Structure and properties of polymer)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ (chọn 9/11 TC) (Soft skills)",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Technical Writing and Presentation",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Quản trị học đại cương (Introduction to management)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Thiết kế mỹ thuật công nghiệp (Industrial design)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tâm lý học ứng dụng (Applied psychology)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật (Technology and technical design thinking) Tự chọn theo định hướng cử nhân (Bachelor Elective Module)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Kỹ thuật vật liệu polyme (Modun 1: Polymer material engineering)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Phương pháp phân tích tính chất polyme (Analytical methods of polymer)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Phương pháp luận trong nghiên cứu khoa học (Methodology in scientific research)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Polyme thân thiện môi trường (Environmentally friendly polymer)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Công nghệ hoá học polyme blend (Polymer blend)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Thực hành chế tạo vật liệu polyme (Polymer materials production practicum)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Phân tích đặc trưng polyme (Polymer characterization)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Đồ án chuyên ngành polyme I (Specialized polymer project I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Công nghệ vật liệu polyme compozit (Polymer composite technology)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Thí nghiệm vật liệu polyme compozit (Polymer composite practicing)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Kỹ thuật vật liệu compozit (Modun 2: Composite material engineering)",
+      "kind": "module",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Công nghệ vật liệu polyme compozit (Polymer composite technology)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Thí nghiệm vật liệu polyme compozit (Polymer composite practicing)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Đồ án chuyên ngành vật liệu compozit I (Specialized composite materials project I)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Phương pháp phân tích tính chất polyme (Analytical methods of polymer)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Phương pháp luận trong nghiên cứu khoa học (Methodology in scientific research)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Công nghệ hoá học polyme blend (Polymer blend)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Kiểm soát chất lượng sản phẩm polyme (Product quality control)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Thực hành chế tạo vật liệu compozit (Polymer composite materials production practicum)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Vật liệu biocompozit (Biopolymer composite materials)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân  (Engineering Practicum and Bachelor Thesis)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": null,
+          "name": "Thực tập kỹ thuật (Engineering practicum)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Đồ án tốt nghiệp cử nhân (Batchelor thesis in polymer engineering)",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "PDF chính thức chỉ có cột STT và Tên học phần; không công bố mã, TC từng học phần hay học kỳ. Vì vậy code, credits và suggested_semester=null cho mọi học phần; không gán mã từ ngành CH1 hoặc MS1.",
+    "Tách tại BẬC KỸ SƯ ở trang 4, chỉ lấy 76 dòng cử nhân. Giữ tên song ngữ như PDF, kể cả lỗi in Calculus I ở Giải tích II.",
+    "Nguồn không ghi năm phiên bản hoặc xác nhận riêng K68; curriculum_version và applies_to_cohorts=null. Không có tổng TC cử nhân công bố: total_credits=null.",
+    "Giáo dục thể chất ghi rõ 5 TC; bổ trợ ghi chọn 9/11 TC. Các mức khối còn lại không ghi: required_credits=null. Chưa rõ ngoại ngữ có nằm trong tổng tốt nghiệp của bản này: counts_toward_degree=null.",
+    "compulsory=null khi nguồn không xác định trực tiếp; hai danh mục mô đun là phần tự chọn theo định hướng cử nhân nên compulsory=false cho các học phần trong đó.",
+    "Tệp do trang ITIMS dẫn tới: https://drive.google.com/uc?export=download&id=1xw0Yuah69a2qSOnn624DUIVnowpSEWhf; SHA-256 25a917b2f5412ec831ca65f77a38440cc87cc16c4cee125bef6630e74dfa1278.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

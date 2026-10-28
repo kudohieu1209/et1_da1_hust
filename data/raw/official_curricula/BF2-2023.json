@@ -9,7 +9,7 @@
   "total_credits": 132,
   "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=kt_thuc_pham_cu_nhan_ky_su_bac_7_2020.pdf",
   "source_title": "Chương trình đào tạo Kỹ thuật Thực phẩm",
-  "retrieved_at": "2026-10-27",
+  "retrieved_at": "2026-10-28",
   "graduation_rule": null,
   "groups": [
     {
@@ -479,6 +479,177 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
+        },
+        {
+          "code": "BF4515",
+          "name": "Bảo quản sau thu hoạch Postharvest preservation",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4506",
+          "name": "Quản lý chất thải trong công nghiệp thực phẩm Waste management in food industry",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4522",
+          "name": "Kỹ thuật phân tích cảm quan thực phẩm Sensory analysis of food",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4518",
+          "name": "Đồ án chuyên ngành công nghệ thực phẩm Project in food technology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Quản lý chất lượng Module 2: Quality Management",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "BF4513",
+          "name": "Kiểm soát vi sinh vật trong thực phẩm Microbiological control of food",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4522",
+          "name": "Kỹ thuật phân tích cảm quan thực phẩm Sensory analysis of food",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4523",
+          "name": "Phân tích thành phần lý hóa thực phẩm Physico-chemical analysis in food",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4524",
+          "name": "Hệ thống quản lý và đảm bảo chất lượng thực phẩm",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4525",
+          "name": "Thống kê ứng dụng trong công nghệ thực phẩm Statistical analysis in food technology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4526",
+          "name": "Marketing thực phẩm Food marketing",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4521",
+          "name": "Phụ gia thực phẩm Food additives",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4527",
+          "name": "Đồ án chuyên ngành quản lý chất lượng Project in quality nanagement",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 3: Quá trình và thiết bị Công nghệ thực phẩm Module 3: Food processing and equipment",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "BF4531",
+          "name": "Máy và thiết bị chế biến thực phẩm Machines and equipment in food processing",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4532",
+          "name": "Điều khiển tự động các quá trình công nghệ thực phẩm Automatic control for food processing",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3090",
+          "name": "Chi tiết máy Food machine elements",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ME3190",
+          "name": "Sức bền vật liệu Strength of material in food machine calculations",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4533",
+          "name": "Thí nghiệm chuyên ngành quá trình thiết bị Experiments in process and equipments in food technology",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4534",
+          "name": "Máy tự động trong sản xuất thực phẩm Automatic machines in food production",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4535",
+          "name": "Đồ án chuyên ngành quá trình thiết bị Project specialized in process and equipment",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BF4980",
+          "name": "Thực tập kỹ thuật Technical practice",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Đồ án tốt nghiệp Cử nhân (Bachelor thesis) Đồ án tốt nghiệp cử nhân (6TC) Student can choose Bachelor thesis (6 credits)",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "BF4991",
+          "name": "Đồ án tốt nghiệp cử nhân KTTP (Bachelor thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
         }
       ]
     }
@@ -495,6 +666,7 @@
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 124 TC; total_credits=132 TC; chênh lệch -8 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 130 TC; total_credits=132 TC; chênh lệch -2 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
   ]
 }

@@ -1,0 +1,680 @@
+{
+  "admission_code": "ED2",
+  "name": "Công nghệ giáo dục",
+  "curriculum_version": "2024",
+  "applies_to_cohorts": [
+    "K68"
+  ],
+  "total_credits": 132,
+  "source_url": "https://fed.hust.edu.vn/uploads/feed/news/2024_10/20241018_-tu-k68_khung-ctdt-cngd.xlsx",
+  "source_title": "Chương trình đào tạo ngành Công nghệ giáo dục (từ K68) — cập nhật 18/10/2024",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "LLCT/Pháp luật 13 + Tiếng Anh 6 + Toán/KHCB 32 + cơ sở/cốt lõi 48 + bổ trợ 9 + chọn một trong ba mô đun 16 + thực tập/ĐATN 8 = 132 TC. GDTC và GDQP không tính tổng TC tốt nghiệp. Ba dòng Tổng theo định hướng mô-đun 1/2/3 đều ghi 132.",
+  "groups": [
+    {
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "kind": "block",
+      "required_credits": 13,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "SSH1111",
+          "name": "Triết học Mác – Lênin",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1121",
+          "name": "Kinh tế chính trị Mác – Lênin",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1131",
+          "name": "Chủ nghĩa xã hội khoa học",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1141",
+          "name": "Lịch sử Đảng Cộng sản Việt Nam",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "SSH1151",
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "EM1170",
+          "name": "Pháp luật đại cương",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục thể chất",
+      "kind": "block",
+      "required_credits": 5,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "PE1014",
+          "name": "Lý luận thể dục thể thao (bắt buộc)",
+          "credits": 1.0,
+          "suggested_semester": 1,
+          "compulsory": true
+        },
+        {
+          "code": "PE1024",
+          "name": "Bơi lội (bắt buộc)",
+          "credits": 1.0,
+          "suggested_semester": 2,
+          "compulsory": true
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 1",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 2",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 3",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng - An ninh (165 tiết)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+          "credits": 0.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng, an ninh",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+          "credits": 0.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Tiếng Anh",
+      "kind": "block",
+      "required_credits": 6,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "FL1100",
+          "name": "Tiếng Anh I",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "FL1101",
+          "name": "Tiếng Anh II",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Khối kiến thức Toán và Khoa học cơ bản",
+      "kind": "block",
+      "required_credits": 32,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "MI1113",
+          "name": "Giải tích I",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI1133",
+          "name": "Giải tích III",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "MI1143",
+          "name": "Đại số",
+          "credits": 4.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "MI2020",
+          "name": "Xác suất thống kê",
+          "credits": 3.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1111",
+          "name": "Vật lý đại cương I",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "PH1121",
+          "name": "Vật lý đại cương II",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "IT1110",
+          "name": "Tin học đại cương",
+          "credits": 4.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ED1010",
+          "name": "Tâm lý học giáo dục",
+          "credits": 3.0,
+          "suggested_semester": 1,
+          "compulsory": null
+        },
+        {
+          "code": "ED3130",
+          "name": "Lí luận dạy học",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "AC2010",
+          "name": "Kỹ thuật lập trình",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "ED2020",
+          "name": "Mỹ thuật căn bản",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "block",
+      "required_credits": 48,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ED2000",
+          "name": "Nhập môn ngành CNGD",
+          "credits": 2.0,
+          "suggested_semester": 2,
+          "compulsory": null
+        },
+        {
+          "code": "ED2030",
+          "name": "Thiết kế dạy học",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ED3290",
+          "name": "Công nghệ dạy học",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ED3300",
+          "name": "Kĩ năng dạy học",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED3310",
+          "name": "Công cụ và Kĩ thuật đánh giá",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED3320",
+          "name": "Quản trị dự án",
+          "credits": 3.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED3330",
+          "name": "Giáo dục người lớn",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ED3340",
+          "name": "E-learning",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ED3350",
+          "name": "Tiếng Anh chuyên ngành Công nghệ giáo dục",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED3360",
+          "name": "Kỹ thuật nhiếp ảnh và Thiết kế thương hiệu",
+          "credits": 3.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ED3170",
+          "name": "Phương pháp luận NCKH",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "AC2020",
+          "name": "Đồ họa hình động 2D, 3D",
+          "credits": 3.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "AC2030",
+          "name": "Khai thác thông tin đa phương tiện",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "AC2040",
+          "name": "Cơ sở dữ liệu",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "AC2050",
+          "name": "Cấu trúc dữ liệu và giải thuật",
+          "credits": 2.0,
+          "suggested_semester": 3,
+          "compulsory": null
+        },
+        {
+          "code": "AC2060",
+          "name": "Nhập môn trí tuệ nhân tạo",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "AC3010",
+          "name": "Phân tích và thiết kế hệ thống",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "AC2070",
+          "name": "Thiết kế và lập trình web",
+          "credits": 3.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "AC2080",
+          "name": "Trò chơi số và tương tác I",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": null
+        },
+        {
+          "code": "ED3370",
+          "name": "Đồ án về Chiến lược dạy học trong kỉ nguyên số",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Kiến thức bổ trợ",
+      "kind": "block",
+      "required_credits": 9,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EM1010",
+          "name": "Quản trị học đại cương",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EM1180",
+          "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3280",
+          "name": "Tâm lý học ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3220",
+          "name": "Kỹ năng mềm",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ET3262",
+          "name": "Tư duy công nghệ và thiết kế kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TEX3123",
+          "name": "Thiết kế mỹ thuật công nghiệp",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ED4090",
+          "name": "Technical Writing and Presentation",
+          "credits": 3.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 1: Môi trường học tập giàu công nghệ",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "AC3020",
+          "name": "Trò chơi số và tương tác II",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ED4100",
+          "name": "Mô phỏng trong giáo dục",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3380",
+          "name": "Video số trong giáo dục",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED4110",
+          "name": "Các Công nghệ giáo dục tiên tiến",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3390",
+          "name": "Hệ thống quản lý học tập thế hệ tương lai",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED3400",
+          "name": "Môi trường học tập đa chiều",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED4120",
+          "name": "Giáo dục STEAM",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED4130",
+          "name": "Đồ án về Môi trường học tập giàu công nghệ",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 2: Multimedia trong giáo dục và truyền thông",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "AC3020",
+          "name": "Trò chơi số và tương tác II",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ED4100",
+          "name": "Mô phỏng trong giáo dục",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3380",
+          "name": "Video số trong giáo dục",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "AC4010",
+          "name": "Thực tại ảo",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "AC4020",
+          "name": "Thực tại tăng cường",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "AC3030",
+          "name": "Phát triển ứng dụng",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "AC3040",
+          "name": "Lập trình di động",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED4140",
+          "name": "Đồ án về VR/AR",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Mô đun 3: Công nghệ và Đào tạo",
+      "kind": "module",
+      "required_credits": 16,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "AC3020",
+          "name": "Trò chơi số và tương tác II",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": null
+        },
+        {
+          "code": "ED4100",
+          "name": "Mô phỏng trong giáo dục",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3380",
+          "name": "Video số trong giáo dục",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED4110",
+          "name": "Các Công nghệ giáo dục tiên tiến",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED3410",
+          "name": "Lãnh đạo tổ chức đào tạo",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED3420",
+          "name": "Phát triển chương trình đào tạo cho doanh nghiệp",
+          "credits": 2.0,
+          "suggested_semester": 6,
+          "compulsory": null
+        },
+        {
+          "code": "ED4150",
+          "name": "Đào tạo tại chỗ",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        },
+        {
+          "code": "ED4160",
+          "name": "Đồ án về Trải nghiệm thực địa",
+          "credits": 2.0,
+          "suggested_semester": 7,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "ED4170",
+          "name": "Thực tập kỹ thuật",
+          "credits": 2.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        },
+        {
+          "code": "ED4180",
+          "name": "Đồ án tốt nghiệp cử nhân",
+          "credits": 6.0,
+          "suggested_semester": 8,
+          "compulsory": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Trang công bố chính thức https://fed.hust.edu.vn/vi/news/tin-tuc/thong-bao-cap-nhat-dang-ky-hoc-tap-chuong-trinh-dao-tao-nganh-cong-nghe-giao-duc-302797.html ngày 20/10/2024 dẫn riêng tệp K68 này. Thông báo ký 18/10/2024, áp dụng thay đổi điều kiện học phần từ kỳ 20242; đây là bản cập nhật 2024 của CTĐT từ K68, không phải bản gốc ban hành 2023.",
+    "Đọc cột D mã HP, E tên, F khối lượng TC, G:N học kỳ 1–8. Không đưa mã điều kiện học phần tại O:Q vào danh mục môn học.",
+    "Giữ mã ED1010, AC2010, ED4090 và các mã khác đúng Excel; các chú thích Học phần mới --> tạo mã ở cột A không thay thế mã trong D.",
+    "Các lựa chọn GDTC có mã trống/nhãn Tự chọn trong danh mục: code=null. Khối GDQP không ghi mức TC khối: required_credits=null, từng học phần ghi 0 TC. Học kỳ bổ trợ/GDTC bỏ trống giữ null.",
+    "compulsory=null nếu nguồn không ghi rõ; mức bổ trợ 9 TC có danh mục 15 TC nhưng không có đánh dấu bắt buộc/tự chọn cho từng môn, không suy từ phép cộng.",
+    "Nguồn có ba mô đun dùng lại AC3020/ED4100/ED3380; giữ các dòng trong từng mô đun vì là các lộ trình thay thế.",
+    "SHA-256 Excel d8f788acc2c80625a07f946430511c4b7ad0e7a253d14e8402a1c3feb9776716.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
+  ]
+}

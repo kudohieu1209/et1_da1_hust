@@ -7,9 +7,9 @@
   ],
   "total_credits": 132,
   "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=2025_scls_ch1_kthh_khung_k70.pdf",
-  "source_title": "CTĐT Kỹ thuật Hóa học — b4e902453a7da462.pdf",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "source_title": "Chương trình đào tạo Kỹ thuật Hóa học",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "LLCT/Pháp luật 13 + Toán/KHCB 32 + cơ sở/cốt lõi 48 + bổ trợ 9 + chọn một trong sáu mô đun định hướng 22 + tốt nghiệp 8 = 132 TC. Tốt nghiệp dùng CH3900 2 + CH4900 6, hoặc CH4904 8 cho lộ trình tích hợp.",
   "groups": [
     {
       "name": "A1. Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
@@ -923,12 +923,75 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
+        },
+        {
+          "code": "CH5665",
+          "name": "Cơ sở thiết kế thiết bị hóa chất (Chemical Engineering Equipment Design)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH5658",
+          "name": "Máy gia công vật liệu rắn (Solid Materials Processing Machinery)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4371",
+          "name": "Cơ sở các quá trình phân tách tiên tiến (Basis of Advanced Separation Processes)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4376",
+          "name": "Kỹ thuật phản ứng (Reaction Engineering)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4377",
+          "name": "Cơ học kết cấu trong công nghiệp hóa chất (Structural Mechanics in Chemical Process Industries)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "B4. Tốt nghiệp cử nhân — hai lộ trình thay thế",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "CH3900",
+          "name": "Thực tập kỹ thuật (Engineering Practicum)",
+          "credits": 2,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4900",
+          "name": "Đồ án tốt nghiệp cử nhân (Bachelor Thesis)",
+          "credits": 6,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CH4904",
+          "name": "Đồ án nghiên cứu bậc cử nhân (Bachelor Research-based Thesis)",
+          "credits": 8,
+          "suggested_semester": null,
+          "compulsory": null
         }
       ]
     }
   ],
   "notes": [
-    "Bìa ghi CTĐT tích hợp 2025; trang giới thiệu chính thức gắn tệp với K70 trở về sau. Phần thông tin chung trong tài liệu vẫn dẫn quyết định 1093 năm 2022; giữ mâu thuẫn biên tập này.",
     "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
     "Trang 9, bảng 1, dòng 15: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 9, bảng 1, dòng 16: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
@@ -939,6 +1002,8 @@
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 124 TC; total_credits=132 TC; chênh lệch -8 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Bổ sung phần cuối mô đun 6 ở trang 15 và khối tốt nghiệp 8 TC ở trang 17–18. Các lộ trình liên kết 2+2 Monash/KU Leuven từ trang 15–17 có danh mục riêng, chưa biểu diễn đủ quan hệ thay thế bằng cấu trúc groups phẳng; không cộng các khối của lộ trình này vào sáu mô đun HUST. Đây là giới hạn phạm vi dữ liệu của file.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }

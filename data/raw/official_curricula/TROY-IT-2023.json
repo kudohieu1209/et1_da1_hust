@@ -1,0 +1,397 @@
+{
+  "admission_code": "TROY-IT",
+  "name": "Khoa học máy tính - ĐH Troy (Hoa Kỳ)",
+  "curriculum_version": null,
+  "applies_to_cohorts": null,
+  "total_credits": null,
+  "source_url": "https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/khoa-hoc-may-tinh-dh-troy-hoa-ky",
+  "source_title": "Subject list for CS — Tentative to change",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": null,
+  "groups": [
+    {
+      "name": "I. General studies",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "ENG 1101",
+          "name": "Composition and Modern English I",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ENG 1102",
+          "name": "Composition and Modern English II",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "SPH 2241",
+          "name": "Fundamentals of Speech",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ART 1133",
+          "name": "Visual Arts",
+          "credits": -2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MUS 1131",
+          "name": "Music Appreciation",
+          "credits": -2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ENG 2205",
+          "name": "World Literature before 1660",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ENG 2206",
+          "name": "World Literature after 1660",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BIO 1100",
+          "name": "Principles of Biology",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "BIO L110",
+          "name": "Principles of Biology Lab",
+          "credits": -1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MTH   2201",
+          "name": "Business Calculus",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PHY 2252",
+          "name": "General Physic I and Lab",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "PhY 2253",
+          "name": "General Physic 2 and Lab",
+          "credits": -1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HIS 1101",
+          "name": "Western Civilization I",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ECO 2251",
+          "name": "Principles of Macroeconomics",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ECO 2252",
+          "name": "Principles of Microeconomics",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "HIS 1102",
+          "name": "Western Civilization II",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IS 2241",
+          "name": "Computer Concepts and Applications",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "TROY 1101",
+          "name": "University Orientation",
+          "credits": -1.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "ENG 1100",
+          "name": "Preparatory English",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MTH 1112",
+          "name": "Pre- Calculus Algebra",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "II. Computer Science",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "MTH 1126",
+          "name": "Calculus 2",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MTH 2215",
+          "name": "Applied Discrete Mathematics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MTH 2210",
+          "name": "Applied Statistics",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 2250",
+          "name": "Computer Science I",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 2255",
+          "name": "Computer Science II",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3310",
+          "name": "Foundation of Computer Science",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3323",
+          "name": "Data Structures",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3329",
+          "name": "Analysis of Algorithms",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3332",
+          "name": "Software Engineering I",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3360",
+          "name": "Concepts of Objected Programming I",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3365",
+          "name": "Introduction to Computer Organization & Architectures",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3370",
+          "name": "Nature of Programming Languages",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3372",
+          "name": "Formal Languages and the Theoory of Computation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 4420",
+          "name": "Introduction to Data base",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 4445",
+          "name": "Data Communication and Networking",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 4448",
+          "name": "Operating Systems",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS4447(*)",
+          "name": "System Analysis and Design",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 4443",
+          "name": "Web based Software Development",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 3347",
+          "name": "Advanced Programming II",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 4449",
+          "name": "Applied Networking",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 4451(*)",
+          "name": "Computer Security",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "CS 4495",
+          "name": "Special Topics in Computer Science",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Electives (12 hours)",
+      "kind": "block",
+      "required_credits": 12,
+      "counts_toward_degree": null,
+      "courses": [
+        {
+          "code": "MTH 1112",
+          "name": "Pre-Calculus Algebra",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "BUS 3382",
+          "name": "Business Communications",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "IS 2241",
+          "name": "Computer Concepts and Applications",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "LAW 2221",
+          "name": "Legal Environment of Business",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MGT 3371",
+          "name": "Principles of Management",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MKT 3361",
+          "name": "Principles of Marketing",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "ECO 4451",
+          "name": "International Trade",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": "MKT 3362",
+          "name": "Advertising",
+          "credits": -3.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "CHƯA XÁC NHẬN CTĐT ĐÃ PHÊ DUYỆT/K68: tệp XLS trong khung-huong-trinh-troy.rar được trang tuyển sinh HUST dẫn, tiêu đề ghi Subject list for CS và Tentative to change. Không coi danh sách dự kiến này là chương trình chính thức áp dụng K68.",
+    "Cột Credits trong chính XLS lưu số âm (-2, -3, -4); giữ đúng giá trị âm của ô nguồn, KHÔNG tự đổi sang số dương. Các giá trị này cần trường xác nhận trước khi sử dụng tính tín chỉ tốt nghiệp.",
+    "Giữ nguyên kiểu chữ và khoảng trắng bên trong mã của nguồn, ví dụ PhY 2253, MTH   2201, CS4447(*), CS 4451(*); không chuẩn hóa mã HUST vì đây là mã Troy.",
+    "Tổng toàn khóa, năm và khóa áp dụng không ghi rõ: total_credits, curriculum_version, applies_to_cohorts=null; học kỳ không ghi nên suggested_semester=null. counts_toward_degree=null vì chưa xác nhận phạm vi tính tín chỉ của danh sách dự kiến.",
+    "Danh mục Electives (12 hours) được tách riêng required_credits=12 theo nhãn nguồn; chưa xác minh được quy đổi hours thành TC HUST, không dùng nó để cân bằng tổng. required_credits các khối còn lại=null.",
+    "graduation_rule=null vì không có công thức tốt nghiệp trong XLS. compulsory=null ngoài các hàng dưới tiêu đề Electives.",
+    "Tệp đính kèm do trang tuyển sinh HUST dẫn: https://drive.google.com/open?id=1F2QQ9NCmcdA2idgg7e-PeaXenLg3IJAe; thành viên archive ACS; SHA-256 XLS 55259ee3b5af3550685eefab69dfeb16a729c7efc2800ec960c00eee51e8180a.",
+    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+  ]
+}

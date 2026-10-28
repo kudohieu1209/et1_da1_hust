@@ -8,9 +8,9 @@
   ],
   "total_credits": 132,
   "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=kt_moi_truong_cu_nhan_thac_sy_kh.pdf",
-  "source_title": "CTĐT Kỹ thuật Môi trường — 174c2c7001180916.pdf",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": "Chọn một trong ba mô-đun định hướng 16 TC. Phần tốt nghiệp 8 TC: thực tập 2 + ĐATN 6, hoặc ĐANC 8 cho sinh viên học tích hợp; các khối còn lại tích lũy theo mức công bố.",
+  "source_title": "Chương trình đào tạo Kỹ thuật Môi trường",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Chọn một trong ba mô đun định hướng 16 TC. Tốt nghiệp: EV3398 (2 TC) + EV4398 (6 TC), hoặc EV4399 (8 TC) cho chương trình tích hợp; phần tốt nghiệp tính 8 TC một lần. Nguồn công bố tổng 132 TC.",
   "groups": [
     {
       "name": "Lý luận chính trị + Pháp luật đại cương (Laws and politics)",
@@ -95,6 +95,49 @@
           "credits": 1.0,
           "suggested_semester": null,
           "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Tự chọn thể dục 4",
+          "credits": null,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Giáo dục Quốc phòng – An ninh (165 tiết)",
+      "kind": "block",
+      "required_credits": null,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng an ninh",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
         }
       ]
     },
@@ -622,11 +665,38 @@
           "compulsory": null
         }
       ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và đồ án tốt nghiệp",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "EV3398",
+          "name": "Thực tập kỹ thuật (Technical Internship)",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4398",
+          "name": "Đồ án tốt nghiệp (Bachelor Graduation Thesis)",
+          "credits": 6.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "EV4399",
+          "name": "Đồ án nghiên cứu (Bachelor Research-based Thesis)",
+          "credits": 8.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
     }
   ],
   "notes": [
-    "Bìa ghi 2022, quyết định 1093/QĐ-ĐHBK-ĐT ngày 10/06/2022. Trang https://scls.hust.edu.vn/vi/dao-tao/ky-thuat-moi-truong/ dẫn bản áp dụng cho K69 trở về trước.",
-    "Phần cấu trúc chung ghi Tiếng Anh 6 TC nhưng bảng danh mục ghi Tiếng Anh 8 TC. required_credits giữ 8 TC tại tiêu đề bảng học phần; tổng 132 TC giữ theo nguồn.",
     "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
     "Trang 12, bảng 1, dòng 8: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 12, bảng 1, dòng 9: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
@@ -634,7 +704,11 @@
     "Giáo dục thể chất (Physical Education): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
+    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 126 TC; total_credits=132 TC; chênh lệch -6 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Phần cấu trúc ghi Tiếng Anh 6 TC nhưng bảng chi tiết ghi 8 TC; required_credits giữ 8 theo bảng. Chênh lệch 2 TC với tổng công bố được giữ nguyên.",
+    "Đã xem ảnh PDF trang 12: mã MIL1210/MIL1220/MIL1230/MIL1240 bị xuống dòng trong ô hẹp (MIL12 rồi 10/20/30/40); ghép hai dòng của cùng mã, không thêm khoảng trắng. Hàng Tự chọn thể dục 4 thiếu mã và khối lượng nên code/credits=null; STT 8 là hàng trống hoàn toàn, không dựng thành môn.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 134 TC; total_credits=132 TC; chênh lệch +2 TC. Giữ nguyên các mức nguồn, không tự cân bằng."
   ]
 }

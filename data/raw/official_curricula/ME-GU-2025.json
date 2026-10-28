@@ -5,60 +5,68 @@
   "applies_to_cohorts": [
     "K70"
   ],
-  "total_credits": null,
-  "source_url": "https://sme.hust.edu.vn/uploads/sme/dao-tao/2026_08/update-me-gu-programme-from-k70-onwards.pdf",
-  "source_title": "CTĐT Cơ khí - Chế tạo máy - ĐH Griffith (Úc) — f5bbbcae829e66ac.pdf",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "total_credits": 132,
+  "source_url": "https://sme.hust.edu.vn/vi/dao-tao/chuong-trinh-quoc-te/chuong-trinh-hop-tac-dao-tao-quoc-te-co-khi-ctm-voi-dh-griffith-uc-3.html",
+  "source_title": "The curriculum framework — Engineer of Mechanical Machine Manufacturing Training Program (ME-GU)",
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Political Theory/Law 13 + Math/Sciences 31 + Basic/Core 49 + Soft skills 9 + Compulsory Specialized 16 + Seletive Specialized 6 + tốt nghiệp 8 = 132 TC. Tốt nghiệp: ME4439Q 2 + ME4955Q 6 hoặc ME4994Q 8. GDTC, Civil Service Education và English không tính tổng.",
   "groups": [
     {
-      "name": null,
+      "name": "Political Theory and General Law",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 13.0,
       "counts_toward_degree": true,
       "courses": [
         {
           "code": "SSH1111Q",
           "name": "Philosophy of Marxism and Leninism",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 1,
           "compulsory": null
         },
         {
           "code": "SSH1121Q",
           "name": "Political Economics of Marxism and Leninism",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 2,
           "compulsory": null
         },
         {
           "code": "SSH1131Q",
           "name": "Scientific Socialism",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 3,
           "compulsory": null
         },
         {
           "code": "SSH1141Q",
           "name": "Ho Chi Minh Ideology",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 4,
           "compulsory": null
         },
         {
           "code": "SSH1151Q",
           "name": "History of Vietnamese Communist Party",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 4,
           "compulsory": null
         },
         {
           "code": "EM1170Q",
           "name": "Introduction to the Legal Environment",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 1,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "Physical Education",
+      "kind": "block",
+      "required_credits": 5.0,
+      "counts_toward_degree": false,
+      "courses": [
         {
           "code": "PE1014Q",
           "name": "Sports theory",
@@ -67,101 +75,152 @@
           "compulsory": null
         },
         {
+          "code": null,
+          "name": "Elective exercise 1",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Elective exercise 2",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Elective exercise 3",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Elective exercise 4",
+          "credits": 1.0,
+          "suggested_semester": null,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Civil Service Education",
+      "kind": "block",
+      "required_credits": 11.0,
+      "counts_toward_degree": false,
+      "courses": [
+        {
           "code": "MIL1210Q",
           "name": "Vietnam Communist Party’s Direction on the National Defense",
-          "credits": 0.0,
+          "credits": 3.0,
           "suggested_semester": null,
           "compulsory": null
         },
         {
           "code": "MIL1220Q",
           "name": "Introduction to the National Defense",
-          "credits": 0.0,
+          "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
         },
         {
           "code": "MIL1230Q",
           "name": "General Military Education",
-          "credits": 0.0,
+          "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
         },
         {
           "code": "MIL1240Q",
           "name": "Infantry Combat Techniques and Tactics",
-          "credits": 0.0,
+          "credits": 4.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "English",
+      "kind": "block",
+      "required_credits": 0.0,
+      "counts_toward_degree": false,
+      "courses": []
+    },
+    {
+      "name": "Math and Sciences",
+      "kind": "block",
+      "required_credits": 31.0,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "MI1110Q",
           "name": "Calculus I",
           "credits": 4.0,
-          "suggested_semester": null,
+          "suggested_semester": 1,
           "compulsory": null
         },
         {
           "code": "MI1120Q",
           "name": "Calculus II",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 2,
           "compulsory": null
         },
         {
           "code": "MI1130Q",
           "name": "Calculus III",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 3,
           "compulsory": null
         },
         {
           "code": "MI1140Q",
           "name": "Algebra",
           "credits": 4.0,
-          "suggested_semester": null,
+          "suggested_semester": 2,
           "compulsory": null
         },
         {
           "code": "ME2032Q",
           "name": "Fundamentals of Mechanical Manufacturing Technology",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 3,
           "compulsory": null
         },
         {
           "code": "PH1110Q",
           "name": "Physics I",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 1,
           "compulsory": null
         },
         {
           "code": "PH1120Q",
           "name": "Physics II",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 2,
           "compulsory": null
         },
         {
           "code": "IT1110Q",
           "name": "Introduction to Informatics",
           "credits": 4.0,
-          "suggested_semester": null,
+          "suggested_semester": 1,
           "compulsory": null
         },
         {
           "code": "ME2811Q",
           "name": "Computing and Programming with MATLAB",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 3,
           "compulsory": null
         },
         {
           "code": "ME2011Q",
           "name": "Engineering Graphics I",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 2,
           "compulsory": null
         }
       ]
@@ -169,161 +228,183 @@
     {
       "name": "Basic and Core of Engineering",
       "kind": "block",
-      "required_credits": 49,
+      "required_credits": 49.0,
       "counts_toward_degree": true,
       "courses": [
         {
           "code": "ME2201Q",
           "name": "Engineering Graphics II",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 3,
           "compulsory": null
         },
         {
           "code": "ME2000Q",
           "name": "Introduction to Mechanical Engineering",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 1,
           "compulsory": null
         },
         {
           "code": "EE2012Q",
           "name": "Fundamentals of Electrical Engineering",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 5,
           "compulsory": null
         },
         {
           "code": "ET2012Q",
           "name": "Electronic Engineering",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 4,
           "compulsory": null
         },
         {
           "code": "ME2112Q",
           "name": "Engineering Mechanics I",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 3,
           "compulsory": null
         },
         {
           "code": "ME3040Q",
           "name": "Strength of Materials 1",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 3,
           "compulsory": null
         },
         {
           "code": "ME3010Q",
           "name": "Engineering Mechanics II",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 4,
           "compulsory": null
         },
         {
           "code": "ME3050Q",
           "name": "Strength of Materials 2",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 4,
           "compulsory": null
         },
         {
           "code": "ME2203Q",
           "name": "Theory of Machine and Mechanism",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 5,
           "compulsory": null
         },
         {
           "code": "ME2824Q",
           "name": "Control Systems",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 7,
           "compulsory": null
         },
         {
           "code": "MSE3100Q",
           "name": "Materials Science",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 4,
           "compulsory": null
         },
         {
           "code": "ME3105Q",
           "name": "Design of Machine Elements",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 4,
           "compulsory": null
         },
         {
           "code": "ME3072Q",
           "name": "Measurement Techniques",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 5,
           "compulsory": null
         },
         {
           "code": "HE2010Q",
           "name": "Thermal Engineering",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 4,
           "compulsory": null
+        },
+        {
+          "code": null,
+          "name": "Mechanical Engineering Design",
+          "credits": 2.0,
+          "suggested_semester": 5,
+          "compulsory": false
+        },
+        {
+          "code": null,
+          "name": "Creative Engineering",
+          "credits": 2.0,
+          "suggested_semester": 4,
+          "compulsory": false
         },
         {
           "code": "ME3104Q",
           "name": "Workpiece Fabrication",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 6,
           "compulsory": null
         },
         {
           "code": "TE3600Q",
           "name": "Hydrodynamics",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 6,
           "compulsory": null
         },
         {
           "code": "ME3201Q",
           "name": "Fundamentals of Machine Tools",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 5,
           "compulsory": null
         },
         {
           "code": "ME4212Q",
           "name": "Principle of Metal Cutting",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 5,
           "compulsory": null
         },
         {
           "code": "ME3233Q",
           "name": "Mechanical Design Project",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 6,
           "compulsory": null
         },
         {
           "code": "ME3811Q",
           "name": "Workshop Practice on CNC Machine",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 7,
           "compulsory": null
         },
         {
           "code": "ME4314Q",
           "name": "CAD/CAM Technology",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 8,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "Soft Skill Courses",
+      "kind": "block",
+      "required_credits": 9.0,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "ME2021Q",
           "name": "Technical Writing and Presentation",
           "credits": 3.0,
-          "suggested_semester": null,
+          "suggested_semester": 2,
           "compulsory": null
         },
         {
@@ -374,144 +455,168 @@
           "credits": 2.0,
           "suggested_semester": null,
           "compulsory": null
-        },
+        }
+      ]
+    },
+    {
+      "name": "Compulsory Specialized Knowledge",
+      "kind": "block",
+      "required_credits": 16.0,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "ME3205Q",
           "name": "Mechanical Technology",
           "credits": 3.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 5,
+          "compulsory": true
         },
         {
           "code": "ME4222Q",
           "name": "Cutting Tool Design",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 7,
+          "compulsory": true
         },
         {
           "code": "ME4032Q",
           "name": "Jig and Fixture",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 7,
+          "compulsory": true
         },
         {
           "code": "ME4192Q",
           "name": "Machine-Tool Design",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 7,
+          "compulsory": true
         },
         {
           "code": "ME4282Q",
           "name": "CNC Machines and Industrial Robots",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 5,
+          "compulsory": true
         },
         {
           "code": "ME4187Q",
           "name": "CNC Technology",
           "credits": 3.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 6,
+          "compulsory": true
         },
         {
           "code": "ME4189Q",
           "name": "Specialized Design Project",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
+          "suggested_semester": 7,
+          "compulsory": true
+        }
+      ]
+    },
+    {
+      "name": "Seletive Specialized Courses",
+      "kind": "block",
+      "required_credits": 6.0,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "ME3235Q",
           "name": "AI in Mechanical Engineering",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 8,
+          "compulsory": false
         },
         {
           "code": "ME3236Q",
           "name": "Smart Manufacturing Systems",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 8,
+          "compulsory": false
         },
         {
           "code": "ME3234Q",
           "name": "Mechanical Manufacturing Planning and Management",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 6,
+          "compulsory": false
         },
         {
           "code": "ME3226Q",
           "name": "Engineering Ethics and Environmental Protection",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 8,
+          "compulsory": false
         },
         {
           "code": "ME4112Q",
           "name": "Automation Manufacturing",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 6,
+          "compulsory": false
         },
         {
           "code": "ME4372Q",
           "name": "Molding Technology",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 8,
+          "compulsory": false
         },
         {
           "code": "ME4972Q",
           "name": "Lubrication Technology",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
+          "suggested_semester": 6,
+          "compulsory": false
         },
         {
           "code": "ME4472Q",
           "name": "Methods of processing experimental data",
           "credits": 2.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
+          "suggested_semester": 6,
+          "compulsory": false
+        }
+      ]
+    },
+    {
+      "name": "Engineering Internship/Bachelor Graduation Project or Bachelor of Science Research Project",
+      "kind": "block",
+      "required_credits": 8.0,
+      "counts_toward_degree": true,
+      "courses": [
         {
           "code": "ME4439Q",
           "name": "Engineering Practicum",
           "credits": 2.0,
-          "suggested_semester": null,
+          "suggested_semester": 7,
           "compulsory": null
         },
         {
           "code": "ME4955Q",
           "name": "Bachelor Final Project",
           "credits": 6.0,
-          "suggested_semester": null,
+          "suggested_semester": 8,
           "compulsory": null
         },
         {
           "code": "ME4994Q",
           "name": "Bachelor of Science Research Project",
           "credits": 8.0,
-          "suggested_semester": null,
+          "suggested_semester": 8,
           "compulsory": null
         }
       ]
     }
   ],
   "notes": [
-    "Quyết định 10024/QĐ-ĐHBK ngày 05/09/2025; trang đầu ghi áp dụng từ K70. Bảng có cấu trúc khác; danh sách được giữ theo nguồn, chưa xác minh đầy đủ phân khối.",
-    "Chỉ trích phần cử nhân; không đưa các khối thạc sĩ/kỹ sư sau cử nhân vào tổng tốt nghiệp cử nhân. compulsory=null nếu nguồn không ghi rõ bắt buộc/tự chọn; không suy ra từ tổng danh mục.",
-    "None: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
-    "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
-    "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
-    "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Quyết định 10024/QĐ-ĐHBK ngày 05/09/2025; áp dụng từ K70. Nguồn gọi framework ENGINEER nhưng kết thúc bằng Bachelor Graduation Project và tổng 132 TC; giữ tên nguồn, chỉ lấy danh mục này, không tự bổ sung phần kỹ sư khác.",
+    "Đọc cột Credits (cột 5), không lấy ECTs (cột 6). Khối Math and Sciences ghi 31 TC; giữ 31, không đổi thành 32 của ngành khác.",
+    "Civil Service Education ghi (11) và từng môn (3)/(2)/(2)/(4) ở cột Credits, dù Workload bắt đầu bằng 0; giữ credits theo cột Credits, ghi mâu thuẫn và counts_toward_degree=false.",
+    "Tên và mã SSH1141Q/SSH1151Q được giữ đúng hàng nguồn dù tên chính trị tương ứng khác cách đánh mã thông thường; không tự hoán đổi.",
+    "English ghi 0 TC nhưng không có danh mục học phần, courses=[]. Bốn hàng Elective exercise không ghi mã nên code=null.",
+    "suggested_semester đọc cột Semester đơn; ô trống để null. compulsory=null nếu không có nhãn bắt buộc/tự chọn trong nguồn.",
+    "Tệp PDF chính thức được trang trường dẫn: https://sme.hust.edu.vn/uploads/sme/dao-tao/2026_08/update-me-gu-programme-from-k70-onwards.pdf; SHA-256 5436b9e10934111319727598c263973891ce67d1a6dc5ec6a37787fc27632192.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }

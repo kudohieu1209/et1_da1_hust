@@ -1,6 +1,6 @@
 # HUST Course Advisor & Degree Audit Engine
 
-> **Đồ án 1 (HUST - 2026.1):** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên Đại học Bách Khoa Hà Nội. Bản thử nghiệm hỗ trợ CTĐT ET1–2022 và ET1–2023 (đã đối chiếu thủ công) cùng 6 CTĐT nhập từ tài liệu công khai qua kiểm tra tự động.  
+> **Đồ án 1 (HUST - 2026.1):** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên Đại học Bách Khoa Hà Nội. Bản thử nghiệm hỗ trợ CTĐT ET1–2022 và ET1–2023 (đã đối chiếu thủ công) cùng 10 CTĐT nhập từ tài liệu công khai qua kiểm tra tự động.  
 > **Sinh viên thực hiện:** Mai Duy Hiếu  
 
 ---
@@ -54,7 +54,7 @@ graph TD
 
 - Đã chuẩn hóa và kiểm tra: **ET1, CTĐT 2022 (K67)** — 126 tín chỉ, 117 học phần, 20 nhóm và 6 mô-đun; **ET1, CTĐT 2023 (K68)** — 132 tín chỉ, 79 học phần, 13 nhóm và 5 mô-đun.
 - Backend chọn CTĐT theo mã ngành và khóa nhập học của hồ sơ (K## ↔ năm 1955+##). Dataset có trường `applies_to_cohorts` chỉ phục vụ đúng các khóa đó; dataset không có trường này phục vụ khóa trùng năm phiên bản (ET1: K67 → 2022, K68 → 2023). Không tự chuyển sang phiên bản khác; hai dataset cùng phục vụ một khóa bị từ chối khi nạp.
-- Nhập từ tài liệu CTĐT công khai, **kiểm tra tự động, chưa đối chiếu thủ công**: BF1–2022 (K68, K69), EE1–2023 (K68), EE2–2023 (K68), ET2–2023 (K68), EV2–2022 (K68, K69), FL2–2022 (K67, 131 TC). Mỗi dataset ghi nhãn này ở cảnh báo đầu tiên, và giao diện hiển thị lại khi rà soát tiến độ. Kết quả đầy đủ, gồm 74 tài liệu chưa đạt và lý do, ở `data/reports/official_curricula_import.md`.
+- Nhập từ tài liệu CTĐT công khai, **kiểm tra tự động, chưa đối chiếu thủ công**: BF1–2022 (K68, K69), BF-E19–2023 (K68, K69), BF-E19–2025 (K70), ED2–2024 (K68), EE1–2023 (K68), EE2–2023 (K68), ET2–2023 (K68), EV2–2022 (K68, K69), FL2–2022 (K67, 131 TC), TE-EP–2023 (K68, K69; 140 TC phần cử nhân). Mỗi dataset ghi nhãn này ở cảnh báo đầu tiên, và giao diện hiển thị lại khi rà soát tiến độ. Kết quả đầy đủ, gồm 81 tài liệu chưa đạt và lý do, ở `data/reports/official_curricula_import.md`.
 - Nguồn chuẩn hóa: `data/processed/curricula/et1_2022.json` và `data/processed/curricula/et1_2023.json`. HTML CTT gốc có dữ liệu cá nhân, không được đưa vào dataset sinh ra hoặc công khai.
 - Đã bổ sung snapshot danh mục **68 chương trình đại học** từ trang tuyển sinh chính thức: `data/raw/hust_undergraduate_programs.json`. Đây là danh mục lựa chọn/tìm kiếm; trường `supported_cohorts` cho biết các khóa đã có CTĐT được nạp, và màn hình đăng ký lấy danh sách ngành từ đây.
 - Đã rà liên kết CTĐT trên trang chi tiết của cả 68 chương trình: `data/raw/hust_program_curriculum_sources.json`. Manifest lưu nguồn chính thức và trạng thái truy cập (snapshot hiện tại: 46 nguồn HTTP 2xx); dữ liệu này chưa được coi là CTĐT chuẩn hóa cho đến khi kiểm tra cấu trúc và điều kiện học phần.
@@ -70,7 +70,7 @@ graph TD
 
 Cần **Python 3.12 trở lên**, **Node.js 22.12 trở lên** và MongoDB (local hoặc
 Atlas). Không cần MongoDB hay khóa Gemini để chạy kiểm thử; ứng dụng thật cần
-`MONGODB_URI`. Phạm vi thử nghiệm: ET1–2022/K67, ET1–2023/K68 và 6 CTĐT nhập tự động nêu trên.
+`MONGODB_URI`. Phạm vi thử nghiệm: ET1–2022/K67, ET1–2023/K68 và 10 CTĐT nhập tự động nêu trên.
 
 Windows PowerShell, tại thư mục gốc sau khi clone:
 
@@ -307,7 +307,7 @@ npm run dev
 
 **Giới hạn hiện tại**
 
-- Rule Engine có CTĐT đối chiếu thủ công của ET1 (2022 và 2023) và 6 CTĐT chỉ qua kiểm tra tự động; các ngành còn lại chưa có CTĐT đủ tin cậy. Phần hỏi đáp quy chế dùng được cho sinh viên mọi ngành.
+- Rule Engine có CTĐT đối chiếu thủ công của ET1 (2022 và 2023) và 10 CTĐT chỉ qua kiểm tra tự động; các ngành còn lại chưa có CTĐT đủ tin cậy. Phần hỏi đáp quy chế dùng được cho sinh viên mọi ngành.
 - Hệ thống chạy trên máy cục bộ, chưa triển khai công khai qua Internet.
 
 **Hướng phát triển**

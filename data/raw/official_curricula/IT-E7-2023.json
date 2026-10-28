@@ -3,11 +3,11 @@
   "name": "Công nghệ thông tin (Global ICT)",
   "curriculum_version": null,
   "applies_to_cohorts": null,
-  "total_credits": null,
+  "total_credits": 133,
   "source_url": "https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Global-ICT-program.pdf",
   "source_title": "Chương trình đào tạo Công nghệ thông tin (Global ICT)",
-  "retrieved_at": "2026-10-27",
-  "graduation_rule": null,
+  "retrieved_at": "2026-10-28",
+  "graduation_rule": "Tích lũy các khối chung; bổ trợ xã hội 9 TC gồm phần bắt buộc và tự chọn 6 TC; chọn một trong hai mô đun định hướng 15 TC; phần tốt nghiệp 8 TC. Chưa xác minh toàn bộ bản hợp nhất áp dụng K68.",
   "groups": [
     {
       "name": "Lý luận chính trị +Pháp luật đại cương",
@@ -62,7 +62,7 @@
     {
       "name": "Giáo dục thể chất - Physical Education",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 5,
       "counts_toward_degree": false,
       "courses": [
         {
@@ -75,34 +75,6 @@
         {
           "code": "PE1024",
           "name": "Bơi lội (Swimming)",
-          "credits": 0.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "MIL1210",
-          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
-          "credits": 0.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "MIL1220",
-          "name": "Công tác quốc phòng và an ninh",
-          "credits": 0.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "MIL1230",
-          "name": "Quân sự chung",
-          "credits": 0.0,
-          "suggested_semester": null,
-          "compulsory": null
-        },
-        {
-          "code": "MIL1240",
-          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
           "credits": 0.0,
           "suggested_semester": null,
           "compulsory": null
@@ -131,9 +103,45 @@
       ]
     },
     {
+      "name": "GDQP - Defense and security education",
+      "kind": "block",
+      "required_credits": 10,
+      "counts_toward_degree": false,
+      "courses": [
+        {
+          "code": "MIL1210",
+          "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1220",
+          "name": "Công tác quốc phòng và an ninh",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1230",
+          "name": "Quân sự chung",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "MIL1240",
+          "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+          "credits": 0.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
       "name": "Tiếng Anh HUST start - English",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 6,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -519,9 +527,9 @@
       ]
     },
     {
-      "name": "Bắt buộc (Mandatory)",
+      "name": "Kiến thức bổ trợ xã hội (bắt buộc và tự chọn 6 TC)",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 9,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -530,15 +538,7 @@
           "credits": 3.0,
           "suggested_semester": null,
           "compulsory": true
-        }
-      ]
-    },
-    {
-      "name": "Tự chọn (Elective) (Chọn 6 tín chỉ)",
-      "kind": "block",
-      "required_credits": 6,
-      "counts_toward_degree": true,
-      "courses": [
+        },
         {
           "code": "EM1010",
           "name": "Quản trị học đại cương (Introduction to Management)",
@@ -584,9 +584,9 @@
       ]
     },
     {
-      "name": "Module 1- AI and Big Data",
+      "name": "Module 1- Trí tuệ nhân tạo và Dữ liệu lớn Module 1- AI and Big Data",
       "kind": "module",
-      "required_credits": null,
+      "required_credits": 15,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -632,6 +632,78 @@
           "compulsory": null
         }
       ]
+    },
+    {
+      "name": "Module 2- IoT thông minh Module 2- AIoT",
+      "kind": "module",
+      "required_credits": 15,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4409E",
+          "name": "Web technologies and e- Services",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4785E",
+          "name": "Mobile Programming",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4542E",
+          "name": "Management of Software Development",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4210E",
+          "name": "Embedded Systems",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4735E",
+          "name": "IoT and Applications",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4651E",
+          "name": "IP Network Design and Implementation",
+          "credits": 3.0,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
+    },
+    {
+      "name": "Thực tập kỹ thuật và Đồ án tốt nghiệp Cử nhân",
+      "kind": "block",
+      "required_credits": 8,
+      "counts_toward_degree": true,
+      "courses": [
+        {
+          "code": "IT4948",
+          "name": "ITSS Internship",
+          "credits": 2.0,
+          "suggested_semester": null,
+          "compulsory": null
+        },
+        {
+          "code": "IT4125E",
+          "name": "Bachelor Thesis",
+          "credits": 6,
+          "suggested_semester": null,
+          "compulsory": null
+        }
+      ]
     }
   ],
   "notes": [
@@ -644,13 +716,15 @@
     "Trang 9, bảng 2, dòng 17: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Giáo dục thể chất - Physical Education: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "Tiếng Anh HUST start - English: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Bắt buộc (Mandatory): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Module 1- AI and Big Data: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "Chưa tìm được tổng TC cử nhân được ghi rõ cho phiên bản này; total_credits=null, không tự lấy tổng danh mục học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Gộp danh mục con bắt buộc/tự chọn vào khối bổ trợ 9 TC theo tiêu đề cha; phần tự chọn ghi 6 TC, không cộng thêm 6 TC bên ngoài 9 TC.",
+    "Trang 13 ghi Total credits - Tổng số tín chỉ 133; bổ sung hàng IT4125E Bachelor Thesis 6 TC nằm cuối bảng. Tổng này được nguồn công bố nhưng phạm vi tiếng Anh chưa rõ; không tự phân bổ để cân bằng.",
+    "Trang 8 cấu trúc chung ghi Tiếng Anh 06 TC thuộc đại cương 52 TC (33+13+6), nên required_credits=6, counts_toward_degree=true. Trang 9 ghi GDTC (5) và GDQP (10); tách thành hai khối điều kiện, không tính vào tổng 133 TC.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 133 TC; total_credits=133 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }

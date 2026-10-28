@@ -8,7 +8,7 @@
   "total_credits": 132,
   "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=2025_scls_bf_e19_cttt_ktsh_khung_k70.pdf",
   "source_title": "Chương trình đào tạo Kỹ thuật sinh học (Chương trình tiên tiến)",
-  "retrieved_at": "2026-10-27",
+  "retrieved_at": "2026-10-28",
   "graduation_rule": null,
   "groups": [
     {
@@ -141,9 +141,9 @@
       ]
     },
     {
-      "name": "Mathematics and basic sciences",
+      "name": "Khối kiến thức Toán và Khoa học cơ bản Mathematics and basic sciences",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 32,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -226,9 +226,9 @@
       ]
     },
     {
-      "name": "Basic and Core of Engineering",
+      "name": "Cơ sở và cốt lõi ngành Basic and Core of Engineering",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 52,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -395,9 +395,9 @@
       ]
     },
     {
-      "name": "Soft skills",
+      "name": "Kiến thức bổ trợ Soft skills",
       "kind": "block",
-      "required_credits": null,
+      "required_credits": 9,
       "counts_toward_degree": true,
       "courses": [
         {
@@ -546,13 +546,11 @@
     "Trang 2, bảng 1, dòng 16: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Trang 2, bảng 1, dòng 17: giữ mã/tên không được nguồn ghi đầy đủ là null nếu có; số TC đọc từ biểu thức thời lượng gốc.",
     "Giáo dục Quốc phòng - An ninh (165 tiết): chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Mathematics and basic sciences: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Basic and Core of Engineering: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
-    "Soft skills: chưa xác định số TC tối thiểu từ tiêu đề khối; required_credits=null.",
     "suggested_semester=null: bảng PDF/Excel có ô gộp hoặc không nêu học kỳ trực tiếp; chưa xác minh được toàn bộ vị trí cột sau trích xuất, không lấy số thứ tự hoặc tín chỉ làm học kỳ.",
     "Có thể có các lựa chọn không công bố mã học phần; giữ code=null hoặc mã mẫu đúng nguồn. Các ô gộp/đoạn văn không phân được chắc chắn không dùng để suy diễn học phần.",
     "graduation_rule=null: chưa xác minh đầy đủ công thức/quy tắc chọn các khối, mô-đun từ tài liệu; danh sách học phần không tự xác định điều kiện tốt nghiệp.",
     "code/name=null ở học phần có ô mã/tên trống hoặc ô gộp không tách chắc chắn; không bổ sung mã/tên từ CTĐT ngành khác.",
-    "Chưa thể đối chiếu đầy đủ tổng required_credits với total_credits do có mức TC khối hoặc phạm vi tính tốt nghiệp chưa rõ; không coi null là 0."
+    "Rà lại ranh giới khối theo trang/bảng/dòng của bản gốc ngày 2026-10-28; không dùng mã học phần 5xxx/6xxx để tự suy ra bậc học khi nguồn đã có ranh giới cử nhân rõ ràng.",
+    "Đối chiếu required_credits (chỉ tính một lựa chọn ở mỗi nhóm mô-đun): 132 TC; total_credits=132 TC; chênh lệch +0 TC. Tổng khớp."
   ]
 }
