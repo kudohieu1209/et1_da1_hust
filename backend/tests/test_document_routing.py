@@ -4,7 +4,14 @@ from unittest import mock
 
 from app.rag.document_loader import DOCUMENT_DISPLAY_NAMES, document_loader
 from app.rag.gemini_service import clean_display_source
-from app.rag.vector_store import VectorStoreManager, lexical_text, preferred_document_types, requested_academic_year
+from app.rag.vector_store import (
+    HEADING_INTENT_BOOST,
+    VectorStoreManager,
+    heading_intent_boost,
+    lexical_text,
+    preferred_document_types,
+    requested_academic_year,
+)
 
 
 def _manager(rows, semantic_order):
@@ -59,6 +66,32 @@ class LexicalTextTests(unittest.TestCase):
     def test_name_already_in_chunk_is_not_repeated(self):
         row = {"text": "Hội đồng xét Học bổng Trần Đại Nghĩa theo quy định.", "metadata": {"source": self.SOURCE}}
         self.assertEqual(lexical_text(row).splitlines()[0], "")
+
+
+class HeadingIntentTests(unittest.TestCase):
+    def test_level_question_prefers_level_heading(self):
+        metadata = {"article": "Điều 8. Mức Học bổng"}
+        self.assertEqual(
+            heading_intent_boost("Học bổng Trần Đại Nghĩa có những mức nào?", metadata),
+            HEADING_INTENT_BOOST,
+        )
+
+    def test_unrelated_heading_is_not_boosted(self):
+        metadata = {"article": "Điều 13. Hội đồng xét học bổng"}
+        self.assertEqual(
+            heading_intent_boost("Học bổng Trần Đại Nghĩa có những mức nào?", metadata),
+            1.0,
+        )
+
+    def test_conditions_and_application_headings_are_supported(self):
+        self.assertEqual(
+            heading_intent_boost("Điều kiện nhận học bổng là gì?", {"section": "Tiêu chuẩn xét cấp"}),
+            HEADING_INTENT_BOOST,
+        )
+        self.assertEqual(
+            heading_intent_boost("Hồ sơ đăng ký gồm gì?", {"article": "Điều 9. Hồ sơ đăng ký"}),
+            HEADING_INTENT_BOOST,
+        )
 
 
 class TuitionYearRankingTests(unittest.TestCase):

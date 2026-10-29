@@ -8,6 +8,7 @@ tests.test_x``), trước khi ``app.core.config`` được import:
 - Không bao giờ ghi vào MongoDB Atlas thật; phía Mongo dùng mongomock.
 """
 import os
+import warnings
 from unittest import mock
 from pathlib import Path
 from uuid import uuid4
@@ -21,6 +22,12 @@ os.environ["MONGODB_URI"] = ""
 os.environ["GEMINI_API_KEY"] = ""
 os.environ["GOOGLE_API_KEY"] = ""
 os.environ["OPENAI_API_KEY"] = ""
+warnings.filterwarnings(
+    "ignore",
+    message=r"datetime\.datetime\.utcnow\(\) is deprecated.*",
+    category=DeprecationWarning,
+    module=r"mongomock\.helpers",
+)
 # Every application repository uses the same isolated MongoDB fixture.
 from testing_support import isolated_database
 TEST_DATABASE = isolated_database(seed=True)

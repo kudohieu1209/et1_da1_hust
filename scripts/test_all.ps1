@@ -26,6 +26,7 @@ try {
     Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$repoDirectory/eval/tests",'-v')
     Invoke-Checked $pythonExecutable @("$repoDirectory/eval/run_eval.py",'--label','latest','--check')
     Invoke-Checked $pythonExecutable @("$repoDirectory/eval/run_eval.py",'--golden',"$repoDirectory/eval/validation_questions.jsonl",'--label','validation_latest')
+    Invoke-Checked 'npm.cmd' @('--prefix',$frontendDirectory,'test')
     Invoke-Checked 'npm.cmd' @('--prefix',$frontendDirectory,'run','lint')
     Invoke-Checked 'npm.cmd' @('--prefix',$frontendDirectory,'run','build')
 } finally {

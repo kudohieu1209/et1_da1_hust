@@ -28,5 +28,6 @@ PYTHONPATH="$BACKEND_DIR" "$PYTHON_BIN" -m unittest discover -s "$REPO_DIR/data/
 "$PYTHON_BIN" "$REPO_DIR/eval/run_eval.py" --label latest --check
 # Tập diễn đạt bổ sung được báo cáo riêng, không thay bộ 100 câu gốc.
 "$PYTHON_BIN" "$REPO_DIR/eval/run_eval.py" --golden "$REPO_DIR/eval/validation_questions.jsonl" --label validation_latest
+npm --prefix "$FRONTEND_DIR" test
 npm --prefix "$FRONTEND_DIR" run lint
 npm --prefix "$FRONTEND_DIR" run build
