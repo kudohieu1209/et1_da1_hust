@@ -21,6 +21,16 @@ import TranscriptImportModal from './components/TranscriptImportModal';
 import AuthScreen from './components/auth/AuthScreen';
 import { API_BASE_URL, UNAUTHORIZED_EVENT, apiFetch, apiUrl } from './api';
 
+function updateConversationUrl(conversationId) {
+  const url = new URL(window.location.href);
+  if (conversationId) {
+    url.searchParams.set('chat', conversationId);
+  } else {
+    url.searchParams.delete('chat');
+  }
+  window.history.replaceState({}, '', url);
+}
+
 export default function App() {
   // undefined: đang kiểm tra phiên; null: chưa đăng nhập; object: tài khoản từ /api/auth/me.
   const [account, setAccount] = useState(undefined);
@@ -45,6 +55,9 @@ export default function App() {
   const [isChatPinned, setIsChatPinned] = useState(false);
   const [toastMessage, setToastMessage] = useState(null);
   const chatMenuRef = useRef(null);
+  const pendingLinkedConversationId = useRef(
+    new URLSearchParams(window.location.search).get('chat')
+  );
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -176,7 +189,18 @@ export default function App() {
       const res = await apiFetch(apiUrl('/api/conversations'));
       if (res.ok) {
         const data = await res.json();
-        setConversations(data.conversations || []);
+        const nextConversations = data.conversations || [];
+        setConversations(nextConversations);
+
+        const linkedId = pendingLinkedConversationId.current;
+        const linkedConversation = nextConversations.find(item => item.id === linkedId);
+        if (linkedConversation) {
+          setActiveTab('chat');
+          setActiveConversationId(linkedId);
+          setIsChatPinned(Boolean(linkedConversation.is_pinned));
+          setChatKey(prev => prev + 1);
+        }
+        pendingLinkedConversationId.current = null;
       }
     } catch (err) {
       console.error('Lỗi tải lịch sử hội thoại:', err);
@@ -195,6 +219,7 @@ export default function App() {
   }, [studentProfile?.info?.student_id]);
 
   const handleNewChat = () => {
+    updateConversationUrl(null);
     setActiveTab('chat');
     setActiveConversationId(null);
     setIsChatPinned(false);
@@ -203,6 +228,7 @@ export default function App() {
 
   const handleSelectConversation = (conversationId) => {
     const conversation = conversations.find(item => item.id === conversationId);
+    updateConversationUrl(conversationId);
     setActiveTab('chat');
     setActiveConversationId(conversationId);
     setIsChatPinned(Boolean(conversation?.is_pinned));
@@ -210,39 +236,72 @@ export default function App() {
   };
 
   const handleConversationCreated = (conversationId, studentId) => {
+    updateConversationUrl(conversationId);
     setActiveConversationId(conversationId);
     refreshConversations(studentId);
   };
 
-  const handleConversationAction = async (action) => {
-    if (!activeConversationId) {
+  const handleConversationAction = async (action, targetId = activeConversationId, payload = {}) => {
+    const cid = targetId || activeConversationId;
+    if (!cid) {
       showToast(language === 'vi' ? 'Chưa có đoạn chat để thao tác' : 'No active chat');
       return;
     }
+    const targetConv = conversations.find(c => c.id === cid);
     const studentId = studentProfile?.info?.student_id;
     const headers = { 'Content-Type': 'application/json' };
     try {
-      if (action === 'pin') {
-        const nextPinned = !isChatPinned;
-        const res = await apiFetch(apiUrl(`/api/conversations/${activeConversationId}`), {
+      if (action === 'rename') {
+        const newTitle = (payload?.title || '').trim();
+        if (!newTitle) return;
+        const res = await apiFetch(apiUrl(`/api/conversations/${cid}`), {
+          method: 'PATCH', headers, body: JSON.stringify({ title: newTitle })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        showToast(language === 'vi' ? 'Đã đổi tên đoạn chat' : 'Chat renamed');
+      } else if (action === 'pin') {
+        const nextPinned = payload?.is_pinned !== undefined
+          ? Boolean(payload.is_pinned)
+          : (cid === activeConversationId ? !isChatPinned : !targetConv?.is_pinned);
+        const res = await apiFetch(apiUrl(`/api/conversations/${cid}`), {
           method: 'PATCH', headers, body: JSON.stringify({ is_pinned: nextPinned })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        setIsChatPinned(nextPinned);
+        if (cid === activeConversationId) {
+          setIsChatPinned(nextPinned);
+        }
         showToast(nextPinned ? (language === 'vi' ? 'Đã ghim đoạn chat' : 'Chat pinned') : (language === 'vi' ? 'Đã bỏ ghim đoạn chat' : 'Chat unpinned'));
+      } else if (action === 'share') {
+        const shareUrl = new URL(window.location.href);
+        shareUrl.searchParams.set('chat', cid);
+        try {
+          if (navigator?.clipboard?.writeText) {
+            await navigator.clipboard.writeText(shareUrl.toString());
+          } else {
+            window.prompt(language === 'vi' ? 'Sao chép liên kết đoạn chat:' : 'Copy chat link:', shareUrl.toString());
+          }
+          showToast(language === 'vi' ? 'Đã sao chép liên kết đoạn chat' : 'Chat link copied to clipboard');
+        } catch {
+          window.prompt(language === 'vi' ? 'Sao chép liên kết đoạn chat:' : 'Copy chat link:', shareUrl.toString());
+        }
+        return;
       } else if (action === 'archive') {
-        const res = await apiFetch(apiUrl(`/api/conversations/${activeConversationId}`), {
+        const res = await apiFetch(apiUrl(`/api/conversations/${cid}`), {
           method: 'PATCH', headers, body: JSON.stringify({ is_archived: true })
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        handleNewChat();
+        if (cid === activeConversationId) {
+          handleNewChat();
+        }
         showToast(language === 'vi' ? 'Đã lưu trữ đoạn chat' : 'Chat archived');
       } else if (action === 'delete') {
-        const res = await apiFetch(apiUrl(`/api/conversations/${activeConversationId}`), {
+        const res = await apiFetch(apiUrl(`/api/conversations/${cid}`), {
           method: 'DELETE', headers
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        handleNewChat();
+        if (cid === activeConversationId) {
+          handleNewChat();
+        }
         showToast(language === 'vi' ? 'Đã xóa đoạn chat' : 'Chat deleted');
       }
       refreshConversations(studentId);
@@ -296,6 +355,7 @@ export default function App() {
         activeConversationId={activeConversationId}
         onNewChat={handleNewChat}
         onSelectConversation={handleSelectConversation}
+        onConversationAction={handleConversationAction}
         onOpenSettings={handleOpenSettings}
         onLogout={handleLogout}
         onOpenImport={handleOpenImport}
