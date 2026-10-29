@@ -163,6 +163,15 @@ def check_thresholds(summary: Dict[str, Any], thresholds: Dict[str, float]) -> L
     return regressions
 
 
+def repository_is_dirty(root: Path) -> bool:
+    status = subprocess.check_output(
+        ["git", "status", "--porcelain", "--", ".", ":(exclude)eval/reports/*"],
+        cwd=root,
+        text=True,
+    )
+    return bool(status.strip())
+
+
 def evaluation_metadata(golden: Path, use_llm: bool) -> Dict[str, Any]:
     root = EVAL_DIR.parent
     digest = hashlib.sha256()
@@ -176,7 +185,7 @@ def evaluation_metadata(golden: Path, use_llm: bool) -> Dict[str, Any]:
             digest.update(path.read_bytes())
     try:
         commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
-        dirty = bool(subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).strip())
+        dirty = repository_is_dirty(root)
     except (OSError, subprocess.CalledProcessError):
         commit, dirty = "unavailable", None
     return {"mode": "live_llm" if use_llm else "extractive_no_llm", "commit": commit, "dirty": dirty,
