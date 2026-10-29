@@ -20,15 +20,10 @@ import SettingsModal from './components/SettingsModal';
 import TranscriptImportModal from './components/TranscriptImportModal';
 import AuthScreen from './components/auth/AuthScreen';
 import { API_BASE_URL, UNAUTHORIZED_EVENT, apiFetch, apiUrl } from './api';
+import { conversationIdFromUrl, urlWithConversationId } from './conversationUrl';
 
 function updateConversationUrl(conversationId) {
-  const url = new URL(window.location.href);
-  if (conversationId) {
-    url.searchParams.set('chat', conversationId);
-  } else {
-    url.searchParams.delete('chat');
-  }
-  window.history.replaceState({}, '', url);
+  window.history.replaceState({}, '', urlWithConversationId(window.location.href, conversationId));
 }
 
 export default function App() {
@@ -56,7 +51,7 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState(null);
   const chatMenuRef = useRef(null);
   const pendingLinkedConversationId = useRef(
-    new URLSearchParams(window.location.search).get('chat')
+    conversationIdFromUrl(window.location.href)
   );
 
   const showToast = (msg) => {
@@ -272,17 +267,16 @@ export default function App() {
         }
         showToast(nextPinned ? (language === 'vi' ? 'Đã ghim đoạn chat' : 'Chat pinned') : (language === 'vi' ? 'Đã bỏ ghim đoạn chat' : 'Chat unpinned'));
       } else if (action === 'share') {
-        const shareUrl = new URL(window.location.href);
-        shareUrl.searchParams.set('chat', cid);
+        const shareUrl = urlWithConversationId(window.location.href, cid);
         try {
           if (navigator?.clipboard?.writeText) {
-            await navigator.clipboard.writeText(shareUrl.toString());
+            await navigator.clipboard.writeText(shareUrl);
           } else {
-            window.prompt(language === 'vi' ? 'Sao chép liên kết đoạn chat:' : 'Copy chat link:', shareUrl.toString());
+            window.prompt(language === 'vi' ? 'Sao chép liên kết đoạn chat:' : 'Copy chat link:', shareUrl);
           }
           showToast(language === 'vi' ? 'Đã sao chép liên kết đoạn chat' : 'Chat link copied to clipboard');
         } catch {
-          window.prompt(language === 'vi' ? 'Sao chép liên kết đoạn chat:' : 'Copy chat link:', shareUrl.toString());
+          window.prompt(language === 'vi' ? 'Sao chép liên kết đoạn chat:' : 'Copy chat link:', shareUrl);
         }
         return;
       } else if (action === 'archive') {

@@ -14,6 +14,7 @@ from app.rag.lexical_search import bm25_scores, tokenize
 # Strong enough that a topical document (e.g. a fee table) outranks another
 # document type that merely repeats the programme names in the question.
 PREFERRED_TYPE_BOOST = 1.5
+HEADING_INTENT_BOOST = 1.6
 
 # Topic keywords -> document types whose chunks get a ranking boost. Several
 # topics may match one question (e.g. scholarship conditions on conduct score).
@@ -75,6 +76,25 @@ def requested_academic_year(query: str, today: Optional[date] = None) -> str:
     today = today or date.today()
     start = today.year if today.month >= 8 else today.year - 1
     return f"{start}-{start + 1}"
+
+
+def heading_intent_boost(query: str, metadata: Dict[str, Any]) -> float:
+    """Prefer clauses whose structural heading answers the question form."""
+    heading = " ".join(
+        str(metadata.get(field, ""))
+        for field in ("article", "section", "clause", "title")
+    ).lower()
+    intents = (
+        (("mức", "bao nhiêu", "tỷ lệ", "phần trăm"), ("mức", "tỷ lệ")),
+        (("điều kiện", "tiêu chuẩn", "yêu cầu"), ("điều kiện", "tiêu chuẩn")),
+        (("đối tượng", "ai được"), ("đối tượng",)),
+        (("hồ sơ", "thủ tục"), ("hồ sơ", "thủ tục", "trình tự")),
+    )
+    lowered = query.lower()
+    for question_terms, heading_terms in intents:
+        if any(term in lowered for term in question_terms) and any(term in heading for term in heading_terms):
+            return HEADING_INTENT_BOOST
+    return 1.0
 
 
 class VectorStoreManager:
@@ -258,6 +278,7 @@ class VectorStoreManager:
                 score += 0.10 / semantic_ranks[identifier]
             if metadata.get("document_type") in preferred_types:
                 score *= PREFERRED_TYPE_BOOST
+            score *= heading_intent_boost(query, metadata)
             if metadata.get("document_type") == "tuition_decision" and academic_year in metadata.get("effective_period", ""):
                 # Fee decisions differ only by year; prefer the requested one.
                 score *= 1.15
