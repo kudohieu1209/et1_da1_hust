@@ -16,10 +16,10 @@ Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tu
 
 Hệ thống được đánh giá tự động trên 108 câu hỏi hồi quy và 20 câu hỏi diễn đạt khác (không dùng khi tinh chỉnh), chế độ không gọi LLM để kết quả lặp lại được:
 
-| Bộ câu hỏi | Phân loại ý định | Truy xuất đúng văn bản (Recall@4) | Câu trả lời chứa ý chính |
-|---|---:|---:|---:|
-| Hồi quy (108 câu) | 100% | 98,6% | 100% |
-| Diễn đạt khác (20 câu) | 100% | 100% | 100% |
+| Bộ câu hỏi | Phân loại ý định | Truy xuất đúng văn bản (Recall@4) | MRR@4 | Câu trả lời chứa ý chính |
+|---|---:|---:|---:|---:|
+| Hồi quy (108 câu) | 100% | 100% | 84,3% | 100% |
+| Diễn đạt khác (20 câu) | 100% | 100% | 80,6% | 100% |
 
 Chi tiết: [bộ hồi quy](eval/reports/final.md), [bộ diễn đạt khác](eval/reports/validation_final.md). Chạy toàn bộ kiểm thử: `./scripts/test_all.sh`.
 
