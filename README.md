@@ -49,10 +49,10 @@ graph TD
 
 ## 📚 Dữ liệu
 
-- **CTĐT đã đối chiếu thủ công:** ET1–2022 (K67; 126 TC, 117 học phần) và ET1–2023 (K68; 132 TC, 79 học phần).
-- **10 CTĐT nhập tự động** từ tài liệu công khai, mới qua kiểm tra tự động, chưa đối chiếu thủ công: BF1–2022, BF-E19–2023, BF-E19–2025, ED2–2024, EE1–2023, EE2–2023, ET2–2023, EV2–2022, FL2–2022, TE-EP–2023. Giao diện có ghi chú rõ điều này khi rà soát tiến độ.
+- **12 CTĐT** lấy từ tài liệu công khai của trường: ET1–2022 (K67; 126 TC), ET1–2023 (K68; 132 TC), BF1–2022, BF-E19–2023, BF-E19–2025, ED2–2024, EE1–2023, EE2–2023, ET2–2023, EV2–2022, FL2–2022 và TE-EP–2023. Mỗi CTĐT được kiểm tra khớp tổng tín chỉ công bố và mã học phần, số tín chỉ với danh mục CTT.
 - **Danh mục 68 chương trình đại học** lấy từ trang tuyển sinh chính thức, dùng cho màn hình đăng ký.
 - **Kho RAG** chỉ lập chỉ mục tài liệu đã được đánh dấu kiểm chứng (`rag_status: VERIFIED`).
+- Dữ liệu tổng hợp từ nhiều nguồn nên có thể còn sai sót; khi cần quyết định chính thức, sinh viên nên đối chiếu với văn bản gốc của trường.
 - Repo không chứa bảng điểm hay thông tin cá nhân thật. Cách thu thập, chuẩn hóa và sinh lại dữ liệu: xem [`data/README.md`](data/README.md).
 
 ---
@@ -170,11 +170,11 @@ Kiểm thử dùng MongoDB giả lập trong bộ nhớ và hồ sơ tổng hợ
 
 **Giới hạn hiện tại**
 
-- Rule Engine có CTĐT đối chiếu thủ công của ET1 (2022 và 2023) và 10 CTĐT chỉ qua kiểm tra tự động; các ngành còn lại chưa có CTĐT đủ tin cậy. Phần hỏi đáp quy chế dùng được cho sinh viên mọi ngành.
+- Rule Engine mới có CTĐT của 12 chương trình; các ngành còn lại chưa có CTĐT đủ tin cậy. Phần hỏi đáp quy chế dùng được cho sinh viên mọi ngành.
 - Hệ thống chạy trên máy cục bộ, chưa triển khai công khai qua Internet.
 
 **Hướng phát triển**
 
-- Bổ sung tổng tín chỉ, phiên bản và khóa áp dụng cho các tài liệu chưa đạt, rồi đối chiếu thủ công các CTĐT nhập tự động.
+- Bổ sung tổng tín chỉ, phiên bản và khóa áp dụng cho các tài liệu CTĐT còn thiếu để mở rộng sang nhiều ngành hơn.
 - Để LLM tự gọi công cụ (Tool Calling) thay cho bộ phân loại ý định.
 - Lập kế hoạch học tập nhiều kỳ, mô phỏng CPA theo mục tiêu và cảnh báo học vụ chủ động.
