@@ -1,14 +1,14 @@
 # HUST Course Advisor & Degree Audit Engine
 
-> **Đồ án 1 (HUST - 2026.1):** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên Đại học Bách Khoa Hà Nội.
+> **Đồ án 1:** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên Đại học Bách Khoa Hà Nội.
 > **Sinh viên thực hiện:** Mai Duy Hiếu  
 
 ---
 
 ## 📌 Giới thiệu đề tài
 
-Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tuệ nhân tạo lai (**Hybrid AI Agent**) nhằm giải quyết bài toán tư vấn học tập, lựa chọn môn học và rà soát tiến độ tốt nghiệp cho sinh viên Bách Khoa:
-1. **RAG Pipeline (Retrieval-Augmented Generation):** Kết hợp mô hình Gemini LLM với cơ sở dữ liệu vector ChromaDB để giải đáp quy chế đào tạo, chuẩn đầu ra và đề cương môn học chính xác có kèm trích dẫn nguồn.
+Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tuệ nhân tạo lai nhằm giải quyết bài toán tư vấn học tập, lựa chọn môn học và rà soát tiến độ tốt nghiệp cho sinh viên Bách Khoa:
+1. **RAG Pipeline:** Kết hợp mô hình Gemini LLM với cơ sở dữ liệu vector ChromaDB để giải đáp quy chế đào tạo, chuẩn đầu ra và đề cương môn học chính xác có kèm trích dẫn nguồn.
 2. **Deterministic Rule Engine:** Sử dụng dữ liệu CTĐT và bộ quy tắc HUST để kiểm tra điều kiện học phần, rà soát tín chỉ (Degree Audit) theo từng hồ sơ sinh viên và hỗ trợ chọn môn.
 3. **Full-stack Interactive Dashboard:** Giao diện React tập trung vào chat tự nhiên, tiến độ học tập và gợi ý chọn môn theo các mô-đun của chương trình đào tạo đang được hỗ trợ.
 
@@ -41,7 +41,7 @@ graph TD
 
 ## ✨ Chức năng chính
 
-- **Tài khoản riêng cho từng sinh viên:** đăng ký và đăng nhập bằng MSSV + mật khẩu; phiên nằm trong cookie HttpOnly, mỗi người chỉ thấy hồ sơ, bảng điểm và hội thoại của mình.
+- **Tài khoản riêng cho từng sinh viên:** đăng ký và đăng nhập bằng MSSV + mật khẩu, mỗi người chỉ thấy hồ sơ, bảng điểm và hội thoại của mình.
 - **Nhập bảng điểm từ CTT:** dán bảng điểm vào hệ thống; học phần ngoài danh mục phải xác nhận số tín chỉ trước khi lưu. Có thể khai báo thêm mức cảnh báo học tập và trạng thái Ngoại ngữ/GDTC/GDQP.
 - **Rà soát tiến độ và điều kiện học phần:** tính theo đúng phiên bản CTĐT của khóa (ET1–2022: 126 TC, ET1–2023: 132 TC).
 - **Hỏi đáp quy chế có trích dẫn nguồn** từ 14 văn bản chính thức: Quy chế đào tạo (QĐ 5445/QĐ-ĐHBK), Sổ tay sinh viên 2026, học phí 2025–2026 và 2026–2027, kế hoạch năm học, quy chế công tác sinh viên, đánh giá rèn luyện, chuẩn ngoại ngữ K70/K71, miễn giảm học phí, học bổng Trần Đại Nghĩa và học bổng trao đổi.
