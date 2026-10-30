@@ -170,6 +170,31 @@ Bản tóm tắt dễ đọc cho quá trình duyệt nằm ở
 Các tài liệu demo cũ có marker `RAG_STATUS: UNVERIFIED` được giữ lại để
 đối chiếu, nhưng `DocumentLoader` sẽ không đưa chúng vào kho vector.
 
+## Nhập CTĐT công khai đã trích xuất
+
+Mỗi ngành một tệp JSON. Chỉ tài liệu qua mọi kiểm tra (mã có trong danh mục
+tuyển sinh đại học, tổng ngưỡng các khối bằng tổng công bố, số TC khớp danh mục
+CTT, không trùng khóa) mới được ghi vào `processed/curricula/` và
+`processed/curriculum_approvals.json`. Kết quả, gồm tài liệu chưa đạt và lý do,
+nằm ở `reports/official_curricula_import.md`.
+
+```bash
+backend/.venv/bin/python data/scripts/import_official_curricula.py \
+  --input-dir <thư-mục-JSON-trích-xuất>
+```
+
+## Tài liệu RAG đã kiểm chứng
+
+Sinh lại các tệp `documents/*_verified.md` từ PDF gốc trong `raw/`:
+
+```bash
+backend/.venv/bin/python data/scripts/build_verified_rag_documents.py
+```
+
+Chỉ tài liệu có metadata `rag_status: VERIFIED` mới được lập chỉ mục; PDF cần
+sidecar `<tên-file>.pdf.metadata.json` có trạng thái tương ứng. Kho vector được
+đồng bộ lại khi backend khởi động để loại nguồn đã thu hồi phê duyệt.
+
 
 Ghi chú snapshot công khai: `raw/program_sources/TROY-IT.html` là trang Google
 Drive đã lưu; các client API key nhúng từ trang gốc đã được ẩn. File này là bản
