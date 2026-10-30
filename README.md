@@ -157,23 +157,10 @@ Kiểm thử dùng MongoDB giả lập trong bộ nhớ và hồ sơ tổng hợ
 | Rà soát tiến độ tốt nghiệp | Mở tab Tiến độ | Tính theo đúng phiên bản CTĐT của khóa (ET1–2022: 126 TC, ET1–2023: 132 TC); Ngoại ngữ, GDTC, GDQP theo dõi riêng. |
 | Hội thoại nhiều lượt | “Môn đó cần gì?”, “Nếu trượt thì sao?” | Hiểu ngữ cảnh từ các tin nhắn trước; lịch sử được lưu theo tài khoản và có thể ghim, lưu trữ, xóa. |
 
-## Kết quả đạt được và hướng phát triển
-
-**Đã thực hiện**
+## Kết quả đạt được
 
 - Đăng nhập bằng MSSV, mỗi sinh viên chỉ xem được hồ sơ và hội thoại của mình.
 - Nhập bảng điểm, có bước xác nhận khi dữ liệu thiếu.
 - Kiểm tra điều kiện học phần và rà soát tiến độ theo phiên bản CTĐT.
 - Hỏi đáp quy chế, học phí, học bổng, rèn luyện, ngoại ngữ có trích dẫn nguồn từ 14 văn bản chính thức của trường.
 - Lưu lịch sử hội thoại và ghi nhớ học tập do sinh viên tự quản lý.
-
-**Giới hạn hiện tại**
-
-- Rule Engine mới có CTĐT của 12 chương trình; các ngành còn lại chưa có CTĐT đủ tin cậy. Phần hỏi đáp quy chế dùng được cho sinh viên mọi ngành.
-- Hệ thống chạy trên máy cục bộ, chưa triển khai công khai qua Internet.
-
-**Hướng phát triển**
-
-- Bổ sung tổng tín chỉ, phiên bản và khóa áp dụng cho các tài liệu CTĐT còn thiếu để mở rộng sang nhiều ngành hơn.
-- Để LLM tự gọi công cụ (Tool Calling) thay cho bộ phân loại ý định.
-- Lập kế hoạch học tập nhiều kỳ, mô phỏng CPA theo mục tiêu và cảnh báo học vụ chủ động.
