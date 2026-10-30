@@ -39,147 +39,22 @@ graph TD
     end
 ```
 
-## Trạng thái dữ liệu hiện tại
+## ✨ Chức năng chính
 
-- Đã chuẩn hóa và kiểm tra: **ET1, CTĐT 2022 (K67)** — 126 tín chỉ, 117 học phần, 20 nhóm và 6 mô-đun; **ET1, CTĐT 2023 (K68)** — 132 tín chỉ, 79 học phần, 13 nhóm và 5 mô-đun.
-- Backend chọn CTĐT theo mã ngành và khóa nhập học của hồ sơ (K## ↔ năm 1955+##). Dataset có trường `applies_to_cohorts` chỉ phục vụ đúng các khóa đó; dataset không có trường này phục vụ khóa trùng năm phiên bản (ET1: K67 → 2022, K68 → 2023). Không tự chuyển sang phiên bản khác; hai dataset cùng phục vụ một khóa bị từ chối khi nạp.
-- Nhập từ tài liệu CTĐT công khai, **kiểm tra tự động, chưa đối chiếu thủ công**: BF1–2022 (K68, K69), BF-E19–2023 (K68, K69), BF-E19–2025 (K70), ED2–2024 (K68), EE1–2023 (K68), EE2–2023 (K68), ET2–2023 (K68), EV2–2022 (K68, K69), FL2–2022 (K67, 131 TC), TE-EP–2023 (K68, K69; 140 TC phần cử nhân). Mỗi dataset ghi nhãn này ở cảnh báo đầu tiên, và giao diện hiển thị lại khi rà soát tiến độ. Kết quả đầy đủ, gồm 98 tài liệu chưa đạt và lý do, ở `data/reports/official_curricula_import.md`.
-- Nguồn chuẩn hóa: `data/processed/curricula/et1_2022.json` và `data/processed/curricula/et1_2023.json`. HTML CTT gốc có dữ liệu cá nhân, không được đưa vào dataset sinh ra hoặc công khai.
-- Đã bổ sung snapshot danh mục **68 chương trình đại học** từ trang tuyển sinh chính thức: `data/raw/hust_undergraduate_programs.json`. Đây là danh mục lựa chọn/tìm kiếm; trường `supported_cohorts` cho biết các khóa đã có CTĐT được nạp, và màn hình đăng ký lấy danh sách ngành từ đây.
-- Đã rà liên kết CTĐT trên trang chi tiết của cả 68 chương trình: `data/raw/hust_program_curriculum_sources.json`. Manifest lưu nguồn chính thức và trạng thái truy cập (snapshot hiện tại: 46 nguồn HTTP 2xx); dữ liệu này chưa được coi là CTĐT chuẩn hóa cho đến khi kiểm tra cấu trúc và điều kiện học phần.
-- Đã có bước trích xuất candidate cho 6 trang CTĐT HTML (5 trang `hp-table` và FL2 dạng bảng thông thường) cùng 6/8 PDF có danh mục học phần (`data/raw/hust_curriculum_extractions.json`, `data/raw/hust_curriculum_pdf_extractions.json`).
-- Đã ghép 14 candidate HTML/PDF với danh mục 8.310 học phần CTT (`data/raw/hust_curriculum_candidates.json`). ET1-2023 đã được phê duyệt qua `data/processed/curriculum_approvals.json`; các candidate còn lại vẫn `needs_review` và chưa nạp vào Rule Engine.
-- **MongoDB là kho nghiệp vụ duy nhất**: `users`, `sessions`, `student_profiles`, `conversations`, `messages`, `student_memory` và bộ đếm `counters`. Backend bắt buộc có `MONGODB_URI`; không còn nhánh SQLite hay ghi hồ sơ JSON. CTĐT và tài liệu nguồn vẫn là dataset có phiên bản. ChromaDB chỉ phục vụ RAG; file SQLite nội bộ của Chroma được giữ nguyên.
-- Hội thoại dùng context từ 12 tin nhắn gần nhất của đúng tài khoản; hiểu “môn đó cần gì?”, “nếu trượt thì sao?”, yêu cầu làm rõ khi có nhiều môn. Lịch sử client gửi lên không được dùng để thiết lập context.
-- **Cài đặt → Ghi nhớ học tập**: tự chọn bật/tắt, sửa hoặc xóa định hướng, tải tín chỉ mong muốn và mục tiêu CPA. Mặc định tắt; chatbot không tự trích xuất mục tiêu từ tin nhắn. Gợi ý môn dùng định hướng/tín chỉ đã lưu, ưu tiên lựa chọn trong câu hỏi và luôn áp giới hạn học vụ. CPA hiện được lưu và nhắc lại, chưa có bộ mô phỏng điểm theo mục tiêu cá nhân.
-- Kho RAG tin cậy hiện gồm 14 tài liệu: CTĐT ET1–2022, ET1–2023, Quy chế đào tạo theo Quyết định 5445/QĐ-ĐHBK, Sổ tay sinh viên 2026, Quyết định học phí 2025–2026 và 2026–2027, Kế hoạch năm học 2026–2027, Quy chế công tác sinh viên, Quy định đánh giá rèn luyện, Quy định chuẩn ngoại ngữ K70 và K71, Quy định miễn giảm học phí, Quy định học bổng Trần Đại Nghĩa và học bổng trao đổi. Các văn bản quy chế, học phí, học bổng áp dụng cho sinh viên mọi ngành; chỉ phần CTĐT là riêng ET1. Chỉ tài liệu có metadata `rag_status: VERIFIED` mới được lập chỉ mục; PDF cần sidecar `<tên-file>.pdf.metadata.json` có trạng thái tương ứng. Kho được đồng bộ lại khi khởi động để loại nguồn đã thu hồi phê duyệt.
-- Sinh viên đăng nhập bằng **MSSV + mật khẩu** (tự đăng ký); phiên nằm trong cookie HttpOnly, mỗi người chỉ thấy hồ sơ, bảng điểm và hội thoại của mình. Hiện chạy trên máy cục bộ; chưa triển khai Internet/HTTPS hay trang quản trị người dùng.
+- **Tài khoản riêng cho từng sinh viên:** đăng ký và đăng nhập bằng MSSV + mật khẩu; phiên nằm trong cookie HttpOnly, mỗi người chỉ thấy hồ sơ, bảng điểm và hội thoại của mình.
+- **Nhập bảng điểm từ CTT:** dán bảng điểm vào hệ thống; học phần ngoài danh mục phải xác nhận số tín chỉ trước khi lưu. Có thể khai báo thêm mức cảnh báo học tập và trạng thái Ngoại ngữ/GDTC/GDQP.
+- **Rà soát tiến độ và điều kiện học phần:** tính theo đúng phiên bản CTĐT của khóa (ET1–2022: 126 TC, ET1–2023: 132 TC).
+- **Hỏi đáp quy chế có trích dẫn nguồn** từ 14 văn bản chính thức: Quy chế đào tạo (QĐ 5445/QĐ-ĐHBK), Sổ tay sinh viên 2026, học phí 2025–2026 và 2026–2027, kế hoạch năm học, quy chế công tác sinh viên, đánh giá rèn luyện, chuẩn ngoại ngữ K70/K71, miễn giảm học phí, học bổng Trần Đại Nghĩa và học bổng trao đổi.
+- **Hội thoại nhiều lượt:** hiểu “môn đó cần gì?”, “nếu trượt thì sao?” dựa trên các tin nhắn trước; lịch sử có thể ghim, lưu trữ, xóa.
+- **Ghi nhớ học tập** (mặc định tắt): sinh viên tự đặt định hướng, số tín chỉ mong muốn và mục tiêu CPA để chatbot gợi ý môn phù hợp.
 
-### Chuẩn bị trên máy mới
+## 📚 Dữ liệu
 
-Cần **Python 3.12 trở lên**, **Node.js 22.12 trở lên** và MongoDB (local hoặc
-Atlas). Không cần MongoDB hay khóa Gemini để chạy kiểm thử; ứng dụng thật cần
-`MONGODB_URI`. Phạm vi thử nghiệm: ET1–2022/K67, ET1–2023/K68 và 10 CTĐT nhập tự động nêu trên.
-
-Windows PowerShell, tại thư mục gốc sau khi clone:
-
-```powershell
-python -m venv backend/.venv-win
-& backend/.venv-win/Scripts/python.exe -m pip install -r backend/requirements.txt -r backend/requirements-dev.txt
-npm --prefix frontend ci
-Copy-Item backend/.env.example backend/.env
-# Điền MONGODB_URI vào backend/.env trước khi chạy ứng dụng.
-& ./scripts/test_all.ps1
-```
-
-Linux/macOS hoặc Git Bash:
-
-```bash
-./scripts/setup.sh
-cp backend/.env.example backend/.env
-# Cấu hình MONGODB_URI trong .env trước khi chạy ứng dụng.
-./scripts/test_all.sh
-```
-
-Git Bash trên Windows chọn `.venv-win`, Linux/macOS chọn `.venv`; không dùng
-chung venv giữa hai hệ điều hành. Python và Node đã cài phải nằm trong PATH.
-
-### MongoDB (bắt buộc cho dữ liệu nghiệp vụ)
-
-1. Tạo cluster miễn phí **MongoDB Atlas M0**, tạo database user riêng cho ứng dụng
-   và chỉ thêm IP máy của bạn vào *Network Access* (không mở `0.0.0.0/0`, vì hồ sơ
-   chứa bảng điểm cá nhân).
-2. Điền `MONGODB_URI` (Connect → Drivers → Python) và `MONGODB_DB` vào
-   `backend/.env` (xem `.env.example`).
-3. Chuyển dữ liệu cục bộ hiện có lên MongoDB (chạy lại nhiều lần vẫn an toàn):
-
-```bash
-cd backend
-./.venv/bin/python migrate_to_mongodb.py --dry-run
-./.venv/bin/python migrate_to_mongodb.py --check
-./.venv/bin/python migrate_to_mongodb.py
-```
-
-`--dry-run` chỉ đếm nguồn cục bộ; `--check` đối chiếu MongoDB mà không ghi. Lệnh
-import giữ bản trên MongoDB khi có khác biệt, chuyển tài khoản kèm hash mật khẩu
-nếu còn thiếu, không chuyển phiên đăng nhập. Trùng ID khác chủ sở hữu bị từ chối
-trước khi ghi. Nguồn không bị sửa/xóa; chạy lại không nhân đôi tin nhắn, kể cả
-bản đã import trước khi có `migration_key`. Có thể dùng `--source <thư-mục>` để
-đọc bản sao lưu chứa `students/`, `auth.sqlite3`, `chat_history.sqlite3`.
-
-Thiếu URI hoặc không kết nối được thì backend dừng khởi động và báo lỗi.
-`GET /` trả `storage: mongodb`. Có thể dùng MongoDB local hoặc Atlas.
-Kiểm thử dùng **mongomock trong bộ nhớ với hồ sơ tổng hợp** từ CTĐT công
-khai; không cần MongoDB thật, không đọc bảng điểm cá nhân. SQLite chỉ còn trong
-công cụ đọc dữ liệu cũ `legacy_storage.py` và phần nội bộ ChromaDB.
-
-### Tài khoản và đăng nhập
-
-- Mở web sẽ gặp màn **Đăng nhập / Đăng ký**. Đăng ký cần MSSV (8 chữ số), họ tên, lớp có khóa (`K67`/`K68`) và mật khẩu ≥ 8 ký tự; xong sẽ được mời dán bảng điểm từ CTT.
-- Đăng xuất: menu tài khoản ở góc dưới thanh bên → **Đăng xuất**. Đổi mật khẩu: **Cài đặt → Tài khoản**.
-- Local hỗ trợ cả `http://localhost:5173` và `http://127.0.0.1:5173`: để trống `VITE_API_BASE_URL` để Vite chuyển tiếp `/api` tới backend cổng 8000. Cookie phiên được giữ cùng địa chỉ với web.
-- Nếu có học phần ngoài danh mục, hệ thống giữ nguyên bảng điểm cũ và yêu cầu xác nhận số tín chỉ trước khi lưu. Trong hộp nhập bảng điểm, sinh viên cũng có thể khai báo mức cảnh báo và trạng thái Ngoại ngữ/GDTC/GDQP theo CTT. Khi chưa biết mức cảnh báo, kế hoạch tạm giới hạn 14 TC/kỳ chính; đây là lựa chọn lập kế hoạch của ứng dụng, không phải kết luận hạn mức đăng ký chính thức.
-- Khi chạy sau reverse proxy, chỉ cấu hình Uvicorn tin các IP proxy do bạn quản lý (`--forwarded-allow-ips`); API lấy IP từ ASGI request, không tự tin header `X-Forwarded-For` do client gửi.
-
-**Demo trên máy mới, không cần hồ sơ cá nhân:**
-
-1. Cấu hình MongoDB, chạy backend và frontend theo hướng dẫn bên dưới.
-2. Tự đăng ký một tài khoản thử, ví dụ MSSV `10000001`, tên `Sinh viên demo`,
-   lớp `Điện tử 03 - K67`, chương trình `ET1`; tự chọn mật khẩu.
-3. Có thể dùng bảng điểm giả sau để thử nhập liệu (không phải bảng điểm thật):
-
-```text
-MI1111 Giải tích I 4 A
-MI1141 Đại số 4 B
-ET3220 Điện tử số 3 A
-```
-
-4. Thử “Tiến độ học tập”, “Điều kiện ET4230?”, rồi “Môn đó cần gì?”. Vào
-   **Cài đặt → Ghi nhớ học tập** để đặt mục tiêu, mở chat mới và hỏi gợi ý môn.
-
-Không có mật khẩu dùng chung hay tài khoản cá nhân được đóng gói trong repo.
-`seed_demo_accounts.py` là công cụ quản trị tùy chọn cho hồ sơ đã tồn tại trong
-MongoDB; không cần chạy để demo bằng tài khoản tự đăng ký. Không sao chép bảng
-điểm cá nhân vào repo công khai.
-
-Tái tạo tài liệu RAG đã kiểm chứng từ PDF gốc:
-
-```bash
-python3 data/scripts/build_verified_rag_documents.py
-```
-
-Danh mục chương trình có thể xem qua `GET /api/programs` (lọc bằng `?search=`
-hoặc chỉ chương trình đã có CTĐT bằng `?supported_only=true`).
-
-Lấy dữ liệu học phần và chuỗi điều kiện trực tiếp từ CTT SIS (script sẽ mở
-Chrome để bạn đăng nhập thủ công):
-
-```bash
-backend/.venv/bin/python data/scripts/scrape_ctt_courses.py --code ET4230
-```
-
-Xem thêm các tùy chọn và chế độ đọc HTML đã lưu tại
-[`data/README.md`](data/README.md).
-
-Tạo lại báo cáo candidate CTĐT công khai (review-only):
-
-```bash
-backend/.venv/bin/python data/scripts/build_hust_curriculum_candidates.py
-```
-
-Phê duyệt và sinh lại dataset ET1–2023 sau khi rà nguồn:
-
-```bash
-backend/.venv/bin/python data/scripts/promote_hust_curriculum_candidate.py \
-  --candidate ET1-2023
-```
-
-Nhập lại các CTĐT công khai đã trích xuất (mỗi ngành một tệp JSON). Chỉ tài liệu qua mọi kiểm tra (mã có trong danh mục tuyển sinh đại học, tổng ngưỡng các khối bằng tổng công bố, số TC khớp danh mục CTT, không trùng khóa) mới được ghi vào `data/processed/curricula/` và `curriculum_approvals.json`:
-
-```bash
-backend/.venv/bin/python data/scripts/import_official_curricula.py \
-  --input-dir <thư-mục-JSON-trích-xuất>
-```
+- **CTĐT đã đối chiếu thủ công:** ET1–2022 (K67; 126 TC, 117 học phần) và ET1–2023 (K68; 132 TC, 79 học phần).
+- **10 CTĐT nhập tự động** từ tài liệu công khai, mới qua kiểm tra tự động, chưa đối chiếu thủ công: BF1–2022, BF-E19–2023, BF-E19–2025, ED2–2024, EE1–2023, EE2–2023, ET2–2023, EV2–2022, FL2–2022, TE-EP–2023. Giao diện có ghi chú rõ điều này khi rà soát tiến độ.
+- **Danh mục 68 chương trình đại học** lấy từ trang tuyển sinh chính thức, dùng cho màn hình đăng ký.
+- **Kho RAG** chỉ lập chỉ mục tài liệu đã được đánh dấu kiểm chứng (`rag_status: VERIFIED`).
+- Repo không chứa bảng điểm hay thông tin cá nhân thật. Cách thu thập, chuẩn hóa và sinh lại dữ liệu: xem [`data/README.md`](data/README.md).
 
 ---
 
@@ -194,12 +69,14 @@ backend/.venv/bin/python data/scripts/import_official_curricula.py \
 │   │   ├── engine/            # Rule Engine, Recommender (Graph là phần mở rộng)
 │   │   ├── rag/               # RAG Engine, Document Loader, Chroma Vector Store, Gemini Service
 │   │   └── services/          # Chatbot, Conversation, Data Loader, Student Service
+│   ├── tests/                 # Kiểm thử backend
 │   ├── requirements.txt       # Các thư viện Python phụ thuộc
 │   └── run.py                 # Script khởi động Backend server
 ├── data/                      # Cơ sở dữ liệu và kho tri thức
 │   ├── documents/             # Văn bản quy chế, CTĐT, đề cương chi tiết (Markdown)
 │   ├── processed/             # CTĐT JSON có phiên bản (không chứa hồ sơ cá nhân)
-│   └── scripts/               # Scripts tạo demo profiles, crawl/chuẩn hóa dữ liệu
+│   ├── raw/                   # Bản chụp nguồn gốc (PDF, HTML, JSON)
+│   └── scripts/               # Scripts crawl, chuẩn hóa và kiểm tra dữ liệu
 ├── frontend/                  # Ứng dụng Web React (Vite)
 │   └── src/
 │       ├── components/        # ChatTab, AuditTab, RecommendTab, Modals
@@ -211,42 +88,76 @@ backend/.venv/bin/python data/scripts/import_official_curricula.py \
 
 ## 🛠️ Hướng dẫn cài đặt và chạy thử
 
-### 0. Cài đặt
-```bash
-./scripts/setup.sh
-cp backend/.env.example backend/.env  # bắt buộc cấu hình MongoDB
+**Yêu cầu:** Python 3.12 trở lên, Node.js 22.12 trở lên (cả hai nằm trong PATH) và MongoDB (local hoặc Atlas). Gemini API key là tùy chọn: không có key, hệ thống vẫn trả lời bằng chế độ trích xuất cục bộ có dẫn nguồn.
+
+### 1. Cài đặt
+
+Windows PowerShell, tại thư mục gốc sau khi clone:
+
+```powershell
+python -m venv backend/.venv-win
+& backend/.venv-win/Scripts/python.exe -m pip install -r backend/requirements.txt -r backend/requirements-dev.txt
+npm --prefix frontend ci
+Copy-Item backend/.env.example backend/.env
 ```
 
-MongoDB là bắt buộc. Không cần Gemini API key để demo: hệ thống sẽ dùng chế độ trích xuất cục bộ có dẫn nguồn. Nếu có key, điền `GEMINI_API_KEY` và model trong `.env`.
+Linux/macOS hoặc Git Bash:
 
-### 1. Khởi động Backend (FastAPI)
+```bash
+./scripts/setup.sh
+cp backend/.env.example backend/.env
+```
 
-PowerShell trên Windows:
+### 2. Cấu hình MongoDB
+
+1. Tạo cluster miễn phí **MongoDB Atlas M0** (hoặc dùng MongoDB local), tạo database user riêng cho ứng dụng và chỉ thêm IP máy của bạn vào *Network Access*.
+2. Điền `MONGODB_URI` (Connect → Drivers → Python) và `MONGODB_DB` vào `backend/.env`. Nếu có Gemini API key, điền thêm `GEMINI_API_KEY`.
+
+Thiếu URI hoặc không kết nối được thì backend dừng khởi động và báo lỗi.
+
+### 3. Khởi động Backend (FastAPI)
 
 ```powershell
 cd backend
-& ./.venv-win/Scripts/python.exe run.py
+& ./.venv-win/Scripts/python.exe run.py   # Windows
 ```
-
-Linux/macOS:
 
 ```bash
 cd backend
-./.venv/bin/python run.py
+./.venv/bin/python run.py                 # Linux/macOS
 ```
 
-Git Bash trên Windows dùng `./.venv-win/Scripts/python.exe run.py`.
-* Backend sẽ chạy tại: `http://localhost:8000`
-* Swagger API Docs: `http://localhost:8000/docs`
+* Backend chạy tại `http://localhost:8000`, tài liệu API (Swagger) tại `http://localhost:8000/docs`.
 
-### 2. Khởi động Frontend (React + Vite)
+### 4. Khởi động Frontend (React + Vite)
+
 ```bash
 cd frontend
-npm ci
 npm run dev
 ```
-* Giao diện Web sẽ chạy tại: `http://localhost:5173`
-* Local mặc định chuyển tiếp `/api` tới `http://127.0.0.1:8000` qua Vite. Nếu cần đổi backend, sửa `server.proxy` trong `vite.config.js`; chỉ đặt `VITE_API_BASE_URL` khi muốn gọi API trực tiếp và đã cấu hình cookie/CORS phù hợp. Khi deploy, cần reverse proxy `/api` hoặc cấu hình URL API riêng.
+
+* Giao diện web chạy tại `http://localhost:5173`. Vite tự chuyển tiếp `/api` tới backend cổng 8000, không cần cấu hình thêm.
+
+### 5. Chạy kiểm thử (tùy chọn)
+
+```bash
+./scripts/test_all.sh      # PowerShell: & ./scripts/test_all.ps1
+```
+
+Kiểm thử dùng MongoDB giả lập trong bộ nhớ và hồ sơ tổng hợp, không cần MongoDB thật hay Gemini API key.
+
+### Dùng thử nhanh
+
+1. Mở `http://localhost:5173`, chọn **Đăng ký** và tạo tài khoản thử, ví dụ MSSV `10000001`, tên `Sinh viên demo`, lớp `Điện tử 03 - K67`, chương trình `ET1`; tự chọn mật khẩu (≥ 8 ký tự).
+2. Khi được mời nhập bảng điểm, có thể dán bảng điểm giả sau (không phải bảng điểm thật):
+
+```text
+MI1111 Giải tích I 4 A
+MI1141 Đại số 4 B
+ET3220 Điện tử số 3 A
+```
+
+3. Thử hỏi “Tiến độ học tập”, “Điều kiện ET4230?”, rồi “Môn đó cần gì?”. Vào **Cài đặt → Ghi nhớ học tập** để đặt mục tiêu, mở chat mới và hỏi gợi ý môn.
 
 ---
 
