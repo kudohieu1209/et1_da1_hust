@@ -1,6 +1,6 @@
 # HUST Course Advisor & Degree Audit Engine
 
-> **Đồ án 1:** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên Đại học Bách Khoa Hà Nội.  
+> **Đồ án 1:** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên HUST.  
 
 ---
 
@@ -13,7 +13,7 @@ Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tu
 
 ---
 
-## 🏛️ Kiến trúc hệ thống (System Architecture)
+## 🏛️ Kiến trúc hệ thống
 
 ```mermaid
 graph TD
@@ -51,7 +51,6 @@ graph TD
 
 - **12 CTĐT** lấy từ tài liệu công khai của trường: ET1–2022 (K67; 126 TC), ET1–2023 (K68; 132 TC), BF1–2022, BF-E19–2023, BF-E19–2025, ED2–2024, EE1–2023, EE2–2023, ET2–2023, EV2–2022, FL2–2022 và TE-EP–2023. Mỗi CTĐT được kiểm tra khớp tổng tín chỉ công bố và mã học phần, số tín chỉ với danh mục CTT.
 - **Danh mục 68 chương trình đại học** lấy từ trang tuyển sinh chính thức, dùng cho màn hình đăng ký.
-- **Kho RAG** chỉ lập chỉ mục tài liệu đã được đánh dấu kiểm chứng (`rag_status: VERIFIED`).
 - Dữ liệu tổng hợp từ nhiều nguồn nên có thể còn sai sót; khi cần quyết định chính thức, sinh viên nên đối chiếu với văn bản gốc của trường.
 - Repo không chứa bảng điểm hay thông tin cá nhân thật. Cách thu thập, chuẩn hóa và sinh lại dữ liệu: xem [`data/README.md`](data/README.md).
 
