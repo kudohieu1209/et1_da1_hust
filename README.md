@@ -12,17 +12,6 @@ Hệ thống **HUST Course Advisor** là một giải pháp ứng dụng trí tu
 2. **Deterministic Rule Engine:** Sử dụng dữ liệu CTĐT và bộ quy tắc HUST để kiểm tra điều kiện học phần, rà soát tín chỉ (Degree Audit) theo từng hồ sơ sinh viên và hỗ trợ chọn môn.
 3. **Full-stack Interactive Dashboard:** Giao diện React tập trung vào chat tự nhiên, tiến độ học tập và gợi ý chọn môn theo các mô-đun của chương trình đào tạo đang được hỗ trợ.
 
-## Kết quả đánh giá
-
-Hệ thống được đánh giá tự động trên 108 câu hỏi hồi quy và 20 câu hỏi diễn đạt khác (không dùng khi tinh chỉnh), chế độ không gọi LLM để kết quả lặp lại được:
-
-| Bộ câu hỏi | Phân loại ý định | Truy xuất đúng văn bản (Recall@4) | MRR@4 | Câu trả lời chứa ý chính |
-|---|---:|---:|---:|---:|
-| Hồi quy (108 câu) | 100% | 100% | 84,3% | 100% |
-| Diễn đạt khác (20 câu) | 100% | 100% | 80,6% | 100% |
-
-Chi tiết: [bộ hồi quy](eval/reports/final.md), [bộ diễn đạt khác](eval/reports/validation_final.md). Chạy toàn bộ kiểm thử: `./scripts/test_all.sh`.
-
 ---
 
 ## 🏛️ Kiến trúc hệ thống (System Architecture)
@@ -120,7 +109,7 @@ bản đã import trước khi có `migration_key`. Có thể dùng `--source <t
 
 Thiếu URI hoặc không kết nối được thì backend dừng khởi động và báo lỗi.
 `GET /` trả `storage: mongodb`. Có thể dùng MongoDB local hoặc Atlas.
-Kiểm thử và eval dùng **mongomock trong bộ nhớ với hồ sơ tổng hợp** từ CTĐT công
+Kiểm thử dùng **mongomock trong bộ nhớ với hồ sơ tổng hợp** từ CTĐT công
 khai; không cần MongoDB thật, không đọc bảng điểm cá nhân. SQLite chỉ còn trong
 công cụ đọc dữ liệu cũ `legacy_storage.py` và phần nội bộ ChromaDB.
 
@@ -152,28 +141,6 @@ Không có mật khẩu dùng chung hay tài khoản cá nhân được đóng g
 `seed_demo_accounts.py` là công cụ quản trị tùy chọn cho hồ sơ đã tồn tại trong
 MongoDB; không cần chạy để demo bằng tài khoản tự đăng ký. Không sao chép bảng
 điểm cá nhân vào repo công khai.
-
-### Đánh giá định lượng
-
-`eval/golden_questions.jsonl` gồm **108 câu hỏi hồi quy**, có bằng chứng/ý chính đối chiếu
-với các văn bản đã kiểm chứng (quy chế, học phí, học bổng, CTĐT) và các câu
-kiểm tra điều kiện, gợi ý môn, rà soát tiến độ. Bộ chạy đo độ chính xác phân loại
-ý định, trích xuất mã môn, Recall@k/MRR của truy xuất và tỉ lệ câu trả lời chứa ý
-chính; mặc định tắt LLM để kết quả tất định.
-
-```bash
-backend/.venv/bin/python eval/run_eval.py --label latest     # ghi eval/reports/
-backend/.venv/bin/python eval/run_eval.py --check            # thoát mã 1 nếu thụt lùi
-```
-
-Ngưỡng chống thụt lùi nằm ở `eval/thresholds.json`; chỉ nâng ngưỡng khi
-một thay đổi đã cải thiện chỉ số.
-
-Test/eval mặc định tạo một chỉ mục riêng cho mỗi tiến trình trong
-`data/vector_db_test/`, không dùng chỉ mục của backend. Khi đặt
-`VECTOR_DB_DIR` thủ công, không trỏ tới chỉ mục đang được ứng dụng sử dụng.
-`eval/reports/baseline.md` là kết quả trước khi cải tiến truy xuất (96 câu), dùng để so sánh với `final.md`.
-“Chứa ý chính” là khớp cụm từ tự động, không phải chấm toàn diện chất lượng LLM.
 
 Tái tạo tài liệu RAG đã kiểm chứng từ PDF gốc:
 
@@ -233,7 +200,6 @@ backend/.venv/bin/python data/scripts/import_official_curricula.py \
 │   ├── documents/             # Văn bản quy chế, CTĐT, đề cương chi tiết (Markdown)
 │   ├── processed/             # CTĐT JSON có phiên bản (không chứa hồ sơ cá nhân)
 │   └── scripts/               # Scripts tạo demo profiles, crawl/chuẩn hóa dữ liệu
-├── eval/                      # Bộ câu hỏi đánh giá, ngưỡng và báo cáo
 ├── frontend/                  # Ứng dụng Web React (Vite)
 │   └── src/
 │       ├── components/        # ChatTab, AuditTab, RecommendTab, Modals

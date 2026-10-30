@@ -33,5 +33,5 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
       - name: Install public dependencies
         run: bash scripts/setup.sh
-      - name: Unit tests, RAG regression, frontend lint and build
+      - name: Unit tests, frontend lint and build
         run: bash scripts/test_all.sh
