@@ -1,7 +1,6 @@
 # HUST Course Advisor & Degree Audit Engine
 
-> **Đồ án 1:** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên Đại học Bách Khoa Hà Nội.
-> **Sinh viên thực hiện:** Mai Duy Hiếu  
+> **Đồ án 1:** Hệ thống Chatbot và Dashboard tư vấn học tập, chọn môn và rà soát tiến độ cho sinh viên Đại học Bách Khoa Hà Nội.  
 
 ---
 
