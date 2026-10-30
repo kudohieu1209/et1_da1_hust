@@ -1,4 +1,4 @@
-"""Synthetic profiles and isolated MongoDB fixtures for tests/evaluation only.
+"""Synthetic profiles and isolated MongoDB fixtures for tests only.
 
 Never reads personal transcripts or connects to a real database.
 """

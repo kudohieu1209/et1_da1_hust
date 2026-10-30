@@ -67,9 +67,8 @@ vector_db.broken-*/
 /data/processed/users/
 /data/legacy_backup/
 
-# Báo cáo đánh giá chạy tạm (giữ lại baseline.* để so sánh)
-/eval/reports/latest.*
-/eval/reports/validation_latest.*
+# Bộ đánh giá nội bộ, không nằm trong phạm vi nộp đồ án
+/eval/
 
 # Tài liệu CTĐT gốc tải về (lớn); bản trích xuất đã làm sạch nằm ở data/raw/official_curricula/
 /data/official_curricula_k67_k70/

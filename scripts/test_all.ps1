@@ -16,16 +16,13 @@ foreach ($name in $environmentNames) { $originalEnvironment[$name] = [Environmen
 try {
     $env:PYTHONIOENCODING = 'utf-8'
     $env:PYTHONPATH = $backendDirectory
-    # unittest/eval also disable real integrations before importing configuration.
+    # unittest also disables real integrations before importing configuration.
     $env:MONGODB_URI = ''
     $env:GEMINI_API_KEY = ''
     $env:GOOGLE_API_KEY = ''
     $env:OPENAI_API_KEY = ''
     Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$backendDirectory/tests",'-t',$backendDirectory,'-v')
     Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$repoDirectory/data/tests",'-v')
-    Invoke-Checked $pythonExecutable @('-m','unittest','discover','-s',"$repoDirectory/eval/tests",'-v')
-    Invoke-Checked $pythonExecutable @("$repoDirectory/eval/run_eval.py",'--label','latest','--check')
-    Invoke-Checked $pythonExecutable @("$repoDirectory/eval/run_eval.py",'--golden',"$repoDirectory/eval/validation_questions.jsonl",'--label','validation_latest')
     Invoke-Checked 'npm.cmd' @('--prefix',$frontendDirectory,'test')
     Invoke-Checked 'npm.cmd' @('--prefix',$frontendDirectory,'run','lint')
     Invoke-Checked 'npm.cmd' @('--prefix',$frontendDirectory,'run','build')

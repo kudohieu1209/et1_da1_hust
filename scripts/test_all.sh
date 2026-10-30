@@ -10,9 +10,9 @@ fi
 export PYTHONIOENCODING=utf-8
 # Vector DB riêng cho kiểm thử: không tranh chấp file với backend dev đang chạy
 # và không ghi đè chỉ mục mà backend dev đang dùng.
-# tests/__init__.py và eval/run_eval.py tự tạo thư mục riêng cho mỗi tiến trình
+# tests/__init__.py tự tạo thư mục riêng cho mỗi tiến trình
 # nếu VECTOR_DB_DIR chưa được đặt. Không tái sử dụng HNSW từ lần chạy trước.
-# Kiểm thử/eval dùng mongomock trong bộ nhớ và hồ sơ tổng hợp từ CTĐT công khai.
+# Kiểm thử dùng mongomock trong bộ nhớ và hồ sơ tổng hợp từ CTĐT công khai.
 # Không kết nối MongoDB Atlas thật hay đọc bảng điểm cá nhân.
 export MONGODB_URI=""
 # Không gọi Gemini thật trong kiểm thử (tất định, không tốn quota).
@@ -23,11 +23,6 @@ export OPENAI_API_KEY=""
 # -t để test được import dưới package "tests" (chạy tests/__init__.py cô lập dữ liệu).
 PYTHONPATH="$BACKEND_DIR" "$PYTHON_BIN" -m unittest discover -s "$BACKEND_DIR/tests" -t "$BACKEND_DIR" -v
 PYTHONPATH="$BACKEND_DIR" "$PYTHON_BIN" -m unittest discover -s "$REPO_DIR/data/tests" -v
-"$PYTHON_BIN" -m unittest discover -s "$REPO_DIR/eval/tests" -v
-# Bộ đánh giá định lượng: thất bại nếu chỉ số tụt dưới eval/thresholds.json.
-"$PYTHON_BIN" "$REPO_DIR/eval/run_eval.py" --label latest --check
-# Tập diễn đạt bổ sung được báo cáo riêng, không thay bộ 100 câu gốc.
-"$PYTHON_BIN" "$REPO_DIR/eval/run_eval.py" --golden "$REPO_DIR/eval/validation_questions.jsonl" --label validation_latest
 npm --prefix "$FRONTEND_DIR" test
 npm --prefix "$FRONTEND_DIR" run lint
 npm --prefix "$FRONTEND_DIR" run build
