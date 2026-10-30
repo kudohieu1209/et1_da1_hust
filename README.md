@@ -145,19 +145,6 @@ npm run dev
 
 Kiểm thử dùng MongoDB giả lập trong bộ nhớ và hồ sơ tổng hợp, không cần MongoDB thật hay Gemini API key.
 
-### Dùng thử nhanh
-
-1. Mở `http://localhost:5173`, chọn **Đăng ký** và tạo tài khoản thử, ví dụ MSSV `10000001`, tên `Sinh viên demo`, lớp `Điện tử 03 - K67`, chương trình `ET1`; tự chọn mật khẩu (≥ 8 ký tự).
-2. Khi được mời nhập bảng điểm, có thể dán bảng điểm giả sau (không phải bảng điểm thật):
-
-```text
-MI1111 Giải tích I 4 A
-MI1141 Đại số 4 B
-ET3220 Điện tử số 3 A
-```
-
-3. Thử hỏi “Tiến độ học tập”, “Điều kiện ET4230?”, rồi “Môn đó cần gì?”. Vào **Cài đặt → Ghi nhớ học tập** để đặt mục tiêu, mở chat mới và hỏi gợi ý môn.
-
 ---
 
 ## 🎯 Một số tình huống sử dụng
