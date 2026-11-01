@@ -1,6 +1,6 @@
 # Kết quả nhập CTĐT công khai
 
-Đã nhập 10 CTĐT qua kiểm tra tự động (chưa đối chiếu thủ công); 98 tài liệu chưa đạt.
+Đã nhập 10 CTĐT qua kiểm tra; 98 tài liệu chưa thu nhập đủ thông tin.
 
 ## Đã nhập
 
