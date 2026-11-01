@@ -1,29 +1,11 @@
-# Báo cáo kiểm kê dữ liệu ET1 2022
+# Kiểm tra dữ liệu ET1 2022
 
-
-## Kết luận đã xác minh
+## Dữ liệu chuẩn hóa
 
 - Chương trình: `ET1` / `1654` / phiên bản `2022`.
 - Tổng tín chỉ tốt nghiệp hệ cử nhân: **126 TC**.
 - Mô-đun: chọn một trong **6** mô-đun, tối thiểu **15 TC**.
 - Tiếng Anh, GDTC và GDQP là các nhóm 0 TC; không cộng vào tổng 126 TC.
-
-## Mâu thuẫn với tài liệu nháp
-
-| Dữ kiện | Bản nháp | CTT ET1 2022 | Vị trí |
-|---|---:|---:|---|
-| Tổng tín chỉ tốt nghiệp | 132 | 126 | `data/documents/chuong_trinh_dao_tao_et1.md:17` |
-| Số mô-đun | 4 | 6 | `data/documents/chuong_trinh_dao_tao_et1.md:31` |
-| Tín chỉ ET3260 | 3 | 2 | `data/documents/chuong_trinh_dao_tao_et1.md:45` |
-| Tín chỉ ET3280 | 3 | 2 | `data/documents/chuong_trinh_dao_tao_et1.md:55` |
-| Tín chỉ ET3310 | 2 | 3 | `data/documents/chuong_trinh_dao_tao_et1.md:56` |
-| Tín chỉ ET4100 | 3 | 2 | `data/documents/chuong_trinh_dao_tao_et1.md:61` |
-| Tín chỉ ET4120 | 3 | 2 | `data/documents/chuong_trinh_dao_tao_et1.md:63` |
-| Tín chỉ ET2040 | 2 | 3 | `data/documents/de_cuong_chi_tiet_mon_hoc_et1.md:9` |
-
-## Nợ kỹ thuật
-
-- Tài liệu Markdown nháp không có metadata program/version; không nên index vào RAG như nguồn chính thức.
 
 ## Mã điều kiện nằm ngoài catalog ET1 2022
 

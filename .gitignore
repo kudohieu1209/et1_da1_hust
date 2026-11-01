@@ -8,6 +8,9 @@ Thumbs.db
 *.swo
 tmp/
 
+# Personal notes and drafts stay on this machine.
+/local-notes/
+
 # Environment variables & secrets
 .env
 *.env
