@@ -1,6 +1,5 @@
 # Báo cáo kiểm kê dữ liệu ET1 2022
 
-> Nguồn chuẩn cho báo cáo này là bản xuất CTT của Chương trình 1654. Dữ liệu sinh viên không được sao chép sang dataset chuẩn hóa.
 
 ## Kết luận đã xác minh
 
