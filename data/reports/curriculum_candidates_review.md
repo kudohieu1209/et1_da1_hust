@@ -1,13 +1,5 @@
 # Hàng đợi kiểm duyệt CTĐT
 
-> Báo cáo sinh tự động từ candidate công khai. Candidate chỉ được bật sau khi có bản ghi phê duyệt và dataset chuẩn hóa tương ứng.
-
-- Sinh lúc (UTC): `2026-09-16T00:14:48.809797+00:00`
-- Tổng candidate: **24**
-- Candidate được nạp Rule Engine: **1**
-- Candidate đã phê duyệt: **1**
-- Dataset CTĐT đang chạy: `ET1-2022`, `ET1-2023`
-
 | Candidate | Parser | Phiên bản | HP | Nhóm | Mô-đun | Tổng TC | Trạng thái | Vấn đề cần rà |
 |---|---|---:|---:|---:|---:|---:|---|---|
 | ED3 | hust-pdf-course-list.v1 | — | 68 | 15 | 2 | — | needs_review | `normalization_not_validated`, `missing_curriculum_version`, `missing_total_credits`, `required_credit_threshold_missing` |
