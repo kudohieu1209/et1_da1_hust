@@ -47,6 +47,45 @@ class RagFailureTests(unittest.TestCase):
         self.assertEqual(response["sources"], [])
         self.assertNotIn("630", response["reply"])
 
+    def test_current_tuition_uses_the_matching_academic_year(self):
+        for question in ("Học phí ET1 năm nay bao nhiêu?", "Học phí hiện tại bao nhiêu?",
+                         "Học phí kỳ này bao nhiêu?", "Học phí học kỳ 2026.1 bao nhiêu?"):
+            with self.subTest(question=question):
+                chunk = {"text": "Học phí ET1", "metadata": {
+                    "document_type": "tuition_decision", "effective_period": "Năm học 2026–2027",
+                }}
+                with mock.patch.object(rag_engine.vector_store, "similarity_search", return_value=[chunk]) as search, \
+                        mock.patch("app.rag.rag_engine.requested_academic_year", return_value="2026-2027"), \
+                        mock.patch.object(rag_engine.gemini, "generate_response", return_value={
+                            "reply": "Có nguồn đúng năm học", "model_used": "test", "sources": [],
+                        }) as generate:
+                    response = rag_engine.query(question)
+                self.assertEqual(response["model_used"], "test")
+                self.assertIn("2026-2027", search.call_args.args[0])
+                self.assertEqual(generate.call_args.kwargs["user_query"], question)
+
+    def test_current_tuition_rejects_only_outdated_evidence(self):
+        chunk = {"text": "Học phí cũ", "metadata": {
+            "document_type": "tuition_decision", "effective_period": "Năm học 2025-2026",
+        }}
+        with mock.patch.object(rag_engine.vector_store, "similarity_search", return_value=[chunk]), \
+                mock.patch("app.rag.rag_engine.requested_academic_year", return_value="2026-2027"), \
+                mock.patch.object(rag_engine.gemini, "generate_response") as generate:
+            response = rag_engine.query("Học phí năm nay bao nhiêu?")
+        generate.assert_not_called()
+        self.assertEqual(response["model_used"], "insufficient-evidence")
+
+    def test_current_fee_support_does_not_require_a_tuition_schedule(self):
+        chunk = {"text": "Điều kiện miễn giảm học phí", "metadata": {
+            "document_type": "tuition_support_regulation",
+        }}
+        with mock.patch.object(rag_engine.vector_store, "similarity_search", return_value=[chunk]), \
+                mock.patch.object(rag_engine.gemini, "generate_response", return_value={
+                    "reply": "Điều kiện miễn giảm", "sources": [],
+                }) as generate:
+            rag_engine.query("Năm nay điều kiện miễn giảm học phí là gì?")
+        generate.assert_called_once()
+
 
 if __name__ == "__main__":
     unittest.main()

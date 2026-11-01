@@ -87,7 +87,7 @@ def root():
     return {
         "system": "HUST Course Advisor & RAG AI Agent",
         "scope": "Sinh viên Đại học Bách Khoa Hà Nội",
-        "data_scope": "Bản thử nghiệm hiện tại đang sử dụng dữ liệu của một chương trình đào tạo.",
+        "data_scope": "Tra cứu CTĐT đang hỗ trợ tại /api/programs?supported_only=true; danh mục ngành không đồng nghĩa với CTĐT đã được hỗ trợ.",
         "storage": "mongodb",
         "rag_status": "/api/rag/status",
         "docs_url": "/docs",

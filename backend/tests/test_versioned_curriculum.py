@@ -15,7 +15,7 @@ from app.services.curriculum_repository import (
     CurriculumRepository,
     curriculum_repository,
 )
-from app.services.data_loader import data_loader
+from app.services.data_loader import data_loader, _build_state
 from app.services.student_service import student_service
 
 
@@ -128,6 +128,22 @@ class VersionedCurriculumTests(unittest.TestCase):
         recommendation = course_recommender.recommend(target_track="MOD6", max_credits=20)
         self.assertEqual(recommendation["target_track"], "MOD6")
         self.assertIn("Mô đun 6", recommendation["track_name"])
+
+    def test_general_recommendations_support_curricula_without_modules(self):
+        for code, year in (("BF-E19", "2023"), ("BF-E19", "2025"), ("FL2", "2022"), ("TE-EP", "2023")):
+            with self.subTest(program=code, year=year):
+                curriculum = curriculum_repository.get(code, year)
+                profile = {"info": {"warning_level": 0}, "passed_courses": [], "failed_courses": []}
+                token = data_loader.enter_scope(_build_state(profile, curriculum, "test-no-modules"))
+                try:
+                    self.assertEqual(data_loader.get_module_tracks(), [])
+                    recommendation = course_recommender.recommend(target_track=None, max_credits=20)
+                    self.assertIsNone(recommendation["target_track"])
+                    self.assertTrue(recommendation["recommended_courses"])
+                    self.assertLessEqual(recommendation["total_credits_suggested"], 20)
+                    self.assertNotIn("0 mô-đun", recommendation["advice_note"])
+                finally:
+                    data_loader.exit_scope(token)
 
 
 

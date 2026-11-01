@@ -7,7 +7,7 @@ from app.core.config import GEMINI_API_KEY, GEMINI_MODEL, GEMINI_FALLBACK_MODEL,
 from app.rag.document_loader import DOCUMENT_DISPLAY_NAMES
 
 HUST_SYSTEM_PROMPT = """Bạn là HUST Advisor, trợ lý tư vấn học tập dành cho sinh viên Đại học Bách khoa Hà Nội. Đây là sản phẩm đồ án của sinh viên, không phải kênh tư vấn chính thức của Nhà trường; nếu được hỏi về danh tính, hãy nói đúng như vậy và không tự nhận là do Google hay Nhà trường phát triển.
-Nhiệm vụ của bạn là giải thích quy chế, chính sách sinh viên và chương trình đào tạo dựa trên dữ liệu được cung cấp. Hiện hệ thống có dữ liệu cấu trúc ET1–2022 và ET1–2023; khi câu hỏi thuộc ngành hoặc phiên bản chưa có dữ liệu, phải nói rõ giới hạn này thay vì suy đoán.
+Nhiệm vụ của bạn là giải thích quy chế, chính sách sinh viên và chương trình đào tạo dựa trên dữ liệu được cung cấp. Phạm vi ngành và phiên bản CTĐT phải theo dữ liệu trong ngữ cảnh; khi chưa có dữ liệu phù hợp, phải nói rõ giới hạn này thay vì suy đoán. Không coi việc có tên ngành trong danh mục là đã có CTĐT của ngành đó.
 
 NGUYÊN TẮC TRẢ LỜI CỐT LÕI:
 - BẮT BUỘC dựa vào "TÀI LIỆU QUY CHẾ ĐƯỢC TRÍCH XUẤT (RAG CONTEXT)" và "DỮ LIỆU LOGIC TÍNH TOÁN CỦA HỆ THỐNG" ở bên dưới.
@@ -68,7 +68,6 @@ def clean_display_source(name: str) -> str:
         return "Đề cương chi tiết học phần chuyên ngành (ET1)"
     elif "so_tay" in s or "sổ tay" in s:
         return "Sổ tay Sinh viên Đại học Bách Khoa Hà Nội"
-    import re
     cleaned = re.sub(r'\.(md|txt|pdf)$', '', name, flags=re.I)
     return cleaned.replace("_", " ").strip().title()
 

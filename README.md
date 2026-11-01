@@ -50,6 +50,7 @@ graph TD
 ## 📚 Dữ liệu
 
 - **12 CTĐT** lấy từ tài liệu công khai của trường: ET1–2022 (K67; 126 TC), ET1–2023 (K68; 132 TC), BF1–2022, BF-E19–2023, BF-E19–2025, ED2–2024, EE1–2023, EE2–2023, ET2–2023, EV2–2022, FL2–2022 và TE-EP–2023. Mỗi CTĐT được kiểm tra khớp tổng tín chỉ công bố và mã học phần, số tín chỉ với danh mục CTT.
+- ET1–2022 và ET1–2023 đã được đối chiếu thủ công. Mười CTĐT mở rộng mới qua kiểm tra tự động, chưa đối chiếu thủ công; chi tiết trong [kết quả nhập dữ liệu](data/reports/official_curricula_import.md).
 - **Danh mục 68 chương trình đại học** lấy từ trang tuyển sinh chính thức, dùng cho màn hình đăng ký.
 - Dữ liệu tổng hợp từ nhiều nguồn nên có thể còn sai sót; khi cần quyết định chính thức, sinh viên nên đối chiếu với văn bản gốc của trường.
 - Repo không chứa bảng điểm hay thông tin cá nhân thật. Cách thu thập, chuẩn hóa và sinh lại dữ liệu: xem [`data/README.md`](data/README.md).
@@ -142,7 +143,7 @@ npm run dev
 ./scripts/test_all.sh      # PowerShell: & ./scripts/test_all.ps1
 ```
 
-Kiểm thử dùng MongoDB giả lập trong bộ nhớ và hồ sơ tổng hợp, không cần MongoDB thật hay Gemini API key.
+Lệnh trên chạy kiểm thử backend, pipeline dữ liệu, toàn bộ test JavaScript (liên kết hội thoại và lựa chọn mascot), lint và build frontend. Kiểm thử dùng MongoDB giả lập trong bộ nhớ và hồ sơ tổng hợp, không cần MongoDB thật hay Gemini API key. Các kiểm thử này không nghiệm thu chất lượng trả lời của Gemini thật.
 
 ---
 

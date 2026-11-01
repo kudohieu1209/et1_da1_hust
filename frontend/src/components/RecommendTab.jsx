@@ -14,16 +14,20 @@ const TRACK_VISUALS = [
 ];
 
 export default function RecommendTab() {
-  const [selectedTrack, setSelectedTrack] = useState('MOD1');
-  const [tracks, setTracks] = useState([]);
+  const [selectedTrack, setSelectedTrack] = useState(null);
+  const [tracks, setTracks] = useState(null);
+  const [tracksRetry, setTracksRetry] = useState(0);
   const [maxCredits, setMaxCredits] = useState(20);
   const [isSummer, setIsSummer] = useState(false);
   const [recommendation, setRecommendation] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    apiFetch(apiUrl('/api/student/tracks'))
+    const controller = new AbortController();
+    setLoading(true);
+    setError('');
+    apiFetch(apiUrl('/api/student/tracks'), { signal: controller.signal })
       .then(res => res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`)))
       .then(data => {
         const loaded = (data.tracks || []).map((track, index) => ({
@@ -33,12 +37,15 @@ export default function RecommendTab() {
           ...TRACK_VISUALS[index % TRACK_VISUALS.length]
         }));
         setTracks(loaded);
-        if (loaded.length) {
-          setSelectedTrack(current => loaded.some(track => track.id === current) ? current : loaded[0].id);
-        }
+        setSelectedTrack(current => loaded.some(track => track.id === current) ? current : loaded[0]?.id ?? null);
       })
-      .catch(err => console.error('Lỗi tải danh sách mô-đun:', err));
-  }, []);
+      .catch(err => {
+        if (err.name === 'AbortError') return;
+        setError('Không tải được thông tin chương trình đào tạo. Vui lòng thử lại.');
+        setLoading(false);
+      });
+    return () => controller.abort();
+  }, [tracksRetry]);
 
   const fetchRecommendation = useCallback(async (signal) => {
     setLoading(true);
@@ -71,6 +78,7 @@ export default function RecommendTab() {
   }, [selectedTrack, maxCredits, isSummer]);
 
   useEffect(() => {
+    if (tracks === null) return undefined;
     const controller = new AbortController();
     // Chờ người dùng thả thanh trượt rồi mới gọi, và hủy yêu cầu cũ khi tham số đổi.
     const timer = setTimeout(() => fetchRecommendation(controller.signal), RECOMMEND_DEBOUNCE_MS);
@@ -78,7 +86,7 @@ export default function RecommendTab() {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [fetchRecommendation]);
+  }, [fetchRecommendation, tracks]);
 
   return (
     <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -87,10 +95,14 @@ export default function RecommendTab() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
           <div>
             <h2 style={{ fontSize: '1.25rem', color: 'var(--text-primary)' }}>
-              Bước 1: Chọn định hướng chuyên môn
+              {tracks?.length ? 'Chọn định hướng chuyên môn' : 'Gợi ý theo chương trình đào tạo'}
             </h2>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-              Chọn một trong các mô-đun của chương trình đào tạo đang được hỗ trợ; mỗi mô-đun yêu cầu tối thiểu 15 tín chỉ.
+              {tracks === null
+                ? 'Đang tải thông tin chương trình đào tạo...'
+                : tracks.length
+                  ? 'Chọn mô-đun để ưu tiên môn học; yêu cầu tín chỉ được ghi riêng ở từng mô-đun.'
+                  : 'Chương trình không chia mô-đun tự chọn. Hệ thống gợi ý môn học theo tiến độ và điều kiện đăng ký của bạn.'}
             </p>
           </div>
         </div>
@@ -100,7 +112,7 @@ export default function RecommendTab() {
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
           gap: '14px'
         }}>
-          {tracks.map(t => {
+          {(tracks || []).map(t => {
             const Icon = t.icon;
             const isSelected = selectedTrack === t.id;
             return (
@@ -196,7 +208,7 @@ export default function RecommendTab() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Sparkles size={20} color="var(--brand-accent)" />
               <h3 style={{ fontSize: '1.2rem', color: 'var(--text-primary)' }}>
-                Danh sách Môn học Tối ưu Được Đề xuất
+                Danh sách môn học được đề xuất
               </h3>
             </div>
             {recommendation && (
@@ -217,11 +229,16 @@ export default function RecommendTab() {
 
         {loading ? (
           <div style={{ padding: '30px', textAlign: 'center', color: 'var(--text-secondary)' }}>
-            Đang tính toán ma trận môn học tối ưu...
+            Đang tìm môn học phù hợp...
           </div>
         ) : error ? (
           <div role="alert" style={{ padding: '30px', textAlign: 'center', color: 'var(--danger)' }}>
             {error}
+            {tracks === null && (
+              <button type="button" className="settings-button" onClick={() => setTracksRetry(value => value + 1)}>
+                Thử lại
+              </button>
+            )}
           </div>
         ) : recommendation?.recommended_courses?.length > 0 ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

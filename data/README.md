@@ -93,7 +93,10 @@ backend/.venv/bin/python data/scripts/scrape_hust_programs.py \
 Nếu môi trường Python thiếu chứng chỉ CA, thêm `--insecure` khi chạy và chỉ
 dùng kết quả này như một snapshot đã kiểm tra. Danh mục này không được coi là
 CTĐT: API đánh dấu `curriculum_supported: true` chỉ cho chương trình đã có
-JSON CTĐT được chuẩn hóa (hiện ET1 có phiên bản 2022 và 2023).
+JSON CTĐT được chuẩn hóa. Hiện có 12 phiên bản CTĐT: ET1–2022/2023 đã đối chiếu
+thủ công và 10 CTĐT mở rộng qua kiểm tra tự động, chưa đối chiếu thủ công.
+Danh sách và lý do loại các nguồn chưa đạt nằm trong
+[kết quả nhập CTĐT công khai](reports/official_curricula_import.md).
 
 Để rà các liên kết CTĐT mà từng trang ngành trỏ tới, chạy:
 

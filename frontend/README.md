@@ -5,6 +5,7 @@ này. Backend chạy cổng 8000. Vite chuyển tiếp `/api` tới `127.0.0.1:8
 `localhost:5173` và `127.0.0.1:5173` đều dùng cookie phiên cùng địa chỉ với web.
 
 - `npm run lint`: kiểm tra mã bằng Oxlint.
+- `npm test`: kiểm tra liên kết hội thoại, lưu lựa chọn mascot và các bộ ảnh nhân vật.
 - `npm run build`: tạo bản tĩnh trong `dist/`.
 - `npm run preview`: chỉ xem bản build; không thay thế reverse proxy production.
 
@@ -13,5 +14,4 @@ URL khác, backend cần cho phép đúng origin và cookie phải phù hợp qu
 của tên miền; không chỉ thay URL là đủ. Khóa MongoDB/Gemini chỉ nằm ở backend,
 không đặt trong biến `VITE_*` vì các biến này được đóng gói vào mã trình duyệt.
 
-Hướng dẫn cài đặt, dữ liệu demo tổng hợp và giới hạn: [README gốc](../README.md). Các trang `*-preview.html` ở máy tác giả chỉ là
-công cụ xem thử thiết kế, không phải luồng ứng dụng được bàn giao.
+Hướng dẫn cài đặt, dữ liệu và kiểm thử: [README gốc](../README.md).

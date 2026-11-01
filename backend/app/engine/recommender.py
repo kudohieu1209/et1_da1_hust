@@ -191,7 +191,7 @@ class CourseRecommender:
             advice_note += "Chưa xác định mức cảnh báo; tạm giới hạn kế hoạch ở 14 TC/kỳ chính. Hãy đối chiếu CTT trước khi đăng ký. "
         if track_info:
             advice_note += f"Ưu tiên theo định hướng: {track_info['name']}."
-        else:
+        elif tracks:
             advice_note += (
                 f"Bạn có thể chọn một trong {len(tracks)} mô-đun chính thức "
                 "để lọc môn tự chọn."

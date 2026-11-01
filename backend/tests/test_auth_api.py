@@ -60,6 +60,28 @@ class AuthApiTests(unittest.TestCase):
             self.assertEqual(response.status_code, 200, response.text)
         return client
 
+    def test_curriculum_without_modules_accepts_general_recommendations(self):
+        profile = self.profiles.get(K67)
+        profile["info"].update({
+            "program_code": "BF-E19", "program_id": "BF-E19",
+            "curriculum_version": "2023", "class_name": "BF-E19 - K68",
+        })
+        profile["transcript"] = []
+        profile["passed_courses"] = []
+        profile["failed_courses"] = []
+        self.profiles.save(K67, profile)
+        client = self._client(K67)
+        tracks = client.get("/api/student/tracks")
+        self.assertEqual(tracks.status_code, 200, tracks.text)
+        self.assertEqual(tracks.json()["tracks"], [])
+        response = client.post("/api/student/recommend", json={"target_track": None, "max_credits": 20})
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertTrue(response.json()["recommended_courses"])
+        self.assertIsNone(response.json()["target_track"])
+        # Invalid module IDs must still be rejected rather than ignored.
+        invalid = client.post("/api/student/recommend", json={"target_track": "MOD1"})
+        self.assertEqual(invalid.status_code, 422)
+
     def test_chat_is_rate_limited_per_student(self):
         client = self._client(K67)
         other = self._client(K68)

@@ -156,6 +156,10 @@ class NewDocumentIndexTests(unittest.TestCase):
 
 
 class DisplaySourceTests(unittest.TestCase):
+    def test_new_file_and_unmapped_display_name_are_supported(self):
+        self.assertEqual(clean_display_source("nguon_moi.md"), "Nguon Moi")
+        self.assertEqual(clean_display_source("Thông báo mới"), "Thông báo mới")
+
     def test_display_names_pass_through_unchanged(self):
         name = DOCUMENT_DISPLAY_NAMES["quy_che_cong_tac_sinh_vien_2026_verified.md"]
         self.assertEqual(clean_display_source(name), name)

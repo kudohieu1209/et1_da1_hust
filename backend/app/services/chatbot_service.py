@@ -1,5 +1,4 @@
 import re
-import os
 import unicodedata
 from typing import Dict, List, Any, Optional
 from app.services.data_loader import data_loader
@@ -7,7 +6,6 @@ from app.services.student_service import student_service
 from app.engine.rule_engine import rule_engine
 from app.engine.graph_engine import graph_engine
 from app.engine.recommender import course_recommender
-from app.core.config import GEMINI_API_KEY
 from app.rag.rag_engine import rag_engine
 from app.rag.gemini_service import gemini_service
 from app.services.conversation_context import previous_focus, resolve_followup
@@ -241,9 +239,6 @@ def detect_small_talk(text: str, detected_codes: Optional[List[str]] = None) -> 
 
 
 class ChatbotService:
-    def __init__(self):
-        self.gemini_key = GEMINI_API_KEY or os.getenv("GEMINI_API_KEY", "")
-
     @staticmethod
     def _is_repeat_request(message: str) -> bool:
         """Nhận diện các câu ngắn yêu cầu trả lời lại câu hỏi trước.

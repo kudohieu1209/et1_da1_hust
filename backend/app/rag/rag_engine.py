@@ -1,8 +1,7 @@
-import os
 import re
 from typing import List, Dict, Any, Optional
 from app.rag.document_loader import document_loader
-from app.rag.vector_store import vector_store
+from app.rag.vector_store import preferred_document_types, requested_academic_year, vector_store
 from app.rag.gemini_service import gemini_service
 
 class RAGEngine:
@@ -23,18 +22,31 @@ class RAGEngine:
         1. Retrieval: Tìm kiếm các chunk văn bản quy chế liên quan nhất trong ChromaDB.
         2. Augmentation & Generation: Truyền Context vào Gemini LLM để tổng hợp câu trả lời chính xác và trích dẫn điều khoản.
         """
-        # 1. Thu thập văn bản liên quan từ Vector Store
-        retrieved_chunks = self.vector_store.similarity_search(question, k=k)
+        search_question = question
+        requested_periods = []
+        if "tuition_decision" in preferred_document_types(question):
+            requested_periods = [f"{left}-{right}" for left, right in
+                                 re.findall(r"(20\d{2})\s*[-–/]\s*(20\d{2})", question)]
+            needs_resolved_period = not requested_periods
+            semester_years = re.findall(r"\b(20\d{2})\.[123]\b", question)
+            if not requested_periods and semester_years:
+                requested_periods = [f"{year}-{int(year) + 1}" for year in semester_years]
+            if not requested_periods and re.search(r"hiện tại|hiện nay|năm nay|kỳ này", question.lower()):
+                requested_periods = [requested_academic_year(question)]
+            if requested_periods and needs_resolved_period:
+                # Resolve relative dates before retrieval so the matching fee
+                # decision can outrank a similar document from a different year.
+                search_question = f"{question} (năm học {', '.join(requested_periods)})"
 
-        # A dated source cannot establish a fee for a different year or current term.
-        if "học phí" in question.lower():
-            requested_periods = re.findall(r"(20\d{2})\s*[-–/]\s*(20\d{2})", question)
+        retrieved_chunks = self.vector_store.similarity_search(search_question, k=k)
+
+        # A dated source only establishes fees for the academic year it covers.
+        if requested_periods:
             periods = [chunk["metadata"].get("effective_period", "") for chunk in retrieved_chunks
                        if chunk["metadata"].get("document_type") == "tuition_decision"]
-            unsupported_period = any(not any(left in period and right in period for period in periods)
-                                     for left, right in requested_periods)
-            current_term = re.search(r"hiện tại|hiện nay|năm nay|kỳ này|20\d{2}\.\d", question.lower())
-            if unsupported_period or current_term:
+            available_periods = {f"{left}-{right}" for period in periods for left, right in
+                                 re.findall(r"(20\d{2})\s*[-–/]\s*(20\d{2})", period)}
+            if not set(requested_periods) <= available_periods:
                 return {
                     "reply": "Kho chưa có văn bản học phí được xác nhận cho thời gian bạn hỏi. Các mức đã lưu chỉ áp dụng cho năm học ghi trên nguồn; hãy tra thông báo đúng năm học/học kỳ trên CTT HUST.",
                     "sources": [], "model_used": "insufficient-evidence",

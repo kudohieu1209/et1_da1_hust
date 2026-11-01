@@ -38,9 +38,6 @@ GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL", "")
 # Giới hạn thời gian mỗi lần gọi Gemini để request chat không treo vô hạn.
 GEMINI_TIMEOUT_SECONDS = float(os.getenv("GEMINI_TIMEOUT_SECONDS", "45"))
-GEMINI_EMBEDDING_MODEL = "text-embedding-004"
-
-
 # Danh sách origin của frontend, phân tách bằng dấu phẩy. Không dùng "*" vì
 # CORSMiddleware bật allow_credentials.
 CORS_ORIGINS = [

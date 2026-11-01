@@ -7,9 +7,7 @@ import {
   Pin,
   Archive,
   Trash2,
-  Folder,
-  FileText,
-  ChevronRight
+  FileText
 } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import BrandLogo from './components/BrandLogo';
@@ -609,38 +607,6 @@ export default function App() {
                 >
                   <Trash2 size={16} color="var(--danger)" />
                   <span>{language === 'vi' ? 'Xóa' : 'Delete'}</span>
-                </button>
-
-                <div style={{ height: '1px', background: 'var(--border-subtle)', margin: '4px 0' }} />
-
-                {/* 5. Di chuyển sang dự án */}
-                <button
-                  onClick={() => {
-                    setIsChatMenuOpen(false);
-                    showToast(language === 'vi' ? 'Đã lưu vào Dự án tốt nghiệp' : 'Moved to Project');
-                  }}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    padding: '9px 12px',
-                    borderRadius: '8px',
-                    border: 'none',
-                    background: 'transparent',
-                    color: 'var(--text-primary)',
-                    fontSize: '0.85rem',
-                    fontWeight: '500',
-                    cursor: 'pointer',
-                    width: '100%',
-                    textAlign: 'left',
-                    transition: 'background 0.15s ease'
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.background = 'var(--sidebar-hover)'}
-                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                >
-                  <Folder size={16} color="var(--text-muted)" />
-                  <span>{language === 'vi' ? 'Di chuyển sang dự án' : 'Move to project'}</span>
-                  <ChevronRight size={14} style={{ marginLeft: 'auto', color: 'var(--text-muted)' }} />
                 </button>
               </div>
             )}
