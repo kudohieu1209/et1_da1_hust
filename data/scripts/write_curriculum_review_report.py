@@ -1,103 +1,74 @@
-#!/usr/bin/env python3
-"""Render the review-only curriculum candidate queue as Markdown."""
-
+"""Publish current curriculum coverage from the actual source and runtime files."""
 from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parents[1]
-DEFAULT_INPUT = DATA_DIR / "raw" / "hust_curriculum_candidates.json"
-DEFAULT_OUTPUT = DATA_DIR / "reports" / "curriculum_candidates_review.md"
-DEFAULT_CURRICULA = DATA_DIR / "processed" / "curricula"
+DATA = Path(__file__).resolve().parents[1]
 
 
-def _value(value):
-    return "—" if value in (None, "") else str(value)
+def load(path):
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
-def render(payload: dict, curricula_dir: Path = DEFAULT_CURRICULA) -> str:
-    records = payload.get("records", [])
-    approved = [
-        record for record in records
-        if (record.get("activation") or {}).get("status") == "approved"
-    ]
-    loaded_keys = []
-    if curricula_dir.exists():
-        for path in sorted(curricula_dir.glob("*.json")):
-            try:
-                data = json.loads(path.read_text(encoding="utf-8"))
-                program = data.get("program", {})
-                if program.get("program_code") and program.get("curriculum_version"):
-                    loaded_keys.append(
-                        f"{program['program_code']}-{program['curriculum_version']}"
-                    )
-            except (OSError, json.JSONDecodeError):
-                continue
-    lines = [
-        "# Hàng đợi kiểm duyệt CTĐT",
-        "",
-        "> Báo cáo sinh tự động từ candidate công khai. Candidate chỉ được bật sau khi có bản ghi phê duyệt và dataset chuẩn hóa tương ứng.",
-        "",
-        f"- Sinh lúc (UTC): `{datetime.now(timezone.utc).isoformat()}`",
-        f"- Tổng candidate: **{len(records)}**",
-        f"- Candidate được nạp Rule Engine: **{payload.get('rule_engine_loaded', 0)}**",
-        f"- Candidate đã phê duyệt: **{len(approved)}**",
-        f"- Dataset CTĐT đang chạy: {', '.join(f'`{key}`' for key in loaded_keys) or '—'}",
-        "",
-        "| Candidate | Parser | Phiên bản | HP | Nhóm | Mô-đun | Tổng TC | Trạng thái | Vấn đề cần rà |",
-        "|---|---|---:|---:|---:|---:|---:|---|---|",
-    ]
-    for record in records:
-        quality = record.get("quality", {})
-        reasons = ", ".join(f"`{reason}`" for reason in quality.get("review_reasons", [])) or "—"
-        lines.append(
-            "| {candidate} | {parser} | {version} | {courses} | {groups} | {modules} | {total} | {status} | {reasons} |".format(
-                candidate=record.get("candidate_id", record.get("admission_code", "?")),
-                parser=record.get("parser", "?"),
-                version=_value(record.get("curriculum_version")),
-                courses=_value(quality.get("course_count")),
-                groups=_value(quality.get("group_count")),
-                modules=_value(quality.get("module_count")),
-                total=_value(quality.get("page_total_credits")),
-                status=(record.get("activation") or {}).get("status", "needs_review"),
-                reasons=reasons,
-            )
-        )
-    lines.extend(["", "## Chi tiết tự động", ""])
-    for record in records:
-        quality = record.get("quality", {})
-        lines.append(f"### `{record.get('candidate_id', record.get('admission_code', '?'))}`")
-        lines.append("")
-        lines.append(f"- Nguồn: {_value(record.get('source_url'))}")
-        lines.append(f"- Tệp: `{_value(record.get('file'))}`")
-        lines.append(f"- Mã môn không có trong CTT: {_value(', '.join(quality.get('course_codes_missing_from_ctt', [])))}")
-        lines.append(f"- Nhóm thiếu ngưỡng tín chỉ bắt buộc: {_value(', '.join(quality.get('required_credit_thresholds_missing', [])))}")
-        lines.append(f"- Chuỗi điều kiện CTT có nội dung: {_value(quality.get('ctt_conditions_nonempty'))}; các dòng rỗng được hiểu là không có học phần trước.")
-        lines.append(f"- Công thức một mô-đun suy ra: {_value(quality.get('derived_one_module_total'))}; tổng trang công bố: {_value(quality.get('page_total_credits'))}")
-        status = (record.get("activation") or {}).get("status", "needs_review")
-        if status == "approved":
-            activation = record.get("activation") or {}
-            lines.append(
-                f"- Phê duyệt: {activation.get('approved_by', '—')} — {activation.get('approved_at', '—')}"
-            )
-        else:
-            lines.append(f"- Lý do giữ lại: {', '.join(quality.get('review_reasons', [])) or '—'}")
-        lines.append("")
+def coverage(data_dir=DATA):
+    catalog = load(data_dir / "raw/hust_undergraduate_programs.json")["programs"]
+    codes = {p["admission_code"] for p in catalog}
+    active = [load(p) for p in sorted((data_dir / "processed/curricula").glob("*.json"))]
+    active_keys = {(d["program"]["program_code"], str(d["program"]["curriculum_version"])) for d in active}
+    approvals = load(data_dir / "processed/curriculum_approvals.json")["approvals"]
+    activations = {a.get("source_candidate_id") or a["candidate_id"]: a["candidate_id"].rsplit("-", 1)[-1]
+                   for a in approvals if a.get("status") == "approved"}
+    records = {}
+    for directory in (data_dir / "raw/official_curricula", data_dir / "raw/reviewed_curricula"):
+        for path in sorted(directory.glob("*.json")):
+            records[path.stem] = (path, load(path))
+    rows = []
+    for identifier, (path, raw) in sorted(records.items()):
+        code = raw["admission_code"]
+        available = (code, str(activations.get(identifier) or raw.get("curriculum_version"))) in active_keys
+        status = "Đã dùng để rà soát tiến độ" if available else "Đã đưa vào tra cứu"
+        reasons = []
+        if code not in codes:
+            status = "Ngoài danh mục đại học"
+            reasons.append("Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học.")
+        elif not available:
+            if raw.get("curriculum_version") is None and not raw.get("applies_to_cohorts"):
+                reasons.append("Nguồn chưa xác định phiên bản/khóa áp dụng.")
+            if raw.get("total_credits") is None:
+                reasons.append("Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ.")
+            if not reasons:
+                reasons.append("Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng.")
+        rows.append((identifier, path, raw, status, " ".join(reasons)))
+    lines = ["# Phạm vi dữ liệu CTĐT đang có trong ứng dụng", "",
+             "Sinh lại bằng `python data/scripts/write_curriculum_review_report.py`. Đây là trạng thái xử lý dữ liệu, không phải danh sách việc giao cho người dùng review.", "",
+             f"- {len(catalog)} ngành đại học đều có mục tra cứu tài liệu đã thu thập qua giao diện và `/api/programs/{{code}}/curricula`.",
+             f"- {len(active)} phiên bản CTĐT đã chuẩn hóa để rà soát tiến độ theo khóa.",
+             "- Nguồn thiếu khung đầy đủ vẫn xem được học phần và ghi chú; không bị bỏ ngoài ứng dụng.",
+             "- Môn chưa có điều kiện trong snapshot CTT không được tự kết luận đủ điều kiện đăng ký.", "",
+             "| Tài liệu | Sử dụng hiện tại | Phạm vi còn thiếu trong nguồn |", "|---|---|---|"]
+    for identifier, path, raw, status, reason in rows:
+        link = "../" + path.relative_to(data_dir).as_posix()
+        lines.append(f"| [{identifier}]({link}) | {status} | {reason or 'Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu.'} |")
+    lines += ["", "## Các khung đã dùng cho tiến độ", "",
+              "| Mã | Phiên bản | Tổng TC | Học phần | Khóa áp dụng |", "|---|---|---:|---:|---|"]
+    for d in active:
+        p = d["program"]
+        cohorts = ", ".join(d.get("applies_to_cohorts") or []) or f"K{int(p['curriculum_version']) - 1955}"
+        lines.append(f"| {p['program_code']} | {p['curriculum_version']} | {p['total_required_credits']} | {len(d['courses'])} | {cohorts} |")
     return "\n".join(lines) + "\n"
 
 
-def main() -> int:
+def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--output", type=Path, default=DATA / "reports/curriculum_candidates_review.md")
     args = parser.parse_args()
-    payload = json.loads(args.input.read_text(encoding="utf-8"))
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(render(payload), encoding="utf-8")
-    print(f"Đã ghi báo cáo kiểm duyệt {len(payload.get('records', []))} candidate vào {args.output}")
+    report = coverage()
+    args.output.write_text(report, encoding="utf-8", newline="\n")
+    # Both old entry points now describe the same current data, not conflicting snapshots.
+    (DATA / "reports/official_curricula_import.md").write_text(report, encoding="utf-8", newline="\n")
+    print("Đã cập nhật phạm vi dữ liệu từ các tệp nguồn và CTĐT đang chạy.")
     return 0
 
 

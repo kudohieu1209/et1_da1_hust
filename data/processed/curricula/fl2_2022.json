@@ -213,7 +213,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "SSH1120",
@@ -229,7 +230,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "SSH1050",
@@ -245,7 +247,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "SSH1130",
@@ -261,7 +264,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "IT1130",
@@ -277,7 +281,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "EM1170",
@@ -293,7 +298,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1320",
@@ -309,7 +315,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1330",
@@ -325,7 +332,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1421",
@@ -341,7 +349,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1422",
@@ -366,7 +375,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1423",
@@ -395,7 +405,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1424",
@@ -428,7 +439,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1431",
@@ -444,7 +456,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1432",
@@ -477,7 +490,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1433",
@@ -510,7 +524,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1434",
@@ -543,7 +558,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1441",
@@ -559,7 +575,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1442",
@@ -584,7 +601,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1443",
@@ -613,7 +631,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FL1444",
@@ -646,7 +665,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE1101",
@@ -662,7 +682,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE1204",
@@ -687,7 +708,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE2108",
@@ -712,7 +734,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE1102",
@@ -728,7 +751,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE1205",
@@ -753,7 +777,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE2109",
@@ -778,7 +803,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE1103",
@@ -794,7 +820,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE1206",
@@ -819,7 +846,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE1207",
@@ -835,7 +863,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE2110",
@@ -860,7 +889,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE2214",
@@ -885,7 +915,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE2111",
@@ -910,7 +941,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE2215",
@@ -935,7 +967,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE2212",
@@ -960,7 +993,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE3101",
@@ -976,7 +1010,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE3205",
@@ -992,7 +1027,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE2213",
@@ -1017,7 +1053,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE3102",
@@ -1033,7 +1070,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE3206",
@@ -1049,7 +1087,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE4102",
@@ -1065,7 +1104,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE3103",
@@ -1081,7 +1121,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE3207",
@@ -1097,7 +1138,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE4103",
@@ -1113,7 +1155,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE3204",
@@ -1129,7 +1172,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE4101",
@@ -1145,7 +1189,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE4104",
@@ -1161,7 +1206,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE4205",
@@ -1186,7 +1232,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "FLE4206",
@@ -1211,7 +1258,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "PE1010",
@@ -1227,7 +1275,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "PE1020",
@@ -1243,7 +1292,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "PE1030",
@@ -1259,7 +1309,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "PE2010",
@@ -1275,7 +1326,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "PE2020",
@@ -1300,7 +1352,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MIL1110",
@@ -1316,7 +1369,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MIL1120",
@@ -1341,7 +1395,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MIL1130",
@@ -1366,7 +1421,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     }
   ],
   "non_credit_group_ids": [

@@ -112,6 +112,71 @@
         "Kiểm tra tự động, chưa đối chiếu thủ công.",
         "66 học phần khớp danh mục CTT; tổng ngưỡng các khối bằng 140 TC công bố."
       ]
+    },
+    {
+      "candidate_id": "BF2-2025",
+      "source_candidate_id": "BF2-2025",
+      "status": "approved",
+      "approved_by": "source-review-20261101",
+      "output_file": "data/processed/curricula/bf2_2025.json",
+      "notes": [
+        "Trang 5: tổng 132 TC được tính từ công thức điều kiện tốt nghiệp 13+32+50+9+20+(2+6 hoặc 8), không lấy tổng danh mục tự chọn."
+      ]
+    },
+    {
+      "candidate_id": "ME1-2025",
+      "source_candidate_id": "ME1-2025",
+      "status": "approved",
+      "approved_by": "source-review-20261101",
+      "output_file": "data/processed/curricula/me1_2025.json",
+      "notes": [
+        "Trang 5: công thức cử nhân cho K70 có tổng 132 TC (13+32+48+9+22+2+6); trang 6 thay thực tập và ĐATN bằng ĐANC 8 TC. Nguồn đăng trên trang trường; ô số/ngày quyết định ở phụ lục còn trống."
+      ]
+    },
+    {
+      "candidate_id": "MS1-2023",
+      "source_candidate_id": "MS1-2023",
+      "status": "approved",
+      "approved_by": "source-review-20261101",
+      "output_file": "data/processed/curricula/ms1_2023.json",
+      "notes": [
+        "Trang 1 ghi áp dụng từ K65. Bản chụp cập nhật 2023 được dùng cho các khóa K67–K70 đang khảo sát.",
+        "Dùng bảng chi tiết: cốt lõi chung 38 TC + cốt lõi định hướng 10 TC (trang 3–5), khác tóm tắt 34+14 ở trang 1.",
+        "Ghép mô-đun cốt lõi 1 với chuyên ngành 1.1–1.5, cốt lõi 2 với chuyên ngành 2.1; mỗi tổ hợp 26 TC. Tổng 132 TC không cộng trùng hai tầng mô-đun."
+      ]
+    },
+    {
+      "candidate_id": "FL3-2025",
+      "source_candidate_id": "FL3-2025",
+      "status": "approved",
+      "approved_by": "source-review-20261101",
+      "output_file": "data/processed/curricula/fl3_2025.json",
+      "notes": [
+        "Ngành bắt đầu tuyển sinh từ 2025; dữ liệu gắn K70, không gán cho K68.",
+        "Có hai lựa chọn độc lập: một ngoại ngữ II 10 TC và một chuyên ngành 15 TC. Sáu tổ hợp hợp lệ có cùng ngưỡng 25 TC; toàn chương trình 136 TC."
+      ]
+    },
+    {
+      "candidate_id": "EV2-2025",
+      "source_candidate_id": "EV2-2025",
+      "status": "approved",
+      "approved_by": "source-review-20261101",
+      "output_file": "data/processed/curricula/ev2_2025.json",
+      "notes": [
+        "Trang 1 ghi áp dụng từ khóa tuyển sinh 2025/K70. Trang 6 ghi công thức 13+32+50+9+16+2+10=132 TC.",
+        "Tiêu đề cha tự chọn 16 TC không được tính thêm ngoài một trong hai mô-đun con."
+      ]
+    },
+    {
+      "candidate_id": "EV1-2025",
+      "source_candidate_id": "EV1-2025",
+      "status": "approved",
+      "approved_by": "source-review-20261101",
+      "output_file": "data/processed/curricula/ev1_2025.json",
+      "notes": [
+        "Khung Kỹ thuật Môi trường K70 có tổng 132 TC: 13+32+50+9+20+8; chỉ chọn một mô-đun 20 TC.",
+        "Tám mã học phần mới chưa có trong snapshot CTT vẫn lấy tín chỉ từ tài liệu CTĐT chính thức; điều kiện đăng ký giữ trạng thái chưa xác minh."
+      ]
     }
   ]
 }

@@ -28,6 +28,7 @@ RAW_CONDITIONS_FILE = PROJECT_DIR / "data" / "raw" / "ctt_et_conditions.json"
 PROGRAM_CATALOG_FILE = PROJECT_DIR / "data" / "raw" / "hust_undergraduate_programs.json"
 PROGRAM_SOURCES_FILE = PROJECT_DIR / "data" / "raw" / "hust_program_curriculum_sources.json"
 PROGRAM_CANDIDATES_FILE = PROJECT_DIR / "data" / "raw" / "hust_curriculum_candidates.json"
+CURRICULUM_REFERENCES_DIR = PROJECT_DIR / "data" / "raw" / "official_curricula"
 
 API_HOST = os.getenv("API_HOST", "0.0.0.0")
 API_PORT = int(os.getenv("API_PORT", 8000))

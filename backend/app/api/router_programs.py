@@ -32,3 +32,11 @@ def get_program(program_code: str):
         "curriculum_sources_discovered_at": program_catalog.curriculum_sources_discovered_at,
         "program": program,
     }
+
+
+@router.get("/{program_code}/curricula")
+def get_program_curricula(program_code: str):
+    program = program_catalog.get(program_code)
+    if not program:
+        raise HTTPException(status_code=404, detail="Không tìm thấy chương trình.")
+    return {"program": program, "curricula": program_catalog.get_curricula(program_code)}

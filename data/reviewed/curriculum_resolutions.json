@@ -1,0 +1,156 @@
+{
+  "reviewed_at": "2026-11-01",
+  "resolutions": [
+    {
+      "id": "BF2-2025",
+      "source_candidate_id": "BF2-2025",
+      "input_file": "data/raw/official_curricula/BF2-2025.json",
+      "input_sha256": "e9b239c502f98e4800c83e6fa0972c26a9a3c8dd45a9bd3a2b947ccc62f3833f",
+      "fields": {
+        "total_credits": 132
+      },
+      "choice_strategy": null,
+      "evidence": [
+        {
+          "file": "data/raw/reviewed_sources/d9c53a113ec7f3dd.pdf",
+          "sha256": "b855bad76540ce0242bcec4ea994db368272013534830b7e2b0678d399a93507",
+          "location": "PDF trang 5"
+        }
+      ],
+      "notes": [
+        "Trang 5: tổng 132 TC được tính từ công thức điều kiện tốt nghiệp 13+32+50+9+20+(2+6 hoặc 8), không lấy tổng danh mục tự chọn."
+      ]
+    },
+    {
+      "id": "ME1-2025",
+      "source_candidate_id": "ME1-2025",
+      "input_file": "data/raw/official_curricula/ME1-2025.json",
+      "input_sha256": "8d9360ef79bff8329f91f24f545fbca092ac93ff941f6eb05884f12aedee38d8",
+      "fields": {
+        "total_credits": 132
+      },
+      "choice_strategy": null,
+      "evidence": [
+        {
+          "file": "data/raw/reviewed_sources/8513d9ad12e9e088.pdf",
+          "sha256": "cc3abdd9fd31f671f4c51473d70af901c26b015263291a3de9177170cfea5152",
+          "location": "PDF trang 1, 5–6"
+        }
+      ],
+      "notes": [
+        "Trang 5: công thức cử nhân cho K70 có tổng 132 TC (13+32+48+9+22+2+6); trang 6 thay thực tập và ĐATN bằng ĐANC 8 TC. Nguồn đăng trên trang trường; ô số/ngày quyết định ở phụ lục còn trống."
+      ]
+    },
+    {
+      "id": "MS1-2023",
+      "source_candidate_id": "MS1-2023",
+      "input_file": "data/raw/official_curricula/MS1-2023.json",
+      "input_sha256": "c55c8e83f8f4dfed46281fc8a6f6da0733d71fc03c3928af83ec324ed822bc02",
+      "fields": {
+        "applies_to_cohorts": [
+          "K67",
+          "K68",
+          "K69",
+          "K70"
+        ]
+      },
+      "choice_strategy": "materials_core_and_specialization",
+      "evidence": [
+        {
+          "file": "data/raw/reviewed_sources/9108f0ab7584b143.pdf",
+          "sha256": "9abfd5ece6d1e63f1296e73963b7d95b1ed816a07e1412cfb2976edeea986716",
+          "location": "PDF trang 1–8"
+        }
+      ],
+      "notes": [
+        "Trang 1 ghi áp dụng từ K65. Bản chụp cập nhật 2023 được dùng cho các khóa K67–K70 đang khảo sát.",
+        "Dùng bảng chi tiết: cốt lõi chung 38 TC + cốt lõi định hướng 10 TC (trang 3–5), khác tóm tắt 34+14 ở trang 1.",
+        "Ghép mô-đun cốt lõi 1 với chuyên ngành 1.1–1.5, cốt lõi 2 với chuyên ngành 2.1; mỗi tổ hợp 26 TC. Tổng 132 TC không cộng trùng hai tầng mô-đun."
+      ]
+    },
+    {
+      "id": "FL3-2025",
+      "source_candidate_id": "FL3-2025",
+      "input_file": "data/raw/official_curricula/FL3-2025.json",
+      "input_sha256": "caf049738c3be2ffc8d5e63fae12bbbea3a230ba59021082075ef5480e32ccaa",
+      "fields": {},
+      "choice_strategy": "language_and_specialization",
+      "evidence": [
+        {
+          "file": "data/raw/reviewed_sources/442b5cab72f870ed.html",
+          "sha256": "7ce6f0fe610ddcc40584a3a216efa0a9b31415bbaa2c91be4717bb02b2df67fe",
+          "location": "Trang công bố cùng sáu ảnh bảng học phần"
+        },
+        {
+          "file": "data/raw/reviewed_sources/f35423d6adfe705b.jpg",
+          "sha256": "831848b389fa1025d9d3678c87bd02f94fe67686e9e2dbae664ac8aac49ad953",
+          "location": "Ảnh bảng học phần chính thức FL3"
+        },
+        {
+          "file": "data/raw/reviewed_sources/16cff727094b5fb2.jpg",
+          "sha256": "aef964d09e872623ffcd0e1428efe642909952f2621fb4ad44c8a0ec4eb5d1de",
+          "location": "Ảnh bảng học phần chính thức FL3"
+        },
+        {
+          "file": "data/raw/reviewed_sources/b6c18c899917e880.jpg",
+          "sha256": "6b2b6205e23d5325534fd9f8af3327a06d452c956549395bac07e19db60ede8c",
+          "location": "Ảnh bảng học phần chính thức FL3"
+        },
+        {
+          "file": "data/raw/reviewed_sources/84fbb77e83998fb0.jpg",
+          "sha256": "dcf0d1a7ec7645f51ca49c3d451cc6511c6efe876f1907023dc3b281c962aeac",
+          "location": "Ảnh bảng học phần chính thức FL3"
+        },
+        {
+          "file": "data/raw/reviewed_sources/d34bce39928d5f50.jpg",
+          "sha256": "38e8044f366a5bba10ee0b129e274badd730195ff56c5a53554314e511fb2920",
+          "location": "Ảnh bảng học phần chính thức FL3"
+        },
+        {
+          "file": "data/raw/reviewed_sources/3c12004f69a4b8f1.jpg",
+          "sha256": "a4100c68c5ae3f80f6ea3dc5cda55ec300eff75ce9376309808833b75eeef1b8",
+          "location": "Ảnh bảng học phần chính thức FL3"
+        }
+      ],
+      "notes": [
+        "Ngành bắt đầu tuyển sinh từ 2025; dữ liệu gắn K70, không gán cho K68.",
+        "Có hai lựa chọn độc lập: một ngoại ngữ II 10 TC và một chuyên ngành 15 TC. Sáu tổ hợp hợp lệ có cùng ngưỡng 25 TC; toàn chương trình 136 TC."
+      ]
+    },
+    {
+      "id": "EV2-2025",
+      "source_candidate_id": "EV2-2025",
+      "input_file": "data/raw/reviewed_sources/ev2_2025_extraction.json",
+      "input_sha256": "27e4b8cce76ef1e0ef6156079266185c5e376f43c774b6accf9295e9d9a4e7fa",
+      "convert": "ev2",
+      "evidence": [
+        {
+          "file": "data/raw/reviewed_sources/7520a6462c4e7d77.pdf",
+          "sha256": "42ce2717e171a9932893d2d6e5cd945cb704ec72c231bd9d03e96a21370690b9",
+          "location": "PDF trang 1, 3–6; công thức tốt nghiệp trang 6"
+        }
+      ],
+      "notes": [
+        "Trang 1 ghi áp dụng từ khóa tuyển sinh 2025/K70. Trang 6 ghi công thức 13+32+50+9+16+2+10=132 TC.",
+        "Tiêu đề cha tự chọn 16 TC không được tính thêm ngoài một trong hai mô-đun con."
+      ]
+    },
+    {
+      "id": "EV1-2025",
+      "source_candidate_id": "EV1-2025",
+      "input_file": "data/raw/official_curricula/EV1-2025.json",
+      "input_sha256": "21d236c1e92df87e1ad3b7028333d47a3dc107c5f528cff75815c508aefb596c",
+      "evidence": [
+        {
+          "file": "data/raw/reviewed_sources/e121d2c31ce8b9a7.pdf",
+          "sha256": "a796033b9c7ce5afa43b2efc55b51681e7f5a1413597954344c7f7772c33c06a",
+          "location": "PDF phần cử nhân, khối chung và ba mô-đun định hướng; tổng 132 TC"
+        }
+      ],
+      "notes": [
+        "Khung Kỹ thuật Môi trường K70 có tổng 132 TC: 13+32+50+9+20+8; chỉ chọn một mô-đun 20 TC.",
+        "Tám mã học phần mới chưa có trong snapshot CTT vẫn lấy tín chỉ từ tài liệu CTĐT chính thức; điều kiện đăng ký giữ trạng thái chưa xác minh."
+      ]
+    }
+  ]
+}

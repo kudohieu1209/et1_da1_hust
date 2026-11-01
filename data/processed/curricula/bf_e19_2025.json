@@ -219,7 +219,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "SSH1121",
@@ -244,7 +245,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "SSH1131",
@@ -260,7 +262,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "SSH1141",
@@ -276,7 +279,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "SSH1151",
@@ -292,7 +296,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "EM1170",
@@ -308,7 +313,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MI1016",
@@ -324,7 +330,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MI1026",
@@ -340,7 +347,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MI1036",
@@ -356,7 +364,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "PH1016",
@@ -372,7 +381,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "PH1026",
@@ -388,7 +398,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "IT1016",
@@ -404,7 +415,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "CH1018E",
@@ -420,7 +432,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "CH3224E",
@@ -436,7 +449,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "CH3081E",
@@ -469,7 +483,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "CH3082E",
@@ -494,7 +509,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "ME2016E",
@@ -510,7 +526,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "CH3316E",
@@ -526,7 +543,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "CH3318E",
@@ -542,7 +560,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF2701E",
@@ -558,7 +577,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF2702E",
@@ -583,7 +603,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF2703E",
@@ -608,7 +629,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3701E",
@@ -633,7 +655,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3702E",
@@ -658,7 +681,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3703E",
@@ -683,7 +707,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3704E",
@@ -708,7 +733,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3705E",
@@ -733,7 +759,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3706E",
@@ -766,7 +793,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3707E",
@@ -791,7 +819,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3708E",
@@ -824,7 +853,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3709E",
@@ -857,7 +887,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3710E",
@@ -886,7 +917,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3711E",
@@ -902,7 +934,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF3712E",
@@ -918,7 +951,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": false
     },
     {
       "code": "BF3713E",
@@ -934,7 +968,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": false
     },
     {
       "code": "BF4705E",
@@ -963,7 +998,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4711E",
@@ -988,7 +1024,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4712E",
@@ -1017,7 +1054,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "CH3853E",
@@ -1033,7 +1071,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4726E",
@@ -1066,7 +1105,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF2020",
@@ -1115,7 +1155,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "EM1010",
@@ -1131,7 +1172,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "EM1180",
@@ -1147,7 +1189,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "ED3280",
@@ -1163,7 +1206,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "ED3220",
@@ -1179,7 +1223,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "ET3262",
@@ -1195,7 +1240,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "TEX3123",
@@ -1211,7 +1257,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4605E",
@@ -1227,7 +1274,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4713E",
@@ -1260,7 +1308,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4728E",
@@ -1297,7 +1346,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4729E",
@@ -1334,7 +1384,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4727E",
@@ -1359,7 +1410,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4717E",
@@ -1375,7 +1427,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4742E",
@@ -1391,7 +1444,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": false
     },
     {
       "code": "BF4792E",
@@ -1472,7 +1526,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4781E",
@@ -1501,7 +1556,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "BF4791E",
@@ -1586,7 +1642,8 @@
             ]
           }
         ]
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "PE1014",
@@ -1602,7 +1659,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MIL1210",
@@ -1618,7 +1676,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MIL1220",
@@ -1634,7 +1693,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MIL1230",
@@ -1650,7 +1710,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     },
     {
       "code": "MIL1240",
@@ -1666,7 +1727,8 @@
       "registration_condition": {
         "raw": "",
         "any_of": []
-      }
+      },
+      "registration_condition_verified": true
     }
   ],
   "non_credit_group_ids": [

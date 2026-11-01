@@ -20,7 +20,10 @@ class StudentService:
     def _non_credit_groups() -> List[Dict[str, Any]]:
         # Source group numbers differ between the 2022 CTT and 2023 public snapshots.
         groups = []
+        non_credit_ids = set(data_loader.get_curriculum().get("non_credit_group_ids", []))
         for group in data_loader.get_groups():
+            if group["id"] not in non_credit_ids:
+                continue
             name = group["name"].lower()
             if "thể chất" in name:
                 requirement_id = "220"

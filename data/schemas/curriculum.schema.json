@@ -166,6 +166,7 @@
           "category": { "type": "string" },
           "department": { "type": "string" },
           "group_ids": { "type": "array", "items": { "type": "string" } },
+          "registration_condition_verified": { "type": "boolean" },
           "registration_condition": {
             "type": "object",
             "required": ["raw", "any_of"],

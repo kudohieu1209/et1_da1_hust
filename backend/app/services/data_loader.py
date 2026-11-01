@@ -328,7 +328,7 @@ class DataLoader:
             ]
             description = max(descriptions, key=len) if descriptions else ""
             description = description.removeprefix("Mô đun:").strip()
-            display_name = f"Mô đun {index}"
+            display_name = f"Mô đun {index}" if description else group["name"]
             if description:
                 display_name += f" - {description}"
             tracks.append({

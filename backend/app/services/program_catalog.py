@@ -15,6 +15,7 @@ from typing import Any
 
 from app.core.config import PROGRAM_CANDIDATES_FILE, PROGRAM_CATALOG_FILE, PROGRAM_SOURCES_FILE
 from app.services.curriculum_repository import curriculum_repository
+from app.services.curriculum_reference import curriculum_references
 
 
 class ProgramCatalog:
@@ -32,6 +33,7 @@ class ProgramCatalog:
         self.curriculum_sources: dict[str, dict[str, Any]] = {}
         self.curriculum_sources_discovered_at: str | None = None
         self.curriculum_candidates: dict[str, list[dict[str, Any]]] = {}
+        self.references = curriculum_references
         self.reload()
 
     def reload(self) -> None:
@@ -86,6 +88,10 @@ class ProgramCatalog:
             if str(item.get("program_code", "")).upper() == admission_code
         ]
         result["curriculum_supported"] = bool(matches)
+        references = self.references.for_program(admission_code)
+        result["reference_available"] = bool(references)
+        result["reference_count"] = len(references)
+        result["reference_course_count"] = max((r["course_count"] for r in references), default=0)
         result["curriculum_versions"] = sorted(
             {str(item.get("curriculum_version", "")) for item in matches if item.get("curriculum_version")}
         )
@@ -133,6 +139,44 @@ class ProgramCatalog:
             if str(program.get("admission_code", "")).casefold() == normalized:
                 return program
         return None
+
+    def get_curricula(self, code: str) -> list[dict[str, Any]]:
+        code = code.upper()
+        datasets = {str(p["curriculum_version"]): p for p in curriculum_repository.list_programs()
+                    if p["program_code"] == code}
+        result = []
+        for record in self.references.for_program(code):
+            version = str(record.get("normalized_version") or record["curriculum_version"] or "")
+            result.append({**record, "curriculum_version": version if version in datasets else record["curriculum_version"],
+                           "audit_available": version in datasets,
+                           "usage": "audit_and_reference" if version in datasets else "reference",
+                           "scope_note": None if version in datasets else
+                           "Dùng để tra cứu học phần và nguồn gốc. Chưa dùng bản này để xác nhận tiến độ tốt nghiệp cho hồ sơ."})
+        represented = {str(row["curriculum_version"]) for row in result if row["audit_available"]}
+        # The manually normalized ET1-2022 snapshot is not part of the newer
+        # public-extraction folder. Include it rather than hiding an active version.
+        for program_code, year in curriculum_repository.available_keys:
+            if program_code != code:
+                continue
+            dataset = curriculum_repository.get(program_code, year)
+            version = str(dataset["program"]["curriculum_version"])
+            if version in represented:
+                continue
+            represented.add(version)
+            course_map = {c["code"]: c for c in dataset["courses"]}
+            result.append({
+                "id": f"{code}-{version}", "program_code": code, "name": dataset["program"]["name"],
+                "curriculum_version": version, "applies_to_cohorts": dataset.get("applies_to_cohorts") or
+                [f"K{int(y) - 1955}" for c, y in curriculum_repository.available_keys
+                 if c == code and curriculum_repository.get(c, y)["program"]["curriculum_version"] == version],
+                "total_credits": dataset["program"]["total_required_credits"], "source_url": None,
+                "course_count": len(course_map), "audit_available": True, "usage": "audit_and_reference",
+                "scope_note": None, "graduation_rule": dataset["graduation_paths"][0]["raw_expression"],
+                "notes": dataset.get("build_warnings", []),
+                "groups": [{"name": g["name"], "required_credits": None,
+                            "courses": [course_map[c] for c in g["course_codes"]]} for g in dataset["groups"]],
+            })
+        return result
 
 
 program_catalog = ProgramCatalog()

@@ -88,6 +88,15 @@ class RuleEngine:
                 "missing_alternative_branches": []
             }
 
+        if rule is None or not rule.get("registration_condition_verified", True):
+            return {
+                "course_code": course_code, "course_name": course_name,
+                "is_eligible": False, "status": "UNVERIFIED",
+                "reasons": [f"Đã có thông tin môn {course_code}, nhưng snapshot CTT chưa có điều kiện đăng ký của môn này. Chưa thể xác nhận đủ điều kiện; hãy đối chiếu CTT."],
+                "missing_prerequisites": [], "missing_prior_courses": [],
+                "missing_alternative_branches": [],
+            }
+
         # 2. Kiểm tra tín chỉ tích lũy tối thiểu (ví dụ Đồ án tốt nghiệp 120 TC, Đồ án 1: 90 TC)
         min_credits = rule.get("min_credits_accumulated", 0) if rule else 0
         if min_credits > 0 and total_credits_accumulated < min_credits:

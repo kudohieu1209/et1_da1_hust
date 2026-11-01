@@ -91,7 +91,7 @@ class CheckEligibilityResponse(BaseModel):
     course_code: str
     course_name: str
     is_eligible: bool
-    status: str # ELIGIBLE | BLOCKED | ALREADY_PASSED | NOT_FOUND
+    status: str # ELIGIBLE | BLOCKED | ALREADY_PASSED | NOT_FOUND | UNVERIFIED
     reasons: List[str] = []
     missing_prerequisites: List[str] = []
     missing_prior_courses: List[str] = []

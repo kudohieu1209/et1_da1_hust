@@ -502,6 +502,11 @@ class ChatbotService:
             elif self._has_any(msg_lower, ["y sinh", "biomedical"]):
                 target_track = "BIOMEDICAL"
 
+            # Legacy aliases describe ET1 modules, not similarly numbered
+            # modules in materials, languages or mechanical engineering.
+            if data_loader.get_program()["program_code"] != "ET1":
+                target_track = None
+
             memory = preferences or {}
             remembered_track = memory.get("target_track") if target_track is None else None
             explicit_credits = re.search(r"\b([1-9]\d?)\s*(?:tín chỉ|tc)\b", msg_lower)

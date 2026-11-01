@@ -1,271 +1,143 @@
-# Hàng đợi kiểm duyệt CTĐT
+# Phạm vi dữ liệu CTĐT đang có trong ứng dụng
 
-| Candidate | Parser | Phiên bản | HP | Nhóm | Mô-đun | Tổng TC | Trạng thái | Vấn đề cần rà |
-|---|---|---:|---:|---:|---:|---:|---|---|
-| ED3 | hust-pdf-course-list.v1 | — | 68 | 15 | 2 | — | needs_review | `normalization_not_validated`, `missing_curriculum_version`, `missing_total_credits`, `required_credit_threshold_missing` |
-| EE-E18-2023 | hust-astro-hp-table.v1 | 2023 | 72 | 12 | 4 | 132 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt`, `course_credit_mismatch`, `page_summary_differs_from_row_sum`, `required_credit_threshold_missing` |
-| EE-E8-2023 | hust-astro-hp-table.v1 | 2023 | 76 | 9 | 1 | 132 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt`, `required_credit_formula_does_not_match_page_total` |
-| EE-EP-2023 | hust-astro-hp-table.v1 | 2023 | 64 | 7 | 0 | 132 | needs_review | `normalization_not_validated`, `course_credit_mismatch` |
-| EE1-2023 | hust-astro-hp-table.v1 | 2023 | 75 | 10 | 2 | 132 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt` |
-| EE2-2023 | hust-astro-hp-table.v1 | 2023 | 71 | 11 | 3 | 132 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt` |
-| ET-E16-2023 | hust-astro-hp-table.v1 | 2023 | 60 | 5 | 0 | 132 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt`, `required_credit_threshold_missing` |
-| ET-E4-2023 | hust-astro-hp-table.v1 | 2023 | 55 | 7 | 2 | 132 | needs_review | `normalization_not_validated`, `required_credit_formula_does_not_match_page_total` |
-| ET-E5-2023 | hust-astro-hp-table.v1 | 2023 | 78 | 7 | 0 | 132 | needs_review | `normalization_not_validated`, `required_credit_threshold_missing` |
-| ET-E9-2023 | hust-astro-hp-table.v1 | 2023 | 63 | 8 | 2 | 132 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt`, `page_summary_differs_from_row_sum`, `required_credit_threshold_missing` |
-| ET-LUH | hust-astro-hp-table.v1 | — | 61 | 9 | 2 | — | needs_review | `normalization_not_validated`, `missing_curriculum_version`, `missing_total_credits`, `course_codes_not_in_ctt` |
-| ET1-2023 | hust-astro-hp-table.v1 | 2023 | 79 | 13 | 5 | 132 | approved | `normalization_not_validated` |
-| ET2-2023 | hust-astro-hp-table.v1 | 2023 | 81 | 12 | 4 | 132 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt` |
-| FL2 | hust-generic-table.v1 | — | 56 | 1 | 0 | — | needs_review | `normalization_not_validated`, `missing_curriculum_version`, `missing_total_credits`, `course_credit_mismatch`, `required_credit_threshold_missing` |
-| IT-E10 | hust-pdf-course-list.v1 | — | 0 | 0 | 0 | 132 | needs_review | `normalization_not_validated`, `missing_curriculum_version` |
-| IT-E15-2021 | hust-pdf-course-list.v1 | 2021 | 91 | 15 | 0 | 180 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt`, `required_credit_threshold_missing` |
-| IT-E6-2020 | hust-pdf-course-list.v1 | 2020 | 77 | 10 | 2 | 148 | needs_review | `normalization_not_validated`, `required_credit_threshold_missing` |
-| IT-E7-2020 | hust-pdf-course-list.v1 | 2020 | 82 | 10 | 4 | 133 | needs_review | `normalization_not_validated`, `required_credit_threshold_missing` |
-| IT-EP | hust-pdf-course-list.v1 | — | 0 | 0 | 0 | 146 | needs_review | `normalization_not_validated`, `missing_curriculum_version` |
-| IT1-2017 | hust-pdf-course-list.v1 | 2017 | 68 | 17 | 5 | 136 | needs_review | `normalization_not_validated`, `required_credit_threshold_missing` |
-| IT2-2017 | hust-pdf-course-list.v1 | 2017 | 62 | 14 | 3 | 132 | needs_review | `normalization_not_validated`, `required_credit_threshold_missing` |
-| MS1 | hust-pdf-course-list.v1 | — | 33 | 1 | 0 | 132 | needs_review | `normalization_not_validated`, `missing_curriculum_version`, `course_credit_mismatch`, `required_credit_threshold_missing` |
-| MS5-2020 | hust-pdf-course-list.v1 | 2020 | 32 | 1 | 0 | 179 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt`, `course_credit_mismatch`, `required_credit_threshold_missing` |
-| MS5-2020 | hust-pdf-course-list.v1 | 2020 | 12 | 1 | 0 | 180 | needs_review | `normalization_not_validated`, `course_codes_not_in_ctt`, `course_credit_mismatch`, `required_credit_threshold_missing` |
+Sinh lại bằng `python data/scripts/write_curriculum_review_report.py`. Đây là trạng thái xử lý dữ liệu, không phải danh sách việc giao cho người dùng review.
 
-## Chi tiết tự động
+- 68 ngành đại học đều có mục tra cứu tài liệu đã thu thập qua giao diện và `/api/programs/{code}/curricula`.
+- 18 phiên bản CTĐT đã chuẩn hóa để rà soát tiến độ theo khóa.
+- Nguồn thiếu khung đầy đủ vẫn xem được học phần và ghi chú; không bị bỏ ngoài ứng dụng.
+- Môn chưa có điều kiện trong snapshot CTT không được tự kết luận đủ điều kiện đăng ký.
 
-### `ED3`
+| Tài liệu | Sử dụng hiện tại | Phạm vi còn thiếu trong nguồn |
+|---|---|---|
+| [BF-E12-2025](../raw/official_curricula/BF-E12-2025.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [BF-E19-2023](../raw/official_curricula/BF-E19-2023.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [BF-E19-2025](../raw/official_curricula/BF-E19-2025.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [BF1-2022](../raw/official_curricula/BF1-2022.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [BF2-2023](../raw/official_curricula/BF2-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [BF2-2025](../raw/reviewed_curricula/BF2-2025.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [CH-E11-2023](../raw/official_curricula/CH-E11-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [CH-E20-2023](../raw/official_curricula/CH-E20-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [CH1-2023](../raw/official_curricula/CH1-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [CH1-2025](../raw/official_curricula/CH1-2025.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [CH2-2022](../raw/official_curricula/CH2-2022.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [E-EE1-undated](../raw/official_curricula/E-EE1-undated.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [E-EE2-undated](../raw/official_curricula/E-EE2-undated.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [E-ET-E-undated](../raw/official_curricula/E-ET-E-undated.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [E-ET-IC-undated](../raw/official_curricula/E-ET-IC-undated.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [E-ET-T-undated](../raw/official_curricula/E-ET-T-undated.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [ED2-2023](../raw/official_curricula/ED2-2023.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [ED2-2024](../raw/official_curricula/ED2-2024.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [ED2-2025](../raw/official_curricula/ED2-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [ED3-2024](../raw/official_curricula/ED3-2024.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [ED5-2023](../raw/official_curricula/ED5-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EE-E18-2023](../raw/official_curricula/EE-E18-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [EE-E8-2023](../raw/official_curricula/EE-E8-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [EE-EP-2023](../raw/official_curricula/EE-EP-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [EE-TN-2023](../raw/official_curricula/EE-TN-2023.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [EE1-2023](../raw/official_curricula/EE1-2023.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [EE2-2023](../raw/official_curricula/EE2-2023.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [EM-E13-2022](../raw/official_curricula/EM-E13-2022.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM-E14-2022](../raw/official_curricula/EM-E14-2022.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM-E14-2025](../raw/official_curricula/EM-E14-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM-E17-2023](../raw/official_curricula/EM-E17-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM1-2023](../raw/official_curricula/EM1-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM2-2023](../raw/official_curricula/EM2-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM3-2023](../raw/official_curricula/EM3-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM5-2022](../raw/official_curricula/EM5-2022.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM5-2023](../raw/official_curricula/EM5-2023.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [EM5-2025](../raw/official_curricula/EM5-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [ET-E16-2023](../raw/official_curricula/ET-E16-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [ET-E4-2023](../raw/official_curricula/ET-E4-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [ET-E5-2023](../raw/official_curricula/ET-E5-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [ET-E9-2023](../raw/official_curricula/ET-E9-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [ET-LUH-2023](../raw/official_curricula/ET-LUH-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [ET-TN-2023](../raw/official_curricula/ET-TN-2023.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [ET1-2022](../raw/official_curricula/ET1-2022.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [ET1-2023](../raw/official_curricula/ET1-2023.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [ET2-2023](../raw/official_curricula/ET2-2023.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [EV1-2022](../raw/official_curricula/EV1-2022.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [EV1-2025](../raw/reviewed_curricula/EV1-2025.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [EV2-2022](../raw/official_curricula/EV2-2022.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [EV2-2025](../raw/reviewed_curricula/EV2-2025.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [FL1-2025](../raw/official_curricula/FL1-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [FL2-2022](../raw/official_curricula/FL2-2022.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [FL3-2025](../raw/reviewed_curricula/FL3-2025.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [FL4-2023](../raw/official_curricula/FL4-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [HE1-2023](../raw/official_curricula/HE1-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT-E10-2023](../raw/official_curricula/IT-E10-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT-E10-2024](../raw/official_curricula/IT-E10-2024.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT-E10-2025](../raw/official_curricula/IT-E10-2025.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [IT-E15-2024](../raw/official_curricula/IT-E15-2024.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT-E15-2025](../raw/official_curricula/IT-E15-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT-E6-2023](../raw/official_curricula/IT-E6-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [IT-E6-2024](../raw/official_curricula/IT-E6-2024.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT-E7-2023](../raw/official_curricula/IT-E7-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [IT-E7-2024](../raw/official_curricula/IT-E7-2024.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT-EP-2024](../raw/official_curricula/IT-EP-2024.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT-EP-2025](../raw/official_curricula/IT-EP-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT1-2023](../raw/official_curricula/IT1-2023.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT1-2024](../raw/official_curricula/IT1-2024.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT1-2025](../raw/official_curricula/IT1-2025.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [IT2-2023](../raw/official_curricula/IT2-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [IT2-2024](../raw/official_curricula/IT2-2024.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [M-EE1-2022](../raw/official_curricula/M-EE1-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [M-EE2-2022](../raw/official_curricula/M-EE2-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [M-ET-E-2022](../raw/official_curricula/M-ET-E-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [M-ET-T-2022](../raw/official_curricula/M-ET-T-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [M-ET2-2022](../raw/official_curricula/M-ET2-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [ME-E1-2023](../raw/official_curricula/ME-E1-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [ME-GU-2025](../raw/official_curricula/ME-GU-2025.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [ME-LUH-2023](../raw/official_curricula/ME-LUH-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [ME-NUT-2023](../raw/official_curricula/ME-NUT-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [ME1-2025](../raw/reviewed_curricula/ME1-2025.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [ME2-2023](../raw/official_curricula/ME2-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [MI-E22-2023](../raw/official_curricula/MI-E22-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [MI1-2023](../raw/official_curricula/MI1-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [MI1-2025](../raw/official_curricula/MI1-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [MI2-2023](../raw/official_curricula/MI2-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [MI2-2025](../raw/official_curricula/MI2-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [MS-E3-2023](../raw/official_curricula/MS-E3-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [MS1-2023](../raw/reviewed_curricula/MS1-2023.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [MS2-2023](../raw/official_curricula/MS2-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [MS3-2023](../raw/official_curricula/MS3-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [MS5-2022](../raw/official_curricula/MS5-2022.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [MS5-2023](../raw/official_curricula/MS5-2023.json) | Đã đưa vào tra cứu | Khung/nhóm tín chỉ hoặc thông tin CTT còn khác nhau; giữ số liệu nguồn để tra cứu, không tự cân bằng. |
+| [P-EE1-2022](../raw/official_curricula/P-EE1-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [P-EE2-2022](../raw/official_curricula/P-EE2-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [P-ET-E-2022](../raw/official_curricula/P-ET-E-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [P-ET-T-2022](../raw/official_curricula/P-ET-T-2022.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [P-ET2-undated](../raw/official_curricula/P-ET2-undated.json) | Ngoài danh mục đại học | Chương trình sau cử nhân hoặc tuyển chọn riêng; không gán cho mã tuyển sinh đại học. |
+| [PH1-2023](../raw/official_curricula/PH1-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [PH2-2023](../raw/official_curricula/PH2-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [PH3-2023](../raw/official_curricula/PH3-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. |
+| [TE-E2-2023](../raw/official_curricula/TE-E2-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [TE-EP-2023](../raw/official_curricula/TE-EP-2023.json) | Đã dùng để rà soát tiến độ | Theo khung chuẩn hóa và khóa áp dụng trong dữ liệu. |
+| [TE-EP-2025](../raw/official_curricula/TE-EP-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [TE1-2023](../raw/official_curricula/TE1-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [TE2-2023](../raw/official_curricula/TE2-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [TE3-2025](../raw/official_curricula/TE3-2025.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [TROY-IT-2023](../raw/official_curricula/TROY-IT-2023.json) | Đã đưa vào tra cứu | Nguồn chưa xác định phiên bản/khóa áp dụng. Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
+| [TX1-2023](../raw/official_curricula/TX1-2023.json) | Đã đưa vào tra cứu | Nguồn chưa có tổng tín chỉ tốt nghiệp đầy đủ. |
 
-- Nguồn: https://fed.hust.edu.vn/uploads/feed/dao-tao/240628_khung-ctdt-qlgd.pdf
-- Tệp: `data/raw/program_sources/ED3__attachment_1.pdf`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1, group_pdf_5, group_pdf_6, group_pdf_7, group_pdf_9, group_pdf_10, group_pdf_11, group_pdf_12, group_pdf_13, group_pdf_14, group_pdf_15
-- Chuỗi điều kiện CTT có nội dung: 31; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: —
-- Lý do giữ lại: normalization_not_validated, missing_curriculum_version, missing_total_credits, required_credit_threshold_missing
+## Các khung đã dùng cho tiến độ
 
-### `EE-E18-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/ee-e18/
-- Tệp: `data/raw/program_sources/EE-E18.html`
-- Mã môn không có trong CTT: DX6000, EE6010E, EE6020E, EE6036E, EE6037E, EE6056E, EE6133E, EE6141E, EE6181E, EE6232E, EE6301E, EE6313E, EE6460E, EE6466E, LV6001, SS6013
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_khoi_1, group_khoi_2, group_khoi_3, group_khoi_4, group_khoi_5, group_khoi_7, group_khoi_8
-- Chuỗi điều kiện CTT có nội dung: 8; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt, course_credit_mismatch, page_summary_differs_from_row_sum, required_credit_threshold_missing
-
-### `EE-E8-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/ee-e8/
-- Tệp: `data/raw/program_sources/EE-E8.html`
-- Mã môn không có trong CTT: EE2022E, EE3424E, EE3491E, EE3816E, EE3826E, EE3916E, EE4166E, EE4251E, EE4331E, EE4335E, EE4343E, EE4906E
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 3; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: 140; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt, required_credit_formula_does_not_match_page_total
-
-### `EE-EP-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/ee-ep/
-- Tệp: `data/raw/program_sources/EE-EP.html`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 25; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, course_credit_mismatch
-
-### `EE1-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/ee1/
-- Tệp: `data/raw/program_sources/EE1.html`
-- Mã môn không có trong CTT: EE3041, EE3112, EE3290, EE4016, EE4125, EE4600
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 18; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: 132; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt
-
-### `EE2-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/ee2/
-- Tệp: `data/raw/program_sources/EE2.html`
-- Mã môn không có trong CTT: EE4166, EE4333, EE4335, EE4343, EE4532
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 26; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: 132; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt
-
-### `ET-E16-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/et-e16/
-- Tệp: `data/raw/program_sources/ET-E16.html`
-- Mã môn không có trong CTT: ET3292E, ET4740E, ET4760E
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_khoi_1, group_khoi_4, group_khoi_5
-- Chuỗi điều kiện CTT có nội dung: 12; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt, required_credit_threshold_missing
-
-### `ET-E4-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/et-e4/
-- Tệp: `data/raw/program_sources/ET-E4.html`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 28; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: 126; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, required_credit_formula_does_not_match_page_total
-
-### `ET-E5-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/et-e5/
-- Tệp: `data/raw/program_sources/ET-E5.html`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_khoi_1, group_khoi_4, group_khoi_5
-- Chuỗi điều kiện CTT có nội dung: 25; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, required_credit_threshold_missing
-
-### `ET-E9-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/et-e9/
-- Tệp: `data/raw/program_sources/ET-E9.html`
-- Mã môn không có trong CTT: ET4792, ET4793
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_khoi_1, group_khoi_2, group_khoi_3, group_khoi_4, group_khoi_5
-- Chuỗi điều kiện CTT có nội dung: 21; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt, page_summary_differs_from_row_sum, required_credit_threshold_missing
-
-### `ET-LUH`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/et-luh/
-- Tệp: `data/raw/program_sources/ET-LUH.html`
-- Mã môn không có trong CTT: ET2022Q, ET3242Q, ET3312Q, ET4022Q, ET4245Q, ET4291Q, ET4920Q, MI2036Q
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 6; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: 132; tổng trang công bố: —
-- Lý do giữ lại: normalization_not_validated, missing_curriculum_version, missing_total_credits, course_codes_not_in_ctt
-
-### `ET1-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/et1/
-- Tệp: `data/raw/program_sources/ET1.html`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 29; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: 132; tổng trang công bố: 132
-- Phê duyệt: project-owner — 2026-09-16T00:00:00+00:00
-
-### `ET2-2023`
-
-- Nguồn: https://seee.hust.edu.vn/vi/dao-tao/et2/
-- Tệp: `data/raw/program_sources/ET2.html`
-- Mã môn không có trong CTT: BF4611, BF4612, ET3047, ET3303, ET4503, ET4713
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 17; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: 132; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt
-
-### `FL2`
-
-- Nguồn: https://sofl.hust.edu.vn/nganh-fl2
-- Tệp: `data/raw/program_sources/FL2.html`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_table_1
-- Chuỗi điều kiện CTT có nội dung: 25; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: —
-- Lý do giữ lại: normalization_not_validated, missing_curriculum_version, missing_total_credits, course_credit_mismatch, required_credit_threshold_missing
-
-### `IT-E10`
-
-- Nguồn: https://soict.hust.edu.vn/wp-content/uploads/Tho%CC%82ng-tin-chu%CC%9Bo%CC%9Bng-tri%CC%80nh-DS-AI_2025_vn.pdf
-- Tệp: `data/raw/program_sources/IT-E10__attachment_1.pdf`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 0; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, missing_curriculum_version
-
-### `IT-E15-2021`
-
-- Nguồn: https://soict.hust.edu.vn/wp-content/uploads/CNTT-Chu%CC%9Bo%CC%9Bng-tri%CC%80nh-da%CC%80o-ta%CC%A3o-An-toa%CC%80n-Kho%CC%82ng-gian-so%CC%82%CC%81-Cyber-Security_v30032025.pdf
-- Tệp: `data/raw/program_sources/IT-E15__attachment_1.pdf`
-- Mã môn không có trong CTT: IT4220E, IT4244E, IT4509E, IT4922E, IT5002E, IT5009E, IT5010E, IT5016E, IT5017E, IT5018E, IT5122E, IT5123E, IT5260E, IT5425E
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1, group_pdf_5, group_pdf_6, group_pdf_7, group_pdf_8, group_pdf_9, group_pdf_10, group_pdf_11, group_pdf_12, group_pdf_13, group_pdf_14, group_pdf_15
-- Chuỗi điều kiện CTT có nội dung: 11; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 180
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt, required_credit_threshold_missing
-
-### `IT-E6-2020`
-
-- Nguồn: https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Hedspi-program.pdf
-- Tệp: `data/raw/program_sources/IT-E6__attachment_1.pdf`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1, group_pdf_4, group_pdf_5, group_pdf_6, group_pdf_7, group_pdf_8, group_pdf_9, group_pdf_10
-- Chuỗi điều kiện CTT có nội dung: 20; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 148
-- Lý do giữ lại: normalization_not_validated, required_credit_threshold_missing
-
-### `IT-E7-2020`
-
-- Nguồn: https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Global-ICT-program.pdf
-- Tệp: `data/raw/program_sources/IT-E7__attachment_1.pdf`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1, group_pdf_4, group_pdf_5, group_pdf_6, group_pdf_7, group_pdf_8, group_pdf_9, group_pdf_10
-- Chuỗi điều kiện CTT có nội dung: 28; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 133
-- Lý do giữ lại: normalization_not_validated, required_credit_threshold_missing
-
-### `IT-EP`
-
-- Nguồn: https://soict.hust.edu.vn/wp-content/uploads/IT-EP-K70.pdf
-- Tệp: `data/raw/program_sources/IT-EP__attachment_1.pdf`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: —
-- Chuỗi điều kiện CTT có nội dung: 0; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 146
-- Lý do giữ lại: normalization_not_validated, missing_curriculum_version
-
-### `IT1-2017`
-
-- Nguồn: https://soict.hust.edu.vn/wp-content/uploads/CTDT-CN.KHMT-K70-V2025.03.28.pdf
-- Tệp: `data/raw/program_sources/IT1__attachment_1.pdf`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1, group_pdf_7, group_pdf_8, group_pdf_9, group_pdf_10, group_pdf_11, group_pdf_12, group_pdf_13, group_pdf_14, group_pdf_15, group_pdf_16, group_pdf_17
-- Chuỗi điều kiện CTT có nội dung: 28; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 136
-- Lý do giữ lại: normalization_not_validated, required_credit_threshold_missing
-
-### `IT2-2017`
-
-- Nguồn: https://soict.hust.edu.vn/wp-content/uploads/Bachelor-Computer-Engineering-program.pdf
-- Tệp: `data/raw/program_sources/IT2__attachment_1.pdf`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1, group_pdf_5, group_pdf_6, group_pdf_7, group_pdf_8, group_pdf_9, group_pdf_10, group_pdf_11, group_pdf_12, group_pdf_13, group_pdf_14
-- Chuỗi điều kiện CTT có nội dung: 28; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, required_credit_threshold_missing
-
-### `MS1`
-
-- Nguồn: https://smse.hust.edu.vn/uploads/smse/dao-tao/2023_07/mse-k65-khung-ct-cu-nhan-2023-10-19-upload-web.pdf
-- Tệp: `data/raw/program_sources/MS1__attachment_1.pdf`
-- Mã môn không có trong CTT: —
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1
-- Chuỗi điều kiện CTT có nội dung: 4; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 132
-- Lý do giữ lại: normalization_not_validated, missing_curriculum_version, course_credit_mismatch, required_credit_threshold_missing
-
-### `MS5-2020`
-
-- Nguồn: https://smse.hust.edu.vn/uploads/smse/dao-tao/2023_07/ctdt-cu-nhan-thac-si-kh-kt-in_song-ngu.03.03.2022.pdf
-- Tệp: `data/raw/program_sources/MS5__attachment_1.pdf`
-- Mã môn không có trong CTT: CH4735, CH6345, CH6353, CH6602
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1
-- Chuỗi điều kiện CTT có nội dung: 8; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 179
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt, course_credit_mismatch, required_credit_threshold_missing
-
-### `MS5-2020`
-
-- Nguồn: https://smse.hust.edu.vn/uploads/smse/dao-tao/2023_07/ctdt-ky-su-180-tckt-in.12.7.2023.pdf
-- Tệp: `data/raw/program_sources/MS5__attachment_2.pdf`
-- Mã môn không có trong CTT: CH5471
-- Nhóm thiếu ngưỡng tín chỉ bắt buộc: group_pdf_1
-- Chuỗi điều kiện CTT có nội dung: 2; các dòng rỗng được hiểu là không có học phần trước.
-- Công thức một mô-đun suy ra: —; tổng trang công bố: 180
-- Lý do giữ lại: normalization_not_validated, course_codes_not_in_ctt, course_credit_mismatch, required_credit_threshold_missing
-
+| Mã | Phiên bản | Tổng TC | Học phần | Khóa áp dụng |
+|---|---|---:|---:|---|
+| BF1 | 2022 | 132 | 78 | K68, K69 |
+| BF2 | 2025 | 132 | 85 | K70 |
+| BF-E19 | 2023 | 132 | 70 | K68, K69 |
+| BF-E19 | 2025 | 132 | 62 | K70 |
+| ED2 | 2024 | 132 | 71 | K68 |
+| EE1 | 2023 | 132 | 75 | K68 |
+| EE2 | 2023 | 132 | 71 | K68 |
+| ET1 | 2022 | 126 | 117 | K67 |
+| ET1 | 2023 | 132 | 79 | K68 |
+| ET2 | 2023 | 132 | 81 | K68 |
+| EV1 | 2025 | 132 | 75 | K70 |
+| EV2 | 2022 | 132 | 69 | K68, K69 |
+| EV2 | 2025 | 132 | 75 | K70 |
+| FL2 | 2022 | 131 | 56 | K67 |
+| FL3 | 2025 | 136 | 74 | K70 |
+| ME1 | 2025 | 132 | 80 | K70 |
+| MS1 | 2023 | 132 | 95 | K67, K68, K69, K70 |
+| TE-EP | 2023 | 140 | 66 | K68, K69 |

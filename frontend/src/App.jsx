@@ -14,6 +14,7 @@ import BrandLogo from './components/BrandLogo';
 import ChatTab from './components/ChatTab';
 import AuditTab from './components/AuditTab';
 import RecommendTab from './components/RecommendTab';
+import ProgramsTab from './components/ProgramsTab';
 import SettingsModal from './components/SettingsModal';
 import TranscriptImportModal from './components/TranscriptImportModal';
 import AuthScreen from './components/auth/AuthScreen';
@@ -659,6 +660,7 @@ export default function App() {
                 {activeTab === 'recommend' && (
                   <RecommendTab />
                 )}
+                {activeTab === 'programs' && <ProgramsTab />}
               </div>
             )}
           </div>

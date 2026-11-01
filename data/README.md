@@ -93,10 +93,29 @@ backend/.venv/bin/python data/scripts/scrape_hust_programs.py \
 Nếu môi trường Python thiếu chứng chỉ CA, thêm `--insecure` khi chạy và chỉ
 dùng kết quả này như một snapshot đã kiểm tra. Danh mục này không được coi là
 CTĐT: API đánh dấu `curriculum_supported: true` chỉ cho chương trình đã có
-JSON CTĐT được chuẩn hóa. Hiện có 12 phiên bản CTĐT: ET1–2022/2023 đã đối chiếu
-thủ công và 10 CTĐT mở rộng qua kiểm tra tự động, chưa đối chiếu thủ công.
+JSON CTĐT được chuẩn hóa. Hiện có 18 phiên bản CTĐT: ET1–2022/2023 đã đối chiếu
+thủ công, 10 bản qua kiểm tra tự động và 6 bản được xử lý dựa trên bằng chứng nguồn.
 Danh sách và lý do loại các nguồn chưa đạt nằm trong
 [kết quả nhập CTĐT công khai](reports/official_curricula_import.md).
+
+Toàn bộ nguồn của 68 ngành đều được đọc qua `/api/programs/{code}/curricula`
+và giao diện **CTĐT toàn trường**, kể cả phần điều chỉnh hoặc nguồn chưa có khung
+tốt nghiệp đầy đủ. Trạng thái tra cứu và trạng thái dùng để audit được tách rõ.
+
+Sinh lại các bản đã xử lý từ bằng chứng được lưu trong repo:
+
+```bash
+backend/.venv/bin/python data/scripts/import_official_curricula.py
+backend/.venv/bin/python data/scripts/apply_curriculum_reviews.py
+backend/.venv/bin/python data/scripts/write_curriculum_review_report.py
+```
+
+`reviewed/curriculum_resolutions.json` ghi hash nguồn, vị trí đối chiếu và cách
+xử lý. Bản gốc trong `raw/official_curricula/` được giữ nguyên; kết quả đối chiếu
+nằm ở `raw/reviewed_curricula/` và bằng chứng ở `raw/reviewed_sources/`. Không hạ
+ngưỡng của importer tự động: chỉ các bản có bằng chứng trong manifest mới được
+dùng tín chỉ từ nguồn khi snapshot CTT chưa có mã. Điều kiện đăng ký tương ứng
+giữ trạng thái `UNVERIFIED`, thay vì coi dữ liệu thiếu là không có ràng buộc.
 
 Để rà các liên kết CTĐT mà từng trang ngành trỏ tới, chạy:
 

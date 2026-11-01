@@ -1,0 +1,2849 @@
+{
+  "knowledge_blocks": [
+    {
+      "id": "g001",
+      "name": "Giáo dục thể chất (5 TC)",
+      "kind": "knowledge_block",
+      "minimum_credits": 5,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 3,
+        "table": 1,
+        "row": 2
+      },
+      "raw_heading": "Giáo dục thể chất (5 TC)",
+      "course_entry_ids": [
+        "c0001",
+        "c0002",
+        "c0003",
+        "c0004",
+        "c0005"
+      ],
+      "catalog_credits": 0,
+      "course_codes": [
+        "PE1014",
+        "PEXXXX",
+        "PEXXXX",
+        "PEXXXX",
+        "PEXXXX"
+      ],
+      "counts_toward_degree_credits": false,
+      "selection_rule": {
+        "type": "physical_education_condition",
+        "required_course_codes": [
+          "PE1014"
+        ],
+        "elective_condition_credits": 4,
+        "elective_code_pattern": "PExxxx",
+        "source_basis": "Giáo dục thể chất (5 TC); Tự chọn học tích lũy 4 TC"
+      },
+      "minimum_degree_credits": 0,
+      "minimum_condition_credits": 5
+    },
+    {
+      "id": "g002",
+      "name": "Giáo dục Quốc phòng - an ninh (165 tiết)",
+      "kind": "knowledge_block",
+      "minimum_credits": 0,
+      "minimum_credits_basis": "published_non_degree_condition",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 3
+      },
+      "raw_heading": "Giáo dục Quốc phòng - an ninh (165 tiết)",
+      "course_entry_ids": [
+        "c0006",
+        "c0007",
+        "c0008",
+        "c0009"
+      ],
+      "catalog_credits": 0,
+      "course_codes": [
+        "MIL1210",
+        "MIL1220",
+        "MIL1230",
+        "MIL1240"
+      ],
+      "counts_toward_degree_credits": false,
+      "selection_rule": null,
+      "contact_hours_required": 165
+    },
+    {
+      "id": "g003",
+      "name": "Khối Ngoại ngữ cơ sở",
+      "kind": "knowledge_block",
+      "minimum_credits": 0,
+      "minimum_credits_basis": "published_degree_credit_column",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 8
+      },
+      "raw_heading": "Khối Ngoại ngữ cơ sở 0",
+      "course_entry_ids": [
+        "c0010",
+        "c0011",
+        "c0012",
+        "c0013",
+        "c0014"
+      ],
+      "catalog_credits": 20,
+      "course_codes": [
+        "FL1131",
+        "FL1132",
+        "FL1133",
+        "FL1134",
+        "FL1135"
+      ],
+      "counts_toward_degree_credits": false,
+      "selection_rule": null
+    },
+    {
+      "id": "g004",
+      "name": "Lý luận chính trị & Pháp luật đại cương",
+      "kind": "knowledge_block",
+      "minimum_credits": 13,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 14
+      },
+      "raw_heading": "Lý luận chính trị & Pháp luật đại cương 13",
+      "course_entry_ids": [
+        "c0015",
+        "c0016",
+        "c0017",
+        "c0018",
+        "c0019",
+        "c0020"
+      ],
+      "catalog_credits": 13,
+      "course_codes": [
+        "SSH1111",
+        "SSH1121",
+        "SSH1131",
+        "SSH1141",
+        "SSH1151",
+        "EM1170"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": null
+    },
+    {
+      "id": "g005",
+      "name": "Toán và Khoa học cơ bản",
+      "kind": "knowledge_block",
+      "minimum_credits": 32,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 21
+      },
+      "raw_heading": "Toán và Khoa học cơ bản 32",
+      "course_entry_ids": [
+        "c0021",
+        "c0022",
+        "c0023",
+        "c0024",
+        "c0025",
+        "c0026",
+        "c0027",
+        "c0028",
+        "c0029",
+        "c0030",
+        "c0031",
+        "c0032",
+        "c0033"
+      ],
+      "catalog_credits": 32,
+      "course_codes": [
+        "IT1140",
+        "MI1112",
+        "MI1142",
+        "CH1018",
+        "ME2015",
+        "MI1122",
+        "PH1111",
+        "CH3071",
+        "CH3072",
+        "MI1132",
+        "MI2021",
+        "PH1121",
+        "PH1131"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": null
+    },
+    {
+      "id": "g006",
+      "name": "Cơ sở và cốt lõi ngành",
+      "kind": "knowledge_block",
+      "minimum_credits": 50,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 2
+      },
+      "raw_heading": "Cơ sở và cốt lõi ngành 50",
+      "course_entry_ids": [
+        "c0034",
+        "c0035",
+        "c0036",
+        "c0037",
+        "c0038",
+        "c0039",
+        "c0040",
+        "c0041",
+        "c0042",
+        "c0043",
+        "c0044",
+        "c0045",
+        "c0046",
+        "c0047",
+        "c0048",
+        "c0049",
+        "c0050",
+        "c0051",
+        "c0052",
+        "c0053",
+        "c0054"
+      ],
+      "catalog_credits": 50,
+      "course_codes": [
+        "EV1250",
+        "EV2251",
+        "EV2225",
+        "EV2252",
+        "EV2253",
+        "EV3106",
+        "EV3121",
+        "EV3226",
+        "EV3228",
+        "EV3229",
+        "EV3254",
+        "EV3256",
+        "EV4131",
+        "EV4223",
+        "EV3109",
+        "EV3257",
+        "EV3258",
+        "EV3259",
+        "EV3260",
+        "EV3261",
+        "EV3262"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": null
+    },
+    {
+      "id": "g007",
+      "name": "Kiến thức bổ trợ",
+      "kind": "knowledge_block",
+      "minimum_credits": 9,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 24
+      },
+      "raw_heading": "Kiến thức bổ trợ 9",
+      "course_entry_ids": [
+        "c0055",
+        "c0056",
+        "c0057",
+        "c0058",
+        "c0059",
+        "c0060",
+        "c0061",
+        "c0062",
+        "c0063"
+      ],
+      "catalog_credits": 19,
+      "course_codes": [
+        "EV2020",
+        "CH2021",
+        "ED3220",
+        "ED3280",
+        "EM1010",
+        "EM1180",
+        "ET3262",
+        "ME3123",
+        "ME3124"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": {
+        "type": "all_of",
+        "components": [
+          {
+            "type": "required_courses",
+            "course_codes": [
+              "EV2020"
+            ],
+            "credits": 3
+          },
+          {
+            "type": "choose_credits",
+            "minimum_credits": 6,
+            "course_codes": [
+              "CH2021",
+              "ED3220",
+              "ED3280",
+              "EM1010",
+              "EM1180",
+              "ET3262",
+              "ME3123",
+              "ME3124"
+            ]
+          }
+        ],
+        "minimum_credits": 9,
+        "source_basis": "Technical Writing and Presentation bắt buộc 3 TC; tự chọn 6 TC trong các học phần 2 TC."
+      }
+    },
+    {
+      "id": "g008",
+      "name": "Tự chọn theo định hướng ứng dụng (chọn 1 trong các mô đun)",
+      "kind": "knowledge_block",
+      "minimum_credits": 16,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 2
+      },
+      "raw_heading": "Tự chọn theo định hướng ứng dụng (chọn 1 trong các mô đun) 16",
+      "course_entry_ids": [],
+      "catalog_credits": 0,
+      "course_codes": [],
+      "counts_toward_degree_credits": true,
+      "selection_rule": {
+        "type": "minimum_credits",
+        "minimum_credits": 16,
+        "course_codes": [],
+        "basis": "published_group_heading",
+        "scope": "whole_block",
+        "note": "Các học phần bắt buộc riêng trong khối vẫn phải được học nếu văn bản quy định."
+      }
+    },
+    {
+      "id": "g009",
+      "name": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững",
+      "kind": "module",
+      "minimum_credits": 16,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 3
+      },
+      "raw_heading": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững 16",
+      "course_entry_ids": [
+        "c0064",
+        "c0065",
+        "c0066",
+        "c0067",
+        "c0068",
+        "c0069",
+        "c0070",
+        "c0071"
+      ],
+      "catalog_credits": 16,
+      "course_codes": [
+        "EV2212",
+        "EV4233",
+        "EV4264",
+        "EV4266",
+        "EV4281",
+        "EV4322",
+        "EV4229",
+        "EV4235"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": {
+        "type": "module_credits",
+        "minimum_credits": 16,
+        "course_codes": [
+          "EV2212",
+          "EV4233",
+          "EV4264",
+          "EV4266",
+          "EV4281",
+          "EV4322",
+          "EV4229",
+          "EV4235"
+        ],
+        "basis": "published_module_heading",
+        "note": "Quy tắc chọn số mô-đun được lưu riêng từ ghi chú nguồn; không mặc định mọi CTĐT đều chọn một mô-đun."
+      }
+    },
+    {
+      "id": "g010",
+      "name": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu",
+      "kind": "module",
+      "minimum_credits": 16,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 12
+      },
+      "raw_heading": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu 16",
+      "course_entry_ids": [
+        "c0072",
+        "c0073",
+        "c0074",
+        "c0075",
+        "c0076",
+        "c0077",
+        "c0078",
+        "c0079"
+      ],
+      "catalog_credits": 16,
+      "course_codes": [
+        "EV4225",
+        "EV4242",
+        "EV4267",
+        "EV4269",
+        "EV4322",
+        "EV5250",
+        "EV4235",
+        "EV4268"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": {
+        "type": "module_credits",
+        "minimum_credits": 16,
+        "course_codes": [
+          "EV4225",
+          "EV4242",
+          "EV4267",
+          "EV4269",
+          "EV4322",
+          "EV5250",
+          "EV4235",
+          "EV4268"
+        ],
+        "basis": "published_module_heading",
+        "note": "Quy tắc chọn số mô-đun được lưu riêng từ ghi chú nguồn; không mặc định mọi CTĐT đều chọn một mô-đun."
+      }
+    },
+    {
+      "id": "g011",
+      "name": "Thực tập kỹ thuật và đồ án tốt nghiệp",
+      "kind": "knowledge_block",
+      "minimum_credits": 12,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 21
+      },
+      "raw_heading": "Thực tập kỹ thuật và đồ án tốt nghiệp 12",
+      "course_entry_ids": [
+        "c0080",
+        "c0081"
+      ],
+      "catalog_credits": 12,
+      "course_codes": [
+        "EV3298",
+        "EV4299"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": null
+    }
+  ],
+  "courses": [
+    {
+      "entry_id": "c0001",
+      "code": "PE1014",
+      "name": "Lý luận TDTT",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(0-2-0-2)",
+      "block_id": "g001",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 3,
+        "table": 1,
+        "row": 3
+      },
+      "raw_cells": [
+        "PE1014",
+        "Lý luận TDTT",
+        "1",
+        "",
+        "0(0-2-0-2)"
+      ]
+    },
+    {
+      "entry_id": "c0002",
+      "code": "PEXXXX",
+      "name": "Tự chọn học tích lũy 4 TC",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(0-2-0-2)",
+      "block_id": "g001",
+      "requirement": "elective",
+      "requirement_basis": "explicit_course_label",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 3,
+        "table": 1,
+        "row": 4
+      },
+      "raw_cells": [
+        "PExxxx",
+        "Tự chọn học tích lũy 4 TC",
+        "",
+        "",
+        "0(0-2-0-2)"
+      ]
+    },
+    {
+      "entry_id": "c0003",
+      "code": "PEXXXX",
+      "name": "Tự chọn học tích lũy 4 TC",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(0-2-0-2)",
+      "block_id": "g001",
+      "requirement": "elective",
+      "requirement_basis": "explicit_course_label",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 3,
+        "table": 1,
+        "row": 5
+      },
+      "raw_cells": [
+        "PExxxx",
+        "Tự chọn học tích lũy 4 TC",
+        "",
+        "",
+        "0(0-2-0-2)"
+      ]
+    },
+    {
+      "entry_id": "c0004",
+      "code": "PEXXXX",
+      "name": "Tự chọn học tích lũy 4 TC",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(0-2-0-2)",
+      "block_id": "g001",
+      "requirement": "elective",
+      "requirement_basis": "explicit_course_label",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 3,
+        "table": 1,
+        "row": 6
+      },
+      "raw_cells": [
+        "PExxxx",
+        "Tự chọn học tích lũy 4 TC",
+        "",
+        "",
+        "0(0-2-0-2)"
+      ]
+    },
+    {
+      "entry_id": "c0005",
+      "code": "PEXXXX",
+      "name": "Tự chọn học tích lũy 4 TC",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(0-2-0-2)",
+      "block_id": "g001",
+      "requirement": "elective",
+      "requirement_basis": "explicit_course_label",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 2
+      },
+      "raw_cells": [
+        "PExxxx",
+        "Tự chọn học tích lũy 4 TC",
+        "",
+        "",
+        "0(0-2-0-2)"
+      ]
+    },
+    {
+      "entry_id": "c0006",
+      "code": "MIL1210",
+      "name": "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(3-0-0-6)",
+      "block_id": "g002",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 4
+      },
+      "raw_cells": [
+        "MIL1210",
+        "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+        "",
+        "",
+        "0(3-0-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0007",
+      "code": "MIL1220",
+      "name": "Công tác quốc phòng và an ninh",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(2-0-0-4)",
+      "block_id": "g002",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 5
+      },
+      "raw_cells": [
+        "MIL1220",
+        "Công tác quốc phòng và an ninh",
+        "",
+        "",
+        "0(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0008",
+      "code": "MIL1230",
+      "name": "Quân sự chung",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(1-0-1-4)",
+      "block_id": "g002",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 6
+      },
+      "raw_cells": [
+        "MIL1230",
+        "Quân sự chung",
+        "",
+        "",
+        "0(1-0-1-4)"
+      ]
+    },
+    {
+      "entry_id": "c0009",
+      "code": "MIL1240",
+      "name": "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+      "credits": 0,
+      "degree_credits": 0,
+      "workload_raw": "0(0-0-4-8)",
+      "block_id": "g002",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 7
+      },
+      "raw_cells": [
+        "MIL1240",
+        "Kỹ thuật chiến đấu bộ binh và chiến thuật",
+        "",
+        "",
+        "0(0-0-4-8)"
+      ]
+    },
+    {
+      "entry_id": "c0010",
+      "code": "FL1131",
+      "name": "Tiếng Anh cơ sở 1",
+      "credits": 4,
+      "degree_credits": 0,
+      "workload_raw": "4(2-4-0-8)",
+      "block_id": "g003",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 9
+      },
+      "raw_cells": [
+        "FL1131",
+        "Tiếng Anh cơ sở 1",
+        "1",
+        "0",
+        "4(2-4-0-8)"
+      ]
+    },
+    {
+      "entry_id": "c0011",
+      "code": "FL1132",
+      "name": "Tiếng Anh cơ sở 2",
+      "credits": 4,
+      "degree_credits": 0,
+      "workload_raw": "4(2-4-0-8)",
+      "block_id": "g003",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 10
+      },
+      "raw_cells": [
+        "FL1132",
+        "Tiếng Anh cơ sở 2",
+        "2",
+        "0",
+        "4(2-4-0-8)"
+      ]
+    },
+    {
+      "entry_id": "c0012",
+      "code": "FL1133",
+      "name": "Tiếng Anh cơ sở 3",
+      "credits": 4,
+      "degree_credits": 0,
+      "workload_raw": "4(2-4-0-8)",
+      "block_id": "g003",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 11
+      },
+      "raw_cells": [
+        "FL1133",
+        "Tiếng Anh cơ sở 3",
+        "3",
+        "0",
+        "4(2-4-0-8)"
+      ]
+    },
+    {
+      "entry_id": "c0013",
+      "code": "FL1134",
+      "name": "Tiếng Anh cơ sở 4",
+      "credits": 4,
+      "degree_credits": 0,
+      "workload_raw": "4(2-4-0-8)",
+      "block_id": "g003",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 12
+      },
+      "raw_cells": [
+        "FL1134",
+        "Tiếng Anh cơ sở 4",
+        "4",
+        "0",
+        "4(2-4-0-8)"
+      ]
+    },
+    {
+      "entry_id": "c0014",
+      "code": "FL1135",
+      "name": "Tiếng Anh cơ sở 5",
+      "credits": 4,
+      "degree_credits": 0,
+      "workload_raw": "4(2-4-0-8)",
+      "block_id": "g003",
+      "requirement": "unknown",
+      "requirement_basis": "not_explicitly_stated",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 13
+      },
+      "raw_cells": [
+        "FL1135",
+        "Tiếng Anh cơ sở 5",
+        "5",
+        "0",
+        "4(2-4-0-8)"
+      ]
+    },
+    {
+      "entry_id": "c0015",
+      "code": "SSH1111",
+      "name": "Triết học Mác - Lênin",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-1-0-6)",
+      "block_id": "g004",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 15
+      },
+      "raw_cells": [
+        "SSH1111",
+        "Triết học Mác - Lênin",
+        "1",
+        "3",
+        "3(2-1-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0016",
+      "code": "SSH1121",
+      "name": "Kinh tế chính trị Mác - Lênin",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g004",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 16
+      },
+      "raw_cells": [
+        "SSH1121",
+        "Kinh tế chính trị Mác - Lênin",
+        "2",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0017",
+      "code": "SSH1131",
+      "name": "Chủ nghĩa xã hội khoa học",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g004",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 17
+      },
+      "raw_cells": [
+        "SSH1131",
+        "Chủ nghĩa xã hội khoa học",
+        "3",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0018",
+      "code": "SSH1141",
+      "name": "Lịch sử Đảng cộng sản Việt Nam",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g004",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 18
+      },
+      "raw_cells": [
+        "SSH1141",
+        "Lịch sử Đảng cộng sản Việt Nam",
+        "4",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0019",
+      "code": "SSH1151",
+      "name": "Tư tưởng Hồ Chí Minh",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g004",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 19
+      },
+      "raw_cells": [
+        "SSH1151",
+        "Tư tưởng Hồ Chí Minh",
+        "4",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0020",
+      "code": "EM1170",
+      "name": "Pháp luật đại cương",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g004",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 20
+      },
+      "raw_cells": [
+        "EM1170",
+        "Pháp luật đại cương",
+        "2",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0021",
+      "code": "IT1140",
+      "name": "Tin học đại cương",
+      "credits": 4,
+      "degree_credits": 4,
+      "workload_raw": "4(3-1-1-8)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 22
+      },
+      "raw_cells": [
+        "IT1140",
+        "Tin học đại cương",
+        "1",
+        "4",
+        "4(3-1-1-8)"
+      ]
+    },
+    {
+      "entry_id": "c0022",
+      "code": "MI1112",
+      "name": "Giải tích I",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-2-0-6)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 23
+      },
+      "raw_cells": [
+        "MI1112",
+        "Giải tích I",
+        "1",
+        "3",
+        "3(2-2-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0023",
+      "code": "MI1142",
+      "name": "Đại số",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-2-0-6)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 24
+      },
+      "raw_cells": [
+        "MI1142",
+        "Đại số",
+        "1",
+        "3",
+        "3(2-2-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0024",
+      "code": "CH1018",
+      "name": "Hoá học",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 25
+      },
+      "raw_cells": [
+        "CH1018",
+        "Hoá học",
+        "2",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0025",
+      "code": "ME2015",
+      "name": "Đồ họa kỹ thuật cơ bản",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(3-1-0-6)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 26
+      },
+      "raw_cells": [
+        "ME2015",
+        "Đồ họa kỹ thuật cơ bản",
+        "2",
+        "3",
+        "3(3-1-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0026",
+      "code": "MI1122",
+      "name": "Giải tích II",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-2-0-6)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 27
+      },
+      "raw_cells": [
+        "MI1122",
+        "Giải tích II",
+        "2",
+        "3",
+        "3(2-2-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0027",
+      "code": "PH1111",
+      "name": "Vật lý đại cương I",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-1-4)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 28
+      },
+      "raw_cells": [
+        "PH1111",
+        "Vật lý đại cương I",
+        "2",
+        "2",
+        "2(2-0-1-4)"
+      ]
+    },
+    {
+      "entry_id": "c0028",
+      "code": "CH3071",
+      "name": "Hóa lý",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 29
+      },
+      "raw_cells": [
+        "CH3071",
+        "Hóa lý",
+        "3",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0029",
+      "code": "CH3072",
+      "name": "Thí nghiệm Hóa lý",
+      "credits": 1,
+      "degree_credits": 1,
+      "workload_raw": "1(0-0-2-2)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 30
+      },
+      "raw_cells": [
+        "CH3072",
+        "Thí nghiệm Hóa lý",
+        "3",
+        "1",
+        "1(0-0-2-2)"
+      ]
+    },
+    {
+      "entry_id": "c0030",
+      "code": "MI1132",
+      "name": "Giải tích III",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-2-0-6)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 31
+      },
+      "raw_cells": [
+        "MI1132",
+        "Giải tích III",
+        "3",
+        "3",
+        "3(2-2-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0031",
+      "code": "MI2021",
+      "name": "Xác suất thống kê",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 32
+      },
+      "raw_cells": [
+        "MI2021",
+        "Xác suất thống kê",
+        "3",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0032",
+      "code": "PH1121",
+      "name": "Vật lý đại cương II",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-1-4)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 33
+      },
+      "raw_cells": [
+        "PH1121",
+        "Vật lý đại cương II",
+        "3",
+        "2",
+        "2(2-0-1-4)"
+      ]
+    },
+    {
+      "entry_id": "c0033",
+      "code": "PH1131",
+      "name": "Vật lý đại cương III",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-1-4)",
+      "block_id": "g005",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 4,
+        "table": 1,
+        "row": 34
+      },
+      "raw_cells": [
+        "PH1131",
+        "Vật lý đại cương III",
+        "4",
+        "2",
+        "2(2-0-1-4)"
+      ]
+    },
+    {
+      "entry_id": "c0034",
+      "code": "EV1250",
+      "name": "Nhập môn quản lý tài nguyên và môi trường",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-2-0-6)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 3
+      },
+      "raw_cells": [
+        "EV1250",
+        "Nhập môn quản lý tài nguyên và môi trường",
+        "1",
+        "3",
+        "3(2-2-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0035",
+      "code": "EV2251",
+      "name": "Các quá trình cơ bản trong CNMT I",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 4
+      },
+      "raw_cells": [
+        "EV2251",
+        "Các quá trình cơ bản trong CNMT I",
+        "3",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0036",
+      "code": "EV2225",
+      "name": "Sinh thái học môi trường",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 5
+      },
+      "raw_cells": [
+        "EV2225",
+        "Sinh thái học môi trường",
+        "4",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0037",
+      "code": "EV2252",
+      "name": "Các quá trình cơ bản trong CNMT II",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 6
+      },
+      "raw_cells": [
+        "EV2252",
+        "Các quá trình cơ bản trong CNMT II",
+        "4",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0038",
+      "code": "EV2253",
+      "name": "Môi trường và xã hội",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 7
+      },
+      "raw_cells": [
+        "EV2253",
+        "Môi trường và xã hội",
+        "4",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0039",
+      "code": "EV3106",
+      "name": "Hóa học môi trường",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(3-0-1-6)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 8
+      },
+      "raw_cells": [
+        "EV3106",
+        "Hóa học môi trường",
+        "4",
+        "3",
+        "3(3-0-1-6)"
+      ]
+    },
+    {
+      "entry_id": "c0040",
+      "code": "EV3121",
+      "name": "Độc học môi trường",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-1-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 9
+      },
+      "raw_cells": [
+        "EV3121",
+        "Độc học môi trường",
+        "5",
+        "2",
+        "2(2-0-1-4)"
+      ]
+    },
+    {
+      "entry_id": "c0041",
+      "code": "EV3226",
+      "name": "Quản lý chất thải rắn",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(3-0-1-6)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 10
+      },
+      "raw_cells": [
+        "EV3226",
+        "Quản lý chất thải rắn",
+        "5",
+        "3",
+        "3(3-0-1-6)"
+      ]
+    },
+    {
+      "entry_id": "c0042",
+      "code": "EV3228",
+      "name": "Quản lý chất thải nguy hại",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-1-1-6)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 11
+      },
+      "raw_cells": [
+        "EV3228",
+        "Quản lý chất thải nguy hại",
+        "5",
+        "3",
+        "3(2-1-1-6)"
+      ]
+    },
+    {
+      "entry_id": "c0043",
+      "code": "EV3229",
+      "name": "Mô hình hóa môi trường",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-1-1-6)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 12
+      },
+      "raw_cells": [
+        "EV3229",
+        "Mô hình hóa môi trường",
+        "5",
+        "3",
+        "3(2-1-1-6)"
+      ]
+    },
+    {
+      "entry_id": "c0044",
+      "code": "EV3254",
+      "name": "Đồ án I (QLMT)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(0-0-4-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 13
+      },
+      "raw_cells": [
+        "EV3254",
+        "Đồ án I (QLMT)",
+        "5",
+        "2",
+        "2(0-0-4-4)"
+      ]
+    },
+    {
+      "entry_id": "c0045",
+      "code": "EV3256",
+      "name": "Quan trắc và đánh giá chất lượng môi trường",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-0-2-6)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 14
+      },
+      "raw_cells": [
+        "EV3256",
+        "Quan trắc và đánh giá chất lượng môi trường",
+        "5",
+        "3",
+        "3(2-0-2-6)"
+      ]
+    },
+    {
+      "entry_id": "c0046",
+      "code": "EV4131",
+      "name": "Kiểm soát ô nhiễm nước",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 15
+      },
+      "raw_cells": [
+        "EV4131",
+        "Kiểm soát ô nhiễm nước",
+        "5",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0047",
+      "code": "EV4223",
+      "name": "Đánh giá tác động môi trường",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 16
+      },
+      "raw_cells": [
+        "EV4223",
+        "Đánh giá tác động môi trường",
+        "5",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0048",
+      "code": "EV3109",
+      "name": "Kỹ thuật kiểm soát ô nhiễm không khí",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(3-0-1-6)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 17
+      },
+      "raw_cells": [
+        "EV3109",
+        "Kỹ thuật kiểm soát ô nhiễm không khí",
+        "6",
+        "3",
+        "3(3-0-1-6)"
+      ]
+    },
+    {
+      "entry_id": "c0049",
+      "code": "EV3257",
+      "name": "Kinh tế tài nguyên và môi trường",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(3-1-0-6)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 18
+      },
+      "raw_cells": [
+        "EV3257",
+        "Kinh tế tài nguyên và môi trường",
+        "6",
+        "3",
+        "3(3-1-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0050",
+      "code": "EV3258",
+      "name": "Viễn thám và GIS ứng dụng trong quản lý tài nguyên và môi trường",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-1-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 19
+      },
+      "raw_cells": [
+        "EV3258",
+        "Viễn thám và GIS ứng dụng trong quản lý tài nguyên và môi trường",
+        "6",
+        "2",
+        "2(2-0-1-4)"
+      ]
+    },
+    {
+      "entry_id": "c0051",
+      "code": "EV3259",
+      "name": "Thống kê sinh thái",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 20
+      },
+      "raw_cells": [
+        "EV3259",
+        "Thống kê sinh thái",
+        "6",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0052",
+      "code": "EV3260",
+      "name": "Đặc tính hóa tài nguyên",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 21
+      },
+      "raw_cells": [
+        "EV3260",
+        "Đặc tính hóa tài nguyên",
+        "6",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0053",
+      "code": "EV3261",
+      "name": "Quản lý tổng hợp tài nguyên nước",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 22
+      },
+      "raw_cells": [
+        "EV3261",
+        "Quản lý tổng hợp tài nguyên nước",
+        "6",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0054",
+      "code": "EV3262",
+      "name": "Bảo tồn và quản lý tài nguyên đất",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g006",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 23
+      },
+      "raw_cells": [
+        "EV3262",
+        "Bảo tồn và quản lý tài nguyên đất",
+        "6",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0055",
+      "code": "EV2020",
+      "name": "Technical Writing and Presentation (bắt buộc)",
+      "credits": 3,
+      "degree_credits": 3,
+      "workload_raw": "3(2-2-0-6)",
+      "block_id": "g007",
+      "requirement": "required",
+      "requirement_basis": "published_mandatory_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 25
+      },
+      "raw_cells": [
+        "EV2020",
+        "Technical Writing and Presentation (bắt buộc)",
+        "2",
+        "3",
+        "3(2-2-0-6)"
+      ]
+    },
+    {
+      "entry_id": "c0056",
+      "code": "CH2021",
+      "name": "Đổi mới sáng tạo và khởi nghiệp (tự chọn)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g007",
+      "requirement": "elective",
+      "requirement_basis": "published_elective_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 26
+      },
+      "raw_cells": [
+        "CH2021",
+        "Đổi mới sáng tạo và khởi nghiệp (tự chọn)",
+        "",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0057",
+      "code": "ED3220",
+      "name": "Kỹ năng mềm (tự chọn)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(1-2-0-4)",
+      "block_id": "g007",
+      "requirement": "elective",
+      "requirement_basis": "published_elective_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 27
+      },
+      "raw_cells": [
+        "ED3220",
+        "Kỹ năng mềm (tự chọn)",
+        "",
+        "2",
+        "2(1-2-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0058",
+      "code": "ED3280",
+      "name": "Tâm lý học ứng dụng (tự chọn)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(1-2-0-4)",
+      "block_id": "g007",
+      "requirement": "elective",
+      "requirement_basis": "published_elective_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 28
+      },
+      "raw_cells": [
+        "ED3280",
+        "Tâm lý học ứng dụng (tự chọn)",
+        "",
+        "2",
+        "2(1-2-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0059",
+      "code": "EM1010",
+      "name": "Quản trị học đại cương (tự chọn)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g007",
+      "requirement": "elective",
+      "requirement_basis": "published_elective_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 29
+      },
+      "raw_cells": [
+        "EM1010",
+        "Quản trị học đại cương (tự chọn)",
+        "",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0060",
+      "code": "EM1180",
+      "name": "Văn hóa kinh doanh và tinh thần khởi nghiệp (tự chọn)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g007",
+      "requirement": "elective",
+      "requirement_basis": "published_elective_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 30
+      },
+      "raw_cells": [
+        "EM1180",
+        "Văn hóa kinh doanh và tinh thần khởi nghiệp (tự chọn)",
+        "",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0061",
+      "code": "ET3262",
+      "name": "Tư duy công nghệ và thiết kế kỹ thuật (tự chọn)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(1-2-0-4)",
+      "block_id": "g007",
+      "requirement": "elective",
+      "requirement_basis": "published_elective_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 31
+      },
+      "raw_cells": [
+        "ET3262",
+        "Tư duy công nghệ và thiết kế kỹ thuật (tự chọn)",
+        "",
+        "2",
+        "2(1-2-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0062",
+      "code": "ME3123",
+      "name": "Thiết kế mỹ thuật công nghiệp (tự chọn)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(1-2-0-4)",
+      "block_id": "g007",
+      "requirement": "elective",
+      "requirement_basis": "published_elective_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 32
+      },
+      "raw_cells": [
+        "ME3123",
+        "Thiết kế mỹ thuật công nghiệp (tự chọn)",
+        "",
+        "2",
+        "2(1-2-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0063",
+      "code": "ME3124",
+      "name": "Thiết kế quảng bá sản phẩm (tự chọn)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(1-2-0-4)",
+      "block_id": "g007",
+      "requirement": "elective",
+      "requirement_basis": "published_elective_label",
+      "elective_group_id": "g007",
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 5,
+        "table": 1,
+        "row": 33
+      },
+      "raw_cells": [
+        "ME3124",
+        "Thiết kế quảng bá sản phẩm (tự chọn)",
+        "",
+        "2",
+        "2(1-2-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0064",
+      "code": "EV2212",
+      "name": "Các quá trình sản xuất cơ bản",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g009",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g009",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 4
+      },
+      "raw_cells": [
+        "EV2212",
+        "Các quá trình sản xuất cơ bản",
+        "7",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0065",
+      "code": "EV4233",
+      "name": "Kinh tế sinh thái",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g009",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g009",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 5
+      },
+      "raw_cells": [
+        "EV4233",
+        "Kinh tế sinh thái",
+        "7",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0066",
+      "code": "EV4264",
+      "name": "Công nghệ sinh học hướng tới kinh tế tuần hoàn",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g009",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g009",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 6
+      },
+      "raw_cells": [
+        "EV4264",
+        "Công nghệ sinh học hướng tới kinh tế tuần hoàn",
+        "7",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0067",
+      "code": "EV4266",
+      "name": "Sản xuất và tiêu dùng bền vững",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g009",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g009",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 7
+      },
+      "raw_cells": [
+        "EV4266",
+        "Sản xuất và tiêu dùng bền vững",
+        "7",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0068",
+      "code": "EV4281",
+      "name": "Hệ thống quản lý môi trường",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g009",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g009",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 8
+      },
+      "raw_cells": [
+        "EV4281",
+        "Hệ thống quản lý môi trường",
+        "7",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0069",
+      "code": "EV4322",
+      "name": "Đồ án II (QLMT)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(0-0-4-4)",
+      "block_id": "g009",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g009",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 9
+      },
+      "raw_cells": [
+        "EV4322",
+        "Đồ án II (QLMT)",
+        "7",
+        "2",
+        "2(0-0-4-4)"
+      ]
+    },
+    {
+      "entry_id": "c0070",
+      "code": "EV4229",
+      "name": "Luật và chính sách môi trường",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g009",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g009",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 10
+      },
+      "raw_cells": [
+        "EV4229",
+        "Luật và chính sách môi trường",
+        "8",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0071",
+      "code": "EV4235",
+      "name": "Quy hoạch môi trường",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g009",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g009",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 11
+      },
+      "raw_cells": [
+        "EV4235",
+        "Quy hoạch môi trường",
+        "8",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0072",
+      "code": "EV4225",
+      "name": "Nguyên lý sản xuất sạch hơn",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g010",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g010",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 13
+      },
+      "raw_cells": [
+        "EV4225",
+        "Nguyên lý sản xuất sạch hơn",
+        "7",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0073",
+      "code": "EV4242",
+      "name": "Hệ thống quản lý năng lượng",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g010",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g010",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 14
+      },
+      "raw_cells": [
+        "EV4242",
+        "Hệ thống quản lý năng lượng",
+        "7",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0074",
+      "code": "EV4267",
+      "name": "Giảm nhẹ và thích ứng với biến đổi khí hậu",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g010",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g010",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 15
+      },
+      "raw_cells": [
+        "EV4267",
+        "Giảm nhẹ và thích ứng với biến đổi khí hậu",
+        "7",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0075",
+      "code": "EV4269",
+      "name": "Đánh giá tính dễ bị tổn thương do biến đổi khí hậu",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g010",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g010",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 16
+      },
+      "raw_cells": [
+        "EV4269",
+        "Đánh giá tính dễ bị tổn thương do biến đổi khí hậu",
+        "7",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0076",
+      "code": "EV4322",
+      "name": "Đồ án II (QLMT)",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(0-0-4-4)",
+      "block_id": "g010",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g010",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 17
+      },
+      "raw_cells": [
+        "EV4322",
+        "Đồ án II (QLMT)",
+        "7",
+        "2",
+        "2(0-0-4-4)"
+      ]
+    },
+    {
+      "entry_id": "c0077",
+      "code": "EV5250",
+      "name": "Kiểm kê phát thải",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-1-0-4)",
+      "block_id": "g010",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g010",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 18
+      },
+      "raw_cells": [
+        "EV5250",
+        "Kiểm kê phát thải",
+        "7",
+        "2",
+        "2(2-1-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0078",
+      "code": "EV4235",
+      "name": "Quy hoạch môi trường",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g010",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g010",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 19
+      },
+      "raw_cells": [
+        "EV4235",
+        "Quy hoạch môi trường",
+        "8",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0079",
+      "code": "EV4268",
+      "name": "Năng lượng từ chất thải",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(2-0-0-4)",
+      "block_id": "g010",
+      "requirement": "required_within_selected_module",
+      "requirement_basis": "all_module_courses_sum_to_published_module_minimum",
+      "elective_group_id": null,
+      "module_id": "g010",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 20
+      },
+      "raw_cells": [
+        "EV4268",
+        "Năng lượng từ chất thải",
+        "8",
+        "2",
+        "2(2-0-0-4)"
+      ]
+    },
+    {
+      "entry_id": "c0080",
+      "code": "EV3298",
+      "name": "Thực tập kỹ thuật",
+      "credits": 2,
+      "degree_credits": 2,
+      "workload_raw": "2(0-0-4-4)",
+      "block_id": "g011",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 22
+      },
+      "raw_cells": [
+        "EV3298",
+        "Thực tập kỹ thuật",
+        "6",
+        "2",
+        "2(0-0-4-4)"
+      ]
+    },
+    {
+      "entry_id": "c0081",
+      "code": "EV4299",
+      "name": "Đồ án nghiên cứu cử nhân",
+      "credits": 10,
+      "degree_credits": 10,
+      "workload_raw": "10(0-0-20-20)",
+      "block_id": "g011",
+      "requirement": "required",
+      "requirement_basis": "inferred_all_rows_needed_to_meet_published_block_minimum",
+      "elective_group_id": null,
+      "module_id": null,
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 23
+      },
+      "raw_cells": [
+        "EV4299",
+        "Đồ án nghiên cứu cử nhân",
+        "8",
+        "10",
+        "10(0-0-20-20)"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "g009",
+      "name": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững",
+      "kind": "module",
+      "minimum_credits": 16,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 3
+      },
+      "raw_heading": "Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững 16",
+      "course_entry_ids": [
+        "c0064",
+        "c0065",
+        "c0066",
+        "c0067",
+        "c0068",
+        "c0069",
+        "c0070",
+        "c0071"
+      ],
+      "catalog_credits": 16,
+      "course_codes": [
+        "EV2212",
+        "EV4233",
+        "EV4264",
+        "EV4266",
+        "EV4281",
+        "EV4322",
+        "EV4229",
+        "EV4235"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": {
+        "type": "module_credits",
+        "minimum_credits": 16,
+        "course_codes": [
+          "EV2212",
+          "EV4233",
+          "EV4264",
+          "EV4266",
+          "EV4281",
+          "EV4322",
+          "EV4229",
+          "EV4235"
+        ],
+        "basis": "published_module_heading",
+        "note": "Quy tắc chọn số mô-đun được lưu riêng từ ghi chú nguồn; không mặc định mọi CTĐT đều chọn một mô-đun."
+      }
+    },
+    {
+      "id": "g010",
+      "name": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu",
+      "kind": "module",
+      "minimum_credits": 16,
+      "minimum_credits_basis": "published_heading",
+      "degree_scope": "bachelor",
+      "source_location": {
+        "page": 6,
+        "table": 1,
+        "row": 12
+      },
+      "raw_heading": "Mô đun 2: Năng lượng, Môi trường và Biến đổi khí hậu 16",
+      "course_entry_ids": [
+        "c0072",
+        "c0073",
+        "c0074",
+        "c0075",
+        "c0076",
+        "c0077",
+        "c0078",
+        "c0079"
+      ],
+      "catalog_credits": 16,
+      "course_codes": [
+        "EV4225",
+        "EV4242",
+        "EV4267",
+        "EV4269",
+        "EV4322",
+        "EV5250",
+        "EV4235",
+        "EV4268"
+      ],
+      "counts_toward_degree_credits": true,
+      "selection_rule": {
+        "type": "module_credits",
+        "minimum_credits": 16,
+        "course_codes": [
+          "EV4225",
+          "EV4242",
+          "EV4267",
+          "EV4269",
+          "EV4322",
+          "EV5250",
+          "EV4235",
+          "EV4268"
+        ],
+        "basis": "published_module_heading",
+        "note": "Quy tắc chọn số mô-đun được lưu riêng từ ghi chú nguồn; không mặc định mọi CTĐT đều chọn một mô-đun."
+      }
+    }
+  ],
+  "warnings": [],
+  "page_count": 6,
+  "text_file": "evidence/7520a6462c4e7d77.txt",
+  "extracted_text_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "published_total_candidates": [],
+  "applicability_evidence": [
+    {
+      "page": 1,
+      "quote": "Về việc phê duyệt chương trình đào tạo Quản lý Tài nguyên và Môi trường áp dụng từ khóa tuyển sinh năm 2025 (khóa 70) GIÁM ĐỐC ĐẠI HỌC BÁCH KHOA HÀ NỘI Căn cứ Luật Giáo dục đại học ngày 10 tháng 12 năm 2025;"
+    },
+    {
+      "page": 1,
+      "quote": "Điều 1. Phê duyệt cập nhật chương trình đào tạo Cử nhân Quản lý Tài nguyên và Môi trường áp dụng từ khóa tuyển sinh năm 2025 (khóa 70). Nội dung cập nhật cụ thể như sau:"
+    },
+    {
+      "page": 1,
+      "quote": "- Chuẩn đầu ra: Tiếp tục áp dụng Chuẩn đầu ra của Chương trình đào tạo đã được phê duyệt tại Quyết định số 4150/QĐ-ĐHBK ngày 21 tháng 4 năm 2025 của Giám đốc Đại học Bách khoa Hà Nội."
+    },
+    {
+      "page": 3,
+      "quote": "CỬ NHÂN QUẢN LÝ TÀI NGUYÊN VÀ MÔI TRƯỜNG ÁP DỤNG TỪ KHÓA TUYỂN SINH NĂM 2025 (KHÓA 70) (kèm theo Quyết định số 10651 /QĐ-ĐHBK ngày 28 tháng 8 năm 2026 của Giám đốc Đại học Bách khoa Hà Nội)"
+    },
+    {
+      "page": 3,
+      "quote": "I. Chuẩn đầu ra của chương trình đào tạo 1. Áp dụng các nguyên lý cơ bản của toán, khoa học tự nhiên, khoa học xã hội để giải quyết các vấn đề thực tiễn, liên ngành trong lĩnh vực quản lý tài nguyên và môi trường. 2. Phân tích các hệ thống, quy trình, hoặc giải pháp kỹ thuật để giải quyết các vấn đề về chất lượng môi trường, quản lý hiệu quả tài nguyên, phát triển bền vững, kinh tế tuần hoàn,"
+    },
+    {
+      "page": 3,
+      "quote": "nguyên và môi trường. 6. Áp dụng các hệ thống, quy trình, tiêu chuẩn và quy chuẩn kỹ thuật trong lĩnh vực quản lý tài nguyên và môi trường. 7. Vận dụng tư duy phản biện, sáng tạo trong giải quyết các vấn đề thuộc lĩnh vực quản lý tài nguyên và môi trường."
+    }
+  ],
+  "selection_notes": [
+    {
+      "page": 3,
+      "quote": "PE1014 Lý luận TDTT 1 0(0-2-0-2) PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2) PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2) PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2)"
+    },
+    {
+      "page": 3,
+      "quote": "PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2) PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2) PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2)"
+    },
+    {
+      "page": 3,
+      "quote": "PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2) PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2)"
+    },
+    {
+      "page": 4,
+      "quote": "CTĐT PExxxx Tự chọn học tích lũy 4 TC 0(0-2-0-2) Giáo dục Quốc phòng - an ninh (165 tiết) Đường lối quốc phòng và an ninh của Đảng Cộng MIL1210 0(3-0-0-6)"
+    },
+    {
+      "page": 5,
+      "quote": "Kiến thức bổ trợ 9 EV2020 Technical Writing and Presentation (bắt buộc) 2 3 3(2-2-0-6) CH2021 Đổi mới sáng tạo và khởi nghiệp (tự chọn) 2 2(2-1-0-4) ED3220 Kỹ năng mềm (tự chọn) 2 2(1-2-0-4) ED3280 Tâm lý học ứng dụng (tự chọn) 2 2(1-2-0-4)"
+    },
+    {
+      "page": 5,
+      "quote": "EV2020 Technical Writing and Presentation (bắt buộc) 2 3 3(2-2-0-6) CH2021 Đổi mới sáng tạo và khởi nghiệp (tự chọn) 2 2(2-1-0-4) ED3220 Kỹ năng mềm (tự chọn) 2 2(1-2-0-4) ED3280 Tâm lý học ứng dụng (tự chọn) 2 2(1-2-0-4) EM1010 Quản trị học đại cương (tự chọn) 2 2(2-1-0-4)"
+    },
+    {
+      "page": 5,
+      "quote": "CH2021 Đổi mới sáng tạo và khởi nghiệp (tự chọn) 2 2(2-1-0-4) ED3220 Kỹ năng mềm (tự chọn) 2 2(1-2-0-4) ED3280 Tâm lý học ứng dụng (tự chọn) 2 2(1-2-0-4) EM1010 Quản trị học đại cương (tự chọn) 2 2(2-1-0-4) Văn hóa kinh doanh và tinh thần khởi nghiệp (tự"
+    },
+    {
+      "page": 5,
+      "quote": "ED3220 Kỹ năng mềm (tự chọn) 2 2(1-2-0-4) ED3280 Tâm lý học ứng dụng (tự chọn) 2 2(1-2-0-4) EM1010 Quản trị học đại cương (tự chọn) 2 2(2-1-0-4) Văn hóa kinh doanh và tinh thần khởi nghiệp (tự EM1180 2 2(2-1-0-4)"
+    },
+    {
+      "page": 5,
+      "quote": "ED3280 Tâm lý học ứng dụng (tự chọn) 2 2(1-2-0-4) EM1010 Quản trị học đại cương (tự chọn) 2 2(2-1-0-4) Văn hóa kinh doanh và tinh thần khởi nghiệp (tự EM1180 2 2(2-1-0-4) chọn)"
+    },
+    {
+      "page": 5,
+      "quote": "chọn) ET3262 Tư duy công nghệ và thiết kế kỹ thuật (tự chọn) 2 2(1-2-0-4) ME3123 Thiết kế mỹ thuật công nghiệp (tự chọn) 2 2(1-2-0-4) ME3124 Thiết kế quảng bá sản phẩm (tự chọn) 2 2(1-2-0-4)"
+    },
+    {
+      "page": 5,
+      "quote": "ET3262 Tư duy công nghệ và thiết kế kỹ thuật (tự chọn) 2 2(1-2-0-4) ME3123 Thiết kế mỹ thuật công nghiệp (tự chọn) 2 2(1-2-0-4) ME3124 Thiết kế quảng bá sản phẩm (tự chọn) 2 2(1-2-0-4)"
+    },
+    {
+      "page": 5,
+      "quote": "ME3123 Thiết kế mỹ thuật công nghiệp (tự chọn) 2 2(1-2-0-4) ME3124 Thiết kế quảng bá sản phẩm (tự chọn) 2 2(1-2-0-4)"
+    },
+    {
+      "page": 6,
+      "quote": "CTĐT Tự chọn theo định hướng ứng dụng (chọn 1 trong các mô đun) 16 Mô đun 1: Kinh tế tuần hoàn và Phát triển bền vững 16 EV2212 Các quá trình sản xuất cơ bản 7 2 2(2-1-0-4) EV4233 Kinh tế sinh thái 7 2 2(2-0-0-4)"
+    }
+  ],
+  "graduation_formulas": [
+    {
+      "page": 6,
+      "quote": "Điều kiện tốt nghiệp: LLCT:13+TKHCB:32+CSCLN:50+KTBT:9+(MOD1:16|MOD2:16)+(TT:2+ĐANC:10)"
+    }
+  ],
+  "document_years_on_opening_pages": [
+    "2026",
+    "2025",
+    "2024"
+  ],
+  "source_id": "7520a6462c4e7d77",
+  "source_file": "originals/7520a6462c4e7d77.pdf",
+  "source_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=ctdt_quan_ly_tai_nguyen_va_moi_truong_k70.pdf",
+  "source_sha256": "42ce2717e171a9932893d2d6e5cd945cb704ec72c231bd9d03e96a21370690b9",
+  "parser_version": "official-curriculum-tables.v1.3",
+  "selection_rules": [
+    {
+      "type": "choose_modules",
+      "count": 1,
+      "module_ids": [
+        "g009",
+        "g010"
+      ],
+      "minimum_credits": 16,
+      "source_basis": "chọn 1 trong các mô đun"
+    }
+  ],
+  "review_notes": [],
+  "manual_review_version": "v1",
+  "total_required_credits": 132,
+  "total_credits_basis": "calculated_from_manually_checked_published_formula",
+  "total_credit_evidence": [],
+  "post_bachelor_courses": [],
+  "document_version": null,
+  "document_years_stated": [
+    "2026",
+    "2025",
+    "2024"
+  ],
+  "reviewed_total_evidence": {
+    "page": 7,
+    "arithmetic": "13+32+50+9+16+2+10",
+    "value": 132
+  },
+  "source": {
+    "id": "7520a6462c4e7d77",
+    "url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=ctdt_quan_ly_tai_nguyen_va_moi_truong_k70.pdf",
+    "download_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=ctdt_quan_ly_tai_nguyen_va_moi_truong_k70.pdf",
+    "final_url": "https://scls.hust.edu.vn/index.php?language=vi&nv=download&op=down&filename=ctdt_quan_ly_tai_nguyen_va_moi_truong_k70.pdf",
+    "file": "originals/7520a6462c4e7d77.pdf",
+    "sha256": "42ce2717e171a9932893d2d6e5cd945cb704ec72c231bd9d03e96a21370690b9",
+    "retrieved_at": "2026-10-27T14:16:22.127929+00:00",
+    "kind": "pdf",
+    "provenance": "downloaded_from_official_host_or_officially_linked_cloud_file",
+    "fresh_access_status": "downloaded",
+    "archive_member": null,
+    "archive_file": null
+  },
+  "official_publisher": true,
+  "verification_status": "extracted_needs_review",
+  "source_cohort_assignments": [
+    {
+      "admission_code": "EV2",
+      "cohorts": [
+        70
+      ],
+      "quote": "Áp dụng cho K70 trở về sau",
+      "publisher_url": "https://scls.hust.edu.vn/vi/dao-tao/quan-ly-tai-nguyen-va-moi-truong/"
+    }
+  ],
+  "notes": [],
+  "raw_extraction_file": "evidence/7520a6462c4e7d77.json"
+}

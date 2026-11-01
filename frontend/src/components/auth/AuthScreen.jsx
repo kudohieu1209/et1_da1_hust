@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AlertCircle, Eye, EyeOff, Loader2, LogIn, UserPlus } from 'lucide-react';
 import BrandLogo from '../BrandLogo';
+import ProgramsTab from '../ProgramsTab';
 import { apiFetch, apiUrl, readError } from '../../api';
 import './auth.css';
 
@@ -142,6 +143,13 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
   const setLoginField = (key) => (e) => setLogin({ ...login, [key]: e.target.value });
   const setRegisterField = (key) => (e) => setRegister({ ...register, [key]: e.target.value });
 
+  if (mode === 'browse') return (
+    <main className="program-public">
+      <button type="button" onClick={() => switchMode('login')}>← {t('Quay lại đăng nhập', 'Back to login')}</button>
+      <ProgramsTab />
+    </main>
+  );
+
   return (
     <main className="auth-screen">
       <div className="auth-card">
@@ -150,6 +158,9 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
           <h1>HUST Advisor</h1>
           <p>{t('Tư vấn học tập cho sinh viên Bách Khoa', 'Academic advising for HUST students')}</p>
         </header>
+        <p className="auth-switch"><button type="button" onClick={() => switchMode('browse')}>
+          {t('Tra cứu chương trình và học phần toàn trường', 'Browse all programs and courses')}
+        </button></p>
 
         <div className="auth-tabs" role="tablist">
           <button

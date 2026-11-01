@@ -1,0 +1,2194 @@
+{
+  "schema_version": "1.0.0",
+  "program": {
+    "program_id": "FL3",
+    "program_code": "FL3",
+    "name": "Tiếng Trung Khoa học và Công nghệ",
+    "curriculum_version": "2025",
+    "degree_level": "BACHELOR",
+    "total_required_credits": 136
+  },
+  "sources": [
+    {
+      "id": "public_curriculum_fl3",
+      "kind": "PUBLIC_HUST_CURRICULUM_EXTRACTION",
+      "file": "data/raw/reviewed_curricula/FL3-2025.json",
+      "sha256": "7fdd8ff4b9885d8cd0009d41961b02ee5c94d6baafd5a958cbe9bf4a0489f9c9",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    },
+    {
+      "id": "review_evidence_0",
+      "kind": "OFFICIAL_SOURCE_REVIEW",
+      "file": "data/raw/reviewed_sources/442b5cab72f870ed.html",
+      "sha256": "7ce6f0fe610ddcc40584a3a216efa0a9b31415bbaa2c91be4717bb02b2df67fe",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    },
+    {
+      "id": "review_evidence_1",
+      "kind": "OFFICIAL_SOURCE_REVIEW",
+      "file": "data/raw/reviewed_sources/f35423d6adfe705b.jpg",
+      "sha256": "831848b389fa1025d9d3678c87bd02f94fe67686e9e2dbae664ac8aac49ad953",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    },
+    {
+      "id": "review_evidence_2",
+      "kind": "OFFICIAL_SOURCE_REVIEW",
+      "file": "data/raw/reviewed_sources/16cff727094b5fb2.jpg",
+      "sha256": "aef964d09e872623ffcd0e1428efe642909952f2621fb4ad44c8a0ec4eb5d1de",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    },
+    {
+      "id": "review_evidence_3",
+      "kind": "OFFICIAL_SOURCE_REVIEW",
+      "file": "data/raw/reviewed_sources/b6c18c899917e880.jpg",
+      "sha256": "6b2b6205e23d5325534fd9f8af3327a06d452c956549395bac07e19db60ede8c",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    },
+    {
+      "id": "review_evidence_4",
+      "kind": "OFFICIAL_SOURCE_REVIEW",
+      "file": "data/raw/reviewed_sources/84fbb77e83998fb0.jpg",
+      "sha256": "dcf0d1a7ec7645f51ca49c3d451cc6511c6efe876f1907023dc3b281c962aeac",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    },
+    {
+      "id": "review_evidence_5",
+      "kind": "OFFICIAL_SOURCE_REVIEW",
+      "file": "data/raw/reviewed_sources/d34bce39928d5f50.jpg",
+      "sha256": "38e8044f366a5bba10ee0b129e274badd730195ff56c5a53554314e511fb2920",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    },
+    {
+      "id": "review_evidence_6",
+      "kind": "OFFICIAL_SOURCE_REVIEW",
+      "file": "data/raw/reviewed_sources/3c12004f69a4b8f1.jpg",
+      "sha256": "a4100c68c5ae3f80f6ea3dc5cda55ec300eff75ce9376309808833b75eeef1b8",
+      "authority": "Đại học Bách khoa Hà Nội / đơn vị quản lý chương trình",
+      "contains_personal_data": false,
+      "personal_data_included_in_output": false
+    }
+  ],
+  "graduation_paths": [
+    {
+      "id": "bachelor",
+      "name": "Tiếng Trung Khoa học và Công nghệ 2025 (Cử nhân)",
+      "raw_expression": "Đại cương 12 + LLCT/Pháp luật 13 + ngoại ngữ II 10 (chọn 1/3 Pháp, Nhật, Anh) + cơ sở/cốt lõi 71 + bổ trợ tự chọn 6 + chọn 1 trong 2 mô đun chuyên ngành 15 + thực tập/ĐATN 9 = 136 TC. Nguồn ghi tổng chưa bao gồm GDTC và GDQP.",
+      "components": [
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_1",
+          "required_credits": 12
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_2",
+          "required_credits": 13
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_3",
+          "required_credits": 71
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_4",
+          "required_credits": 6
+        },
+        {
+          "type": "GROUP_CREDITS",
+          "group_id": "group_khoi_5",
+          "required_credits": 9
+        },
+        {
+          "type": "ONE_OF_GROUPS",
+          "required_credits": 25,
+          "options": [
+            {
+              "group_id": "group_mod_1",
+              "required_credits": 25
+            },
+            {
+              "group_id": "group_mod_2",
+              "required_credits": 25
+            },
+            {
+              "group_id": "group_mod_3",
+              "required_credits": 25
+            },
+            {
+              "group_id": "group_mod_4",
+              "required_credits": 25
+            },
+            {
+              "group_id": "group_mod_5",
+              "required_credits": 25
+            },
+            {
+              "group_id": "group_mod_6",
+              "required_credits": 25
+            }
+          ]
+        }
+      ],
+      "total_required_credits": 136,
+      "source_order": 0
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_khoi_1",
+      "source_group_code": "KHOI1",
+      "name": "Kiến thức giáo dục đại cương",
+      "course_count_reported": 6,
+      "catalog_credits": 12,
+      "course_codes": [
+        "IT1130",
+        "FL1320",
+        "ED3070",
+        "FL1330",
+        "FLC1001",
+        "FLC2002"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_2",
+      "source_group_code": "KHOI2",
+      "name": "Lý luận chính trị + Pháp luật đại cương",
+      "course_count_reported": 6,
+      "catalog_credits": 13,
+      "course_codes": [
+        "SSH1111",
+        "SSH1121",
+        "SSH1131",
+        "SSH1141",
+        "SSH1151",
+        "EM1170"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_3",
+      "source_group_code": "KHOI3",
+      "name": "Cơ sở và cốt lõi ngành",
+      "course_count_reported": 27,
+      "catalog_credits": 71,
+      "course_codes": [
+        "FLC1101",
+        "FLC1102",
+        "FLC1103",
+        "FLC1104",
+        "FLC2105",
+        "FLC2106",
+        "FLC2201",
+        "FLC2202",
+        "FLC2203",
+        "FLC2204",
+        "FLC2205",
+        "FLC2206",
+        "FLC2301",
+        "FLC2302",
+        "FLC3303",
+        "FLC3304",
+        "FLC3305",
+        "FL1310",
+        "FLC3401",
+        "FLC3402",
+        "FLC3403",
+        "FLC3404",
+        "FLC3405",
+        "FLC3406",
+        "FLC3407",
+        "FLC3408",
+        "FLC4409"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_4",
+      "source_group_code": "KHOI4",
+      "name": "Kiến thức bổ trợ",
+      "course_count_reported": 6,
+      "catalog_credits": 12,
+      "course_codes": [
+        "FL3571",
+        "FLC1501",
+        "FLC3502",
+        "FLC3503",
+        "FLC4504",
+        "FLC4505"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_5",
+      "source_group_code": "KHOI5",
+      "name": "Thực tập và Đồ án tốt nghiệp",
+      "course_count_reported": 2,
+      "catalog_credits": 9,
+      "course_codes": [
+        "FLC4801",
+        "FLC4802"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_khoi_6",
+      "source_group_code": "KHOI6",
+      "name": "Giáo dục thể chất",
+      "course_count_reported": 1,
+      "catalog_credits": 1,
+      "course_codes": [
+        "PE1014"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_khoi_7",
+      "source_group_code": "KHOI7",
+      "name": "Giáo dục Quốc phòng - An ninh",
+      "course_count_reported": 4,
+      "catalog_credits": 0,
+      "course_codes": [
+        "MIL1210",
+        "MIL1220",
+        "MIL1230",
+        "MIL1240"
+      ],
+      "counts_toward_degree_credits": false
+    },
+    {
+      "id": "group_mod_1",
+      "source_group_code": "MOD1",
+      "name": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "course_count_reported": 9,
+      "catalog_credits": 25,
+      "course_codes": [
+        "FL1421",
+        "FL1422",
+        "FL1423",
+        "FL1424",
+        "FLC3601",
+        "FLC3602",
+        "FLC4603",
+        "FLC4604",
+        "FLC4605"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_2",
+      "source_group_code": "MOD2",
+      "name": "Ngoại ngữ II — Tiếng Pháp + Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "course_count_reported": 9,
+      "catalog_credits": 25,
+      "course_codes": [
+        "FL1421",
+        "FL1422",
+        "FL1423",
+        "FL1424",
+        "FLC3701",
+        "FLC3702",
+        "FLC4703",
+        "FLC4704",
+        "FLC4705"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_3",
+      "source_group_code": "MOD3",
+      "name": "Ngoại ngữ II — Tiếng Nhật + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "course_count_reported": 9,
+      "catalog_credits": 25,
+      "course_codes": [
+        "FL1431",
+        "FL1432",
+        "FL1433",
+        "FL1434",
+        "FLC3601",
+        "FLC3602",
+        "FLC4603",
+        "FLC4604",
+        "FLC4605"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_4",
+      "source_group_code": "MOD4",
+      "name": "Ngoại ngữ II — Tiếng Nhật + Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "course_count_reported": 9,
+      "catalog_credits": 25,
+      "course_codes": [
+        "FL1431",
+        "FL1432",
+        "FL1433",
+        "FL1434",
+        "FLC3701",
+        "FLC3702",
+        "FLC4703",
+        "FLC4704",
+        "FLC4705"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_5",
+      "source_group_code": "MOD5",
+      "name": "Ngoại ngữ II — Tiếng Anh + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "course_count_reported": 9,
+      "catalog_credits": 25,
+      "course_codes": [
+        "FL1451",
+        "FL1452",
+        "FL1453",
+        "FL1454",
+        "FLC3601",
+        "FLC3602",
+        "FLC4603",
+        "FLC4604",
+        "FLC4605"
+      ],
+      "counts_toward_degree_credits": true
+    },
+    {
+      "id": "group_mod_6",
+      "source_group_code": "MOD6",
+      "name": "Ngoại ngữ II — Tiếng Anh + Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "course_count_reported": 9,
+      "catalog_credits": 25,
+      "course_codes": [
+        "FL1451",
+        "FL1452",
+        "FL1453",
+        "FL1454",
+        "FLC3701",
+        "FLC3702",
+        "FLC4703",
+        "FLC4704",
+        "FLC4705"
+      ],
+      "counts_toward_degree_credits": true
+    }
+  ],
+  "courses": [
+    {
+      "code": "IT1130",
+      "name": "Introduction to Computer Science",
+      "credits": 2,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Kiến thức giáo dục đại cương",
+      "department": "TCNTT",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1320",
+      "name": "Introduction to Vietnamese Culture",
+      "credits": 2,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Kiến thức giáo dục đại cương",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "ED3070",
+      "name": "Introduction to Science and Technology",
+      "credits": 2,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Kiến thức giáo dục đại cương",
+      "department": "KSPKT",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1330",
+      "name": "Vietnamese Language in Practice",
+      "credits": 2,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Kiến thức giáo dục đại cương",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC1001",
+      "name": "Study and Research Methodology",
+      "credits": 2,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Kiến thức giáo dục đại cương",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2002",
+      "name": "Introduction to Chinese for Science and Technology",
+      "credits": 2,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Kiến thức giáo dục đại cương",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_1"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "SSH1111",
+      "name": "Philosophy of Marxism and Leninism",
+      "credits": 3,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "SSH1121",
+      "name": "Political Economics of Marxism and Leninism",
+      "credits": 2,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "SSH1111",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "SSH1111",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "SSH1131",
+      "name": "Scientific Socialism",
+      "credits": 2,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "SSH1141",
+      "name": "History of Vietnamese Communist Party",
+      "credits": 2,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "SSH1151",
+      "name": "Ho Chi Minh Ideology",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương",
+      "department": "KML",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "EM1170",
+      "name": "General Law",
+      "credits": 2,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Lý luận chính trị + Pháp luật đại cương",
+      "department": "KKTVQL",
+      "group_ids": [
+        "group_khoi_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC1101",
+      "name": "Chinese 1A",
+      "credits": 3,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC1102",
+      "name": "Chinese 1B",
+      "credits": 3,
+      "suggested_semester": 1,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC1103",
+      "name": "Chinese 2A",
+      "credits": 3,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC1104",
+      "name": "Chinese 2B",
+      "credits": 3,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2105",
+      "name": "Chinese 3A",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2106",
+      "name": "Chinese 3B",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2201",
+      "name": "Chinese 3C",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2202",
+      "name": "Chinese 3D",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2203",
+      "name": "Chinese 4A",
+      "credits": 3,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104, FLC2105, FLC2106, FLC2201, FLC2202",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2105",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2106",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2201",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2202",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2204",
+      "name": "Chinese 4B",
+      "credits": 3,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104, FLC2105, FLC2106, FLC2201, FLC2202",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2105",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2106",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2201",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2202",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2205",
+      "name": "Chinese 4C",
+      "credits": 3,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104, FLC2105, FLC2106, FLC2201, FLC2202",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2105",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2106",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2201",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2202",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2206",
+      "name": "Chinese 4D",
+      "credits": 3,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104, FLC2105, FLC2106, FLC2201, FLC2202",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2105",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2106",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2201",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2202",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2301",
+      "name": "Chinese for Information Technology",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "FLC1101, FLC1102, FLC1103, FLC1104, FLC2105, FLC2106, FLC2201, FLC2202",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FLC1101",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1102",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1103",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC1104",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2105",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2106",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2201",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FLC2202",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC2302",
+      "name": "Chinese for Electrical and Electronic Engineering",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3303",
+      "name": "Chinese for Materials Science",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3304",
+      "name": "Chinese for Mechanical Engineering and Automotive Engineering",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3305",
+      "name": "Chinese for Environmental and Life Sciences",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FL1310",
+      "name": "Introduction to Linguistics",
+      "credits": 2,
+      "suggested_semester": 2,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC3401",
+      "name": "Lexicology and Syntax",
+      "credits": 3,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3402",
+      "name": "Introduction to China",
+      "credits": 3,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3403",
+      "name": "Research Methodology",
+      "credits": 3,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3404",
+      "name": "Theory of Translation and Interpretation",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3405",
+      "name": "Translation and Interpreting Practice",
+      "credits": 2,
+      "suggested_semester": 6,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3406",
+      "name": "Chinese phonetics and characters",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3407",
+      "name": "Chinese Literature",
+      "credits": 2,
+      "suggested_semester": 6,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3408",
+      "name": "Chinese Teaching Methodology",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4409",
+      "name": "Vietnamese-Chinese Contrastive Linguistics",
+      "credits": 2,
+      "suggested_semester": 7,
+      "is_compulsory": true,
+      "category": "Cơ sở và cốt lõi ngành",
+      "department": "",
+      "group_ids": [
+        "group_khoi_3"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FL3571",
+      "name": "Communication Skills",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC1501",
+      "name": "Critical Thinking",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "KNN",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC3502",
+      "name": "The Use of AI in Language Teaching, Translation and Interpreting",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3503",
+      "name": "Chinese for Journalism and Communication",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4504",
+      "name": "Project Management in Science and Technology",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4505",
+      "name": "Chinese for Economics and Business",
+      "credits": 2,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Kiến thức bổ trợ",
+      "department": "",
+      "group_ids": [
+        "group_khoi_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4801",
+      "name": "Work placement",
+      "credits": 3,
+      "suggested_semester": 8,
+      "is_compulsory": true,
+      "category": "Thực tập và Đồ án tốt nghiệp",
+      "department": "",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4802",
+      "name": "Graduation Project",
+      "credits": 6,
+      "suggested_semester": 8,
+      "is_compulsory": true,
+      "category": "Thực tập và Đồ án tốt nghiệp",
+      "department": "",
+      "group_ids": [
+        "group_khoi_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "PE1014",
+      "name": "Sports theory",
+      "credits": 1,
+      "suggested_semester": null,
+      "is_compulsory": false,
+      "category": "Giáo dục thể chất",
+      "department": "BGDTC",
+      "group_ids": [
+        "group_khoi_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "MIL1210",
+      "name": "Vietnam Communist Party’s direction on defense and security",
+      "credits": 0,
+      "suggested_semester": 1,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "MIL1220",
+      "name": "Introduction to the National Defense",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "MIL1230",
+      "name": "General Military Education",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "MIL1240",
+      "name": "Infantry Cambat Techniques and Tactics",
+      "credits": 0,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Giáo dục Quốc phòng - An ninh",
+      "department": "KGDQP",
+      "group_ids": [
+        "group_khoi_7"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1421",
+      "name": "French I",
+      "credits": 3,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1422",
+      "name": "French II",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1421",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1421",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1423",
+      "name": "French III",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1422,FL1421",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1422",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1421",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1424",
+      "name": "French IV",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_2"
+      ],
+      "registration_condition": {
+        "raw": "FL1423,FL1421,FL1422",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1423",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1421",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1422",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FLC3601",
+      "name": "Translation and Interpretation Profession",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_3",
+        "group_mod_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3602",
+      "name": "Translation Technology",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_3",
+        "group_mod_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4603",
+      "name": "Management of Digital Translation Projects",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_3",
+        "group_mod_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4604",
+      "name": "Scientific and Technical Translation",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_3",
+        "group_mod_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4605",
+      "name": "Scientific and Technical Interpreting",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_1",
+        "group_mod_3",
+        "group_mod_5"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3701",
+      "name": "Theory and Methods of Teaching",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_2",
+        "group_mod_4",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC3702",
+      "name": "Lesson Design Skills and Development of Learning Materials",
+      "credits": 3,
+      "suggested_semester": 6,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_2",
+        "group_mod_4",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4703",
+      "name": "Assessment and Evaluation",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_2",
+        "group_mod_4",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4704",
+      "name": "Use of Technology in Teaching",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_2",
+        "group_mod_4",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FLC4705",
+      "name": "Practical Teaching of Chinese for Science and Technology",
+      "credits": 3,
+      "suggested_semester": 7,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Pháp + Mô đun 2: Giảng dạy Tiếng Trung Khoa học và Công nghệ",
+      "department": "",
+      "group_ids": [
+        "group_mod_2",
+        "group_mod_4",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": false
+    },
+    {
+      "code": "FL1431",
+      "name": "Japanese I",
+      "credits": 3,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Nhật + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_3",
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1432",
+      "name": "Japanese II",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Nhật + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_3",
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "FL1431/FL1410",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1431",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1410",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1433",
+      "name": "Japanese III",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Nhật + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_3",
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "FL1432/FL1420",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1432",
+                "relation": "PRIOR"
+              }
+            ]
+          },
+          {
+            "all_of": [
+              {
+                "course_code": "FL1420",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1434",
+      "name": "Japanese IV",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Nhật + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_3",
+        "group_mod_4"
+      ],
+      "registration_condition": {
+        "raw": "FL1433,FL1431,FL1432",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1433",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1431",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1432",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1451",
+      "name": "English I",
+      "credits": 3,
+      "suggested_semester": 2,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Anh + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_5",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "",
+        "any_of": []
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1452",
+      "name": "English II",
+      "credits": 3,
+      "suggested_semester": 3,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Anh + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_5",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "FL1451",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1451",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1453",
+      "name": "English III",
+      "credits": 2,
+      "suggested_semester": 4,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Anh + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_5",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "FL1451,FL1452",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1451",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1452",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    },
+    {
+      "code": "FL1454",
+      "name": "English IV",
+      "credits": 2,
+      "suggested_semester": 5,
+      "is_compulsory": false,
+      "category": "Ngoại ngữ II — Tiếng Anh + Mô đun 1: Biên phiên dịch Tiếng Trung Khoa học và Công nghệ",
+      "department": "KNN",
+      "group_ids": [
+        "group_mod_5",
+        "group_mod_6"
+      ],
+      "registration_condition": {
+        "raw": "FL1451,FL1452,FL1453",
+        "any_of": [
+          {
+            "all_of": [
+              {
+                "course_code": "FL1451",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1452",
+                "relation": "PRIOR"
+              },
+              {
+                "course_code": "FL1453",
+                "relation": "PRIOR"
+              }
+            ]
+          }
+        ]
+      },
+      "registration_condition_verified": true
+    }
+  ],
+  "non_credit_group_ids": [
+    "group_khoi_6",
+    "group_khoi_7"
+  ],
+  "build_warnings": [
+    "Đã đối chiếu nguồn gốc và quy tắc chọn môn: https://sofl.hust.edu.vn/nganh-fl3. Các môn chưa có trong snapshot CTT vẫn được tính theo tín chỉ CTĐT; chưa xác nhận điều kiện đăng ký.",
+    "FLC2302 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3303 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3304 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3305 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3401 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC3402 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC3403 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC3404 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3405 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3406 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC3407 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3408 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC4409 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3502 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC3503 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC4504 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC4505 chưa có trong snapshot danh mục CTT; dùng 2 TC theo CTĐT.",
+    "FLC4801 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC4802 chưa có trong snapshot danh mục CTT; dùng 6 TC theo CTĐT.",
+    "PE1014: CTT ghi 0 TC; dùng 1 TC theo CTĐT.",
+    "Giáo dục thể chất: bỏ dòng không có mã học phần cụ thể (trống – Elective course 1).",
+    "Giáo dục thể chất: bỏ dòng không có mã học phần cụ thể (trống – Elective course 2).",
+    "Giáo dục thể chất: bỏ dòng không có mã học phần cụ thể (trống – Elective course 3).",
+    "Giáo dục thể chất: bỏ dòng không có mã học phần cụ thể (trống – Elective course 4).",
+    "FLC3601 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC3602 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC4603 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC4604 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC4605 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC3701 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC3702 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC4703 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC4704 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "FLC4705 chưa có trong snapshot danh mục CTT; dùng 3 TC theo CTĐT.",
+    "Ngành bắt đầu tuyển sinh từ 2025; dữ liệu gắn K70, không gán cho K68.",
+    "Có hai lựa chọn độc lập: một ngoại ngữ II 10 TC và một chuyên ngành 15 TC. Sáu tổ hợp hợp lệ có cùng ngưỡng 25 TC; toàn chương trình 136 TC."
+  ],
+  "applies_to_cohorts": [
+    "K70"
+  ]
+}

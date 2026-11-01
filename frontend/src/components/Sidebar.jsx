@@ -5,6 +5,7 @@ import {
   Plus, 
   Award, 
   CheckCircle2, 
+  BookOpen,
   PanelLeft,
   PanelLeftClose,
   Search,
@@ -208,6 +209,7 @@ export default function Sidebar({
   const toolItems = [
     { id: 'audit', label: language === 'vi' ? 'Tiến độ học tập & CPA' : 'Degree Audit & CPA', icon: Award },
     { id: 'recommend', label: language === 'vi' ? 'Gợi ý chọn môn' : 'Course Suggestions', icon: CheckCircle2 },
+    { id: 'programs', label: language === 'vi' ? 'CTĐT toàn trường' : 'All programs', icon: BookOpen },
   ];
 
   return (

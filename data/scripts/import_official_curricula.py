@@ -117,7 +117,8 @@ def _is_placeholder(code: Any) -> bool:
 
 
 def _collect_group_courses(
-    group: dict[str, Any], catalog: dict[str, dict[str, Any]], counts: bool, warnings: list[str]
+    group: dict[str, Any], catalog: dict[str, dict[str, Any]], counts: bool, warnings: list[str],
+    *, prefer_source_credits: bool = False,
 ) -> list[dict[str, Any]]:
     """Keep real catalog courses; reject a degree group whose courses disagree with CTT."""
     kept: list[dict[str, Any]] = []
@@ -152,9 +153,13 @@ def _collect_group_courses(
             warnings.append(f"{code}: CTT ghi 0 TC; dùng {source_credits:g} TC theo CTĐT.")
             ctt_credits = source_credits
         elif counts and source_credits is not None and abs(source_credits - ctt_credits) > 1e-9:
-            raise CheckFailed(
-                f"{group['name']}: {code} ghi {source_credits:g} TC nhưng CTT ghi {ctt_credits:g} TC"
-            )
+            if not prefer_source_credits:
+                raise CheckFailed(
+                    f"{group['name']}: {code} ghi {source_credits:g} TC nhưng CTT ghi {ctt_credits:g} TC"
+                )
+            warnings.append(f"{code}: dùng {source_credits:g} TC đã đối chiếu trên CTĐT của khóa; snapshot CTT ghi {ctt_credits:g} TC. Chưa xác minh điều kiện đăng ký cho phiên bản này.")
+            kept.append({**course, "code": code, "_ctt": None, "_credits": source_credits})
+            continue
         kept.append({**course, "code": code, "_ctt": ctt, "_credits": ctt_credits})
     return kept
 
@@ -179,7 +184,8 @@ def _graduation_parts(raw: dict[str, Any]) -> tuple[list[dict], list[dict], list
 
 
 def build_dataset(
-    raw: dict[str, Any], source_file: str, source_sha256: str, catalog: dict[str, dict[str, Any]]
+    raw: dict[str, Any], source_file: str, source_sha256: str, catalog: dict[str, dict[str, Any]],
+    *, allow_unlisted: bool = False, prefer_source_credits: bool = False,
 ) -> dict[str, Any]:
     code = str(raw.get("admission_code") or "").strip().upper()
     if not PROGRAM_CODE_PATTERN.match(code):
@@ -203,7 +209,7 @@ def build_dataset(
         counters[prefix] += 1
         group_id = f"group_{prefix}_{counters[prefix]}"
         counts = bool(group.get("counts_toward_degree"))
-        kept = _collect_group_courses(group, catalog, counts, warnings)
+        kept = _collect_group_courses(group, catalog, counts, warnings, prefer_source_credits=prefer_source_credits)
         catalog_credits = sum(c["_credits"] for c in kept)
         required = _number(group.get("required_credits")) or 0.0
         if counts and catalog_credits + 1e-9 < required:
@@ -231,7 +237,7 @@ def build_dataset(
             components.append({"type": "GROUP_CREDITS", "group_id": group_id, "required_credits": _clean_number(required)})
         elif counts:
             module_options.append({"group_id": group_id, "required_credits": _clean_number(required)})
-    _check_ctt_coverage(groups, courses)
+    _check_ctt_coverage(groups, courses, allow_unlisted=allow_unlisted)
     if module_options:
         components.append({"type": "ONE_OF_GROUPS", "required_credits": _clean_number(module_threshold), "options": module_options})
 
@@ -281,14 +287,14 @@ def build_dataset(
     return dataset
 
 
-def _check_ctt_coverage(groups: list[dict[str, Any]], courses: dict[str, dict[str, Any]]) -> None:
+def _check_ctt_coverage(groups: list[dict[str, Any]], courses: dict[str, dict[str, Any]], *, allow_unlisted: bool = False) -> None:
     degree_codes = {
         code for group in groups if group["counts_toward_degree_credits"] for code in group["course_codes"]
     }
     missing = [code for code in degree_codes if courses[code].pop("_missing_from_ctt", False)]
     for course in courses.values():
         course.pop("_missing_from_ctt", None)
-    if degree_codes and len(missing) / len(degree_codes) > MAX_MISSING_FROM_CTT:
+    if not allow_unlisted and degree_codes and len(missing) / len(degree_codes) > MAX_MISSING_FROM_CTT:
         raise CheckFailed(
             f"{len(missing)}/{len(degree_codes)} học phần tính tốt nghiệp không có trong danh mục CTT"
         )
@@ -307,6 +313,7 @@ def _course_entry(course: dict[str, Any], group_name: str) -> dict[str, Any]:
         "department": str(ctt.get("department") or ""),
         "group_ids": [],
         "registration_condition": parse_condition(ctt.get("raw_condition") or ""),
+        "registration_condition_verified": bool(ctt),
         "_missing_from_ctt": course["_ctt"] is None,
     }
 
@@ -374,7 +381,7 @@ def run(input_dir: Path, catalog_path: Path, output_dir: Path, approvals_path: P
     admission_codes = load_admission_codes(programs_path)
     approvals = json.loads(approvals_path.read_text(encoding="utf-8"))
     manual = [a for a in approvals["approvals"] if a.get("approved_by") != AUTO_APPROVER]
-    manual_programs = {str(a["candidate_id"]).rsplit("-", 1)[0].upper() for a in manual}
+    manual_candidates = {a.get("source_candidate_id") or a["candidate_id"] for a in manual}
     stale_outputs = [a["output_file"] for a in approvals["approvals"] if a.get("approved_by") == AUTO_APPROVER]
 
     source_dir = source_dir or input_dir
@@ -385,7 +392,7 @@ def run(input_dir: Path, catalog_path: Path, output_dir: Path, approvals_path: P
         raw = sanitize_source(json.loads(path.read_text(encoding="utf-8")))
         target = source_dir / path.name
         target.write_text(json.dumps(raw, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
-        if str(raw.get("admission_code") or "").upper() in manual_programs:
+        if path.stem in manual_candidates:
             rejected[path.stem] = "đã có dữ liệu được đối chiếu thủ công, giữ bản thủ công"
             continue
         try:
