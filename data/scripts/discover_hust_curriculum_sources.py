@@ -22,6 +22,15 @@ from urllib.parse import urljoin, urlparse
 
 
 DATA_DIR = Path(__file__).resolve().parents[1]
+PROJECT_DIR = DATA_DIR.parent
+
+
+def _project_relative(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(PROJECT_DIR).as_posix()
+    except ValueError:
+        return path.name
+
 DEFAULT_INPUT = DATA_DIR / "raw" / "hust_undergraduate_programs.json"
 DEFAULT_OUTPUT = DATA_DIR / "raw" / "hust_program_curriculum_sources.json"
 DEFAULT_TIMEOUT = 30
@@ -226,7 +235,7 @@ def discover(input_path: Path, *, insecure: bool, timeout: int) -> dict:
     )
     return {
         "schema_version": "hust-curriculum-sources.v1",
-        "source_catalog": str(input_path),
+        "source_catalog": _project_relative(input_path),
         "discovered_at": datetime.now(timezone.utc).isoformat(),
         "count": len(records),
         "with_source_link": linked,

@@ -15,3 +15,7 @@
 
 # Preserve the downloaded evidence bytes: the review manifest records their hashes.
 /data/raw/reviewed_sources/* -text -whitespace
+
+# Legacy source manifests retain their original line endings.
+/data/raw/hust_curriculum_extractions.json whitespace=cr-at-eol
+/data/raw/hust_program_curriculum_sources.json whitespace=cr-at-eol

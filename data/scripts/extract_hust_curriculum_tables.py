@@ -452,7 +452,7 @@ def extract_manifest(input_path: Path) -> dict:
         records.append(extracted)
     return {
         "schema_version": "hust-curriculum-extraction.v1",
-        "source_manifest": str(input_path),
+        "source_manifest": _project_relative(input_path),
         "extracted_at": datetime.now(timezone.utc).isoformat(),
         "count": len(records),
         "extracted": sum(str(item.get("status", "")).startswith("extracted") for item in records),

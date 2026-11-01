@@ -18,6 +18,15 @@ from urllib.parse import urljoin, urlparse
 
 
 DATA_DIR = Path(__file__).resolve().parents[1]
+PROJECT_DIR = DATA_DIR.parent
+
+
+def _project_relative(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(PROJECT_DIR).as_posix()
+    except ValueError:
+        return path.name
+
 DEFAULT_INPUT = DATA_DIR / "raw" / "hust_program_curriculum_sources.json"
 DEFAULT_OUTPUT = DATA_DIR / "raw" / "hust_program_curriculum_downloads.json"
 DEFAULT_DIR = DATA_DIR / "raw" / "program_sources"
@@ -169,7 +178,7 @@ def download(
                 result.update(
                     {
                         "status": "downloaded" if kind != "unknown" else "downloaded_unknown",
-                        "file": str(target),
+                        "file": _project_relative(target),
                         "sha256": digest,
                         "bytes": len(response.content),
                     }
@@ -221,7 +230,7 @@ def download(
                                 attachment.update(
                                     {
                                         "status": "downloaded" if attachment_kind != "unknown" else "downloaded_unknown",
-                                        "file": str(attachment_target),
+                                        "file": _project_relative(attachment_target),
                                         "sha256": attachment_digest,
                                         "bytes": len(attachment_response.content),
                                     }
@@ -280,8 +289,8 @@ def download(
     )
     return {
         "schema_version": "hust-curriculum-downloads.v1",
-        "source_manifest": str(input_path),
-        "download_dir": str(output_dir),
+        "source_manifest": _project_relative(input_path),
+        "download_dir": _project_relative(output_dir),
         "downloaded_at": datetime.now(timezone.utc).isoformat(),
         "count": len(results),
         "downloaded": downloaded,
