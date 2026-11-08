@@ -2,12 +2,12 @@
   "k": 4,
   "metadata": {
     "mode": "extractive_no_llm",
-    "commit": "29de602c360a5b9db063e40d25fe6929e3541abb",
+    "commit": "b3ad366764bef9fed05ca5e9aba8ad4ee00b4bfd",
     "dirty": false,
     "profile_fixture": "synthetic_curriculum_based",
     "storage_fixture": "mongomock",
     "golden_sha256": "1e112bda72944e5023b13f0a0c463174fa08041e6084449150334bc656a562a6",
-    "implementation_sha256": "f017094a45af1cc8590ffdeef4655a055099bcc291fe40b9a8979014c4ce1fd2",
+    "implementation_sha256": "8c2ea1060bd55cf42a4ed4909cd5cb45b7aa0aa6491b491bae0ae912e879c31a",
     "retrieval": "bm25_only"
   },
   "summary": {
@@ -109,7 +109,7 @@
       "retrieved_characters": 2226,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 211.6,
+      "latency_ms": 210.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -126,7 +126,7 @@
       "retrieved_characters": 1514,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.7,
+      "latency_ms": 207.9,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -143,7 +143,7 @@
       "retrieved_characters": 2318,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.2,
+      "latency_ms": 211.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -160,7 +160,7 @@
       "retrieved_characters": 2318,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 208.9,
+      "latency_ms": 204.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -177,7 +177,7 @@
       "retrieved_characters": 2103,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 204.0,
+      "latency_ms": 207.8,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -194,7 +194,7 @@
       "retrieved_characters": 2318,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 200.8,
+      "latency_ms": 208.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -211,7 +211,7 @@
       "retrieved_characters": 2610,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 209.6,
+      "latency_ms": 205.4,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -228,7 +228,7 @@
       "retrieved_characters": 2103,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 200.5,
+      "latency_ms": 216.9,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -245,7 +245,7 @@
       "retrieved_characters": 2318,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 210.0,
+      "latency_ms": 212.7,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -262,7 +262,7 @@
       "retrieved_characters": 2467,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 199.7,
+      "latency_ms": 201.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -279,7 +279,7 @@
       "retrieved_characters": 2445,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 204.7,
+      "latency_ms": 212.3,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -296,7 +296,7 @@
       "retrieved_characters": 2004,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.1,
+      "latency_ms": 205.9,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -313,7 +313,7 @@
       "retrieved_characters": 2018,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 206.3,
+      "latency_ms": 206.6,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -330,7 +330,7 @@
       "retrieved_characters": 2157,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 198.4,
+      "latency_ms": 196.8,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -347,7 +347,7 @@
       "retrieved_characters": 1981,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 197.8,
+      "latency_ms": 195.7,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -364,7 +364,7 @@
       "retrieved_characters": 2510,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 207.7,
+      "latency_ms": 205.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -381,7 +381,7 @@
       "retrieved_characters": 1474,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 195.6,
+      "latency_ms": 198.6,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -398,7 +398,7 @@
       "retrieved_characters": 1442,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 198.8,
+      "latency_ms": 204.5,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -415,7 +415,7 @@
       "retrieved_characters": 1442,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 198.3,
+      "latency_ms": 202.9,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -432,7 +432,7 @@
       "retrieved_characters": 1250,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 228.2,
+      "latency_ms": 209.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -449,7 +449,7 @@
       "retrieved_characters": 1606,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 204.6,
+      "latency_ms": 201.3,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -466,7 +466,7 @@
       "retrieved_characters": 1981,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 203.9,
+      "latency_ms": 202.3,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -483,7 +483,7 @@
       "retrieved_characters": 1431,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 210.5,
+      "latency_ms": 206.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -500,7 +500,7 @@
       "retrieved_characters": 1682,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.5,
+      "latency_ms": 200.4,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -517,7 +517,7 @@
       "retrieved_characters": 1628,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 199.4,
+      "latency_ms": 201.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -534,7 +534,7 @@
       "retrieved_characters": 2314,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 202.9,
+      "latency_ms": 205.4,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -551,7 +551,7 @@
       "retrieved_characters": 1658,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 204.1,
+      "latency_ms": 201.9,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -568,7 +568,7 @@
       "retrieved_characters": 1494,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 210.2,
+      "latency_ms": 203.5,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -585,7 +585,7 @@
       "retrieved_characters": 2667,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 204.3,
+      "latency_ms": 214.3,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -602,7 +602,7 @@
       "retrieved_characters": 2256,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.5,
+      "latency_ms": 202.7,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -619,7 +619,7 @@
       "retrieved_characters": 1497,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 211.2,
+      "latency_ms": 207.8,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -636,7 +636,7 @@
       "retrieved_characters": 1587,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 206.1,
+      "latency_ms": 210.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -653,7 +653,7 @@
       "retrieved_characters": 3775,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 206.2,
+      "latency_ms": 216.4,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -670,7 +670,7 @@
       "retrieved_characters": 1836,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 210.3,
+      "latency_ms": 199.8,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -687,7 +687,7 @@
       "retrieved_characters": 1853,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 211.1,
+      "latency_ms": 208.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -704,7 +704,7 @@
       "retrieved_characters": 2447,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 200.5,
+      "latency_ms": 211.7,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -721,7 +721,7 @@
       "retrieved_characters": 2156,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 203.9,
+      "latency_ms": 206.8,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -738,7 +738,7 @@
       "retrieved_characters": 1981,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 210.2,
+      "latency_ms": 207.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -755,7 +755,7 @@
       "retrieved_characters": 2348,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.3,
+      "latency_ms": 212.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -772,7 +772,7 @@
       "retrieved_characters": 2093,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 207.2,
+      "latency_ms": 210.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -789,7 +789,7 @@
       "retrieved_characters": 2339,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 228.5,
+      "latency_ms": 232.2,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -806,7 +806,7 @@
       "retrieved_characters": 5168,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 203.2,
+      "latency_ms": 203.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -823,7 +823,7 @@
       "retrieved_characters": 2771,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 202.5,
+      "latency_ms": 208.5,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -840,7 +840,7 @@
       "retrieved_characters": 3248,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.5,
+      "latency_ms": 207.2,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -857,7 +857,7 @@
       "retrieved_characters": 1304,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 201.9,
+      "latency_ms": 204.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -874,7 +874,7 @@
       "retrieved_characters": 2580,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 201.6,
+      "latency_ms": 203.8,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -891,7 +891,7 @@
       "retrieved_characters": 3992,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 204.4,
+      "latency_ms": 206.3,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -908,7 +908,7 @@
       "retrieved_characters": 2214,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 201.5,
+      "latency_ms": 203.7,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -925,7 +925,7 @@
       "retrieved_characters": 4007,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 201.7,
+      "latency_ms": 204.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -942,7 +942,7 @@
       "retrieved_characters": 3113,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 206.2,
+      "latency_ms": 213.5,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -959,7 +959,7 @@
       "retrieved_characters": 4244,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 198.1,
+      "latency_ms": 205.3,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -976,7 +976,7 @@
       "retrieved_characters": 3667,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 199.1,
+      "latency_ms": 201.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -993,7 +993,7 @@
       "retrieved_characters": 2849,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 208.8,
+      "latency_ms": 216.2,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1010,7 +1010,7 @@
       "retrieved_characters": 2444,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.2,
+      "latency_ms": 204.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1027,7 +1027,7 @@
       "retrieved_characters": 1353,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 209.4,
+      "latency_ms": 205.3,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1044,7 +1044,7 @@
       "retrieved_characters": 3405,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 216.2,
+      "latency_ms": 205.2,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1061,7 +1061,7 @@
       "retrieved_characters": 2329,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 209.9,
+      "latency_ms": 202.4,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1078,7 +1078,7 @@
       "retrieved_characters": 1666,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 201.5,
+      "latency_ms": 193.9,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1095,7 +1095,7 @@
       "retrieved_characters": 1189,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 204.3,
+      "latency_ms": 196.9,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1112,7 +1112,7 @@
       "retrieved_characters": 1692,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 212.0,
+      "latency_ms": 203.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1129,7 +1129,7 @@
       "retrieved_characters": 1052,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 212.9,
+      "latency_ms": 200.8,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1146,7 +1146,7 @@
       "retrieved_characters": 1375,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 213.3,
+      "latency_ms": 206.6,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1163,7 +1163,7 @@
       "retrieved_characters": 1166,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 206.3,
+      "latency_ms": 202.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1180,7 +1180,7 @@
       "retrieved_characters": 1692,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 205.1,
+      "latency_ms": 205.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1277,7 +1277,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 0.6,
+      "latency_ms": 0.7,
       "model_used": null
     },
     {
@@ -1335,7 +1335,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 0.7,
+      "latency_ms": 0.6,
       "model_used": null
     },
     {
@@ -1485,7 +1485,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 1.4,
+      "latency_ms": 1.3,
       "model_used": null
     },
     {
@@ -1536,7 +1536,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 0.8,
+      "latency_ms": 0.9,
       "model_used": null
     },
     {
@@ -1587,7 +1587,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 0.9,
+      "latency_ms": 0.8,
       "model_used": null
     },
     {
@@ -1604,7 +1604,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 1.0,
+      "latency_ms": 0.9,
       "model_used": null
     },
     {
@@ -1691,7 +1691,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 1.6,
+      "latency_ms": 1.5,
       "model_used": null
     },
     {
@@ -1710,7 +1710,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 0.6,
+      "latency_ms": 0.7,
       "model_used": null
     },
     {
@@ -1797,7 +1797,7 @@
       "retrieved_characters": 0,
       "answer_ok": null,
       "missing_points": [],
-      "latency_ms": 0.5,
+      "latency_ms": 0.4,
       "model_used": null
     },
     {
@@ -1848,7 +1848,7 @@
       "retrieved_characters": 1748,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 215.8,
+      "latency_ms": 209.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1865,7 +1865,7 @@
       "retrieved_characters": 1213,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 220.0,
+      "latency_ms": 212.1,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1882,7 +1882,7 @@
       "retrieved_characters": 2777,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 215.9,
+      "latency_ms": 210.7,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1899,7 +1899,7 @@
       "retrieved_characters": 1649,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 239.6,
+      "latency_ms": 229.9,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1916,7 +1916,7 @@
       "retrieved_characters": 4052,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 216.7,
+      "latency_ms": 205.0,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1933,7 +1933,7 @@
       "retrieved_characters": 4924,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 215.0,
+      "latency_ms": 207.8,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1950,7 +1950,7 @@
       "retrieved_characters": 2262,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 226.7,
+      "latency_ms": 204.6,
       "model_used": "rag-knowledge-engine"
     },
     {
@@ -1967,7 +1967,7 @@
       "retrieved_characters": 2018,
       "answer_ok": true,
       "missing_points": [],
-      "latency_ms": 209.3,
+      "latency_ms": 201.6,
       "model_used": "rag-knowledge-engine"
     }
   ]

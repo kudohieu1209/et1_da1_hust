@@ -1,10 +1,10 @@
 # Kết quả đánh giá: ablation_bm25_only
 
-- Thời điểm (UTC): 2026-11-08T07:05:53+00:00
+- Thời điểm (UTC): 2026-11-08T07:16:18+00:00
 - Số câu hỏi: 108; k = 4; độ trễ trung vị: 203 ms
-- Chế độ: extractive_no_llm; truy xuất: bm25_only; commit: `29de602c360a5b9db063e40d25fe6929e3541abb`; có thay đổi chưa commit: False
+- Chế độ: extractive_no_llm; truy xuất: bm25_only; commit: `b3ad366764bef9fed05ca5e9aba8ad4ee00b4bfd`; có thay đổi chưa commit: False
 - Bộ câu hỏi SHA-256: `1e112bda72944e5023b13f0a0c463174fa08041e6084449150334bc656a562a6`
-- Mã nguồn và corpus SHA-256: `f017094a45af1cc8590ffdeef4655a055099bcc291fe40b9a8979014c4ce1fd2`
+- Mã nguồn và corpus SHA-256: `8c2ea1060bd55cf42a4ed4909cd5cb45b7aa0aa6491b491bae0ae912e879c31a`
 - Hồ sơ kiểm thử: dữ liệu tổng hợp từ CTĐT công khai, không dùng bảng điểm cá nhân hay MongoDB thật.
 - Số ký tự ngữ cảnh truy xuất trung vị: 2156; top-k có thể bao gồm cả khoản chứa điểm được khớp.
 - Lưu ý: 'Câu trả lời chứa ý chính' chấm bằng khớp cụm từ, không phải độ đúng toàn diện của LLM. Recall@k hiện đo tỷ lệ câu có ít nhất một bằng chứng khớp trong top-k.
