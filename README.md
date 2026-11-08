@@ -76,6 +76,7 @@ graph TD
 │   ├── processed/             # CTĐT JSON có phiên bản (không chứa hồ sơ cá nhân)
 │   ├── raw/                   # Bản chụp nguồn gốc (PDF, HTML, JSON)
 │   └── scripts/               # Scripts crawl, chuẩn hóa và kiểm tra dữ liệu
+├── eval/                      # Bộ câu hỏi hồi quy, ngưỡng, script đánh giá và báo cáo
 ├── frontend/                  # Ứng dụng Web React (Vite)
 │   └── src/
 │       ├── components/        # ChatTab, AuditTab, RecommendTab, Modals
@@ -143,7 +144,25 @@ npm run dev
 ./scripts/test_all.sh      # PowerShell: & ./scripts/test_all.ps1
 ```
 
-Lệnh trên chạy kiểm thử backend, pipeline dữ liệu, toàn bộ test JavaScript (liên kết hội thoại và lựa chọn mascot), lint và build frontend. Kiểm thử dùng MongoDB giả lập trong bộ nhớ và hồ sơ tổng hợp, không cần MongoDB thật hay Gemini API key. Các kiểm thử này không nghiệm thu chất lượng trả lời của Gemini thật.
+Lệnh trên chạy kiểm thử backend, pipeline dữ liệu, kiểm thử bộ đánh giá, bộ câu hỏi hồi quy (dừng nếu chỉ số tụt dưới `eval/thresholds.json`), toàn bộ test JavaScript (liên kết hội thoại và lựa chọn mascot), lint và build frontend. Kiểm thử dùng MongoDB giả lập trong bộ nhớ và hồ sơ tổng hợp, không cần MongoDB thật hay Gemini API key. Các kiểm thử này không nghiệm thu chất lượng trả lời của Gemini thật.
+
+### 6. Đánh giá định lượng
+
+`eval/golden_questions.jsonl` gồm **108 câu hỏi hồi quy** (quy chế, học phí, học bổng, CTĐT, kiểm tra điều kiện, gợi ý môn, rà soát tiến độ, chào hỏi, mô phỏng trượt môn), mỗi câu có ý định kỳ vọng, bằng chứng truy xuất và cụm từ ý chính; `eval/validation_questions.jsonl` gồm 20 câu diễn đạt khác. Mặc định tắt LLM để kết quả tất định.
+
+```bash
+backend/.venv/bin/python eval/run_eval.py --label final              # ghi eval/reports/final.{md,json}
+backend/.venv/bin/python eval/run_eval.py --check                    # thoát mã 1 nếu thụt lùi
+backend/.venv/bin/python eval/run_eval.py --no-vector --label ablation_bm25_only   # ablation: chỉ BM25
+backend/.venv/bin/python eval/compare_reports.py eval/reports/baseline.json eval/reports/final.json
+```
+
+| Bộ câu hỏi | Phân loại ý định | Recall@4 (có bằng chứng trong top-4) | MRR@4 | Câu trả lời chứa ý chính |
+|---|---:|---:|---:|---:|
+| Hồi quy (108 câu) | 100% | 100% | 84,3% | 100% |
+| Diễn đạt khác (20 câu) | 100% | 100% | 80,6% | 100% |
+
+Chi tiết: [bộ hồi quy](eval/reports/final.md), [bộ diễn đạt khác](eval/reports/validation_final.md). `eval/reports/baseline.md` là kết quả trước khi cải tiến truy xuất (96 câu). Mỗi báo cáo ghi commit, SHA-256 của bộ câu hỏi và của mã nguồn cùng corpus. Hai bộ câu hỏi do tác giả biên soạn từ chính các văn bản trong kho, nên đây là kiểm thử hồi quy, không phải tập kiểm định độc lập; “chứa ý chính” là khớp cụm từ, không phải chấm chất lượng LLM.
 
 ---
 

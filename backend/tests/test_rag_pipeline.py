@@ -1,6 +1,7 @@
 """Kiểm thử pipeline RAG và router, chuyển từ script test_rag.py cũ.
 
-Chỉ giữ các ca hồi quy đã từng hỏng.
+Chất lượng truy xuất được đo đầy đủ bằng eval/run_eval.py; ở đây chỉ
+giữ các ca hồi quy đã từng hỏng.
 """
 import sys
 import unittest

@@ -1,0 +1,7 @@
+{
+  "intent_accuracy": 0.970,
+  "entity_accuracy": 1.0,
+  "recall_at_k": 0.796,
+  "mrr": 0.626,
+  "answer_accuracy": 0.774
+}
