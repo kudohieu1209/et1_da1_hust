@@ -12,6 +12,15 @@ ENV HOME=/home/user \
     COOKIE_SECURE=true \
     PYTHONUNBUFFERED=1 \
     PYTHON_DOTENV_DISABLED=1 \
+    RAG_SYNC_ON_STARTUP=auto \
+    OMP_NUM_THREADS=1 \
+    MKL_NUM_THREADS=1 \
+    OPENBLAS_NUM_THREADS=1 \
+    TOKENIZERS_PARALLELISM=false \
+    ANONYMIZED_TELEMETRY=False \
+    PYTHONDONTWRITEBYTECODE=1 \
+    MALLOC_ARENA_MAX=2 \
+    MALLOC_TRIM_THRESHOLD_=131072 \
     VECTOR_DB_DIR=/home/user/app/data/vector_db
 
 # ONNX Runtime's Linux wheel links against libstdc++.so.6.
@@ -43,4 +52,4 @@ WORKDIR /home/user/app/backend
 # Running as the runtime user keeps both Chroma and its downloaded ONNX cache writable.
 RUN python scripts/build_vector_db.py
 EXPOSE 7860
-CMD ["sh", "-c", "exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-7860} --proxy-headers --forwarded-allow-ips='*'"]
+CMD ["sh", "-c", "exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-7860} --workers 1 --proxy-headers --forwarded-allow-ips='*'"]

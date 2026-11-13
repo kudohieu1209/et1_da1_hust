@@ -1,113 +1,92 @@
-# Đưa HUST Course Advisor lên Hugging Face Spaces
+# Deploy HUST Course Advisor lên Render
 
-**Bản demo đồ án: không nhập bảng điểm hoặc mật khẩu thật.** Repo chỉ chuẩn bị
-gói triển khai; các bước tạo dịch vụ và push bên dưới do chủ repo thực hiện.
+Một Web Service Docker phục vụ FastAPI và frontend React trên cùng URL HTTPS. Đích là Render Free (512 MB RAM, 0,1 CPU), phù hợp bản demo đồ án. Không nhập bảng điểm hoặc mật khẩu thật vào bản demo.
 
-1. **Tạo MongoDB Atlas Free (M0), vùng Singapore** nếu có trong lựa chọn nhà
-   cung cấp. Tạo database user riêng, chỉ cấp `readWrite` cho database của app
-   (mặc định `hust_course_advisor`), đặt mật khẩu mạnh và giữ kín chuỗi kết nối
-   trong Connect → Drivers → Python. Trong Network Access thêm `0.0.0.0/0`
-   vì IP đầu ra của Space có thể thay đổi. Quy tắc này cho phép mọi IP thử kết
-   nối, làm tăng rủi ro dò mật khẩu; không cấp quyền quản trị cho user app.
-   Xem [hướng dẫn Atlas](https://www.mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster/)
-   và [IP access list](https://www.mongodb.com/docs/atlas/security/ip-access-list/).
+Hướng Hugging Face trong kế hoạch trước đã được bỏ: môi trường Space dự kiến dùng cần gói trả phí, còn kết nối ra ngoài chỉ qua cổng 80/443/8080 không đáp ứng MongoDB Atlas ở cổng 27017. Không còn script đóng gói Space; dùng Render và Atlas theo các bước dưới đây.
 
-2. **Tạo Space trên Hugging Face**, chọn SDK **Docker**, hardware **CPU basic
-   miễn phí**. App dùng một image: Node 22 build React; Python 3.12 phục vụ cả
-   API lẫn frontend ở cổng 7860. Chroma và mô hình embedding ONNX được tạo/tải
-   lúc build, bằng user UID 1000; không cần MongoDB hay Gemini trong bước này.
-   Khi chạy, app vẫn đồng bộ lại kho tri thức như local. Xem
-   [Docker Spaces](https://huggingface.co/docs/hub/spaces-sdks-docker).
+## 1. Chuẩn bị MongoDB Atlas
 
-3. **Trong Settings → Variables and secrets**, thêm Secrets:
+- Dùng cluster sẵn có **`hust-advisor`**; không cần tạo lại cluster.
+- Trong Database Access, tạo user riêng **`hust-live`**, mật khẩu mạnh và quyền `readWrite` chỉ trên database **`hust_course_advisor_live`**. Database riêng tránh trộn tài khoản/hồ sơ demo với dữ liệu thử nghiệm local.
+- Trong Network Access, thêm **`0.0.0.0/0`** để chấp nhận kết nối từ IP outbound của Render. Đây là mở truy cập mạng từ toàn Internet, làm tăng bề mặt tấn công; vẫn bắt buộc xác thực, dùng TLS, mật khẩu mạnh, quyền tối thiểu và không công khai URI. Khi biết các dải outbound cụ thể trong Render Dashboard, nên thu hẹp allowlist về những dải đó.
+- Lấy connection string bằng Connect → Drivers. Thay user/mật khẩu trong giao diện Secrets của Render. Ký tự đặc biệt trong user/mật khẩu (như `@`, `:`, `/`, `#`) phải được URL-encode. Không lưu URI thật vào repo hoặc dán vào log.
 
-   | Tên | Giá trị |
-   | --- | --- |
-   | `MONGODB_URI` | Chuỗi Atlas do bạn tạo; mã hóa URL các ký tự đặc biệt trong mật khẩu |
-   | `MONGODB_DB` | Tùy chọn; mặc định `hust_course_advisor`, phải khớp quyền database user |
-   | `GEMINI_API_KEY` | Tùy chọn; bỏ trống thì trả lời trích xuất cục bộ có dẫn nguồn |
-   | `CORS_ORIGINS` | `https://<user>-<space>.hf.space` (nhiều origin phân cách bằng dấu phẩy) |
+## 2. Đưa nhánh deploy lên GitHub
 
-   Không ghi URI/key vào repo hoặc gói đẩy. Image đặt `COOKIE_SECURE=true`,
-   `PYTHON_DOTENV_DISABLED=1`; local vẫn mặc định cookie không Secure và đọc
-   dotenv như trước. Uvicorn tin proxy headers của HF để xác định HTTPS;
-   chỉ dùng cấu hình tin mọi proxy này khi container nằm sau proxy tin cậy.
-
-4. **Chuẩn bị gói từ nhánh đã commit**, tại gốc repo:
-
-   ```bash
-   ./scripts/prepare_hf_space.sh /tmp/hust-advisor-space
-   ```
-
-   Đích phải ở ngoài repo, chưa tồn tại hoặc rỗng. Script chỉ copy danh sách
-   file build cần thiết đã được Git theo dõi (lấy nội dung working tree hiện
-   tại), thay README bằng bản có metadata Space, từ chối symlink và file lớn
-   hơn 10.000.000 byte. Script không tự push và không cần token. Chạy chuỗi
-   lệnh script in ra sau khi thay `<user>/<space>`; khi Git hỏi mật khẩu, dùng
-   **HF access token loại write**, không dùng mật khẩu tài khoản. Lệnh có
-   `push --force`, chỉ trỏ tới Space dành riêng cho app: nó thay lịch sử nhánh
-   `main` của Space, không được trỏ tới repo GitHub của dự án.
-
-5. **Mở đúng URL trực tiếp** `https://<user>-<space>.hf.space` được Space hiển
-   thị. Trang `huggingface.co/spaces/...` nhúng app trong iframe; trình duyệt
-   có thể chặn cookie đăng nhập ở đó. Kiểm tra trang chủ, `/docs`,
-   `/api/health`, rồi đăng ký/đăng nhập bằng dữ liệu demo.
-
-6. **Space miễn phí ngủ sau thời gian không dùng**; lần mở lại có thể chờ
-   khởi động. Ổ đĩa container không bền: Chroma được dựng sẵn trong image và
-   đồng bộ khi khởi động; tài khoản, phiên, hồ sơ và hội thoại lưu trên Atlas.
-   Không dùng ổ đĩa container để lưu dữ liệu người dùng. Xem
-   [Spaces overview](https://huggingface.co/docs/hub/spaces-overview).
-
-7. **Cập nhật và chẩn đoán.** Sau khi sửa code, chạy kiểm thử, commit rồi tạo
-   gói mới vào một thư mục rỗng và làm lại bước 4 với cùng remote Space; HF tự
-   rebuild khi nhận commit. Xem **Build logs** và **Container/Run logs** trên
-   trang Space. Thiếu `MONGODB_URI` làm backend dừng; kiểm tra tên Secret,
-   restart sau khi sửa. Với lỗi Atlas, kiểm tra database user, mật khẩu được
-   mã hóa URL, Network Access, DNS/TLS và cluster đang hoạt động. HF chỉ công
-   bố hỗ trợ kết nối ra cổng 80, 443 và 8080, còn Atlas driver thường cần
-   cổng 27017: **phải xác minh kết nối Atlas từ Space thật**. Nếu bị chặn,
-   mở IP access list không khắc phục được; cần nền tảng cho phép kết nối
-   MongoDB (hoặc hỗ trợ từ HF), không thể coi triển khai này đã live.
-   Nếu build hết thời gian, xem bước pip/tải ONNX/embedding trong Build logs,
-   thử rebuild khi mạng ổn định; không bỏ bước tạo vector DB. Các dependency
-   hiện dùng ràng buộc phiên bản tối thiểu, nên bản mới có thể làm build
-   thay đổi; cần kiểm tra lại log khi rebuild về sau.
-
-## Dữ liệu được đưa vào image
-
-| Đường dẫn | Lý do cần lúc build/chạy |
-| --- | --- |
-| `data/processed/curricula/` | 18 CTĐT có phiên bản cho tra cứu, điều kiện học phần và rà soát tiến độ |
-| `data/processed/curriculum_approvals.json` | Danh sách phê duyệt để xác định phiên bản từ trích xuất nguồn |
-| `data/documents/` | 14 văn bản Markdown đã phê duyệt, nguồn nạp chunks RAG lúc build và đồng bộ khi chạy |
-| `data/raw/ctt_et_conditions.json` | Điều kiện đăng ký mà `DataLoader` đọc |
-| `data/raw/hust_undergraduate_programs.json` | Danh mục ngành của `ProgramCatalog` |
-| `data/raw/hust_program_curriculum_sources.json` | Nguồn CTĐT trong danh mục chương trình |
-| `data/raw/hust_curriculum_candidates.json` | Các ứng viên CTĐT và phạm vi hỗ trợ |
-| `data/raw/official_curricula/` | Bản trích xuất JSON để tra cứu CTĐT toàn trường |
-| `data/raw/reviewed_curricula/` | Bản JSON đã rà soát, ghi đè trích xuất cùng ID trong `CurriculumReferences` |
-| `data/vector_db/` | Được script sinh trong image; không copy index local, user 1000 có quyền ghi |
-
-Không copy snapshot cũ `courses_et1.json`, `prerequisites_et1.json` hoặc hồ sơ
-cá nhân local trong `processed`; backend dùng CTĐT có phiên bản. Các PDF thô
-(kể cả `So tay sinh vien_2026.pdf`), `program_sources`, `reviewed_sources`,
-`data/reviewed`, scripts thu thập dữ liệu, `eval`, `local-notes`, `tmp` không
-được copy: backend đã đọc các JSON/Markdown chuẩn hóa, không mở các kho nguồn
-này trong chuỗi runtime. Không đưa `.env`, venv, node_modules hay vector DB
-của máy phát triển vào build context.
-
-## Kiểm tra local
-
-`backend/run.py` vẫn phục vụ cổng 8000; `npm --prefix frontend run dev` vẫn
-proxy `/api` từ cổng 5173. Có `frontend/dist/index.html` thì backend phục vụ
-SPA; nếu muốn kiểm tra nhánh dev khi đã build, đặt `FRONTEND_DIST_DIR` tới
-một đường dẫn chưa tồn tại. Có thể build riêng index không cần MongoDB/key:
+Chủ repo tự chạy (phiên chuẩn bị này không push):
 
 ```bash
-VECTOR_DB_DIR=/tmp/hust-vector-build backend/.venv/bin/python backend/scripts/build_vector_db.py
+git switch deploy/render
+git push -u origin deploy/render
 ```
 
-Chưa có Docker trên máy phát triển thì không thay kiểm tra build thật bằng
-khẳng định image chạy được. Cần kiểm chứng build image, kết nối Atlas, proxy
-HTTPS và cookie trên Space sau khi chủ repo cấu hình dịch vụ.
+Repo GitHub là **`kudohieu1209/et1_da1_hust`**. Không push file `.env`, token hay dữ liệu cá nhân. Không cần thay đổi nhánh `main` hoặc `deploy/hf-spaces`.
+
+## 3. Tạo dịch vụ Render
+
+1. Đăng nhập Render bằng GitHub và cấp quyền đọc repo `et1_da1_hust`.
+2. Chọn **New → Blueprint**, chọn repo và nhánh **`deploy/render`**. Render đọc `render.yaml` ở gốc repo.
+3. Kiểm tra service `hust-course-advisor`: runtime **Docker**, plan **Free**, region **Singapore**, health check **`/api/health`**.
+4. Nếu tạo thủ công bằng **New → Web Service**: chọn cùng repo/nhánh, Dockerfile `./Dockerfile`, build context gốc repo, plan Free, Singapore; tắt Auto-Deploy và nhập các biến ở bước 4. Không điền start command để Render dùng CMD của image.
+
+Blueprint giữ `autoDeploy: false` theo kế hoạch. [Tài liệu Blueprint](https://render.com/docs/blueprint-spec) hiện vẫn hỗ trợ trường này nhưng đánh dấu deprecated (trường thay thế là `autoDeployTrigger: off`); `region: singapore` là giá trị hợp lệ. [Tài liệu vùng](https://render.com/docs/regions) và [giới hạn Free](https://render.com/docs/free) không nêu hạn chế Singapore cho Free Web Service.
+
+## 4. Điền biến môi trường
+
+| Biến | Giá trị / ý nghĩa |
+|---|---|
+| `MONGODB_URI` | **Bắt buộc**, connection string Atlas của user `hust-live`; nhập dưới dạng secret, không commit. |
+| `MONGODB_DB` | `hust_course_advisor_live` (Blueprint đã đặt). |
+| `GEMINI_API_KEY` | Tuỳ chọn, có thể để trống. Khi chưa có key, app trả lời bằng trích xuất cục bộ và dẫn nguồn. Blueprint dùng `sync: false`; nếu giao diện yêu cầu nhập trước khi tạo, có thể bỏ mục key này rồi thêm sau trong Environment. |
+| `COOKIE_SECURE` | `true` trên Render; cookie chỉ gửi qua HTTPS. |
+| `RAG_SYNC_ON_STARTUP` | `auto` (mặc định): kiểm tra manifest và số chunk, chỉ nhúng lại khi index/corpus/mô hình không khớp. `always` ép đồng bộ toàn bộ; `never` bỏ kiểm tra/đồng bộ lúc khởi động, chỉ dùng khi chủ động quản lý index. |
+| `RENDER_EXTERNAL_URL` | Render tự đặt URL công khai; app tự thêm URL vào CORS và danh sách origin hợp lệ cho CSRF. Không cần tự đặt. |
+| `CORS_ORIGINS` | Tuỳ chọn, danh sách origin bổ sung ngăn cách dấu phẩy; cơ chế cùng origin vẫn hoạt động. |
+| `PORT` | Render tự cấp (thường `10000`); CMD dùng biến này, mặc định `7860` khi chạy image nơi khác. |
+
+Không đưa secret vào Docker build arguments. Build index không cần MongoDB/Gemini và tắt dotenv. Chỉ các biến môi trường runtime mới cần thông tin Atlas.
+
+## 5. Deploy và kiểm tra
+
+- Bấm tạo Blueprint / Deploy. Xem **Events → build log**: frontend phải build thành công, sau đó script tạo index ghi `Built vector index: 1449 approved chunks.` (số chunk có thể đổi khi tài liệu được duyệt thay đổi).
+- Image tạo index và cache embedding trong lúc build, dưới user UID 1000. Runtime phải ghi được `VECTOR_DB_DIR`. Không cần persistent disk cho index vì index được đóng sẵn trong image.
+- Xem **Logs** lúc chạy: với `auto` và corpus không đổi phải thấy **`Index khớp, bỏ qua đồng bộ`**, sau đó `Application startup complete`. Không cần nạp mô hình embedding trong bước kiểm tra manifest; mô hình sẽ được dùng khi có truy vấn ngữ nghĩa.
+- Mở **`https://<tên>.onrender.com`**, đăng ký tài khoản giả và thử ít nhất 5 câu hỏi quy chế. Kiểm tra `/api/health` trả `{"status":"healthy"}`, `/api/system` trả JSON, `/docs` vẫn hiển thị Swagger, tải lại một route frontend không lỗi 404.
+- Kiểm tra mục Metrics / log về RAM. Mục tiêu đo local sau truy vấn là peak RSS dưới 450 MB; giới hạn container còn phải chứa các chi phí runtime khác, nên đây không phải bảo đảm chạy được trên 512 MB.
+
+Docker chạy đúng **1 worker**, không reload, bật proxy headers và tin proxy phía Render để nhận đúng HTTPS. Không phơi trực tiếp cổng container ra Internet ở một hạ tầng có proxy không đáng tin.
+
+SDK Gemini chỉ được nạp khi có key hoặc khi thực sự gọi Gemini; chế độ trích xuất cục bộ không phải giữ SDK này trong RAM. RAM sẽ tăng nếu bật key, cần đo lại trên service thật.
+
+Ngoài giới hạn arena, image đặt `MALLOC_TRIM_THRESHOLD_=131072` để glibc trả các vùng nhớ rảnh sau những bước xử lý lớn sớm hơn; đánh đổi có thể là thêm chi phí cấp phát bộ nhớ.
+
+## 6. Ngủ, cập nhật và phương án dự phòng
+
+[Render Free](https://render.com/docs/free) ngủ sau 15 phút không có traffic; lần mở lại có thể chờ khoảng 1 phút. File phát sinh trong container mất khi restart/redeploy/ngủ. Tài khoản và hồ sơ nằm trên Atlas nên được giữ; index và cache embedding gốc được phục hồi từ image. Nếu dùng API đồng bộ để thay index runtime, thay đổi đó không bền và cần đưa corpus được duyệt vào lần build tiếp theo.
+
+Khi sửa code: commit/push nhánh deploy rồi chọn **Manual Deploy → Deploy latest commit**. Auto-Deploy đã tắt. Xem cả build log lẫn runtime log sau mỗi lần cập nhật. Free có giới hạn giờ chạy, bandwidth và build pipeline theo workspace; theo dõi Billing/usage.
+
+Nếu log báo **out of memory** hoặc service restart khi hỏi RAG: kiểm tra `RAG_SYNC_ON_STARTUP=auto` và thông báo index khớp, giữ một worker. Image đã đặt `OMP_NUM_THREADS=1`, `MKL_NUM_THREADS=1`, `OPENBLAS_NUM_THREADS=1`, `TOKENIZERS_PARALLELISM=false`, `ANONYMIZED_TELEMETRY=False`, `PYTHONDONTWRITEBYTECODE=1`, `MALLOC_ARENA_MAX=2`. Chroma ONNX mặc định không có tham số công khai để đặt intra-op threads trong constructor, nên không vá nội bộ thư viện. Nếu vẫn vượt RAM, chuyển sang instance trả phí đủ RAM hoặc nơi chạy khác; không bật `always` để xử lý lỗi thiếu RAM vì nó buộc nhúng lại corpus.
+
+## 7. Lỗi thường gặp
+
+- **Thiếu `MONGODB_URI`**: backend dừng ngay khi khởi tạo kho nghiệp vụ. Thêm secret rồi deploy lại.
+- **Atlas chặn IP / timeout**: kiểm tra Network Access, cluster đang hoạt động và các dải outbound của service Render. Chạy trên Render vẫn cần Atlas cho phép truy cập mạng.
+- **Sai mật khẩu / authentication failed**: kiểm tra user `hust-live`, quyền trên database live, URL-encode ký tự đặc biệt trong URI và `authSource` theo URI Atlas cung cấp.
+- **Đăng nhập không giữ phiên**: mở đúng URL HTTPS của app; giữ `COOKIE_SECURE=true`. App và API dùng cùng origin.
+- **Khởi động vẫn nhúng toàn bộ**: kiểm tra manifest `corpus_manifest.json` được tạo khi build, cùng model/phiên bản Chroma giữa build và run, số chunk và corpus không bị thay, `VECTOR_DB_DIR` không bị ghi đè sang thư mục rỗng.
+- **Health check không lên**: xem lỗi import/Atlas/startup, xác nhận Render có `PORT`, CMD không bị override và health check `/api/health`.
+
+## Dữ liệu trong image và chạy local
+
+Docker chỉ copy dữ liệu công khai backend thật sự đọc:
+
+- `data/documents/`: tài liệu được loader kiểm tra phê duyệt để làm RAG.
+- `data/processed/curricula/` và `data/processed/curriculum_approvals.json`: CTĐT và trạng thái duyệt.
+- `data/raw/ctt_et_conditions.json`: điều kiện học phần.
+- `data/raw/hust_undergraduate_programs.json`, `hust_program_curriculum_sources.json`, `hust_curriculum_candidates.json`: danh mục ngành và nguồn/ứng viên CTĐT.
+- `data/raw/official_curricula/` và `data/raw/reviewed_curricula/`: bản nguồn công khai mà endpoint tài liệu CTĐT phục vụ.
+
+Không đưa `backend/.env`, dữ liệu cá nhân, bản PDF sổ tay 110 MB, `data/raw/program_sources/`, `data/raw/reviewed_sources/`, `eval/`, `local-notes/`, `tmp/`, test hay venv vào image. `.dockerignore` chặn các phần này.
+
+Hành vi local theo README giữ nguyên: `backend/run.py` chạy cổng 8000 với reload, Vite cổng 5173 proxy `/api`, cookie mặc định không bắt buộc HTTPS. Không cần đặt các biến riêng của Docker khi chạy local; mặc định `auto` vẫn đối soát corpus và đồng bộ nếu có thay đổi.
