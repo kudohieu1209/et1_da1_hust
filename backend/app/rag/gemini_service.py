@@ -1,8 +1,11 @@
+from __future__ import annotations
+
 import os
 import re
-from typing import List, Dict, Any, Optional, Set, Tuple
-from google import genai
-from google.genai import types
+from typing import List, Dict, Any, Optional, Set, Tuple, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from google import genai
 from app.core.config import GEMINI_API_KEY, GEMINI_MODEL, GEMINI_FALLBACK_MODEL, GEMINI_TIMEOUT_SECONDS
 from app.rag.document_loader import DOCUMENT_DISPLAY_NAMES
 
@@ -83,6 +86,10 @@ class GeminiService:
         key = self.api_key or os.getenv("GEMINI_API_KEY", "")
         if key:
             try:
+                # Local extractive RAG does not need to load the Gemini SDK.
+                from google import genai
+                from google.genai import types
+
                 self.client = genai.Client(
                     api_key=key,
                     # HttpOptions.timeout tính bằng mili giây.
@@ -118,6 +125,8 @@ class GeminiService:
         # Nếu chưa cấu hình Gemini API, dùng template synthesis từ RAG chunks
         if not self.is_configured() or not context_chunks and not structured_data:
             return self._fallback_synthesis(user_query, context_chunks, structured_data)
+
+        from google.genai import types
 
         # Chuẩn bị Prompt tổng hợp
         prompt_parts = []
@@ -203,6 +212,8 @@ class GeminiService:
         """Đáp câu xã giao bằng Gemini; trả None nếu không gọi được để bên gọi dùng câu mẫu."""
         if not self.is_configured():
             return None
+        from google.genai import types
+
         lines = []
         for item in (history or [])[-4:]:
             role = "Sinh viên" if item.get("role") == "user" else "Trợ lý"

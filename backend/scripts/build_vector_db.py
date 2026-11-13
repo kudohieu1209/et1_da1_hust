@@ -15,6 +15,6 @@ from app.rag.rag_engine import rag_engine
 
 if __name__ == "__main__":
     result = rag_engine.sync_knowledge_base()
-    if result.get("status") != "success" or not result.get("total_chunks"):
+    if result.get("status") not in {"success", "skipped"} or not result.get("total_chunks"):
         raise SystemExit("Vector index build failed or contains no approved documents.")
     print(f"Built vector index: {result['total_chunks']} approved chunks.")

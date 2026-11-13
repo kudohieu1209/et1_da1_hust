@@ -93,5 +93,59 @@ class SameOriginWriteTests(unittest.TestCase):
         self.assertEqual(response.status_code, 204)
 
 
+class StartupSyncTests(unittest.IsolatedAsyncioTestCase):
+    async def test_startup_modes(self):
+        from unittest import mock
+        import app.main as main
+        for mode, expected_force in (("auto", False), ("always", True), ("never", None)):
+            with self.subTest(mode=mode), mock.patch.object(main, "RAG_SYNC_ON_STARTUP", mode), mock.patch.object(
+                main.rag_engine, "sync_knowledge_base", return_value={"status": "success", "total_chunks": 1}
+            ) as sync:
+                async with main.lifespan(main.app):
+                    pass
+                if expected_force is None:
+                    sync.assert_not_called()
+                else:
+                    sync.assert_called_once_with(force=expected_force)
+
+
+class RenderOriginTests(unittest.TestCase):
+    def test_render_env_origin_allows_cors_and_csrf_with_internal_host(self):
+        # A fresh process exercises config -> CORS middleware -> CSRF together.
+        import os
+        import subprocess
+        import sys
+        script = '''
+import sys
+import tests
+from fastapi.testclient import TestClient
+from app.core.config import CORS_ORIGINS, SESSION_COOKIE_NAME
+from app.main import app
+assert "google.genai" not in sys.modules, "Unconfigured Gemini must not load its SDK"
+origin = "https://hust-course-advisor.onrender.com"
+assert origin in CORS_ORIGINS
+assert "https://custom.example" in CORS_ORIGINS
+client = TestClient(app, base_url="http://internal-render:10000")
+client.cookies.set(SESSION_COOKIE_NAME, "synthetic-session")
+preflight = client.options("/api/auth/logout", headers={"Origin": origin, "Access-Control-Request-Method": "POST"})
+assert preflight.status_code == 200, preflight.text
+assert preflight.headers["access-control-allow-origin"] == origin
+assert preflight.headers["access-control-allow-credentials"] == "true"
+assert client.post("/api/auth/logout", headers={"Origin": origin}).status_code == 204
+client.cookies.set(SESSION_COOKIE_NAME, "synthetic-session")
+assert client.post("/api/auth/logout", headers={"Origin": origin + ".evil.example"}).status_code == 403
+'''
+        environment = {**os.environ, "PYTHON_DOTENV_DISABLED": "1", "MONGODB_URI": "",
+                       "GEMINI_API_KEY": "", "GOOGLE_API_KEY": "", "VECTOR_DB_DIR": tempfile.mkdtemp(),
+                       "CORS_ORIGINS": "https://custom.example",
+                       "RENDER_EXTERNAL_URL": "https://hust-course-advisor.onrender.com/"}
+        try:
+            result = subprocess.run([sys.executable, "-c", script], env=environment, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        finally:
+            import shutil
+            shutil.rmtree(environment["VECTOR_DB_DIR"])
+
+
 if __name__ == "__main__":
     unittest.main()

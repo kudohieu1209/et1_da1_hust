@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from app.core.config import CORS_ORIGINS, FRONTEND_DIST_DIR, SESSION_COOKIE_NAME
+from app.core.config import CORS_ORIGINS, FRONTEND_DIST_DIR, RAG_SYNC_ON_STARTUP, SESSION_COOKIE_NAME
 from app.api.router_auth import router as auth_router
 from app.api.router_courses import router as courses_router
 from app.api.router_student import router as student_router
@@ -18,11 +18,13 @@ from app.rag.rag_engine import rag_engine
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Khởi tạo và tự động đồng bộ tài liệu vào ChromaDB khi backend khởi động
+    # auto checks approved corpus without loading the embedding model.
     try:
-        # Reconcile approvals and chunk metadata even when the index already exists.
-        result = rag_engine.sync_knowledge_base()
-        print(f"[Startup] Đã đồng bộ kho RAG đã phê duyệt: {result.get('total_chunks', 0)} chunks.")
+        if RAG_SYNC_ON_STARTUP == "never":
+            print("[Startup] Bỏ qua đồng bộ RAG theo RAG_SYNC_ON_STARTUP=never.")
+        else:
+            result = rag_engine.sync_knowledge_base(force=RAG_SYNC_ON_STARTUP == "always")
+            print(f"[Startup] RAG {result['status']}: {result.get('total_chunks', 0)} chunks.")
     except Exception as e:
         print(f"[Startup] Cảnh báo đồng bộ RAG: {e}")
     yield

@@ -1,11 +1,14 @@
 import os
 import json
+import hashlib
 import re
+import tempfile
 from datetime import date
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import chromadb
 from chromadb.config import Settings
+from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
 
 from app.core.config import VECTOR_DB_DIR
 from app.rag.document_loader import document_loader, DocumentChunk
@@ -15,6 +18,14 @@ from app.rag.lexical_search import bm25_scores, tokenize
 # document type that merely repeats the programme names in the question.
 PREFERRED_TYPE_BOOST = 1.5
 HEADING_INTENT_BOOST = 1.6
+
+# Class constants only: constructing the embedding function would import ONNX.
+# Include the model archive revision and Chroma version in the cache identity.
+EMBEDDING_IDENTITY = {
+    "model": ONNXMiniLM_L6_V2.MODEL_NAME,
+    "revision": ONNXMiniLM_L6_V2._MODEL_SHA256,
+    "chromadb_version": chromadb.__version__,
+}
 
 # Topic keywords -> document types whose chunks get a ranking boost. Several
 # topics may match one question (e.g. scholarship conditions on conduct score).
@@ -128,28 +139,14 @@ class VectorStoreManager:
         if not self.collection:
             self._init_client()
 
-        current_count = self.collection.count() if self.collection else 0
-
         chunks = document_loader.load_all_chunks()
         if not chunks:
+            self._manifest_path.unlink(missing_ok=True)
             if self.collection:
-                existing_ids = self.collection.get().get("ids", [])
+                existing_ids = self.collection.get(include=[]).get("ids", [])
                 if existing_ids:
                     self.collection.delete(ids=existing_ids)
             return {"status": "empty", "message": "Không tìm thấy tài liệu nào trong data/documents/", "count": 0}
-
-        if force and self.client:
-            try:
-                self.client.delete_collection(self.collection_name)
-                self.collection = self.client.get_or_create_collection(
-                    name=self.collection_name,
-                    metadata={"description": "Kho tri thức đề cương môn học và quy chế đào tạo tín chỉ HUST"}
-                )
-                print("[VectorStoreManager] Đã làm mới collection cho kho tri thức môn học.")
-            except Exception as e:
-                print(f"[VectorStoreManager] Lỗi reset collection: {e}")
-        elif current_count > 0:
-            print(f"[VectorStoreManager] Collection đã có {current_count} chunks. Tiến hành cập nhật/upsert...")
 
         documents = []
         metadatas = []
@@ -180,6 +177,25 @@ class VectorStoreManager:
             metadatas.append(clean_meta)
             ids.append(chunk_id)
 
+        if len(set(ids)) != len(ids):
+            raise ValueError("Duplicate chunk IDs in approved corpus")
+        manifest = self._corpus_manifest(ids, documents, metadatas)
+        current_count = self.collection.count() if self.collection else 0
+        if not force and current_count == len(ids) and self._read_manifest() == manifest:
+            print(f"[VectorStoreManager] Index khớp, bỏ qua đồng bộ: {current_count} chunks.")
+            return {"status": "skipped", "synced_chunks": 0, "total_chunks": current_count}
+
+        # Invalidate before mutations: a partially failed sync must never leave
+        # an old manifest that could incorrectly approve the index later.
+        self._manifest_path.unlink(missing_ok=True)
+        if force and self.client:
+            self.client.delete_collection(self.collection_name)
+            self.collection = self.client.get_or_create_collection(
+                name=self.collection_name,
+                metadata={"description": "Kho tri thức quy chế đào tạo và sổ tay sinh viên HUST"},
+            )
+            print("[VectorStoreManager] Đã làm mới collection cho kho tri thức môn học.")
+
         # Batch upsert vào ChromaDB (mỗi batch tối đa 200 chunks)
         batch_size = 100
         for i in range(0, len(ids), batch_size):
@@ -192,13 +208,16 @@ class VectorStoreManager:
 
         # Giữ collection là bản phản chiếu chính xác của thư mục documents:
         # xóa chunk cũ khi file bị xóa hoặc số chunk giảm sau khi biên tập.
-        existing = self.collection.get()
+        existing = self.collection.get(include=[])
         stale_ids = sorted(set(existing.get("ids", [])) - set(ids))
         if stale_ids:
             self.collection.delete(ids=stale_ids)
             print(f"[VectorStoreManager] Đã xóa {len(stale_ids)} chunks cũ không còn trong nguồn.")
 
         new_total = self.collection.count()
+        if new_total != len(ids):
+            raise RuntimeError("Vector index count differs from approved corpus")
+        self._write_manifest(manifest)
         print(f"[VectorStoreManager] Đồng bộ thành công {len(ids)} chunks vào ChromaDB. Tổng hiện có: {new_total}")
 
         return {
@@ -207,6 +226,39 @@ class VectorStoreManager:
             "total_chunks": new_total,
             "sources": list(set([m["source"] for m in metadatas]))
         }
+
+    @property
+    def _manifest_path(self) -> Path:
+        return self.persist_dir / "corpus_manifest.json"
+
+    @staticmethod
+    def _corpus_manifest(ids, documents, metadatas) -> Dict[str, Any]:
+        # Stable across loader order, metadata key order and deployment paths.
+        payload = {"embedding": EMBEDDING_IDENTITY,
+                   "chunks": sorted(zip(ids, documents, metadatas), key=lambda row: row[0])}
+        encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True,
+                             separators=(",", ":")).encode("utf-8")
+        return {"schema_version": 1, "embedding": EMBEDDING_IDENTITY,
+                "chunk_count": len(ids), "corpus_sha256": hashlib.sha256(encoded).hexdigest()}
+
+    def _read_manifest(self):
+        try:
+            return json.loads(self._manifest_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return None
+
+    def _write_manifest(self, manifest):
+        temporary = None
+        try:
+            with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=self.persist_dir,
+                                             prefix="corpus_manifest-", suffix=".tmp", delete=False) as output:
+                temporary = Path(output.name)
+                json.dump(manifest, output, ensure_ascii=False, sort_keys=True)
+                output.write("\n")
+            temporary.replace(self._manifest_path)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
 
     def similarity_search(self, query: str, k: int = 4) -> List[Dict[str, Any]]:
         """Combine BM25 scores and vector ranks within the requested academic scope."""

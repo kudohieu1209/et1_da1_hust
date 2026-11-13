@@ -107,6 +107,9 @@ class DocumentTrustTests(unittest.TestCase):
         from unittest import mock
         from app.rag.vector_store import VectorStoreManager
         manager = object.__new__(VectorStoreManager)
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        manager.persist_dir = Path(directory.name)
         manager.collection = mock.Mock()
         manager.collection.count.return_value = 2
         manager.collection.get.return_value = {"ids": ["old-1", "old-2"]}
