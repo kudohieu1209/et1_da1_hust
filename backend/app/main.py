@@ -115,7 +115,7 @@ def register_frontend(application: FastAPI, dist_dir: Path) -> None:
     dist_dir = dist_dir.resolve()
     index = dist_dir / "index.html"
     if not index.is_file():
-        application.add_api_route("/", root, methods=["GET"], include_in_schema=False)
+        application.add_api_route("/", root, methods=["GET"])
         return
 
     if (dist_dir / "assets").is_dir():

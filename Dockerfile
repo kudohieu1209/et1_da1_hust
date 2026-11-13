@@ -14,7 +14,11 @@ ENV HOME=/home/user \
     PYTHON_DOTENV_DISABLED=1 \
     VECTOR_DB_DIR=/home/user/app/data/vector_db
 
-RUN useradd --create-home --uid 1000 user
+# ONNX Runtime's Linux wheel links against libstdc++.so.6.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libstdc++6 \
+    && rm -rf /var/lib/apt/lists/* \
+    && useradd --create-home --uid 1000 user
 WORKDIR /home/user/app
 COPY backend/requirements.txt backend/requirements.txt
 RUN pip install --no-cache-dir -r backend/requirements.txt

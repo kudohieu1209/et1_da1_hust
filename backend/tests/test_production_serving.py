@@ -31,6 +31,7 @@ class FrontendServingTests(unittest.TestCase):
             with self.subTest(has_directory=has_directory):
                 client = self.client()
                 self.assertEqual(client.get("/").json(), client.get("/api/system").json())
+                self.assertIn("/", client.get("/openapi.json").json()["paths"])
                 self.assertEqual(client.get("/some/spa/route").status_code, 404)
 
     def test_production_files_spa_and_reserved_routes(self):
