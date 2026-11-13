@@ -12,6 +12,7 @@ load_dotenv(PROJECT_DIR / ".env")
 DATA_DIR = PROJECT_DIR / "data" / "processed"
 CURRICULA_DIR = DATA_DIR / "curricula"
 DOCUMENTS_DIR = PROJECT_DIR / "data" / "documents"
+FRONTEND_DIST_DIR = Path(os.getenv("FRONTEND_DIST_DIR") or PROJECT_DIR / "frontend" / "dist")
 # ChromaDB lưu file cục bộ không an toàn khi nhiều tiến trình cùng mở, nên
 # kiểm thử/đánh giá trỏ biến này sang thư mục riêng khi backend dev đang chạy.
 VECTOR_DB_DIR = Path(os.getenv("VECTOR_DB_DIR") or PROJECT_DIR / "data" / "vector_db")

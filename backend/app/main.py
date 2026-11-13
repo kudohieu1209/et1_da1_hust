@@ -1,10 +1,12 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
+from pathlib import Path
 from urllib.parse import urlsplit
 
-from app.core.config import CORS_ORIGINS, SESSION_COOKIE_NAME
+from app.core.config import CORS_ORIGINS, FRONTEND_DIST_DIR, SESSION_COOKIE_NAME
 from app.api.router_auth import router as auth_router
 from app.api.router_courses import router as courses_router
 from app.api.router_student import router as student_router
@@ -32,13 +34,23 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-def is_allowed_origin(origin: str | None) -> bool:
+def is_allowed_origin(origin: str | None, request: Request) -> bool:
     if not origin:
         return True
     if origin in CORS_ORIGINS:
         return True
     try:
         parsed = urlsplit(origin)
+        # Uvicorn resolves the scheme through trusted proxy headers in production.
+        # Compare complete origins, including non-default ports, never suffixes.
+        def authority(url):
+            return (url.scheme, url.hostname, url.port or (443 if url.scheme == "https" else 80))
+
+        if (parsed.scheme in ("http", "https") and parsed.netloc
+                and not parsed.username and not parsed.password
+                and not parsed.path and not parsed.query and not parsed.fragment
+                and authority(parsed) == authority(urlsplit(str(request.base_url)))):
+            return True
         if parsed.scheme in ("http", "https") and parsed.hostname in ("localhost", "127.0.0.1"):
             return True
     except Exception:
@@ -67,7 +79,7 @@ async def reject_cross_site_writes(request: Request, call_next):
         SESSION_COOKIE_NAME in request.cookies or request.url.path.startswith("/api/auth/")
     ):
         origin = request.headers.get("origin")
-        if origin and not is_allowed_origin(origin):
+        if origin and not is_allowed_origin(origin, request):
             return JSONResponse(status_code=403, content={"detail": "Nguồn gửi yêu cầu không được phép."})
     return await call_next(request)
 
@@ -81,7 +93,6 @@ app.include_router(rag_router)
 app.include_router(conversations_router)
 app.include_router(programs_router)
 
-@app.get("/")
 @app.get("/api/system")
 def root():
     return {
@@ -97,3 +108,29 @@ def root():
 @app.get("/api/health")
 def health_check():
     return {"status": "healthy"}
+
+
+def register_frontend(application: FastAPI, dist_dir: Path) -> None:
+    """Register last so API/docs routes retain priority over the SPA fallback."""
+    dist_dir = dist_dir.resolve()
+    index = dist_dir / "index.html"
+    if not index.is_file():
+        application.add_api_route("/", root, methods=["GET"], include_in_schema=False)
+        return
+
+    if (dist_dir / "assets").is_dir():
+        application.mount("/assets", StaticFiles(directory=dist_dir / "assets"), name="assets")
+
+    @application.get("/{path:path}", include_in_schema=False)
+    def frontend(path: str):
+        if path.startswith(("api", "docs", "redoc", "openapi.json")):
+            raise HTTPException(status_code=404)
+        candidate = (dist_dir / path).resolve()
+        if not candidate.is_relative_to(dist_dir):
+            raise HTTPException(status_code=404)
+        if candidate.is_file():
+            return FileResponse(candidate)
+        return FileResponse(index)
+
+
+register_frontend(app, FRONTEND_DIST_DIR)
