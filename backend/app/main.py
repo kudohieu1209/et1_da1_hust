@@ -20,6 +20,8 @@ from app.rag.rag_engine import rag_engine
 async def lifespan(app: FastAPI):
     # auto checks approved corpus without loading the embedding model.
     try:
+        if rag_engine.vector_store.mode == "bm25_only":
+            print("RAG: chế độ chỉ BM25.")
         if RAG_SYNC_ON_STARTUP == "never":
             print("[Startup] Bỏ qua đồng bộ RAG theo RAG_SYNC_ON_STARTUP=never.")
         else:

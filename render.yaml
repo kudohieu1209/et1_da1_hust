@@ -17,3 +17,5 @@ services:
         value: "true"
       - key: RAG_SYNC_ON_STARTUP
         value: auto
+      - key: RAG_VECTOR_SEARCH
+        value: "off"

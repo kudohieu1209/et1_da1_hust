@@ -6,7 +6,7 @@ from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from compare_reports import common_results
-from run_eval import check_thresholds, disable_vector_search, repository_is_dirty
+from run_eval import check_thresholds, repository_is_dirty
 
 
 class CheckThresholdsTests(unittest.TestCase):
@@ -35,12 +35,47 @@ class RepositoryStatusTests(unittest.TestCase):
         self.assertTrue(repository_is_dirty(Path("/repo")))
 
 
-class AblationTests(unittest.TestCase):
-    def test_disable_vector_search_makes_query_fail(self):
-        store = mock.Mock()
-        disable_vector_search(store)
-        with self.assertRaises(RuntimeError):
-            store.collection.query(query_texts=["học phí"], n_results=4)
+class BM25EvaluationTests(unittest.TestCase):
+    def test_env_off_and_legacy_flag_use_bm25_without_vector_imports(self):
+        import os
+        import subprocess
+        import tempfile
+        script = r"""
+import importlib.abc
+import json
+import os
+from pathlib import Path
+import sys
+import run_eval
+
+class BlockVectorImports(importlib.abc.MetaPathFinder):
+    def find_spec(self, fullname, *args):
+        if fullname.split(".")[0] in {"chromadb", "onnxruntime"}:
+            raise AssertionError("Unexpected vector dependency: " + fullname)
+sys.meta_path.insert(0, BlockVectorImports())
+directory = Path(os.environ["EVAL_TEST_DIR"])
+item = next(item for item in run_eval.load_golden_set(run_eval.DEFAULT_GOLDEN) if item.get("evidence"))
+golden = directory / "golden.jsonl"
+golden.write_text(json.dumps(item, ensure_ascii=False) + "\n", encoding="utf-8")
+run_eval.DEFAULT_REPORT_DIR = directory
+args = ["--golden", str(golden), "--label", "bm25_test"] + sys.argv[1:]
+assert run_eval.main(args) == 0
+report = json.loads((directory / "bm25_test.json").read_text())
+assert report["metadata"]["retrieval"] == "bm25_only"
+assert report["summary"]["overall"]["recall_at_k"] == 1
+assert "chromadb" not in sys.modules
+assert "onnxruntime" not in sys.modules
+assert not Path(os.environ["VECTOR_DB_DIR"]).exists()
+"""
+        for flag in (False, True):
+            with self.subTest(legacy_flag=flag), tempfile.TemporaryDirectory() as directory:
+                environment = {**os.environ, "PYTHON_DOTENV_DISABLED": "1", "EVAL_TEST_DIR": directory,
+                               "VECTOR_DB_DIR": str(Path(directory) / "absent"),
+                               "RAG_VECTOR_SEARCH": "on" if flag else "off",
+                               "PYTHONPATH": str(Path(__file__).resolve().parents[1])}
+                result = subprocess.run([sys.executable, "-c", script] + (["--no-vector"] if flag else []),
+                                        env=environment, capture_output=True, text=True, timeout=60)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 
 class CompareReportsTests(unittest.TestCase):

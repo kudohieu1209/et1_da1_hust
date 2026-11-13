@@ -39,20 +39,21 @@ Blueprint giữ `autoDeploy: false` theo kế hoạch. [Tài liệu Blueprint](h
 | `MONGODB_DB` | `hust_course_advisor_live` (Blueprint đã đặt). |
 | `GEMINI_API_KEY` | Tuỳ chọn, có thể để trống. Khi chưa có key, app trả lời bằng trích xuất cục bộ và dẫn nguồn. Blueprint dùng `sync: false`; nếu giao diện yêu cầu nhập trước khi tạo, có thể bỏ mục key này rồi thêm sau trong Environment. |
 | `COOKIE_SECURE` | `true` trên Render; cookie chỉ gửi qua HTTPS. |
-| `RAG_SYNC_ON_STARTUP` | `auto` (mặc định): kiểm tra manifest và số chunk, chỉ nhúng lại khi index/corpus/mô hình không khớp. `always` ép đồng bộ toàn bộ; `never` bỏ kiểm tra/đồng bộ lúc khởi động, chỉ dùng khi chủ động quản lý index. |
+| `RAG_VECTOR_SEARCH` | `off` trong Docker/Render: chỉ BM25, không import ChromaDB hoặc nạp ONNX/embedding. Local mặc định `on` (hybrid). Chỉ chấp nhận `on` / `off`. |
+| `RAG_SYNC_ON_STARTUP` | `auto` (mặc định) / `always`: với BM25 chỉ nạp chunk đã duyệt vào RAM, không embed; `never` nạp lười khi truy vấn hoặc xem trạng thái lần đầu. Với hybrid: `auto` đối soát manifest, `always` nhúng lại toàn bộ, `never` bỏ đồng bộ lúc khởi động. |
 | `RENDER_EXTERNAL_URL` | Render tự đặt URL công khai; app tự thêm URL vào CORS và danh sách origin hợp lệ cho CSRF. Không cần tự đặt. |
 | `CORS_ORIGINS` | Tuỳ chọn, danh sách origin bổ sung ngăn cách dấu phẩy; cơ chế cùng origin vẫn hoạt động. |
 | `PORT` | Render tự cấp (thường `10000`); CMD dùng biến này, mặc định `7860` khi chạy image nơi khác. |
 
-Không đưa secret vào Docker build arguments. Build index không cần MongoDB/Gemini và tắt dotenv. Chỉ các biến môi trường runtime mới cần thông tin Atlas.
+Không đưa secret vào Docker build arguments. Image không tạo vector DB hoặc cache embedding; dotenv đã tắt. Chỉ các biến môi trường runtime mới cần thông tin Atlas.
 
 ## 5. Deploy và kiểm tra
 
-- Bấm tạo Blueprint / Deploy. Xem **Events → build log**: frontend phải build thành công, sau đó script tạo index ghi `Built vector index: 1449 approved chunks.` (số chunk có thể đổi khi tài liệu được duyệt thay đổi).
-- Image tạo index và cache embedding trong lúc build, dưới user UID 1000. Runtime phải ghi được `VECTOR_DB_DIR`. Không cần persistent disk cho index vì index được đóng sẵn trong image.
-- Xem **Logs** lúc chạy: với `auto` và corpus không đổi phải thấy **`Index khớp, bỏ qua đồng bộ`**, sau đó `Application startup complete`. Không cần nạp mô hình embedding trong bước kiểm tra manifest; mô hình sẽ được dùng khi có truy vấn ngữ nghĩa.
+- Bấm tạo Blueprint / Deploy. Xem **Events → build log**: frontend và dependencies phải build thành công; không có bước tạo vector DB hoặc tải mô hình.
+- Image chạy dưới user UID 1000, không cần vector DB hay persistent disk cho RAG. Vẫn giữ dependencies Chroma và `libstdc++6` để hỗ trợ bật lại hybrid khi cần; chúng không được import trong chế độ chỉ BM25.
+- Xem **Logs** lúc chạy: phải thấy **`RAG: chế độ chỉ BM25`**, hiện tại 1.449 chunk đã duyệt, sau đó `Application startup complete`. `/api/rag/status` báo `mode: bm25_only`, số chunk và nguồn, không báo lỗi vector DB.
 - Mở **`https://<tên>.onrender.com`**, đăng ký tài khoản giả và thử ít nhất 5 câu hỏi quy chế. Kiểm tra `/api/health` trả `{"status":"healthy"}`, `/api/system` trả JSON, `/docs` vẫn hiển thị Swagger, tải lại một route frontend không lỗi 404.
-- Kiểm tra mục Metrics / log về RAM. Mục tiêu đo local sau truy vấn là peak RSS dưới 450 MB; giới hạn container còn phải chứa các chi phí runtime khác, nên đây không phải bảo đảm chạy được trên 512 MB.
+- Kiểm tra mục Metrics / log về RAM. Mục tiêu đo local sau truy vấn BM25 là peak RSS dưới 250 MB; giới hạn container còn phải chứa các chi phí runtime khác, nên đây không phải bảo đảm chạy được trên 512 MB.
 
 Docker chạy đúng **1 worker**, không reload, bật proxy headers và tin proxy phía Render để nhận đúng HTTPS. Không phơi trực tiếp cổng container ra Internet ở một hạ tầng có proxy không đáng tin.
 
@@ -62,11 +63,23 @@ Ngoài giới hạn arena, image đặt `MALLOC_TRIM_THRESHOLD_=131072` để gl
 
 ## 6. Ngủ, cập nhật và phương án dự phòng
 
-[Render Free](https://render.com/docs/free) ngủ sau 15 phút không có traffic; lần mở lại có thể chờ khoảng 1 phút. File phát sinh trong container mất khi restart/redeploy/ngủ. Tài khoản và hồ sơ nằm trên Atlas nên được giữ; index và cache embedding gốc được phục hồi từ image. Nếu dùng API đồng bộ để thay index runtime, thay đổi đó không bền và cần đưa corpus được duyệt vào lần build tiếp theo.
+[Render Free](https://render.com/docs/free) ngủ sau 15 phút không có traffic; lần mở lại có thể chờ khoảng 1 phút. File phát sinh trong container mất khi restart/redeploy/ngủ. Tài khoản và hồ sơ nằm trên Atlas nên được giữ; chỉ mục BM25 được dựng lại từ tài liệu đã duyệt trong image. Thay đổi corpus cần đưa vào lần build tiếp theo.
 
 Khi sửa code: commit/push nhánh deploy rồi chọn **Manual Deploy → Deploy latest commit**. Auto-Deploy đã tắt. Xem cả build log lẫn runtime log sau mỗi lần cập nhật. Free có giới hạn giờ chạy, bandwidth và build pipeline theo workspace; theo dõi Billing/usage.
 
-Nếu log báo **out of memory** hoặc service restart khi hỏi RAG: kiểm tra `RAG_SYNC_ON_STARTUP=auto` và thông báo index khớp, giữ một worker. Image đã đặt `OMP_NUM_THREADS=1`, `MKL_NUM_THREADS=1`, `OPENBLAS_NUM_THREADS=1`, `TOKENIZERS_PARALLELISM=false`, `ANONYMIZED_TELEMETRY=False`, `PYTHONDONTWRITEBYTECODE=1`, `MALLOC_ARENA_MAX=2`. Chroma ONNX mặc định không có tham số công khai để đặt intra-op threads trong constructor, nên không vá nội bộ thư viện. Nếu vẫn vượt RAM, chuyển sang instance trả phí đủ RAM hoặc nơi chạy khác; không bật `always` để xử lý lỗi thiếu RAM vì nó buộc nhúng lại corpus.
+Nếu log báo **out of memory** hoặc service restart khi hỏi RAG: kiểm tra `RAG_VECTOR_SEARCH=off`, log chế độ chỉ BM25 và giữ một worker. Image đã đặt các giới hạn luồng/allocator trong Dockerfile. Nếu vẫn vượt RAM, đo lại khi bật Gemini và chuyển sang instance trả phí đủ RAM hoặc nơi chạy khác.
+
+### Chất lượng và bật lại hybrid
+
+Bản live dùng chỉ BM25 vì giới hạn RAM: hybrid đo trước đây peak khoảng 416 MB, riêng ONNX/embedding khoảng 250 MB, quá sát mức 512 MB của Render Free. Bộ hồi quy 108 câu: MRR BM25 **85,3%**, hybrid **84,3%**; bộ 20 câu diễn đạt khác: BM25 **77,2%**, hybrid **80,6%**. Recall@4, ý định và ý chính đều **100%** ở cả hai chế độ. Đây là đánh giá trích xuất cục bộ, không bảo đảm độ đúng của mọi câu trả lời LLM.
+
+Khi có máy đủ RAM, bật lại hybrid bằng cách đổi `RAG_VECTOR_SEARCH=on` trong Dockerfile **và** Environment/Blueprint Render, rồi thêm bước sau vào Dockerfile sau `USER user` và `WORKDIR /home/user/app/backend` (trước `EXPOSE`):
+
+```dockerfile
+RUN python scripts/build_vector_db.py
+```
+
+Script có sẵn, không cần MongoDB/Gemini, tạo vector DB + manifest và cache mô hình dưới user runtime. Giữ `RAG_SYNC_ON_STARTUP=auto` để khởi động bỏ qua embedding khi index khớp; xác nhận `/api/rag/status` báo `hybrid`. Đo RAM lại trước khi đưa lên live. Local theo README vẫn mặc định hybrid, không cần thay biến cấu hình.
 
 ## 7. Lỗi thường gặp
 
@@ -74,7 +87,7 @@ Nếu log báo **out of memory** hoặc service restart khi hỏi RAG: kiểm tr
 - **Atlas chặn IP / timeout**: kiểm tra Network Access, cluster đang hoạt động và các dải outbound của service Render. Chạy trên Render vẫn cần Atlas cho phép truy cập mạng.
 - **Sai mật khẩu / authentication failed**: kiểm tra user `hust-live`, quyền trên database live, URL-encode ký tự đặc biệt trong URI và `authSource` theo URI Atlas cung cấp.
 - **Đăng nhập không giữ phiên**: mở đúng URL HTTPS của app; giữ `COOKIE_SECURE=true`. App và API dùng cùng origin.
-- **Khởi động vẫn nhúng toàn bộ**: kiểm tra manifest `corpus_manifest.json` được tạo khi build, cùng model/phiên bản Chroma giữa build và run, số chunk và corpus không bị thay, `VECTOR_DB_DIR` không bị ghi đè sang thư mục rỗng.
+- **Khởi động vẫn nhúng toàn bộ**: bản BM25 phải đặt `RAG_VECTOR_SEARCH=off`. Nếu chủ động bật hybrid, kiểm tra manifest `corpus_manifest.json` được tạo khi build, cùng model/phiên bản Chroma giữa build và run, số chunk và corpus không bị thay, `VECTOR_DB_DIR` không bị ghi đè sang thư mục rỗng.
 - **Health check không lên**: xem lỗi import/Atlas/startup, xác nhận Render có `PORT`, CMD không bị override và health check `/api/health`.
 
 ## Dữ liệu trong image và chạy local

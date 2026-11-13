@@ -194,13 +194,6 @@ def evaluation_metadata(golden: Path, use_llm: bool) -> Dict[str, Any]:
             "implementation_sha256": digest.hexdigest()}
 
 
-def disable_vector_search(vector_store) -> None:
-    """Làm truy vấn vector luôn lỗi để similarity_search quay về nhánh chỉ BM25."""
-    def _unavailable(*_args, **_kwargs):
-        raise RuntimeError("vector search disabled for ablation")
-    vector_store.collection.query = _unavailable
-
-
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--golden", type=Path, default=DEFAULT_GOLDEN)
@@ -213,14 +206,15 @@ def main(argv: Optional[List[str]] = None) -> int:
                         help="Ablation: tắt tìm kiếm vector, chỉ xếp hạng bằng BM25 và các hệ số cấu trúc")
     args = parser.parse_args(argv)
 
+    if args.no_vector:
+        os.environ["RAG_VECTOR_SEARCH"] = "off"
+
     items = load_golden_set(args.golden)
     metadata = evaluation_metadata(args.golden, args.use_llm)
     chatbot, vector_store = _load_backend(args.use_llm)
     # An existing index may contain an older chunking scheme or revoked sources.
     vector_store.sync_documents()
-    if args.no_vector:
-        disable_vector_search(vector_store)
-    metadata["retrieval"] = "bm25_only" if args.no_vector else "hybrid"
+    metadata["retrieval"] = vector_store.mode
     results = [evaluate_item(item, chatbot, vector_store, args.k) for item in items]
     summary = summarize(results, k=args.k)
     completed_metadata = evaluation_metadata(args.golden, args.use_llm)

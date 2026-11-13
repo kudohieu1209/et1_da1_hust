@@ -19,6 +19,9 @@ VECTOR_DB_DIR = Path(os.getenv("VECTOR_DB_DIR") or PROJECT_DIR / "data" / "vecto
 RAG_SYNC_ON_STARTUP = os.getenv("RAG_SYNC_ON_STARTUP", "auto").strip().lower()
 if RAG_SYNC_ON_STARTUP not in {"auto", "always", "never"}:
     raise ValueError("RAG_SYNC_ON_STARTUP must be auto, always or never")
+RAG_VECTOR_SEARCH = os.getenv("RAG_VECTOR_SEARCH", "on").strip().lower()
+if RAG_VECTOR_SEARCH not in {"on", "off"}:
+    raise ValueError("RAG_VECTOR_SEARCH must be on or off")
 # MongoDB là kho nghiệp vụ duy nhất; ChromaDB chỉ phục vụ chỉ mục RAG.
 MONGODB_URI = os.getenv("MONGODB_URI", "").strip()
 MONGODB_DB = os.getenv("MONGODB_DB", "hust_course_advisor").strip() or "hust_course_advisor"

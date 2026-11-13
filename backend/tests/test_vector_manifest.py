@@ -7,7 +7,7 @@ from pathlib import Path
 from unittest import mock
 
 from app.rag.document_loader import DocumentChunk
-from app.rag.vector_store import EMBEDDING_IDENTITY, VectorStoreManager
+from app.rag.vector_store import embedding_identity, VectorStoreManager
 
 
 class VectorManifestTests(unittest.TestCase):
@@ -46,7 +46,7 @@ class VectorManifestTests(unittest.TestCase):
         self.collection.upsert.reset_mock()
         self.embed.reset_mock()
         # Cached checks must not even construct the real embedding function.
-        with mock.patch("app.rag.vector_store.ONNXMiniLM_L6_V2.__init__", side_effect=AssertionError("model loaded")):
+        with mock.patch("chromadb.utils.embedding_functions.ONNXMiniLM_L6_V2.__init__", side_effect=AssertionError("model loaded")):
             reopened = copy.copy(self.manager)
             self.assertEqual(reopened.sync_documents()["status"], "skipped")
         self.collection.upsert.assert_not_called()
@@ -65,8 +65,10 @@ class VectorManifestTests(unittest.TestCase):
                     self.chunks[0].metadata["source"] = "Changed source"
                 elif change == "id":
                     self.chunks[0].metadata["chunk_index"] += 1
-                identity = {**EMBEDDING_IDENTITY, "revision": "new-model"} if change == "model" else EMBEDDING_IDENTITY
-                with mock.patch("app.rag.vector_store.EMBEDDING_IDENTITY", identity):
+                identity = embedding_identity()
+                if change == "model":
+                    identity = {**identity, "revision": "new-model"}
+                with mock.patch("app.rag.vector_store.embedding_identity", return_value=identity):
                     self.assertEqual(self.sync()["status"], "success")
                 self.collection.upsert.assert_called_once()
                 self.embed.assert_called_once()
