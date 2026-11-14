@@ -18,4 +18,5 @@ if __name__ == "__main__":
     port = int(os.getenv("API_PORT", 8000))
     print(f"Starting HUST Course Advisor Backend at http://{host}:{port}...")
     print(f"Swagger API Docs: http://localhost:{port}/docs")
-    uvicorn.run("app.main:app", host=host, port=port, reload=True)
+    reload = os.getenv("RELOAD", "false").lower() == "true"
+    uvicorn.run("app.main:app", host=host, port=port, reload=reload)

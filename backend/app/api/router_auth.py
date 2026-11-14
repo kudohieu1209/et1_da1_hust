@@ -79,6 +79,8 @@ def _account_view(student_id: str) -> dict:
         "curriculum_version": info.get("curriculum_version", ""),
         "is_admin": bool(user.get("is_admin")),
         "is_demo": bool(user.get("is_demo")),
+        "auth_provider": user.get("auth_provider", "local"),
+        "school_sync": (profiles.get(key) or {}).get("school_sync") if key else None,
     }
 
 
@@ -117,6 +119,12 @@ async def login(payload: LoginRequest, request: Request, response: Response):
         ) from exc
     _set_session_cookie(response, token)
     return await run_in_threadpool(_account_view, payload.student_id.strip())
+
+
+@router.post("/login-ctt")
+async def login_ctt():
+    """Legacy password forwarding is retired; CTT requires interactive sign-in."""
+    raise HTTPException(status_code=410, detail="Hãy dùng Tài khoản trường để đăng nhập trên trang CTT chính thức. Ứng dụng không nhận mật khẩu trường.")
 
 
 @router.post("/logout", status_code=204)

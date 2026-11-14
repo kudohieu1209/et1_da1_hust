@@ -105,9 +105,9 @@ export default function AuditTab({
 
         {/* Quick status pills on top right */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-          <div style={{
-            padding: '6px 14px',
-            borderRadius: 'var(--radius-md)',
+          <div className="gemini-pill" style={{
+            padding: '7px 16px',
+            borderRadius: 'var(--radius-full)',
             background: 'var(--bg-card)',
             border: '1px solid var(--border-subtle)',
             fontSize: '0.82rem'
@@ -115,9 +115,9 @@ export default function AuditTab({
             <span style={{ color: 'var(--text-muted)' }}>Tích lũy: </span>
             <strong style={{ color: 'var(--text-primary)' }}>{total_credits_accumulated}/{total_credits_required} TC</strong>
           </div>
-          <div style={{
-            padding: '6px 14px',
-            borderRadius: 'var(--radius-md)',
+          <div className="gemini-pill" style={{
+            padding: '7px 16px',
+            borderRadius: 'var(--radius-full)',
             background: 'var(--bg-card)',
             border: '1px solid var(--border-subtle)',
             fontSize: '0.82rem'
@@ -131,7 +131,7 @@ export default function AuditTab({
       {/* 2. Top 4 Metric Bento Cards (Uniform Height & Balanced Whitespace) */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
         gap: '16px'
       }}>
         {/* Card 1: Credit Progress */}
@@ -256,12 +256,12 @@ export default function AuditTab({
               <span style={{ color: 'var(--text-muted)' }}>Chuẩn Bằng Khá (≥ 2.50)</span>
               <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}>{cpa.toFixed(2)} / 2.50</span>
             </div>
-            <div style={{ width: '100%', height: '5px', background: 'var(--border-subtle)', borderRadius: '3px', overflow: 'hidden' }}>
+            <div style={{ width: '100%', height: '6px', background: 'var(--border-subtle)', borderRadius: '9999px', overflow: 'hidden' }}>
               <div style={{
                 width: `${Math.min(100, (cpa / 2.5) * 100)}%`,
                 height: '100%',
                 background: cpa >= 2.5 ? 'var(--success)' : 'var(--warning)',
-                borderRadius: '3px'
+                borderRadius: '9999px'
               }} />
             </div>
           </div>
@@ -299,9 +299,9 @@ export default function AuditTab({
           <div style={{
             fontSize: '0.75rem',
             color: 'var(--text-muted)',
-            padding: '6px 10px',
+            padding: '7px 14px',
             background: 'var(--bg-surface)',
-            borderRadius: 'var(--radius-sm)',
+            borderRadius: 'var(--radius-full)',
             border: '1px solid var(--border-subtle)'
           }}>
             {credit_limit.is_provisional ? 'Hạn mức kế hoạch tạm thời' : 'Hạn mức đăng ký'}: <strong style={{ color: 'var(--text-primary)' }}>Tối đa {credit_limit.max || 14} TC</strong> / kỳ chính
@@ -362,7 +362,7 @@ export default function AuditTab({
           <span className="badge badge-indigo">{graduation_group_audit.length} thành phần</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '10px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '10px' }}>
           {graduation_group_audit.map((group, index) => (
             <div key={group.group_id || `choice-${index}`} style={{ padding: '12px', border: '1px solid var(--border-subtle)', borderRadius: '10px', background: 'var(--bg-surface)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px' }}>
@@ -436,7 +436,7 @@ export default function AuditTab({
       {/* 4. Main 2-Column Grid */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
         gap: '20px'
       }}>
         {/* Left Column: Breakdown of remaining credits */}
@@ -446,9 +446,9 @@ export default function AuditTab({
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <div style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '8px',
+                  width: '34px',
+                  height: '34px',
+                  borderRadius: '50%',
                   background: 'var(--warning-bg)',
                   display: 'flex',
                   alignItems: 'center',
@@ -496,9 +496,9 @@ export default function AuditTab({
                           fontWeight: '800',
                           color: 'var(--brand-accent)',
                           fontFamily: 'monospace',
-                          fontSize: '1rem',
-                          padding: '2px 6px',
-                          borderRadius: '4px',
+                          fontSize: '0.92rem',
+                          padding: '3px 8px',
+                          borderRadius: 'var(--radius-full)',
                           background: 'rgba(213, 19, 42, 0.1)'
                         }}>
                           {course.code}
@@ -527,9 +527,9 @@ export default function AuditTab({
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <div style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '8px',
+                  width: '34px',
+                  height: '34px',
+                  borderRadius: '50%',
                   background: 'rgba(213, 19, 42, 0.12)',
                   display: 'flex',
                   alignItems: 'center',
@@ -569,11 +569,11 @@ export default function AuditTab({
               </span>
               <button
                 onClick={() => onNavigateTab('recommend')}
-                className="btn-primary"
+                className="btn-primary gemini-pill"
                 style={{
                   fontSize: '0.82rem',
-                  padding: '7px 14px',
-                  borderRadius: '8px'
+                  padding: '8px 18px',
+                  borderRadius: 'var(--radius-full)'
                 }}
               >
                 <span>Xem Gợi ý chọn môn</span>
@@ -589,9 +589,9 @@ export default function AuditTab({
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <div style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '8px',
+                  width: '34px',
+                  height: '34px',
+                  borderRadius: '50%',
                   background: 'var(--hust-red-glow)',
                   display: 'flex',
                   alignItems: 'center',
@@ -642,12 +642,12 @@ export default function AuditTab({
                   </span>
                 </div>
                 {/* Progress bar inside */}
-                <div style={{ width: '100%', height: '5px', background: 'var(--border-subtle)', borderRadius: '3px', marginTop: '10px', overflow: 'hidden' }}>
+                <div style={{ width: '100%', height: '6px', background: 'var(--border-subtle)', borderRadius: '9999px', marginTop: '10px', overflow: 'hidden' }}>
                   <div style={{
                     width: `${Math.min(100, completion_percentage)}%`,
                     height: '100%',
                     background: total_credits_accumulated >= total_credits_required ? 'var(--success)' : 'var(--warning)',
-                    borderRadius: '3px'
+                    borderRadius: '9999px'
                   }} />
                 </div>
               </div>
@@ -730,18 +730,18 @@ export default function AuditTab({
                   <AlertTriangle size={18} color="var(--warning)" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div>
                     <div style={{ fontWeight: '700', color: 'var(--text-primary)', fontSize: '0.9rem' }}>
-                      Chứng chỉ GDTC, GDQP & Chuẩn tiếng Anh
+                      Hoàn thành GDTC, GDQP & Chuẩn tiếng Anh
                     </div>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
                       {non_credit_requirements.map((item) => (
-                        <div key={item.group_id}>{item.name}: {requirementLabels[item.status] || 'Chưa xác minh'}</div>
+                        <div key={item.group_id}>{item.name}: {item.source === 'coursework' ? `${item.status === 'completed' ? 'Đã hoàn thành học phần' : item.status === 'incomplete' ? 'Chưa đủ học phần' : 'Chưa có đủ điểm'} (${item.coursework?.passed_count || 0}/${item.coursework?.required_count || 0})` : item.status === 'completed' && item.source === 'ctt' ? 'Đã hoàn thành (đồng bộ CTT)' : requirementLabels[item.status] || 'Chưa xác minh'}</div>
                       ))}
                       Đối chiếu hồ sơ chính thức; cập nhật khi nhập bảng điểm.
                     </div>
                   </div>
                 </div>
                 <span className="badge badge-warning" style={{ fontSize: '0.7rem' }}>
-                  {non_credit_requirements.length > 0 && non_credit_requirements.every((item) => item.status === 'completed') ? 'Đã khai báo hoàn thành' : 'Cần đối chiếu'}
+                  {non_credit_requirements.length > 0 && non_credit_requirements.every((item) => item.status === 'completed') ? 'Đã ghi nhận hoàn thành' : 'Cần đối chiếu'}
                 </span>
               </div>
             </div>
@@ -758,7 +758,7 @@ export default function AuditTab({
             <div style={{
               width: '38px',
               height: '38px',
-              borderRadius: '10px',
+              borderRadius: '50%',
               background: 'var(--hust-red-glow)',
               color: 'var(--brand-accent)',
               display: 'flex',

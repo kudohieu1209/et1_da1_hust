@@ -69,6 +69,11 @@ class ProfileUpdateApiTests(unittest.TestCase):
         response = self.client.post(ENDPOINT, json={"avatar_gradient": gradient})
         self.assertEqual(response.status_code, 200, response.text)
 
+    def test_accepts_program_code_for_dual_degree(self):
+        response = self.client.post(ENDPOINT, json={"program_code": "ET2"})
+        self.assertEqual(response.status_code, 200, response.text)
+        self.update_profile.assert_called_once_with({"program_code": "ET2"}, "20220001")
+
 
 if __name__ == "__main__":
     unittest.main()

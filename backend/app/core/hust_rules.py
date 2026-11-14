@@ -72,7 +72,7 @@ def assess_academic_warning(profile: Dict[str, Any]) -> Dict[str, Any]:
     declared = profile.get("info", {}).get("warning_level")
     if declared is not None and str(declared).strip() != "":
         level = max(0, min(3, int(declared)))
-        basis = "Mức cảnh báo khai báo trong hồ sơ (theo CTT)"
+        basis = "Mức cảnh báo đồng bộ trực tiếp từ CTT" if profile.get("info", {}).get("warning_source") == "ctt" else "Mức cảnh báo khai báo trong hồ sơ (theo CTT)"
     elif owed > MAX_DEBT_CREDITS_BEFORE_LEVEL3:
         level = 3
         basis = (f"Nợ đọng {owed:g} TC > {MAX_DEBT_CREDITS_BEFORE_LEVEL3} TC "

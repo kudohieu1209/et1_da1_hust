@@ -1,0 +1,28 @@
+.school-connect { display: flex; flex-direction: column; gap: 19px; }
+.school-connect__portal { display: flex; align-items: center; gap: 12px; padding: 16px; border: 1px solid var(--border-subtle); border-radius: 20px; background: var(--bg-card); }
+.school-connect__portal-icon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--brand-accent); background: var(--brand-soft); border-radius: 50%; flex-shrink: 0; }
+.school-connect__portal > div { display: flex; flex-direction: column; gap: 3px; }
+.school-connect__portal strong { font-size: .88rem; color: var(--text-primary); }
+.school-connect__portal > div > span { display: flex; align-items: center; gap: 3px; font-size: .72rem; color: var(--text-muted); }
+.school-connect__badge { margin-left: auto; border: 1px solid var(--border-subtle); padding: 5px 10px; border-radius: var(--radius-full); font-size: .65rem; white-space: nowrap; color: var(--text-secondary); }
+.school-connect__intro { color: var(--text-secondary); line-height: 1.7; font-size: .84rem; margin: 0; }
+.school-connect__steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.school-connect__steps li { display: flex; align-items: flex-start; gap: 12px; position: relative; }
+.school-connect__steps li:not(:last-child)::after { content: ''; position: absolute; height: calc(100% - 8px); left: 12px; top: 32px; border-left: 1px solid var(--border-subtle); }
+.school-connect__step-number { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid var(--border-subtle); border-radius: 50%; flex-shrink: 0; color: var(--text-muted); font-size: .72rem; font-weight: 600; background: var(--bg-surface); }
+.school-connect__steps li > div { display: flex; flex-direction: column; gap: 3px; }
+.school-connect__steps strong { font-size: .8rem; font-weight: 550; color: var(--text-primary); }
+.school-connect__steps li > div > span { font-size: .73rem; line-height: 1.5; color: var(--text-muted); }
+.school-connect__steps .is-current .school-connect__step-number { color: var(--brand-accent); background: var(--brand-soft); border-color: var(--border-hust); }
+.school-connect__steps .is-done .school-connect__step-number { color: var(--success); background: var(--success-bg); border-color: var(--success); }
+.school-connect__program { padding-top: 3px; }
+.school-connect__error, .school-connect__notice, .school-connect__status { font-size: .79rem; line-height: 1.65; padding: 12px 16px; border-radius: 16px; }
+.school-connect__error { color: var(--danger); background: var(--danger-bg); border: 1px solid rgba(244, 63, 94, 0.2); }
+.school-connect__notice { color: var(--warning); background: var(--warning-bg); border: 1px solid rgba(245, 158, 11, 0.2); }
+.school-connect__status { display: flex; align-items: center; gap: 10px; color: var(--brand-accent); background: var(--brand-soft); }
+.school-connect__status svg { flex-shrink: 0; }
+.school-connect__submit { width: 100%; margin-top: 0; border-radius: var(--radius-full) !important; }
+.school-connect__cancel { border: none; background: transparent; color: var(--text-secondary); padding: 6px 14px; border-radius: var(--radius-full); cursor: pointer; font-size: .78rem; align-self: center; }
+.school-connect__privacy { display: flex; justify-content: center; align-items: flex-start; gap: 6px; color: var(--text-muted); font-size: .69rem; line-height: 1.6; text-align: center; margin: -5px 0 0; }
+.school-connect__privacy svg { flex-shrink: 0; margin-top: 2px; }
+@media (max-width: 420px) { .school-connect__badge { display: none; } }

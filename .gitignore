@@ -76,3 +76,14 @@ vector_db.broken-*/
 
 # Tài liệu CTĐT gốc tải về (lớn); bản trích xuất đã làm sạch nằm ở data/raw/official_curricula/
 /data/official_curricula_k67_k70/
+
+# Android / Capacitor build artifacts & secrets
+frontend/android/app/build/
+frontend/android/.gradle/
+frontend/android/build/
+android/app/build/
+android/.gradle/
+*.keystore
+*.jks
+local.properties
+

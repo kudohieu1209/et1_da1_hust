@@ -1,0 +1,57 @@
+[
+  {
+    "id": "rev-1",
+    "course_code": "MI1111",
+    "course_name": "Giải tích I",
+    "rating": 4,
+    "difficulty": "Khó",
+    "attendance": "Có điểm danh",
+    "comment": "Môn đại cương tiên quyết quan trọng. Nên làm hết bài tập trong sách bài tập thầy Nguyễn Đình Huy, ôn kỹ phần tích phân suy rộng và chuỗi số. Giữa kỳ thường dễ thở hơn cuối kỳ.",
+    "author": "K66 - Điện tử",
+    "created_at": "2024-10-15T08:30:00Z"
+  },
+  {
+    "id": "rev-2",
+    "course_code": "PH1110",
+    "course_name": "Vật lý đại cương I",
+    "rating": 3,
+    "difficulty": "Rất khó",
+    "attendance": "Thỉnh thoảng",
+    "comment": "Lý thuyết rộng, phần cơ học và nhiệt học nhiều công thức. Chú ý thí nghiệm vật lý lấy trọn 1.0 điểm cộng, đừng để mất điểm thí nghiệm.",
+    "author": "K67 - Cơ điện tử",
+    "created_at": "2024-11-02T14:20:00Z"
+  },
+  {
+    "id": "rev-3",
+    "course_code": "ET3210",
+    "course_name": "Kỹ thuật số",
+    "rating": 5,
+    "difficulty": "Trung bình",
+    "attendance": "Có điểm danh",
+    "comment": "Môn cơ sở ngành cực hay của viện Điện tử. Thầy cô dạy rất tâm huyết, phần bìa Karnaugh và thiết kế mạch tuần hoàn FSM nếu nắm chắc thì thi trắc nghiệm điểm A rất dễ.",
+    "author": "K67 - ET1",
+    "created_at": "2024-12-05T09:15:00Z"
+  },
+  {
+    "id": "rev-4",
+    "course_code": "IT1110",
+    "course_name": "Tin học đại cương",
+    "rating": 4,
+    "difficulty": "Trung bình",
+    "attendance": "Không điểm danh",
+    "comment": "Học lập trình C. Điểm thực hành trên máy chiếm 30%, thi trắc nghiệm thuật toán và đọc code cuối kỳ. Nên tự code bài tập trên HackerEarth hoặc LeetCode trước.",
+    "author": "K68 - IT1",
+    "created_at": "2025-01-10T16:45:00Z"
+  },
+  {
+    "id": "rev-5",
+    "course_code": "ET3220",
+    "course_name": "Tín hiệu và hệ thống",
+    "rating": 4,
+    "difficulty": "Khó",
+    "attendance": "Có điểm danh",
+    "comment": "Toán nhiều: biến đổi Fourier, Laplace, Z. Nắm chắc bảng biến đổi và tính chất tích chập. Đề thi cuối kỳ thường theo dạng đề cương ôn tập.",
+    "author": "K67 - ET-E9",
+    "created_at": "2025-02-18T11:00:00Z"
+  }
+]

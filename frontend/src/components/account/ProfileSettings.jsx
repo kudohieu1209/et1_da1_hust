@@ -3,7 +3,25 @@ import { Camera, Loader2, RotateCcw, Upload } from 'lucide-react';
 import { apiFetch, apiUrl } from '../../api';
 import Avatar from './Avatar';
 import { ACCEPTED_AVATAR_TYPES, resizeAvatar } from './imageResize';
-import { AVATAR_GRADIENTS, buildStudentSummary, getInitials, programLabel } from './studentSummary';
+import { AVATAR_GRADIENTS, buildStudentSummary, getInitials } from './studentSummary';
+
+const DEFAULT_PROGRAMS = [
+  { code: 'ET1', name: 'Kỹ thuật Điện tử - Viễn thông' },
+  { code: 'ET2', name: 'Kỹ thuật Y sinh' },
+  { code: 'EE1', name: 'Kỹ thuật điện' },
+  { code: 'EE2', name: 'Kỹ thuật Điều khiển - Tự động hóa' },
+  { code: 'ME1', name: 'Kỹ thuật Cơ điện tử' },
+  { code: 'BF1', name: 'Kỹ thuật Sinh học' },
+  { code: 'BF2', name: 'Kỹ thuật Thực phẩm' },
+  { code: 'BF-E19', name: 'Kỹ thuật sinh học (Chương trình tiên tiến)' },
+  { code: 'EV1', name: 'Kỹ thuật Môi trường' },
+  { code: 'EV2', name: 'Quản lý Tài nguyên và Môi trường' },
+  { code: 'ED2', name: 'Công nghệ giáo dục' },
+  { code: 'FL2', name: 'Tiếng Anh Chuyên nghiệp Quốc tế' },
+  { code: 'FL3', name: 'Tiếng Trung Khoa học và Công nghệ' },
+  { code: 'MS1', name: 'Kỹ thuật Vật liệu' },
+  { code: 'TE-EP', name: 'Cơ khí hàng không (Chương trình Việt - Pháp PFIEV)' },
+];
 
 /** Chuỗi lỗi đọc được từ phản hồi FastAPI (detail dạng chuỗi hoặc danh sách lỗi Pydantic). */
 async function readErrorDetail(response, fallback) {
@@ -26,17 +44,33 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
   const summary = buildStudentSummary(studentProfile, auditData);
   const [name, setName] = useState(summary.name);
   const [avatar, setAvatar] = useState(summary.avatar);
+  const [programCode, setProgramCode] = useState(summary.programCode || 'ET1');
+  const [availablePrograms, setAvailablePrograms] = useState([]);
   const [status, setStatus] = useState({ state: 'idle', message: '' });
   const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    apiFetch(apiUrl('/api/programs?supported_only=true'))
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!cancelled && data?.programs?.length) {
+          setAvailablePrograms(data.programs);
+        }
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
 
   useEffect(() => {
     const fresh = buildStudentSummary(studentProfile, auditData);
     setName(fresh.name);
     setAvatar(fresh.avatar);
+    setProgramCode(fresh.programCode || 'ET1');
     setStatus({ state: 'idle', message: '' });
     // Chỉ đặt lại form khi đổi sang hồ sơ khác hoặc hồ sơ vừa được lưu.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [studentProfile]);
+  }, [studentProfile, auditData]);
 
   const changes = {};
   const trimmedName = name.trim().replace(/\s+/g, ' ');
@@ -44,6 +78,7 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
   if (avatar.url !== summary.avatar.url) changes.avatar_url = avatar.url;
   if (avatar.emoji !== summary.avatar.emoji) changes.avatar_emoji = avatar.emoji;
   if (avatar.gradient !== summary.avatar.gradient) changes.avatar_gradient = avatar.gradient;
+  if (programCode && programCode !== summary.programCode) changes.program_code = programCode;
   const isDirty = Object.keys(changes).length > 0;
   const isSaving = status.state === 'saving';
 
@@ -90,8 +125,6 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
       setStatus({ state: 'error', message: t('Không kết nối được máy chủ.', 'Could not reach the server.') });
     }
   };
-
-  const program = programLabel(summary);
 
   return (
     <form onSubmit={handleSave}>
@@ -165,8 +198,8 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
         <h3>{t('Thông tin đào tạo', 'Academic record')}</h3>
         <p className="settings-hint">
           {t(
-            'Lấy từ tài khoản và bảng điểm nên không sửa tay ở đây. Muốn cập nhật tiến độ, hãy nhập lại bảng điểm.',
-            'Comes from your account and transcript, so it cannot be edited here. Re-import the transcript to update it.',
+            'Lớp và bảng điểm đồng bộ từ CTT. Bạn có thể đổi CTĐT bên dưới nếu học song bằng hoặc chương trình đặc biệt.',
+            'Class and transcript are synced from CTT. You can change your program below if taking a dual or special degree.',
           )}
         </p>
         <dl className="settings-readonly">
@@ -174,9 +207,35 @@ export default function ProfileSettings({ studentProfile, auditData, language, o
           <dd>{summary.studentId || '—'}</dd>
           <dt>{t('Lớp', 'Class')}</dt>
           <dd>{summary.className || '—'}</dd>
-          <dt>{t('CTĐT', 'Program')}</dt>
-          <dd>{[summary.programName, program && `(${program})`].filter(Boolean).join(' ') || '—'}</dd>
+          <dt>{t('Khóa', 'Cohort')}</dt>
+          <dd>{summary.curriculumVersion ? `K${parseInt(summary.curriculumVersion, 10) - 1955} (${summary.curriculumVersion})` : '—'}</dd>
         </dl>
+
+        <div className="settings-field" style={{ marginTop: 14 }}>
+          <label htmlFor="settings-program-select">{t('Chương trình đào tạo (CTĐT)', 'Curriculum program')}</label>
+          <select
+            id="settings-program-select"
+            className="settings-input"
+            value={programCode}
+            onChange={(event) => setProgramCode(event.target.value)}
+          >
+            {(availablePrograms.length > 0
+              ? availablePrograms.map((p) => ({ code: p.admission_code || p.code, name: p.name }))
+              : DEFAULT_PROGRAMS
+            ).map((prog) => (
+              <option key={prog.code} value={prog.code}>
+                {prog.code} - {prog.name}
+              </option>
+            ))}
+          </select>
+          <p className="settings-hint" style={{ marginTop: 4 }}>
+            {t(
+              'Hệ thống tự nhận diện CTĐT theo lớp khi đăng nhập trường. Nếu học song bằng, chọn chương trình bạn muốn rà soát.',
+              'Automatically detected from your class name upon sign in. If pursuing dual degrees, select your target program here.',
+            )}
+          </p>
+        </div>
+
         <div className="settings-actions" style={{ justifyContent: 'flex-start', marginTop: 10 }}>
           <button type="button" className="settings-button" onClick={onImportTranscript}>
             <Upload size={15} aria-hidden="true" />

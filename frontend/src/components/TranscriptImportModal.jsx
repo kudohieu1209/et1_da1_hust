@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { CheckCircle2, Loader2, UploadCloud, X } from 'lucide-react';
+import { CheckCircle2, Loader2, RefreshCw, UploadCloud, X } from 'lucide-react';
 import { apiFetch, apiUrl, readError } from '../api';
 import { TranscriptEmptyState } from './StudentState';
+import SchoolConnect from './auth/SchoolConnect';
+import './auth/auth.css';
 
 const SAMPLE_TRANSCRIPT = `MI1111  Giải tích I                 4   A
 MI1121  Giải tích II                3   B+
@@ -19,8 +21,8 @@ ET3260  Kỹ thuật phần mềm ứng dụng 2   A`;
 
 const fieldStyle = {
   width: '100%',
-  padding: '10px 12px',
-  borderRadius: '8px',
+  padding: '10px 14px',
+  borderRadius: '14px',
   border: '1px solid var(--border-subtle)',
   background: 'var(--bg-card)',
   color: 'var(--text-primary)',
@@ -33,6 +35,7 @@ const fieldStyle = {
 /** Nhập bảng điểm copy từ CTT cho tài khoản đang đăng nhập (thay toàn bộ bảng điểm cũ). */
 export default function TranscriptImportModal({ isOpen, onClose, onImported, hasTranscript, auditData, language = 'vi' }) {
   const t = (vi, en) => (language === 'vi' ? vi : en);
+  const [activeTab, setActiveTab] = useState('sync'); // 'sync' | 'paste'
   const [text, setText] = useState('');
   const [importing, setImporting] = useState(false);
   const [message, setMessage] = useState(null);
@@ -56,6 +59,19 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
   }, [isOpen, auditData]);
 
   if (!isOpen) return null;
+
+  const handleSchoolConnected = async () => {
+    try {
+      const [profileRes, auditRes] = await Promise.all([
+        apiFetch(apiUrl('/api/student/profile')), apiFetch(apiUrl('/api/student/audit')),
+      ]);
+      if (!profileRes.ok || !auditRes.ok) throw new Error();
+      onImported?.({ profile: await profileRes.json(), audit: await auditRes.json() });
+      onClose();
+    } catch {
+      setMessage({ type: 'error', text: t('Đã đồng bộ CTT. Hãy tải lại trang để xem dữ liệu mới.', 'CTT synced. Reload the page to see the updated profile.') });
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -102,7 +118,7 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
     <div
       className="apple-modal-backdrop"
       onClick={onClose}
-      style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '20px' }}
+      style={{ position: 'fixed', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '12px' }}
     >
       <div
         className="apple-modal-window"
@@ -113,17 +129,17 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
         style={{
           background: 'var(--bg-surface)',
           border: '1px solid var(--border-subtle)',
-          borderRadius: '18px',
+          borderRadius: '24px',
           width: '100%',
-          maxWidth: '640px',
-          maxHeight: '90vh',
+          maxWidth: 'min(640px, 96vw)',
+          maxHeight: '92dvh',
           display: 'flex',
           flexDirection: 'column',
           overflow: 'hidden',
         }}
       >
         <div style={{
-          padding: '18px 24px',
+          padding: '16px 20px',
           borderBottom: '1px solid var(--border-subtle)',
           display: 'flex',
           alignItems: 'center',
@@ -132,7 +148,7 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div style={{
-              width: '36px', height: '36px', borderRadius: '10px', background: 'var(--brand-gradient)',
+              width: '38px', height: '38px', borderRadius: '50%', background: 'var(--brand-gradient)',
               display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
             }}>
               <UploadCloud size={20} />
@@ -150,19 +166,70 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
             type="button"
             onClick={onClose}
             aria-label={t('Đóng', 'Close')}
-            style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '6px', borderRadius: '6px', display: 'flex' }}
+            style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '10px', width: '44px', height: '44px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
             <X size={20} />
           </button>
         </div>
 
+        {/* Tab chuyển đổi giữa Tự động đồng bộ CTT và Dán thủ công */}
+        <div style={{ display: 'flex', borderBottom: '1px solid var(--border-subtle)', background: 'var(--bg-card)', padding: '0 20px' }}>
+          <button
+            type="button"
+            onClick={() => { setActiveTab('sync'); setMessage(null); }}
+            style={{
+              padding: '12px 18px',
+              border: 'none',
+              borderBottom: activeTab === 'sync' ? '2px solid var(--brand-accent)' : '2px solid transparent',
+              background: 'transparent',
+              color: activeTab === 'sync' ? 'var(--brand-accent)' : 'var(--text-muted)',
+              fontWeight: activeTab === 'sync' ? 700 : 500,
+              fontSize: '0.86rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}
+          >
+            <RefreshCw size={15} />
+            {t('Kết nối tài khoản trường', 'Connect HUST account')}
+          </button>
+          <button
+            type="button"
+            onClick={() => { setActiveTab('paste'); setMessage(null); }}
+            style={{
+              padding: '12px 18px',
+              border: 'none',
+              borderBottom: activeTab === 'paste' ? '2px solid var(--brand-accent)' : '2px solid transparent',
+              background: 'transparent',
+              color: activeTab === 'paste' ? 'var(--brand-accent)' : 'var(--text-muted)',
+              fontWeight: activeTab === 'paste' ? 700 : 500,
+              fontSize: '0.86rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}
+          >
+            <UploadCloud size={15} />
+            {t('Dán bảng điểm', 'Paste transcript')}
+          </button>
+        </div>
+
+        {activeTab === 'sync' ? (
+          <div style={{ padding: '24px', overflowY: 'auto' }}>
+            {hasTranscript && <p className="school-connect__notice" style={{ marginBottom: '16px' }}>{t('Bảng điểm mới sẽ thay thế bảng điểm hiện tại sau khi xác thực đúng MSSV.', 'Your transcript is replaced only after verifying the same student ID.')}</p>}
+            <SchoolConnect defaultProgram={auditData?.student_info?.program_code || 'ET1'} language={language} onConnected={handleSchoolConnected} />
+            {message && <p role="alert" className="school-connect__notice" style={{ marginTop: '16px' }}>{message.text}</p>}
+          </div>
+        ) : (
         <form onSubmit={handleSubmit} style={{ padding: '20px 24px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '14px' }}>
           {!hasTranscript && !text.trim() && <TranscriptEmptyState compact language={language} />}
           <div style={{
             background: 'var(--brand-soft)',
             border: '1px solid var(--border-hust)',
-            borderRadius: '10px',
-            padding: '12px 14px',
+            borderRadius: '18px',
+            padding: '12px 16px',
             fontSize: '0.8rem',
             color: 'var(--text-primary)',
             lineHeight: 1.45,
@@ -203,7 +270,7 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
           </div>
 
           {unresolved.length > 0 && (
-            <fieldset style={{ border: '1px solid var(--border-subtle)', borderRadius: '8px', padding: '12px' }}>
+            <fieldset style={{ border: '1px solid var(--border-subtle)', borderRadius: '16px', padding: '14px' }}>
               <legend>{t('Xác nhận học phần ngoài danh mục', 'Confirm courses outside the curriculum')}</legend>
               <p style={{ fontSize: '0.8rem' }}>{t('Đối chiếu mã môn, điểm chữ và nhập số tín chỉ từ CTT. Bảng điểm cũ chưa bị thay đổi.', 'Check codes, grades and credits against CTT. Your previous transcript has not changed.')}</p>
               {[...new Set(unresolved.map((item) => item.code))].map((code) => (
@@ -242,7 +309,7 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
               role={message.type === 'error' ? 'alert' : 'status'}
               style={{
                 display: 'flex', alignItems: 'center', gap: '6px',
-                padding: '8px 12px', borderRadius: '6px', fontSize: '0.8rem',
+                padding: '10px 14px', borderRadius: '16px', fontSize: '0.8rem',
                 background: message.type === 'success' ? 'var(--success-bg)' : 'var(--danger-bg)',
                 color: message.type === 'success' ? 'var(--success)' : 'var(--danger)',
               }}
@@ -256,15 +323,17 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
             <button
               type="button"
               onClick={onClose}
-              style={{ padding: '8px 16px', borderRadius: '8px', border: '1px solid var(--border-subtle)', background: 'transparent', color: 'var(--text-muted)', fontSize: '0.84rem', cursor: 'pointer' }}
+              className="gemini-pill"
+              style={{ padding: '9px 20px', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-subtle)', background: 'transparent', color: 'var(--text-muted)', fontSize: '0.84rem', cursor: 'pointer' }}
             >
               {t('Hủy', 'Cancel')}
             </button>
             <button
               type="submit"
               disabled={importing}
+              className="gemini-pill"
               style={{
-                display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 18px', borderRadius: '8px', border: 'none',
+                display: 'flex', alignItems: 'center', gap: '6px', padding: '9px 22px', borderRadius: 'var(--radius-full)', border: 'none',
                 background: 'var(--brand-gradient)', color: '#fff', fontSize: '0.84rem', fontWeight: 600, cursor: 'pointer',
               }}
             >
@@ -273,6 +342,7 @@ export default function TranscriptImportModal({ isOpen, onClose, onImported, has
             </button>
           </div>
         </form>
+        )}
       </div>
     </div>
   );

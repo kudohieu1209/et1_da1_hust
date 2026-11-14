@@ -138,6 +138,15 @@ class VectorStoreManager:
                     self.collection.delete(ids=existing_ids)
             return {"status": "empty", "message": "Không tìm thấy tài liệu nào trong data/documents/", "count": 0}
 
+        if not force and current_count == len(chunks):
+            print(f"[VectorStoreManager] Kho tri thức đã đầy đủ ({current_count} chunks), bỏ qua bước re-index.")
+            return {
+                "status": "success",
+                "synced_chunks": 0,
+                "total_chunks": current_count,
+                "sources": list(set([c.metadata.get("source", "") for c in chunks]))
+            }
+
         if force and self.client:
             try:
                 self.client.delete_collection(self.collection_name)

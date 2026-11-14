@@ -7,17 +7,26 @@ import {
   Pin,
   Archive,
   Trash2,
-  FileText
+  FileText,
+  Award,
+  BookOpen,
+  TrendingUp,
+  Calendar,
+  GraduationCap
 } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import BrandLogo from './components/BrandLogo';
 import ChatTab from './components/ChatTab';
 import AuditTab from './components/AuditTab';
-import RecommendTab from './components/RecommendTab';
 import ProgramsTab from './components/ProgramsTab';
+import ImproveTab from './components/ImproveTab';
+import ScheduleTab from './components/ScheduleTab';
+import StudentServicesTab from './components/StudentServicesTab';
 import SettingsModal from './components/SettingsModal';
 import TranscriptImportModal from './components/TranscriptImportModal';
 import AuthScreen from './components/auth/AuthScreen';
+import { Capacitor } from '@capacitor/core';
+import { App as CapApp } from '@capacitor/app';
 import { API_BASE_URL, UNAUTHORIZED_EVENT, apiFetch, apiUrl } from './api';
 import { conversationIdFromUrl, urlWithConversationId } from './conversationUrl';
 
@@ -30,7 +39,8 @@ export default function App() {
   const [account, setAccount] = useState(undefined);
   const [authNotice, setAuthNotice] = useState(null);
   const [activeTab, setActiveTab] = useState('chat');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => typeof window !== 'undefined' ? window.innerWidth > 768 : true);
   const [isSidebarToggleHovered, setIsSidebarToggleHovered] = useState(false);
   const [studentProfile, setStudentProfile] = useState(null);
   const [auditData, setAuditData] = useState(null);
@@ -76,11 +86,43 @@ export default function App() {
     checkSession();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Bất kỳ API nào trả 401 (phiên hết hạn/bị thu hồi) thì quay về màn đăng nhập.
   useEffect(() => {
     const handleUnauthorized = () => resetSession('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
     window.addEventListener(UNAUTHORIZED_EVENT, handleUnauthorized);
     return () => window.removeEventListener(UNAUTHORIZED_EVENT, handleUnauthorized);
+  }, []);
+
+  // Xử lý nút Back của Android: nếu WebView có lịch sử thì quay lại, không thì thoát app (chỉ chạy trên native)
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+
+    let sub;
+    const registerBackHandler = async () => {
+      sub = await CapApp.addListener('backButton', ({ canGoBack }) => {
+        if (canGoBack || window.history.length > 1) {
+          window.history.back();
+        } else {
+          CapApp.exitApp();
+        }
+      });
+    };
+    registerBackHandler();
+
+    return () => {
+      if (sub && typeof sub.remove === 'function') {
+        sub.remove();
+      }
+    };
   }, []);
 
   // Update body class when theme changes
@@ -335,7 +377,7 @@ export default function App() {
   }
 
   return (
-    <div style={{ height: '100vh', display: 'flex', overflow: 'hidden', background: 'var(--bg-dark)' }}>
+    <div style={{ height: '100dvh', minHeight: '100dvh', display: 'flex', overflow: 'hidden', background: 'var(--bg-dark)' }}>
       {/* Collapsible navigation sidebar */}
       <Sidebar 
         isOpen={isSidebarOpen}
@@ -360,29 +402,31 @@ export default function App() {
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
+        height: '100dvh',
         overflow: 'hidden',
         position: 'relative'
       }}>
         {/* Workspace header */}
         <header style={{
-          height: '44px',
+          minHeight: '44px',
+          paddingTop: 'env(safe-area-inset-top, 0px)',
+          paddingLeft: 'max(16px, env(safe-area-inset-left, 0px))',
+          paddingRight: 'max(16px, env(safe-area-inset-right, 0px))',
           borderBottom: 'none',
           background: 'transparent',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '0 16px',
           zIndex: 30,
           flexShrink: 0
         }}>
-          {/* Left: Sidebar Toggle (when closed) & Student Switcher Pill */}
+          {/* Left: Sidebar Toggle (when closed or on mobile) & Student Switcher Pill */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {!isSidebarOpen && (
+            {(!isSidebarOpen || isMobile) && (
               <button
                 onClick={() => {
                   setIsSidebarToggleHovered(false);
-                  setIsSidebarOpen(true);
+                  setIsSidebarOpen(prev => !prev);
                 }}
                 title={language === 'vi' ? 'Mở thanh bên' : 'Open Sidebar'}
                 style={{
@@ -390,9 +434,9 @@ export default function App() {
                   border: 'none',
                   color: isSidebarToggleHovered ? 'var(--text-primary)' : 'var(--text-secondary)',
                   cursor: 'pointer',
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '8px',
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -404,17 +448,17 @@ export default function App() {
                 {isSidebarToggleHovered ? <PanelLeftOpen size={18} /> : <PanelLeft size={18} />}
               </button>
             )}
-            {!isSidebarOpen && (
+            {(!isSidebarOpen || isMobile) && (
               <button
                 type="button"
                 onClick={handleNewChat}
-                className="apple-press"
+                className="apple-press gemini-pill"
                 title={language === 'vi' ? 'Cuộc trò chuyện mới' : 'New chat'}
                 style={{
                   background: 'transparent',
                   border: 'none',
-                  padding: '4px 6px',
-                  borderRadius: '8px',
+                  padding: '6px 14px',
+                  borderRadius: 'var(--radius-full)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
@@ -446,12 +490,12 @@ export default function App() {
               onClick={() => setIsChatMenuOpen(prev => !prev)}
               title={language === 'vi' ? 'Tùy chọn đoạn chat' : 'Chat options'}
               style={{
-                width: '36px',
-                height: '36px',
+                width: '44px',
+                height: '44px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                borderRadius: '8px',
+                borderRadius: '50%',
                 border: 'none',
                 background: isChatMenuOpen ? 'var(--sidebar-hover)' : 'transparent',
                 color: isChatMenuOpen ? 'var(--text-primary)' : 'var(--text-secondary)',
@@ -481,8 +525,8 @@ export default function App() {
                 width: '235px',
                 background: 'var(--bg-surface)',
                 border: '1px solid var(--border-subtle)',
-                borderRadius: '14px',
-                padding: '6px',
+                borderRadius: '20px',
+                padding: '8px',
                 boxShadow: 'var(--shadow-md)',
                 backdropFilter: 'blur(20px)',
                 zIndex: 100,
@@ -496,12 +540,13 @@ export default function App() {
                     setIsChatMenuOpen(false);
                     handleOpenImport();
                   }}
+                  className="gemini-pill"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
-                    padding: '9px 12px',
-                    borderRadius: '8px',
+                    padding: '9px 14px',
+                    borderRadius: 'var(--radius-full)',
                     border: 'none',
                     background: 'transparent',
                     color: 'var(--text-primary)',
@@ -525,12 +570,13 @@ export default function App() {
                     setIsChatMenuOpen(false);
                     handleConversationAction('pin');
                   }}
+                  className="gemini-pill"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
-                    padding: '9px 12px',
-                    borderRadius: '8px',
+                    padding: '9px 14px',
+                    borderRadius: 'var(--radius-full)',
                     border: 'none',
                     background: 'transparent',
                     color: 'var(--text-primary)',
@@ -558,12 +604,13 @@ export default function App() {
                     setIsChatMenuOpen(false);
                     handleConversationAction('archive');
                   }}
+                  className="gemini-pill"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
-                    padding: '9px 12px',
-                    borderRadius: '8px',
+                    padding: '9px 14px',
+                    borderRadius: 'var(--radius-full)',
                     border: 'none',
                     background: 'transparent',
                     color: 'var(--text-primary)',
@@ -587,12 +634,13 @@ export default function App() {
                     setIsChatMenuOpen(false);
                     handleConversationAction('delete');
                   }}
+                  className="gemini-pill"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
-                    padding: '9px 12px',
-                    borderRadius: '8px',
+                    padding: '9px 14px',
+                    borderRadius: 'var(--radius-full)',
                     border: 'none',
                     background: 'transparent',
                     color: 'var(--danger)',
@@ -613,6 +661,66 @@ export default function App() {
             )}
           </div>
         </header>
+
+        {/* Mobile Navigation Segmented Pill Bar */}
+        {isMobile && (
+          <nav 
+            className="mobile-tab-bar"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '6px 12px 10px',
+              paddingLeft: 'max(12px, env(safe-area-inset-left, 0px))',
+              paddingRight: 'max(12px, env(safe-area-inset-right, 0px))',
+              background: 'transparent',
+              overflowX: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              borderBottom: '1px solid var(--border-subtle)',
+              flexShrink: 0
+            }}
+          >
+            {[
+              { id: 'chat', label: language === 'vi' ? 'Trò chuyện' : 'Chat', icon: <Sparkles size={14} /> },
+              { id: 'audit', label: language === 'vi' ? 'Tiến độ CPA' : 'Audit', icon: <Award size={14} /> },
+              { id: 'improve', label: language === 'vi' ? 'Cải thiện CPA' : 'Improve', icon: <TrendingUp size={14} /> },
+              { id: 'schedule', label: language === 'vi' ? 'Thời khóa biểu' : 'Schedule', icon: <Calendar size={14} /> },
+              { id: 'services', label: language === 'vi' ? 'Tiện ích CTT' : 'Services', icon: <GraduationCap size={14} /> },
+              { id: 'programs', label: language === 'vi' ? 'CTĐT' : 'Programs', icon: <BookOpen size={14} /> }
+            ].map(tab => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  className="apple-press gemini-pill"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '8px 14px',
+                    minHeight: '44px',
+                    borderRadius: 'var(--radius-full)',
+                    border: isActive ? '1px solid rgba(213, 19, 42, 0.3)' : '1px solid var(--border-subtle)',
+                    background: isActive ? 'rgba(213, 19, 42, 0.12)' : 'var(--bg-card)',
+                    color: isActive ? 'var(--brand-accent)' : 'var(--text-secondary)',
+                    fontWeight: isActive ? '600' : '450',
+                    fontSize: '0.8rem',
+                    cursor: 'pointer',
+                    whiteSpace: 'nowrap',
+                    flex: '1 0 auto',
+                    justifyContent: 'center',
+                    transition: 'all 0.15s ease'
+                  }}
+                >
+                  {tab.icon}
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </nav>
+        )}
 
         {/* Apple Dynamic Island Toast Notification */}
         {toastMessage && (
@@ -643,7 +751,8 @@ export default function App() {
               <div style={{ 
                 height: '100%', 
                 overflowY: 'auto', 
-                padding: '24px 28px',
+                WebkitOverflowScrolling: 'touch',
+                padding: isMobile ? '12px 12px 32px' : '24px 28px',
                 maxWidth: '1280px',
                 margin: '0 auto'
               }}>
@@ -656,9 +765,14 @@ export default function App() {
                     language={language}
                   />
                 )}
-
-                {activeTab === 'recommend' && (
-                  <RecommendTab />
+                {activeTab === 'improve' && (
+                  <ImproveTab language={language} />
+                )}
+                {activeTab === 'schedule' && (
+                  <ScheduleTab language={language} syncVersion={studentProfile?.school_sync?.synced_at} onOpenImport={handleOpenImport} />
+                )}
+                {activeTab === 'services' && (
+                  <StudentServicesTab language={language} syncVersion={studentProfile?.school_sync?.synced_at} onOpenImport={handleOpenImport} />
                 )}
                 {activeTab === 'programs' && <ProgramsTab />}
               </div>

@@ -250,6 +250,13 @@ class DataLoader:
         """
         key = self.find_profile_key(student_id) or student_id
         curriculum = curriculum_repository.resolve_profile(profile)
+        program = curriculum["program"]
+        profile.setdefault("info", {}).update({
+            "program_code": program["program_code"],
+            "program_id": program.get("program_id", program["program_code"]),
+            "program_name": program.get("name", ""),
+            "curriculum_version": str(program["curriculum_version"]),
+        })
         with self._lock:
             self._profiles.save(key, profile)
             state = _build_state(profile, curriculum, key)
@@ -270,6 +277,9 @@ class DataLoader:
         for field, value in updates.items():
             if value is not None:
                 candidate["info"][field] = value
+        if "program_code" in updates and updates["program_code"]:
+            candidate["info"]["program_code"] = updates["program_code"].upper()
+            candidate["info"].pop("curriculum_version", None)
         return self.save_profile_for(student_id, candidate)
 
     def get_course(self, code: str) -> Optional[Dict[str, Any]]:

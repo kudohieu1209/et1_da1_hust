@@ -59,7 +59,12 @@ export default function AccountSecurity({ account, language, onPasswordChanged, 
         </dl>
       </section>
 
-      <form className="settings-section" onSubmit={handleSubmit}>
+      {account?.auth_provider === 'ctt' ? (
+        <section className="settings-section">
+          <h3>{t('Đăng nhập bằng tài khoản trường', 'Signed in with HUST')}</h3>
+          <p className="settings-hint">{t('Mật khẩu được quản lý tại cổng tài khoản của trường. HUST Advisor không nhận hoặc lưu mật khẩu này.', 'Your password is managed by HUST. HUST Advisor does not receive or store it.')}</p>
+        </section>
+      ) : <form className="settings-section" onSubmit={handleSubmit}>
         <h3>{t('Đổi mật khẩu', 'Change password')}</h3>
         <p className="settings-hint">
           {t('Sau khi đổi, mọi thiết bị đều bị đăng xuất và bạn cần đăng nhập lại.', 'All devices are signed out after the change.')}
@@ -87,7 +92,7 @@ export default function AccountSecurity({ account, language, onPasswordChanged, 
             {isSaving ? t('Đang đổi…', 'Saving…') : t('Đổi mật khẩu', 'Change password')}
           </button>
         </div>
-      </form>
+      </form>}
 
       <section className="settings-section">
         <h3>{t('Đăng xuất', 'Log out')}</h3>

@@ -4,7 +4,7 @@
 .mascot-picker__options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .mascot-picker__option { position: relative; cursor: pointer; min-width: 0; }
 .mascot-picker__option input { position: absolute; width: 1px; height: 1px; opacity: 0; }
-.mascot-picker__card { position: relative; display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 12px 8px; border: 1px solid var(--border-subtle); border-radius: 14px; background: var(--bg-card); }
+.mascot-picker__card { position: relative; display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 14px 10px; border: 1px solid var(--border-subtle); border-radius: 20px; background: var(--bg-card); transition: all 160ms ease; }
 .mascot-picker__art { display: grid; place-items: end center; width: 100%; height: 132px; }
 .mascot-picker__art img { display: block; width: 132px; max-width: 100%; height: 132px; object-fit: contain; }
 .mascot-picker__label { font-size: 0.82rem; font-weight: 600; }

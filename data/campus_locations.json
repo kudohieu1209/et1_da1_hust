@@ -1,0 +1,603 @@
+﻿[
+    {
+        "name":  "Nhà thi đấu",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.003269,
+                       "lng":  105.846818
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.003269,105.846818"
+    },
+    {
+        "name":  "D3",
+        "code":  "D3",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004784,
+                       "lng":  105.844992
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004784,105.844992"
+    },
+    {
+        "name":  "Trung tâm liên hợp thực hành công nghệ",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.00394,
+                       "lng":  105.849058
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.00394,105.849058"
+    },
+    {
+        "name":  "B10",
+        "code":  "B10",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.005286,
+                       "lng":  105.847483
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005286,105.847483"
+    },
+    {
+        "name":  "B8",
+        "code":  "B8",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.005258,
+                       "lng":  105.846082
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005258,105.846082"
+    },
+    {
+        "name":  "C2",
+        "code":  "C2",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006394,
+                       "lng":  105.842298
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006394,105.842298"
+    },
+    {
+        "name":  "D8",
+        "code":  "D8",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.003975,
+                       "lng":  105.842605
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.003975,105.842605"
+    },
+    {
+        "name":  "B3",
+        "code":  "B3",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.005627,
+                       "lng":  105.847542
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005627,105.847542"
+    },
+    {
+        "name":  "B7",
+        "code":  "B7",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006036,
+                       "lng":  105.846068
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006036,105.846068"
+    },
+    {
+        "name":  "D7",
+        "code":  "D7",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004128,
+                       "lng":  105.84491
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004128,105.84491"
+    },
+    {
+        "name":  "C1",
+        "code":  "C1",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006996,
+                       "lng":  105.843009
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006996,105.843009"
+    },
+    {
+        "name":  "B6",
+        "code":  "B6",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006457,
+                       "lng":  105.846111
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006457,105.846111"
+    },
+    {
+        "name":  "B5",
+        "code":  "B5",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006433,
+                       "lng":  105.846859
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006433,105.846859"
+    },
+    {
+        "name":  "C10",
+        "code":  "C10",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.00543,
+                       "lng":  105.843986
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.00543,105.843986"
+    },
+    {
+        "name":  "D6",
+        "code":  "D6",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004327,
+                       "lng":  105.842676
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004327,105.842676"
+    },
+    {
+        "name":  "B13",
+        "code":  "B13",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006581,
+                       "lng":  105.847613
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006581,105.847613"
+    },
+    {
+        "name": "Thư viện Tạ Quang Bửu",
+        "code":  "TVTQB",
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.004486,
+                       "lng":  105.844088
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004486,105.844088"
+    },
+    {
+        "name":  "B9",
+        "code":  "B9",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006074,
+                       "lng":  105.846882
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006074,105.846882"
+    },
+    {
+        "name":  "C9",
+        "code":  "C9",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.005855,
+                       "lng":  105.842098
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005855,105.842098"
+    },
+    {
+        "name":  "TC",
+        "code":  "TC",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.002719,
+                       "lng":  105.84647
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.002719,105.84647"
+    },
+    {
+        "name":  "C3",
+        "code":  "C3",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006573,
+                       "lng":  105.843818
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006573,105.843818"
+    },
+    {
+        "name":  "C4",
+        "code":  "C4",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006184,
+                       "lng":  105.843959
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006184,105.843959"
+    },
+    {
+        "name":  "C5",
+        "code":  "C5",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.005782,
+                       "lng":  105.843956
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005782,105.843956"
+    },
+    {
+        "name":  "C6",
+        "code":  "C6",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006214,
+                       "lng":  105.845037
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006214,105.845037"
+    },
+    {
+        "name":  "HiTech",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006947,
+                       "lng":  105.844148
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006947,105.844148"
+    },
+    {
+        "name":  "B1",
+        "code":  "B1",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004564,
+                       "lng":  105.846609
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004564,105.846609"
+    },
+    {
+        "name":  "D3-5",
+        "code":  "D3-5",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004485,
+                       "lng":  105.845292
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004485,105.845292"
+    },
+    {
+        "name":  "Highlands Coffee",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.00487,
+                       "lng":  105.845871
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.00487,105.845871"
+    },
+    {
+        "name":  "A17",
+        "code":  "A17",
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.00388,
+                       "lng":  105.84762
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.00388,105.84762"
+    },
+    {
+        "name":  "B7bis",
+        "code":  "B7bis",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.005677,
+                       "lng":  105.846087
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005677,105.846087"
+    },
+    {
+        "name":  "C3b",
+        "code":  "C3b",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006667,
+                       "lng":  105.844842
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006667,105.844842"
+    },
+    {
+        "name":  "Nhà Cựu sinh viên",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004722,
+                       "lng":  105.843486
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004722,105.843486"
+    },
+    {
+        "name":  "C15",
+        "code":  "C15",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.00601,
+                       "lng":  105.845409
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.00601,105.845409"
+    },
+    {
+        "name":  "C10b",
+        "code":  "C10b",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.005406,
+                       "lng":  105.844463
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005406,105.844463"
+    },
+    {
+        "name":  "ITIMS",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.005528,
+                       "lng":  105.843557
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005528,105.843557"
+    },
+    {
+        "name":  "B4",
+        "code":  "B4",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.005995,
+                       "lng":  105.848029
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005995,105.848029"
+    },
+    {
+        "name":  "B5b",
+        "code":  "B5b",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006582,
+                       "lng":  105.846949
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006582,105.846949"
+    },
+    {
+        "name":  "D2A",
+        "code":  "D2A",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004853,
+                       "lng":  105.842597
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004853,105.842597"
+    },
+    {
+        "name":  "Trung tâm Việt Đức",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.00473,
+                       "lng":  105.843121
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.00473,105.843121"
+    },
+    {
+        "name":  "HUST Digital Hub",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.004725,
+                       "lng":  105.84329
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004725,105.84329"
+    },
+    {
+        "name":  "D4",
+        "code":  "D4",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004249,
+                       "lng":  105.842079
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004249,105.842079"
+    },
+    {
+        "name":  "D2B",
+        "code":  "D2B",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004828,
+                       "lng":  105.842889
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004828,105.842889"
+    },
+    {
+        "name":  "Nhà A",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.001932,
+                       "lng":  105.848737
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.001932,105.848737"
+    },
+    {
+        "name":  "E",
+        "code":  "E",
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.003709,
+                       "lng":  105.848207
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.003709,105.848207"
+    },
+    {
+        "name":  "A2",
+        "code":  "A2",
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.0029,
+                       "lng":  105.848835
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.0029,105.848835"
+    },
+    {
+        "name":  "A3",
+        "code":  "A3",
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.003234,
+                       "lng":  105.848623
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.003234,105.848623"
+    },
+    {
+        "name":  "Nhà khách",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004083,
+                       "lng":  105.847872
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004083,105.847872"
+    },
+    {
+        "name":  "Nhà ăn",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004369,
+                       "lng":  105.847571
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004369,105.847571"
+    },
+    {
+        "name":  "Hội trường B6",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006247,
+                       "lng":  105.846186
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006247,105.846186"
+    },
+    {
+        "name":  "C4b",
+        "code":  "C4b",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006356,
+                       "lng":  105.844238
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006356,105.844238"
+    },
+    {
+        "name":  "C7",
+        "code":  "C7",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.00559,
+                       "lng":  105.844985
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.00559,105.844985"
+    },
+    {
+        "name":  "D5",
+        "code":  "D5",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.004372,
+                       "lng":  105.844954
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004372,105.844954"
+    },
+    {
+        "name":  "ADCBook",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.004688,
+                       "lng":  105.845815
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.004688,105.845815"
+    },
+    {
+        "name":  "Trung tâm Phục vụ Tổng hợp",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.005195,
+                       "lng":  105.846888
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005195,105.846888"
+    },
+    {
+        "name":  "Phòng thí nghiệm Kỹ thuật in",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.003225,
+                       "lng":  105.846294
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.003225,105.846294"
+    },
+    {
+        "name":  "Căng tin B5-9",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006254,
+                       "lng":  105.847104
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006254,105.847104"
+    },
+    {
+        "name":  "Trung tâm đào tạo thực hành ĐTVT",
+        "code":  null,
+        "category":  "tien_ich",
+        "center":  {
+                       "lat":  21.005783,
+                       "lng":  105.847494
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.005783,105.847494"
+    },
+    {
+        "name":  "B13b",
+        "code":  "B13b",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006741,
+                       "lng":  105.84758
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006741,105.84758"
+    },
+    {
+        "name":  "Nhà tôn",
+        "code":  null,
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.006377,
+                       "lng":  105.847941
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.006377,105.847941"
+    },
+    {
+        "name":  "D9",
+        "code":  "D9",
+        "category":  "giang_duong",
+        "center":  {
+                       "lat":  21.003835,
+                       "lng":  105.84411
+                   },
+        "google_maps_url":  "https://www.google.com/maps/dir/?api=1\u0026destination=21.003835,105.84411"
+    }
+]
+

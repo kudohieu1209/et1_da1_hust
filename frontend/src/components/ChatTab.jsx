@@ -472,7 +472,7 @@ export default function ChatTab({
           border: 'none',
           color: isListening ? 'var(--brand-accent)' : 'var(--text-primary)',
           fontWeight: isListening ? '600' : 'normal',
-          fontSize: '0.96rem',
+          fontSize: '1rem',
           outline: 'none',
           fontFamily: 'inherit',
           resize: 'none',
@@ -602,7 +602,7 @@ export default function ChatTab({
           {/* Header Title */}
           <StudentWelcome language={language} />
           <h1 style={{
-            fontSize: '1.9rem',
+            fontSize: 'clamp(1.35rem, 4.5vw, 1.85rem)',
             fontWeight: '600',
             color: 'var(--text-primary)',
             letterSpacing: '-0.02em',
@@ -631,13 +631,13 @@ export default function ChatTab({
               <button
                 key={item.id}
                 onClick={() => !loading && handleSend(item.query)}
-                className="apple-press"
+                className="apple-press gemini-pill"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px',
-                  padding: '7px 12px',
-                  borderRadius: '10px',
+                  padding: '9px 16px',
+                  borderRadius: 'var(--radius-full)',
                   border: 'none',
                   background: 'transparent',
                   color: 'var(--text-muted)',
@@ -688,7 +688,8 @@ export default function ChatTab({
       <div style={{
         flex: 1,
         overflowY: 'auto',
-        padding: '24px 20px 140px',
+        WebkitOverflowScrolling: 'touch',
+        padding: '20px 14px calc(150px + env(safe-area-inset-bottom, 0px))',
         display: 'flex',
         flexDirection: 'column'
       }}>
@@ -711,13 +712,13 @@ export default function ChatTab({
                   }}
                 >
                   <div style={{
-                    maxWidth: '80%',
-                    padding: '12px 20px',
+                    maxWidth: 'min(88%, 680px)',
+                    padding: '11px 18px',
                     borderRadius: '20px',
                     background: 'var(--chat-user-bubble)',
                     border: '1px solid var(--chat-user-bubble-border)',
                     color: 'var(--text-primary)',
-                    fontSize: '0.96rem',
+                    fontSize: '1rem',
                     fontWeight: '500',
                     lineHeight: '1.55',
                     wordBreak: 'break-word',
@@ -802,13 +803,14 @@ export default function ChatTab({
                               key={idx} 
                               {...(SourceTag === 'a' ? { href: s.source_url, target: '_blank', rel: 'noopener noreferrer' } : {})}
                               title={s.title || cleanName}
+                              className="gemini-pill"
                               style={{
                                 fontSize: '0.74rem',
                                 background: 'rgba(213, 19, 42, 0.08)',
                                 color: 'var(--text-secondary)',
                                 border: '1px solid rgba(213, 19, 42, 0.2)',
-                                padding: '3px 8px',
-                                borderRadius: '6px',
+                                padding: '4px 10px',
+                                borderRadius: 'var(--radius-full)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 gap: '4px'
@@ -839,8 +841,9 @@ export default function ChatTab({
                       border: 'none',
                       color: 'var(--text-muted)',
                       cursor: 'pointer',
-                      padding: '6px',
-                      borderRadius: '6px',
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -865,8 +868,9 @@ export default function ChatTab({
                       border: 'none',
                       color: 'var(--text-muted)',
                       cursor: 'pointer',
-                      padding: '6px',
-                      borderRadius: '6px',
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -891,8 +895,9 @@ export default function ChatTab({
                       border: 'none',
                       color: 'var(--text-muted)',
                       cursor: 'pointer',
-                      padding: '6px',
-                      borderRadius: '6px',
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -921,8 +926,9 @@ export default function ChatTab({
                       border: 'none',
                       color: 'var(--text-muted)',
                       cursor: 'pointer',
-                      padding: '6px',
-                      borderRadius: '6px',
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -952,14 +958,14 @@ export default function ChatTab({
                     {msg.suggested_actions.map((act, i) => (
                       <button
                         key={i}
-                        className="apple-chip"
+                        className="apple-chip gemini-pill"
                         onClick={() => handleSend(act)}
                         style={{
                           display: 'flex',
                           alignItems: 'center',
                           gap: '6px',
-                          padding: '6px 14px',
-                          borderRadius: '16px',
+                          padding: '7px 16px',
+                          borderRadius: 'var(--radius-full)',
                           border: '1px solid var(--border-subtle)',
                           background: 'var(--bg-card)',
                           color: 'var(--text-secondary)',
@@ -1033,7 +1039,7 @@ export default function ChatTab({
         left: 0,
         right: 0,
         background: 'linear-gradient(to top, var(--bg-dark) 70%, transparent 100%)',
-        padding: '16px 20px 18px',
+        padding: '14px 16px calc(14px + env(safe-area-inset-bottom, 0px))',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

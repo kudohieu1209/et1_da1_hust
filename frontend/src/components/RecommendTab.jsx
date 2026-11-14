@@ -109,7 +109,7 @@ export default function RecommendTab() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
           gap: '14px'
         }}>
           {(tracks || []).map(t => {
@@ -131,9 +131,9 @@ export default function RecommendTab() {
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '10px',
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '50%',
                     background: isSelected ? 'var(--hust-red)' : t.bg,
                     display: 'flex',
                     alignItems: 'center',
@@ -261,7 +261,7 @@ export default function RecommendTab() {
                   <div style={{
                     width: '32px',
                     height: '32px',
-                    borderRadius: '8px',
+                    borderRadius: '50%',
                     background: 'rgba(213, 19, 42, 0.15)',
                     color: 'var(--brand-accent)',
                     display: 'flex',

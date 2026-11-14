@@ -1,5 +1,5 @@
 import math
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from app.core.hust_rules import (
     GRADE_TO_SCALE4,
@@ -10,6 +10,8 @@ from app.core.hust_rules import (
     parse_grade_from_line,
 )
 from app.services.data_loader import data_loader
+from app.services.ctt_service import ctt_parser, ctt_scraper
+from app.engine.improve_engine import course_improvement_engine
 
 
 class StudentService:
@@ -193,17 +195,26 @@ class StudentService:
             pending_reqs.append(f"CPA cần đạt tối thiểu {MIN_GRADUATION_CPA:.1f} (hiện tại: {cpa})")
 
         declared_requirements = profile.get("non_credit_status", {})
+        from app.services.non_credit_coursework import assess_non_credit_coursework
+        coursework = assess_non_credit_coursework(profile, data_loader.get_curriculum())
         non_credit_groups = [
             {
                 "group_id": group["id"],
                 "requirement_id": group["requirement_id"],
                 "name": group["name"],
                 "course_codes": group["course_codes"],
-                "status": declared_requirements.get(group["requirement_id"], "unverified"),
-                "note": "Theo khai báo của sinh viên từ CTT; không thay thế xác nhận tốt nghiệp của nhà trường.",
+                "status": declared_requirements.get(group["requirement_id"], "unverified") if declared_requirements.get(group["requirement_id"], "unverified") != 'unverified' else coursework.get(group['requirement_id'], {}).get('status', 'unverified'),
+                "source": profile.get("non_credit_sources", {}).get(group["requirement_id"], {}).get("source", "declared"),
+                "note": "Đồng bộ từ trạng thái trên CTT." if profile.get("non_credit_sources", {}).get(group["requirement_id"], {}).get("source") == "ctt" else "Theo khai báo của sinh viên; cần đối chiếu hồ sơ nhà trường.",
             }
             for group in self._non_credit_groups()
         ]
+        for item in non_credit_groups:
+            progress = coursework.get(item['requirement_id'])
+            if progress:
+                item['coursework'] = progress
+                if declared_requirements.get(item['requirement_id'], 'unverified') == 'unverified':
+                    item.update(source='coursework', note=progress['note'])
         academic_requirements_met = not pending_reqs
         for requirement in non_credit_groups:
             if requirement["status"] != "completed":
@@ -278,15 +289,21 @@ class StudentService:
 
         source_items = []
         skipped = []
+        parsed_semesters = []
         if raw_text:
-            for line in raw_text.splitlines():
-                code_match = re.search(r"\b([A-Z]{2,3}\d{4}[A-Z]?)\b", line.upper())
-                if code_match:
-                    source_items.append({
-                        "code": code_match.group(1),
-                        "letter_grade": parse_grade_from_line(line[code_match.end():]),
-                        "_line": line.strip(),
-                    })
+            if "<table" in raw_text.lower() or "<tr" in raw_text.lower():
+                parsed_res = ctt_parser.parse_transcript_html(raw_text)
+                source_items = parsed_res.get("transcript", [])
+                parsed_semesters = parsed_res.get("semesters", [])
+            else:
+                for line in raw_text.splitlines():
+                    code_match = re.search(r"\b([A-Z]{2,3}\d{4}[A-Z]?)\b", line.upper())
+                    if code_match:
+                        source_items.append({
+                            "code": code_match.group(1),
+                            "letter_grade": parse_grade_from_line(line[code_match.end():]),
+                            "_line": line.strip(),
+                        })
         else:
             source_items = data.get("courses", [])
 
@@ -314,6 +331,10 @@ class StudentService:
                 "letter_grade": letter,
                 "numeric_grade": GRADE_TO_SCALE4.get(letter, 0.0),
                 "is_passed": letter != "F",
+                "semester": item.get("semester"),
+                "midterm_grade": item.get("midterm_grade"),
+                "final_grade": item.get("final_grade"),
+                "class_code": item.get("class_code"),
             })
 
         if unresolved:
@@ -331,20 +352,29 @@ class StudentService:
 
         info = dict(existing.get("info", {}))
         if "warning_level" in data:
+            if data["warning_level"] != info.get("warning_level"):
+                info.pop("warning_source", None)
             # Mức cảnh báo học tập hiển thị trên CTT (0-3), nếu sinh viên nhập.
             if data["warning_level"] is None:
                 info.pop("warning_level", None)
             else:
                 info["warning_level"] = data["warning_level"]
+        requirement_sources = dict(existing.get("non_credit_sources", {}))
+        for requirement_id, status in non_credit_status.items():
+            if status != existing.get("non_credit_status", {}).get(requirement_id):
+                requirement_sources.pop(requirement_id, None)
         custom_profile = {
             **existing,
             "info": info,
             "non_credit_status": {**existing.get("non_credit_status", {}), **non_credit_status},
+            "non_credit_sources": requirement_sources,
             "total_courses_completed": sum(item["is_passed"] for item in transcript),
             "passed_courses": [item for item in transcript if item["is_passed"]],
             "failed_courses": [item for item in transcript if not item["is_passed"]],
             "transcript": transcript,
         }
+        if parsed_semesters:
+            custom_profile["semesters"] = parsed_semesters
         data_loader.save_profile_for(student_id, custom_profile)
         return {
             "status": "success",
@@ -354,6 +384,23 @@ class StudentService:
             "profile": custom_profile,
             "audit": self.audit_degree(),
         }
+
+    def sync_from_ctt(self, username: str, password: str, student_id: str) -> Dict[str, Any]:
+        """Tự động đăng nhập vào CTT và đồng bộ bảng điểm."""
+        ok, msg, session = ctt_scraper.login(username, password)
+        if not ok or not session:
+            raise ValueError(msg)
+
+        ok_grade, html_content = ctt_scraper.fetch_student_grade_page(session)
+        if not ok_grade:
+            raise ValueError(html_content)
+
+        return self.import_transcript({"raw_text": html_content}, student_id)
+
+    def get_course_improvements(self, student_id: Optional[str] = None) -> Dict[str, Any]:
+        """Phân tích các môn cần cải thiện để nâng CPA theo quy chế HUST."""
+        profile = self.get_profile()
+        return course_improvement_engine.analyze_improvements(profile)
 
     def update_profile(self, payload: Dict[str, Any], student_id: str) -> Dict[str, Any]:
         profile = data_loader.update_profile_info_for(student_id, payload)

@@ -24,6 +24,7 @@ def _user_view(raw: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "student_id": raw["student_id"],
         "password_hash": raw["password_hash"],
+        "auth_provider": raw.get("auth_provider", "local"),
         "is_admin": bool(raw.get("is_admin")),
         "is_demo": bool(raw.get("is_demo")),
         "failed_attempts": int(raw.get("failed_attempts") or 0),
@@ -58,6 +59,7 @@ class MongoAuthStore:
                 {
                     "_id": user["student_id"],
                     "password_hash": user["password_hash"],
+                    "auth_provider": user.get("auth_provider", "local"),
                     "is_admin": bool(user.get("is_admin")),
                     "is_demo": bool(user.get("is_demo")),
                     "failed_attempts": 0,

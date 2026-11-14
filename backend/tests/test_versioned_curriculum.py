@@ -180,6 +180,35 @@ class CohortLookupTests(unittest.TestCase):
         self.assertEqual(curriculum["program"]["total_required_credits"], 132)
         self.assertIn("chưa đối chiếu thủ công", curriculum["build_warnings"][0])
 
+    def test_infer_program_code_from_class_names(self):
+        cases = {
+            "Điện tử 02 - K67": "ET1",
+            "Kỹ thuật Điện tử - Viễn thông 01-K67": "ET1",
+            "Điện tử Y sinh 01 - K68": "ET2",
+            "Kỹ thuật Điện 01 - K68": "EE1",
+            "Điều khiển & TĐH 01 - K68": "EE2",
+            "Cơ điện tử 01 - K70": "ME1",
+            "Kỹ thuật Sinh học 01 - K68": "BF1",
+            "Sinh học tiên tiến 01 - K68": "BF-E19",
+            "Kỹ thuật Thực phẩm 01 - K70": "BF2",
+            "Kỹ thuật Môi trường 01 - K70": "EV1",
+            "Quản lý Tài nguyên và Môi trường 01 - K68": "EV2",
+            "Công nghệ giáo dục 01 - K68": "ED2",
+            "Kỹ thuật Vật liệu 01 - K67": "MS1",
+            "Tiếng Anh Chuyên nghiệp Quốc tế 01 - K67": "FL2",
+            "Tiếng Trung KH&CN 01 - K70": "FL3",
+            "Cơ khí hàng không 01 - K68": "TE-EP",
+        }
+        for name, expected in cases.items():
+            with self.subTest(name=name):
+                self.assertEqual(curriculum_repository.infer_program_code(name), expected)
+
+    def test_resolve_profile_auto_detects_program_from_class_name(self):
+        profile = {"info": {"class_name": "Điện tử 02 - K67"}}
+        curriculum = curriculum_repository.resolve_profile(profile)
+        self.assertEqual(curriculum["program"]["program_code"], "ET1")
+        self.assertEqual(curriculum["program"]["curriculum_version"], "2022")
+
 
 if __name__ == "__main__":
     unittest.main()

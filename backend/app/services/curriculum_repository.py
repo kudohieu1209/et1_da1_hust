@@ -72,6 +72,8 @@ class CurriculumRepository:
     def resolve_profile(self, profile: Dict[str, Any]) -> Dict[str, Any]:
         info = profile.get("info", {})
         program = str(info.get("program_code") or info.get("program_id") or "").upper()
+        if not program:
+            program = self.infer_program_code(str(info.get("class_name", ""))) or ""
         stored_version = str(info.get("curriculum_version") or "")
         entry_year = self._infer_version(info)
         if not program:
@@ -90,6 +92,49 @@ class CurriculumRepository:
                 f"nhưng đang trỏ tới CTĐT {stored_version}."
             )
         return curriculum
+
+    @staticmethod
+    def infer_program_code(class_name: str) -> Optional[str]:
+        """Tự động suy luận mã CTĐT (program_code) từ tên lớp của sinh viên."""
+        if not class_name:
+            return None
+        import unicodedata
+        for code in ["BF-E19", "TE-EP", "BF1", "BF2", "ED2", "EE1", "EE2", "ET1", "ET2", "EV1", "EV2", "FL2", "FL3", "ME1", "MS1"]:
+            if re.search(rf"\b{re.escape(code)}\b", class_name, re.I):
+                return code
+        folded = unicodedata.normalize("NFD", class_name.lower().replace("đ", "d"))
+        folded = " ".join("".join(c for c in folded if not unicodedata.combining(c)).split()).strip(" :")
+        if "pfiev" in folded or "hang khong" in folded:
+            return "TE-EP"
+        if "co dien tu" in folded:
+            return "ME1"
+        if "y sinh" in folded:
+            return "ET2"
+        if "dien tu" in folded or "vien thong" in folded or "dtvt" in folded:
+            return "ET1"
+        if ("sinh hoc" in folded or "bf" in folded) and ("tien tien" in folded or "elitech" in folded or "e19" in folded):
+            return "BF-E19"
+        if "sinh hoc" in folded:
+            return "BF1"
+        if "thuc pham" in folded:
+            return "BF2"
+        if "giao duc" in folded:
+            return "ED2"
+        if "tu dong" in folded or "dieu khien" in folded or "tdh" in folded:
+            return "EE2"
+        if "ky thuat dien" in folded or "he thong dien" in folded or "dien luc" in folded or re.search(r"\bdien\s+\d", folded):
+            return "EE1"
+        if "tai nguyen" in folded:
+            return "EV2"
+        if "moi truong" in folded:
+            return "EV1"
+        if "tieng trung" in folded:
+            return "FL3"
+        if "tieng anh" in folded or "anh van" in folded:
+            return "FL2"
+        if "vat lieu" in folded:
+            return "MS1"
+        return None
 
     def supports_profile(self, profile: Dict[str, Any]) -> bool:
         try:

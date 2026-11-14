@@ -4,8 +4,10 @@ import AccountMenu from './account/AccountMenu';
 import { 
   Plus, 
   Award, 
-  CheckCircle2, 
   BookOpen,
+  TrendingUp,
+  Calendar,
+  GraduationCap,
   PanelLeft,
   PanelLeftClose,
   Search,
@@ -48,6 +50,15 @@ export default function Sidebar({
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredConversationId, setHoveredConversationId] = useState(null);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const [menuState, setMenuState] = useState({
     isOpen: false,
     conversationId: null,
@@ -208,41 +219,85 @@ export default function Sidebar({
 
   const toolItems = [
     { id: 'audit', label: language === 'vi' ? 'Tiến độ học tập & CPA' : 'Degree Audit & CPA', icon: Award },
-    { id: 'recommend', label: language === 'vi' ? 'Gợi ý chọn môn' : 'Course Suggestions', icon: CheckCircle2 },
+    { id: 'improve', label: language === 'vi' ? 'Cải thiện điểm CPA' : 'Improve CPA', icon: TrendingUp },
+    { id: 'schedule', label: language === 'vi' ? 'Thời khóa biểu & Lịch thi' : 'Schedule & Exams', icon: Calendar },
+    { id: 'services', label: language === 'vi' ? 'Tiện ích CTT (Học phí, TOEIC, Lớp)' : 'Student Services', icon: GraduationCap },
     { id: 'programs', label: language === 'vi' ? 'CTĐT toàn trường' : 'All programs', icon: BookOpen },
   ];
 
+  const handleNewChatClick = () => {
+    if (isMobile) setIsOpen(false);
+    onNewChat();
+  };
+
+  const handleToolClick = (tabId) => {
+    if (isMobile) setIsOpen(false);
+    setActiveTab(tabId);
+  };
+
+  const handleSelectConvClick = (convId) => {
+    if (isMobile) setIsOpen(false);
+    onSelectConversation(convId);
+  };
+
   return (
-    <aside 
-      style={{
-        width: isOpen ? `${width}px` : '0px',
-        minWidth: isOpen ? `${width}px` : '0px',
-        transition: isResizing ? 'none' : 'width 0.32s var(--ease-apple), min-width 0.32s var(--ease-apple)',
-        height: '100vh',
-        background: 'var(--sidebar-bg)',
-        borderRight: isOpen ? '1px solid var(--border-subtle)' : 'none',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
-        position: 'relative',
-        zIndex: 50,
-        flexShrink: 0
-      }}
-    >
+    <>
+      {isMobile && isOpen && (
+        <div 
+          className="sidebar-backdrop"
+          onClick={() => setIsOpen(false)}
+          aria-label={language === 'vi' ? 'Đóng thanh bên' : 'Close sidebar'}
+        />
+      )}
+      <aside 
+        style={isMobile ? {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          bottom: 0,
+          height: '100dvh',
+          width: 'min(300px, 84vw)',
+          minWidth: 'min(300px, 84vw)',
+          background: 'var(--sidebar-bg)',
+          borderRight: '1px solid var(--border-subtle)',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
+          zIndex: 1000,
+          transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 0.32s var(--ease-apple)',
+          boxShadow: isOpen ? '0 0 50px rgba(0, 0, 0, 0.7)' : 'none',
+          paddingTop: 'env(safe-area-inset-top, 0px)',
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)'
+        } : {
+          width: isOpen ? `${width}px` : '0px',
+          minWidth: isOpen ? `${width}px` : '0px',
+          transition: isResizing ? 'none' : 'width 0.32s var(--ease-apple), min-width 0.32s var(--ease-apple)',
+          height: '100vh',
+          background: 'var(--sidebar-bg)',
+          borderRight: isOpen ? '1px solid var(--border-subtle)' : 'none',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
+          position: 'relative',
+          zIndex: 50,
+          flexShrink: 0
+        }}
+      >
       {/* Sidebar Header: Logo & New Chat */}
       <div style={{ padding: '14px 12px 10px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <button
             type="button"
-            onClick={onNewChat}
+            onClick={handleNewChatClick}
             className="apple-press"
             title={language === 'vi' ? 'Cuộc trò chuyện mới' : 'New chat'}
             style={{ 
               background: 'transparent',
               border: 'none',
-              padding: '4px 6px',
+              padding: '6px 12px',
               marginLeft: '-4px',
-              borderRadius: '8px',
+              borderRadius: 'var(--radius-full)',
               display: 'flex', 
               alignItems: 'center', 
               gap: '8px',
@@ -280,7 +335,7 @@ export default function Sidebar({
                 cursor: 'pointer',
                 width: '32px',
                 height: '32px',
-                borderRadius: '8px',
+                borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -314,7 +369,7 @@ export default function Sidebar({
                 cursor: 'pointer',
                 width: '32px',
                 height: '32px',
-                borderRadius: '8px',
+                borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -333,8 +388,8 @@ export default function Sidebar({
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            padding: '6px 10px',
-            borderRadius: '8px',
+            padding: '8px 14px',
+            borderRadius: 'var(--radius-full)',
             background: 'var(--sidebar-hover)',
             border: '1px solid var(--border-subtle)',
             marginTop: '2px'
@@ -380,13 +435,13 @@ export default function Sidebar({
           const isNewChatActive = activeTab === 'chat' && !activeConversationId;
           return (
             <button
-              onClick={onNewChat}
-              className="apple-press"
+              onClick={handleNewChatClick}
+              className="apple-press gemini-pill"
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                padding: '8px 10px',
-                borderRadius: '8px',
+                padding: '9px 14px',
+                borderRadius: 'var(--radius-full)',
                 border: 'none',
                 background: isNewChatActive ? 'rgba(213, 19, 42, 0.15)' : 'transparent',
                 color: isNewChatActive ? 'var(--text-primary)' : 'var(--text-secondary)',
@@ -449,14 +504,14 @@ export default function Sidebar({
               return (
                 <button
                   key={item.id}
-                  onClick={() => setActiveTab(item.id)}
-                  className="apple-press"
+                  onClick={() => handleToolClick(item.id)}
+                  className="apple-press gemini-pill"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '8px 10px',
-                    borderRadius: '8px',
+                    padding: '8px 14px',
+                    borderRadius: 'var(--radius-full)',
                     border: 'none',
                     background: isActive ? 'rgba(213, 19, 42, 0.15)' : 'transparent',
                     color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
@@ -490,8 +545,8 @@ export default function Sidebar({
                       fontSize: '0.65rem', 
                       background: 'rgba(213, 19, 42, 0.15)',
                       color: 'var(--brand-accent)',
-                      padding: '2px 6px', 
-                      borderRadius: '4px',
+                      padding: '2px 8px', 
+                      borderRadius: 'var(--radius-full)',
                       fontWeight: '700'
                     }}>
                       {item.badge}
@@ -543,14 +598,15 @@ export default function Sidebar({
                     onMouseEnter={() => setHoveredConversationId(conversation.id)}
                     onMouseLeave={() => setHoveredConversationId(null)}
                     onClick={() => {
-                      if (!isEditing) onSelectConversation(conversation.id);
+                      if (!isEditing) handleSelectConvClick(conversation.id);
                     }}
+                    className="gemini-pill"
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      padding: '7px 10px',
-                      borderRadius: '8px',
+                      padding: '7px 14px',
+                      borderRadius: 'var(--radius-full)',
                       background: (isActive || isHovered || isMenuOpen) ? 'var(--sidebar-hover)' : 'transparent',
                       color: (isActive || isHovered || isMenuOpen) ? 'var(--text-primary)' : 'var(--text-secondary)',
                       fontSize: '0.84rem',
@@ -580,8 +636,8 @@ export default function Sidebar({
                             flex: 1,
                             minWidth: 0,
                             fontSize: '0.82rem',
-                            padding: '3px 8px',
-                            borderRadius: '6px',
+                            padding: '4px 12px',
+                            borderRadius: 'var(--radius-full)',
                             border: '1px solid var(--border-focus)',
                             background: 'var(--bg-surface)',
                             color: 'var(--text-primary)',
@@ -656,9 +712,9 @@ export default function Sidebar({
                                 border: 'none',
                                 color: isMenuOpen ? 'var(--text-primary)' : 'var(--text-muted)',
                                 cursor: 'pointer',
-                                width: '24px',
-                                height: '24px',
-                                borderRadius: '6px',
+                                width: '26px',
+                                height: '26px',
+                                borderRadius: '50%',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -706,14 +762,23 @@ export default function Sidebar({
       <AccountMenu
         studentProfile={studentProfile}
         auditData={auditData}
-        onLogout={onLogout}
-        onImportTranscript={onOpenImport}
-        onOpenSettings={onOpenSettings}
+        onLogout={() => {
+          if (isMobile) setIsOpen(false);
+          onLogout?.();
+        }}
+        onImportTranscript={() => {
+          if (isMobile) setIsOpen(false);
+          onOpenImport?.();
+        }}
+        onOpenSettings={() => {
+          if (isMobile) setIsOpen(false);
+          onOpenSettings?.();
+        }}
         language={language}
       />
 
       {/* Draggable Resize Handle on right edge */}
-      {isOpen && (
+      {isOpen && !isMobile && (
         <div
           onMouseDown={startResizing}
           onDoubleClick={handleDoubleClick}
@@ -748,8 +813,8 @@ export default function Sidebar({
           display: 'flex',
           alignItems: 'center',
           gap: '12px',
-          padding: '8px 12px',
-          borderRadius: '8px',
+          padding: '8px 14px',
+          borderRadius: 'var(--radius-full)',
           border: 'none',
           background: 'transparent',
           color: isDanger ? 'var(--danger, #ef4444)' : 'var(--text-primary)',
@@ -773,7 +838,7 @@ export default function Sidebar({
               minWidth: '180px',
               background: 'var(--bg-surface, #ffffff)',
               border: '1px solid var(--border-subtle)',
-              borderRadius: '14px',
+              borderRadius: '20px',
               boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.16), 0 8px 10px -6px rgba(0, 0, 0, 0.08)',
               padding: '6px',
               display: 'flex',
@@ -859,5 +924,6 @@ export default function Sidebar({
       })()}
 
     </aside>
+    </>
   );
 }

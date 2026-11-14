@@ -97,6 +97,7 @@ Windows PowerShell, tại thư mục gốc sau khi clone:
 ```powershell
 python -m venv backend/.venv-win
 & backend/.venv-win/Scripts/python.exe -m pip install -r backend/requirements.txt -r backend/requirements-dev.txt
+& backend/.venv-win/Scripts/python.exe -m playwright install chromium
 npm --prefix frontend ci
 Copy-Item backend/.env.example backend/.env
 ```
@@ -116,6 +117,8 @@ cp backend/.env.example backend/.env
 Thiếu URI hoặc không kết nối được thì backend dừng khởi động và báo lỗi.
 
 ### 3. Khởi động Backend (FastAPI)
+
+**Đăng nhập bằng tài khoản trường:** bản chạy trên PC hỗ trợ mở trình duyệt riêng để bạn đăng nhập trực tiếp tại CTT (gồm CAPTCHA hoặc Office 365). HUST Advisor xác minh MSSV rồi đồng bộ hồ sơ và bảng điểm; không nhận mật khẩu trường. Xem [cách dùng, phạm vi hỗ trợ và kiểm thử](docs/CTT_LOGIN.md). Tài khoản Advisor dùng mật khẩu riêng và vẫn hỗ trợ nhập bảng điểm thủ công.
 
 ```powershell
 cd backend

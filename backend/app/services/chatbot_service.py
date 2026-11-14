@@ -9,6 +9,7 @@ from app.engine.recommender import course_recommender
 from app.rag.rag_engine import rag_engine
 from app.rag.gemini_service import gemini_service
 from app.services.conversation_context import previous_focus, resolve_followup
+from app.services.campus_service import campus_service
 
 # Bảng từ đồng nghĩa / tên gọi phổ biến của sinh viên Bách Khoa
 COURSE_ALIASES = {
@@ -460,6 +461,18 @@ class ChatbotService:
         small_talk = detect_small_talk(effective_message, detected_codes)
         if small_talk:
             return self._handle_small_talk(effective_message, small_talk, history)
+
+        # 0b. Tra cứu vị trí và bản đồ khuôn viên Bách Khoa (Campus Map & Directions)
+        if self._has_any(msg_lower, ["ở đâu", "chỉ đường", "vị trí", "đi lối nào", "tìm đường"]) or (
+            self._has_any(msg_lower, ["giảng đường", "hội trường", "thư viện tạ quang bửu", "tạ quang bửu", "nhà thi đấu", "ký túc xá"])
+        ):
+            campus_res = self._handle_campus_map(effective_message)
+            if campus_res:
+                return campus_res
+
+        # 0c. Gợi ý môn học cải thiện CPA
+        if self._has_any(msg_lower, ["cải thiện cpa", "học lại môn nào", "môn cần cải thiện", "kéo cpa", "kéo điểm", "nâng cpa", "cải thiện điểm"]):
+            return self._handle_course_improvement()
 
         # 1. Xử lý câu hỏi mô phỏng trượt môn (What-if simulation)
         if self._has_any(msg_lower, ["trượt", "tạch", "nếu rớt", "học lại", "không qua", "ảnh hưởng"]):
@@ -998,6 +1011,86 @@ class ChatbotService:
                 "Xem tiến độ tốt nghiệp"
             ]
         }
+
+    def _handle_campus_map(self, message: str) -> Optional[Dict[str, Any]]:
+        """Tra cứu vị trí khuôn viên Bách Khoa và cung cấp link dẫn đường Google Maps."""
+        matches = re.findall(r"\b([DCB]\d{1,2}(?:-\d)?|TC|HiTech)\b", message, re.IGNORECASE)
+        query = matches[0] if matches else message
+
+        loc = campus_service.find_location(query)
+        if not loc:
+            for kw in ["thư viện tạ quang bửu", "tạ quang bửu", "thư viện", "hội trường c2", "nhà thi đấu", "ký túc xá", "b10", "b8", "b6", "b5", "b3"]:
+                if kw in message.lower():
+                    loc = campus_service.find_location(kw)
+                    if loc:
+                        break
+
+        if loc:
+            reply = campus_service.format_direction_reply(loc)
+            return {
+                "reply": reply,
+                "intent": "CAMPUS_NAVIGATION",
+                "suggested_actions": ["Chỉ đường đến Thư viện Tạ Quang Bửu", "Tìm tòa nhà D3", "Tiến độ học tập"],
+                "data_context": loc,
+                "model_used": "campus-gis-service",
+            }
+        return None
+
+    def _handle_course_improvement(self) -> Dict[str, Any]:
+        """Tư vấn các môn điểm thấp (D, D+, F) cần học cải thiện và dự báo tác động CPA."""
+        try:
+            analysis = student_service.get_course_improvements()
+            candidates = analysis.get("improve_candidates", [])
+            cpa = analysis.get("current_cpa", 0.0)
+            rank = analysis.get("current_classification", {}).get("rank", "Trung bình")
+
+            if not candidates:
+                reply = (
+                    f"🎉 Chúc mừng bạn! Hiện tại CPA của bạn đang là **{cpa:.2f}** ({rank}) "
+                    "và bạn không có môn học nào bị điểm F hoặc D/D+ cần phải học cải thiện."
+                )
+                return {
+                    "reply": reply,
+                    "intent": "COURSE_IMPROVEMENT",
+                    "suggested_actions": ["Rà soát tốt nghiệp", "Gợi ý môn kỳ tới"],
+                    "data_context": analysis,
+                    "model_used": "deterministic-engine",
+                }
+
+            lines = [
+                "📊 **Phân tích tối ưu CPA từ bảng điểm cá nhân:**",
+                f"- **CPA hiện tại:** `{cpa:.2f}` (Xếp loại: **{rank}**)",
+                f"- **Số môn có thể học lại/cải thiện:** `{len(candidates)} môn`\n",
+                "🎯 **Danh sách học phần ưu tiên cải thiện điểm:**",
+            ]
+            for idx, c in enumerate(candidates[:5], 1):
+                code = c["code"]
+                name = c["name"]
+                cre = c["credits"]
+                curr = c["current_letter_grade"]
+                pri = "🔴 Bắt buộc học lại" if c["is_failed"] else "🟡 Khuyên cải thiện"
+                proj_b = c.get("projections", {}).get("B", {})
+                delta = proj_b.get("delta_cpa", 0.0)
+                new_cpa = proj_b.get("new_cpa", cpa)
+                lines.append(
+                    f"{idx}. **{code} - {name}** ({cre:g} TC, điểm hiện tại: `{curr}`) - {pri}\n"
+                    f"   ➥ Nếu đạt điểm **B (3.0)**: CPA tăng thêm **+{delta:.3f}** ➔ đạt **{new_cpa:.2f}**."
+                )
+            lines.append("\n💡 *Mẹo:* Ưu tiên học lại các môn F trước để xóa nợ đọng, sau đó chọn các môn 3-4 tín chỉ điểm D/D+ để kéo CPA nhanh nhất.")
+            return {
+                "reply": "\n".join(lines),
+                "intent": "COURSE_IMPROVEMENT",
+                "suggested_actions": ["Rà soát tiến độ tốt nghiệp", "Gợi ý môn kỳ tới", "Quy chế học cải thiện"],
+                "data_context": analysis,
+                "model_used": "deterministic-engine",
+            }
+        except Exception as e:
+            return {
+                "reply": f"Không thể phân tích môn cải thiện lúc này: {str(e)}",
+                "intent": "COURSE_IMPROVEMENT",
+                "suggested_actions": ["Kiểm tra tiến độ học tập"],
+                "model_used": "fallback",
+            }
 
 # Singleton instance
 chatbot_service = ChatbotService()

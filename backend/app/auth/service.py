@@ -227,6 +227,8 @@ class AuthService:
 
         student_id = str(student_id or "").strip()
         user = self.store.get_user(student_id) if STUDENT_ID_PATTERN.fullmatch(student_id) else None
+        if user and user.get("auth_provider") == "ctt":
+            raise InvalidCredentialsError("Tài khoản này dùng đăng nhập trường. Hãy chọn Tài khoản trường để tiếp tục.")
         if user is None:
             verify_password(password or "", DUMMY_HASH)  # cân bằng thời gian phản hồi
             raise InvalidCredentialsError("MSSV hoặc mật khẩu không đúng.")
@@ -251,6 +253,9 @@ class AuthService:
 
     def change_password(self, student_id: str, current_password: str, new_password: str) -> None:
         now = self.clock()
+        school_user = self.store.get_user(student_id)
+        if school_user and school_user.get("auth_provider") == "ctt":
+            raise InvalidCredentialsError("Tài khoản trường quản lý mật khẩu tại HUST. Ứng dụng không đổi mật khẩu trường.")
         # Phiên bị đánh cắp không được dùng để dò mật khẩu hiện tại không giới hạn.
         wait = self._password_change_failures.retry_after(student_id, now)
         if wait is not None:

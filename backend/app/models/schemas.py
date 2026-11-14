@@ -23,13 +23,14 @@ class TranscriptImportRequest(BaseModel):
 class ProfileDisplayUpdate(BaseModel):
     """Các trường hiển thị sinh viên được tự sửa trong Cài đặt.
 
-    MSSV, lớp, CTĐT quyết định kết quả rà soát nên không nằm ở đây: chúng chỉ
-    đến từ hồ sơ hoặc bảng điểm nhập từ CTT. Trường lạ bị từ chối (422).
+    MSSV, lớp không sửa tay được. Sinh viên có thể đổi tên hiển thị, ảnh đại diện,
+    hoặc chọn lại CTĐT nếu học song bằng / chương trình đặc biệt.
     """
 
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
     student_name: Optional[str] = Field(None, min_length=1, max_length=80)
+    program_code: Optional[str] = Field(None, min_length=2, max_length=12, pattern=r"^[A-Z0-9-]+$")
     avatar_url: Optional[str] = Field(
         None, max_length=MAX_AVATAR_DATA_URL_LENGTH, pattern=AVATAR_DATA_URL_PATTERN
     )
@@ -66,6 +67,10 @@ class StudentGradeItem(BaseModel):
     letter_grade: str
     numeric_grade: float
     is_passed: bool
+    semester: Optional[str] = None
+    midterm_grade: Optional[float] = None
+    final_grade: Optional[float] = None
+    class_code: Optional[str] = None
 
 class StudentProfile(BaseModel):
     info: Dict[str, str]
@@ -186,3 +191,164 @@ class ConversationUpdateRequest(BaseModel):
     title: Optional[str] = None
     is_archived: Optional[bool] = None
     is_pinned: Optional[bool] = None
+
+
+class CttSyncRequest(BaseModel):
+    """Thông tin đăng nhập CTT-SIS để cào tự động (Auto-login CTT)."""
+    username: str = Field(..., min_length=1, max_length=50)
+    password: str = Field(..., min_length=1, max_length=100)
+
+
+class CttHtmlParseRequest(BaseModel):
+    """Nhập mã nguồn HTML DevExpress copy từ trang CTT (An toàn 100%)."""
+    html_content: str = Field(..., min_length=1, max_length=5_000_000)
+
+
+class ImprovementCandidateItem(BaseModel):
+    code: str
+    name: str
+    credits: float
+    current_letter_grade: str
+    current_numeric_grade: float
+    is_failed: bool
+    priority: str
+    reason: str
+    projections: Dict[str, Dict[str, float]]
+    efficiency_score: float
+
+
+class CourseImprovementResponse(BaseModel):
+    current_cpa: float
+    current_classification: Dict[str, Any]
+    total_credits: float
+    total_candidates: int
+    improve_candidates: List[ImprovementCandidateItem]
+    summary: str
+
+
+class CampusLocationItem(BaseModel):
+    name: str
+    code: Optional[str] = None
+    category: str
+    center: Dict[str, Optional[float]]
+    google_maps_url: str
+
+
+class CampusLocationResponse(BaseModel):
+    locations: List[CampusLocationItem]
+    total: int
+
+
+class TimetableItem(BaseModel):
+    id: str
+    course_code: str
+    course_name: str
+    class_code: str
+    room: str
+    day_of_week: int  # 2: Thứ 2 ... 7: Thứ 7, 8: CN
+    start_period: Optional[int] = None  # CTT may publish clock times only.
+    end_period: Optional[int] = None
+    time_str: str
+    weeks: str
+    lecturer: Optional[str] = None
+    is_temp: bool = False
+
+
+class SchoolServiceMeta(BaseModel):
+    status: str = "not_synced"
+    message: str = ""
+    source_url: str = ""
+    synced_at: Optional[str] = None
+    last_attempt_at: Optional[str] = None
+    tables: List[Dict[str, Any]] = []
+    records: List[Dict[str, Any]] = []
+    source_type: str = "ctt"
+
+
+class TimetableResponse(SchoolServiceMeta):
+    semester: str = ""
+    items: List[TimetableItem]
+    total_classes: int
+    has_temp: bool = False
+
+
+class ExamScheduleItem(BaseModel):
+    course_code: str
+    course_name: str
+    exam_date: str
+    exam_time: str
+    room: str
+    exam_type: str = ""
+    student_index: Optional[str] = None
+    notes: Optional[str] = None
+    class_code: str = ""
+
+
+class ExamScheduleResponse(SchoolServiceMeta):
+    semester: str = ""
+    exams: List[ExamScheduleItem]
+    total: int
+
+
+class TuitionItem(BaseModel):
+    semester: str
+    tuition_fee: Optional[float] = None
+    paid: Optional[float] = None
+    debt: Optional[float] = None
+    deadline: Optional[str] = None
+    status: str = ""
+
+
+class TuitionResponse(SchoolServiceMeta):
+    student_id: str
+    current_debt: Optional[float] = None
+    semesters: List[TuitionItem]
+    charges: List[Dict[str, Any]] = []
+    payments: List[Dict[str, Any]] = []
+
+
+class ToeicResponse(SchoolServiceMeta):
+    student_id: str
+    score: Optional[float] = None
+    max_score: Optional[int] = None
+    required_score: Optional[int] = None
+    is_qualified: Optional[bool] = None
+    test_date: Optional[str] = None
+    certificate_type: str = ""
+
+
+class ClassmateItem(BaseModel):
+    student_id: str
+    student_name: str
+    class_name: str
+    email: Optional[str] = None
+
+
+class ClassmatesResponse(SchoolServiceMeta):
+    class_code: str
+    course_name: str
+    lecturer: str
+    room: str
+    students: List[ClassmateItem]
+    total: int
+    available_classes: List[Dict[str, str]] = []
+
+
+class CourseReviewItem(BaseModel):
+    id: str
+    course_code: str
+    course_name: Optional[str] = None
+    rating: int
+    difficulty: str
+    attendance: str
+    comment: str
+    author: str
+    created_at: str
+
+
+class CourseReviewCreate(BaseModel):
+    rating: int = Field(..., ge=1, le=5)
+    difficulty: str
+    attendance: str
+    comment: str = Field(..., min_length=3, max_length=2000)
+    author: Optional[str] = None

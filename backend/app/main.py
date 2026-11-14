@@ -1,11 +1,14 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from urllib.parse import urlsplit
 
-from app.core.config import CORS_ORIGINS, SESSION_COOKIE_NAME
+from app.core.config import CORS_ORIGINS, SESSION_COOKIE_NAME, PROJECT_DIR
 from app.api.router_auth import router as auth_router
+from app.api.router_school_auth import router as school_auth_router
+from app.services.school_portal import school_login_manager
 from app.api.router_courses import router as courses_router
 from app.api.router_student import router as student_router
 from app.api.router_chat import router as chat_router
@@ -23,7 +26,10 @@ async def lifespan(app: FastAPI):
         print(f"[Startup] Đã đồng bộ kho RAG đã phê duyệt: {result.get('total_chunks', 0)} chunks.")
     except Exception as e:
         print(f"[Startup] Cảnh báo đồng bộ RAG: {e}")
-    yield
+    try:
+        yield
+    finally:
+        school_login_manager.close()
 
 app = FastAPI(
     title="HUST Course Advisor & Degree Audit Engine",
@@ -74,6 +80,7 @@ async def reject_cross_site_writes(request: Request, call_next):
 
 # Routers
 app.include_router(auth_router)
+app.include_router(school_auth_router)
 app.include_router(courses_router)
 app.include_router(student_router)
 app.include_router(chat_router)
@@ -81,9 +88,18 @@ app.include_router(rag_router)
 app.include_router(conversations_router)
 app.include_router(programs_router)
 
+FRONTEND_DIST = PROJECT_DIR / "frontend" / "dist"
+if (FRONTEND_DIST / "assets").is_dir():
+    app.mount("/assets", StaticFiles(directory=FRONTEND_DIST / "assets"), name="assets")
+
 @app.get("/")
-@app.get("/api/system")
 def root():
+    if (FRONTEND_DIST / "index.html").is_file():
+        return FileResponse(FRONTEND_DIST / "index.html")
+    return system_info()
+
+@app.get("/api/system")
+def system_info():
     return {
         "system": "HUST Course Advisor & RAG AI Agent",
         "scope": "Sinh viên Đại học Bách Khoa Hà Nội",
