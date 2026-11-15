@@ -25,7 +25,7 @@ SESSION_COOKIE_NAME = "hust_session"
 COOKIE_SECURE = os.getenv("COOKIE_SECURE", "false").strip().lower() in {"1", "true", "yes"}
 
 # Local connector: the backend opens a fresh browser on the user's own PC.
-CTT_BROWSER_LOGIN_ENABLED = os.getenv("CTT_BROWSER_LOGIN_ENABLED", "true").strip().lower() in {"1", "true", "yes"}
+CTT_BROWSER_LOGIN_ENABLED = os.getenv("CTT_BROWSER_LOGIN_ENABLED", "false").strip().lower() in {"1", "true", "yes"}
 CTT_BROWSER_CHANNEL = os.getenv("CTT_BROWSER_CHANNEL", "chromium").strip() or "chromium"
 CTT_LOGIN_TIMEOUT_SECONDS = max(60, min(600, int(os.getenv("CTT_LOGIN_TIMEOUT_SECONDS", "300"))))
 

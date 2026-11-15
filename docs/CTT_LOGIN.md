@@ -3,7 +3,7 @@
 ## Dùng trên PC
 
 1. Cài thư viện backend theo `backend/requirements.txt`, rồi cài trình duyệt riêng bằng `python -m playwright install chromium` trong môi trường Python của backend. Mặc định không dùng Edge/Chrome cá nhân và không âm thầm chuyển về Edge nếu Chromium thiếu.
-2. Chạy backend và frontend trên cùng PC, mở web bằng `localhost` hoặc `127.0.0.1`.
+2. Chỉ trên PC cá nhân, đặt `CTT_BROWSER_LOGIN_ENABLED=true` trong môi trường backend (đã có trong `backend/.env.example`); mặc định tính năng tắt. Chạy backend và frontend trên cùng PC, mở web bằng `localhost` hoặc `127.0.0.1`.
 3. Chọn **Tài khoản trường**, chọn chương trình đào tạo, bấm **Tiếp tục với tài khoản trường**.
 4. Trong cửa sổ CTT chính thức vừa mở, tự nhập tài khoản và hoàn tất CAPTCHA hoặc đăng nhập Office 365 theo hướng dẫn của trường.
 5. Sau khi CTT xác nhận đăng nhập, HUST Advisor đọc thông tin sinh viên và bảng điểm, xác minh danh tính rồi lưu vào hồ sơ. Cửa sổ kết nối sẽ đóng. Giao diện Advisor tự chuyển vào không gian học tập.
@@ -39,7 +39,7 @@ Tài khoản tạo lần đầu qua trường dùng đăng nhập trường cho 
 
 | Biến | Mặc định | Ý nghĩa |
 | --- | --- | --- |
-| `CTT_BROWSER_LOGIN_ENABLED` | `true` | Cho phép bộ kết nối trên PC; tắt trên server dùng chung |
+| `CTT_BROWSER_LOGIN_ENABLED` | `false` | Chỉ bật `true` trên PC cá nhân; giữ tắt trên server dùng chung |
 | `CTT_BROWSER_CHANNEL` | `chromium` | Chromium riêng đi kèm phiên bản Playwright; có thể chỉ định channel khác để chẩn đoán |
 | `CTT_LOGIN_TIMEOUT_SECONDS` | `300` | Thời gian chờ thao tác đăng nhập, giới hạn 60–600 giây |
 

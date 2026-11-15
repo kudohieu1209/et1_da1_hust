@@ -140,6 +140,7 @@ npm run dev
 ```
 
 * Giao diện web chạy tại `http://localhost:5173`. Vite tự chuyển tiếp `/api` tới backend cổng 8000, không cần cấu hình thêm.
+* Mặc định Vite chỉ lắng nghe loopback. Nếu cần truy cập từ LAN, chạy `npm run dev -- --host` và chỉ dùng mạng tin cậy: khi `COOKIE_SECURE=false`, cookie và dữ liệu phiên gửi qua HTTP có thể bị nghe lén. Không mở cấu hình phát triển này ra Internet.
 
 ### 5. Chạy kiểm thử (tùy chọn)
 
