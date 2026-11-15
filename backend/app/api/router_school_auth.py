@@ -77,7 +77,7 @@ async def start(payload: SchoolStartRequest, request: Request, response: Respons
         attempt_id = school_login_manager.start(owner, payload.program_code, expected_id, before_start=count_new_window)
     except SchoolPortalError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from None
-    response.set_cookie(OWNER_COOKIE, owner, httponly=True, secure=COOKIE_SECURE, samesite="lax",
+    response.set_cookie(OWNER_COOKIE, owner, httponly=True, secure=COOKIE_SECURE, samesite="strict",
                         max_age=CTT_LOGIN_TIMEOUT_SECONDS + 120, path="/api/auth/ctt")
     response.headers["Cache-Control"] = "no-store"
     return {"attempt_id": attempt_id, "status": "opening", "expires_in": CTT_LOGIN_TIMEOUT_SECONDS}
