@@ -10,6 +10,7 @@ from app.auth.store import UserExistsError
 from app.services.curriculum_repository import curriculum_repository
 from app.services.data_loader import data_loader
 from app.services.school_portal import SchoolPortalError, SchoolSnapshot
+from app.services.ctt_sections import minimize_classmate_section
 
 _link_lock = threading.RLock()
 
@@ -65,6 +66,10 @@ def complete_school_login(auth_service, snapshot: SchoolSnapshot, program_code: 
                                         "message": incoming.get("message") or "Chưa cập nhật được; đang hiển thị lần đồng bộ trước."}
             else:
                 saved_services[kind] = copy.deepcopy(incoming)
+        # Prune old or retained stale roster data even when this sync did not
+        # return classmates. Successful syncs replace the section above in full.
+        if 'classmates' in saved_services:
+            saved_services['classmates'] = minimize_classmate_section(saved_services['classmates'])
         warning = snapshot.services.get("warning", {})
         if warning.get("status") == "synced" and warning.get("warning_level") is not None:
             info["warning_level"] = warning["warning_level"]

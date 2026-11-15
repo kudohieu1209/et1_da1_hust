@@ -171,7 +171,8 @@ class ExtraStudentServices:
             "test_date": latest.get("test_date"), "certificate_type": latest.get("certificate_type", "")})
 
     def get_classmates(self, class_code: str, student_id: str) -> ClassmatesResponse:
-        section = self._section(student_id, "classmates")
+        from app.services.ctt_sections import minimize_classmate_section
+        section = minimize_classmate_section(self._section(student_id, "classmates"))
         actual_code = section.get("class_code") or "current"
         if class_code and class_code != actual_code:
             raise ValueError("Lớp này chưa có trong dữ liệu CTT đã đồng bộ của bạn.")

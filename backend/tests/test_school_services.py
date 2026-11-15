@@ -49,6 +49,20 @@ class SchoolSectionParserTests(unittest.TestCase):
         self.assertNotIn('roster-private@example.test', str(section))
         self.assertNotIn('01/01/2004', str(section))
 
+    def test_classmates_legacy_normalization_strips_email_before_early_returns(self):
+        row = {'student_id': '20221235', 'student_name': 'Sinh viên kiểm thử', 'class_name': 'ET1-01', 'email': 'old-private@example.test'}
+        for version in (0, 2):
+            with self.subTest(parser_version=version):
+                old = {'status': 'synced', 'records': [row], 'parser_version': version, 'tables': [
+                    {'headers': ['MSSV', 'Họ và tên', 'Lớp', 'Email'],
+                     'rows': [['20221235', 'Sinh viên kiểm thử', 'ET1-01', 'old-private@example.test']]}
+                ]}
+                before = copy.deepcopy(old)
+                normalized = normalize_saved_section('classmates', old)
+                self.assertNotIn('email', normalized['records'][0])
+                self.assertNotIn('old-private@example.test', str(normalized))
+                self.assertEqual(old, before)
+
     def test_real_ctt_m_prefix_warning_and_existing_evidence(self):
         for value, expected in [('M0',0),('M1',1),('M2',2),('M3',3),('Mức 0',0),('Mức cảnh báo M1',None),('M4',None),('2026.1 M0',None)]:
             self.assertEqual(parse_warning_level(value), expected, value)
@@ -268,6 +282,56 @@ class SchoolServiceApiTests(unittest.TestCase):
         result = self.client.get('/api/student/toeic', headers={'X-Student-ID': '20231890'}).json()
         self.assertEqual(result['score'], 820)
         self.assertEqual(self.client.get('/api/student/classmates?class_code=not-my-class').status_code, 404)
+
+    def test_classmates_endpoints_minimize_legacy_rosters_without_mutating_storage_on_read(self):
+        mine = self.profiles.get('20220001')
+        old = {'status': 'synced', 'parser_version': 2, 'records': [
+            {'student_id': '20221235', 'student_name': 'Bạn kiểm thử', 'class_name': 'ET1-01', 'email': 'old-private@example.test'}],
+            'tables': [{'headers': ['MSSV', 'Họ tên', 'Lớp', 'Email', 'Ngày sinh'],
+                        'rows': [['20221235', 'Bạn kiểm thử', 'ET1-01', 'old-private@example.test', '01/01/2004']]}]}
+        mine['school_services'] = {'classmates': old}
+        self.profiles.save('20220001', mine)
+        for path in ['/api/student/classmates', '/api/student/school-services']:
+            response = self.client.get(path)
+            self.assertEqual(response.status_code, 200, response.text)
+            self.assertNotIn('email', response.text.lower())
+            self.assertNotIn('old-private@example.test', response.text)
+            self.assertNotIn('01/01/2004', response.text)
+        self.assertEqual(self.client.get('/api/student/classmates').json()['students'], [
+            {'student_id': '20221235', 'student_name': 'Bạn kiểm thử', 'class_name': 'ET1-01'}])
+        self.assertEqual(self.profiles.get('20220001')['school_services']['classmates'], old)
+
+    def test_second_sync_replaces_the_entire_previous_classmates_list(self):
+        first = snapshot('20220001')
+        first.services = {'classmates': {'status': 'synced', 'class_code': 'old-class', 'records': [
+            {'student_id': '20221235', 'student_name': 'Danh sách cũ', 'class_name': 'ET1-01', 'email': 'old-private@example.test'}], 'tables': []}}
+        complete_school_login(self.auth, first, 'ET1', '20220001')
+        second = snapshot('20220001')
+        second.services = {'classmates': parse_section('classmates', table(['MSSV', 'Họ tên', 'Lớp', 'Email'], [
+            ['20223333', 'Danh sách mới', 'ET1-02', 'new-private@example.test']]), ROOT, STAMP)}
+        complete_school_login(self.auth, second, 'ET1', '20220001')
+        saved = self.profiles.get('20220001')['school_services']['classmates']
+        self.assertEqual(saved, second.services['classmates'])
+        self.assertEqual(saved['records'], [{'student_id': '20223333', 'student_name': 'Danh sách mới', 'class_name': 'ET1-02'}])
+        self.assertNotIn('old-class', str(saved))
+        self.assertNotIn('20221235', str(saved))
+        self.assertNotIn('email', str(saved).lower())
+
+    def test_login_prunes_stored_classmate_email_without_a_successful_roster_refresh(self):
+        for services in ({}, {'classmates': {'status': 'error', 'synced_at': STAMP}}):
+            with self.subTest(refresh=bool(services)):
+                mine = self.profiles.get('20220001')
+                mine['school_services'] = {'classmates': {'status': 'synced', 'records': [
+                    {'student_id': '20221235', 'student_name': 'Bạn kiểm thử', 'class_name': 'ET1-01', 'email': 'old-private@example.test'}],
+                    'tables': [{'headers': ['MSSV', 'Email'], 'rows': [['20221235', 'old-private@example.test']]}]}}
+                self.profiles.save('20220001', mine)
+                data = snapshot('20220001')
+                data.services = services
+                complete_school_login(self.auth, data, 'ET1', '20220001')
+                saved = self.profiles.get('20220001')['school_services']['classmates']
+                self.assertNotIn('email', str(saved).lower())
+                self.assertEqual(saved['records'][0]['student_id'], '20221235')
+                self.assertEqual(saved['status'], 'stale' if services else 'synced')
 
     def test_school_sync_updates_real_warning_and_certificates_without_affecting_other_students(self):
         before = self.profiles.get('20231890')

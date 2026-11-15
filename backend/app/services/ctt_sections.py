@@ -327,6 +327,8 @@ def parse_section(kind, html, source_url, synced_at):
 
 def normalize_saved_section(kind, section):
     """Upgrade text tables on read without another login or changing saved data."""
+    if kind == 'classmates':
+        section = minimize_classmate_section(section)
     if kind == 'certificates' and section.get('status') == 'unavailable':
         return {**section, 'message': 'Chưa xác định được trạng thái cấp chứng chỉ từ các trang CTT đã kiểm tra. Trạng thái này không có nghĩa là chưa đạt.'}
     if kind == 'warning' and section.get('warning_level') is None:
