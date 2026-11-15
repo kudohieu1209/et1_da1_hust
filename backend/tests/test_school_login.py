@@ -148,7 +148,8 @@ class SchoolHtmlTests(unittest.TestCase):
         page = context.new_page.return_value
         page.url = PORTAL
         page.locator.return_value.count.return_value = 1
-        page.evaluate.side_effect = lambda script, url=None: {"url": url, "status": 200, "html": HTML} if url else True
+        page.evaluate.return_value = True
+        page.context = context
         context.pages = [page]
         response = mock.MagicMock()
         response.url, response.status = PORTAL, 200
@@ -161,7 +162,7 @@ class SchoolHtmlTests(unittest.TestCase):
         self.assertEqual(len(result.transcript), 2)
         page.fill.assert_not_called()
         page.click.assert_not_called()
-        context.request.get.assert_not_called()
+        context.request.get.assert_any_call(PORTAL, timeout=30000)
         self.assertEqual(fake.chromium.launch.call_args.kwargs["channel"], "chromium")
         browser.close.assert_called_once()
 
@@ -211,14 +212,13 @@ class SchoolHtmlTests(unittest.TestCase):
             context.pages = {1: [oauth], 2: [], 3: [oauth], 4: [protected]}[len(steps)]
             raise BrowserTimeout("normal event wait")
 
-        def verified_response(script, url=None):
-            if url is None:
-                return True
+        def verified_response(url, **kwargs):
             self.assertEqual(len(steps), 4, "Grade requests must wait for Office 365 password/MFA and the return to CTT")
-            return {"url": url, "status": 200, "html": HTML}
+            return mock.Mock(url=url, status=200, text=mock.Mock(return_value=HTML))
 
         context.wait_for_event.side_effect = handoff
-        protected.evaluate.side_effect = verified_response
+        protected.context = context
+        context.request.get.side_effect = verified_response
         stages = []
         with mock.patch("playwright.sync_api.sync_playwright") as launch:
             launch.return_value.__enter__.return_value = fake
@@ -260,7 +260,8 @@ class SchoolHtmlTests(unittest.TestCase):
         context = browser.new_context.return_value
         page = context.new_page.return_value
         page.url = PORTAL
-        page.evaluate.side_effect = lambda script, url=None: {"url": url, "status": 200, "html": HTML} if url else True
+        page.evaluate.return_value = True
+        page.context = context
         context.pages = [page]
         response = context.request.get.return_value
         response.url, response.status = PORTAL, 200
@@ -269,22 +270,40 @@ class SchoolHtmlTests(unittest.TestCase):
             launch.return_value.__enter__.return_value = fake
             self.assertEqual(read_school_in_browser(threading.Event(), lambda _: None).info["student_id"], "20221234")
 
-    def test_same_origin_reader_uses_the_authenticated_page_and_rejects_external_targets(self):
+    def test_request_reader_rejects_external_targets_and_unauthenticated_responses(self):
         page = mock.MagicMock()
-        with self.assertRaises(SchoolPortalError):
-            _fetch_ctt_html(page, "https://evil.test/")
-        page.evaluate.assert_not_called()
-        page.evaluate.return_value = {"url": PORTAL, "status": 200, "html": HTML}
-        self.assertEqual(_fetch_ctt_html(page, PORTAL)["html"], HTML)
-        script, target = page.evaluate.call_args.args
-        self.assertIn("credentials: 'same-origin'", script)
-        self.assertEqual(target, PORTAL)
-        for result in [None, {"url": "https://evil.test/", "status": 200, "html": HTML},
-                       {"url": PORTAL, "status": 500, "html": HTML},
-                       {"url": PORTAL + "Account/Login.aspx", "status": 200, "html": HTML}]:
-            page.evaluate.return_value = result
-            with self.subTest(result=result and result.get("url")), self.assertRaises(SchoolPortalError):
+        for target in ("https://evil.test/", "http://ctt-sis.hust.edu.vn/",
+                       "https://ctt-sis.hust.edu.vn.evil.test/"):
+            with self.subTest(target=target), self.assertRaises(SchoolPortalError):
+                _fetch_ctt_html(page, target)
+        page.context.request.get.assert_not_called()
+        for url, status, html in [
+            ("https://evil.test/", 200, HTML),
+            ("http://ctt-sis.hust.edu.vn/", 200, HTML),
+            (PORTAL, 500, HTML),
+            (PORTAL + "Account/Login.aspx", 200, HTML),
+            (PORTAL, 200, HTML + '<input type="password">'),
+            (PORTAL, 200, IDENTITY),
+        ]:
+            page.context.request.get.return_value = mock.Mock(
+                url=url, status=status, text=mock.Mock(return_value=html))
+            with self.subTest(url=url, status=status, html=html[-40:]), self.assertRaises(SchoolPortalError):
                 _fetch_ctt_html(page, PORTAL)
+        page.evaluate.assert_not_called()
+
+    def test_request_reader_ignores_page_javascript_with_a_forged_student_identity(self):
+        page = mock.MagicMock()
+        forged_html = HTML.replace("20221234", "20224567")
+        page.evaluate.return_value = {"url": PORTAL, "status": 200, "html": forged_html}
+        page.context.request.get.return_value = mock.Mock(
+            url=PORTAL, status=200, text=mock.Mock(return_value=HTML))
+
+        result = _fetch_ctt_html(page, PORTAL)
+
+        self.assertEqual(result, {"url": PORTAL, "status": 200, "html": HTML})
+        self.assertEqual(parse_school_identity(result["html"])["student_id"], "20221234")
+        page.context.request.get.assert_called_once_with(PORTAL, timeout=30000)
+        page.evaluate.assert_not_called()
 
 
 class SchoolLoginApiTests(unittest.TestCase):

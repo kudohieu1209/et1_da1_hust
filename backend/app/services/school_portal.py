@@ -189,6 +189,8 @@ def _school_page_ready(page) -> bool:
 
     Read the origin and marker together: a URL observed before navigation may
     refer to a different document by the time a locator is evaluated.
+    This page-controlled signal only schedules the read; identity and grades
+    must come from _fetch_ctt_html's trusted Playwright request context.
     """
     from playwright.sync_api import Error
     parsed = urlsplit(page.url)
@@ -225,24 +227,17 @@ def _wait_for_browser_activity(context, browser, cancel: threading.Event):
 
 
 def _fetch_ctt_html(page, url: str) -> dict:
-    """Read through the authenticated document, like iLoveBK's same-origin JS.
+    """Read CTT through Playwright's authenticated browser request context.
 
-    No cookie export, separate HTTP client or password forwarding is involved.
+    The context shares browser cookies without trusting page-controlled JS.
     Both the requested origin and the returned origin remain validated.
     """
     target = urlsplit(url)
     if target.scheme != "https" or target.netloc.lower() != "ctt-sis.hust.edu.vn":
         raise SchoolPortalError("Không cho phép đọc dữ liệu ngoài cổng CTT.")
-    result = page.evaluate("""async (url) => {
-        const origin = 'https://ctt-sis.hust.edu.vn';
-        if (location.origin !== origin || new URL(url).origin !== origin) return null;
-        const response = await fetch(url, {
-            credentials: 'same-origin', cache: 'no-store', signal: AbortSignal.timeout(30000)
-        });
-        if (new URL(response.url).origin !== origin) return null;
-        return {url: response.url, status: response.status, html: await response.text()};
-    }""", url)
-    if not isinstance(result, dict) or not authenticated_ctt_html(result.get("url", ""), result.get("html", ""), result.get("status", 0)):
+    response = page.context.request.get(url, timeout=30000)
+    result = {"url": response.url, "status": response.status, "html": response.text()}
+    if not authenticated_ctt_html(result["url"], result["html"], result["status"]):
         raise SchoolPortalError("Phiên CTT chưa được xác nhận hoặc đã hết hạn. Chưa đọc hay lưu bảng điểm.")
     return result
 
@@ -354,8 +349,8 @@ def read_school_in_browser(cancel: threading.Event, notify: Callable[[str], None
                     notify("syncing")
                     pages = []
                     grade_html = None
-                    # Same-origin fetch runs inside the signed-in CTT document,
-                    # matching the session-check pattern recovered from iLoveBK.
+                    # Read identity and grades through Playwright's request
+                    # context; page JavaScript only signals when to start.
                     for url in (CTT_BASE_URL + "/", STUDENT_GRADE_URL, STUDENT_MARKS_URL):
                         if cancel.is_set():
                             raise SchoolPortalError("Đã hủy kết nối CTT.")
