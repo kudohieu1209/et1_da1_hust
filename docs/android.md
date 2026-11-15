@@ -84,6 +84,9 @@ Do ứng dụng sử dụng cơ chế bảo mật HttpOnly cookie (`hust_session
 ## 2. Cấu hình Capacitor trên Mobile
 
 File cấu hình tại `frontend/capacitor.config.json`:
+
+Mặc định repo chỉ đặt `server.androidScheme: "https"`, không đặt `server.url` và không bật `cleartext`; Capacitor dùng frontend đóng gói. Để triển khai Remote Web App, thêm URL HTTPS như mẫu dưới trước khi build release. Cấu hình HTTP `http://localhost:8000` chỉ nằm trong `app/src/usbDebug/assets/capacitor.config.json`; manifest overlay và `res/xml/network_security_config.xml` của `usbDebug` chỉ cho HTTP tới `localhost` và `127.0.0.1`, không cho subdomain hay địa chỉ LAN.
+
 ```json
 {
   "appId": "vn.hust.advisor",
@@ -91,16 +94,14 @@ File cấu hình tại `frontend/capacitor.config.json`:
   "webDir": "dist",
   "server": {
     "url": "{{APP_DOMAIN}}",
-    "cleartext": false,
-    "androidScheme": "https",
-    "allowNavigation": [
-      "{{APP_DOMAIN}}"
-    ]
+    "androidScheme": "https"
   }
 }
 ```
 > [!IMPORTANT]
 > Thay thế placeholder `{{APP_DOMAIN}}` bằng URL HTTPS thực tế của hệ thống (ví dụ: `https://advisor.example.com`) trước khi đồng bộ và build bản phát hành.
+
+Sau khi đổi cấu hình, chạy `npm run build` rồi `npx cap copy android` từ `frontend`. Kiểm tra `android/app/src/main/assets/capacitor.config.json` không có URL `http://` hoặc `cleartext: true`; build thường và release tuyệt đối không bật HTTP thường. Build `usbDebug` tiếp tục dùng cấu hình asset riêng qua `adb reverse`.
 
 ---
 
@@ -212,23 +213,6 @@ frontend/android/app/build/outputs/apk/release/app-release.apk
 
 ## 5. Thử nghiệm nhanh trong mạng nội bộ (LAN Dev)
 
-Chỉ sử dụng để kiểm thử tính năng trên thiết bị thật trong quá trình phát triển (khi chưa có HTTPS domain):
+Để thử app Android khi chưa có domain HTTPS, dùng build `usbDebug` qua USB như hướng dẫn đầu tài liệu. Không chép URL HTTP LAN hoặc `cleartext: true` vào cấu hình Capacitor chính; ngoại lệ HTTP của `usbDebug` chỉ áp dụng cho loopback.
 
-1. Tạo file cấu hình tạm `frontend/capacitor.config.dev.json`:
-   ```json
-   {
-     "appId": "vn.hust.advisor",
-     "appName": "HUST Advisor (Dev LAN)",
-     "webDir": "dist",
-     "server": {
-       "url": "http://192.168.1.xxx:5173",
-       "cleartext": true
-     }
-   }
-   ```
-2. Sao chép đè vào `capacitor.config.json` và chạy `npx cap sync android`.
-3. Khởi động Vite với `npm run dev -- --host` và Backend với `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
-
-> [!WARNING] Cảnh báo rủi ro bảo mật LAN Dev
-> - `cleartext: true` cho phép truyền dữ liệu HTTP không mã hóa qua mạng Wi-Fi nội bộ, khiến cookie và thông tin xác thực dễ bị nghe lén (Man-in-the-Middle).
-> - Tính năng này **tuyệt đối không bật** trong bản phát hành chính thức (`cleartext: false`).
+Nếu cần thử giao diện web từ LAN bằng trình duyệt, chạy Vite với `npm run dev -- --host`. Chỉ dùng mạng tin cậy: khi `COOKIE_SECURE=false`, HTTP có thể làm lộ cookie và dữ liệu phiên qua mạng. Bản Android thường và release vẫn phải dùng HTTPS.

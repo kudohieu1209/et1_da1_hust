@@ -3,8 +3,6 @@
   "appName": "AHUST",
   "webDir": "dist",
   "server": {
-    "url": "http://localhost:8000",
-    "cleartext": true,
     "androidScheme": "https"
   }
 }
