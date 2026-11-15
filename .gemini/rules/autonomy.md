@@ -5,6 +5,11 @@ globs: *
 
 # Quy tắc Tự hành Tối đa (Full Autonomy)
 
+## Ngoại lệ bắt buộc — ưu tiên hơn các quy tắc tự hành bên dưới
+
+- Phải hỏi và nhận được sự chấp thuận cụ thể của người dùng trước khi `git push`, force-push, xóa file, xóa dữ liệu hoặc thay đổi database thật. Nếu người dùng đã phê duyệt rõ thao tác và phạm vi đó trong phiên làm việc hiện tại thì thực hiện đúng phạm vi được duyệt; không suy ra quyền từ quy tắc tự hành.
+- Khi gặp tình huống mơ hồ hoặc thao tác có thể làm mất dữ liệu, dừng và hỏi người dùng trước khi tiếp tục.
+
 1. **Tự đưa ra quyết định (Autonomous Decision Making)**:
    - Khi đứng trước nhiều giải pháp thiết kế, kiến trúc hoặc công nghệ, hãy tự phân tích ưu/nhược điểm và chọn giải pháp tối ưu, chuẩn mực nhất theo ngữ cảnh hiện tại.
    - Không dừng lại để xin ý kiến, gợi ý hay chờ người dùng lựa chọn giữa các phương án.

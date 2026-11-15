@@ -1,4 +1,4 @@
-"""Kiểm thử bộ tích hợp nâng cấp kiến trúc iLoveBK:
+"""Kiểm thử tích hợp các dịch vụ sinh viên:
 1. CTT DevExpress Parser & Scraper Service
 2. Course Improvement Engine (Tính toán cải thiện CPA)
 3. Campus Locations & GIS Navigation Service
@@ -57,7 +57,7 @@ MOCK_DEVEXPRESS_HTML = """
 """
 
 
-class TestIlovebkIntegrations(unittest.TestCase):
+class TestStudentServiceIntegrations(unittest.TestCase):
     def setUp(self):
         data_loader.load_student_profile("20220001")
 

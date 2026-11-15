@@ -1,4 +1,4 @@
-"""Dịch vụ hỗ trợ các tính năng mở rộng từ kiến trúc iLoveBK:
+"""Dịch vụ hỗ trợ các tính năng sinh viên mở rộng:
 - Thời khóa biểu chính thức & Tạm thời (Timetable & Temp Timetable)
 - Lịch thi & Phòng thi (Exam Schedule)
 - Tra cứu học phí & Chuẩn đầu ra Tiếng Anh TOEIC
@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 REPO_ROOT = Path(__file__).resolve().parents[3]
 REVIEWS_FILE = REPO_ROOT / "data" / "course_reviews.json"
 
-# Mẫu reviews thực tế cho sinh viên HUST
+# Dữ liệu đánh giá mẫu để minh họa, không phải đánh giá đã xác minh.
 INITIAL_REVIEWS = [
     {
         "id": "rev-1",
@@ -40,7 +40,7 @@ INITIAL_REVIEWS = [
         "rating": 4,
         "difficulty": "Khó",
         "attendance": "Có điểm danh",
-        "comment": "Môn đại cương tiên quyết quan trọng. Nên làm hết bài tập trong sách bài tập thầy Nguyễn Đình Huy, ôn kỹ phần tích phân suy rộng và chuỗi số. Giữa kỳ thường dễ thở hơn cuối kỳ.",
+        "comment": "Dữ liệu mẫu: Môn đại cương tiên quyết quan trọng. Nên làm hết bài tập do giảng viên phụ trách cung cấp, ôn kỹ phần tích phân suy rộng và chuỗi số. Giữa kỳ thường dễ thở hơn cuối kỳ.",
         "author": "K66 - Điện tử",
         "created_at": "2024-10-15T08:30:00Z"
     },
@@ -51,7 +51,7 @@ INITIAL_REVIEWS = [
         "rating": 3,
         "difficulty": "Rất khó",
         "attendance": "Thỉnh thoảng",
-        "comment": "Lý thuyết rộng, phần cơ học và nhiệt học nhiều công thức. Chú ý thí nghiệm vật lý lấy trọn 1.0 điểm cộng, đừng để mất điểm thí nghiệm.",
+        "comment": "Dữ liệu mẫu: Lý thuyết rộng, phần cơ học và nhiệt học nhiều công thức. Chú ý thí nghiệm vật lý lấy trọn 1.0 điểm cộng, đừng để mất điểm thí nghiệm.",
         "author": "K67 - Cơ điện tử",
         "created_at": "2024-11-02T14:20:00Z"
     },
@@ -62,7 +62,7 @@ INITIAL_REVIEWS = [
         "rating": 5,
         "difficulty": "Trung bình",
         "attendance": "Có điểm danh",
-        "comment": "Môn cơ sở ngành cực hay của viện Điện tử. Thầy cô dạy rất tâm huyết, phần bìa Karnaugh và thiết kế mạch tuần hoàn FSM nếu nắm chắc thì thi trắc nghiệm điểm A rất dễ.",
+        "comment": "Dữ liệu mẫu: Môn cơ sở ngành cực hay của viện Điện tử. Thầy cô dạy rất tâm huyết, phần bìa Karnaugh và thiết kế mạch tuần hoàn FSM nếu nắm chắc thì thi trắc nghiệm điểm A rất dễ.",
         "author": "K67 - ET1",
         "created_at": "2024-12-05T09:15:00Z"
     },
@@ -73,7 +73,7 @@ INITIAL_REVIEWS = [
         "rating": 4,
         "difficulty": "Trung bình",
         "attendance": "Không điểm danh",
-        "comment": "Học lập trình C. Điểm thực hành trên máy chiếm 30%, thi trắc nghiệm thuật toán và đọc code cuối kỳ. Nên tự code bài tập trên HackerEarth hoặc LeetCode trước.",
+        "comment": "Dữ liệu mẫu: Học lập trình C. Điểm thực hành trên máy chiếm 30%, thi trắc nghiệm thuật toán và đọc code cuối kỳ. Nên tự code bài tập trên HackerEarth hoặc LeetCode trước.",
         "author": "K68 - IT1",
         "created_at": "2025-01-10T16:45:00Z"
     },
@@ -84,7 +84,7 @@ INITIAL_REVIEWS = [
         "rating": 4,
         "difficulty": "Khó",
         "attendance": "Có điểm danh",
-        "comment": "Toán nhiều: biến đổi Fourier, Laplace, Z. Nắm chắc bảng biến đổi và tính chất tích chập. Đề thi cuối kỳ thường theo dạng đề cương ôn tập.",
+        "comment": "Dữ liệu mẫu: Toán nhiều: biến đổi Fourier, Laplace, Z. Nắm chắc bảng biến đổi và tính chất tích chập. Đề thi cuối kỳ thường theo dạng đề cương ôn tập.",
         "author": "K67 - ET-E9",
         "created_at": "2025-02-18T11:00:00Z"
     }

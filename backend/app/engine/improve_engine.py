@@ -1,7 +1,7 @@
 """Thuật toán phân tích và gợi ý học phần cải thiện điểm (Course Improvement Engine)
 
-Áp dụng quy chế đào tạo Đại học Bách khoa Hà Nội (QĐ 5445/QĐ-ĐHBK) và kế thừa
-triết lý tính toán tối ưu CPA từ kiến trúc iLoveBK.
+Áp dụng quy chế đào tạo Đại học Bách khoa Hà Nội (QĐ 5445/QĐ-ĐHBK)
+để tính toán phương án cải thiện CPA.
 """
 
 from typing import Any, Dict, List, Optional

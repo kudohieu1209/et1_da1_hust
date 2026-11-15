@@ -26,7 +26,7 @@ DEFAULT_HEADERS = {
 class CttDevExpressParser:
     """Parser chuyên dụng bóc tách bảng dữ liệu chuẩn DevExpress ASP.NET WebForms
 
-    của CTT-SIS Bách Khoa (như trong kiến trúc của iLoveBK).
+    của CTT-SIS Bách Khoa.
     """
 
     @staticmethod
