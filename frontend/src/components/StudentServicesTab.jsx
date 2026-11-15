@@ -39,7 +39,7 @@ export default function StudentServicesTab({ syncVersion, onOpenImport }) {
       </>}
       {tab === 'classmates' && <>
         <input className="school-data-search" aria-label="Tìm bạn cùng lớp trong dữ liệu đã đồng bộ" placeholder="Tìm MSSV hoặc họ tên trong danh sách đã đồng bộ" value={query} onChange={(e) => setQuery(e.target.value)} />
-        <DataTable rows={classmates} columns={[[ 'student_id', 'MSSV' ], ['student_name', 'Họ và tên'], ['class_name', 'Lớp'], ['email', 'Email']]} />
+        <DataTable rows={classmates} columns={[[ 'student_id', 'MSSV' ], ['student_name', 'Họ và tên'], ['class_name', 'Lớp']]} />
       </>}
       {tab === 'certificates' && <>
         <SchoolSectionState section={sections.warning} onSync={onOpenImport} title="Cảnh báo học tập" />

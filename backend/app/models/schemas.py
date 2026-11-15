@@ -321,7 +321,6 @@ class ClassmateItem(BaseModel):
     student_id: str
     student_name: str
     class_name: str
-    email: Optional[str] = None
 
 
 class ClassmatesResponse(SchoolServiceMeta):

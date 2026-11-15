@@ -117,6 +117,28 @@ def table_records(tables):
     return [dict(zip(t["headers"], row)) for t in tables for row in t["rows"]]
 
 
+def minimize_classmate_section(section):
+    """Keep roster identity fields only, including in retained source tables."""
+    result = dict(section)
+    fields = ('student_id', 'student_name', 'class_name')
+    for key in ('records', 'students'):
+        if key in result:
+            result[key] = [{field: row.get(field, '') for field in fields} for row in result[key]]
+    allowed_columns = {
+        'mssv', 'ma so sinh vien', 'ma sinh vien', 'ma sv',
+        'ho va ten', 'ho ten', 'ten sinh vien', 'ho va dem', 'ho dem', 'ho', 'dem', 'ten',
+        'ten lop', 'lop sinh vien', 'lop quan ly', 'lop',
+    }
+    tables = []
+    for table in result.get('tables', []):
+        indexes = [i for i, label in enumerate(table['headers']) if fold(label) in allowed_columns]
+        if indexes:
+            tables.append({'id': table.get('id', ''), 'headers': [table['headers'][i] for i in indexes],
+                           'rows': [[row[i] if i < len(row) else '' for i in indexes] for row in table['rows']]})
+    result['tables'] = tables
+    return result
+
+
 def label_pairs(html):
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "noscript"]):
@@ -277,8 +299,8 @@ def parse_section(kind, html, source_url, synced_at):
             family = field(row, "Họ và đệm", "Họ đệm") or clean(field(row, "Họ") + " " + field(row, "Đệm"))
             name = field(row, "Họ và tên", "Họ tên", "Tên sinh viên") or clean(family + " " + field(row, "Tên"))
             if re.fullmatch(r"[0-9]{8}", student_id) and name:
-                result["records"].append({"student_id": student_id, "student_name": name, "class_name": field(row, "Tên lớp", "Lớp sinh viên", "Lớp quản lý", "Lớp"),
-                                          "email": field(row, "Email", "Thư điện tử") or None})
+                result["records"].append({"student_id": student_id, "student_name": name,
+                                          "class_name": field(row, "Tên lớp", "Lớp sinh viên", "Lớp quản lý", "Lớp")})
     elif kind == "exams":
         for row in rows:
             code = field(row, "Mã học phần", "Mã HP", "Mã môn")
@@ -298,6 +320,8 @@ def parse_section(kind, html, source_url, synced_at):
         result["status"] = "partial"
         result["message"] = "Đã lấy được bảng CTT; một số cột chưa chuẩn hóa. Xem bảng gốc bên dưới."
     result["parser_version"] = 2
+    if kind == 'classmates':
+        return minimize_classmate_section(result)
     return result
 
 

@@ -40,6 +40,15 @@ REQUIREMENTS = '''<table><tr><td>Mức cảnh báo học tập</td><td>0</td></t
 
 
 class SchoolSectionParserTests(unittest.TestCase):
+    def test_classmates_parse_keeps_identity_without_email_or_other_personal_columns(self):
+        html = table(['Mã SV', 'Họ', 'Đệm', 'Tên', 'Tên lớp', 'Email', 'Ngày sinh'],
+                     [['20221235', 'Nguyễn', 'Văn', 'Bình', 'ET1-01', 'roster-private@example.test', '01/01/2004']])
+        section = parse_section('classmates', html, ROOT, STAMP)
+        self.assertEqual(section['records'], [{'student_id': '20221235', 'student_name': 'Nguyễn Văn Bình', 'class_name': 'ET1-01'}])
+        self.assertEqual(section['tables'][0]['headers'], ['Mã SV', 'Họ', 'Đệm', 'Tên', 'Tên lớp'])
+        self.assertNotIn('roster-private@example.test', str(section))
+        self.assertNotIn('01/01/2004', str(section))
+
     def test_real_ctt_m_prefix_warning_and_existing_evidence(self):
         for value, expected in [('M0',0),('M1',1),('M2',2),('M3',3),('Mức 0',0),('Mức cảnh báo M1',None),('M4',None),('2026.1 M0',None)]:
             self.assertEqual(parse_warning_level(value), expected, value)
