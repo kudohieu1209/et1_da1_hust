@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Capacitor } from '@capacitor/core';
 import { ArrowUpRight, Check, CheckCircle2, ExternalLink, Loader2, ShieldCheck } from 'lucide-react';
 import { apiFetch, apiUrl, readError } from '../../api';
 import './school-connect.css';
@@ -7,6 +8,9 @@ const BUSY = new Set(['opening', 'waiting', 'syncing', 'saving']);
 
 export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', onConnected, onCommittingChange, language = 'vi' }) {
   const t = (vi, en) => (language === 'vi' ? vi : en);
+  const usbMode = Capacitor.isNativePlatform()
+    && ['localhost', '127.0.0.1'].includes(window.location.hostname)
+    && window.location.protocol === 'http:';
   const [program] = useState(defaultProgram);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState('');
@@ -121,8 +125,12 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
   const busy = BUSY.has(status);
   const progress = { opening: 0, waiting: 1, syncing: 2, saving: 2, success: 3 }[status] ?? -1;
   const statusText = {
-    opening: t('Đang mở cửa sổ đăng nhập…', 'Opening the sign-in window…'),
-    waiting: t('Hoàn tất đăng nhập trong cửa sổ CTT.', 'Complete sign-in in the CTT window.'),
+    opening: usbMode
+      ? t('Đang mở cửa sổ đăng nhập trên PC đang nối USB…', 'Opening the sign-in window on the PC connected via USB…')
+      : t('Đang mở cửa sổ đăng nhập…', 'Opening the sign-in window…'),
+    waiting: usbMode
+      ? t('Hoàn tất đăng nhập trong cửa sổ CTT trên PC đang nối USB.', 'Complete sign-in in the CTT window on the PC connected via USB.')
+      : t('Hoàn tất đăng nhập trong cửa sổ CTT.', 'Complete sign-in in the CTT window.'),
     syncing: t('Đang xác minh MSSV và đồng bộ dữ liệu CTT…', 'Verifying your identity and syncing CTT data…'),
     saving: t('Đang lưu hồ sơ học tập của bạn…', 'Saving your academic profile…'),
     success: t('Đã kết nối và đồng bộ bảng điểm.', 'Connected and transcript synced.'),
@@ -138,8 +146,12 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
 
       <ol className="school-connect__steps" aria-label={t('Các bước kết nối', 'Connection steps')}>
         {[
-          [t('Mở trang trường', 'Open the portal'), t('Cửa sổ đăng nhập bảo mật được mở riêng biệt.', 'A secure sign-in window opens separately.')],
-          [t('Bạn tự đăng nhập', 'Sign in yourself'), t('Nhập tài khoản, mật khẩu mail edu.', 'Enter your edu email account and password.')],
+          [t('Mở trang trường', 'Open the portal'), usbMode
+            ? t('Cửa sổ CTT mở trên PC đang nối USB.', 'The CTT window opens on the PC connected via USB.')
+            : t('Cửa sổ đăng nhập bảo mật được mở riêng biệt.', 'A secure sign-in window opens separately.')],
+          [t('Bạn tự đăng nhập', 'Sign in yourself'), usbMode
+            ? t('Nhập tài khoản, mật khẩu mail edu trên trang trường trong cửa sổ CTT trên PC.', 'Enter your edu email account and password on the school portal in the CTT window on your PC.')
+            : t('Nhập tài khoản, mật khẩu mail edu trên trang trường.', 'Enter your edu email account and password on the school portal.')],
           [t('Nhận hồ sơ và bảng điểm', 'Sync your profile and grades'), t('Hệ thống tự nhận diện bảng điểm.', 'The system automatically recognizes your transcript.')],
         ].map(([title, detail], i) => (
           <li key={title} className={progress > i ? 'is-done' : progress === i ? 'is-current' : ''}>
@@ -148,6 +160,8 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
           </li>
         ))}
       </ol>
+
+      <p className="school-connect__privacy"><ShieldCheck size={14} />{t('HUST Advisor không nhận hoặc lưu mật khẩu trường.', 'HUST Advisor never receives or stores your school password.')}</p>
 
       {available === false && <div className="school-connect__notice">{t(
         'Kết nối trực tiếp CTT cần máy chủ hỗ trợ phiên trình duyệt xác thực. Bạn có thể sử dụng tài khoản Advisor hoặc tự nhập bảng điểm.',
