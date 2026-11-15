@@ -21,6 +21,11 @@
 .school-connect__notice { color: var(--warning); background: var(--warning-bg); border: 1px solid rgba(245, 158, 11, 0.2); }
 .school-connect__status { display: flex; align-items: center; gap: 10px; color: var(--brand-accent); background: var(--brand-soft); }
 .school-connect__status svg { flex-shrink: 0; }
+.spin { animation: school-spin 1s linear infinite; }
+@keyframes school-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 .school-connect__submit { width: 100%; margin-top: 0; border-radius: var(--radius-full) !important; }
 .school-connect__cancel { border: none; background: transparent; color: var(--text-secondary); padding: 6px 14px; border-radius: var(--radius-full); cursor: pointer; font-size: .78rem; align-self: center; }
 .school-connect__privacy { display: flex; justify-content: center; align-items: flex-start; gap: 6px; color: var(--text-muted); font-size: .69rem; line-height: 1.6; text-align: center; margin: -5px 0 0; }

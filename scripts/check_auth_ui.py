@@ -113,7 +113,7 @@ def main():
             state["start_bodies"].clear()
             state["scenario"] = "waiting"
             page.get_by_role("button", name="Thử kết nối lại").evaluate("button => { button.click(); button.click(); }")
-            page.get_by_text("Hoàn tất đăng nhập trong cửa sổ CTT vừa mở.").wait_for()
+            page.get_by_text("Hoàn tất đăng nhập trong cửa sổ CTT.").wait_for()
             page.get_by_role("button", name="Hủy kết nối", exact=True).click()
             page.get_by_role("button", name="Tiếp tục với tài khoản trường").wait_for()
             page.wait_for_function("true")
@@ -121,7 +121,7 @@ def main():
             assert state["start_bodies"] == [{"program_code": "ET1"}]
 
             page.get_by_role("button", name="Tiếp tục với tài khoản trường").click()
-            page.get_by_text("Hoàn tất đăng nhập trong cửa sổ CTT vừa mở.").wait_for()
+            page.get_by_text("Hoàn tất đăng nhập trong cửa sổ CTT.").wait_for()
             page.locator('#advisor-tab').click()
             page.wait_for_timeout(50)
             assert state["cancelled"] == 2

@@ -1,8 +1,10 @@
 {
   "appId": "vn.hust.advisor",
-  "appName": "AdvisorBK",
+  "appName": "AHUST",
   "webDir": "dist",
   "server": {
+    "url": "http://localhost:8000",
+    "cleartext": true,
     "androidScheme": "https"
   }
 }

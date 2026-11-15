@@ -1,6 +1,6 @@
 {
   "appId": "vn.hust.advisor.usb",
-  "appName": "AdvisorBK USB",
+  "appName": "AHUST",
   "webDir": "dist",
   "server": {
     "url": "http://localhost:8000",

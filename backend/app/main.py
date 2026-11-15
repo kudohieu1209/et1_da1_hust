@@ -92,6 +92,10 @@ FRONTEND_DIST = PROJECT_DIR / "frontend" / "dist"
 if (FRONTEND_DIST / "assets").is_dir():
     app.mount("/assets", StaticFiles(directory=FRONTEND_DIST / "assets"), name="assets")
 
+FRONTEND_BRAND = (FRONTEND_DIST / "brand") if (FRONTEND_DIST / "brand").is_dir() else (PROJECT_DIR / "frontend" / "public" / "brand")
+if FRONTEND_BRAND.is_dir():
+    app.mount("/brand", StaticFiles(directory=FRONTEND_BRAND), name="brand")
+
 @app.get("/")
 def root():
     if (FRONTEND_DIST / "index.html").is_file():

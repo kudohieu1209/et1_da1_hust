@@ -7,12 +7,7 @@ import {
   Pin,
   Archive,
   Trash2,
-  FileText,
-  Award,
-  BookOpen,
-  TrendingUp,
-  Calendar,
-  GraduationCap
+  FileText
 } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import BrandLogo from './components/BrandLogo';
@@ -27,11 +22,21 @@ import TranscriptImportModal from './components/TranscriptImportModal';
 import AuthScreen from './components/auth/AuthScreen';
 import { Capacitor } from '@capacitor/core';
 import { App as CapApp } from '@capacitor/app';
-import { API_BASE_URL, UNAUTHORIZED_EVENT, apiFetch, apiUrl } from './api';
+import { UNAUTHORIZED_EVENT, apiFetch, apiUrl } from './api';
 import { conversationIdFromUrl, urlWithConversationId } from './conversationUrl';
 
 function updateConversationUrl(conversationId) {
   window.history.replaceState({}, '', urlWithConversationId(window.location.href, conversationId));
+}
+
+function getEffectiveTheme(themeChoice) {
+  if (themeChoice === 'light' || themeChoice === 'dark') {
+    return themeChoice;
+  }
+  if (typeof window !== 'undefined' && window.matchMedia) {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  return 'light';
 }
 
 export default function App() {
@@ -48,7 +53,12 @@ export default function App() {
   const [activeConversationId, setActiveConversationId] = useState(null);
 
   // Theme & Language Settings (persisted in localStorage)
-  const [theme, setTheme] = useState(() => localStorage.getItem('hust_advisor_theme') || 'dark');
+  // Mặc định: 'system' (theo hệ điều hành). Người dùng có thể chọn 'light' hoặc 'dark'.
+  const [theme, setTheme] = useState(() => {
+    const explicit = localStorage.getItem('hust_advisor_theme_explicit') === 'true';
+    const saved = localStorage.getItem('hust_advisor_theme');
+    return explicit && (saved === 'light' || saved === 'dark' || saved === 'system') ? saved : 'system';
+  });
   const [language, setLanguage] = useState(() => localStorage.getItem('hust_advisor_lang') || 'vi');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [settingsTab, setSettingsTab] = useState('general');
@@ -125,13 +135,30 @@ export default function App() {
     };
   }, []);
 
-  // Update body class when theme changes
+  // Update body class when theme changes (supports 'system', 'light', 'dark')
   useEffect(() => {
     localStorage.setItem('hust_advisor_theme', theme);
-    if (theme === 'light') {
-      document.body.classList.add('light-theme');
-    } else {
-      document.body.classList.remove('light-theme');
+    const applyTheme = () => {
+      const active = getEffectiveTheme(theme);
+      if (active === 'light') {
+        document.body.classList.add('light-theme');
+      } else {
+        document.body.classList.remove('light-theme');
+      }
+      try {
+        if (window.AndroidThemeBridge?.setStatusBarStyle) {
+          window.AndroidThemeBridge.setStatusBarStyle(active);
+        }
+      } catch {}
+    };
+
+    applyTheme();
+
+    if (theme === 'system' && typeof window !== 'undefined' && window.matchMedia) {
+      const media = window.matchMedia('(prefers-color-scheme: dark)');
+      const listener = () => applyTheme();
+      media.addEventListener('change', listener);
+      return () => media.removeEventListener('change', listener);
     }
   }, [theme]);
 
@@ -174,7 +201,7 @@ export default function App() {
       fetchInitialData();
     } catch (err) {
       console.error('Lỗi kết nối Backend:', err);
-      setAuthNotice(`Không kết nối được máy chủ (${API_BASE_URL || 'API cùng địa chỉ web'}). Hãy kiểm tra backend đang chạy.`);
+      setAuthNotice(language === 'vi' ? 'Không thể kết nối tới máy chủ' : 'Cannot connect to server');
       setAccount(null);
     }
   };
@@ -354,6 +381,11 @@ export default function App() {
   // Ổn định tham chiếu: SettingsModal gắn/gỡ listener Esc theo onClose.
   const handleCloseSettings = useCallback(() => setIsSettingsOpen(false), []);
 
+  const handleThemeChange = (newTheme) => {
+    localStorage.setItem('hust_advisor_theme_explicit', 'true');
+    setTheme(newTheme);
+  };
+
   const handleOpenSettings = (tab = 'general') => {
     setSettingsTab(tab);
     setIsSettingsOpen(true);
@@ -408,8 +440,9 @@ export default function App() {
       }}>
         {/* Workspace header */}
         <header style={{
-          minHeight: '44px',
-          paddingTop: 'env(safe-area-inset-top, 0px)',
+          minHeight: '52px',
+          paddingTop: 'calc(8px + env(safe-area-inset-top, 0px))',
+          paddingBottom: '8px',
           paddingLeft: 'max(16px, env(safe-area-inset-left, 0px))',
           paddingRight: 'max(16px, env(safe-area-inset-right, 0px))',
           borderBottom: 'none',
@@ -662,66 +695,6 @@ export default function App() {
           </div>
         </header>
 
-        {/* Mobile Navigation Segmented Pill Bar */}
-        {isMobile && (
-          <nav 
-            className="mobile-tab-bar"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '6px 12px 10px',
-              paddingLeft: 'max(12px, env(safe-area-inset-left, 0px))',
-              paddingRight: 'max(12px, env(safe-area-inset-right, 0px))',
-              background: 'transparent',
-              overflowX: 'auto',
-              WebkitOverflowScrolling: 'touch',
-              borderBottom: '1px solid var(--border-subtle)',
-              flexShrink: 0
-            }}
-          >
-            {[
-              { id: 'chat', label: language === 'vi' ? 'Trò chuyện' : 'Chat', icon: <Sparkles size={14} /> },
-              { id: 'audit', label: language === 'vi' ? 'Tiến độ CPA' : 'Audit', icon: <Award size={14} /> },
-              { id: 'improve', label: language === 'vi' ? 'Cải thiện CPA' : 'Improve', icon: <TrendingUp size={14} /> },
-              { id: 'schedule', label: language === 'vi' ? 'Thời khóa biểu' : 'Schedule', icon: <Calendar size={14} /> },
-              { id: 'services', label: language === 'vi' ? 'Tiện ích CTT' : 'Services', icon: <GraduationCap size={14} /> },
-              { id: 'programs', label: language === 'vi' ? 'CTĐT' : 'Programs', icon: <BookOpen size={14} /> }
-            ].map(tab => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveTab(tab.id)}
-                  className="apple-press gemini-pill"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '8px 14px',
-                    minHeight: '44px',
-                    borderRadius: 'var(--radius-full)',
-                    border: isActive ? '1px solid rgba(213, 19, 42, 0.3)' : '1px solid var(--border-subtle)',
-                    background: isActive ? 'rgba(213, 19, 42, 0.12)' : 'var(--bg-card)',
-                    color: isActive ? 'var(--brand-accent)' : 'var(--text-secondary)',
-                    fontWeight: isActive ? '600' : '450',
-                    fontSize: '0.8rem',
-                    cursor: 'pointer',
-                    whiteSpace: 'nowrap',
-                    flex: '1 0 auto',
-                    justifyContent: 'center',
-                    transition: 'all 0.15s ease'
-                  }}
-                >
-                  {tab.icon}
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
-          </nav>
-        )}
-
         {/* Apple Dynamic Island Toast Notification */}
         {toastMessage && (
           <div className="apple-dynamic-island">
@@ -787,7 +760,7 @@ export default function App() {
         onClose={handleCloseSettings}
         initialTab={settingsTab}
         theme={theme}
-        setTheme={setTheme}
+        setTheme={handleThemeChange}
         language={language}
         setLanguage={setLanguage}
         studentProfile={studentProfile}

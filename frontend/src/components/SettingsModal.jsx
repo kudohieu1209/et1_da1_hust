@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Brain, Info, KeyRound, Moon, SlidersHorizontal, Sun, UserRound, X } from 'lucide-react';
+import { Brain, Info, KeyRound, Monitor, Moon, SlidersHorizontal, Sun, UserRound, X } from 'lucide-react';
 import AboutPanel from './account/AboutPanel';
 import AccountSecurity from './account/AccountSecurity';
 import ProfileSettings from './account/ProfileSettings';
@@ -141,12 +141,15 @@ export default function SettingsModal({
                 </section>
                 <section className="settings-section">
                   <h3>{t('Giao diện', 'Appearance')}</h3>
-                  <p className="settings-hint">{t('Lưu trên trình duyệt này.', 'Saved in this browser.')}</p>
+                  <p className="settings-hint">
+                    {t('Mặc định theo hệ thống. Bạn có thể chọn cố định sáng hoặc tối.', 'Follows your system theme by default, or lock to light/dark.')}
+                  </p>
                   <Segmented
                     label={t('Giao diện', 'Appearance')}
                     value={theme}
                     onChange={setTheme}
                     options={[
+                      { value: 'system', label: t('Hệ thống', 'System'), icon: <Monitor size={15} aria-hidden="true" /> },
                       { value: 'light', label: t('Sáng', 'Light'), icon: <Sun size={15} aria-hidden="true" /> },
                       { value: 'dark', label: t('Tối', 'Dark'), icon: <Moon size={15} aria-hidden="true" /> },
                     ]}

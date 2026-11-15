@@ -22,8 +22,8 @@ android {
             applicationIdSuffix ".usb"
             versionNameSuffix "-usb"
             matchingFallbacks = ['debug']
-            resValue 'string', 'app_name', 'AdvisorBK USB'
-            resValue 'string', 'title_activity_main', 'AdvisorBK USB'
+            resValue 'string', 'app_name', 'AHUST'
+            resValue 'string', 'title_activity_main', 'AHUST'
         }
         release {
             minifyEnabled false

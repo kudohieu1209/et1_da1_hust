@@ -103,6 +103,7 @@ body.light-theme {
   --bg-card: #ffffff;
   --bg-card-hover: #faf6ee;
   --bg-card-active: #f4eddf;
+  --hust-red-glow: rgba(213, 19, 42, 0.08);
   
   --border-subtle: #e7e1d6;
   --border-focus: rgba(213, 19, 42, 0.5);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AlertCircle, ArrowLeft, ArrowRight, BookOpen, Eye, EyeOff, GraduationCap, Loader2, LockKeyhole, MessageSquare, UserRound } from 'lucide-react';
+import { AlertCircle, ArrowLeft, ArrowRight, BookOpen, Eye, EyeOff, GraduationCap, Loader2, MessageSquare, UserRound } from 'lucide-react';
 import BrandLogo from '../BrandLogo';
 import ProgramsTab from '../ProgramsTab';
 import SchoolConnect from './SchoolConnect';
@@ -86,7 +86,7 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
       setRegister((current) => ({ ...current, password: '', confirm: '' }));
       onAuthenticated(account);
     } catch {
-      setError(t('Chưa kết nối được máy chủ. Hãy kiểm tra backend đang chạy.', 'Cannot reach the server. Check that the backend is running.'));
+      setError(t('Không thể kết nối tới máy chủ', 'Cannot connect to server'));
     } finally { setSubmitting(false); }
   };
 
@@ -105,8 +105,8 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
       <div className="auth-layout">
         <section className="auth-story" aria-label="HUST Advisor">
           <a className="auth-brand" href="/" aria-label="HUST Advisor">
-            <BrandLogo size={48} decorative />
-            <span>HUST<span className="auth-brand__light">Advisor</span><small>{t('NGƯỜI BẠN ĐỒNG HÀNH HỌC TẬP', 'YOUR ACADEMIC COMPANION')}</small></span>
+            <BrandLogo size={42} decorative />
+            <span>HUST Advisor</span>
           </a>
           <div className="auth-story__body">
             <span className="auth-eyebrow"><span />{t('HIỂU MÌNH. HIỂU LỘ TRÌNH.', 'YOUR PROGRESS. YOUR PATH.')}</span>
@@ -130,7 +130,7 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
 
         <section className="auth-card" aria-labelledby="auth-title">
           <header className="auth-card__header">
-            <h2 id="auth-title">{mode === 'register' ? t('Tạo tài khoản demo', 'Create a demo account') : t('Chào bạn trở lại', 'Welcome back')}</h2>
+            <h2 id="auth-title">{mode === 'register' ? t('Tạo tài khoản demo', 'Create a demo account') : t('Đăng nhập', 'Sign in')}</h2>
             {mode === 'register' && <p>{t('Dùng để nhập bảng điểm và lưu kế hoạch học tập.', 'Import your grades and save your academic plans.')}</p>}
           </header>
 
@@ -157,9 +157,8 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
             ) : (
               <form className="auth-form" onSubmit={submit}>
                 {mode === 'register' && <button type="button" className="auth-back" onClick={() => switchMode('local')}><ArrowLeft size={15} />{t('Về đăng nhập demo', 'Back to demo sign in')}</button>}
-                {mode === 'local' && <p className="auth-form__hint"><LockKeyhole size={16} />{t('Dùng mật khẩu bạn đã tạo cho tài khoản demo.', 'Use the password you created for your demo account.')}</p>}
                 <label className="auth-field" htmlFor="advisor-student-id"><span>{t('Mã số sinh viên', 'Student ID')}</span>
-                  <input id="advisor-student-id" className="auth-input" inputMode="numeric" autoComplete="username" placeholder="Ví dụ: 20231234"
+                  <input id="advisor-student-id" className="auth-input" inputMode="numeric" autoComplete="username"
                     maxLength={8} pattern="[0-9]{8}" value={mode === 'register' ? register.student_id : login.student_id} disabled={submitting} required
                     onChange={mode === 'register' ? setRegisterField('student_id') : (e) => setLogin({ ...login, student_id: e.target.value })} />
                 </label>
@@ -183,7 +182,7 @@ export default function AuthScreen({ onAuthenticated, notice, language = 'vi' })
                 {mode === 'register' && <div className="auth-field"><label htmlFor="advisor-confirm">{t('Nhập lại mật khẩu', 'Confirm password')}</label>
                   <PasswordInput id="advisor-confirm" value={register.confirm} onChange={setRegisterField('confirm')} autoComplete="new-password" disabled={submitting} /></div>}
                 <button type="submit" className="auth-submit" disabled={submitting}>{submitting ? <Loader2 size={17} className="spin" /> : <ArrowRight size={17} />}
-                  {submitting ? t('Đang xử lý…', 'Please wait…') : mode === 'register' ? t('Tạo tài khoản', 'Create account') : t('Vào không gian học tập', 'Open my workspace')}</button>
+                  {submitting ? t('Đang xử lý…', 'Please wait…') : mode === 'register' ? t('Tạo tài khoản', 'Create account') : t('Đăng nhập', 'Sign in')}</button>
                 <p className="auth-switch">{mode === 'register' ? t('Đã có tài khoản?', 'Already have an account?') : t('Chưa có tài khoản demo?', 'New to demo account?')}{' '}
                   <button type="button" disabled={submitting} onClick={() => switchMode(mode === 'register' ? 'local' : 'register')}>{mode === 'register' ? t('Đăng nhập', 'Sign in') : t('Tạo tài khoản', 'Create an account')}</button></p>
               </form>
