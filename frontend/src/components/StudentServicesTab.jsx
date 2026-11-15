@@ -11,6 +11,10 @@ export default function StudentServicesTab({ syncVersion, onOpenImport }) {
   const certificates = sections.certificates?.requirements || {};
   const coursework = sections.certificates?.coursework || {};
   const classmates = records.filter((row) => !query || [row.student_id, row.student_name, row.class_name].some((value) => String(value || '').toLocaleLowerCase('vi').includes(query.toLocaleLowerCase('vi'))));
+  const classSyncDate = sections.classmates?.synced_at && new Date(sections.classmates.synced_at);
+  const classSyncTime = classSyncDate && !Number.isNaN(classSyncDate.getTime())
+    ? new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short', timeZone: 'Asia/Bangkok' }).format(classSyncDate)
+    : null;
   const debts = (sections.tuition?.records || []).map((row) => row.debt);
   const totalDebt = debts.length && debts.every((n) => typeof n === 'number') ? debts.reduce((a, b) => a + b, 0) : null;
   return <div className="school-data-page">
@@ -38,6 +42,7 @@ export default function StudentServicesTab({ syncVersion, onOpenImport }) {
         {!records.length && !selected?.charges?.length && !selected?.payments?.length && !selected?.tables?.length && <p className="school-data-empty">Chưa có bảng học phí từ CTT để hiển thị.</p>}
       </>}
       {tab === 'classmates' && <>
+        <p className="school-data-provenance">{classSyncTime ? <>Lấy từ CTT lúc <time dateTime={sections.classmates.synced_at}>{classSyncTime}</time>.</> : 'Chưa có thời điểm đồng bộ từ CTT.'} Chỉ bạn xem được danh sách này.</p>
         <input className="school-data-search" aria-label="Tìm bạn cùng lớp trong dữ liệu đã đồng bộ" placeholder="Tìm MSSV hoặc họ tên trong danh sách đã đồng bộ" value={query} onChange={(e) => setQuery(e.target.value)} />
         <DataTable rows={classmates} columns={[[ 'student_id', 'MSSV' ], ['student_name', 'Họ và tên'], ['class_name', 'Lớp']]} />
       </>}

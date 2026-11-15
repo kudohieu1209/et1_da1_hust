@@ -41,3 +41,4 @@
 .school-data-file input[type=file] { max-width: 100%; font: inherit; font-size: .76rem; color: var(--text-secondary); }
 .school-data-error { padding: 13px 15px; color: var(--danger); background: var(--danger-bg); font-size: .8rem; border-radius: 10px; line-height: 1.7; }
 .school-data-search { padding: 10px 13px; border-radius: 10px; border: 1px solid var(--border-subtle); color: var(--text-primary); background: var(--bg-card); width: min(100%, 420px); font: inherit; font-size: .8rem; }
+.school-data-provenance { margin: 0; font-size: .75rem; line-height: 1.65; color: var(--text-muted); }
