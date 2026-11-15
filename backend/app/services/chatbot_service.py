@@ -9,6 +9,7 @@ from app.engine.recommender import course_recommender
 from app.rag.rag_engine import rag_engine
 from app.rag.gemini_service import gemini_service
 from app.services.conversation_context import previous_focus, resolve_followup
+from app.services.context_privacy import without_classmates
 from app.services.campus_service import campus_service
 
 # Bảng từ đồng nghĩa / tên gọi phổ biến của sinh viên Bách Khoa
@@ -414,7 +415,7 @@ class ChatbotService:
         return False
 
     def process_message(self, message: str, history: Optional[List[Dict[str, Any]]] = None, *, preferences=None) -> Dict[str, Any]:
-        history = (history or [])[-12:]
+        history = without_classmates((history or [])[-12:])
         message = unicodedata.normalize("NFC", message or "").strip()
         focus = previous_focus(history, self._detect_courses, self._is_repeat_request)
         if self._is_repeat_request(message):
@@ -432,7 +433,7 @@ class ChatbotService:
         result = self._process_message(effective, text_history, preferences=preferences)
         if result.get("intent") not in {"SMALL_TALK", "GENERAL_GREETING", "OUT_OF_SCOPE"}:
             focus = {"course_codes": self._detect_courses(effective), "topic_query": effective[:1200]}
-        context = dict(result.get("data_context") or {})
+        context = without_classmates(dict(result.get("data_context") or {}))
         context["conversation_context"] = focus
         result["data_context"] = context
         return result

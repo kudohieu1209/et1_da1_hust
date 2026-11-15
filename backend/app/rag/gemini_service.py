@@ -5,6 +5,7 @@ from google import genai
 from google.genai import types
 from app.core.config import GEMINI_API_KEY, GEMINI_MODEL, GEMINI_FALLBACK_MODEL, GEMINI_TIMEOUT_SECONDS
 from app.rag.document_loader import DOCUMENT_DISPLAY_NAMES
+from app.services.context_privacy import without_classmates
 
 HUST_SYSTEM_PROMPT = """Bạn là HUST Advisor, trợ lý tư vấn học tập dành cho sinh viên Đại học Bách khoa Hà Nội. Đây là sản phẩm đồ án của sinh viên, không phải kênh tư vấn chính thức của Nhà trường; nếu được hỏi về danh tính, hãy nói đúng như vậy và không tự nhận là do Google hay Nhà trường phát triển.
 Nhiệm vụ của bạn là giải thích quy chế, chính sách sinh viên và chương trình đào tạo dựa trên dữ liệu được cung cấp. Phạm vi ngành và phiên bản CTĐT phải theo dữ liệu trong ngữ cảnh; khi chưa có dữ liệu phù hợp, phải nói rõ giới hạn này thay vì suy đoán. Không coi việc có tên ngành trong danh mục là đã có CTĐT của ngành đó.
@@ -115,6 +116,9 @@ class GeminiService:
         """
         Sinh câu trả lời sử dụng Gemini LLM + Context từ RAG + Dữ liệu cấu trúc
         """
+        structured_data = without_classmates(structured_data)
+        context_chunks = without_classmates(context_chunks)
+        history = without_classmates(history)
         # Nếu chưa cấu hình Gemini API, dùng template synthesis từ RAG chunks
         if not self.is_configured() or not context_chunks and not structured_data:
             return self._fallback_synthesis(user_query, context_chunks, structured_data)
