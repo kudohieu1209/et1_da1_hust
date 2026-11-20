@@ -739,7 +739,12 @@ export default function App() {
                   />
                 )}
                 {activeTab === 'improve' && (
-                  <ImproveTab language={language} />
+                  <ImproveTab
+                    language={language}
+                    syncVersion={studentProfile?.school_sync?.synced_at}
+                    transcript={studentProfile?.transcript}
+                    onOpenImport={handleOpenImport}
+                  />
                 )}
                 {activeTab === 'schedule' && (
                   <ScheduleTab language={language} syncVersion={studentProfile?.school_sync?.synced_at} onOpenImport={handleOpenImport} />

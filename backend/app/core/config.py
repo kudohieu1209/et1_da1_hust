@@ -12,9 +12,16 @@ load_dotenv(PROJECT_DIR / ".env")
 DATA_DIR = PROJECT_DIR / "data" / "processed"
 CURRICULA_DIR = DATA_DIR / "curricula"
 DOCUMENTS_DIR = PROJECT_DIR / "data" / "documents"
+FRONTEND_DIST_DIR = Path(os.getenv("FRONTEND_DIST_DIR") or PROJECT_DIR / "frontend" / "dist")
 # ChromaDB lưu file cục bộ không an toàn khi nhiều tiến trình cùng mở, nên
 # kiểm thử/đánh giá trỏ biến này sang thư mục riêng khi backend dev đang chạy.
 VECTOR_DB_DIR = Path(os.getenv("VECTOR_DB_DIR") or PROJECT_DIR / "data" / "vector_db")
+RAG_SYNC_ON_STARTUP = os.getenv("RAG_SYNC_ON_STARTUP", "auto").strip().lower()
+if RAG_SYNC_ON_STARTUP not in {"auto", "always", "never"}:
+    raise ValueError("RAG_SYNC_ON_STARTUP must be auto, always or never")
+RAG_VECTOR_SEARCH = os.getenv("RAG_VECTOR_SEARCH", "on").strip().lower()
+if RAG_VECTOR_SEARCH not in {"on", "off"}:
+    raise ValueError("RAG_VECTOR_SEARCH must be on or off")
 # MongoDB là kho nghiệp vụ duy nhất; ChromaDB chỉ phục vụ chỉ mục RAG.
 MONGODB_URI = os.getenv("MONGODB_URI", "").strip()
 MONGODB_DB = os.getenv("MONGODB_DB", "hust_course_advisor").strip() or "hust_course_advisor"
@@ -54,3 +61,8 @@ CORS_ORIGINS = [
     ).split(",")
     if origin.strip()
 ]
+
+# Render supplies the public HTTPS origin even when the proxy's internal host differs.
+RENDER_EXTERNAL_URL = os.getenv("RENDER_EXTERNAL_URL", "").strip().rstrip("/")
+if RENDER_EXTERNAL_URL and RENDER_EXTERNAL_URL not in CORS_ORIGINS:
+    CORS_ORIGINS.append(RENDER_EXTERNAL_URL)

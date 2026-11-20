@@ -472,7 +472,10 @@ class ChatbotService:
                 return campus_res
 
         # 0c. Gợi ý môn học cải thiện CPA
-        if self._has_any(msg_lower, ["cải thiện cpa", "học lại môn nào", "môn cần cải thiện", "kéo cpa", "kéo điểm", "nâng cpa", "cải thiện điểm"]):
+        if self._has_any(msg_lower, [
+            "cải thiện cpa", "học lại môn nào", "môn cần cải thiện", "kéo cpa", "kéo điểm",
+            "nâng cpa", "cải thiện điểm", "học cải thiện môn nào",
+        ]):
             return self._handle_course_improvement()
 
         # 1. Xử lý câu hỏi mô phỏng trượt môn (What-if simulation)
@@ -1041,14 +1044,20 @@ class ChatbotService:
         """Tư vấn các môn điểm thấp (D, D+, F) cần học cải thiện và dự báo tác động CPA."""
         try:
             analysis = student_service.get_course_improvements()
-            candidates = analysis.get("improve_candidates", [])
+            candidates = [
+                course for course in analysis.get("improve_candidates", [])
+                if course["category"] in {"retake", "improve_low"}
+            ]
+            analysis = {**analysis, "improve_candidates": candidates, "total_candidates": len(candidates)}
             cpa = analysis.get("current_cpa", 0.0)
             rank = analysis.get("current_classification", {}).get("rank", "Trung bình")
+            tab_tip = 'Mở tab "Cải thiện điểm CPA" để xem các môn từ C trở lên và đặt CPA mục tiêu.'
 
             if not candidates:
                 reply = (
                     f"🎉 Chúc mừng bạn! Hiện tại CPA của bạn đang là **{cpa:.2f}** ({rank}) "
-                    "và bạn không có môn học nào bị điểm F hoặc D/D+ cần phải học cải thiện."
+                    "và bạn không có môn học nào bị điểm F hoặc D/D+ cần phải học cải thiện.\n\n"
+                    f"{tab_tip}"
                 )
                 return {
                     "reply": reply,
@@ -1078,6 +1087,7 @@ class ChatbotService:
                     f"   ➥ Nếu đạt điểm **B (3.0)**: CPA tăng thêm **+{delta:.3f}** ➔ đạt **{new_cpa:.2f}**."
                 )
             lines.append("\n💡 *Mẹo:* Ưu tiên học lại các môn F trước để xóa nợ đọng, sau đó chọn các môn 3-4 tín chỉ điểm D/D+ để kéo CPA nhanh nhất.")
+            lines.append(tab_tip)
             return {
                 "reply": "\n".join(lines),
                 "intent": "COURSE_IMPROVEMENT",

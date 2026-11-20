@@ -1,6 +1,7 @@
 """User-operated local browser connection to the official HUST portal."""
 import importlib.util
 import ipaddress
+import logging
 import secrets
 from datetime import timedelta
 from urllib.parse import urlsplit
@@ -15,16 +16,25 @@ from app.auth.service import SlidingWindowLimiter
 from app.core.config import COOKIE_SECURE, CTT_BROWSER_LOGIN_ENABLED, CTT_LOGIN_TIMEOUT_SECONDS, SESSION_COOKIE_NAME
 from app.services.curriculum_repository import CurriculumNotFoundError, curriculum_repository
 from app.services.school_account_service import complete_school_login
-from app.services.school_portal import SchoolPortalError, school_login_manager
+from app.services.school_portal import SchoolPortalError, read_school_with_cookie, school_login_manager
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/auth/ctt", tags=["School sign-in"])
 OWNER_COOKIE = "hust_ctt_connect"
 start_limiter = SlidingWindowLimiter(timedelta(minutes=5), 5)
+mobile_limiter = SlidingWindowLimiter(timedelta(minutes=5), 10)
 
 
 class SchoolStartRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     program_code: str = Field("ET1", min_length=2, max_length=12, pattern=r"^[A-Z0-9-]+$")
+
+
+class MobileSchoolCompleteRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    program_code: str = Field("ET1", min_length=2, max_length=12, pattern=r"^[A-Z0-9-]+$")
+    ctt_cookie: str = Field(..., min_length=4, max_length=8192)
+    user_agent: str | None = Field(default=None, max_length=300)
 
 
 def _local_request(request: Request) -> bool:
@@ -56,7 +66,43 @@ async def _current_account(request: Request):
 def capabilities(request: Request, response: Response):
     response.headers["Cache-Control"] = "no-store"
     return {"available": CTT_BROWSER_LOGIN_ENABLED and _local_request(request) and importlib.util.find_spec("playwright") is not None,
-            "local_only": True, "timeout_seconds": CTT_LOGIN_TIMEOUT_SECONDS}
+            "local_only": True, "timeout_seconds": CTT_LOGIN_TIMEOUT_SECONDS, "mobile_webview_supported": True}
+
+
+@router.post("/mobile-complete")
+async def mobile_complete(payload: MobileSchoolCompleteRequest, request: Request, response: Response):
+    if payload.program_code not in {code for code, _ in curriculum_repository.available_keys}:
+        raise HTTPException(status_code=422, detail="Chương trình đào tạo chưa được hỗ trợ.")
+    client_host = request.client.host if request.client else "unknown"
+    wait = mobile_limiter.hit(client_host, runtime.auth_service.clock())
+    if wait is not None:
+        raise HTTPException(
+            status_code=429,
+            detail="Thiết bị vừa gửi nhiều yêu cầu đồng bộ CTT. Vui lòng đợi ít phút rồi thử lại.",
+            headers={"Retry-After": str(wait)},
+        )
+    expected_id = await _current_account(request)
+    try:
+        snapshot = await run_in_threadpool(read_school_with_cookie, payload.ctt_cookie, payload.user_agent)
+    except SchoolPortalError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from None
+    except Exception as exc:
+        logger.warning("Mobile CTT sync failed: error_type=%s", type(exc).__name__)
+        raise HTTPException(status_code=502, detail="Không thể xác minh dữ liệu từ cổng CTT. Vui lòng thử lại.") from None
+
+    current = await _current_account(request)
+    school_id = snapshot.info["student_id"]
+    if (expected_id and current != expected_id) or (current and current != school_id):
+        raise HTTPException(status_code=409, detail="MSSV CTT khác tài khoản đang đăng nhập. Chưa thay đổi hồ sơ.")
+    try:
+        token, sync = await run_in_threadpool(
+            complete_school_login, runtime.auth_service, snapshot, payload.program_code, expected_id
+        )
+    except (SchoolPortalError, CurriculumNotFoundError) as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from None
+    _set_session_cookie(response, token)
+    response.headers["Cache-Control"] = "no-store"
+    return {**(await run_in_threadpool(_account_view, school_id)), "school_sync": sync}
 
 
 @router.post("/start", status_code=202)

@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Capacitor } from '@capacitor/core';
+import { Capacitor, registerPlugin } from '@capacitor/core';
 import { ArrowUpRight, Check, CheckCircle2, ExternalLink, Loader2, ShieldCheck } from 'lucide-react';
 import { apiFetch, apiUrl, readError } from '../../api';
 import './school-connect.css';
 
 const BUSY = new Set(['opening', 'waiting', 'syncing', 'saving']);
+const CttPortal = registerPlugin('CttPortal');
 
 export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', onConnected, onCommittingChange, language = 'vi' }) {
   const t = (vi, en) => (language === 'vi' ? vi : en);
-  const usbMode = Capacitor.isNativePlatform()
+  const nativeAndroid = Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android';
+  const usbMode = !nativeAndroid
+    && Capacitor.isNativePlatform()
     && ['localhost', '127.0.0.1'].includes(window.location.hostname)
     && window.location.protocol === 'http:';
   const [program] = useState(defaultProgram);
@@ -37,13 +40,17 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
     const state = connection.current;
     state.mounted = true;
     let cancelled = false;
-    apiFetch(apiUrl('/api/auth/ctt/capabilities'))
-      .then(async (res) => {
-        if (!res.ok) throw new Error();
-        const data = await res.json();
-        if (!cancelled) setAvailable(data.available);
-      })
-      .catch(() => { if (!cancelled) setAvailable(null); });
+    if (nativeAndroid) {
+      setAvailable(true);
+    } else {
+      apiFetch(apiUrl('/api/auth/ctt/capabilities'))
+        .then(async (res) => {
+          if (!res.ok) throw new Error();
+          const data = await res.json();
+          if (!cancelled) setAvailable(data.available);
+        })
+        .catch(() => { if (!cancelled) setAvailable(null); });
+    }
     return () => {
       cancelled = true;
       state.mounted = false;
@@ -52,7 +59,7 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
       if (state.attempt) abandon(state.attempt);
       state.attempt = null;
     };
-  }, []);
+  }, [nativeAndroid]);
 
   const start = async () => {
     const state = connection.current;
@@ -81,6 +88,26 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
       setError(err.message || t('Không thể kết nối tới máy chủ', 'Cannot connect to server'));
     };
     try {
+      if (nativeAndroid) {
+        setStatus('waiting');
+        const nativeResult = await CttPortal.openLogin();
+        if (!active()) return;
+        setStatus('saving');
+        const account = await request('/api/auth/ctt/mobile-complete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            program_code: program,
+            ctt_cookie: nativeResult.cookie,
+            user_agent: nativeResult.userAgent || '',
+          }),
+        });
+        state.running = false;
+        if (!active()) return;
+        setStatus('success');
+        onConnectedRef.current?.(account);
+        return;
+      }
       const data = await request('/api/auth/ctt/start', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ program_code: program }),
@@ -108,7 +135,16 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
         } catch (err) { fail(err); }
       };
       await poll();
-    } catch (err) { fail(err); }
+    } catch (err) {
+      if (err?.code === 'CANCELLED') {
+        if (!active()) return;
+        state.running = false;
+        setStatus('idle');
+        setError('');
+        return;
+      }
+      fail(err);
+    }
   };
 
   const cancel = () => {
@@ -128,11 +164,15 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
     opening: usbMode
       ? t('Đang mở cửa sổ đăng nhập trên PC đang nối USB…', 'Opening the sign-in window on the PC connected via USB…')
       : t('Đang mở cửa sổ đăng nhập…', 'Opening the sign-in window…'),
-    waiting: usbMode
-      ? t('Hoàn tất đăng nhập trong cửa sổ CTT trên PC đang nối USB.', 'Complete sign-in in the CTT window on the PC connected via USB.')
-      : t('Hoàn tất đăng nhập trong cửa sổ CTT.', 'Complete sign-in in the CTT window.'),
+    waiting: nativeAndroid
+      ? t('Hoàn tất đăng nhập trên trang CTT trong ứng dụng.', 'Complete sign-in on the CTT page inside the app.')
+      : usbMode
+        ? t('Hoàn tất đăng nhập trong cửa sổ CTT trên PC đang nối USB.', 'Complete sign-in in the CTT window on the PC connected via USB.')
+        : t('Hoàn tất đăng nhập trong cửa sổ CTT.', 'Complete sign-in in the CTT window.'),
     syncing: t('Đang xác minh MSSV và đồng bộ dữ liệu CTT…', 'Verifying your identity and syncing CTT data…'),
-    saving: t('Đang lưu hồ sơ học tập của bạn…', 'Saving your academic profile…'),
+    saving: nativeAndroid
+      ? t('Đang xác minh MSSV và đồng bộ dữ liệu CTT…', 'Verifying your identity and syncing CTT data…')
+      : t('Đang lưu hồ sơ học tập của bạn…', 'Saving your academic profile…'),
     success: t('Đã kết nối và đồng bộ bảng điểm.', 'Connected and transcript synced.'),
   }[status];
 
@@ -146,13 +186,19 @@ export default function SchoolConnect({ _programs = [], defaultProgram = 'ET1', 
 
       <ol className="school-connect__steps" aria-label={t('Các bước kết nối', 'Connection steps')}>
         {[
-          [t('Mở trang trường', 'Open the portal'), usbMode
-            ? t('Cửa sổ CTT mở trên PC đang nối USB.', 'The CTT window opens on the PC connected via USB.')
-            : t('Cửa sổ đăng nhập bảo mật được mở riêng biệt.', 'A secure sign-in window opens separately.')],
-          [t('Bạn tự đăng nhập', 'Sign in yourself'), usbMode
-            ? t('Nhập tài khoản, mật khẩu mail edu trên trang trường trong cửa sổ CTT trên PC.', 'Enter your edu email account and password on the school portal in the CTT window on your PC.')
-            : t('Nhập tài khoản, mật khẩu mail edu trên trang trường.', 'Enter your edu email account and password on the school portal.')],
-          [t('Nhận hồ sơ và bảng điểm', 'Sync your profile and grades'), t('Hệ thống tự nhận diện bảng điểm.', 'The system automatically recognizes your transcript.')],
+          [t('Mở trang trường', 'Open the portal'), nativeAndroid
+            ? t('Cửa sổ đăng nhập CTT mở trực tiếp ngay trong ứng dụng.', 'The CTT sign-in window opens directly inside the app.')
+            : usbMode
+              ? t('Cửa sổ CTT mở trên PC đang nối USB.', 'The CTT window opens on the PC connected via USB.')
+              : t('Cửa sổ đăng nhập bảo mật được mở riêng biệt.', 'A secure sign-in window opens separately.')],
+          [t('Bạn tự đăng nhập', 'Sign in yourself'), nativeAndroid
+            ? t('Nhập tài khoản, mật khẩu mail edu và xác thực trực tiếp trên trang trường.', 'Enter your edu email account, password, and verify directly on the school portal.')
+            : usbMode
+              ? t('Nhập tài khoản, mật khẩu mail edu trên trang trường trong cửa sổ CTT trên PC.', 'Enter your edu email account and password on the school portal in the CTT window on your PC.')
+              : t('Nhập tài khoản, mật khẩu mail edu trên trang trường.', 'Enter your edu email account and password on the school portal.')],
+          [t('Nhận hồ sơ và bảng điểm', 'Sync your profile and grades'), nativeAndroid
+            ? t('Hệ thống đồng bộ bảng điểm, TKB và tự động đăng xuất phiên CTT tạm.', 'The system syncs your transcript, timetable, and automatically signs out the temporary CTT session.')
+            : t('Hệ thống tự nhận diện bảng điểm.', 'The system automatically recognizes your transcript.')],
         ].map(([title, detail], i) => (
           <li key={title} className={progress > i ? 'is-done' : progress === i ? 'is-current' : ''}>
             <span className="school-connect__step-number">{progress > i ? <Check size={13} /> : i + 1}</span>

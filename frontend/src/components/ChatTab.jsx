@@ -370,41 +370,6 @@ export default function ChatTab({
 
   const hasChatStarted = messages.length > 0;
 
-  const suggestionItems = [
-    {
-      id: 'thesis',
-      emoji: '🎓',
-      text: language === 'vi' ? 'Kiểm tra điều kiện nhận Đồ án tốt nghiệp tại HUST' : 'Check graduation thesis criteria at HUST',
-      query: language === 'vi'
-        ? 'Điều kiện để được nhận Đồ án tốt nghiệp tại HUST là gì? Em cần chuẩn bị những gì?'
-        : 'What are the requirements for Graduation Thesis and degree completion at HUST?'
-    },
-    {
-      id: 'cpa',
-      emoji: '📈',
-      text: language === 'vi' ? 'Kế hoạch cải thiện CPA lên bằng Khá (≥ 2.50)' : 'CPA improvement plan to reach Good standing (≥ 2.50)',
-      query: language === 'vi'
-        ? 'CPA hiện tại của em đang là 2.26. Em cần làm gì và học cải thiện những môn nào để kéo CPA lên bằng Khá?'
-        : 'My current CPA is 2.26. Which courses should I retake to raise my CPA to Good standing?'
-    },
-    {
-      id: 'warning',
-      emoji: '⚠️',
-      text: language === 'vi' ? 'Quy chế Cảnh báo học tập mức 1 & mức 2 của HUST' : 'HUST Academic Warning Level 1 & 2 regulations',
-      query: language === 'vi'
-        ? 'Quy chế cảnh báo học tập mức 1 và mức 2 của Đại học Bách Khoa Hà Nội quy định như thế nào?'
-        : 'What are the rules and credit limits for Academic Warning Level 1 and 2 at HUST?'
-    },
-    {
-      id: 'enroll',
-      emoji: '📅',
-      text: language === 'vi' ? 'Gợi ý danh sách môn nên đăng ký trong kỳ tới' : 'Course registration suggestions for next term',
-      query: language === 'vi'
-        ? 'Gợi ý cho em danh sách các môn nên đăng ký trong kỳ tới dựa trên tiến độ học tập hiện tại'
-        : 'Which courses should I register for next semester based on my current progress?'
-    }
-  ];
-
   const renderInputCapsule = (isCentered = false) => (
     <div style={{
       display: 'flex',
@@ -575,7 +540,7 @@ export default function ChatTab({
     </p>;
   }
 
-  // New conversation: heading, input and suggested questions
+  // New conversation: heading and input
   if (!hasChatStarted) {
     return (
       <div style={{
@@ -615,59 +580,6 @@ export default function ChatTab({
           {/* Centered Input Capsule */}
           <div style={{ width: '100%' }}>
             {renderInputCapsule(true)}
-          </div>
-
-          {/* Suggested questions */}
-          <div style={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            gap: '2px',
-            marginTop: '2px',
-            padding: '0 6px'
-          }}>
-            {suggestionItems.map(item => (
-              <button
-                key={item.id}
-                onClick={() => !loading && handleSend(item.query)}
-                className="apple-press gemini-pill"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  padding: '9px 16px',
-                  borderRadius: 'var(--radius-full)',
-                  border: 'none',
-                  background: 'transparent',
-                  color: 'var(--text-muted)',
-                  fontSize: '0.88rem',
-                  cursor: loading ? 'default' : 'pointer',
-                  textAlign: 'left',
-                  width: '100%',
-                  transition: 'all 0.15s ease'
-                }}
-                onMouseEnter={e => {
-                  if (!loading) {
-                    e.currentTarget.style.background = 'var(--sidebar-hover)';
-                    e.currentTarget.style.color = 'var(--text-primary)';
-                  }
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = 'var(--text-muted)';
-                }}
-              >
-                <span style={{ fontSize: '0.96rem', flexShrink: 0, lineHeight: 1 }}>{item.emoji}</span>
-                <span style={{
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap'
-                }}>
-                  {item.text}
-                </span>
-              </button>
-            ))}
           </div>
 
         </div>

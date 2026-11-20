@@ -8,6 +8,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app.core.hust_rules import (
     CREDIT_LIMITS,
     assess_academic_warning,
+    best_attempts,
+    cpa_from_attempts,
+    get_academic_classification,
     parse_grade_from_line,
 )
 from app.engine.recommender import course_recommender
@@ -40,6 +43,28 @@ class GradeParsingTests(unittest.TestCase):
     def test_missing_grade_returns_none_instead_of_default(self):
         self.assertIsNone(parse_grade_from_line("MI1111 Giải tích I 4"))
         self.assertIsNone(parse_grade_from_line("IT3040 Ngôn ngữ C 3"))
+
+
+class AcademicClassificationTests(unittest.TestCase):
+    def test_classification_boundaries(self):
+        cases = [(0.99, "Kém"), (1.0, "Yếu"), (1.99, "Yếu"), (2.0, "Trung bình"),
+                 (2.495, "Trung bình"), (2.5, "Khá"), (3.2, "Giỏi"), (3.6, "Xuất sắc")]
+        for cpa, rank in cases:
+            with self.subTest(cpa=cpa):
+                self.assertEqual(get_academic_classification(cpa)["rank"], rank)
+
+    def test_best_attempts_keep_highest_grade_and_exclude_pe_and_noncredit_courses(self):
+        best = best_attempts([
+            _course("ET2050", 3, "F", 0),
+            {**_course("ET2050", 3, "D", 1), "name": "Lý thuyết mạch"},
+            _course("ET2050", 3, "F", 0),
+            _course("ET2030", 4, "B", 3),
+            _course("PE1015", 2, "A", 4),
+            _course("ET0000", 0, "A", 4),
+        ])
+        self.assertEqual(set(best), {"ET2050", "ET2030"})
+        self.assertEqual(best["ET2050"], {"credits": 3, "letter": "D", "name": "Lý thuyết mạch", "scale4": 1})
+        self.assertEqual(cpa_from_attempts(best), (2.14, 15, 7))
 
 
 class AcademicWarningTests(unittest.TestCase):

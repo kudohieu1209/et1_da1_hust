@@ -1,11 +1,12 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse, FileResponse
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
+from pathlib import Path
 from urllib.parse import urlsplit
 
-from app.core.config import CORS_ORIGINS, SESSION_COOKIE_NAME, PROJECT_DIR
+from app.core.config import CORS_ORIGINS, FRONTEND_DIST_DIR, RAG_SYNC_ON_STARTUP, SESSION_COOKIE_NAME
 from app.api.router_auth import router as auth_router
 from app.api.router_school_auth import router as school_auth_router
 from app.services.school_portal import school_login_manager
@@ -19,11 +20,15 @@ from app.rag.rag_engine import rag_engine
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Khởi tạo và tự động đồng bộ tài liệu vào ChromaDB khi backend khởi động
+    # auto checks approved corpus without loading the embedding model.
     try:
-        # Reconcile approvals and chunk metadata even when the index already exists.
-        result = rag_engine.sync_knowledge_base()
-        print(f"[Startup] Đã đồng bộ kho RAG đã phê duyệt: {result.get('total_chunks', 0)} chunks.")
+        if rag_engine.vector_store.mode == "bm25_only":
+            print("RAG: chế độ chỉ BM25.")
+        if RAG_SYNC_ON_STARTUP == "never":
+            print("[Startup] Bỏ qua đồng bộ RAG theo RAG_SYNC_ON_STARTUP=never.")
+        else:
+            result = rag_engine.sync_knowledge_base(force=RAG_SYNC_ON_STARTUP == "always")
+            print(f"[Startup] RAG {result.get('status', 'done')}: {result.get('total_chunks', 0)} chunks.")
     except Exception as e:
         print(f"[Startup] Cảnh báo đồng bộ RAG: {e}")
     try:
@@ -38,13 +43,24 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-def is_allowed_origin(origin: str | None) -> bool:
+def is_allowed_origin(origin: str | None, request: Request | None = None) -> bool:
     if not origin:
         return True
     if origin in CORS_ORIGINS:
         return True
     try:
         parsed = urlsplit(origin)
+        if request is not None:
+            # Uvicorn resolves the scheme through trusted proxy headers in production.
+            # Compare complete origins, including non-default ports, never suffixes.
+            def authority(url):
+                return (url.scheme, url.hostname, url.port or (443 if url.scheme == "https" else 80))
+
+            if (parsed.scheme in ("http", "https") and parsed.netloc
+                    and not parsed.username and not parsed.password
+                    and not parsed.path and not parsed.query and not parsed.fragment
+                    and authority(parsed) == authority(urlsplit(str(request.base_url)))):
+                return True
         if parsed.scheme in ("http", "https") and parsed.hostname in ("localhost", "127.0.0.1"):
             return True
     except Exception:
@@ -73,7 +89,7 @@ async def reject_cross_site_writes(request: Request, call_next):
         SESSION_COOKIE_NAME in request.cookies or request.url.path.startswith("/api/auth/")
     ):
         origin = request.headers.get("origin")
-        if origin and not is_allowed_origin(origin):
+        if origin and not is_allowed_origin(origin, request):
             return JSONResponse(status_code=403, content={"detail": "Nguồn gửi yêu cầu không được phép."})
     return await call_next(request)
 
@@ -88,22 +104,8 @@ app.include_router(rag_router)
 app.include_router(conversations_router)
 app.include_router(programs_router)
 
-FRONTEND_DIST = PROJECT_DIR / "frontend" / "dist"
-if (FRONTEND_DIST / "assets").is_dir():
-    app.mount("/assets", StaticFiles(directory=FRONTEND_DIST / "assets"), name="assets")
-
-FRONTEND_BRAND = (FRONTEND_DIST / "brand") if (FRONTEND_DIST / "brand").is_dir() else (PROJECT_DIR / "frontend" / "public" / "brand")
-if FRONTEND_BRAND.is_dir():
-    app.mount("/brand", StaticFiles(directory=FRONTEND_BRAND), name="brand")
-
-@app.get("/")
-def root():
-    if (FRONTEND_DIST / "index.html").is_file():
-        return FileResponse(FRONTEND_DIST / "index.html")
-    return system_info()
-
 @app.get("/api/system")
-def system_info():
+def root():
     return {
         "system": "HUST Course Advisor & RAG AI Agent",
         "scope": "Sinh viên Đại học Bách Khoa Hà Nội",
@@ -117,3 +119,29 @@ def system_info():
 @app.get("/api/health")
 def health_check():
     return {"status": "healthy"}
+
+
+def register_frontend(application: FastAPI, dist_dir: Path) -> None:
+    """Register last so API/docs routes retain priority over the SPA fallback."""
+    dist_dir = dist_dir.resolve()
+    index = dist_dir / "index.html"
+    if not index.is_file():
+        application.add_api_route("/", root, methods=["GET"])
+        return
+
+    if (dist_dir / "assets").is_dir():
+        application.mount("/assets", StaticFiles(directory=dist_dir / "assets"), name="assets")
+
+    @application.get("/{path:path}", include_in_schema=False)
+    def frontend(path: str):
+        if path.startswith(("api", "docs", "redoc", "openapi.json")):
+            raise HTTPException(status_code=404)
+        candidate = (dist_dir / path).resolve()
+        if not candidate.is_relative_to(dist_dir):
+            raise HTTPException(status_code=404)
+        if candidate.is_file():
+            return FileResponse(candidate)
+        return FileResponse(index, headers={"Cache-Control": "no-store, max-age=0"})
+
+
+register_frontend(app, FRONTEND_DIST_DIR)

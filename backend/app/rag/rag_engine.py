@@ -19,7 +19,7 @@ class RAGEngine:
     ) -> Dict[str, Any]:
         """
         Thực hiện chu trình RAG hoàn chỉnh:
-        1. Retrieval: Tìm kiếm các chunk văn bản quy chế liên quan nhất trong ChromaDB.
+        1. Retrieval: Tìm kiếm các chunk quy chế bằng hybrid hoặc chỉ BM25.
         2. Augmentation & Generation: Truyền Context vào Gemini LLM để tổng hợp câu trả lời chính xác và trích dẫn điều khoản.
         """
         search_question = question
@@ -83,7 +83,7 @@ class RAGEngine:
         }
 
     def sync_knowledge_base(self, force: bool = False) -> Dict[str, Any]:
-        """Đồng bộ lại toàn bộ tài liệu vào Vector Store"""
+        """Chuẩn bị chỉ mục theo chế độ truy xuất đã cấu hình."""
         return self.vector_store.sync_documents(force=force)
 
     def get_status(self) -> Dict[str, Any]:
@@ -92,6 +92,7 @@ class RAGEngine:
         doc_files = [f.name for f in self.loader.get_document_files()]
 
         return {
+            "mode": self.vector_store.mode,
             "gemini": {
                 "configured": self.gemini.is_configured(),
                 "model": self.gemini.model_name,

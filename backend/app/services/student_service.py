@@ -5,6 +5,8 @@ from app.core.hust_rules import (
     GRADE_TO_SCALE4,
     MIN_GRADUATION_CPA,
     assess_academic_warning,
+    best_attempts,
+    cpa_from_attempts,
     credit_limits_for_warning,
     get_academic_classification,
     parse_grade_from_line,
@@ -98,21 +100,8 @@ class StudentService:
         passed_codes = {course["code"] for course in passed_courses}
         course_map = {course["code"]: course for course in data_loader.get_all_courses()}
 
-        # Một học phần học nhiều lần chỉ tính điểm lần cao nhất (QĐ 5445,
-        # "Điểm lần cao nhất được công nhận là điểm chính thức của học phần").
-        best_by_code: Dict[str, Dict[str, float]] = {}
-        for item in transcript:
-            credits = float(item.get("credits", 0.0))
-            letter = item.get("letter_grade", "")
-            scale4 = float(item.get("numeric_grade", GRADE_TO_SCALE4.get(letter, 0.0)))
-            if item["code"].startswith("PE") or credits <= 0:
-                continue
-            best = best_by_code.get(item["code"])
-            if best is None or scale4 > best["scale4"]:
-                best_by_code[item["code"]] = {"scale4": scale4, "credits": credits}
-        total_grade_points = sum(v["scale4"] * v["credits"] for v in best_by_code.values())
-        cpa_credits = sum(v["credits"] for v in best_by_code.values())
-        cpa = round(total_grade_points / cpa_credits, 2) if cpa_credits else 0.0
+        best_by_code = best_attempts(transcript)
+        cpa, total_grade_points, cpa_credits = cpa_from_attempts(best_by_code)
 
         warning = assess_academic_warning(profile)
         warning_level = warning["level"]
@@ -400,7 +389,11 @@ class StudentService:
     def get_course_improvements(self, student_id: Optional[str] = None) -> Dict[str, Any]:
         """Phân tích các môn cần cải thiện để nâng CPA theo quy chế HUST."""
         profile = self.get_profile()
-        return course_improvement_engine.analyze_improvements(profile)
+        try:
+            required_credits = data_loader.get_graduation_path().get("total_required_credits")
+        except LookupError:
+            required_credits = None
+        return course_improvement_engine.analyze_improvements(profile, required_credits)
 
     def update_profile(self, payload: Dict[str, Any], student_id: str) -> Dict[str, Any]:
         profile = data_loader.update_profile_info_for(student_id, payload)

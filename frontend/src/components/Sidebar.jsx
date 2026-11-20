@@ -218,10 +218,10 @@ export default function Sidebar({
   };
 
   const toolItems = [
-    { id: 'audit', label: language === 'vi' ? 'Tiến độ học tập & CPA' : 'Degree Audit & CPA', icon: Award },
-    { id: 'improve', label: language === 'vi' ? 'Cải thiện điểm CPA' : 'Improve CPA', icon: TrendingUp },
-    { id: 'schedule', label: language === 'vi' ? 'Thời khóa biểu & Lịch thi' : 'Schedule & Exams', icon: Calendar },
-    { id: 'services', label: language === 'vi' ? 'Tiện ích CTT (Học phí, TOEIC, Lớp)' : 'Student Services', icon: GraduationCap },
+    { id: 'audit', label: language === 'vi' ? 'Tiến độ' : 'Progress', icon: Award },
+    { id: 'improve', label: 'CPA', icon: TrendingUp },
+    { id: 'schedule', label: language === 'vi' ? 'Thời khóa biểu' : 'Schedule', icon: Calendar },
+    { id: 'services', label: language === 'vi' ? 'Tiện ích' : 'Services', icon: GraduationCap },
     { id: 'programs', label: language === 'vi' ? 'CTĐT toàn trường' : 'All programs', icon: BookOpen },
   ];
 

@@ -18,12 +18,13 @@ from datetime import datetime, timezone
 from typing import Callable
 from urllib.parse import urljoin, urlsplit
 
+import requests
 from bs4 import BeautifulSoup
 
 from app.core.config import CTT_BROWSER_CHANNEL, CTT_LOGIN_TIMEOUT_SECONDS
 from app.core.hust_rules import GRADE_TO_SCALE4, PASSING_GRADES
 from app.services.ctt_service import (
-    CTT_BASE_URL, LOGIN_URL, STUDENT_GRADE_URL, STUDENT_MARKS_URL, ctt_parser,
+    CTT_BASE_URL, DEFAULT_HEADERS, LOGIN_URL, STUDENT_GRADE_URL, STUDENT_MARKS_URL, ctt_parser,
 )
 
 logger = logging.getLogger(__name__)
@@ -242,7 +243,7 @@ def _fetch_ctt_html(page, url: str) -> dict:
     return result
 
 
-def _collect_school_services(page, identity_pages, cancel):
+def _collect_school_services_with_fetcher(fetch_fn, identity_pages, cancel):
     from app.services.ctt_sections import PATHS, fold, parse_section
     synced_at = datetime.now(timezone.utc).isoformat()
     services = {}
@@ -270,7 +271,7 @@ def _collect_school_services(page, identity_pages, cancel):
         if cancel.is_set():
             raise SchoolPortalError("Đã hủy kết nối CTT.")
         try:
-            details = _fetch_ctt_html(page, url)
+            details = fetch_fn(url)
             if urlsplit(details['url']).path.lower() == urlsplit(url).path.lower():
                 requirement_pages.append(details['html'])
                 assessment_sources.append(details['url'])
@@ -286,7 +287,7 @@ def _collect_school_services(page, identity_pages, cancel):
             continue
         url = urljoin(CTT_BASE_URL, path)
         try:
-            result = _fetch_ctt_html(page, url)
+            result = fetch_fn(url)
             if urlsplit(result["url"]).path.lower() != urlsplit(url).path.lower():
                 raise SchoolPortalError("CTT chuyển hướng khỏi trang dữ liệu được yêu cầu.")
             services[kind] = parse_section(kind, result["html"], result["url"], synced_at)
@@ -305,6 +306,118 @@ def _collect_school_services(page, identity_pages, cancel):
     services["certificates"] = {**assessment, "status": "synced" if all(x != "unverified" for x in states.values()) else "partial" if any(x != "unverified" for x in states.values()) else "unavailable"}
     services['certificates']['message'] = '' if all(x != 'unverified' for x in states.values()) else 'Chưa xác định được đầy đủ trạng thái chứng chỉ từ các trang CTT đã kiểm tra. Điểm học phần không thay thế trạng thái cấp chứng chỉ.'
     return services
+
+
+def _collect_school_services(page, identity_pages, cancel):
+    return _collect_school_services_with_fetcher(lambda url: _fetch_ctt_html(page, url), identity_pages, cancel)
+
+
+def _collect_snapshot_with_fetcher(fetch_fn: Callable[[str], dict], cancel: threading.Event | None = None) -> SchoolSnapshot:
+    cancel = cancel or threading.Event()
+    pages = []
+    grade_html = None
+    for url in (CTT_BASE_URL + "/", STUDENT_GRADE_URL, STUDENT_MARKS_URL):
+        if cancel.is_set():
+            raise SchoolPortalError("Đã hủy kết nối CTT.")
+        try:
+            result = fetch_fn(url)
+        except SchoolPortalError:
+            if url == CTT_BASE_URL + "/":
+                raise
+            continue
+        html = result["html"]
+        pages.append((result["url"], html))
+        if url == CTT_BASE_URL + "/" and not {"student_id", "student_name"} <= parse_school_identity(html).keys():
+            home = BeautifulSoup(html, "html.parser")
+            for link in home.find_all("a", href=True):
+                destination = urljoin(result["url"], link["href"])
+                target = urlsplit(destination)
+                label = _fold(link.get_text(" ", strip=True))
+                if (target.scheme != "https" or target.netloc.lower() != "ctt-sis.hust.edu.vn"
+                        or not target.path.lower().startswith("/students/") or not target.path.lower().endswith(".aspx")
+                        or label not in {"thong tin sinh vien", "thong tin ca nhan", "ho so sinh vien"}):
+                    continue
+                try:
+                    details = fetch_fn(destination)
+                    pages.append((details["url"], details["html"]))
+                except SchoolPortalError:
+                    pass
+                break
+        if url != CTT_BASE_URL + "/" and any(c["letter_grade"] in GRADE_TO_SCALE4 for c in ctt_parser.parse_transcript_html(html)["transcript"]):
+            grade_html = html
+            break
+    if grade_html is None:
+        raise SchoolPortalError("Không lấy được bảng điểm từ CTT. Chưa lưu dữ liệu.")
+    snapshot = build_school_snapshot(pages, grade_html)
+    snapshot.services = _collect_school_services_with_fetcher(fetch_fn, pages, cancel)
+    return snapshot
+
+
+def _parse_ctt_cookie_header(ctt_cookie: str) -> list[tuple[str, str]]:
+    if not isinstance(ctt_cookie, str) or not ctt_cookie.strip() or len(ctt_cookie) > 8192 or "\r" in ctt_cookie or "\n" in ctt_cookie:
+        raise SchoolPortalError("Phiên CTT không hợp lệ. Vui lòng đăng nhập lại.")
+    pairs: list[tuple[str, str]] = []
+    for part in ctt_cookie.split(";"):
+        piece = part.strip()
+        if not piece or "=" not in piece:
+            continue
+        name, value = piece.split("=", 1)
+        name = name.strip()
+        value = value.strip()
+        if not name or any(ch.isspace() for ch in name):
+            continue
+        pairs.append((name, value))
+    if not pairs:
+        raise SchoolPortalError("Phiên CTT không hợp lệ. Vui lòng đăng nhập lại.")
+    return pairs
+
+
+def read_school_with_cookie(ctt_cookie: str, user_agent: str | None = None) -> SchoolSnapshot:
+    """Verify an authenticated Android WebView CTT session directly against CTT."""
+    cookies = _parse_ctt_cookie_header(ctt_cookie)
+    ua = DEFAULT_HEADERS["User-Agent"]
+    if isinstance(user_agent, str):
+        cleaned_ua = user_agent.replace("\r", "").replace("\n", "").strip()
+        if cleaned_ua:
+            ua = cleaned_ua[:300]
+
+    session = requests.Session()
+    session.headers.update({**DEFAULT_HEADERS, "User-Agent": ua})
+    for name, value in cookies:
+        session.cookies.set(name, value, domain="ctt-sis.hust.edu.vn", path="/")
+
+    def fetch_url(url: str) -> dict:
+        current_url = url
+        resp = None
+        for _ in range(4):
+            target = urlsplit(current_url)
+            if target.scheme != "https" or target.netloc.lower() != "ctt-sis.hust.edu.vn":
+                raise SchoolPortalError("Không cho phép đọc dữ liệu ngoài cổng CTT.")
+            try:
+                resp = session.get(current_url, timeout=25, allow_redirects=False)
+            except requests.RequestException:
+                raise SchoolPortalError("Không kết nối được cổng CTT. Vui lòng kiểm tra mạng và thử lại.") from None
+            if resp.status_code in {301, 302, 303, 307, 308} and resp.headers.get("Location"):
+                current_url = urljoin(current_url, resp.headers["Location"])
+                continue
+            break
+        else:
+            raise SchoolPortalError("Phiên CTT chuyển hướng quá nhiều lần. Vui lòng đăng nhập lại.")
+
+        final_url = resp.url or current_url
+        if not authenticated_ctt_html(final_url, resp.text, resp.status_code):
+            raise SchoolPortalError("Phiên CTT chưa được xác nhận hoặc đã hết hạn. Vui lòng đăng nhập lại.")
+        return {"url": final_url, "status": resp.status_code, "html": resp.text}
+
+    try:
+        return _collect_snapshot_with_fetcher(fetch_url)
+    finally:
+        try:
+            session.get(f"{CTT_BASE_URL}/Account/Logout.aspx", timeout=5, allow_redirects=False)
+        except Exception:
+            pass
+        session.cookies.clear()
+        session.close()
 
 
 def read_school_in_browser(cancel: threading.Event, notify: Callable[[str], None]) -> SchoolSnapshot:
@@ -347,45 +460,9 @@ def read_school_in_browser(cancel: threading.Event, notify: Callable[[str], None
                 if signed_in_page is not None:
                     phase = "syncing"
                     notify("syncing")
-                    pages = []
-                    grade_html = None
                     # Read identity and grades through Playwright's request
                     # context; page JavaScript only signals when to start.
-                    for url in (CTT_BASE_URL + "/", STUDENT_GRADE_URL, STUDENT_MARKS_URL):
-                        if cancel.is_set():
-                            raise SchoolPortalError("Đã hủy kết nối CTT.")
-                        try:
-                            result = _fetch_ctt_html(signed_in_page, url)
-                        except SchoolPortalError:
-                            if url == CTT_BASE_URL + "/":
-                                raise
-                            continue
-                        html = result["html"]
-                        pages.append((result["url"], html))
-                        if url == CTT_BASE_URL + "/" and not {"student_id", "student_name"} <= parse_school_identity(html).keys():
-                            home = BeautifulSoup(html, "html.parser")
-                            for link in home.find_all("a", href=True):
-                                destination = urljoin(result["url"], link["href"])
-                                target = urlsplit(destination)
-                                label = _fold(link.get_text(" ", strip=True))
-                                if (target.scheme != "https" or target.netloc.lower() != "ctt-sis.hust.edu.vn"
-                                        or not target.path.lower().startswith("/students/") or not target.path.lower().endswith(".aspx")
-                                        or label not in {"thong tin sinh vien", "thong tin ca nhan", "ho so sinh vien"}):
-                                    continue
-                                try:
-                                    details = _fetch_ctt_html(signed_in_page, destination)
-                                    pages.append((details["url"], details["html"]))
-                                except SchoolPortalError:
-                                    pass
-                                break
-                        if url != CTT_BASE_URL + "/" and any(c["letter_grade"] in GRADE_TO_SCALE4 for c in ctt_parser.parse_transcript_html(html)["transcript"]):
-                            grade_html = html
-                            break
-                    if grade_html is None:
-                        raise SchoolPortalError("Không lấy được bảng điểm từ CTT. Chưa lưu dữ liệu.")
-                    snapshot = build_school_snapshot(pages, grade_html)
-                    snapshot.services = _collect_school_services(signed_in_page, pages, cancel)
-                    return snapshot
+                    return _collect_snapshot_with_fetcher(lambda url: _fetch_ctt_html(signed_in_page, url), cancel)
                 _wait_for_browser_activity(context, browser, cancel)
             raise SchoolPortalError("Đã hủy kết nối CTT." if cancel.is_set() else "Hết thời gian chờ đăng nhập. Vui lòng thử lại.")
         except SchoolPortalError:

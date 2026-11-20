@@ -1,5 +1,6 @@
 package vn.hust.advisor;
 
+import android.content.pm.ApplicationInfo;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
@@ -8,7 +9,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowInsetsController;
 import android.webkit.JavascriptInterface;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import com.getcapacitor.BridgeActivity;
 
@@ -18,6 +22,7 @@ public class MainActivity extends BridgeActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        registerPlugin(CttPortalPlugin.class);
         super.onCreate(savedInstanceState);
 
         // Mặc định ban đầu theo theme của hệ điều hành
@@ -25,9 +30,25 @@ public class MainActivity extends BridgeActivity {
         mCurrentDark = (nightMode == Configuration.UI_MODE_NIGHT_YES);
         applySystemBars(mCurrentDark);
 
+        View contentView = findViewById(android.R.id.content);
+        if (contentView != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(contentView, (v, windowInsets) -> {
+                Insets bars = windowInsets.getInsets(
+                    WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout()
+                );
+                Insets ime = windowInsets.getInsets(WindowInsetsCompat.Type.ime());
+                v.setPadding(bars.left, bars.top, bars.right, Math.max(bars.bottom, ime.bottom));
+                return WindowInsetsCompat.CONSUMED;
+            });
+            ViewCompat.requestApplyInsets(contentView);
+        }
+
         // Bridge nhận thông báo thay đổi theme trực tiếp từ React app
         try {
             if (getBridge() != null && getBridge().getWebView() != null) {
+                if ((getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0) {
+                    getBridge().getWebView().clearCache(true);
+                }
                 getBridge().getWebView().addJavascriptInterface(new Object() {
                     @JavascriptInterface
                     public void setStatusBarStyle(String style) {
@@ -76,6 +97,12 @@ public class MainActivity extends BridgeActivity {
         window.setNavigationBarColor(Color.TRANSPARENT);
 
         View decorView = window.getDecorView();
+        int bgColor = Color.parseColor(isDark ? "#181819" : "#FFFDF7");
+        decorView.setBackgroundColor(bgColor);
+        View contentView = findViewById(android.R.id.content);
+        if (contentView != null) {
+            contentView.setBackgroundColor(bgColor);
+        }
         
         // WindowInsetsControllerCompat:
         // isDark = true (nền tối) -> icon sáng/trắng (setAppearanceLightStatusBars(false))

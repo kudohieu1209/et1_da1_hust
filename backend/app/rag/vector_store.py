@@ -1,20 +1,31 @@
 import os
 import json
+import hashlib
 import re
+import tempfile
 from datetime import date
 from pathlib import Path
 from typing import List, Dict, Any, Optional
-import chromadb
-from chromadb.config import Settings
 
-from app.core.config import VECTOR_DB_DIR
-from app.rag.document_loader import document_loader, DocumentChunk
+from app.core.config import RAG_VECTOR_SEARCH, VECTOR_DB_DIR
+from app.rag.document_loader import document_loader
 from app.rag.lexical_search import bm25_scores, tokenize
 
 # Strong enough that a topical document (e.g. a fee table) outranks another
 # document type that merely repeats the programme names in the question.
 PREFERRED_TYPE_BOOST = 1.5
 HEADING_INTENT_BOOST = 1.6
+
+def embedding_identity() -> Dict[str, str]:
+    # Read class constants without constructing/loading the ONNX model.
+    # Only hybrid manifest checks call this function.
+    import chromadb
+    from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
+
+    return {"model": ONNXMiniLM_L6_V2.MODEL_NAME,
+            "revision": ONNXMiniLM_L6_V2._MODEL_SHA256,
+            "chromadb_version": chromadb.__version__}
+
 
 # Topic keywords -> document types whose chunks get a ranking boost. Several
 # topics may match one question (e.g. scholarship conditions on conduct score).
@@ -98,16 +109,30 @@ def heading_intent_boost(query: str, metadata: Dict[str, Any]) -> float:
 
 
 class VectorStoreManager:
-    def __init__(self, persist_dir: Path = VECTOR_DB_DIR):
+    vector_search = RAG_VECTOR_SEARCH
+
+    @property
+    def mode(self) -> str:
+        return "hybrid" if self.vector_search == "on" else "bm25_only"
+
+    def __init__(self, persist_dir: Path = VECTOR_DB_DIR, *, vector_search: str = RAG_VECTOR_SEARCH):
         self.persist_dir = Path(persist_dir)
-        self.persist_dir.mkdir(parents=True, exist_ok=True)
+        self.vector_search = vector_search
         self.collection_name = "hust_documents"
-        self.client: Optional[chromadb.PersistentClient] = None
+        self.client = None
         self.collection = None
-        self._init_client()
+        self._bm25_rows = None
+        if self.vector_search == "on":
+            self._init_client()
 
     def _init_client(self):
+        if self.vector_search == "off":
+            return
         try:
+            import chromadb
+            from chromadb.config import Settings
+
+            self.persist_dir.mkdir(parents=True, exist_ok=True)
             self.client = chromadb.PersistentClient(
                 path=str(self.persist_dir),
                 settings=Settings(anonymized_telemetry=False)
@@ -120,46 +145,8 @@ class VectorStoreManager:
         except Exception as e:
             print(f"[VectorStoreManager] Lỗi khởi tạo ChromaDB: {e}")
 
-    def sync_documents(self, force: bool = False) -> Dict[str, Any]:
-        """
-        Đồng bộ tài liệu từ data/documents vào ChromaDB Vector Store.
-        Tự động nạp các chunks mới hoặc cập nhật khi có thay đổi.
-        """
-        if not self.collection:
-            self._init_client()
-
-        current_count = self.collection.count() if self.collection else 0
-
-        chunks = document_loader.load_all_chunks()
-        if not chunks:
-            if self.collection:
-                existing_ids = self.collection.get().get("ids", [])
-                if existing_ids:
-                    self.collection.delete(ids=existing_ids)
-            return {"status": "empty", "message": "Không tìm thấy tài liệu nào trong data/documents/", "count": 0}
-
-        if not force and current_count == len(chunks):
-            print(f"[VectorStoreManager] Kho tri thức đã đầy đủ ({current_count} chunks), bỏ qua bước re-index.")
-            return {
-                "status": "success",
-                "synced_chunks": 0,
-                "total_chunks": current_count,
-                "sources": list(set([c.metadata.get("source", "") for c in chunks]))
-            }
-
-        if force and self.client:
-            try:
-                self.client.delete_collection(self.collection_name)
-                self.collection = self.client.get_or_create_collection(
-                    name=self.collection_name,
-                    metadata={"description": "Kho tri thức đề cương môn học và quy chế đào tạo tín chỉ HUST"}
-                )
-                print("[VectorStoreManager] Đã làm mới collection cho kho tri thức môn học.")
-            except Exception as e:
-                print(f"[VectorStoreManager] Lỗi reset collection: {e}")
-        elif current_count > 0:
-            print(f"[VectorStoreManager] Collection đã có {current_count} chunks. Tiến hành cập nhật/upsert...")
-
+    @staticmethod
+    def _chunk_rows(chunks) -> List[Dict[str, Any]]:
         documents = []
         metadatas = []
         ids = []
@@ -189,6 +176,58 @@ class VectorStoreManager:
             metadatas.append(clean_meta)
             ids.append(chunk_id)
 
+        if len(set(ids)) != len(ids):
+            raise ValueError("Duplicate chunk IDs in approved corpus")
+        return [{"id": identifier, "text": text, "metadata": meta}
+                for identifier, text, meta in zip(ids, documents, metadatas)]
+
+    def sync_documents(self, force: bool = False) -> Dict[str, Any]:
+        """
+        Đồng bộ tài liệu từ data/documents vào ChromaDB Vector Store.
+        Tự động nạp các chunks mới hoặc cập nhật khi có thay đổi.
+        """
+        if self.vector_search == "off":
+            # Keep normalized chunks only; reuse the existing BM25 scorer on
+            # demand without retaining another token cache in RAM.
+            self._bm25_rows = self._chunk_rows(document_loader.load_all_chunks())
+            print(f"RAG: chế độ chỉ BM25 ({len(self._bm25_rows)} chunks).")
+            return {"status": "success", "mode": self.mode,
+                    "synced_chunks": len(self._bm25_rows), "total_chunks": len(self._bm25_rows),
+                    "sources": sorted({row["metadata"]["source"] for row in self._bm25_rows})}
+
+        if not self.collection:
+            self._init_client()
+
+        chunks = document_loader.load_all_chunks()
+        if not chunks:
+            self._manifest_path.unlink(missing_ok=True)
+            if self.collection:
+                existing_ids = self.collection.get(include=[]).get("ids", [])
+                if existing_ids:
+                    self.collection.delete(ids=existing_ids)
+            return {"status": "empty", "message": "Không tìm thấy tài liệu nào trong data/documents/", "count": 0}
+
+        rows = self._chunk_rows(chunks)
+        ids = [row["id"] for row in rows]
+        documents = [row["text"] for row in rows]
+        metadatas = [row["metadata"] for row in rows]
+        manifest = self._corpus_manifest(ids, documents, metadatas)
+        current_count = self.collection.count() if self.collection else 0
+        if not force and current_count == len(ids) and self._read_manifest() == manifest:
+            print(f"[VectorStoreManager] Index khớp, bỏ qua đồng bộ: {current_count} chunks.")
+            return {"status": "skipped", "synced_chunks": 0, "total_chunks": current_count}
+
+        # Invalidate before mutations: a partially failed sync must never leave
+        # an old manifest that could incorrectly approve the index later.
+        self._manifest_path.unlink(missing_ok=True)
+        if force and self.client:
+            self.client.delete_collection(self.collection_name)
+            self.collection = self.client.get_or_create_collection(
+                name=self.collection_name,
+                metadata={"description": "Kho tri thức quy chế đào tạo và sổ tay sinh viên HUST"},
+            )
+            print("[VectorStoreManager] Đã làm mới collection cho kho tri thức môn học.")
+
         # Batch upsert vào ChromaDB (mỗi batch tối đa 200 chunks)
         batch_size = 100
         for i in range(0, len(ids), batch_size):
@@ -201,13 +240,16 @@ class VectorStoreManager:
 
         # Giữ collection là bản phản chiếu chính xác của thư mục documents:
         # xóa chunk cũ khi file bị xóa hoặc số chunk giảm sau khi biên tập.
-        existing = self.collection.get()
+        existing = self.collection.get(include=[])
         stale_ids = sorted(set(existing.get("ids", [])) - set(ids))
         if stale_ids:
             self.collection.delete(ids=stale_ids)
             print(f"[VectorStoreManager] Đã xóa {len(stale_ids)} chunks cũ không còn trong nguồn.")
 
         new_total = self.collection.count()
+        if new_total != len(ids):
+            raise RuntimeError("Vector index count differs from approved corpus")
+        self._write_manifest(manifest)
         print(f"[VectorStoreManager] Đồng bộ thành công {len(ids)} chunks vào ChromaDB. Tổng hiện có: {new_total}")
 
         return {
@@ -217,14 +259,59 @@ class VectorStoreManager:
             "sources": list(set([m["source"] for m in metadatas]))
         }
 
+    @property
+    def _manifest_path(self) -> Path:
+        return self.persist_dir / "corpus_manifest.json"
+
+    @staticmethod
+    def _corpus_manifest(ids, documents, metadatas) -> Dict[str, Any]:
+        # Stable across loader order, metadata key order and deployment paths.
+        identity = embedding_identity()
+        payload = {"embedding": identity,
+                   "chunks": sorted(zip(ids, documents, metadatas), key=lambda row: row[0])}
+        encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True,
+                             separators=(",", ":")).encode("utf-8")
+        return {"schema_version": 1, "embedding": identity,
+                "chunk_count": len(ids), "corpus_sha256": hashlib.sha256(encoded).hexdigest()}
+
+    def _read_manifest(self):
+        try:
+            return json.loads(self._manifest_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return None
+
+    def _write_manifest(self, manifest):
+        temporary = None
+        try:
+            with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=self.persist_dir,
+                                             prefix="corpus_manifest-", suffix=".tmp", delete=False) as output:
+                temporary = Path(output.name)
+                json.dump(manifest, output, ensure_ascii=False, sort_keys=True)
+                output.write("\n")
+            temporary.replace(self._manifest_path)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
+
     def similarity_search(self, query: str, k: int = 4) -> List[Dict[str, Any]]:
         """Combine BM25 scores and vector ranks within the requested academic scope."""
         if k <= 0:
             return []
-        if not self.collection or self.collection.count() == 0:
-            self.sync_documents()
-        if not self.collection:
-            return []
+        if self.vector_search == "off":
+            if self._bm25_rows is None:
+                self.sync_documents()
+            # Ranking annotates rows: keep the cached corpus unchanged.
+            rows = [dict(row) for row in self._bm25_rows]
+        else:
+            if not self.collection or self.collection.count() == 0:
+                self.sync_documents()
+            if not self.collection:
+                return []
+            corpus = self.collection.get(include=["documents", "metadatas"])
+            rows = [
+                {"id": identifier, "text": document, "metadata": metadata or {}}
+                for identifier, document, metadata in zip(corpus["ids"], corpus["documents"], corpus["metadatas"])
+            ]
 
         search_query = query.replace("cảnh cáo học tập", "cảnh báo học tập")
         # The active supported curricula are bachelor's programmes. Explicit
@@ -242,23 +329,18 @@ class VectorStoreManager:
             search_query = re.sub(r"loại A\b", "loại xuất sắc", search_query, flags=re.I)
             search_query = re.sub(r"loại B\b", "loại giỏi", search_query, flags=re.I)
             search_query = re.sub(r"loại C\b", "loại khá", search_query, flags=re.I)
-        corpus = self.collection.get(include=["documents", "metadatas"])
-        rows = [
-            {"id": identifier, "text": document, "metadata": metadata or {}}
-            for identifier, document, metadata in zip(corpus["ids"], corpus["documents"], corpus["metadatas"])
-        ]
         if not rows:
             return []
         lexical = bm25_scores(search_query, [lexical_text(row) for row in rows])
         lexical_order = sorted(range(len(rows)), key=lambda index: lexical[index], reverse=True)
         lexical_ranks = {rows[index]["id"]: rank for rank, index in enumerate(lexical_order, 1) if lexical[index] > 0}
         semantic_ranks = {}
-        try:
-            semantic = self.collection.query(query_texts=[search_query], n_results=min(k * 4, len(rows)))
-            semantic_ranks = {identifier: rank for rank, identifier in enumerate(semantic["ids"][0], 1)}
-        except Exception as exc:
-            print(f"[VectorStoreManager] Vector search unavailable; using BM25: {type(exc).__name__}")
-
+        if self.vector_search == "on":
+            try:
+                semantic = self.collection.query(query_texts=[search_query], n_results=min(k * 4, len(rows)))
+                semantic_ranks = {identifier: rank for rank, identifier in enumerate(semantic["ids"][0], 1)}
+            except Exception as exc:
+                print(f"[VectorStoreManager] Vector search unavailable; using BM25: {type(exc).__name__}")
         years = set(re.findall(r"\b20\d{2}\b", query))
         codes = set(re.findall(r"\b[A-Z]{2,3}\d{4}[A-Z]?\b", query.upper()))
         articles = set(re.findall(r"điều\s+(\d+)\b", query.lower()))
@@ -352,6 +434,13 @@ class VectorStoreManager:
         giao diện vẫn hiển thị được trạng thái mô hình. Không trả đường dẫn
         thư mục vì endpoint này công khai.
         """
+        if self.vector_search == "off":
+            if self._bm25_rows is None:
+                self.sync_documents()
+            return {"mode": self.mode, "collection_name": self.collection_name,
+                    "total_chunks": len(self._bm25_rows),
+                    "indexed_sources": sorted({row["metadata"]["source"] for row in self._bm25_rows})}
+
         try:
             if not self.collection:
                 self._init_client()
@@ -363,6 +452,7 @@ class VectorStoreManager:
             except Exception as exc:
                 print(f"[VectorStoreManager] Không đọc được chỉ mục: {exc}")
                 return {
+                    "mode": self.mode,
                     "collection_name": self.collection_name,
                     "total_chunks": 0,
                     "indexed_sources": [],
@@ -379,6 +469,7 @@ class VectorStoreManager:
                 pass
 
         return {
+            "mode": self.mode,
             "collection_name": self.collection_name,
             "total_chunks": count,
             "indexed_sources": sorted(sources),

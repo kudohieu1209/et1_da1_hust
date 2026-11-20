@@ -4,7 +4,7 @@ Dùng chung cho mọi CTĐT đại học; số tín chỉ riêng của từng CT
 """
 
 import re
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Iterable, Optional, TypedDict
 
 GRADE_TO_SCALE4 = {
     "A+": 4.0,
@@ -98,22 +98,57 @@ def credit_limits_for_warning(warning: Dict[str, Any]) -> Dict[str, Any]:
 # được nạp từ dataset CTĐT có phiên bản tương ứng.
 MIN_GRADUATION_CPA = 2.0
 
+HONORS_RETAKE_RATIO = 0.05
+
+
+class GradeAttempt(TypedDict):
+    scale4: float
+    credits: float
+    letter: str
+    name: str
+
+
+def best_attempts(transcript: Iterable[Dict[str, Any]]) -> Dict[str, GradeAttempt]:
+    """Điểm lần cao nhất được công nhận là điểm chính thức của học phần."""
+    best: Dict[str, GradeAttempt] = {}
+    for item in transcript:
+        code = item["code"]
+        credits = float(item.get("credits", 0.0))
+        if code.startswith("PE") or credits <= 0:
+            continue
+        letter = item.get("letter_grade", "")
+        scale4 = float(item.get("numeric_grade", GRADE_TO_SCALE4.get(letter, 0.0)))
+        if code not in best or scale4 > best[code]["scale4"]:
+            best[code] = {
+                "scale4": scale4,
+                "credits": credits,
+                "letter": letter,
+                "name": item.get("name") or code,
+            }
+    return best
+
+
+def cpa_from_attempts(best: Dict[str, GradeAttempt]) -> tuple[float, float, float]:
+    points = sum(item["scale4"] * item["credits"] for item in best.values())
+    credits = sum(item["credits"] for item in best.values())
+    return (round(points / credits, 2) if credits else 0.0), points, credits
+
+
 # Xếp loại học lực và tốt nghiệp theo Quy chế Đào tạo ĐHBK Hà Nội (thang 4.0)
+ACADEMIC_CLASSIFICATIONS = [
+    {"rank": "Xuất sắc", "color": "#10b981", "min_cpa": 3.60, "desc": "CPA ≥ 3.60"},
+    {"rank": "Giỏi", "color": "#38bdf8", "min_cpa": 3.20, "desc": "3.20 ≤ CPA < 3.60"},
+    {"rank": "Khá", "color": "#818cf8", "min_cpa": 2.50, "desc": "2.50 ≤ CPA < 3.20"},
+    {"rank": "Trung bình", "color": "#f59e0b", "min_cpa": 2.00,
+     "desc": "2.00 ≤ CPA < 2.50 (Đủ điều kiện tốt nghiệp)"},
+    {"rank": "Yếu", "color": "#ef4444", "min_cpa": 1.00,
+     "desc": "1.00 ≤ CPA < 2.00 (Chưa đủ chuẩn tốt nghiệp)"},
+    {"rank": "Kém", "color": "#dc2626", "min_cpa": 0.0, "desc": "CPA < 1.00"},
+]
+
+
 def get_academic_classification(cpa: float) -> dict:
-    if cpa >= 3.60:
-        return {"rank": "Xuất sắc", "color": "#10b981", "min_cpa": 3.60,
-                "desc": "CPA ≥ 3.60"}
-    elif cpa >= 3.20:
-        return {"rank": "Giỏi", "color": "#38bdf8", "min_cpa": 3.20,
-                "desc": "3.20 ≤ CPA < 3.60"}
-    elif cpa >= 2.50:
-        return {"rank": "Khá", "color": "#818cf8", "min_cpa": 2.50,
-                "desc": "2.50 ≤ CPA < 3.20"}
-    elif cpa >= 2.00:
-        return {"rank": "Trung bình", "color": "#f59e0b", "min_cpa": 2.00,
-                "desc": "2.00 ≤ CPA < 2.50 (Đủ điều kiện tốt nghiệp)"}
-    elif cpa >= 1.00:
-        return {"rank": "Yếu", "color": "#ef4444", "min_cpa": 1.00,
-                "desc": "1.00 ≤ CPA < 2.00 (Chưa đủ chuẩn tốt nghiệp)"}
-    else:
-        return {"rank": "Kém", "color": "#dc2626", "min_cpa": 0.0, "desc": "CPA < 1.00"}
+    for classification in ACADEMIC_CLASSIFICATIONS:
+        if cpa >= classification["min_cpa"]:
+            return classification.copy()
+    return ACADEMIC_CLASSIFICATIONS[-1].copy()

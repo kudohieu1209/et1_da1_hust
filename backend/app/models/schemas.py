@@ -215,6 +215,8 @@ class ImprovementCandidateItem(BaseModel):
     reason: str
     projections: Dict[str, Dict[str, float]]
     efficiency_score: float
+    category: str = "improve"
+    max_delta_cpa: float = 0.0
 
 
 class CourseImprovementResponse(BaseModel):
@@ -224,6 +226,10 @@ class CourseImprovementResponse(BaseModel):
     total_candidates: int
     improve_candidates: List[ImprovementCandidateItem]
     summary: str
+    cpa_credits: float = 0.0
+    has_transcript: bool = True
+    honors_rule: Dict[str, Any] = Field(default_factory=dict)
+    classification_ladder: List[Dict[str, Any]] = Field(default_factory=list)
 
 
 class CampusLocationItem(BaseModel):

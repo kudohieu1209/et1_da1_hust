@@ -22,7 +22,7 @@ from app.services.school_account_service import complete_school_login
 from app.services.school_portal import (
     SchoolLoginManager, SchoolPortalError, authenticated_ctt_html,
     build_school_snapshot, parse_school_identity, read_school_in_browser,
-    _school_page_ready, _wait_for_browser_activity, _fetch_ctt_html,
+    read_school_with_cookie, _school_page_ready, _wait_for_browser_activity, _fetch_ctt_html,
 )
 from testing_support import isolated_database, sample_profiles
 
@@ -529,3 +529,115 @@ class SchoolManagerTests(unittest.TestCase):
         finally:
             release.set()
             manager.close()
+
+
+class MobileSchoolLoginTests(unittest.TestCase):
+    def setUp(self):
+        self.database = isolated_database()
+        self.profiles = MongoProfileRepository(self.database)
+        self.store = MongoAuthStore(self.database)
+        self.auth = AuthService(self.store, self.profiles)
+        for sid in ("20220001", "20231890"):
+            self.profiles.save(sid, sample_profiles()[sid])
+            self.store.create_user({"student_id": sid, "password_hash": hash_password(PASSWORD), "created_at": self.auth.clock()})
+        for patcher in (
+            mock.patch.object(data_loader, "_profiles", self.profiles),
+            mock.patch.object(runtime, "auth_service", self.auth),
+            mock.patch.object(router_school_auth, "mobile_limiter", SlidingWindowLimiter(timedelta(minutes=5), 20)),
+            mock.patch.object(router_school_auth, "CTT_BROWSER_LOGIN_ENABLED", False),
+        ):
+            patcher.start()
+            self.addCleanup(patcher.stop)
+
+    def test_read_school_with_cookie_validates_cookie_and_logs_out(self):
+        for bad_cookie in ("", "   ", "no_equals", "ASP.NET_SessionId=abc\r\nInjected: 1"):
+            with self.subTest(bad_cookie=bad_cookie), self.assertRaises(SchoolPortalError):
+                read_school_with_cookie(bad_cookie)
+
+        fake_session = mock.MagicMock()
+        fake_session.headers = {}
+        fake_session.cookies = mock.MagicMock()
+        called_urls = []
+
+        def fake_get(url, timeout=25, allow_redirects=False):
+            called_urls.append(url)
+            if url.endswith("/Account/Logout.aspx"):
+                return mock.Mock(url=url, status_code=200, text="", headers={})
+            return mock.Mock(url=url, status_code=200, text=HTML, headers={})
+
+        fake_session.get.side_effect = fake_get
+        with mock.patch("app.services.school_portal.requests.Session", return_value=fake_session):
+            result = read_school_with_cookie("ASP.NET_SessionId=secret_session_value; Other=1", "CustomAgent/1.0\r\nBad")
+
+        self.assertEqual(result.info["student_id"], "20221234")
+        self.assertEqual(len(result.transcript), 2)
+        self.assertTrue(any(u.endswith("/Account/Logout.aspx") for u in called_urls))
+        fake_session.cookies.set.assert_any_call("ASP.NET_SessionId", "secret_session_value", domain="ctt-sis.hust.edu.vn", path="/")
+        fake_session.cookies.clear.assert_called_once()
+        fake_session.close.assert_called_once()
+
+    def test_read_school_with_cookie_rejects_off_host_redirect(self):
+        fake_session = mock.MagicMock()
+        fake_session.headers = {}
+        fake_session.cookies = mock.MagicMock()
+
+        def fake_get(url, timeout=25, allow_redirects=False):
+            if url.endswith("/Account/Logout.aspx"):
+                return mock.Mock(url=url, status_code=200, text="", headers={})
+            return mock.Mock(url=url, status_code=302, text="", headers={"Location": "https://evil.test/steal"})
+
+        fake_session.get.side_effect = fake_get
+        with mock.patch("app.services.school_portal.requests.Session", return_value=fake_session):
+            with self.assertRaisesRegex(SchoolPortalError, "ngoài cổng CTT"):
+                read_school_with_cookie("ASP.NET_SessionId=secret")
+        fake_session.cookies.clear.assert_called_once()
+        fake_session.close.assert_called_once()
+
+    def test_mobile_complete_works_without_desktop_browser_and_from_remote_client(self):
+        client = TestClient(app, base_url="https://advisor.example.test", client=("198.51.100.42", 50000))
+        with mock.patch.object(router_school_auth, "read_school_with_cookie", return_value=snapshot()) as reader:
+            response = client.post("/api/auth/ctt/mobile-complete", json={
+                "program_code": "ET1",
+                "ctt_cookie": "ASP.NET_SessionId=mobile_secret_cookie",
+                "user_agent": "Mozilla/5.0",
+            })
+        self.assertEqual(response.status_code, 200, response.text)
+        reader.assert_called_once_with("ASP.NET_SessionId=mobile_secret_cookie", "Mozilla/5.0")
+        self.assertIn(SESSION_COOKIE_NAME, response.headers["set-cookie"])
+        self.assertEqual(response.json()["student_id"], "20221234")
+        self.assertEqual(response.json()["school_sync"]["course_count"], 2)
+        self.assertNotIn("mobile_secret_cookie", response.text)
+        self.assertEqual(client.get("/api/student/profile").json()["info"]["student_id"], "20221234")
+
+    def test_mobile_complete_checks_identity_program_rate_limit_and_error_redaction(self):
+        client = TestClient(app, base_url="http://localhost", client=("127.0.0.1", 50000))
+        self.assertEqual(client.post("/api/auth/ctt/mobile-complete", json={
+            "program_code": "ZZZ", "ctt_cookie": "ASP.NET_SessionId=abc",
+        }).status_code, 422)
+
+        client.post("/api/auth/login", json={"student_id": "20220001", "password": PASSWORD})
+        with mock.patch.object(router_school_auth, "read_school_with_cookie", return_value=snapshot("20221234")):
+            conflict = client.post("/api/auth/ctt/mobile-complete", json={
+                "program_code": "ET1", "ctt_cookie": "ASP.NET_SessionId=abc",
+            })
+        self.assertEqual(conflict.status_code, 409)
+
+        with mock.patch.object(router_school_auth, "read_school_with_cookie", side_effect=RuntimeError("cookie=should-not-leak")):
+            err = client.post("/api/auth/ctt/mobile-complete", json={
+                "program_code": "ET1", "ctt_cookie": "ASP.NET_SessionId=abc",
+            })
+        self.assertEqual(err.status_code, 502)
+        self.assertNotIn("should-not-leak", err.text)
+
+        limiter = SlidingWindowLimiter(timedelta(minutes=5), 1)
+        with mock.patch.object(router_school_auth, "mobile_limiter", limiter):
+            with mock.patch.object(router_school_auth, "read_school_with_cookie", return_value=snapshot("20220001")):
+                first = client.post("/api/auth/ctt/mobile-complete", json={
+                    "program_code": "ET1", "ctt_cookie": "ASP.NET_SessionId=abc",
+                })
+                self.assertEqual(first.status_code, 200)
+            limited = client.post("/api/auth/ctt/mobile-complete", json={
+                "program_code": "ET1", "ctt_cookie": "ASP.NET_SessionId=abc",
+            })
+            self.assertEqual(limited.status_code, 429)
+            self.assertIn("Retry-After", limited.headers)

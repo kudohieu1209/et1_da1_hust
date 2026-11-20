@@ -1,141 +1,108 @@
-"""Thuật toán phân tích và gợi ý học phần cải thiện điểm (Course Improvement Engine)
+"""Phân tích học phần học lại và mô phỏng cải thiện CPA theo QĐ 5445."""
+from itertools import chain
+from typing import Any, Dict, Optional
 
-Áp dụng quy chế đào tạo Đại học Bách khoa Hà Nội (QĐ 5445/QĐ-ĐHBK)
-để tính toán phương án cải thiện CPA.
-"""
-
-from typing import Any, Dict, List, Optional
 from app.core.hust_rules import (
+    ACADEMIC_CLASSIFICATIONS,
     GRADE_TO_SCALE4,
-    PASSING_GRADES,
+    HONORS_RETAKE_RATIO,
+    best_attempts,
+    cpa_from_attempts,
     get_academic_classification,
 )
 
 
 class CourseImprovementEngine:
-    """Engine phân tích các môn điểm thấp (D, D+, F) và mô phỏng tác động cải thiện CPA."""
+    TARGET_GRADES = ("C", "C+", "B", "B+", "A")
 
-    TARGET_GRADES = ["C", "B", "B+", "A"]
-
-    def analyze_improvements(self, profile: Dict[str, Any]) -> Dict[str, Any]:
-        """Phân tích toàn bộ bảng điểm để tìm ra danh sách môn nên học cải thiện/học lại,
-
-        tính toán mức tăng CPA cụ thể cho từng mục tiêu điểm số.
-        """
+    def analyze_improvements(
+        self, profile: Dict[str, Any], required_credits: Optional[float] = None
+    ) -> Dict[str, Any]:
         transcript = profile.get("transcript", [])
-        passed_courses = profile.get("passed_courses", [])
-        failed_courses = profile.get("failed_courses", [])
-        cpa_current = float(profile.get("info", {}).get("cpa", 0.0) or 0.0)
+        best = best_attempts(transcript)
+        cpa, _, cpa_credits = cpa_from_attempts(best)
+        if not transcript:
+            cpa = float(profile.get("info", {}).get("cpa") or 0.0)
 
-        # 1. Tính tổng số tín chỉ tính điểm CPA hiện tại
-        # Các môn đã học có điểm và số tín chỉ > 0
-        total_eval_credits = sum(
-            float(c.get("credits", 0.0)) for c in transcript if float(c.get("credits", 0.0)) > 0
-        )
-        if total_eval_credits <= 0:
-            total_eval_credits = sum(float(c.get("credits", 0.0)) for c in passed_courses) + sum(
-                float(c.get("credits", 0.0)) for c in failed_courses
-            )
-
-        if total_eval_credits <= 0:
-            return {
-                "current_cpa": cpa_current,
-                "current_classification": get_academic_classification(cpa_current),
-                "total_credits": 0.0,
-                "improve_candidates": [],
-                "summary": "Chưa có đủ dữ liệu bảng điểm để phân tích môn cải thiện.",
-            }
-
-        # 2. Lọc các môn có thể học lại hoặc học cải thiện
-        # Quy chế Bách Khoa: Điểm F bắt buộc học lại; Điểm D, D+ được học cải thiện.
         candidates = []
-        seen_codes = set()
+        for code, attempt in best.items():
+            scale4 = attempt["scale4"]
+            if scale4 >= 4.0:
+                continue
 
-        # Quét môn F trước (ưu tiên cao)
-        for item in failed_courses:
-            code = item.get("code")
-            if code and code not in seen_codes:
-                seen_codes.add(code)
-                candidates.append({**item, "is_failed": True})
+            letter = attempt["letter"]
+            credits = attempt["credits"]
+            if letter == "F":
+                category = "retake"
+                priority = "HIGH"
+                reason = "Điểm F, bắt buộc học lại để tích lũy tín chỉ."
+            else:
+                category = "improve_low" if letter in {"D", "D+"} else "improve"
+                priority = "HIGH" if category == "improve_low" and credits >= 3 else "MEDIUM"
+                reason = f"Học phần {credits:g} tín chỉ, có thể học lại để cải thiện điểm {letter}."
 
-        # Quét các môn D, D+ trong passed_courses
-        for item in passed_courses:
-            code = item.get("code")
-            letter = item.get("letter_grade", "").upper()
-            if code and code not in seen_codes and letter in {"D", "D+"}:
-                seen_codes.add(code)
-                candidates.append({**item, "is_failed": False})
-
-        # 3. Tính toán tác động CPA cho từng môn
-        analysis_list = []
-        for course in candidates:
-            code = course.get("code", "")
-            name = course.get("name", "")
-            credits = float(course.get("credits", 0.0))
-            current_letter = course.get("letter_grade", "F").upper()
-            current_num = float(course.get("numeric_grade", GRADE_TO_SCALE4.get(current_letter, 0.0)))
-            is_failed = course.get("is_failed", False)
-
-            # Mô phỏng nếu đạt điểm target: C (2.0), B (3.0), B+ (3.5), A (4.0)
             projections = {}
-            for tgt in self.TARGET_GRADES:
-                tgt_num = GRADE_TO_SCALE4[tgt]
-                if tgt_num > current_num:
-                    delta_pts = (tgt_num - current_num) * credits
-                    # Nếu là môn F học lại thì tổng tín chỉ tích lũy tăng thêm `credits`
-                    # Đối với môn D/D+ cải thiện thì tổng số tín chỉ giữ nguyên, chỉ thay điểm
-                    new_cpa = cpa_current + (delta_pts / total_eval_credits)
-                    projections[tgt] = {
-                        "new_cpa": round(min(4.0, new_cpa), 2),
-                        "delta_cpa": round(delta_pts / total_eval_credits, 3),
+            for grade in self.TARGET_GRADES:
+                target = GRADE_TO_SCALE4[grade]
+                if target > scale4:
+                    # Điểm F đã nằm trong mẫu số CPA, nên chỉ thay điểm chất lượng.
+                    delta = (target - scale4) * credits / cpa_credits
+                    projections[grade] = {
+                        "delta_cpa": round(delta, 3),
+                        "new_cpa": round(min(4.0, cpa + delta), 2),
                     }
 
-            # Xác định mức độ ưu tiên
-            if is_failed:
-                priority = "HIGH"
-                reason = "Môn nợ đọng (F). Bắt buộc học lại để tích lũy tín chỉ và tránh cảnh báo học tập."
-            elif credits >= 3.0:
-                priority = "HIGH"
-                reason = f"Môn {credits:g} tín chỉ điểm {current_letter}. Kéo CPA rất hiệu quả khi cải thiện lên B/A."
-            else:
-                priority = "MEDIUM"
-                reason = f"Môn {credits:g} tín chỉ điểm {current_letter}. Cải thiện để tối ưu điểm tổng kết."
-
-            # Hiệu quả trên mỗi tín chỉ (với mục tiêu B)
-            target_b_delta = projections.get("B", {}).get("delta_cpa", 0.0)
-
-            analysis_list.append({
+            candidates.append({
                 "code": code,
-                "name": name,
+                "name": attempt["name"],
                 "credits": credits,
-                "current_letter_grade": current_letter,
-                "current_numeric_grade": current_num,
-                "is_failed": is_failed,
+                "current_letter_grade": letter,
+                "current_numeric_grade": scale4,
+                "is_failed": category == "retake",
+                "category": category,
                 "priority": priority,
                 "reason": reason,
                 "projections": projections,
-                "efficiency_score": target_b_delta,
+                "efficiency_score": projections.get("B", {}).get("delta_cpa", 0.0),
+                "max_delta_cpa": projections["A"]["delta_cpa"],
             })
 
-        # Sắp xếp: Môn HIGH trước, sau đó theo efficiency_score giảm dần
-        priority_weight = {"HIGH": 2, "MEDIUM": 1, "LOW": 0}
-        analysis_list.sort(
-            key=lambda x: (priority_weight.get(x["priority"], 0), x["efficiency_score"]),
-            reverse=True
+        category_order = {"retake": 0, "improve_low": 1, "improve": 2}
+        candidates.sort(key=lambda course: (category_order[course["category"]], -course["max_delta_cpa"]))
+
+        failed_attempts = (item for item in transcript if item.get("letter_grade") == "F")
+        failed_by_code: Dict[str, float] = {}
+        for item in chain(profile.get("failed_courses", []), failed_attempts):
+            if code := item.get("code"):
+                credits = float(item.get("credits") or 0.0)
+                failed_by_code[code] = max(failed_by_code.get(code, 0.0), credits)
+        retake_credits = sum(failed_by_code.values())
+        basis_credits = cpa_credits if required_credits is None else float(required_credits)
+        threshold_credits = round(basis_credits * HONORS_RETAKE_RATIO, 2)
+
+        classification = get_academic_classification(cpa)
+        summary = (
+            f"Hiện tại CPA của bạn là {cpa:.2f} ({classification['rank']}). "
+            f"Có {len(candidates)} môn học có thể cải thiện hoặc học lại để nâng CPA."
+            if transcript else "Chưa có đủ dữ liệu bảng điểm để phân tích môn cải thiện."
         )
-
-        curr_class = get_academic_classification(cpa_current)
-
         return {
-            "current_cpa": cpa_current,
-            "current_classification": curr_class,
-            "total_credits": total_eval_credits,
-            "total_candidates": len(analysis_list),
-            "improve_candidates": analysis_list,
-            "summary": (
-                f"Hiện tại CPA của bạn là {cpa_current:.2f} ({curr_class.get('rank', 'Trung bình')}). "
-                f"Có {len(analysis_list)} môn học có thể cải thiện hoặc học lại để nâng CPA."
-            ),
+            "current_cpa": cpa,
+            "current_classification": classification,
+            "total_credits": cpa_credits,
+            "cpa_credits": cpa_credits,
+            "has_transcript": bool(transcript),
+            "total_candidates": len(candidates),
+            "improve_candidates": candidates,
+            "summary": summary,
+            "honors_rule": {
+                "retake_credits": retake_credits,
+                "basis_credits": basis_credits,
+                "threshold_credits": threshold_credits,
+                "exceeds": retake_credits > threshold_credits,
+                "basis_source": "transcript" if required_credits is None else "program",
+            },
+            "classification_ladder": ACADEMIC_CLASSIFICATIONS,
         }
 
 
