@@ -1,0 +1,26 @@
+.english-standard-card {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+.english-standard-card header { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; }
+.english-standard-card h3, .english-standard-card h4, .english-standard-card p, .english-standard-card blockquote { margin: 0; }
+.english-standard-card h4 { font-size: .85rem; }
+.english-standard-card p, .english-standard-card summary { font-size: .8rem; line-height: 1.6; color: var(--text-secondary); }
+.english-standard-card strong { color: var(--text-primary); }
+.english-standard-card summary { cursor: pointer; font-weight: 650; }
+.english-standard-card details { min-width: 0; }
+.english-standard-card .english-standard-source { font-size: .71rem; line-height: 1.6; color: var(--text-muted); }
+.english-standard-card .school-data-secondary { justify-self: start; }
+.english-standard-section { display: grid; gap: 5px; min-width: 0; }
+.english-standard-card summary + .english-standard-section, .english-standard-card summary + .services-table-wrap { margin-top: 8px; }
+
+@media (min-width: 640px) {
+  .english-standard-history .services-table th, .english-standard-history .services-table td { padding-inline: 5px; }
+  .english-standard-history .services-table th:nth-child(n + 3):nth-child(-n + 6),
+  .english-standard-history .services-table time { white-space: nowrap; }
+}

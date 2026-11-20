@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { AcademicMilestone, TranscriptEmptyState } from './StudentState';
+import EnglishStandardCard from './audit/EnglishStandardCard';
+import NonCreditEvidence from './audit/NonCreditEvidence';
 import {
   CheckCircle2,
   AlertTriangle,
@@ -32,6 +34,7 @@ export default function AuditTab({
       <div className="audit-loading">
         <div style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '8px' }}>Đang tải báo cáo tiến độ học tập...</div>
         <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Vui lòng đợi giây lát trong khi hệ thống đồng bộ dữ liệu CTĐT Bách Khoa.</div>
+        <EnglishStandardCard language={language} onSync={onOpenImport} />
       </div>
     );
   }
@@ -563,6 +566,9 @@ export default function AuditTab({
             </div>
           </div>
 
+          {/* graduation-requirements: feat/services-tab */}
+          <EnglishStandardCard language={language} onSync={onOpenImport} refreshKey={auditData} />
+          <NonCreditEvidence language={language} refreshKey={auditData} />
           {/* Graduation Roadmap Forecast Box */}
           <div className="glass-panel audit-forecast-box">
             <div className="audit-panel__icon" style={{ width: '38px', height: '38px', background: 'var(--hust-red-glow)', color: 'var(--brand-accent)' }}>

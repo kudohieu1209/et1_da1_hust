@@ -120,15 +120,20 @@ class ExtraStudentServices:
         except Exception as e:
             logger.error(f"Error saving reviews: {e}")
 
-    def _section(self, student_id: str, key: str) -> dict:
+    def _student_profile(self, student_id: str) -> dict:
         from app.services.data_loader import data_loader
         profile_key = data_loader.profiles.find_key(student_id)
         profile = data_loader.profiles.get(profile_key) if profile_key else None
         if not profile or profile.get("info", {}).get("student_id") != student_id:
             raise ValueError("Không tìm thấy hồ sơ của tài khoản đang đăng nhập.")
+        return profile
+
+    def _section(self, student_id: str, key: str, *, include_coursework: bool = True, profile=None) -> dict:
+        if profile is None:
+            profile = self._student_profile(student_id)
         from app.services.ctt_sections import normalize_saved_section
         saved = profile.get("school_services", {}).get(key)
-        if key == 'certificates':
+        if key == 'certificates' and include_coursework:
             from app.services.curriculum_repository import curriculum_repository
             from app.services.non_credit_coursework import with_coursework
             saved = with_coursework(saved or {'records': [], 'tables': [], 'requirements': {}}, profile, curriculum_repository.resolve_profile(profile))
@@ -162,13 +167,22 @@ class ExtraStudentServices:
         return TuitionResponse(**{**section, "student_id": student_id, "current_debt": total, "semesters": semesters})
 
     def get_toeic_status(self, student_id: str, program_code: str = "") -> ToeicResponse:
+        from app.services.english_standard import latest_score
         section = self._section(student_id, "english")
         records = section.get("records", [])
-        # Prefer the latest explicitly dated result; retain full history separately.
-        dated = [row for row in records if row.get("test_date")]
-        latest = max(dated, key=lambda row: row["test_date"]) if dated else records[0] if len(records) == 1 else {}
+        latest = latest_score(records) or {}
         return ToeicResponse(**{**section, "student_id": student_id, "score": latest.get("score"),
             "test_date": latest.get("test_date"), "certificate_type": latest.get("certificate_type", "")})
+
+    def get_english_standard(self, student_id: str) -> dict:
+        from app.services.english_standard import english_standard
+
+        profile = self._student_profile(student_id)
+        sections = {
+            key: self._section(student_id, key, include_coursework=False, profile=profile)
+            for key in ("english", "certificates")
+        }
+        return english_standard(profile, sections)
 
     def get_classmates(self, class_code: str, student_id: str) -> ClassmatesResponse:
         from app.services.ctt_sections import minimize_classmate_section

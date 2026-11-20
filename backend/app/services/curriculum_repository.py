@@ -21,6 +21,11 @@ class CurriculumNotFoundError(LookupError):
     """Raised when a student profile has no matching, verified curriculum."""
 
 
+def cohort_from_class_name(class_name: str) -> Optional[int]:
+    match = re.search(r"\bK(\d{2})\b", class_name, re.IGNORECASE)
+    return int(match.group(1)) if match else None
+
+
 class CurriculumRepository:
     def __init__(self, curricula_dir: Path = CURRICULA_DIR):
         self.curricula_dir = Path(curricula_dir)
@@ -156,10 +161,10 @@ class CurriculumRepository:
     @staticmethod
     def _infer_version(info: Dict[str, Any]) -> Optional[str]:
         class_name = str(info.get("class_name", ""))
-        cohort_match = re.search(r"\bK(\d{2})\b", class_name, re.IGNORECASE)
-        if cohort_match:
+        cohort = cohort_from_class_name(class_name)
+        if cohort is not None:
             # K67 entered in 2022, K68 in 2023, ...
-            return str(1955 + int(cohort_match.group(1)))
+            return str(1955 + cohort)
 
         program_name = str(info.get("program_name", ""))
         year_match = re.search(r"\b(20\d{2})\b", program_name)

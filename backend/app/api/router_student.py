@@ -3,6 +3,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from datetime import date, datetime, timezone
 from starlette.concurrency import run_in_threadpool
 from app.auth.dependencies import current_student, student_scope
+from app.models.english import EnglishStandardResponse
 from app.services.student_service import student_service
 from app.engine.recommender import course_recommender
 from app.services.data_loader import data_loader
@@ -30,36 +31,36 @@ from app.models.schemas import (
     TuitionResponse,
 )
 
-# Mọi endpoint chạy trong scope hồ sơ của sinh viên đang đăng nhập (cookie phiên).
+# Các endpoint cần CTĐT chạy trong scope hồ sơ của sinh viên đang đăng nhập.
+scoped_router = APIRouter(dependencies=[Depends(student_scope)])
 router = APIRouter(
     prefix="/api/student",
     tags=["Student & Degree Audit"],
-    dependencies=[Depends(student_scope)],
 )
 
 
-@router.get("/memory")
+@scoped_router.get("/memory")
 def get_advising_memory(student_id: str = Depends(current_student)):
     return student_memory.get(student_id)
 
 
-@router.put("/memory")
+@scoped_router.put("/memory")
 def update_advising_memory(payload: AdvisingMemoryUpdate, student_id: str = Depends(current_student)):
     if payload.target_track and payload.target_track not in {track["id"] for track in data_loader.get_module_tracks()}:
         raise HTTPException(status_code=422, detail="Mô-đun không thuộc CTĐT hiện tại của bạn.")
     return student_memory.save(student_id, payload, data_loader.get_program())
 
 
-@router.delete("/memory", status_code=204)
+@scoped_router.delete("/memory", status_code=204)
 def delete_advising_memory(student_id: str = Depends(current_student)):
     student_memory.delete(student_id)
 
-@router.get("/profile")
+@scoped_router.get("/profile")
 def get_student_profile():
     """Thông tin và bảng điểm của sinh viên đang đăng nhập."""
     return student_service.get_profile()
 
-@router.post("/profile/update")
+@scoped_router.post("/profile/update")
 def update_student_profile(payload: ProfileDisplayUpdate, student_id: str = Depends(current_student)):
     """Cập nhật tên hiển thị và ảnh đại diện. MSSV/lớp/CTĐT không sửa tay được."""
     try:
@@ -67,13 +68,13 @@ def update_student_profile(payload: ProfileDisplayUpdate, student_id: str = Depe
     except CurriculumNotFoundError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
-@router.get("/audit", response_model=DegreeAuditResponse)
+@scoped_router.get("/audit", response_model=DegreeAuditResponse)
 def get_degree_audit():
     """Đánh giá chi tiết tiến độ học tập (Degree Audit) và điều kiện tốt nghiệp Bách Khoa"""
     audit = student_service.audit_degree()
     return DegreeAuditResponse(**audit)
 
-@router.post("/import")
+@scoped_router.post("/import")
 def import_student_transcript(payload: TranscriptImportRequest, student_id: str = Depends(current_student)):
     """Thay bảng điểm của sinh viên đang đăng nhập bằng nội dung copy từ CTT."""
     try:
@@ -81,12 +82,12 @@ def import_student_transcript(payload: TranscriptImportRequest, student_id: str 
     except (CurriculumNotFoundError, ValueError) as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
-@router.get("/tracks")
+@scoped_router.get("/tracks")
 def get_available_tracks():
     """Danh sách các mô-đun lấy từ CTĐT của sinh viên."""
     return {"tracks": data_loader.get_module_tracks()}
 
-@router.post("/recommend", response_model=RecommendationResponse)
+@scoped_router.post("/recommend", response_model=RecommendationResponse)
 def recommend_courses(req: RecommendationRequest):
     """Đề xuất danh sách học phần kỳ tiếp theo theo định hướng chuyên ngành."""
     try:
@@ -100,13 +101,13 @@ def recommend_courses(req: RecommendationRequest):
     return RecommendationResponse(**rec)
 
 
-@router.post("/sync-ctt")
+@scoped_router.post("/sync-ctt")
 def sync_ctt_transcript(student_id: str = Depends(current_student)):
     """Old clients must switch to the verified, browser-based CTT connection."""
     raise HTTPException(status_code=410, detail="Hãy chọn Kết nối tài khoản trường để đồng bộ bảng điểm; không gửi mật khẩu CTT vào ứng dụng.")
 
 
-@router.post("/parse-ctt-html")
+@scoped_router.post("/parse-ctt-html")
 def parse_ctt_html(payload: CttHtmlParseRequest, student_id: str = Depends(current_student)):
     """Nạp bảng điểm từ mã nguồn HTML DevExpress copy từ trang CTT (An toàn bảo mật 100%)."""
     try:
@@ -115,21 +116,21 @@ def parse_ctt_html(payload: CttHtmlParseRequest, student_id: str = Depends(curre
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 
-@router.get("/improve-courses", response_model=CourseImprovementResponse)
+@scoped_router.get("/improve-courses", response_model=CourseImprovementResponse)
 def get_course_improvements(student_id: str = Depends(current_student)):
     """Gợi ý các môn điểm thấp (D, D+, F) cần học cải thiện và dự báo mức tăng CPA."""
     res = student_service.get_course_improvements(student_id)
     return CourseImprovementResponse(**res)
 
 
-@router.get("/campus-locations", response_model=CampusLocationResponse)
+@scoped_router.get("/campus-locations", response_model=CampusLocationResponse)
 def get_campus_locations():
     """Danh sách các tòa nhà, giảng đường, tiện ích trong khuôn viên Bách Khoa."""
     locs = campus_service.get_all_locations()
     return CampusLocationResponse(locations=locs, total=len(locs))
 
 
-@router.get("/campus-directions")
+@scoped_router.get("/campus-directions")
 def get_campus_direction(query: str):
     """Tìm địa điểm và nhận liên kết chỉ đường Google Maps trong khuôn viên HUST."""
     loc = campus_service.find_location(query)
@@ -141,13 +142,13 @@ def get_campus_direction(query: str):
     }
 
 
-@router.get("/timetable", response_model=TimetableResponse)
+@scoped_router.get("/timetable", response_model=TimetableResponse)
 def get_student_timetable(student_id: str = Depends(current_student)):
     """Thời khóa biểu chính thức và thời khóa biểu tạm thời (SIS Temp)."""
     return extra_student_services.get_timetable(student_id)
 
 
-@router.get("/exams", response_model=ExamScheduleResponse)
+@scoped_router.get("/exams", response_model=ExamScheduleResponse)
 def get_student_exams(student_id: str = Depends(current_student)):
     """Lịch thi kết thúc học phần, phòng thi và số báo danh."""
     return extra_student_services.get_exam_schedule(student_id)
@@ -170,7 +171,7 @@ class ExamImport(BaseModel):
     exams: list[ImportedExam] = Field(..., min_length=1, max_length=500)
 
 
-@router.post("/exams/preview")
+@scoped_router.post("/exams/preview")
 async def preview_exam_file(file: UploadFile = File(...), student_id: str = Depends(current_student)):
     from app.services.exam_import import preview_exam_pdf
     try:
@@ -183,7 +184,7 @@ async def preview_exam_file(file: UploadFile = File(...), student_id: str = Depe
         await file.close()
 
 
-@router.post("/exams/import")
+@scoped_router.post("/exams/import")
 def save_imported_exams(payload: ExamImport, student_id: str = Depends(current_student)):
     key = data_loader.profiles.find_key(student_id)
     profile = data_loader.profiles.get(key) if key else None
@@ -197,19 +198,19 @@ def save_imported_exams(payload: ExamImport, student_id: str = Depends(current_s
     return {"status": "success", "total": len(payload.exams)}
 
 
-@router.get("/tuition", response_model=TuitionResponse)
+@scoped_router.get("/tuition", response_model=TuitionResponse)
 def get_student_tuition(student_id: str = Depends(current_student)):
     """Tra cứu học phí và trạng thái nợ học phí."""
     return extra_student_services.get_tuition(student_id)
 
 
-@router.get("/toeic", response_model=ToeicResponse)
+@scoped_router.get("/toeic", response_model=ToeicResponse)
 def get_student_toeic(student_id: str = Depends(current_student)):
     """Tra cứu điểm thi TOEIC nội bộ và kiểm tra chuẩn đầu ra ngoại ngữ."""
     return extra_student_services.get_toeic_status(student_id)
 
 
-@router.get("/classmates", response_model=ClassmatesResponse)
+@scoped_router.get("/classmates", response_model=ClassmatesResponse)
 def get_classmates(class_code: str = Query("", max_length=80, description="Mã lớp đã được đồng bộ từ CTT"), student_id: str = Depends(current_student)):
     """Tra cứu danh sách sinh viên cùng lớp học phần (StudentGroupInfo)."""
     try:
@@ -218,18 +219,18 @@ def get_classmates(class_code: str = Query("", max_length=80, description="Mã l
         raise HTTPException(status_code=404, detail=str(exc)) from exc
 
 
-@router.get("/school-services")
+@scoped_router.get("/school-services")
 def get_school_services(student_id: str = Depends(current_student)):
     return extra_student_services.get_sync_summary(student_id)
 
 
-@router.get("/reviews")
+@scoped_router.get("/reviews")
 def get_course_reviews(course_code: str = Query(None, description="Mã môn học (VD: MI1111, ET3210)")):
     """Xem đánh giá và review học phần từ cộng đồng sinh viên HUST."""
     return extra_student_services.get_course_reviews(course_code)
 
 
-@router.post("/reviews")
+@scoped_router.post("/reviews")
 def add_course_review(
     course_code: str = Query(..., description="Mã môn học"),
     payload: CourseReviewCreate = ...,
@@ -237,3 +238,14 @@ def add_course_review(
 ):
     """Gửi đánh giá và kinh nghiệm học tập cho môn học."""
     return extra_student_services.add_course_review(course_code, payload, author_name=f"SV {student_id[:4]}***")
+
+router.include_router(scoped_router)
+
+
+@router.get("/english-standard", response_model=EnglishStandardResponse)
+def get_english_standard(student_id: str = Depends(current_student)):
+    # This owner-scoped lookup also works before a verified curriculum exists.
+    try:
+        return extra_student_services.get_english_standard(student_id)
+    except ValueError:
+        return EnglishStandardResponse()
