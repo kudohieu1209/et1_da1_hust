@@ -27,8 +27,12 @@ if ($Build) {
     $previousJavaHome = $env:JAVA_HOME
     try {
         if (-not $env:JAVA_HOME) {
-            $jdk = Get-ChildItem 'C:\Program Files\Microsoft' -Directory -Filter 'jdk-21*' | Select-Object -First 1
-            if (-not $jdk) { throw 'Set JAVA_HOME to a JDK 21 installation.' }
+            $jdkCandidates = @(
+                (Get-ChildItem 'C:\Program Files\Eclipse Adoptium' -Directory -Filter 'jdk-*' -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1),
+                (Get-ChildItem 'C:\Program Files\Microsoft' -Directory -Filter 'jdk-*' -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1)
+            ) | Where-Object { $_ -ne $null }
+            $jdk = $jdkCandidates | Select-Object -First 1
+            if (-not $jdk) { throw 'Set JAVA_HOME to a JDK 21+ installation.' }
             $env:JAVA_HOME = $jdk.FullName
         }
         Push-Location (Join-Path $repoPath 'frontend')
