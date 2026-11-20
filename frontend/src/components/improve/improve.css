@@ -422,9 +422,205 @@
 
   .improve-course-targets .improve-controls {
     gap: 4px;
+    flex-wrap: wrap;
   }
 
   .improve-course-targets > span {
     min-width: 0;
   }
 }
+
+/* CPA Upcoming Courses and Scope Enhancements */
+.improve-score-breakdown {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.improve-upcoming-note {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+.improve-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.improve-tag--term {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.improve-tag--compulsory {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.improve-subnav {
+  display: flex;
+  gap: 8px;
+  margin-block: 4px;
+  flex-wrap: wrap;
+}
+
+.improve-tab-chip {
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.improve-tab-chip[aria-pressed="true"],
+.improve-tab-chip[aria-selected="true"] {
+  background: var(--brand-accent);
+  color: #fff;
+  border-color: var(--brand-accent);
+}
+
+.improve-upcoming-section {
+  display: grid;
+  gap: 16px;
+}
+
+.improve-super-title {
+  font-size: 1.05rem;
+  margin-block: 8px 12px;
+  color: var(--text-primary);
+}
+
+.improve-subgroup {
+  margin-bottom: 14px;
+}
+
+.improve-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.improve-group-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.improve-batch-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.improve-batch-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.improve-select {
+  padding: 3px 6px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.improve-button--sm {
+  padding: 3px 8px;
+  font-size: 0.78rem;
+}
+
+.improve-custom-credit-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 6px;
+}
+
+.improve-credit-input {
+  width: 48px;
+  padding: 2px 4px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.improve-unknown-note {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.improve-grade--upcoming {
+  background: rgba(100, 116, 139, 0.12);
+  color: var(--text-secondary);
+}
+
+.improve-electives-details {
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 10px;
+  background: var(--bg-surface);
+}
+
+.improve-electives-summary {
+  cursor: pointer;
+  font-size: 0.92rem;
+  padding: 4px;
+  user-select: none;
+}
+
+.improve-goal-gpa-needed {
+  margin-bottom: 8px;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.improve-loss {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+@media (max-width: 375px) {
+  .improve-page {
+    overflow-x: hidden;
+    padding-inline: 4px;
+  }
+
+  .improve-group-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .improve-course-targets .improve-controls {
+    gap: 3px;
+  }
+
+  .improve-page .improve-grade-button {
+    min-width: 28px;
+    padding-inline: 4px;
+    font-size: 0.78rem;
+  }
+}
+

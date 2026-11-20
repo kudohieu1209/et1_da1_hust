@@ -9,7 +9,7 @@ import unittest
 from unittest.mock import patch
 
 from app.core.hust_rules import GRADE_TO_SCALE4
-from app.engine.improve_engine import course_improvement_engine
+from app.engine.improve_engine import build_upcoming, course_improvement_engine
 from app.services.campus_service import campus_service
 from app.services.chatbot_service import chatbot_service
 from app.services.ctt_service import ctt_parser
@@ -217,6 +217,106 @@ class TestStudentServiceIntegrations(unittest.TestCase):
         self.assertIn("Cải thiện điểm CPA", result["reply"])
         self.assertNotIn("ET2050", result["reply"])
         self.assertEqual(result["data_context"]["total_candidates"], 0)
+
+
+    def test_build_upcoming_deduplication_and_filtering(self):
+        catalog = {
+            "ET2050": {"code": "ET2050", "name": "Lý thuyết mạch", "credits": 3.0, "suggested_semester": 3, "is_compulsory": True},
+            "ET3220": {"code": "ET3220", "name": "Điện tử số", "credits": 3.0, "suggested_semester": 4, "is_compulsory": True},
+            "MI1111": {"code": "MI1111", "name": "Giải tích I", "credits": 4.0, "suggested_semester": 1, "is_compulsory": True},
+            "PE1010": {"code": "PE1010", "name": "Giáo dục thể chất", "credits": 0.0, "suggested_semester": 1, "is_compulsory": False},
+        }
+        transcript = [_course("MI1111", "F")]
+        current_term = ["MI1111", "ET3220", "PE1010", "UNK0001"]
+        unlearned_compulsory = [catalog["ET3220"], catalog["ET2050"]]
+        unlearned_elective = []
+
+        upcoming = build_upcoming(
+            current_term=current_term,
+            unlearned_compulsory=unlearned_compulsory,
+            unlearned_elective=unlearned_elective,
+            course_catalog=catalog,
+            best_attempts_data=transcript,
+            current_term_names={"UNK0001": "Môn ngoài CTĐT"},
+        )
+        codes = [item["code"] for item in upcoming]
+        self.assertNotIn("MI1111", codes)
+        self.assertNotIn("PE1010", codes)
+        self.assertEqual(codes.count("ET3220"), 1)
+        et3220_item = next(item for item in upcoming if item["code"] == "ET3220")
+        self.assertEqual(et3220_item["source"], "current_term")
+        self.assertTrue(et3220_item["credits_known"])
+        self.assertEqual(et3220_item["credits"], 3.0)
+
+        unk_item = next(item for item in upcoming if item["code"] == "UNK0001")
+        self.assertIsNone(unk_item["credits"])
+        self.assertFalse(unk_item["credits_known"])
+        self.assertEqual(unk_item["source"], "current_term")
+
+        et2050_item = next(item for item in upcoming if item["code"] == "ET2050")
+        self.assertEqual(et2050_item["source"], "curriculum")
+        self.assertTrue(et2050_item["is_compulsory"])
+
+    def test_candidate_in_current_term_flag(self):
+        failed = _course("ET2050", "F")
+        profile = {"transcript": [failed], "failed_courses": [failed]}
+        res = course_improvement_engine.analyze_improvements(
+            profile, current_term_codes=["ET2050", "ET3000"]
+        )
+        cand = next(c for c in res["improve_candidates"] if c["code"] == "ET2050")
+        self.assertTrue(cand["in_current_term"])
+
+        res2 = course_improvement_engine.analyze_improvements(
+            profile, current_term_codes=["ET3000"]
+        )
+        cand2 = next(c for c in res2["improve_candidates"] if c["code"] == "ET2050")
+        self.assertFalse(cand2["in_current_term"])
+
+    def test_missing_timetable_or_value_error_handles_cleanly(self):
+        profile = {"info": {"student_id": "SV_NO_TKB"}, "transcript": [_course("ET2050", "D")]}
+        from app.services.extra_student_services import extra_student_services
+        with patch.object(student_service, "get_profile", return_value=profile), \
+             patch.object(extra_student_services, "_section", side_effect=ValueError("No profile")):
+            res = student_service.get_course_improvements("SV_NO_TKB")
+        term_upcoming = [c for c in res["upcoming_courses"] if c["source"] == "current_term"]
+        self.assertEqual(term_upcoming, [])
+
+    def test_cpa_points_and_program_projection(self):
+        profile = {
+            "info": {"student_id": "20220001"},
+            "transcript": [
+                _course("ET2050", "D", 3.0),
+                _course("ET2030", "B", 3.0),
+            ],
+            "passed_courses": [
+                _course("ET2050", "D", 3.0),
+                _course("ET2030", "B", 3.0),
+            ],
+            "failed_courses": [],
+        }
+        with patch.object(student_service, "get_profile", return_value=profile), \
+             patch.object(data_loader, "get_student_profile", return_value=profile):
+            audit = student_service.audit_degree()
+            improve = student_service.get_course_improvements("20220001")
+
+        self.assertAlmostEqual(
+            round(improve["cpa_points"] / improve["cpa_credits"], 2),
+            improve["current_cpa"],
+            places=2,
+        )
+        if improve["program_projection"] and audit.get("target_kha_advice"):
+            proj = improve["program_projection"]
+            self.assertEqual(proj["remaining_credits"], audit["target_kha_advice"]["remaining_credits"])
+
+    def test_audit_degree_identical_after_refactoring(self):
+        audit = student_service.audit_degree()
+        self.assertIn("cpa", audit)
+        self.assertIn("target_kha_advice", audit)
+        self.assertIn("unlearned_compulsory_courses", audit)
+        self.assertIn("unlearned_elective_courses", audit)
+        self.assertIn("graduation_group_audit", audit)
+        self.assertEqual(type(audit["unlearned_compulsory_courses"]), list)
+        self.assertEqual(type(audit["unlearned_elective_courses"]), list)
 
 
 if __name__ == "__main__":

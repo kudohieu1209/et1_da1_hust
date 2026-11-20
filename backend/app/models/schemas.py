@@ -204,6 +204,16 @@ class CttHtmlParseRequest(BaseModel):
     html_content: str = Field(..., min_length=1, max_length=5_000_000)
 
 
+class UpcomingCourseItem(BaseModel):
+    code: str
+    name: str
+    credits: Optional[float] = None
+    source: str
+    suggested_semester: Optional[int] = None
+    is_compulsory: bool = False
+    credits_known: bool = True
+
+
 class ImprovementCandidateItem(BaseModel):
     code: str
     name: str
@@ -217,6 +227,7 @@ class ImprovementCandidateItem(BaseModel):
     efficiency_score: float
     category: str = "improve"
     max_delta_cpa: float = 0.0
+    in_current_term: bool = False
 
 
 class CourseImprovementResponse(BaseModel):
@@ -230,6 +241,9 @@ class CourseImprovementResponse(BaseModel):
     has_transcript: bool = True
     honors_rule: Dict[str, Any] = Field(default_factory=dict)
     classification_ladder: List[Dict[str, Any]] = Field(default_factory=list)
+    cpa_points: float = 0.0
+    upcoming_courses: List[UpcomingCourseItem] = Field(default_factory=list)
+    program_projection: Optional[Dict[str, float]] = None
 
 
 class CampusLocationItem(BaseModel):

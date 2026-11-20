@@ -90,6 +90,93 @@ class StudentService:
                 })
         return results
 
+    def _degree_course_codes(self) -> set:
+        try:
+            path = data_loader.get_graduation_path()
+            groups = {group["id"]: group for group in data_loader.get_groups()}
+        except LookupError:
+            return set()
+        path_group_ids = set()
+        for component in path.get("components", []):
+            if component["type"] == "GROUP_CREDITS":
+                path_group_ids.add(component["group_id"])
+            else:
+                path_group_ids.update(option["group_id"] for option in component.get("options", []))
+        return {
+            code
+            for group_id in path_group_ids
+            if group_id in groups
+            for code in groups[group_id]["course_codes"]
+        }
+
+    def _unlearned_courses(self, passed_codes: set) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+        try:
+            path = data_loader.get_graduation_path()
+            groups = {group["id"]: group for group in data_loader.get_groups()}
+        except LookupError:
+            return [], []
+
+        path_group_ids = set()
+        mandatory_group_ids = set()
+        for component in path.get("components", []):
+            if component["type"] == "GROUP_CREDITS":
+                group_id = component["group_id"]
+                path_group_ids.add(group_id)
+                if group_id in groups and float(groups[group_id]["catalog_credits"]) <= float(component["required_credits"]):
+                    mandatory_group_ids.add(group_id)
+            else:
+                path_group_ids.update(option["group_id"] for option in component.get("options", []))
+
+        degree_course_codes = {
+            code
+            for group_id in path_group_ids
+            if group_id in groups
+            for code in groups[group_id]["course_codes"]
+        }
+
+        unlearned_compulsory = []
+        unlearned_elective = []
+        for course in data_loader.get_all_courses():
+            if course["code"] in passed_codes or course["code"] not in degree_course_codes:
+                continue
+            item = {
+                "code": course["code"],
+                "name": course["name"],
+                "credits": course.get("credits", 0.0),
+                "suggested_semester": course.get("suggested_semester"),
+                "category": course.get("category", ""),
+            }
+            is_mandatory = bool(set(course.get("group_ids", [])) & mandatory_group_ids)
+            if course.get("is_compulsory") or is_mandatory:
+                unlearned_compulsory.append(item)
+            elif float(course.get("credits", 0)) > 0:
+                unlearned_elective.append(item)
+        sort_key = lambda item: (item.get("suggested_semester") or 99, item["code"])
+        unlearned_compulsory.sort(key=sort_key)
+        unlearned_elective.sort(key=sort_key)
+        return unlearned_compulsory, unlearned_elective
+
+    @staticmethod
+    def _program_credit_projection(
+        required_credits: float,
+        total_accumulated_credits: float,
+        cpa_credits: float,
+        best_by_code: Dict[str, Any],
+        degree_course_codes: set,
+    ) -> Dict[str, float]:
+        remaining_credits = max(0.0, required_credits - total_accumulated_credits)
+        failed_degree_credits = sum(
+            v["credits"]
+            for code, v in best_by_code.items()
+            if v["scale4"] == 0 and code in degree_course_codes
+        )
+        final_cpa_credits = cpa_credits - failed_degree_credits + remaining_credits
+        return {
+            "remaining_credits": remaining_credits,
+            "failed_degree_credits": failed_degree_credits,
+            "final_cpa_credits": final_cpa_credits,
+        }
+
     def audit_degree(self) -> Dict[str, Any]:
         """Audit the active student against their exact curriculum version."""
         profile = data_loader.get_student_profile()
@@ -112,59 +199,17 @@ class StudentService:
         required_credits = float(path["total_required_credits"])
         group_audit = self._audit_graduation_components(passed_codes)
 
-        path_group_ids = set()
-        mandatory_group_ids = set()
-        groups = {group["id"]: group for group in data_loader.get_groups()}
-        for component in path["components"]:
-            if component["type"] == "GROUP_CREDITS":
-                group_id = component["group_id"]
-                path_group_ids.add(group_id)
-                if float(groups[group_id]["catalog_credits"]) <= float(component["required_credits"]):
-                    mandatory_group_ids.add(group_id)
-            else:
-                path_group_ids.update(option["group_id"] for option in component["options"])
-
-        degree_course_codes = {
-            code
-            for group_id in path_group_ids
-            for code in groups[group_id]["course_codes"]
-        }
-        # Excess electives or courses from several alternative modules cannot
-        # compensate for a missing compulsory graduation component.
+        degree_course_codes = self._degree_course_codes()
         total_accumulated_credits = sum(component["earned_credits"] for component in group_audit)
-
-        unlearned_compulsory = []
-        unlearned_elective = []
-        for course in data_loader.get_all_courses():
-            if course["code"] in passed_codes or course["code"] not in degree_course_codes:
-                continue
-            item = {
-                "code": course["code"],
-                "name": course["name"],
-                "credits": course.get("credits", 0.0),
-                "suggested_semester": course.get("suggested_semester"),
-                "category": course.get("category", ""),
-            }
-            is_mandatory = bool(set(course.get("group_ids", [])) & mandatory_group_ids)
-            if course.get("is_compulsory") or is_mandatory:
-                unlearned_compulsory.append(item)
-            elif float(course.get("credits", 0)) > 0:
-                unlearned_elective.append(item)
-        sort_key = lambda item: (item.get("suggested_semester") or 99, item["code"])
-        unlearned_compulsory.sort(key=sort_key)
-        unlearned_elective.sort(key=sort_key)
+        unlearned_compulsory, unlearned_elective = self._unlearned_courses(passed_codes)
 
         completion_rate = min(100.0, round(total_accumulated_credits / required_credits * 100, 1))
         classification = get_academic_classification(cpa)
-        remaining_credits = max(0.0, required_credits - total_accumulated_credits)
-        # Học phần F của CTĐT nằm trong số TC còn lại; khi học lại, điểm mới
-        # thay điểm F chứ không cộng thêm TC vào mẫu số CPA.
-        failed_degree_credits = sum(
-            v["credits"]
-            for code, v in best_by_code.items()
-            if v["scale4"] == 0 and code in degree_course_codes
+        projection = self._program_credit_projection(
+            required_credits, total_accumulated_credits, cpa_credits, best_by_code, degree_course_codes
         )
-        final_cpa_credits = cpa_credits - failed_degree_credits + remaining_credits
+        remaining_credits = projection["remaining_credits"]
+        final_cpa_credits = projection["final_cpa_credits"]
         points_needed_for_kha = 2.50 * final_cpa_credits - total_grade_points
         needed = max(0.0, points_needed_for_kha / remaining_credits) if remaining_credits else None
         if cpa_credits and total_grade_points / cpa_credits >= 2.50:
@@ -389,11 +434,58 @@ class StudentService:
     def get_course_improvements(self, student_id: Optional[str] = None) -> Dict[str, Any]:
         """Phân tích các môn cần cải thiện để nâng CPA theo quy chế HUST."""
         profile = self.get_profile()
+        sid = student_id or profile.get("info", {}).get("student_id")
+
+        current_term_codes: List[str] = []
+        current_term_names: Dict[str, str] = {}
+        if sid:
+            from app.services.extra_student_services import extra_student_services
+            for section_name in ("timetable", "temporary_timetable"):
+                try:
+                    section = extra_student_services._section(sid, section_name)
+                    for rec in section.get("records", []):
+                        if code := rec.get("course_code"):
+                            current_term_codes.append(code)
+                            if name := rec.get("course_name"):
+                                current_term_names[code] = name
+                except (ValueError, Exception):
+                    pass
+
+        course_catalog = {course["code"]: course for course in data_loader.get_all_courses()}
+        passed_codes = {course["code"] for course in profile.get("passed_courses", [])}
+        unlearned_compulsory, unlearned_elective = self._unlearned_courses(passed_codes)
+
+        transcript = profile.get("transcript", [])
+        best_by_code = best_attempts(transcript)
+        _, _, cpa_credits = cpa_from_attempts(best_by_code)
+
         try:
-            required_credits = data_loader.get_graduation_path().get("total_required_credits")
+            path = data_loader.get_graduation_path()
+            required_credits = float(path["total_required_credits"])
+            group_audit = self._audit_graduation_components(passed_codes)
+            total_accumulated_credits = sum(component["earned_credits"] for component in group_audit)
+            degree_course_codes = self._degree_course_codes()
+            projection = self._program_credit_projection(
+                required_credits, total_accumulated_credits, cpa_credits, best_by_code, degree_course_codes
+            )
+            final_cpa_credits = projection["final_cpa_credits"]
+            remaining_credits = projection["remaining_credits"]
         except LookupError:
             required_credits = None
-        return course_improvement_engine.analyze_improvements(profile, required_credits)
+            final_cpa_credits = None
+            remaining_credits = None
+
+        return course_improvement_engine.analyze_improvements(
+            profile,
+            required_credits,
+            current_term_codes=current_term_codes,
+            current_term_names=current_term_names,
+            course_catalog=course_catalog,
+            unlearned_compulsory=unlearned_compulsory,
+            unlearned_elective=unlearned_elective,
+            final_cpa_credits=final_cpa_credits,
+            remaining_credits=remaining_credits,
+        )
 
     def update_profile(self, payload: Dict[str, Any], student_id: str) -> Dict[str, Any]:
         profile = data_loader.update_profile_info_for(student_id, payload)

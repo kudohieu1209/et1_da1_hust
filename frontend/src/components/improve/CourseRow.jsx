@@ -1,7 +1,8 @@
-import { TARGET_GRADES } from './planner';
+import { TARGET_GRADES, courseGain } from './planner';
 
-export default function CourseRow({ course, categoryLabel, target, onTargetChange, t }) {
-  const projection = course.projections[target];
+export default function CourseRow({ course, categoryLabel, target, onTargetChange, base, t }) {
+  const gain = target ? courseGain(course, target, base) : 0;
+  const maxGain = course.projections?.A ? courseGain(course, 'A', base) : (course.max_delta_cpa || 0);
 
   return (
     <li className={`improve-course improve-course--${course.category}`}>
@@ -11,7 +12,14 @@ export default function CourseRow({ course, categoryLabel, target, onTargetChang
           `Current grade ${course.current_letter_grade}`,
         )}>{course.current_letter_grade}</span>
         <div>
-          <div className="improve-course-name"><strong>{course.code}</strong> · {course.name}</div>
+          <div className="improve-course-name">
+            <strong>{course.code}</strong> · {course.name}
+            {course.in_current_term && (
+              <span className="improve-tag improve-tag--term">
+                {t('Đang học lại kỳ này', 'Retaking this term')}
+              </span>
+            )}
+          </div>
           <div className="improve-course-meta">
             {course.credits} {t('tín chỉ', 'credits')} · {categoryLabel}
           </div>
@@ -31,10 +39,10 @@ export default function CourseRow({ course, categoryLabel, target, onTargetChang
             >{grade}</button>
           ))}
         </div>
-        <span className={projection ? 'improve-gain' : 'improve-course-max'}>
-          {projection
-            ? t(`+${projection.delta_cpa.toFixed(3)} CPA`, `+${projection.delta_cpa.toFixed(3)} CPA`)
-            : t(`tối đa +${course.max_delta_cpa.toFixed(3)}`, `up to +${course.max_delta_cpa.toFixed(3)}`)}
+        <span className={target ? 'improve-gain' : 'improve-course-max'}>
+          {target
+            ? t(`+${gain.toFixed(3)} CPA`, `+${gain.toFixed(3)} CPA`)
+            : t(`tối đa +${maxGain.toFixed(3)}`, `up to +${maxGain.toFixed(3)}`)}
         </span>
       </div>
     </li>
